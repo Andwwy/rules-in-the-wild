@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+.pytest_cache/
+dist/
+node_modules/
+coverage/
+.vite/
+*.tsbuildinfo
+test-results/
+playwright-report/
+*.py[cod]
+*.duckdb
+*.duckdb.wal

@@ -1,0 +1,15 @@
+[project]
+name = "rules-models"
+version = "0.1.0"
+description = "Shared data models and DuckDB schema for rules extraction and labeling."
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic>=2.0.0",
+]
+
+[build-system]
+requires = ["hatchling>=1.27.0"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/rules_models"]
