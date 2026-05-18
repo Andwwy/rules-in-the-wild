@@ -1,0 +1,38 @@
+[project]
+name = "rules-in-the-wild"
+version = "0.1.0"
+description = "DuckDB/Flock pipeline for LLM-backed rule extraction and classification."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "duckdb==1.5.2",
+    "rules-models",
+]
+
+[build-system]
+requires = ["hatchling>=1.27.0"]
+build-backend = "hatchling.build"
+
+[project.scripts]
+rules-in-the-wild = "rules_in_the_wild.cli:main"
+
+[project.optional-dependencies]
+dev = [
+    "build>=1.2.0",
+    "pytest>=8.0.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/rules_in_the_wild"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"prompts/extract.md" = "rules_in_the_wild/prompts/extract.md"
+"prompts/classify.md" = "rules_in_the_wild/prompts/classify.md"
+"src/rules_in_the_wild/extract/extract_rules.sql" = "rules_in_the_wild/extract/extract_rules.sql"
+"src/rules_in_the_wild/classify/classify_rules.sql" = "rules_in_the_wild/classify/classify_rules.sql"
+
+[tool.uv.sources]
+rules-models = { path = "../rules_models", editable = true }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
