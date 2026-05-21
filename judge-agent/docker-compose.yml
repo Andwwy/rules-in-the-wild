@@ -1,0 +1,51 @@
+# Third sibling stack alongside prototype/ and rules-in-the-wild/.
+#
+# Two services from the same image:
+#   - judge     : FastAPI worker. Polls MotherDuck for unjudged rules,
+#                 calls Perplexity, writes rule_llm_decision. Port 8002.
+#   - judge-ui  : Streamlit dashboard. Talks to judge over its REST API.
+#                 Mirrors the prototype admin UI's style. Port 8503.
+#
+# `prompts/` is mounted in (not copied at build) so editing the rubric is a
+# one-step iteration: edit + `docker compose restart judge`.
+
+services:
+  judge:
+    build: .
+    container_name: rules_judge_agent
+    environment:
+      PERPLEXITY_API_KEY: ${PERPLEXITY_API_KEY}
+      MOTHERDUCK_TOKEN: ${MOTHERDUCK_TOKEN}
+      motherduck_token: ${MOTHERDUCK_TOKEN}
+      MOTHERDUCK_DB: ${MOTHERDUCK_DB:-rules_in_the_wild}
+      JUDGE_MAX_USD: ${JUDGE_MAX_USD:-1.00}
+      JUDGE_MODEL: ${JUDGE_MODEL:-anthropic/claude-haiku-4-5}
+      JUDGE_PROMPT_PATH: /app/prompts/judge.md
+    volumes:
+      - ./prompts:/app/prompts:ro
+      - ./evals:/app/evals:ro
+      - ./src/static:/app/src/static:ro
+    ports:
+      - "8002:8000"
+    restart: unless-stopped
+
+  judge-ui:
+    build: .
+    container_name: rules_judge_ui
+    depends_on:
+      - judge
+    environment:
+      JUDGE_API_URL: http://judge:8000
+    volumes:
+      - ./ui:/app/ui:ro
+    ports:
+      - "8503:8501"
+    command:
+      - streamlit
+      - run
+      - ui/app.py
+      - --server.address=0.0.0.0
+      - --server.port=8501
+      - --server.headless=true
+      - --browser.gatherUsageStats=false
+    restart: unless-stopped

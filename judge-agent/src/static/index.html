@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Judge Agent</title>
+  <style>
+    :root {
+      --bg: #0f1115;
+      --panel: #1a1d24;
+      --panel-2: #232730;
+      --border: #2d323d;
+      --text: #e6e8ec;
+      --muted: #8a93a3;
+      --accent: #4f9eff;
+      --good: #4ade80;
+      --warn: #f59e0b;
+      --bad: #f87171;
+      --highlight: #fbbf24;
+      --highlight-bg: rgba(251, 191, 36, 0.15);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.4;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 12px 20px;
+      background: var(--panel);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    h1 { font-size: 18px; margin: 0; }
+    .grow { flex: 1; }
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      background: var(--panel-2);
+    }
+    .status-pill .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--muted);
+    }
+    .status-pill.running .dot { background: var(--good); animation: pulse 1.2s infinite; }
+    .status-pill.stopping .dot { background: var(--warn); animation: pulse 0.6s infinite; }
+    .status-pill.idle .dot { background: var(--muted); }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+    button {
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--panel-2);
+      color: var(--text);
+      cursor: pointer;
+    }
+    button:hover { background: #2c313c; }
+    button:disabled { opacity: 0.5; cursor: not-allowed; }
+    button.primary { background: var(--accent); border-color: var(--accent); color: white; }
+    button.primary:hover { background: #3b8eef; }
+    button.danger { background: var(--bad); border-color: var(--bad); color: white; }
+    button.danger:hover { background: #ef5050; }
+    .meta { font-size: 12px; color: var(--muted); }
+    main {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 380px;
+      gap: 16px;
+      padding: 16px 20px;
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+    .panel h2 {
+      margin: 0 0 12px 0;
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+    }
+    .rule-text {
+      font-family: ui-monospace, Menlo, monospace;
+      background: var(--panel-2);
+      padding: 10px 12px;
+      border-radius: 6px;
+      border-left: 3px solid var(--accent);
+      margin-bottom: 12px;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .source-meta { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+    .source-file {
+      font-family: ui-monospace, Menlo, monospace;
+      font-size: 12px;
+      background: var(--panel-2);
+      border-radius: 6px;
+      padding: 10px;
+      max-height: 360px;
+      overflow: auto;
+      border: 1px solid var(--border);
+    }
+    .source-line { display: flex; gap: 12px; padding: 1px 0; }
+    .line-no { color: var(--muted); min-width: 36px; text-align: right; user-select: none; }
+    .line-text { flex: 1; white-space: pre; }
+    .line-text:empty::before { content: '\00a0'; }
+    .source-line.hl { background: var(--highlight-bg); border-left: 3px solid var(--highlight); margin-left: -10px; padding-left: 7px; }
+    .source-line.hl .line-no { color: var(--highlight); font-weight: 600; }
+    .source-line.hl .line-text { color: var(--text); }
+    .axes {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      gap: 4px 12px;
+      font-size: 13px;
+    }
+    .axes .k { color: var(--muted); }
+    .axes .v { font-family: ui-monospace, Menlo, monospace; }
+    .spend-bar {
+      height: 8px;
+      background: var(--panel-2);
+      border-radius: 4px;
+      overflow: hidden;
+      margin: 8px 0;
+    }
+    .spend-fill {
+      height: 100%;
+      background: var(--good);
+      transition: width 0.3s ease;
+    }
+    .spend-fill.warn { background: var(--warn); }
+    .spend-fill.bad { background: var(--bad); }
+    .spend-text {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      font-family: ui-monospace, Menlo, monospace;
+    }
+    .counter {
+      font-family: ui-monospace, Menlo, monospace;
+      font-size: 16px;
+      font-weight: 600;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .stat-card {
+      background: var(--panel-2);
+      padding: 10px 12px;
+      border-radius: 6px;
+    }
+    .stat-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+    .stat-value { font-family: ui-monospace, Menlo, monospace; font-size: 18px; font-weight: 600; margin-top: 4px; }
+    .recent-item {
+      padding: 10px;
+      border-radius: 6px;
+      background: var(--panel-2);
+      margin-bottom: 8px;
+      font-size: 12px;
+    }
+    .recent-item .rule-snippet {
+      font-family: ui-monospace, Menlo, monospace;
+      margin-bottom: 6px;
+      max-height: 60px;
+      overflow: hidden;
+    }
+    .recent-item .axes-compact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 4px;
+    }
+    .chip {
+      display: inline-block;
+      padding: 2px 6px;
+      background: var(--bg);
+      border-radius: 4px;
+      font-size: 11px;
+      font-family: ui-monospace, Menlo, monospace;
+    }
+    .chip.ok { color: var(--good); }
+    .chip.fail { color: var(--bad); }
+    .recent-meta { color: var(--muted); display: flex; gap: 12px; }
+    .placeholder { color: var(--muted); font-style: italic; padding: 24px 0; text-align: center; }
+    .error-banner {
+      background: rgba(248, 113, 113, 0.15);
+      border: 1px solid var(--bad);
+      color: var(--bad);
+      padding: 10px 14px;
+      border-radius: 6px;
+      margin-bottom: 16px;
+      font-size: 13px;
+    }
+    @media (max-width: 1100px) {
+      main { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Judge Agent</h1>
+    <span id="status-pill" class="status-pill idle"><span class="dot"></span><span id="status-text">idle</span></span>
+    <span class="meta">model: <span id="model">—</span></span>
+    <span class="meta">prompt: <span id="prompt-version">—</span></span>
+    <div class="grow"></div>
+    <button id="btn-start" class="primary" onclick="postAction('start')">Start</button>
+    <button id="btn-stop" class="danger" onclick="postAction('stop')">Stop</button>
+  </header>
+
+  <main>
+    <div>
+      <div id="error-banner" class="error-banner" style="display:none"></div>
+
+      <section class="panel">
+        <h2>Current rule</h2>
+        <div id="current-empty" class="placeholder">no rule in flight</div>
+        <div id="current-body" style="display:none">
+          <div class="rule-text" id="cur-rule-text"></div>
+          <div class="source-meta">
+            <span id="cur-source-path"></span>
+            ·
+            lines <span id="cur-lines"></span>
+            ·
+            source_kind: <span id="cur-source-kind"></span>
+          </div>
+          <div id="cur-source-file" class="source-file"></div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Recent results</h2>
+        <div id="recent-empty" class="placeholder">no results yet</div>
+        <div id="recent-list"></div>
+      </section>
+    </div>
+
+    <aside>
+      <section class="panel">
+        <h2>Spend</h2>
+        <div class="spend-text">
+          <span><span id="spent">$0.0000</span> used</span>
+          <span>of <span id="max-usd">$0.0000</span></span>
+        </div>
+        <div class="spend-bar"><div id="spend-fill" class="spend-fill" style="width:0%"></div></div>
+        <div class="meta" id="spend-pct">0%</div>
+      </section>
+
+      <section class="panel">
+        <h2>Counters</h2>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-label">Judged</div>
+            <div class="stat-value" id="total-judged">0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Failed</div>
+            <div class="stat-value" id="total-failed">0</div>
+          </div>
+        </div>
+      </section>
+    </aside>
+  </main>
+
+  <script>
+    const fmt$ = v => '$' + Number(v).toFixed(4);
+    const escape = s => String(s ?? '')
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+    async function postAction(name) {
+      const btn = document.getElementById('btn-' + name);
+      btn.disabled = true;
+      try {
+        await fetch(`/api/${name}`, { method: 'POST' });
+        await refresh();
+      } finally {
+        setTimeout(() => { btn.disabled = false; }, 300);
+      }
+    }
+
+    function renderSourceFile(container, lines) {
+      container.innerHTML = '';
+      for (const l of lines) {
+        const div = document.createElement('div');
+        div.className = 'source-line' + (l.highlighted ? ' hl' : '');
+        div.innerHTML = `<span class="line-no">${l.line_number}</span><span class="line-text">${escape(l.text)}</span>`;
+        container.appendChild(div);
+      }
+      // Auto-scroll to first highlighted line so the rule is visible.
+      const firstHl = container.querySelector('.source-line.hl');
+      if (firstHl) firstHl.scrollIntoView({ block: 'center', behavior: 'instant' });
+    }
+
+    function renderRecent(items) {
+      const empty = document.getElementById('recent-empty');
+      const list = document.getElementById('recent-list');
+      if (!items.length) {
+        empty.style.display = '';
+        list.innerHTML = '';
+        return;
+      }
+      empty.style.display = 'none';
+      list.innerHTML = '';
+      for (const it of items) {
+        const div = document.createElement('div');
+        div.className = 'recent-item';
+        const axesHtml = it.parse_ok
+          ? Object.entries(it.values || {})
+              .map(([k, v]) => `<span class="chip">${k.replace(/^rule_/, '')}: ${escape(v)}</span>`)
+              .join('')
+          : `<span class="chip fail">parse_error: ${escape(it.parse_error)}</span>`;
+        const confChip = it.confidence != null
+          ? `<span class="chip">conf ${Number(it.confidence).toFixed(2)}</span>`
+          : '';
+        const okChip = `<span class="chip ${it.parse_ok ? 'ok' : 'fail'}">${it.parse_ok ? '✓ parsed' : '✗ failed'}</span>`;
+        div.innerHTML = `
+          <div class="rule-snippet">${escape(it.rule_text)}</div>
+          <div class="axes-compact">${okChip}${confChip}${axesHtml}</div>
+          <div class="recent-meta">
+            <span>${escape(it.source_path)}</span>
+            <span>${it.latency_ms} ms</span>
+            <span>${fmt$(it.cost_usd)}</span>
+          </div>
+        `;
+        list.appendChild(div);
+      }
+    }
+
+    function renderCurrent(cur) {
+      const empty = document.getElementById('current-empty');
+      const body = document.getElementById('current-body');
+      if (!cur) {
+        empty.style.display = '';
+        body.style.display = 'none';
+        return;
+      }
+      empty.style.display = 'none';
+      body.style.display = '';
+      document.getElementById('cur-rule-text').textContent = cur.rule_text;
+      document.getElementById('cur-source-path').textContent = cur.source_path || '(unknown)';
+      document.getElementById('cur-lines').textContent = `${cur.start_line}–${cur.end_line}`;
+      document.getElementById('cur-source-kind').textContent = cur.source_kind || '—';
+      renderSourceFile(document.getElementById('cur-source-file'), cur.source_lines || []);
+    }
+
+    function renderSpend(s) {
+      document.getElementById('spent').textContent = fmt$(s.spent_usd);
+      document.getElementById('max-usd').textContent = fmt$(s.max_usd);
+      const pct = s.max_usd > 0 ? Math.min(100, (s.spent_usd / s.max_usd) * 100) : 0;
+      const fill = document.getElementById('spend-fill');
+      fill.style.width = pct + '%';
+      fill.className = 'spend-fill' + (pct > 90 ? ' bad' : pct > 60 ? ' warn' : '');
+      document.getElementById('spend-pct').textContent = pct.toFixed(1) + '%';
+    }
+
+    function renderStatus(s) {
+      const pill = document.getElementById('status-pill');
+      const text = document.getElementById('status-text');
+      pill.className = 'status-pill ' + s.status;
+      text.textContent = s.status;
+      document.getElementById('model').textContent = s.model || '—';
+      document.getElementById('prompt-version').textContent = s.prompt_version || '—';
+      document.getElementById('btn-start').disabled = s.status !== 'idle';
+      document.getElementById('btn-stop').disabled = s.status === 'idle';
+
+      const errEl = document.getElementById('error-banner');
+      if (s.error) {
+        errEl.style.display = '';
+        errEl.textContent = s.error;
+      } else {
+        errEl.style.display = 'none';
+      }
+    }
+
+    async function refresh() {
+      try {
+        const r = await fetch('/api/state');
+        const s = await r.json();
+        renderStatus(s);
+        renderSpend(s);
+        document.getElementById('total-judged').textContent = s.total_judged;
+        document.getElementById('total-failed').textContent = s.total_failed;
+        renderCurrent(s.current_rule);
+        renderRecent(s.recent);
+      } catch (e) {
+        console.error('refresh failed', e);
+      }
+    }
+
+    refresh();
+    setInterval(refresh, 700);
+  </script>
+</body>
+</html>

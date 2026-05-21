@@ -1,0 +1,187 @@
+# Hand-curated ground truth for the judge. 15 rules covering common patterns
+# from each axis. The expected values are the author's best calls, not gospel —
+# the goal is "judge agrees with a reasonable human" not "judge nails this
+# exact taxonomy interpretation."
+#
+# Once the labeling UI has accumulated ~50+ accepted classifications, regenerate
+# this file from classification_labels (decision='accept').
+
+- rule_text: "Always run `cargo test` before committing."
+  source_kind: claude_md
+  expected:
+    rule_specificity: stack_specific
+    rule_cognitive_load: requires_running_cmd
+    rule_constraint_level: human_workflow
+    enforcement_mechanism: deterministic
+    enforcement_scope: local
+    enforcement_trigger: pre_tool_verify_gate
+    rule_kind: process_sequential
+    artifacts_required: [tool_call_log]
+
+- rule_text: "Think step by step before writing code."
+  source_kind: cursor_rules
+  expected:
+    rule_specificity: universal
+    rule_cognitive_load: zero_lookup
+    rule_constraint_level: planning_reasoning
+    enforcement_mechanism: llm_judge
+    enforcement_scope: runtime_external
+    enforcement_trigger: intermediate_output
+    rule_kind: process_agent_response
+    artifacts_required: [reasoning_trace]
+
+- rule_text: "Use `rg` not `grep` for searching the codebase."
+  source_kind: claude_md
+  expected:
+    rule_specificity: universal
+    rule_cognitive_load: zero_lookup
+    rule_constraint_level: tool_use
+    enforcement_mechanism: deterministic
+    enforcement_scope: runtime_external
+    enforcement_trigger: pre_tool_verify_gate
+    rule_kind: process_agent_response
+    artifacts_required: [tool_call_log]
+
+- rule_text: "Never use emojis in commit messages."
+  source_kind: agents_md
+  expected:
+    rule_specificity: universal
+    rule_cognitive_load: zero_lookup
+    rule_constraint_level: output_content
+    enforcement_mechanism: deterministic
+    enforcement_scope: runtime_external
+    enforcement_trigger: final_output
+    rule_kind: repository_conventions
+    artifacts_required: [output]
+
+- rule_text: "All public functions must have type hints (PEP 484)."
+  source_kind: claude_md
+  expected:
+    rule_specificity: stack_specific
+    rule_cognitive_load: zero_lookup
+    rule_constraint_level: output_content
+    enforcement_mechanism: deterministic
+    enforcement_scope: full_repo
+    enforcement_trigger: final_output
+    rule_kind: repository_language
+    artifacts_required: [code_diff]
+
+- rule_text: "Match the existing style in CONTRIBUTING.md when writing PR descriptions."
+  source_kind: agents_md
+  expected:
+    rule_specificity: project_specific
+    rule_cognitive_load: requires_reading_file
+    rule_constraint_level: output_content
+    enforcement_mechanism: llm_judge
+    enforcement_scope: runtime_external
+    enforcement_trigger: final_output
+    rule_kind: process_agent_response
+    artifacts_required: [output]
+
+- rule_text: "Edit only files in /core, never /vendor."
+  source_kind: cursor_rules
+  expected:
+    rule_specificity: project_specific
+    rule_cognitive_load: zero_lookup
+    rule_constraint_level: tool_use
+    enforcement_mechanism: deterministic
+    enforcement_scope: full_repo
+    enforcement_trigger: pre_tool_verify_gate
+    rule_kind: repository_architectural
+    artifacts_required: [code_diff]
+
+- rule_text: "Check the Linear ticket linked in the branch name before claiming a PR is ready."
+  source_kind: agents_md
+  expected:
+    rule_specificity: universal
+    rule_cognitive_load: requires_external_state
+    rule_constraint_level: human_workflow
+    enforcement_mechanism: human_remind
+    enforcement_scope: runtime_external
+    enforcement_trigger: final_output
+    rule_kind: process_context_chasing
+    artifacts_required: []
+
+- rule_text: "Open a draft PR after 3 failed attempts at the same fix."
+  source_kind: claude_md
+  expected:
+    rule_specificity: universal
+    rule_cognitive_load: zero_lookup
+    rule_constraint_level: human_workflow
+    enforcement_mechanism: hybrid
+    enforcement_scope: runtime_external
+    enforcement_trigger: final_output
+    rule_kind: process_sequential
+    artifacts_required: [tool_call_log]
+
+- rule_text: "Reply in under 200 words unless the user asks for more detail."
+  source_kind: cursor_rules
+  expected:
+    rule_specificity: universal
+    rule_cognitive_load: zero_lookup
+    rule_constraint_level: agent_human_interaction
+    enforcement_mechanism: deterministic
+    enforcement_scope: runtime_external
+    enforcement_trigger: final_output
+    rule_kind: process_agent_response
+    artifacts_required: [output]
+
+- rule_text: "Use the existing `useFetchPosts` hook in src/hooks instead of writing a new one."
+  source_kind: agents_md
+  expected:
+    rule_specificity: project_specific
+    rule_cognitive_load: requires_reading_file
+    rule_constraint_level: output_content
+    enforcement_mechanism: hybrid
+    enforcement_scope: full_repo
+    enforcement_trigger: final_output
+    rule_kind: repository_conventions
+    artifacts_required: [code_diff]
+
+- rule_text: "Buttons on primary actions must use the brand blue (#0066FF), not the system blue."
+  source_kind: claude_md
+  expected:
+    rule_specificity: project_specific
+    rule_cognitive_load: zero_lookup
+    rule_constraint_level: output_content
+    enforcement_mechanism: hybrid
+    enforcement_scope: full_repo
+    enforcement_trigger: final_output
+    rule_kind: repository_ui
+    artifacts_required: [code_diff, ui_snapshot]
+
+- rule_text: "Plan the change in a numbered list before making any edits."
+  source_kind: claude_md
+  expected:
+    rule_specificity: universal
+    rule_cognitive_load: zero_lookup
+    rule_constraint_level: planning_reasoning
+    enforcement_mechanism: llm_judge
+    enforcement_scope: runtime_external
+    enforcement_trigger: intermediate_output
+    rule_kind: process_sequential
+    artifacts_required: [agent_plan]
+
+- rule_text: "Never run destructive git commands (reset --hard, push --force) without explicit user approval."
+  source_kind: claude_md
+  expected:
+    rule_specificity: universal
+    rule_cognitive_load: zero_lookup
+    rule_constraint_level: tool_use
+    enforcement_mechanism: deterministic
+    enforcement_scope: runtime_external
+    enforcement_trigger: pre_tool_verify_gate
+    rule_kind: process_agent_response
+    artifacts_required: [tool_call_log]
+
+- rule_text: "Set max_workers=4 in the Celery config for the worker pool."
+  source_kind: agents_md
+  expected:
+    rule_specificity: project_specific
+    rule_cognitive_load: zero_lookup
+    rule_constraint_level: output_content
+    enforcement_mechanism: deterministic
+    enforcement_scope: full_repo
+    enforcement_trigger: settings_json
+    rule_kind: repository_architectural
+    artifacts_required: [code_diff]
