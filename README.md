@@ -5,8 +5,8 @@ Three independent Docker stacks sharing a common MotherDuck DB (`rules_in_the_wi
 | Stack | Path | URL | What it does |
 |---|---|---|---|
 | Crawling agent | `crawling-agent/` | http://localhost:8501 | Streamlit admin UI — discovers + embeds + clusters rules from public GitHub repos |
-| Labeling platform | `labeling-platform/` | http://localhost:5173 | React + FastAPI UI for reviewing extracted rules |
-| Judge agent | `judge-agent/` | http://localhost:8503 | Streamlit dashboard + FastAPI worker that LLM-judges rules |
+| Labeling platform | `labeling-platform/` | http://localhost:5173 | UI for reviewing extracted & LLM judged rules |
+| Judge agent | `judge-agent/` | http://localhost:8503 | Streamlit dashboard + FastAPI worker that LLM-judges rules from DB |
 
 Install [Docker Desktop](https://www.docker.com/products/docker-desktop/) before running any of these.
 
