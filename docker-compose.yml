@@ -1,0 +1,47 @@
+# Separate compose for the reallocf/rules-in-the-wild labeling UI.
+# Connects to the same MotherDuck DB the prototype uses (`md:rules_in_the_wild`)
+# via MOTHERDUCK_TOKEN from this directory's .env. The prototype's compose at
+# ../prototype/docker-compose.yml is unchanged — nothing here touches it.
+#
+# Host ports chosen to avoid clashing with the prototype's admin UI on 8501:
+#   - 8001 → labeling FastAPI backend (container 8000)
+#   - 5173 → Vite dev server (container 5173)
+#
+# After `docker compose up --build`, open http://localhost:5173. The Vite dev
+# server proxies /api to the backend service over the Docker network.
+
+services:
+  labeling-backend:
+    build:
+      context: .
+      dockerfile: backend.Dockerfile
+    container_name: rules_labeling_backend
+    environment:
+      # duckdb client reads either casing; we set both to be safe.
+      MOTHERDUCK_TOKEN: ${MOTHERDUCK_TOKEN}
+      motherduck_token: ${MOTHERDUCK_TOKEN}
+    ports:
+      - "8001:8000"
+    networks:
+      - labeling
+    restart: unless-stopped
+
+  labeling-frontend:
+    build:
+      context: .
+      dockerfile: frontend.Dockerfile
+    container_name: rules_labeling_frontend
+    depends_on:
+      - labeling-backend
+    environment:
+      # Picked up by vite.config.ts to override the dev-server proxy target.
+      VITE_API_PROXY: "http://labeling-backend:8000"
+    ports:
+      - "5173:5173"
+    networks:
+      - labeling
+    restart: unless-stopped
+
+networks:
+  labeling:
+    driver: bridge

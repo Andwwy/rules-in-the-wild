@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import threading
 from pathlib import Path
 from typing import Any, Literal
 
@@ -75,16 +76,30 @@ class LabelStore:
     def __init__(self, db_path: str | Path = ":memory:") -> None:
         self.con = duckdb.connect(str(db_path))
         self.con.execute("LOAD json;")
+        # duckdb Python connections are not safe for concurrent queries
+        # across threads. FastAPI's threadpool runs handlers in parallel, so
+        # we serialize every DB access through this reentrant lock. Reentrant
+        # because upsert paths call helpers that also take the lock.
+        self._lock = threading.RLock()
         self.ensure_label_schema()
 
     def ensure_label_schema(self) -> None:
-        self.con.execute(LABEL_SCHEMA_SQL)
+        with self._lock:
+            self.con.execute(LABEL_SCHEMA_SQL)
 
     def documents(self) -> list[DocumentItem]:
-        rows = self.con.execute(
+        # Adapter: read from the prototype's `rules_file` table. The prototype
+        # has no separate document_name column, so we reuse path. project.name
+        # ("owner/repo") is appended where available for readability.
+        with self._lock:
+            rows = self.con.execute(
             """
-            SELECT document_id, source_path, document_name
-            FROM source_documents
+            SELECT
+                f.id::VARCHAR                                   AS document_id,
+                f.path                                          AS source_path,
+                COALESCE(p.owner || '/' || p.name || ':' || f.path, f.path) AS document_name
+            FROM rules_file f
+            LEFT JOIN source_project p ON p.id = f.project_id
             ORDER BY document_name, source_path
             """
         ).fetchall()
@@ -108,7 +123,8 @@ class LabelStore:
         corrected_rule_text = payload.corrected_rule_text
         corrected_start_line = payload.corrected_start_line
         corrected_end_line = payload.corrected_end_line
-        self.con.execute(
+        with self._lock:
+            self.con.execute(
             """
             INSERT INTO extraction_labels (
                 target_key,
@@ -167,7 +183,8 @@ class LabelStore:
             end_line=payload.end_line,
             rule_text=payload.rule_text,
         )
-        self.con.execute(
+        with self._lock:
+            self.con.execute(
             """
             INSERT INTO extraction_labels (
                 target_key,
@@ -257,7 +274,8 @@ class LabelStore:
             confidence=0.0,
         )
         snapshot = json.dumps(prediction.model_dump(), sort_keys=True)
-        self.con.execute(
+        with self._lock:
+            self.con.execute(
             """
             INSERT INTO classification_labels (
                 target_key,
@@ -335,8 +353,10 @@ class LabelStore:
         return self._get_classification_label(target_key)
 
     def stats(self) -> Stats:
+        # Document and rule counts come from the prototype's tables; label
+        # counts stay on this app's own tables.
         return Stats(
-            documents=self._count("source_documents"),
+            documents=self._count("rules_file"),
             extraction_items=len(self.extraction_items("all")),
             extraction_labels=self._count("extraction_labels"),
             classification_items=len(self.classification_items("all")),
@@ -344,21 +364,50 @@ class LabelStore:
         )
 
     def _predicted_extraction_items(self) -> list[ExtractionItem]:
-        rows = self.con.execute(
-            """
-            SELECT
-                r.rule_id,
-                r.document_id,
-                r.source_path,
-                r.rule_text,
-                r.start_line,
-                r.end_line,
-                d.document_text
-            FROM extracted_rules r
-            JOIN source_documents d USING (document_id)
-            ORDER BY r.source_path, r.start_line, r.rule_index
-            """
-        ).fetchall()
+        # Adapter: prototype stores rules in `rule` and full file text in
+        # `rules_file.raw_content`. Two queries instead of a join: documents
+        # alone are cheap, rules without raw_content are cheap. Joining on
+        # raw_content per-rule would ship the same ~10 KB markdown for every
+        # one of ~10k rules — orders of magnitude more network traffic.
+        with self._lock:
+            doc_rows = self.con.execute(
+                """
+                SELECT id::VARCHAR AS document_id,
+                       path        AS source_path,
+                       raw_content AS document_text
+                FROM rules_file
+                """
+            ).fetchall()
+            rule_rows = self.con.execute(
+                """
+                SELECT id::VARCHAR             AS rule_id,
+                       rules_file_id::VARCHAR  AS document_id,
+                       rule_text,
+                       line_start              AS start_line,
+                       line_end                AS end_line
+                FROM rule
+                """
+            ).fetchall()
+        # Pre-filter to LLM-judged rules only. The labeling platform is for
+        # human review of judge decisions; rules the judge hasn't gotten to
+        # yet shouldn't appear at all. Once a rule has a parse_ok=true row in
+        # rule_llm_decision, it surfaces here. After a human labels it, the
+        # existing _filter_by_status('labeled'/'unlabeled') split tells the
+        # two apart based on item.label presence.
+        judged = self._judged_rule_ids()
+        docs: dict[str, tuple[str, str]] = {
+            r[0]: (r[1], r[2]) for r in doc_rows
+        }
+        rows = []
+        for rid, did, rule_text, start_line, end_line in rule_rows:
+            if rid not in judged:
+                continue
+            doc = docs.get(did)
+            if doc is None:
+                continue  # orphan rule (shouldn't happen, FK enforces)
+            source_path, document_text = doc
+            rows.append((rid, did, source_path, rule_text, start_line, end_line, document_text))
+        rows.sort(key=lambda x: (x[2], x[4], x[5]))
         labels = self._extraction_labels()
         items = []
         for row in rows:
@@ -384,7 +433,11 @@ class LabelStore:
         return items
 
     def _missing_extraction_items(self) -> list[ExtractionItem]:
-        rows = self.con.execute(
+        # Adapter: missing-rule labels are still stored in our own
+        # `extraction_labels` table; we join to the prototype's `rules_file`
+        # (via UUID cast) to fetch document_text for context rendering.
+        with self._lock:
+            rows = self.con.execute(
             """
             SELECT
                 l.target_key,
@@ -393,9 +446,9 @@ class LabelStore:
                 l.corrected_rule_text,
                 l.corrected_start_line,
                 l.corrected_end_line,
-                d.document_text
+                f.raw_content AS document_text
             FROM extraction_labels l
-            JOIN source_documents d USING (document_id)
+            JOIN rules_file f ON f.id::VARCHAR = l.document_id
             WHERE l.is_missing
             """
         ).fetchall()
@@ -431,7 +484,8 @@ class LabelStore:
         ]
 
     def _extraction_labels(self) -> dict[str, ExtractionLabel]:
-        rows = self.con.execute(
+        with self._lock:
+            rows = self.con.execute(
             """
             SELECT
                 target_key,
@@ -458,7 +512,8 @@ class LabelStore:
         }
 
     def _classification_labels(self) -> dict[str, ClassificationLabel]:
-        rows = self.con.execute(
+        with self._lock:
+            rows = self.con.execute(
             """
             SELECT
                 target_key,
@@ -487,30 +542,76 @@ class LabelStore:
         }
 
     def _classification_predictions(self) -> dict[str, ClassificationPrediction]:
-        rows = self.con.execute(
+        # Adapter: prototype's classification lives in `rule_llm_decision`
+        # (append-only history). Take the latest parse_ok=true row per rule.
+        # Axis mapping is lossy because the two schemas use different
+        # taxonomies — see ambiguity_notes for the full prototype payload.
+        with self._lock:
+            rows = self.con.execute(
             """
             SELECT
-                rule_id,
-                prerequisites,
-                enforcement_mechanisms,
-                triggers,
-                ambiguity_level,
-                ambiguity_notes,
-                confidence
-            FROM classified_rules
+                rule_id::VARCHAR        AS rule_id,
+                specificity::VARCHAR    AS specificity,
+                cognitive_load::VARCHAR AS cognitive_load,
+                constraint_level::VARCHAR AS constraint_level,
+                enforcement_mechanism::VARCHAR AS enforcement_mechanism,
+                enforcement_scope::VARCHAR AS enforcement_scope,
+                enforcement_trigger::VARCHAR AS enforcement_trigger,
+                rule_kind::VARCHAR      AS rule_kind,
+                artifacts_required,
+                COALESCE(confidence, 0.0) AS confidence,
+                COALESCE(rationale, '')   AS rationale
+            FROM (
+                SELECT *,
+                       ROW_NUMBER() OVER (
+                           PARTITION BY rule_id ORDER BY created_at DESC
+                       ) AS rn
+                FROM rule_llm_decision
+                WHERE parse_ok = TRUE
+            )
+            WHERE rn = 1
             """
         ).fetchall()
-        return {
-            row[0]: ClassificationPrediction(
-                prerequisites=self._json_array(row[1]),
-                enforcement_mechanisms=self._json_array(row[2]),
-                triggers=self._json_array(row[3]),
-                ambiguity_level=row[4],
-                ambiguity_notes=row[5],
-                confidence=row[6],
+        out: dict[str, ClassificationPrediction] = {}
+        for row in rows:
+            (rule_id, specificity, cognitive_load, constraint_level,
+             enforcement_mechanism, enforcement_scope, enforcement_trigger,
+             rule_kind, artifacts_required, confidence, rationale) = row
+            artifacts = [str(a) for a in (artifacts_required or [])]
+            notes_lines = [
+                f"specificity: {specificity or '-'}",
+                f"cognitive_load: {cognitive_load or '-'}",
+                f"constraint_level: {constraint_level or '-'}",
+                f"enforcement_scope: {enforcement_scope or '-'}",
+                f"rule_kind: {rule_kind or '-'}",
+                f"artifacts_required: {', '.join(artifacts) or '-'}",
+            ]
+            if rationale:
+                notes_lines.append("")
+                notes_lines.append(rationale)
+            out[rule_id] = ClassificationPrediction(
+                prerequisites=[],
+                enforcement_mechanisms=[enforcement_mechanism] if enforcement_mechanism else [],
+                triggers=[enforcement_trigger] if enforcement_trigger else [],
+                ambiguity_level=constraint_level or "",
+                ambiguity_notes="\n".join(notes_lines),
+                confidence=float(confidence or 0.0),
             )
-            for row in rows
-        }
+        return out
+
+    def _judged_rule_ids(self) -> set[str]:
+        """Set of rule UUIDs that have at least one parse_ok=true row in
+        rule_llm_decision. Used as a pre-filter so the labeling UI only shows
+        rules the judge agent has already classified."""
+        with self._lock:
+            rows = self.con.execute(
+                """
+                SELECT DISTINCT rule_id::VARCHAR
+                FROM rule_llm_decision
+                WHERE parse_ok = TRUE
+                """
+            ).fetchall()
+        return {r[0] for r in rows}
 
     def _get_extraction_label(self, target_key: str) -> ExtractionLabel:
         label = self._extraction_labels().get(target_key)
@@ -537,7 +638,8 @@ class LabelStore:
         raise KeyError(target_key)
 
     def _count(self, table: str) -> int:
-        return self.con.execute(f"SELECT count(*) FROM {table}").fetchone()[0]
+        with self._lock:
+            return self.con.execute(f"SELECT count(*) FROM {table}").fetchone()[0]
 
     def _json_array(self, value: Any) -> list[str]:
         if value is None:
