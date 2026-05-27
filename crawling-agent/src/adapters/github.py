@@ -203,7 +203,7 @@ def _fetch_one(owner: str, repo: str, path: str, source_kind: str) -> FetchedFil
         source_kind=source_kind,
         commit_sha=sha,
         raw_content=raw,
-        snapshot_url=f"https://github.com/{owner}/{repo}/blob/{sha}/{path}",
+        snapshot_url=f"https://github.com/{owner}/{repo}",
     )
 
 

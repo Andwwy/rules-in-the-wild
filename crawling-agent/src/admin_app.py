@@ -386,7 +386,6 @@ with tab_browse:
          spec, cload, clevel, mech, scope, trigger, rkind,
          artifacts, conf, rationale) in rows:
         with st.expander(text):
-            permalink = f"{repo}/blob/{commit}/{path}#L{lstart}-L{lend}" if commit else None
             # Layout depends on whether we have anything to show in the right column.
             if JUDGE_ENABLED:
                 left, right = st.columns(2)
@@ -394,10 +393,8 @@ with tab_browse:
                 left, right = st.container(), None
             with left:
                 st.markdown(f"**Project** `{project}`  ·  **Source kind** `{skind}`")
-                if permalink:
-                    st.markdown(f"**Permalink** [{path}:L{lstart}-L{lend}]({permalink})")
-                else:
-                    st.markdown(f"**Path** `{path}:L{lstart}-L{lend}`")
+                st.markdown(f"**Source** [{repo}]({repo})")
+                st.markdown(f"**Path** `{path}:L{lstart}-L{lend}`")
                 if anchor:
                     st.markdown(f"**Section** `{anchor}`")
                 if conf is not None:
