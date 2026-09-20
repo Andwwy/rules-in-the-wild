@@ -37,6 +37,7 @@ the 8-class enforcer mapping + translation study (`map/`), the enforcement trans
 experiments. Scripts in there are records — many carry absolute paths from before they moved.
 
 ## Keys and environments
+* `.env.example` at the root is the template: Perplexity key, MotherDuck token, GitHub token. Copy it to `.env` in the stage you run.
 * Secrets live in per-project `.env` files that are never committed: `sem_filter/.env` (Perplexity),
   `rule clause extraction/.env` (MotherDuck, Hugging Face), `assign+group/.env` (copy `.env.example`).
 * Perplexity's agent API is the group's default model provider (`openai/gpt-5.6-terra`, `flex`).
