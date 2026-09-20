@@ -112,12 +112,5 @@ rule_pipeline/run.py          the command line; writes the run folder
 tests/                        offline, a fake model stands in for llm.call
 ```
 ```bash
-python -m pytest              # 21 tests, no network, < 1 s
+python -m pytest              # 19 tests, no network, < 1 s
 ```
-`tests/test_parity_local.py` additionally replays our recorded 10,000-rule run through `vote.py` and `categorize.py` and
-requires the same result; it is skipped when that run is not on disk (it is not part of the repo).
-
-## Not in this repo
-`archive/`, `data/`, `runs/` and `motherduck upload/` are git-ignored: past runs and scripts, the rule draws, run outputs and the
-lab's warehouse loader stay local. `result.json` keeps the keys of the lab's `assignment output.json`, so a finished run can be
-staged for the warehouse by adding one line to `motherduck upload/build_staging.py`.

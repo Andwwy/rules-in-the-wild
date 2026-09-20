@@ -1,29 +1,39 @@
 # rules in the wild
 
-Natural-language rules mined from agent instruction files (`CLAUDE.md`, `AGENTS.md`, `.cursorrules`, …): collect them, cut them
-into clauses, keep the ones that are rules, work out what could enforce each rule, and evaluate that enforcement.
+Natural-language rules from agent instruction files (`CLAUDE.md`, `AGENTS.md`, `.cursorrules`, …) → what could enforce each rule.
 
 ```
-crawl ──► clause extraction ──► is_rule filter ──► assign → vote → categorize ──► enforcement eval
-archive/     rule clause           sem_filter/          assign+group/                 enforcement eval/
-rule crawling/  extraction/                             (= the rule-pipeline repo)    enforcement eval test/
+rule files ─► clause extraction ─► is_rule filter ─► assign ×3 ─► majority-vote judge ─► subcategory
+              rule clause           sem_filter/       └──────────────── assign+group/ ───────────────┘
+              extraction/
 ```
 
-| stage | folder | what it holds | where its output lives |
-|---|---|---|---|
-| 1 crawl | `archive/rule crawling/` (finished Jul 2026) | the GitHub crawler for rule files | MotherDuck `rules.rule_file` — 2,204,470 files |
-| 2 clause extraction | `rule clause extraction/` | the parser that cuts files into clauses, its audit, the bulk loader | MotherDuck `rules.rule_clause` — 55,182,794 clauses; Hugging Face dataset |
-| 3 is_rule filter | `sem_filter/` | the judge prompt, the 30k judged sample, labelled control sets, the annotator | `sem_filter/data/30k filter result.json` → the 10k draw in `assign+group/data/` |
-| 4 assign → vote → categorize | `assign+group/` | **`rule-pipeline`**, the shareable git repo: three prompted stages in six small modules. Past runs are local-only under its `archive/` and `data/` | MotherDuck `rule_assignment*`, `rule_subcategory`, `subcategory_class` (loader: `assign+group/motherduck upload/`) |
-| 5 enforcement eval — **local only** | `enforcement eval/` | related work (≈160 entries), datasets per enforcer class, the proposed end-to-end eval design | — |
-| — **local only** | `enforcement eval test/` | the local pilot: 10 rules per enforcer category, two tracks, scored on execution (`REPORT.md`) | — |
+| folder | what it does |
+|---|---|
+| [`rule clause extraction/`](rule%20clause%20extraction/) | cuts rule files into clauses (a markdown parser, no LLM) |
+| [`sem_filter/`](sem_filter/) | an LLM judge labels each clause: is it a rule? |
+| [`assign+group/`](assign+group/) | **the pipeline**: for each rule, an LLM assigns `enforcer / target / trigger / spec` three times, a judge reconciles the three, and regex aliases group the enforcers into subcategories |
 
-Every active folder has its own README; start there. Folder names are kept stable on purpose — Claude Code sessions and a few
-scripts are keyed to these paths.
+## Run the pipeline
+```bash
+git clone https://github.com/Andwwy/rules-in-the-wild.git && cd rules-in-the-wild/assign+group
+pip install -e .
+cp ../.env.example .env                  # fill in PERPLEXITY_API_KEY
+python -m rule_pipeline.run examples/rules.sample.json --out runs/first --dry-run    # counts requests, calls nothing
+python -m rule_pipeline.run examples/rules.sample.json --out runs/first
+```
+* **Input**: a JSON list of rules (`clause_id`, `rule_text`, `context`) — or `--from-db` to pull them from MotherDuck with `MOTHERDUCK_TOKEN`.
+* **Output**: `runs/first/result.json`, one record per rule. Rerunning the same command resumes where it stopped.
+* Stages can run separately (`--stages assign`, `vote`, `subcategory`); threads and batch size are flags (defaults 20 and 1).
+* Everything else — settings, prompts, adding a model provider, tests — is in [`assign+group/README.md`](assign+group/README.md).
 
-## The database
-Results live in the MotherDuck database `rules`, next to the crawled files (`rule_file`) and the clauses (`rule_clause`). A rule
-is a `rule_clause` row; it has **many** assignments, one per version, and each version carries its own prompt.
+## Keys
+Copy [`.env.example`](.env.example) to `.env` in the folder you run from: `PERPLEXITY_API_KEY` (the model provider),
+`MOTHERDUCK_TOKEN` (the database), `GH_TOKEN` (GitHub API). Never commit a `.env`; they are git-ignored.
+
+## Database
+Results are stored in the MotherDuck database `rules`. A rule is a `rule_clause` row; it has many assignments, one per version,
+and each version keeps the prompt that produced it.
 
 ```mermaid
 erDiagram
@@ -78,16 +88,5 @@ erDiagram
     }
 ```
 
-* Solid lines are declared foreign keys. The dashed one is checked at load time instead: `rule_clause` has no primary key to point
-  at (an index over 55M rows does not fit the instance).
-* `rule_subcategory` is the deterministic regex grouping (enforcer value → subcategory); `subcategory_class` is the optional LLM
-  grouping (subcategory → class). Most rules have neither — only rules with a voted enforcer, target and trigger are grouped.
-* Query through the views: `rule_assignment_current` (one row per rule — its newest version that is not a replicate),
-  `rule_enforcer` and `rule_enforcer_current` (one row per enforcer value, with subcategory and class).
-
-## Keys and environments
-* `.env.example` at the root is the template: Perplexity key, MotherDuck token, GitHub token. Copy it to `.env` in the stage you run.
-* Secrets live in per-project `.env` files that are never committed: `sem_filter/.env` (Perplexity),
-  `rule clause extraction/.env` (MotherDuck, Hugging Face), `assign+group/.env` (copy `.env.example`).
-* Perplexity's agent API is the group's default model provider (`openai/gpt-5.6-terra`, `flex`).
-* `.venv-jupyter/` is the shared notebook environment; do not move it (virtualenvs hard-code their path).
+Solid lines are foreign keys; the dashed link is checked at load time. Query through the views `rule_assignment_current` (the
+newest assignment of each rule) and `rule_enforcer_current` (one row per enforcer, with its subcategory and class).

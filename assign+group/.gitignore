@@ -1,11 +1,12 @@
 # secrets
 .env
 
-# local only: past runs and materials, input data, run outputs, the lab's warehouse loader
+# not published
 archive/
 data/
 runs/
 motherduck upload/
+tests/test_parity_local.py
 
 # noise
 __pycache__/

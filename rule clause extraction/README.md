@@ -59,8 +59,6 @@ the Hub. `--push` requires a **write-scoped** `HF_TOKEN` in `.env` or the enviro
 
 | directory | contents |
 |---|---|
-| `audit/` | clause-parsing audit report + the 1,000-sample evidence batches |
-| `exports/` | NL rule exports (`nl_rules.json`, `nl_rules_plain.json`) |
 | `local/`, `staging/` | bulk-pipeline working parquet (queried/written by `bulk.py`) |
 | `_corpus_cache/` | 57-file test corpus for `--compare` |
 | `scripts/` | standalone tools (`make_control_set.py`) |

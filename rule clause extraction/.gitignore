@@ -11,3 +11,7 @@ _out/
 local/
 staging/
 logs/
+
+# not published
+audit/
+exports/
