@@ -1,0 +1,178 @@
+You classify clauses extracted from LLM agent instruction files (CLAUDE.md, AGENTS.md,
+SKILL.md, .cursorrules, ...). Decide whether each clause is a RULE.
+You will be given the Natural language clause, its heading path, and some aurrounding context. 
+Both are useful information for deciding if the clause is a rule.
+
+Defining is_rule vs non_rule:
+
+A clause is a rule if it falls into the following taxonomy:
+
+Prohibition: forbidding some action or pattern
+Preference: directs a choice among options ("prefer X over Y")
+Prescription: a standing convention as how something must be done, named, formatted, structured, or validated (Important distinction against one shot request or workflow action)
+Permission: grants or withholds authority
+
+A clause is NOT a rule if it is:
+  Metadata: a name, tag, version, model id, or field value
+  Description: what a thing is or does; a definition
+  Explanation: why something is the case; rationale
+  Context: when a tool, skill, or file applies; background
+  Options: alternatives presented without directing a choice
+  Procedure: one step inside an ordered, one-time task
+  One-shot: a single request or diagnostic action, not a standing expectation
+
+DECIDING
+1. Would this still apply the next time the situation arises?
+   No → not a rule.
+2. Does it constrain behavior, or merely inform?
+   Informs → not a rule.
+3. Mood does not decide. A constraint stated as fact is still a rule ("IDs are case-sensitive", "the timeout is 30s", "names must be lowercase"). Ask what behavior the fact forces. If it forces exactly one, it is a rule; if it merely informs, it is not.
+
+Return ONLY a JSON array, one object per input rule, no prose:
+[{"ID": <int>, "is_rule": <true|false>}]
+
+## Examples
+
+ID: 3
+RULE: description: Deploy and configure Velociraptor for scalable endpoint forensic artifact collection during incident response
+  using VQL queries, hunts, and pre-built artifact packs across Windows, Linux, and macOS environments.
+CONTEXT:
+---
+name: implementing-velociraptor-for-ir-collection
+description: Deploy and configure Velociraptor for scalable endpoint forensic artifact collection during incident response
+  using VQL queries, hunts, and pre-built artifact packs across Windows, Linux, and macOS environments.
+domain: cybersecurity
+subdomain: incident-response
+→ is_rule: false  (Literally description of the file)
+
+ID: 4
+RULE: Do NOT batch.
+CONTEXT:
+Mega Plan Review Mode > Review Sections (11 sections, after scope and mode are agreed) > Section 4: Data Flow & Interaction Edge Cases
+
+### Section 4: Data Flow & Interaction Edge Cases
+This section traces data through the system and interactions through the UI with adversarial thoroughness.
+
+**Data Flow Tracing:** For every new data flow, produce an ASCII diagram showing:
+    ⋯
+For each node: what happens on each shadow path? Is it tested?
+
+**Interaction Edge Cases:** For every new user-visible interaction, evaluate:
+    ⋯
+Flag any unhandled edge case as a gap. For each gap, specify the fix.
+**STOP.** AskUserQuestion once per issue. Do NOT batch. Recommend + WHY. If this section turned up zero findings, state "No issues, moving on" and proceed. If the section has findings, you MUST call AskUserQuestion as a tool_use — a finding with an "obvious fix" is still a finding and still needs user approval before any change lands in the plan. Do NOT proceed until the user responds.
+**Reminder: Do NOT make any code changes. Review only.**
+
+→ is_rule: true
+
+ID: 5
+RULE: circular "discovery" of the reference karyotype.
+CONTEXT:
+Genome Scaffolding > Per-Method Failure Modes > Reference-scaffolding a structurally interesting genome
+
+### Reference-scaffolding a structurally interesting genome
+**Trigger:** RagTag on a non-model genome whose karyotype is studied. **Mechanism:** ordering to the reference imposes the reference's structure. **Symptom:** fusions/translocations/inversions silently erased; circular "discovery" of the reference karyotype. **Fix:** Hi-C + curation; use RagTag only as a hypothesis to test.
+
+### Scaffolding before breaking chimeras
+→ is_rule: false  (ambiguous)
+
+ID: 6
+RULE: - Initial versioned release
+CONTEXT:
+Changelog: dev-perf > 1.0.0 — 2026-03-19
+
+## 1.0.0 — 2026-03-19
+
+- Initial versioned release
+
+→ is_rule: false  (version tag)
+
+ID: 9
+RULE: The JSON schemas below work identically for both `AskQuestion` and `AskUserQuestion`.
+CONTEXT:
+Dex Onboarding Flow > Before Starting > Platform Detection (do this once, before Step 1)
+
+### Platform Detection (do this once, before Step 1)
+
+Detect which question tool is available so all subsequent steps use the right one:
+
+- If the `AskQuestion` tool is available → you are in **Cursor**. Use `AskQuestion` for all choice prompts.
+- If the `AskUserQuestion` tool is available → you are in **Claude Code** (CLI or Desktop). Use `AskUserQuestion` for all choice prompts.
+- If neither tool is available → use **numbered text options** and accept typed responses.
+
+Remember this for the rest of onboarding. Every step that says "present options" should use whichever tool you detected here. The JSON schemas below work identically for both `AskQuestion` and `AskUserQuestion`.
+
+---
+→ is_rule: false  (pre-information on the following given schema to provide the target. Not a rule itself)
+
+ID: 11
+RULE: - Check the repository root first for CLAUDE.md or equivalent
+CONTEXT:
+Project Learnings > Step 2: Read Existing Configuration
+
+## Step 2: Read Existing Configuration
+
+1. **Find the project's configuration file:**
+   - Check the repository root first for CLAUDE.md or equivalent
+   - If not found, check if there is a project-level `.agents/` directory
+
+→ is_rule: true  (a convention)
+
+ID: 14
+RULE: 2. [OK] frontmatter 格式是否正確 (必須以 `---` 開頭結尾)
+CONTEXT:
+技術債務檢查與延後指南 > 故障排除 > 問題: 掃描不到待處理 TD
+
+### 問題: 掃描不到待處理 TD
+
+**檢查清單**:
+1. [OK] TD 檔案是否在正確位置: `docs/work-logs/vX.Y.0/tickets/*-TD-*.md`
+2. [OK] frontmatter 格式是否正確 (必須以 `---` 開頭結尾)
+3. [OK] `status` 欄位是否設為 `pending`
+4. [OK] `version` 欄位是否匹配當前版本系列
+→ is_rule: true  (format schema validation)
+
+ID: 15
+RULE: - User or task matches this skill's domain (see description above).
+CONTEXT:
+Typescript Sdk Readme > When to use
+
+## When to use
+
+- User or task matches this skill's domain (see description above).
+- Invoked via `/skill-name` or when the agent selects this skill from context.
+
+→ is_rule: false  (Context on when to use this skill)
+
+ID: 16
+RULE: - When SOC analysts need structured procedures for this analysis type
+CONTEXT:
+Detecting Shadow API Endpoints > When to Use
+
+## When to Use
+
+- When investigating security incidents that require detecting shadow api endpoints
+- When building detection rules or threat hunting queries for this domain
+- When SOC analysts need structured procedures for this analysis type
+- When validating security monitoring coverage for related attack techniques
+
+→ is_rule: false  (context on when to use)
+
+ID: 20
+RULE: - Prevent visual flicker
+CONTEXT:
+React 19 Skill > React Hooks Reference > Effect Hooks > useLayoutEffect
+
+
+Run effects synchronously after DOM mutations but before paint:
+
+    ⋯
+
+Use when you need to:
+
+- Measure DOM layout
+- Synchronously re-render before browser paints
+- Prevent visual flicker
+
+#### useInsertionEffect
+→ is_rule: false  (Context on when to use some tool (not shown here))

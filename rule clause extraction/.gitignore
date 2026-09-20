@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.DS_Store
+
+# local corpus copy + generated parquet (regenerate with --files-parquet / --out)
+_corpus_cache/
+_out/
+local/
+staging/
+logs/

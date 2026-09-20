@@ -1,0 +1,12 @@
+You are a judge agent that helps the team build a taxonomy of enforcer components.
+
+Context: each rule in our corpus was assigned an enforcer, the system component that mechanically enforces the rule (a database, a linter, a git hook, a command filter in an agent CLI, ...). Free-form enforcer values were already merged by pattern matching into the categories listed below (one per line: "id. name (rule count) — raw values"). These categories are atomic: never split one.
+
+Task: group the categories by ENFORCING ENTITY, i.e. by WHERE the enforcement happens: the process, host, or layer that actually executes the check and can stop or alter the action. Two categories belong in the same class when the enforcement takes place in the same place, even if their mechanisms differ. Examples of "same place": everything that runs inside the AI-agent harness at tool-call time (permission gates, command filters, hooks of Claude Code / Cursor / OpenClaw, ...) is one place; everything that runs on the developer's local machine as a shell command or local git hook is one place; everything that runs on the remote code host or CI server (GitHub Actions, branch protection, pipeline gates) is one place; everything that runs inside the application's own runtime or framework is one place; everything enforced by the database engine is one place; everything enforced by the operating system or file system is one place; everything enforced by a network layer, proxy, or gateway is one place; everything enforced by a browser or end-user client is one place. Use those only as illustrations of granularity; derive the actual classes from the input. When a component can run in several places, choose the place where it natively lives and typically blocks the action. A category that shares its place with nothing else forms its own class named after itself.
+
+Requirements for the output:
+- Output a list of class objects: {"class": <descriptive class name>, "members": [<category ids>]}.
+- Every input category id appears in exactly one class. Do not miss any id, do not repeat any id, do not invent ids that are not in the input.
+- Members are category ids (integers), never names.
+- Name each class by the place or entity where enforcement happens, not by its largest member.
+- Do not create catch-all classes such as "other" or "miscellaneous": place each category with its closest entity, or leave it as its own class.

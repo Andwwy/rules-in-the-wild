@@ -1,0 +1,19 @@
+services:
+  annotator:
+    build: .
+    container_name: is-rule-annotator
+    ports:
+      # 5001/5002 are the other annotators on this machine; 8000 is DocWrangler.
+      - "5003:8000"
+    volumes:
+      # The project directory, so labels are written straight to the real
+      # 1000_sample.jsonl. Mounting the directory (not the single file) is
+      # what lets the app rewrite it atomically.
+      - ../data:/data
+      # Code mounted read-only so UI/app edits take effect on `restart`, with no
+      # rebuild. The image still COPYs them, so the container also runs standalone.
+      - ./app.py:/app/app.py:ro
+      - ./static:/app/static:ro
+    environment:
+      DATA: /data/100_sample.jsonl
+    restart: unless-stopped

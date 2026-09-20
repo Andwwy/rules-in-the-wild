@@ -1,0 +1,18 @@
+{
+  "assignment": {
+    "file": "assignment.txt",
+    "version": "v1.19"
+  },
+  "vote": {
+    "file": "vote.txt",
+    "version": "v1 (attempts only)"
+  },
+  "vote_with_rule": {
+    "file": "vote_with_rule.txt",
+    "version": "v1 (rule + context shown to the judge)"
+  },
+  "classes": {
+    "file": "classes.txt",
+    "version": "entity v1"
+  }
+}

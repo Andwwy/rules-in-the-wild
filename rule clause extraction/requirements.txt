@@ -1,0 +1,10 @@
+# The markdown grammar that supplies the block skeleton. This is the one dependency the
+# parser itself has; without it grammar.py degrades to a pure-regex splitter.
+markdown-it-py>=3.0
+
+# Hugging Face is the store: read the files config, commit the clauses config.
+huggingface-hub>=0.34
+pyarrow>=15.0
+
+# MotherDuck input source (--motherduck). Only needed for that path.
+duckdb>=1.0

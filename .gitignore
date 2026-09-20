@@ -1,0 +1,31 @@
+# Only the shareable parts go in: code, prompts and READMEs. Data, past material and private work stay on this machine.
+
+# secrets
+.env
+**/.env
+
+# local only — kept on this machine, never shared
+/archive/
+/enforcement eval/
+/enforcement eval test/
+/.venv-jupyter/
+
+# data and old experiments of the shared stages: crawled third-party text (may quote other people's tokens), labels, logs
+/sem_filter/data/
+/sem_filter/archive/
+/rule clause extraction/audit/
+/rule clause extraction/exports/
+
+# each project also ignores its own local data (see its .gitignore):
+#   assign+group/           archive/  data/  runs/  "motherduck upload/"
+#   rule clause extraction/ local/  staging/  _out/  …
+#   sem_filter/             data it must not publish
+
+# noise
+.DS_Store
+__pycache__/
+.ipynb_checkpoints/
+.pytest_cache/
+node_modules/
+.venv/
+.claude/

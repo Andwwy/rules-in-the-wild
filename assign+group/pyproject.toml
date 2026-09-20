@@ -1,0 +1,17 @@
+[project]
+name = "rule-pipeline"
+version = "0.1.0"
+description = "rule -> assignment -> majority vote -> categories, as a handful of prompted LLM calls"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["requests", "python-dotenv"]
+
+[project.optional-dependencies]
+db = ["duckdb"]        # only for --from-db
+test = ["pytest"]
+
+[tool.setuptools]
+packages = ["rule_pipeline"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

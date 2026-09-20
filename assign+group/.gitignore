@@ -1,0 +1,17 @@
+# secrets
+.env
+
+# local only: past runs and materials, input data, run outputs, the lab's warehouse loader
+archive/
+data/
+runs/
+motherduck upload/
+
+# noise
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+.DS_Store
+.claude/
+.venv/
