@@ -85,21 +85,6 @@ erDiagram
 * Query through the views: `rule_assignment_current` (one row per rule — its newest version that is not a replicate),
   `rule_enforcer` and `rule_enforcer_current` (one row per enforcer value, with subcategory and class).
 
-## What is in this repo, and what stays local
-In the repo: code, prompts and READMEs of three stages — `rule clause extraction/` (the clause parser and loaders),
-`sem_filter/` (the is_rule judge prompt, runner and annotator) and `assign+group/` (the `rule-pipeline` package: start there,
-`cd assign+group` and follow its README).
-
-**Local only**, never published: `archive/`, `enforcement eval/`, `enforcement eval test/`, `.venv-jupyter/`, every `.env`, and the
-data of the shared stages — `sem_filter/data/` and `sem_filter/archive/`, `rule clause extraction/audit/` and `exports/`,
-`assign+group/archive/`, `data/`, `runs/` and `motherduck upload/`. They hold crawled third-party text, labels, run outputs and
-past experiments. The `.gitignore` files say the same. A few READMEs therefore mention folders you will not find here.
-
-## archive/ (local only)
-Past material, kept locally and never deleted; see `archive/README.md`. Besides the finished crawl it holds the early dev set,
-the 8-class enforcer mapping + translation study (`map/`), the enforcement translation test, and the DocETL / semantic-operator
-experiments. Scripts in there are records — many carry absolute paths from before they moved.
-
 ## Keys and environments
 * `.env.example` at the root is the template: Perplexity key, MotherDuck token, GitHub token. Copy it to `.env` in the stage you run.
 * Secrets live in per-project `.env` files that are never committed: `sem_filter/.env` (Perplexity),
