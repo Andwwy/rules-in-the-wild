@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 81201,
+  "duration_api_ms": 78383,
+  "ttft_ms": 2631,
+  "ttft_stream_ms": 2627,
+  "time_to_request_ms": 101,
+  "num_turns": 8,
+  "result": "喵～\n\n开发者大大，代码小灵已为您实现了掷骰子快速滚动动画和飞机平滑移动动画，使用逐帧更新函数逐帧更新飞机位置，跳跃飞跃也支持平滑轨迹，所有代码使用2空格缩进及相对路径引用，进度文件已更新。哒～",
+  "stop_reason": "end_turn",
+  "session_id": "a0bb4d32-21a5-4f90-857a-c5186659037b",
+  "total_cost_usd": 0.18133675000000002,
+  "usage": {
+   "input_tokens": 51,
+   "cache_creation_input_tokens": 26753,
+   "cache_read_input_tokens": 842045,
+   "output_tokens": 12728,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 26753
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 51,
+    "outputTokens": 12728,
+    "cacheReadInputTokens": 842045,
+    "cacheCreationInputTokens": 26753,
+    "webSearchRequests": 0,
+    "costUSD": 0.18133675000000002,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "31b0e4e0-19be-4f32-9eff-e659b571ca44"
+ },
+ "stderr": ""
+}

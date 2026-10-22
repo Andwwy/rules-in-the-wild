@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 65143,
+  "duration_api_ms": 56324,
+  "ttft_ms": 4307,
+  "ttft_stream_ms": 4305,
+  "time_to_request_ms": 134,
+  "num_turns": 7,
+  "result": "喵～\n\n代码小灵已为开发者大大实现了吃子机制：飞机移动到对手飞机所在格子时自动检测并击毁对手飞机，被吃的飞机从棋盘移除，同时显示提示弹窗。\n\n<result>通过</result><description>吃子检测函数已实现，移动后正确调用检测逻辑，通知弹窗动画可正常显示，支持多架飞机同时被吃，所有代码缩进为4个空格，单层条件判断结构完整。</description>\n\n哒～",
+  "stop_reason": "end_turn",
+  "session_id": "a615e270-a3ac-4bff-908b-9f1ab0e3ef5c",
+  "total_cost_usd": 0.13063155,
+  "usage": {
+   "input_tokens": 42,
+   "cache_creation_input_tokens": 18365,
+   "cache_read_input_tokens": 593883,
+   "output_tokens": 9649,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 18365
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 42,
+    "outputTokens": 9649,
+    "cacheReadInputTokens": 593883,
+    "cacheCreationInputTokens": 18365,
+    "webSearchRequests": 0,
+    "costUSD": 0.13063155,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "6790ee1b-9d15-4e50-8c8d-007928f468f5"
+ },
+ "stderr": ""
+}

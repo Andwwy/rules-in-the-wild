@@ -1,0 +1,10 @@
+{
+ "created": {
+  "/workspace/.claude/settings.json": "dac48a974b90c3fa51d3408f1da5716018c6caba33be74cf758ba7361a204e11",
+  "/workspace/.claude/hooks/check-response-rules.py": "107e3e5b473c8562e5ab6342098c2da3b4214891e6a71cc62376fb3ea957a804",
+  "/workspace/.claude/hooks/check-postbash.py": "cc3cf6d3c9b38d4fcfc52f42566db2134674780ef1ef2e6cc68d5c3719d549ed",
+  "/workspace/.claude/hooks/check-prewrite.py": "32a999576be51d4d09a15113f1615bb3bf0088f52089fb8ae8f743f290d0a62c"
+ },
+ "changed": {},
+ "deleted": []
+}

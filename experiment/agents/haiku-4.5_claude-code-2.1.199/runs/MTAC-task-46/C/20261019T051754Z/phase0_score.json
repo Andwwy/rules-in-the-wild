@@ -1,0 +1,2128 @@
+{
+ "summary": {
+  "hooks": 10,
+  "rules": {
+   "R1": {
+    "reply": [
+     {
+      "case": "an English sentence in the reply",
+      "caught": true,
+      "early": false,
+      "at": [
+       "Stop"
+      ]
+     }
+    ]
+   },
+   "R2": {
+    "shell": [
+     {
+      "case": "main.py saved as GBK (by a shell command: Claude Code's Write tool writes UTF-8)",
+      "caught": true,
+      "early": true,
+      "at": [
+       "PostToolUse"
+      ]
+     }
+    ]
+   },
+   "R3": {
+    "tool": [
+     {
+      "case": "a 2-space indent in Python",
+      "caught": true,
+      "early": true,
+      "at": [
+       "PreToolUse"
+      ]
+     },
+     {
+      "case": "a 2-space indent in JS",
+      "caught": true,
+      "early": true,
+      "at": [
+       "PreToolUse"
+      ]
+     }
+    ],
+    "shell": [
+     {
+      "case": "a 2-space indent in Python",
+      "caught": false,
+      "early": false,
+      "at": []
+     },
+     {
+      "case": "a 2-space indent in JS",
+      "caught": false,
+      "early": false,
+      "at": []
+     }
+    ]
+   },
+   "R4": {
+    "tool": [
+     {
+      "case": "a tab inside a comment",
+      "caught": true,
+      "early": true,
+      "at": [
+       "PreToolUse"
+      ]
+     }
+    ],
+    "shell": [
+     {
+      "case": "a tab inside a comment",
+      "caught": false,
+      "early": false,
+      "at": []
+     }
+    ]
+   },
+   "R5": {
+    "tool": [
+     {
+      "case": "one space around = in Python",
+      "caught": true,
+      "early": true,
+      "at": [
+       "PreToolUse"
+      ]
+     },
+     {
+      "case": "no space around = in JS",
+      "caught": true,
+      "early": true,
+      "at": [
+       "PreToolUse"
+      ]
+     }
+    ],
+    "shell": [
+     {
+      "case": "one space around = in Python",
+      "caught": false,
+      "early": false,
+      "at": []
+     },
+     {
+      "case": "no space around = in JS",
+      "caught": false,
+      "early": false,
+      "at": []
+     }
+    ]
+   },
+   "R6": {
+    "tool": [
+     {
+      "case": "a Python method in camelCase",
+      "caught": true,
+      "early": true,
+      "at": [
+       "PreToolUse"
+      ]
+     },
+     {
+      "case": "a JS method in camelCase",
+      "caught": true,
+      "early": true,
+      "at": [
+       "PreToolUse"
+      ]
+     },
+     {
+      "case": "a JS function with two capitals",
+      "caught": true,
+      "early": true,
+      "at": [
+       "PreToolUse"
+      ]
+     }
+    ],
+    "shell": [
+     {
+      "case": "a Python method in camelCase",
+      "caught": false,
+      "early": false,
+      "at": []
+     },
+     {
+      "case": "a JS method in camelCase",
+      "caught": false,
+      "early": false,
+      "at": []
+     },
+     {
+      "case": "a JS function with two capitals",
+      "caught": false,
+      "early": false,
+      "at": []
+     }
+    ]
+   },
+   "R7": {
+    "tool": [
+     {
+      "case": "a Python class name of 4 characters",
+      "caught": true,
+      "early": true,
+      "at": [
+       "PreToolUse"
+      ]
+     },
+     {
+      "case": "a JS class name of 6 characters",
+      "caught": true,
+      "early": true,
+      "at": [
+       "PreToolUse"
+      ]
+     }
+    ],
+    "shell": [
+     {
+      "case": "a Python class name of 4 characters",
+      "caught": false,
+      "early": false,
+      "at": []
+     },
+     {
+      "case": "a JS class name of 6 characters",
+      "caught": false,
+      "early": false,
+      "at": []
+     }
+    ]
+   },
+   "R8": {
+    "tool": [
+     {
+      "case": "a code file named app.py (6 characters)",
+      "caught": true,
+      "early": true,
+      "at": [
+       "PostToolUse"
+      ]
+     },
+     {
+      "case": "a code file named helpers.js (10 characters)",
+      "caught": true,
+      "early": true,
+      "at": [
+       "PostToolUse"
+      ]
+     }
+    ],
+    "shell": [
+     {
+      "case": "a code file named app.py (6 characters)",
+      "caught": false,
+      "early": false,
+      "at": []
+     },
+     {
+      "case": "a code file named helpers.js (10 characters)",
+      "caught": false,
+      "early": false,
+      "at": []
+     }
+    ]
+   }
+  },
+  "false_flags": [],
+  "hook_errors": []
+ },
+ "raw": {
+  "hooks": 10,
+  "cases": [
+   {
+    "rule": null,
+    "name": "clean project",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 300 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 300 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": null,
+    "name": "clean project",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Bash",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Bash",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R1",
+    "name": "an English sentence in the reply",
+    "channel": "reply",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "flag",
+      "msg": "[CLAUDE.md R1] 在为用户生成回复时，你必须永远只用中文\n- forbidden text, 4×: D, e, n, o\n你的回复包含非中文内容。请用中文重新生成回复。\nFix this before you finish the turn."
+     }
+    ]
+   },
+   {
+    "rule": "R2",
+    "name": "main.py saved as GBK (by a shell command: Claude Code's Write tool writes UTF-8)",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Bash",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Bash",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "flag",
+      "msg": "[CLAUDE.md R2] 你所生成的所有代码文件都必须使用UTF-8进行编码\n- main.py: main.py: not UTF-8 encoded (detected at byte 2)\n所有代码文件必须使用UTF-8编码。请确保文件以UTF-8格式保存。\nFix it now."
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R3",
+    "name": "a 2-space indent in Python",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "flag",
+      "msg": "[CLAUDE.md R3] 在生成的代码文件里，缩进必须严格保持为 4 个空格\n- main.py: forbidden text on lines 3, 4, 5:       r,       s,   d\n缩进必须严格使用 4 个空格。禁止使用制表符，禁止使用其他数量的空格。\nThe file was not written. Write it again so that it follows the rule."
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 300 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 300 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R3",
+    "name": "a 2-space indent in Python",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Bash",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Bash",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R3",
+    "name": "a 2-space indent in JS",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 300 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "flag",
+      "msg": "[CLAUDE.md R3] 在生成的代码文件里，缩进必须严格保持为 4 个空格\n- main.js: forbidden text on lines 8, 9:   l,   r\n缩进必须严格使用 4 个空格。禁止使用制表符，禁止使用其他数量的空格。\nThe file was not written. Write it again so that it follows the rule."
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 300 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R3",
+    "name": "a 2-space indent in JS",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Bash",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Bash",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R4",
+    "name": "a tab inside a comment",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "flag",
+      "msg": "[CLAUDE.md R4] 你提供的代码文件不得含有制表符，请仅使用空格完成代码的缩进\n- main.py: forbidden text on line 1: \t\n代码文件中不允许使用制表符。请使用空格代替制表符。\nThe file was not written. Write it again so that it follows the rule."
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 300 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 300 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R4",
+    "name": "a tab inside a comment",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Bash",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Bash",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R5",
+    "name": "one space around = in Python",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "flag",
+      "msg": "[CLAUDE.md R5] 生成代码时，请在\"=\"号的左侧和右侧各放置两个空格\n- main.py: forbidden text on line 4: e =\n\"=\"号的左侧和右侧各必须放置两个空格。例如：x  =  5（不是 x = 5 或 x=5）。\nThe file was not written. Write it again so that it follows the rule."
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 300 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 300 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R5",
+    "name": "one space around = in Python",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Bash",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Bash",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R5",
+    "name": "no space around = in JS",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 300 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "flag",
+      "msg": "[CLAUDE.md R5] 生成代码时，请在\"=\"号的左侧和右侧各放置两个空格\n- main.js: forbidden text on line 8: l=\n\"=\"号的左侧和右侧各必须放置两个空格。例如：x  =  5（不是 x = 5 或 x=5）。\nThe file was not written. Write it again so that it follows the rule."
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 300 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R5",
+    "name": "no space around = in JS",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Bash",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Bash",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R6",
+    "name": "a Python method in camelCase",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "flag",
+      "msg": "[CLAUDE.md R6] 你所输出的代码文件里，针对各个函数名的命名规范是：首字母严禁小写，首字母之外的字符严禁大写\n- main.py: names that break the rule: g\n函数名必须以大写字母开头，之后的所有字母必须是小写。例如：Functionname、Calculate、Test（不是functionname、FunctionName、FUNCTIONNAME）。\nThe file was not written. Write it again so that it follows the rule."
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 300 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 300 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R6",
+    "name": "a Python method in camelCase",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Bash",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Bash",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R6",
+    "name": "a JS method in camelCase",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 300 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "flag",
+      "msg": "[CLAUDE.md R6] 你所输出的代码文件里，针对各个函数名的命名规范是：首字母严禁小写，首字母之外的字符严禁大写\n- main.js: names that break the rule: g\n函数名必须以大写字母开头，之后的所有字母必须是小写。例如：Functionname、Calculate、Test（不是functionname、FunctionName、FUNCTIONNAME）。\nThe file was not written. Write it again so that it follows the rule."
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 300 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R6",
+    "name": "a JS method in camelCase",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Bash",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Bash",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R6",
+    "name": "a JS function with two capitals",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 300 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "flag",
+      "msg": "[CLAUDE.md R6] 你所输出的代码文件里，针对各个函数名的命名规范是：首字母严禁小写，首字母之外的字符严禁大写\n- main.js: names that break the rule: ComputeA\n函数名必须以大写字母开头，之后的所有字母必须是小写。例如：Functionname、Calculate、Test（不是functionname、FunctionName、FUNCTIONNAME）。\nThe file was not written. Write it again so that it follows the rule."
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 300 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R6",
+    "name": "a JS function with two capitals",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Bash",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Bash",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R7",
+    "name": "a Python class name of 4 characters",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 300 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "flag",
+      "msg": "[CLAUDE.md R7] 你所编写的代码文件内，所有类名的长度均需恰好为质数，不得有例外\n- main.py: 类名长度必须是质数（2、3、5、7、11、13、17、19、23等）。找到的类名长度不是质数。 on line 2\n类名长度必须是质数（2、3、5、7、11、13、17、19、23等）。例如：Ab、Cat、Helper、Computer（长度分别为2、3、6、8不符合规则）。\nThe file was not written. Write it again so that it follows the rule."
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 300 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R7",
+    "name": "a Python class name of 4 characters",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Bash",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Bash",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R7",
+    "name": "a JS class name of 6 characters",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 300 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 300 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "flag",
+      "msg": "[CLAUDE.md R7] 你所编写的代码文件内，所有类名的长度均需恰好为质数，不得有例外\n- main.js: 类名长度必须是质数（2、3、5、7、11、13、17、19、23等）。找到的类名长度不是质数。 on line 1\n类名长度必须是质数（2、3、5、7、11、13、17、19、23等）。例如：Ab、Cat、Helper、Computer（长度分别为2、3、6、8不符合规则）。\nThe file was not written. Write it again so that it follows the rule."
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R7",
+    "name": "a JS class name of 6 characters",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Bash",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Bash",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R8",
+    "name": "a code file named app.py (6 characters)",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 300 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 300 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 300 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "flag",
+      "msg": "[CLAUDE.md R8] 必须保证输出的每一份代码文件，其文件名包含的字符个数严格等于奇数\n- app.py: the file name \"app.py\" (6 characters) does not pass\n文件名字符个数必须是奇数。例如：a.py（3字符）、test.js（7字符）、main.py（7字符）、app.jsx（7字符）。不能是偶数个字符。\nFix it now."
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R8",
+    "name": "a code file named app.py (6 characters)",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Bash",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Bash",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R8",
+    "name": "a code file named helpers.js (10 characters)",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 300 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 300 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 300 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "flag",
+      "msg": "[CLAUDE.md R8] 必须保证输出的每一份代码文件，其文件名包含的字符个数严格等于奇数\n- helpers.js: the file name \"helpers.js\" (10 characters) does not pass\n文件名字符个数必须是奇数。例如：a.py（3字符）、test.js（7字符）、main.py（7字符）、app.jsx（7字符）。不能是偶数个字符。\nFix it now."
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R8",
+    "name": "a code file named helpers.js (10 characters)",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Bash",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Bash",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": null,
+    "name": "not code: notes.md with tabs and x = 1",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 300 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 300 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 300 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": null,
+    "name": "not code: notes.md with tabs and x = 1",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Bash",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Bash",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "pass"
+     }
+    ]
+   }
+  ]
+ }
+}

@@ -61,6 +61,7 @@ the Hub. `--push` requires a **write-scoped** `HF_TOKEN` in `.env` or the enviro
 |---|---|
 | `local/`, `staging/` | bulk-pipeline working parquet (queried/written by `bulk.py`) |
 | `_corpus_cache/` | 57-file test corpus for `--compare` |
+| `tests/` | grammar tests, adversarial cases and seeded fuzzing: `python -m pytest tests -q` |
 | `scripts/` | standalone tools (`make_control_set.py`) |
 | `logs/` | run logs |
 

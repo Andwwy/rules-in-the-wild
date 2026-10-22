@@ -1,0 +1,58 @@
+{
+ "rule": "R8",
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 15071,
+  "duration_api_ms": 356389,
+  "ttft_ms": 5934,
+  "ttft_stream_ms": 5932,
+  "time_to_request_ms": 52,
+  "num_turns": 1,
+  "result": "Let me create the documentation for R8:",
+  "stop_reason": null,
+  "session_id": "d7dcd190-0ffd-42a3-a4c3-26861be497ee",
+  "total_cost_usd": 0.6788968000000001,
+  "usage": {
+   "input_tokens": 0,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 0,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 97,
+    "outputTokens": 5664,
+    "cacheReadInputTokens": 2879173,
+    "cacheCreationInputTokens": 290050,
+    "webSearchRequests": 0,
+    "costUSD": 0.6788968000000001,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "origin": {
+   "kind": "task-notification"
+  },
+  "uuid": "de028c18-afc6-45f6-895f-82a3dda6381f"
+ },
+ "stderr": ""
+}

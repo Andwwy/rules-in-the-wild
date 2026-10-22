@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 141836,
+  "duration_api_ms": 137005,
+  "ttft_ms": 3860,
+  "ttft_stream_ms": 3819,
+  "time_to_request_ms": 110,
+  "num_turns": 14,
+  "result": "喵～\n\n代码小灵已完成安全通道和终点逻辑实现，包括飞机绕场回到出发地后必须拐入安全通道、安全通道内精确移动（步数必须\"刚好\"到达中心终点）、步数过多自动回退往回走、飞机到达终点隐藏并记录完成、所有代码函数控制60行以内、使用4空格缩进规范、已更新fly-chess-progress.txt进度文件。哒～",
+  "stop_reason": "end_turn",
+  "session_id": "3abddb79-d401-412b-9335-f083b4af7291",
+  "total_cost_usd": 0.47698099999999993,
+  "usage": {
+   "input_tokens": 88,
+   "cache_creation_input_tokens": 134084,
+   "cache_read_input_tokens": 1972730,
+   "output_tokens": 22403,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 134084
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 88,
+    "outputTokens": 22403,
+    "cacheReadInputTokens": 1972730,
+    "cacheCreationInputTokens": 134084,
+    "webSearchRequests": 0,
+    "costUSD": 0.47698099999999993,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "76487f63-a2ca-4fed-ab10-1a17b7256008"
+ },
+ "stderr": ""
+}

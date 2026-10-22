@@ -8,7 +8,7 @@ Use the rule and context only to decide whether two attempts name the same thing
 Each attempt has four fields:
 * enforcer: what system component it could be enforced by,
 * target: the noun that is being evaluated for rule adherence or violation,
-* trigger: the circumstances that would trigger the rule to be evaluated,
+* trigger: the event in the agent's or the project's work that starts the rule's evaluation, never the enforcer's own run,
 * spec: a specification of how that component could enforce it (or description if it does not take a formal specification).
 
 Vote each axis on its own. Winning on one axis gives an attempt no weight on another: if two

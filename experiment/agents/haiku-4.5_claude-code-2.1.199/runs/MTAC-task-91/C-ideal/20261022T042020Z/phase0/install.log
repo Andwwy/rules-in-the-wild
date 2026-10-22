@@ -1,0 +1,10 @@
+installing git (Debian 12) into /opt/enforce/tool-installs/git
+ok: git installed
+installing pre-commit 4.7.0: git pre-commit hook framework (its hooks fetch their tools on first use) into /opt/enforce/tool-installs/pre-commit
+ok: pre-commit installed
+installing Semgrep 1.177.0: pattern-based code scans into /opt/enforce/tool-installs/semgrep
+ok: semgrep installed
+phase 0 (C-ideal): installed
+
+
+

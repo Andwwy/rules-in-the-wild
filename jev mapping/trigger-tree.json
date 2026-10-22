@@ -1,0 +1,76 @@
+{
+  "Trigger": [
+    "Always",
+    {
+      "Agent loop": [
+        "Prompt received",
+        "Response sent",
+        "Task completion",
+        "Session start",
+        "Other"
+      ]
+    },
+    {
+      "Agent action": [
+        "File write / edit",
+        "File read",
+        "Shell command",
+        "Ask user",
+        "Skill / subagent",
+        "Tool / MCP call",
+        "Other"
+      ]
+    },
+    {
+      "Git / delivery": [
+        "Commit",
+        "Push / merge",
+        "Pull request",
+        "Deploy / release",
+        "Publish",
+        "Other"
+      ]
+    },
+    {
+      "App runtime": [
+        "Request / API call",
+        "Data read / write",
+        "Log / error",
+        "UI event",
+        "Schedule / timer",
+        "Message send",
+        "Other"
+      ]
+    },
+    "Other"
+  ],
+  "descriptions": {
+    "Always": "The rule applies at all times. No event starts the check.",
+    "Agent loop": "An event in the agent's own work loop: a prompt arrives, a response goes out, a turn or task ends, a session starts.",
+    "Agent loop > Prompt received": "A user prompt or request reaches the agent.",
+    "Agent loop > Response sent": "The agent makes or sends a response, an answer or a message.",
+    "Agent loop > Task completion": "The agent ends its turn or its task.",
+    "Agent loop > Session start": "A session starts, or the agent loads or compacts its context.",
+    "Agent action": "The agent uses a tool: it writes or reads a file, runs a command, asks the user, or calls a skill, a subagent or an MCP server.",
+    "Agent action > File write / edit": "A file or code is created, changed, renamed or deleted.",
+    "Agent action > File read": "A file is read, opened or loaded.",
+    "Agent action > Shell command": "A shell or CLI command runs, such as a test run, a build or a linter that the agent starts.",
+    "Agent action > Ask user": "The agent asks the user a question (for example with AskUserQuestion).",
+    "Agent action > Skill / subagent": "The agent calls a skill or starts a subagent.",
+    "Agent action > Tool / MCP call": "The agent calls any other tool: an MCP server, a web fetch or search, an external API.",
+    "Git / delivery": "A version-control or delivery event: commit, push, merge, pull request, deploy, release, publish.",
+    "Git / delivery > Commit": "A git commit or a commit message is made.",
+    "Git / delivery > Push / merge": "A push, a merge or a rebase (what starts a CI pipeline on it).",
+    "Git / delivery > Pull request": "A pull request is opened, updated, reviewed or merged (what starts a review or a CI pipeline on it).",
+    "Git / delivery > Deploy / release": "A deploy, a release, a version tag or a database migration.",
+    "Git / delivery > Publish": "A package, a post or other content is published.",
+    "App runtime": "The running application does something: it serves a request, reads or writes data, logs, fails, reacts to the UI, runs on a schedule, sends a message.",
+    "App runtime > Request / API call": "The application gets or makes an HTTP request or an API call.",
+    "App runtime > Data read / write": "The application queries, stores or changes data.",
+    "App runtime > Log / error": "A log record is written, or an error or exception occurs.",
+    "App runtime > UI event": "A page renders, or a user clicks, types or opens something in the UI.",
+    "App runtime > Schedule / timer": "A schedule or a timer fires, or a calendar date arrives.",
+    "App runtime > Message send": "The application sends a message, an email or a notification.",
+    "Other": "None of the options above fits."
+  }
+}

@@ -1,0 +1,7 @@
+02:40:31 run MTAC-task-91/C/20261021T064031Z: task 91, arm C, 0 task turns
+02:40:31 container ritw-t091-C-20261021t064031z (alexgshaw/break-filter-js-from-html:20251031)
+02:40:34 Claude Code: ExitPlanMode patch: 1 replaced 2.1.199 (Claude Code)
+02:40:42 installed by the harness for C's routes: pre-commit (exit 0)
+02:40:56 installed by the harness for C's routes: semgrep (exit 0)
+02:40:57 phase 0, batch 1 (R7, R5, R6): compiled plan of 1 nodes
+02:41:41 Claude Code crashed (exit 143, no result); the same message again (2/3)

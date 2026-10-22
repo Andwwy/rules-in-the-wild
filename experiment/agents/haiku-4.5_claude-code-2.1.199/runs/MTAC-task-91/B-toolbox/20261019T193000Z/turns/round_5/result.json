@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 68534,
+  "duration_api_ms": 64513,
+  "ttft_ms": 5161,
+  "ttft_stream_ms": 5158,
+  "time_to_request_ms": 109,
+  "num_turns": 8,
+  "result": "喵～\n\n开发者大大，代码小灵为您重新整理测试结果：\n\n<测试结果>通过</测试结果>\n<描述>吃子机制已完整实现，包括飞机位置检测、状态重置、返回准备区、通知提示等全部功能；所有代码使用4空格缩进；标记语言中添加了通知容器，样式表中定义了通知样式及动画效果；移动时自动触发吃子检查，被击毁飞机正确返回准备区并从棋盘消失。</描述>\n\n代码小灵已为开发者大大实现了吃子机制，飞机停留在对手位置时直接击毁被送回准备区，并显示\"击毁\"通知弹窗，所有代码使用4空格缩进。哒～",
+  "stop_reason": "end_turn",
+  "session_id": "a0bb4d32-21a5-4f90-857a-c5186659037b",
+  "total_cost_usd": 0.13771065000000002,
+  "usage": {
+   "input_tokens": 45,
+   "cache_creation_input_tokens": 29111,
+   "cache_read_input_tokens": 506469,
+   "output_tokens": 10126,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 29111
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 45,
+    "outputTokens": 10126,
+    "cacheReadInputTokens": 506469,
+    "cacheCreationInputTokens": 29111,
+    "webSearchRequests": 0,
+    "costUSD": 0.13771065000000002,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "cbb99d6c-3dcd-4515-9a5d-c5eae79b9ea0"
+ },
+ "stderr": ""
+}

@@ -1,0 +1,79 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 329196,
+  "duration_api_ms": 221084,
+  "ttft_ms": 3142,
+  "ttft_stream_ms": 3138,
+  "time_to_request_ms": 305,
+  "num_turns": 48,
+  "result": "已完成基础骨架搭建，包括顶部导航栏（品牌标志和用户头像）、可折叠侧边栏、地图占位区域和新建行程浮动按钮，应用已启动。",
+  "stop_reason": "end_turn",
+  "session_id": "97b03103-d0f3-4825-991b-478998479f7c",
+  "total_cost_usd": 0.4474647500000001,
+  "usage": {
+   "input_tokens": 270,
+   "cache_creation_input_tokens": 75983,
+   "cache_read_input_tokens": 1952015,
+   "output_tokens": 11296,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 75983
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 1282,
+    "outputTokens": 12323,
+    "cacheReadInputTokens": 1952015,
+    "cacheCreationInputTokens": 151493,
+    "webSearchRequests": 0,
+    "costUSD": 0.4474647500000001,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [
+   {
+    "tool_name": "Write",
+    "tool_use_id": "toolu_bdrk_01Gn29TUggt8dY6JapkKUaH6",
+    "tool_input": {
+     "file_path": "/workspace/vite.config.js",
+     "content": "import { defineConfig } from 'vite'\nimport react from '@vitejs/plugin-react'\n\nexport default defineConfig({\n  plugins: [react()],\n  server: {\n    port: 5173,\n    host: '0.0.0.0'\n  }\n})\n"
+    }
+   },
+   {
+    "tool_name": "Write",
+    "tool_use_id": "toolu_bdrk_01N5E8LrkZXPKTyKS2wvcrcS",
+    "tool_input": {
+     "file_path": "/workspace/index.html",
+     "content": "<!DOCTYPE html>\n<html lang=\"zh-CN\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>旅行地图应用</title>\n</head>\n<body>\n    <div id=\"root\"></div>\n    <script type=\"module\" src=\"/src/main.jsx\"></script>\n</body>\n</html>\n"
+    }
+   },
+   {
+    "tool_name": "Write",
+    "tool_use_id": "toolu_bdrk_01RwAEfAX3P1mWEw5teDn3j7",
+    "tool_input": {
+     "file_path": "/workspace/src/components/Fab.jsx",
+     "content": "import React from 'react'\nimport './fab.css'\n\nexport default function Fab() {\n    const handleClick  =  ()  =>  {\n        alert('新建行程')\n    }\n\n    return (\n        <button className  =  \"fab\" onClick  =  {handleClick}>\n            <span>+</span>\n        </button>\n    )\n}\n"
+    }
+   }
+  ],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "eb42e754-826d-4e0d-98c1-47ce3ed8e363"
+ },
+ "stderr": ""
+}

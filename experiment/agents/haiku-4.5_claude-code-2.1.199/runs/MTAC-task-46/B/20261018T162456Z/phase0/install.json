@@ -1,0 +1,94 @@
+{
+ "session": "4c9e8714-ddf0-48bf-aa0b-1dbcb6086055",
+ "messages": 8,
+ "install": {
+  "installed": 8,
+  "hooks": [
+   {
+    "hook": 1,
+    "event": "Stop",
+    "matcher": null,
+    "command": "/opt/enforce/hooks/check-chinese-response.sh",
+    "args": [],
+    "form": "exec",
+    "timeout": 60
+   },
+   {
+    "hook": 2,
+    "event": "PostToolUse",
+    "matcher": "Write|Edit",
+    "command": "/opt/enforce/hooks/check-utf8-encoding.sh",
+    "args": [],
+    "form": "exec",
+    "timeout": 60
+   },
+   {
+    "hook": 3,
+    "event": "PostToolUse",
+    "matcher": "Write|Edit",
+    "command": "/opt/enforce/hooks/check-4space-indentation.sh",
+    "args": [],
+    "form": "exec",
+    "timeout": 60
+   },
+   {
+    "hook": 4,
+    "event": "PostToolUse",
+    "matcher": "Write|Edit",
+    "command": "/opt/enforce/hooks/check-no-tabs.sh",
+    "args": [],
+    "form": "exec",
+    "timeout": 60
+   },
+   {
+    "hook": 5,
+    "event": "PostToolUse",
+    "matcher": "Write|Edit",
+    "command": "/opt/enforce/hooks/check-equals-spacing.sh",
+    "args": [],
+    "form": "exec",
+    "timeout": 60
+   },
+   {
+    "hook": 6,
+    "event": "PostToolUse",
+    "matcher": "Write|Edit",
+    "command": "/opt/enforce/hooks/check-function-naming.sh",
+    "args": [],
+    "form": "exec",
+    "timeout": 60
+   },
+   {
+    "hook": 7,
+    "event": "PostToolUse",
+    "matcher": "Write|Edit",
+    "command": "/opt/enforce/hooks/check-class-name-length.sh",
+    "args": [],
+    "form": "exec",
+    "timeout": 60
+   },
+   {
+    "hook": 8,
+    "event": "PostToolUse",
+    "matcher": "Write|Edit",
+    "command": "/opt/enforce/hooks/check-filename-odd-length.sh",
+    "args": [],
+    "form": "exec",
+    "timeout": 60
+   }
+  ],
+  "not_wrapped": [],
+  "other_settings": [],
+  "fingerprint": "225a7aeb36bfb03bf42f9e0c671d15f9e89a504cb82a831ef3b2c2ef27bad2c1"
+ },
+ "claude_code_on_settings": null,
+ "commands_added_for_agent": [
+  "file",
+  "jq"
+ ],
+ "workspace": {
+  "created": 0,
+  "changed": 0,
+  "deleted": 0
+ }
+}

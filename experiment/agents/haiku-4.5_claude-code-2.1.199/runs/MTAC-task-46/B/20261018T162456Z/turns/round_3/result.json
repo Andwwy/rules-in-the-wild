@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 38482,
+  "duration_api_ms": 35552,
+  "ttft_ms": 3631,
+  "ttft_stream_ms": 3628,
+  "time_to_request_ms": 128,
+  "num_turns": 6,
+  "result": "<result>通过</result><description>成功实现多途经点管理和拖拽排序功能。用户可通过\"添加途经点\"按钮动态添加最多5个途经点，每个途经点支持拖拽排序和删除；规划路线时按排序后的顺序绘制折线并用紫色编号图标标记途经点；验证了所有核心功能代码的完整性。</description>\n\n已完成拖拽排序和多途经点功能，用户现在可动态添加、删除和拖拽排序途经点，规划路线时按排序顺序绘制折线。",
+  "stop_reason": "end_turn",
+  "session_id": "fe5e21ed-e952-4a7c-a5bd-b61eda522681",
+  "total_cost_usd": 0.08273640000000002,
+  "usage": {
+   "input_tokens": 35,
+   "cache_creation_input_tokens": 11060,
+   "cache_read_input_tokens": 383414,
+   "output_tokens": 6107,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 11060
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 35,
+    "outputTokens": 6107,
+    "cacheReadInputTokens": 383414,
+    "cacheCreationInputTokens": 11060,
+    "webSearchRequests": 0,
+    "costUSD": 0.08273640000000002,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "464004a0-6d81-4fc6-ac07-50ff93e86395"
+ },
+ "stderr": ""
+}

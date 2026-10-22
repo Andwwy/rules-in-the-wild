@@ -1,0 +1,913 @@
+{
+ "select": {
+  "1": {
+   "route": {
+    "enforcer": [
+     "Validation",
+     "Regex",
+     "Regex validator"
+    ],
+    "trigger": [
+     "Agent loop",
+     "Response sent"
+    ],
+    "timing": "before",
+    "target": [
+     "Agent output",
+     "Response / message"
+    ]
+   },
+   "p": 0.78,
+   "separation": 8.667,
+   "top": [
+    [
+     "enforcer: Validation > Regex > Regex validator; trigger: Agent loop > Response sent, timing: before; target: Agent output > Response / message",
+     0.78
+    ],
+    [
+     "enforcer: Validation > Regex > Regex filter; trigger: Agent loop > Response sent, timing: before; target: Agent output > Response / message",
+     0.09
+    ],
+    [
+     "enforcer: Validation > Regex > Regex validator; trigger: Agent loop > Response sent, timing: at; target: Agent output > Response / message",
+     0.07
+    ],
+    [
+     "enforcer: Validation > Regex > Regex filter; trigger: Agent loop > Response sent, timing: at; target: Agent output > Response / message",
+     0.02
+    ]
+   ],
+   "options": 64,
+   "candidates": {
+    "enforcer": [
+     [
+      "Validation",
+      "Regex",
+      "Regex validator"
+     ],
+     [
+      "Validation",
+      "Regex",
+      "Regex filter"
+     ],
+     [
+      "Gates",
+      "Workflow",
+      "Workflow"
+     ],
+     [
+      "Gates",
+      "Workflow",
+      "Agent workflow"
+     ]
+    ],
+    "trigger": [
+     {
+      "path": [
+       "Agent loop",
+       "Response sent"
+      ],
+      "timing": "at"
+     },
+     {
+      "path": [
+       "Agent loop",
+       "Response sent"
+      ],
+      "timing": "before"
+     },
+     {
+      "path": [
+       "Agent loop",
+       "Response sent"
+      ],
+      "timing": "after"
+     },
+     {
+      "path": [
+       "Agent loop",
+       "Prompt received"
+      ],
+      "timing": "at"
+     }
+    ],
+    "target": [
+     [
+      "Agent output",
+      "Response / message"
+     ],
+     [
+      "Agent output",
+      "Plan"
+     ],
+     [
+      "Agent output",
+      "Report / summary"
+     ],
+     [
+      "Agent output",
+      "Findings"
+     ]
+    ]
+   },
+   "shuffle": "MTAC-task-91 R1 select",
+   "cost_usd": 0.00014696,
+   "at": "2026-10-21T15:43:08"
+  },
+  "2": {
+   "route": {
+    "enforcer": [
+     "Validation",
+     "Regex",
+     "Regex filter"
+    ],
+    "trigger": [
+     "Agent loop",
+     "Response sent"
+    ],
+    "timing": "before",
+    "target": [
+     "Agent output",
+     "Response / message"
+    ]
+   },
+   "p": 0.59,
+   "separation": 3.933,
+   "top": [
+    [
+     "enforcer: Validation > Regex > Regex filter; trigger: Agent loop > Response sent, timing: before; target: Agent output > Response / message",
+     0.59
+    ],
+    [
+     "enforcer: Validation > Regex > Regex validator; trigger: Agent loop > Response sent, timing: before; target: Agent output > Response / message",
+     0.15
+    ],
+    [
+     "enforcer: Validation > Regex > Regex validator; trigger: Always, timing: always; target: Agent output > Response / message",
+     0.09
+    ],
+    [
+     "enforcer: Validation > Regex > Regex filter; trigger: Always, timing: always; target: Agent output > Response / message",
+     0.06
+    ]
+   ],
+   "options": 64,
+   "candidates": {
+    "enforcer": [
+     [
+      "Validation",
+      "Regex",
+      "Regex filter"
+     ],
+     [
+      "Validation",
+      "Regex",
+      "Regex validator"
+     ],
+     [
+      "Analysis",
+      "Text",
+      "Other"
+     ],
+     [
+      "Analysis",
+      "Text",
+      "remark-lint"
+     ]
+    ],
+    "trigger": [
+     {
+      "path": [
+       "Always"
+      ],
+      "timing": "always"
+     },
+     {
+      "path": [
+       "Agent loop",
+       "Response sent"
+      ],
+      "timing": "at"
+     },
+     {
+      "path": [
+       "Agent loop",
+       "Response sent"
+      ],
+      "timing": "before"
+     },
+     {
+      "path": [
+       "Agent loop",
+       "Prompt received"
+      ],
+      "timing": "at"
+     }
+    ],
+    "target": [
+     [
+      "Agent output",
+      "Response / message"
+     ],
+     [
+      "Docs / content",
+      "Prose / copy"
+     ],
+     [
+      "Agent setup",
+      "Agent / persona"
+     ],
+     [
+      "Agent setup",
+      "Instruction file"
+     ]
+    ]
+   },
+   "shuffle": "MTAC-task-91 R2 select",
+   "cost_usd": 0.00014923,
+   "at": "2026-10-21T15:43:08"
+  },
+  "3": {
+   "route": {
+    "enforcer": [
+     "Validation",
+     "Regex",
+     "Regex validator"
+    ],
+    "trigger": [
+     "Agent loop",
+     "Response sent"
+    ],
+    "timing": "before",
+    "target": [
+     "Agent output",
+     "Response / message"
+    ]
+   },
+   "p": 0.44,
+   "separation": 1.073,
+   "top": [
+    [
+     "enforcer: Validation > Regex > Regex validator; trigger: Agent loop > Response sent, timing: before; target: Agent output > Response / message",
+     0.44
+    ],
+    [
+     "enforcer: Validation > Regex > Regex filter; trigger: Agent loop > Response sent, timing: before; target: Agent output > Response / message",
+     0.41
+    ],
+    [
+     "enforcer: Validation > Regex > Regex validator; trigger: Agent loop > Response sent, timing: at; target: Agent output > Response / message",
+     0.06
+    ],
+    [
+     "enforcer: Validation > Regex > Regex filter; trigger: Agent loop > Response sent, timing: at; target: Agent output > Response / message",
+     0.04
+    ]
+   ],
+   "options": 64,
+   "candidates": {
+    "enforcer": [
+     [
+      "Validation",
+      "Regex",
+      "Regex filter"
+     ],
+     [
+      "Validation",
+      "Regex",
+      "Regex validator"
+     ],
+     [
+      "Analysis",
+      "Text",
+      "Other"
+     ],
+     [
+      "Analysis",
+      "Text",
+      "remark-lint"
+     ]
+    ],
+    "trigger": [
+     {
+      "path": [
+       "Agent loop",
+       "Response sent"
+      ],
+      "timing": "at"
+     },
+     {
+      "path": [
+       "Agent loop",
+       "Response sent"
+      ],
+      "timing": "before"
+     },
+     {
+      "path": [
+       "Agent loop",
+       "Response sent"
+      ],
+      "timing": "after"
+     },
+     {
+      "path": [
+       "Agent loop",
+       "Prompt received"
+      ],
+      "timing": "at"
+     }
+    ],
+    "target": [
+     [
+      "Agent output",
+      "Response / message"
+     ],
+     [
+      "Docs / content",
+      "Prose / copy"
+     ],
+     [
+      "Agent output",
+      "Other"
+     ],
+     [
+      "Agent setup",
+      "Agent / persona"
+     ]
+    ]
+   },
+   "shuffle": "MTAC-task-91 R3 select",
+   "cost_usd": 0.00015011,
+   "at": "2026-10-21T15:43:08"
+  },
+  "4": {
+   "route": {
+    "enforcer": [
+     "Validation",
+     "Regex",
+     "Regex validator"
+    ],
+    "trigger": [
+     "Always"
+    ],
+    "timing": "always",
+    "target": [
+     "Agent output",
+     "Response / message"
+    ]
+   },
+   "p": 0.4,
+   "separation": 1.333,
+   "top": [
+    [
+     "enforcer: Validation > Regex > Regex validator; trigger: Always, timing: always; target: Agent output > Response / message",
+     0.4
+    ],
+    [
+     "enforcer: Validation > Regex > Regex validator; trigger: Agent loop > Response sent, timing: before; target: Agent output > Response / message",
+     0.3
+    ],
+    [
+     "enforcer: Validation > Regex > Regex validator; trigger: Agent loop > Response sent, timing: at; target: Agent output > Response / message",
+     0.12
+    ],
+    [
+     "enforcer: Validation > Regex > Regex filter; trigger: Always, timing: always; target: Agent output > Response / message",
+     0.06
+    ]
+   ],
+   "options": 64,
+   "candidates": {
+    "enforcer": [
+     [
+      "Validation",
+      "Regex",
+      "Regex validator"
+     ],
+     [
+      "Validation",
+      "Regex",
+      "Regex filter"
+     ],
+     [
+      "Analysis",
+      "Languages",
+      "Python / shell",
+      "Other"
+     ],
+     [
+      "Validation",
+      "Schemas",
+      "JSON Schema"
+     ]
+    ],
+    "trigger": [
+     {
+      "path": [
+       "Agent loop",
+       "Response sent"
+      ],
+      "timing": "at"
+     },
+     {
+      "path": [
+       "Agent loop",
+       "Response sent"
+      ],
+      "timing": "before"
+     },
+     {
+      "path": [
+       "Always"
+      ],
+      "timing": "always"
+     },
+     {
+      "path": [
+       "Agent loop",
+       "Response sent"
+      ],
+      "timing": "after"
+     }
+    ],
+    "target": [
+     [
+      "Agent output",
+      "Response / message"
+     ],
+     [
+      "Agent output",
+      "Plan"
+     ],
+     [
+      "Agent output",
+      "Report / summary"
+     ],
+     [
+      "Agent output",
+      "Findings"
+     ]
+    ]
+   },
+   "shuffle": "MTAC-task-91 R4 select",
+   "cost_usd": 0.00014755,
+   "at": "2026-10-21T15:43:08"
+  },
+  "5": {
+   "route": {
+    "enforcer": [
+     "Gates",
+     "Git hooks",
+     "pre-commit"
+    ],
+    "trigger": [
+     "Agent action",
+     "File write / edit"
+    ],
+    "timing": "before",
+    "target": [
+     "Source code",
+     "Source file"
+    ]
+   },
+   "p": 0.44,
+   "separation": 1.63,
+   "top": [
+    [
+     "enforcer: Gates > Git hooks > pre-commit; trigger: Agent action > File write / edit, timing: before; target: Source code > Source file",
+     0.44
+    ],
+    [
+     "enforcer: Validation > Regex > Regex validator; trigger: Agent action > File write / edit, timing: before; target: Source code > Source file",
+     0.27
+    ],
+    [
+     "enforcer: Validation > Regex > Regex validator; trigger: Agent action > File write / edit, timing: after; target: Source code > Source file",
+     0.1
+    ],
+    [
+     "enforcer: Validation > Regex > Regex validator; trigger: Agent action > File write / edit, timing: at; target: Source code > Source file",
+     0.08
+    ]
+   ],
+   "options": 64,
+   "candidates": {
+    "enforcer": [
+     [
+      "Validation",
+      "Regex",
+      "Regex validator"
+     ],
+     [
+      "Gates",
+      "Git hooks",
+      "pre-commit"
+     ],
+     [
+      "Gates",
+      "Tools",
+      "Tool policy"
+     ],
+     [
+      "Commands",
+      "Text tools",
+      "grep"
+     ]
+    ],
+    "trigger": [
+     {
+      "path": [
+       "Agent action",
+       "File write / edit"
+      ],
+      "timing": "at"
+     },
+     {
+      "path": [
+       "Agent action",
+       "File write / edit"
+      ],
+      "timing": "after"
+     },
+     {
+      "path": [
+       "Agent action",
+       "File write / edit"
+      ],
+      "timing": "before"
+     },
+     {
+      "path": [
+       "Agent loop",
+       "Response sent"
+      ],
+      "timing": "at"
+     }
+    ],
+    "target": [
+     [
+      "Source code",
+      "Source file"
+     ],
+     [
+      "Docs / content",
+      "Code comment"
+     ],
+     [
+      "Docs / content",
+      "Other"
+     ],
+     [
+      "Docs / content",
+      "Template"
+     ]
+    ]
+   },
+   "shuffle": "MTAC-task-91 R5 select",
+   "cost_usd": 0.00015393,
+   "at": "2026-10-21T15:43:08"
+  },
+  "6": {
+   "route": {
+    "enforcer": [
+     "Validation",
+     "Regex",
+     "Regex validator"
+    ],
+    "trigger": [
+     "Agent action",
+     "File write / edit"
+    ],
+    "timing": "after",
+    "target": [
+     "Source code",
+     "Source file"
+    ]
+   },
+   "p": 0.3,
+   "separation": 2.0,
+   "top": [
+    [
+     "enforcer: Validation > Regex > Regex validator; trigger: Agent action > File write / edit, timing: after; target: Source code > Source file",
+     0.3
+    ],
+    [
+     "enforcer: Gates > Git hooks > pre-commit; trigger: Agent action > File write / edit, timing: before; target: Source code > Source file",
+     0.15
+    ],
+    [
+     "enforcer: Validation > Regex > Regex validator; trigger: Agent action > File write / edit, timing: at; target: Source code > Source file",
+     0.14
+    ],
+    [
+     "enforcer: Validation > Regex > Regex validator; trigger: Agent action > File write / edit, timing: before; target: Source code > Source file",
+     0.12
+    ]
+   ],
+   "options": 64,
+   "candidates": {
+    "enforcer": [
+     [
+      "Validation",
+      "Regex",
+      "Regex validator"
+     ],
+     [
+      "Gates",
+      "Git hooks",
+      "pre-commit"
+     ],
+     [
+      "Validation",
+      "Regex",
+      "Regex filter"
+     ],
+     [
+      "Gates",
+      "CI / hosting",
+      "CI pipeline"
+     ]
+    ],
+    "trigger": [
+     {
+      "path": [
+       "Agent action",
+       "File write / edit"
+      ],
+      "timing": "at"
+     },
+     {
+      "path": [
+       "Agent action",
+       "File write / edit"
+      ],
+      "timing": "after"
+     },
+     {
+      "path": [
+       "Agent action",
+       "File write / edit"
+      ],
+      "timing": "before"
+     },
+     {
+      "path": [
+       "Agent loop",
+       "Response sent"
+      ],
+      "timing": "after"
+     }
+    ],
+    "target": [
+     [
+      "Source code",
+      "Source file"
+     ],
+     [
+      "Docs / content",
+      "Code comment"
+     ],
+     [
+      "Agent action",
+      "File operation"
+     ],
+     [
+      "Agent output",
+      "Response / message"
+     ]
+    ]
+   },
+   "shuffle": "MTAC-task-91 R6 select",
+   "cost_usd": 0.00015712,
+   "at": "2026-10-21T15:43:08"
+  },
+  "7": {
+   "route": {
+    "enforcer": [
+     "Analysis",
+     "Code scans",
+     "Semgrep"
+    ],
+    "trigger": [
+     "Agent action",
+     "File write / edit"
+    ],
+    "timing": "before",
+    "target": [
+     "Source code",
+     "Function / method"
+    ]
+   },
+   "p": 0.54,
+   "separation": 4.154,
+   "top": [
+    [
+     "enforcer: Analysis > Code scans > Semgrep; trigger: Agent action > File write / edit, timing: before; target: Source code > Function / method",
+     0.54
+    ],
+    [
+     "enforcer: Analysis > Code scans > CodeQL; trigger: Agent action > File write / edit, timing: at; target: Source code > Function / method",
+     0.13
+    ],
+    [
+     "enforcer: Analysis > Code scans > Semgrep; trigger: Agent action > File write / edit, timing: at; target: Source code > Function / method",
+     0.13
+    ],
+    [
+     "enforcer: Analysis > Code scans > CodeQL; trigger: Agent action > File write / edit, timing: before; target: Source code > Function / method",
+     0.1
+    ]
+   ],
+   "options": 64,
+   "candidates": {
+    "enforcer": [
+     [
+      "Analysis",
+      "Code scans",
+      "Semgrep"
+     ],
+     [
+      "Analysis",
+      "Code scans",
+      "CodeQL"
+     ],
+     [
+      "Validation",
+      "Project check"
+     ],
+     [
+      "Validation",
+      "Schemas",
+      "JSON Schema"
+     ]
+    ],
+    "trigger": [
+     {
+      "path": [
+       "Agent action",
+       "File write / edit"
+      ],
+      "timing": "at"
+     },
+     {
+      "path": [
+       "Agent action",
+       "File write / edit"
+      ],
+      "timing": "after"
+     },
+     {
+      "path": [
+       "Agent action",
+       "File write / edit"
+      ],
+      "timing": "before"
+     },
+     {
+      "path": [
+       "Git / delivery",
+       "Push / merge"
+      ],
+      "timing": "before"
+     }
+    ],
+    "target": [
+     [
+      "Source code",
+      "Function / method"
+     ],
+     [
+      "Source code",
+      "Source file"
+     ],
+     [
+      "Source code",
+      "Class / type"
+     ],
+     [
+      "Source code",
+      "Component"
+     ]
+    ]
+   },
+   "shuffle": "MTAC-task-91 R7 select",
+   "cost_usd": 0.00015406,
+   "at": "2026-10-21T15:43:08"
+  },
+  "8": {
+   "route": {
+    "enforcer": [
+     "Validation",
+     "Regex",
+     "Regex validator"
+    ],
+    "trigger": [
+     "Agent loop",
+     "Response sent"
+    ],
+    "timing": "at",
+    "target": [
+     "Agent output",
+     "Response / message"
+    ]
+   },
+   "p": 0.58,
+   "separation": 2.522,
+   "top": [
+    [
+     "enforcer: Validation > Regex > Regex validator; trigger: Agent loop > Response sent, timing: at; target: Agent output > Response / message",
+     0.58
+    ],
+    [
+     "enforcer: Validation > Regex > Regex validator; trigger: Agent loop > Response sent, timing: before; target: Agent output > Response / message",
+     0.23
+    ],
+    [
+     "enforcer: Validation > Regex > Regex filter; trigger: Agent loop > Response sent, timing: before; target: Agent output > Response / message",
+     0.08
+    ],
+    [
+     "enforcer: Validation > Regex > Regex filter; trigger: Agent loop > Response sent, timing: at; target: Agent output > Response / message",
+     0.07
+    ]
+   ],
+   "options": 64,
+   "candidates": {
+    "enforcer": [
+     [
+      "Validation",
+      "Regex",
+      "Regex validator"
+     ],
+     [
+      "Validation",
+      "Regex",
+      "Regex filter"
+     ],
+     [
+      "Tests",
+      "Synthesized CI tests",
+      "ASSERT"
+     ],
+     [
+      "Validation",
+      "Regex",
+      "Other"
+     ]
+    ],
+    "trigger": [
+     {
+      "path": [
+       "Agent loop",
+       "Response sent"
+      ],
+      "timing": "at"
+     },
+     {
+      "path": [
+       "Agent loop",
+       "Response sent"
+      ],
+      "timing": "before"
+     },
+     {
+      "path": [
+       "Agent loop",
+       "Response sent"
+      ],
+      "timing": "after"
+     },
+     {
+      "path": [
+       "Agent loop",
+       "Prompt received"
+      ],
+      "timing": "at"
+     }
+    ],
+    "target": [
+     [
+      "Agent output",
+      "Response / message"
+     ],
+     [
+      "Docs / content",
+      "Prose / copy"
+     ],
+     [
+      "Agent setup",
+      "Agent / persona"
+     ],
+     [
+      "Agent setup",
+      "Instruction file"
+     ]
+    ]
+   },
+   "shuffle": "MTAC-task-91 R8 select",
+   "cost_usd": 0.00015284,
+   "at": "2026-10-21T15:43:08"
+  }
+ }
+}

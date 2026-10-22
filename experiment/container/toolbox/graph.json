@@ -1,0 +1,2226 @@
+{
+ "nodes": [
+  {
+   "id": "recipe:semgrep",
+   "kind": "recipe",
+   "title": "Semgrep 1.177.0: pattern-based code scans"
+  },
+  {
+   "id": "recipe:jsonschema",
+   "kind": "recipe",
+   "title": "jsonschema 4.23.0: JSON Schema validation in Python (tool-installs/jsonschema/bin/python)"
+  },
+  {
+   "id": "recipe:js-parser",
+   "kind": "recipe",
+   "title": "tree-sitter 0.24.0 with the JavaScript 0.23.1 and TypeScript 0.23.2 grammars: JS/TS syntax trees in Python (tool-installs/js-parser/bin/python)"
+  },
+  {
+   "id": "recipe:ruff",
+   "kind": "recipe",
+   "title": "Ruff 0.17.1: Python linter and formatter"
+  },
+  {
+   "id": "recipe:shellcheck",
+   "kind": "recipe",
+   "title": "ShellCheck (shellcheck-py 0.11.0.1): shell script linter"
+  },
+  {
+   "id": "recipe:yamllint",
+   "kind": "recipe",
+   "title": "yamllint 1.38.0: YAML linter"
+  },
+  {
+   "id": "recipe:pytest",
+   "kind": "recipe",
+   "title": "pytest 9.1.1: Python test runner (the project's own packages are not in its environment)"
+  },
+  {
+   "id": "recipe:openapi",
+   "kind": "recipe",
+   "title": "openapi-spec-validator 0.9.0: OpenAPI document validator"
+  },
+  {
+   "id": "recipe:pre-commit",
+   "kind": "recipe",
+   "title": "pre-commit 4.7.0: git pre-commit hook framework (its hooks fetch their tools on first use)"
+  },
+  {
+   "id": "recipe:node",
+   "kind": "recipe",
+   "title": "Node.js 22.23.3 with npm"
+  },
+  {
+   "id": "recipe:eslint",
+   "kind": "recipe",
+   "title": "ESLint 10.13.0: JavaScript / TypeScript linter"
+  },
+  {
+   "id": "recipe:stylelint",
+   "kind": "recipe",
+   "title": "Stylelint 17.16.0: CSS linter"
+  },
+  {
+   "id": "recipe:biome",
+   "kind": "recipe",
+   "title": "Biome 2.5.15: web linter and formatter"
+  },
+  {
+   "id": "recipe:typescript",
+   "kind": "recipe",
+   "title": "TypeScript 7.0.2: tsc, the type checker and compiler"
+  },
+  {
+   "id": "recipe:jest",
+   "kind": "recipe",
+   "title": "Jest 30.5.2: JavaScript test runner"
+  },
+  {
+   "id": "recipe:ajv",
+   "kind": "recipe",
+   "title": "ajv-cli 5.0.0: JSON Schema validator"
+  },
+  {
+   "id": "recipe:markdownlint",
+   "kind": "recipe",
+   "title": "markdownlint-cli2 0.23.3: Markdown linter"
+  },
+  {
+   "id": "recipe:remark-lint",
+   "kind": "recipe",
+   "title": "remark-cli 12.0.1, remark-lint 10.0.1, remark-preset-lint-recommended 7.0.1: Markdown linter"
+  },
+  {
+   "id": "recipe:commitlint",
+   "kind": "recipe",
+   "title": "commitlint 21.2.3 with config-conventional 21.2.3: commit message linter"
+  },
+  {
+   "id": "recipe:pnpm",
+   "kind": "recipe",
+   "title": "pnpm 12.14.0: Node package manager"
+  },
+  {
+   "id": "recipe:vale",
+   "kind": "recipe",
+   "title": "Vale 3.24.0: prose linter"
+  },
+  {
+   "id": "recipe:git",
+   "kind": "recipe",
+   "title": "git (Debian 12)"
+  },
+  {
+   "id": "recipe:jq",
+   "kind": "recipe",
+   "title": "jq (Debian 12): JSON processor"
+  },
+  {
+   "id": "recipe:ripgrep",
+   "kind": "recipe",
+   "title": "ripgrep (Debian 12): rg, a fast grep"
+  },
+  {
+   "id": "recipe:curl",
+   "kind": "recipe",
+   "title": "curl (Debian 12): HTTP client"
+  },
+  {
+   "id": "recipe:inotify-tools",
+   "kind": "recipe",
+   "title": "inotify-tools (Debian 12): inotifywait, which reports file changes as they happen"
+  },
+  {
+   "id": "recipe:gcc",
+   "kind": "recipe",
+   "title": "gcc and the C library headers (Debian 12): the linker that Rust needs"
+  },
+  {
+   "id": "recipe:rust",
+   "kind": "recipe",
+   "title": "Rust 1.99.1 (minimal): cargo and rustc, to build Rust tools"
+  },
+  {
+   "id": "recipe:dogwood",
+   "kind": "recipe",
+   "title": "Dogwood CLI 1.1.0: policies on agent actions that depend on what happened before, and when (Cedar-based; `dogwood replay`)"
+  },
+  {
+   "id": "recipe:opa",
+   "kind": "recipe",
+   "title": "Open Policy Agent 1.0.0: policies in Rego, evaluated with `opa eval`"
+  },
+  {
+   "id": "skeletons/ask_service.py",
+   "kind": "skeleton",
+   "title": "ask_service.py"
+  },
+  {
+   "id": "skeletons/check.py",
+   "kind": "skeleton",
+   "title": "check.py"
+  },
+  {
+   "id": "skeletons/dogwood_gate.sh",
+   "kind": "skeleton",
+   "title": "dogwood_gate.sh"
+  },
+  {
+   "id": "skeletons/json_schema.py",
+   "kind": "skeleton",
+   "title": "json_schema.py"
+  },
+  {
+   "id": "skeletons/names_js.py",
+   "kind": "skeleton",
+   "title": "names_js.py"
+  },
+  {
+   "id": "skeletons/names_python.py",
+   "kind": "skeleton",
+   "title": "names_python.py"
+  },
+  {
+   "id": "skeletons/opa_gate.sh",
+   "kind": "skeleton",
+   "title": "opa_gate.sh"
+  },
+  {
+   "id": "skeletons/policy.dw",
+   "kind": "skeleton",
+   "title": "policy.dw"
+  },
+  {
+   "id": "skeletons/policy.rego",
+   "kind": "skeleton",
+   "title": "policy.rego"
+  },
+  {
+   "id": "skeletons/pre-commit.sh",
+   "kind": "skeleton",
+   "title": "pre-commit.sh"
+  },
+  {
+   "id": "skeletons/pre_commit_check.sh",
+   "kind": "skeleton",
+   "title": "pre_commit_check.sh"
+  },
+  {
+   "id": "skeletons/project_check.py",
+   "kind": "skeleton",
+   "title": "project_check.py"
+  },
+  {
+   "id": "skeletons/regex_filter.py",
+   "kind": "skeleton",
+   "title": "regex_filter.py"
+  },
+  {
+   "id": "skeletons/regex_validator.py",
+   "kind": "skeleton",
+   "title": "regex_validator.py"
+  },
+  {
+   "id": "skeletons/schema.cedarschema",
+   "kind": "skeleton",
+   "title": "schema.cedarschema"
+  },
+  {
+   "id": "skeletons/semgrep_check.py",
+   "kind": "skeleton",
+   "title": "semgrep_check.py"
+  },
+  {
+   "id": "skeletons/service.py",
+   "kind": "skeleton",
+   "title": "service.py"
+  },
+  {
+   "id": "skeletons/watcher.sh",
+   "kind": "skeleton",
+   "title": "watcher.sh"
+  },
+  {
+   "id": "skeletons/wrapper.sh",
+   "kind": "skeleton",
+   "title": "wrapper.sh"
+  },
+  {
+   "id": "enforcers/analysis/code-scans/codeql.md",
+   "kind": "enforcer",
+   "title": "Analysis › Code scans › CodeQL"
+  },
+  {
+   "id": "enforcers/analysis/code-scans/other.md",
+   "kind": "enforcer",
+   "title": "Analysis › Code scans › Other"
+  },
+  {
+   "id": "enforcers/analysis/code-scans/semgrep.md",
+   "kind": "enforcer",
+   "title": "Analysis › Code scans › Semgrep"
+  },
+  {
+   "id": "enforcers/analysis/languages/dart/custom-lint.md",
+   "kind": "enforcer",
+   "title": "Analysis › Languages › Dart › custom_lint"
+  },
+  {
+   "id": "enforcers/analysis/languages/dart/dart-analyzer.md",
+   "kind": "enforcer",
+   "title": "Analysis › Languages › Dart › Dart analyzer"
+  },
+  {
+   "id": "enforcers/analysis/languages/dart/other.md",
+   "kind": "enforcer",
+   "title": "Analysis › Languages › Dart › Other"
+  },
+  {
+   "id": "enforcers/analysis/languages/java-net/checkstyle.md",
+   "kind": "enforcer",
+   "title": "Analysis › Languages › Java / .NET › Checkstyle"
+  },
+  {
+   "id": "enforcers/analysis/languages/java-net/other.md",
+   "kind": "enforcer",
+   "title": "Analysis › Languages › Java / .NET › Other"
+  },
+  {
+   "id": "enforcers/analysis/languages/java-net/pmd.md",
+   "kind": "enforcer",
+   "title": "Analysis › Languages › Java / .NET › PMD"
+  },
+  {
+   "id": "enforcers/analysis/languages/java-net/roslyn-analyzer.md",
+   "kind": "enforcer",
+   "title": "Analysis › Languages › Java / .NET › Roslyn analyzer"
+  },
+  {
+   "id": "enforcers/analysis/languages/other.md",
+   "kind": "enforcer",
+   "title": "Analysis › Languages › Other"
+  },
+  {
+   "id": "enforcers/analysis/languages/php/other.md",
+   "kind": "enforcer",
+   "title": "Analysis › Languages › PHP › Other"
+  },
+  {
+   "id": "enforcers/analysis/languages/php/php-codesniffer.md",
+   "kind": "enforcer",
+   "title": "Analysis › Languages › PHP › PHP_CodeSniffer"
+  },
+  {
+   "id": "enforcers/analysis/languages/php/phpstan.md",
+   "kind": "enforcer",
+   "title": "Analysis › Languages › PHP › PHPStan"
+  },
+  {
+   "id": "enforcers/analysis/languages/python-shell/other.md",
+   "kind": "enforcer",
+   "title": "Analysis › Languages › Python / shell › Other"
+  },
+  {
+   "id": "enforcers/analysis/languages/python-shell/ruff.md",
+   "kind": "enforcer",
+   "title": "Analysis › Languages › Python / shell › Ruff"
+  },
+  {
+   "id": "enforcers/analysis/languages/python-shell/shellcheck.md",
+   "kind": "enforcer",
+   "title": "Analysis › Languages › Python / shell › ShellCheck"
+  },
+  {
+   "id": "enforcers/analysis/other.md",
+   "kind": "enforcer",
+   "title": "Analysis › Other"
+  },
+  {
+   "id": "enforcers/analysis/text/commitlint.md",
+   "kind": "enforcer",
+   "title": "Analysis › Text › commitlint"
+  },
+  {
+   "id": "enforcers/analysis/text/markdownlint.md",
+   "kind": "enforcer",
+   "title": "Analysis › Text › markdownlint"
+  },
+  {
+   "id": "enforcers/analysis/text/other.md",
+   "kind": "enforcer",
+   "title": "Analysis › Text › Other"
+  },
+  {
+   "id": "enforcers/analysis/text/remark-lint.md",
+   "kind": "enforcer",
+   "title": "Analysis › Text › remark-lint"
+  },
+  {
+   "id": "enforcers/analysis/text/vale.md",
+   "kind": "enforcer",
+   "title": "Analysis › Text › Vale"
+  },
+  {
+   "id": "enforcers/analysis/text/yamllint.md",
+   "kind": "enforcer",
+   "title": "Analysis › Text › yamllint"
+  },
+  {
+   "id": "enforcers/analysis/web/biome.md",
+   "kind": "enforcer",
+   "title": "Analysis › Web › Biome"
+  },
+  {
+   "id": "enforcers/analysis/web/eslint.md",
+   "kind": "enforcer",
+   "title": "Analysis › Web › ESLint"
+  },
+  {
+   "id": "enforcers/analysis/web/other.md",
+   "kind": "enforcer",
+   "title": "Analysis › Web › Other"
+  },
+  {
+   "id": "enforcers/analysis/web/stylelint.md",
+   "kind": "enforcer",
+   "title": "Analysis › Web › Stylelint"
+  },
+  {
+   "id": "enforcers/build-ops/builds/gradle.md",
+   "kind": "enforcer",
+   "title": "Build / ops › Builds › Gradle"
+  },
+  {
+   "id": "enforcers/build-ops/builds/msbuild.md",
+   "kind": "enforcer",
+   "title": "Build / ops › Builds › MSBuild"
+  },
+  {
+   "id": "enforcers/build-ops/builds/other.md",
+   "kind": "enforcer",
+   "title": "Build / ops › Builds › Other"
+  },
+  {
+   "id": "enforcers/build-ops/compilers/other.md",
+   "kind": "enforcer",
+   "title": "Build / ops › Compilers › Other"
+  },
+  {
+   "id": "enforcers/build-ops/compilers/roslyn-compiler.md",
+   "kind": "enforcer",
+   "title": "Build / ops › Compilers › Roslyn compiler"
+  },
+  {
+   "id": "enforcers/build-ops/compilers/tsc.md",
+   "kind": "enforcer",
+   "title": "Build / ops › Compilers › tsc"
+  },
+  {
+   "id": "enforcers/build-ops/compilers/type-checker.md",
+   "kind": "enforcer",
+   "title": "Build / ops › Compilers › Type checker"
+  },
+  {
+   "id": "enforcers/build-ops/operations/aws-config.md",
+   "kind": "enforcer",
+   "title": "Build / ops › Operations › AWS Config"
+  },
+  {
+   "id": "enforcers/build-ops/operations/file-permissions.md",
+   "kind": "enforcer",
+   "title": "Build / ops › Operations › File permissions"
+  },
+  {
+   "id": "enforcers/build-ops/operations/other.md",
+   "kind": "enforcer",
+   "title": "Build / ops › Operations › Other"
+  },
+  {
+   "id": "enforcers/build-ops/operations/prometheus.md",
+   "kind": "enforcer",
+   "title": "Build / ops › Operations › Prometheus"
+  },
+  {
+   "id": "enforcers/build-ops/other.md",
+   "kind": "enforcer",
+   "title": "Build / ops › Other"
+  },
+  {
+   "id": "enforcers/build-ops/packages/npm-registry.md",
+   "kind": "enforcer",
+   "title": "Build / ops › Packages › npm registry"
+  },
+  {
+   "id": "enforcers/build-ops/packages/npm.md",
+   "kind": "enforcer",
+   "title": "Build / ops › Packages › npm"
+  },
+  {
+   "id": "enforcers/build-ops/packages/other.md",
+   "kind": "enforcer",
+   "title": "Build / ops › Packages › Other"
+  },
+  {
+   "id": "enforcers/build-ops/packages/pnpm.md",
+   "kind": "enforcer",
+   "title": "Build / ops › Packages › pnpm"
+  },
+  {
+   "id": "enforcers/commands/data-tools/curl.md",
+   "kind": "enforcer",
+   "title": "Commands › Data tools › curl"
+  },
+  {
+   "id": "enforcers/commands/data-tools/jq.md",
+   "kind": "enforcer",
+   "title": "Commands › Data tools › jq"
+  },
+  {
+   "id": "enforcers/commands/data-tools/other.md",
+   "kind": "enforcer",
+   "title": "Commands › Data tools › Other"
+  },
+  {
+   "id": "enforcers/commands/data-tools/remark.md",
+   "kind": "enforcer",
+   "title": "Commands › Data tools › remark"
+  },
+  {
+   "id": "enforcers/commands/flock.md",
+   "kind": "enforcer",
+   "title": "Commands › flock"
+  },
+  {
+   "id": "enforcers/commands/git.md",
+   "kind": "enforcer",
+   "title": "Commands › Git"
+  },
+  {
+   "id": "enforcers/commands/other.md",
+   "kind": "enforcer",
+   "title": "Commands › Other"
+  },
+  {
+   "id": "enforcers/commands/shell/bash.md",
+   "kind": "enforcer",
+   "title": "Commands › Shell › Bash"
+  },
+  {
+   "id": "enforcers/commands/shell/cli-parser.md",
+   "kind": "enforcer",
+   "title": "Commands › Shell › CLI parser"
+  },
+  {
+   "id": "enforcers/commands/shell/other.md",
+   "kind": "enforcer",
+   "title": "Commands › Shell › Other"
+  },
+  {
+   "id": "enforcers/commands/shell/posix-sh.md",
+   "kind": "enforcer",
+   "title": "Commands › Shell › POSIX sh"
+  },
+  {
+   "id": "enforcers/commands/shell/posix-test.md",
+   "kind": "enforcer",
+   "title": "Commands › Shell › POSIX test"
+  },
+  {
+   "id": "enforcers/commands/text-tools/awk.md",
+   "kind": "enforcer",
+   "title": "Commands › Text tools › awk"
+  },
+  {
+   "id": "enforcers/commands/text-tools/grep.md",
+   "kind": "enforcer",
+   "title": "Commands › Text tools › grep"
+  },
+  {
+   "id": "enforcers/commands/text-tools/other.md",
+   "kind": "enforcer",
+   "title": "Commands › Text tools › Other"
+  },
+  {
+   "id": "enforcers/commands/text-tools/ripgrep.md",
+   "kind": "enforcer",
+   "title": "Commands › Text tools › ripgrep"
+  },
+  {
+   "id": "enforcers/commands/text-tools/wc.md",
+   "kind": "enforcer",
+   "title": "Commands › Text tools › wc"
+  },
+  {
+   "id": "enforcers/gates/ci-hosting/branch-protection.md",
+   "kind": "enforcer",
+   "title": "Gates › CI / hosting › Branch protection"
+  },
+  {
+   "id": "enforcers/gates/ci-hosting/ci-pipeline.md",
+   "kind": "enforcer",
+   "title": "Gates › CI / hosting › CI pipeline"
+  },
+  {
+   "id": "enforcers/gates/ci-hosting/github-actions.md",
+   "kind": "enforcer",
+   "title": "Gates › CI / hosting › GitHub Actions"
+  },
+  {
+   "id": "enforcers/gates/ci-hosting/other.md",
+   "kind": "enforcer",
+   "title": "Gates › CI / hosting › Other"
+  },
+  {
+   "id": "enforcers/gates/git-hooks/commit-hook.md",
+   "kind": "enforcer",
+   "title": "Gates › Git hooks › Commit hook"
+  },
+  {
+   "id": "enforcers/gates/git-hooks/other.md",
+   "kind": "enforcer",
+   "title": "Gates › Git hooks › Other"
+  },
+  {
+   "id": "enforcers/gates/git-hooks/pre-commit.md",
+   "kind": "enforcer",
+   "title": "Gates › Git hooks › pre-commit"
+  },
+  {
+   "id": "enforcers/gates/git-hooks/push-hook.md",
+   "kind": "enforcer",
+   "title": "Gates › Git hooks › Push hook"
+  },
+  {
+   "id": "enforcers/gates/other.md",
+   "kind": "enforcer",
+   "title": "Gates › Other"
+  },
+  {
+   "id": "enforcers/gates/tools/claude-code.md",
+   "kind": "enforcer",
+   "title": "Gates › Tools › Claude Code"
+  },
+  {
+   "id": "enforcers/gates/tools/command-filter.md",
+   "kind": "enforcer",
+   "title": "Gates › Tools › Command filter"
+  },
+  {
+   "id": "enforcers/gates/tools/other.md",
+   "kind": "enforcer",
+   "title": "Gates › Tools › Other"
+  },
+  {
+   "id": "enforcers/gates/tools/tool-policy.md",
+   "kind": "enforcer",
+   "title": "Gates › Tools › Tool policy"
+  },
+  {
+   "id": "enforcers/gates/workflow/agent-workflow.md",
+   "kind": "enforcer",
+   "title": "Gates › Workflow › Agent workflow"
+  },
+  {
+   "id": "enforcers/gates/workflow/approval.md",
+   "kind": "enforcer",
+   "title": "Gates › Workflow › Approval"
+  },
+  {
+   "id": "enforcers/gates/workflow/other.md",
+   "kind": "enforcer",
+   "title": "Gates › Workflow › Other"
+  },
+  {
+   "id": "enforcers/gates/workflow/workflow.md",
+   "kind": "enforcer",
+   "title": "Gates › Workflow › Workflow"
+  },
+  {
+   "id": "enforcers/other.md",
+   "kind": "enforcer",
+   "title": "Other"
+  },
+  {
+   "id": "enforcers/tests/archunit.md",
+   "kind": "enforcer",
+   "title": "Tests › ArchUnit"
+  },
+  {
+   "id": "enforcers/tests/ci-tests.md",
+   "kind": "enforcer",
+   "title": "Tests › CI tests"
+  },
+  {
+   "id": "enforcers/tests/other.md",
+   "kind": "enforcer",
+   "title": "Tests › Other"
+  },
+  {
+   "id": "enforcers/tests/runners/go-test.md",
+   "kind": "enforcer",
+   "title": "Tests › Runners › go test"
+  },
+  {
+   "id": "enforcers/tests/runners/jest.md",
+   "kind": "enforcer",
+   "title": "Tests › Runners › Jest"
+  },
+  {
+   "id": "enforcers/tests/runners/other.md",
+   "kind": "enforcer",
+   "title": "Tests › Runners › Other"
+  },
+  {
+   "id": "enforcers/tests/runners/phpunit.md",
+   "kind": "enforcer",
+   "title": "Tests › Runners › PHPUnit"
+  },
+  {
+   "id": "enforcers/tests/runners/pytest.md",
+   "kind": "enforcer",
+   "title": "Tests › Runners › pytest"
+  },
+  {
+   "id": "enforcers/tests/runners/rust/cargo-nextest.md",
+   "kind": "enforcer",
+   "title": "Tests › Runners › Rust › cargo-nextest"
+  },
+  {
+   "id": "enforcers/tests/runners/rust/cargo-test.md",
+   "kind": "enforcer",
+   "title": "Tests › Runners › Rust › cargo test"
+  },
+  {
+   "id": "enforcers/tests/runners/rust/other.md",
+   "kind": "enforcer",
+   "title": "Tests › Runners › Rust › Other"
+  },
+  {
+   "id": "enforcers/tests/synthesized-ci-tests/assert.md",
+   "kind": "enforcer",
+   "title": "Tests › Synthesized CI tests › ASSERT"
+  },
+  {
+   "id": "enforcers/tests/synthesized-ci-tests/other.md",
+   "kind": "enforcer",
+   "title": "Tests › Synthesized CI tests › Other"
+  },
+  {
+   "id": "enforcers/tests/ui/axe-core.md",
+   "kind": "enforcer",
+   "title": "Tests › UI › axe-core"
+  },
+  {
+   "id": "enforcers/tests/ui/other.md",
+   "kind": "enforcer",
+   "title": "Tests › UI › Other"
+  },
+  {
+   "id": "enforcers/tests/ui/playwright.md",
+   "kind": "enforcer",
+   "title": "Tests › UI › Playwright"
+  },
+  {
+   "id": "enforcers/tests/ui/xctest.md",
+   "kind": "enforcer",
+   "title": "Tests › UI › XCTest"
+  },
+  {
+   "id": "enforcers/validation/other.md",
+   "kind": "enforcer",
+   "title": "Validation › Other"
+  },
+  {
+   "id": "enforcers/validation/project-check.md",
+   "kind": "enforcer",
+   "title": "Validation › Project check"
+  },
+  {
+   "id": "enforcers/validation/regex/other.md",
+   "kind": "enforcer",
+   "title": "Validation › Regex › Other"
+  },
+  {
+   "id": "enforcers/validation/regex/regex-filter.md",
+   "kind": "enforcer",
+   "title": "Validation › Regex › Regex filter"
+  },
+  {
+   "id": "enforcers/validation/regex/regex-validator.md",
+   "kind": "enforcer",
+   "title": "Validation › Regex › Regex validator"
+  },
+  {
+   "id": "enforcers/validation/schemas/ajv.md",
+   "kind": "enforcer",
+   "title": "Validation › Schemas › Ajv"
+  },
+  {
+   "id": "enforcers/validation/schemas/json-schema.md",
+   "kind": "enforcer",
+   "title": "Validation › Schemas › JSON Schema"
+  },
+  {
+   "id": "enforcers/validation/schemas/openapi.md",
+   "kind": "enforcer",
+   "title": "Validation › Schemas › OpenAPI"
+  },
+  {
+   "id": "enforcers/validation/schemas/other.md",
+   "kind": "enforcer",
+   "title": "Validation › Schemas › Other"
+  },
+  {
+   "id": "mechanisms/command-wrappers.md",
+   "kind": "mechanism",
+   "title": "Command wrappers"
+  },
+  {
+   "id": "mechanisms/file-permissions.md",
+   "kind": "mechanism",
+   "title": "File permissions"
+  },
+  {
+   "id": "mechanisms/file-watchers.md",
+   "kind": "mechanism",
+   "title": "File watchers"
+  },
+  {
+   "id": "mechanisms/framework-hooks.md",
+   "kind": "mechanism",
+   "title": "Agent framework hooks"
+  },
+  {
+   "id": "mechanisms/git-hooks.md",
+   "kind": "mechanism",
+   "title": "Git hooks"
+  },
+  {
+   "id": "mechanisms/keep-running.md",
+   "kind": "mechanism",
+   "title": "Checks that keep running"
+  },
+  {
+   "id": "mechanisms/policy-dogwood.md",
+   "kind": "mechanism",
+   "title": "Policy engine: Dogwood (temporal permissions)"
+  },
+  {
+   "id": "mechanisms/policy-opa.md",
+   "kind": "mechanism",
+   "title": "Policy engine: OPA (Rego)"
+  },
+  {
+   "id": "mechanisms/root-service.md",
+   "kind": "mechanism",
+   "title": "Root service"
+  },
+  {
+   "id": "targets/agent-action/file-operation.md",
+   "kind": "target",
+   "title": "Agent action › File operation"
+  },
+  {
+   "id": "targets/agent-action/git-command.md",
+   "kind": "target",
+   "title": "Agent action › Git command"
+  },
+  {
+   "id": "targets/agent-action/other.md",
+   "kind": "target",
+   "title": "Agent action › Other"
+  },
+  {
+   "id": "targets/agent-action/shell-command.md",
+   "kind": "target",
+   "title": "Agent action › Shell command"
+  },
+  {
+   "id": "targets/agent-action/skill-subagent-call.md",
+   "kind": "target",
+   "title": "Agent action › Skill / subagent call"
+  },
+  {
+   "id": "targets/agent-action/tool-call.md",
+   "kind": "target",
+   "title": "Agent action › Tool call"
+  },
+  {
+   "id": "targets/agent-output/claim-decision.md",
+   "kind": "target",
+   "title": "Agent output › Claim / decision"
+  },
+  {
+   "id": "targets/agent-output/findings.md",
+   "kind": "target",
+   "title": "Agent output › Findings"
+  },
+  {
+   "id": "targets/agent-output/other.md",
+   "kind": "target",
+   "title": "Agent output › Other"
+  },
+  {
+   "id": "targets/agent-output/plan.md",
+   "kind": "target",
+   "title": "Agent output › Plan"
+  },
+  {
+   "id": "targets/agent-output/question-to-user.md",
+   "kind": "target",
+   "title": "Agent output › Question to user"
+  },
+  {
+   "id": "targets/agent-output/report-summary.md",
+   "kind": "target",
+   "title": "Agent output › Report / summary"
+  },
+  {
+   "id": "targets/agent-output/response-message.md",
+   "kind": "target",
+   "title": "Agent output › Response / message"
+  },
+  {
+   "id": "targets/agent-setup/agent-persona.md",
+   "kind": "target",
+   "title": "Agent setup › Agent / persona"
+  },
+  {
+   "id": "targets/agent-setup/instruction-file.md",
+   "kind": "target",
+   "title": "Agent setup › Instruction file"
+  },
+  {
+   "id": "targets/agent-setup/memory.md",
+   "kind": "target",
+   "title": "Agent setup › Memory"
+  },
+  {
+   "id": "targets/agent-setup/other.md",
+   "kind": "target",
+   "title": "Agent setup › Other"
+  },
+  {
+   "id": "targets/agent-setup/skill.md",
+   "kind": "target",
+   "title": "Agent setup › Skill"
+  },
+  {
+   "id": "targets/agent-setup/workflow.md",
+   "kind": "target",
+   "title": "Agent setup › Workflow"
+  },
+  {
+   "id": "targets/docs-content/changelog.md",
+   "kind": "target",
+   "title": "Docs / content › Changelog"
+  },
+  {
+   "id": "targets/docs-content/code-comment.md",
+   "kind": "target",
+   "title": "Docs / content › Code comment"
+  },
+  {
+   "id": "targets/docs-content/doc-file.md",
+   "kind": "target",
+   "title": "Docs / content › Doc file"
+  },
+  {
+   "id": "targets/docs-content/other.md",
+   "kind": "target",
+   "title": "Docs / content › Other"
+  },
+  {
+   "id": "targets/docs-content/prose-copy.md",
+   "kind": "target",
+   "title": "Docs / content › Prose / copy"
+  },
+  {
+   "id": "targets/docs-content/section-heading.md",
+   "kind": "target",
+   "title": "Docs / content › Section / heading"
+  },
+  {
+   "id": "targets/docs-content/template.md",
+   "kind": "target",
+   "title": "Docs / content › Template"
+  },
+  {
+   "id": "targets/other.md",
+   "kind": "target",
+   "title": "Other"
+  },
+  {
+   "id": "targets/repo-config/any-file-folder.md",
+   "kind": "target",
+   "title": "Repo / config › Any file / folder"
+  },
+  {
+   "id": "targets/repo-config/build-ci-file.md",
+   "kind": "target",
+   "title": "Repo / config › Build / CI file"
+  },
+  {
+   "id": "targets/repo-config/config-file.md",
+   "kind": "target",
+   "title": "Repo / config › Config file"
+  },
+  {
+   "id": "targets/repo-config/dependency-package.md",
+   "kind": "target",
+   "title": "Repo / config › Dependency / package"
+  },
+  {
+   "id": "targets/repo-config/infra-deployment.md",
+   "kind": "target",
+   "title": "Repo / config › Infra / deployment"
+  },
+  {
+   "id": "targets/repo-config/other.md",
+   "kind": "target",
+   "title": "Repo / config › Other"
+  },
+  {
+   "id": "targets/runtime-data/api-response.md",
+   "kind": "target",
+   "title": "Runtime data › API response"
+  },
+  {
+   "id": "targets/runtime-data/domain-object.md",
+   "kind": "target",
+   "title": "Runtime data › Domain object"
+  },
+  {
+   "id": "targets/runtime-data/endpoint-request.md",
+   "kind": "target",
+   "title": "Runtime data › Endpoint / request"
+  },
+  {
+   "id": "targets/runtime-data/error.md",
+   "kind": "target",
+   "title": "Runtime data › Error"
+  },
+  {
+   "id": "targets/runtime-data/field-value.md",
+   "kind": "target",
+   "title": "Runtime data › Field / value"
+  },
+  {
+   "id": "targets/runtime-data/log-entry.md",
+   "kind": "target",
+   "title": "Runtime data › Log entry"
+  },
+  {
+   "id": "targets/runtime-data/other.md",
+   "kind": "target",
+   "title": "Runtime data › Other"
+  },
+  {
+   "id": "targets/runtime-data/query.md",
+   "kind": "target",
+   "title": "Runtime data › Query"
+  },
+  {
+   "id": "targets/runtime-data/record-table.md",
+   "kind": "target",
+   "title": "Runtime data › Record / table"
+  },
+  {
+   "id": "targets/runtime-data/secret-credential.md",
+   "kind": "target",
+   "title": "Runtime data › Secret / credential"
+  },
+  {
+   "id": "targets/source-code/class-type.md",
+   "kind": "target",
+   "title": "Source code › Class / type"
+  },
+  {
+   "id": "targets/source-code/component.md",
+   "kind": "target",
+   "title": "Source code › Component"
+  },
+  {
+   "id": "targets/source-code/function-method.md",
+   "kind": "target",
+   "title": "Source code › Function / method"
+  },
+  {
+   "id": "targets/source-code/import.md",
+   "kind": "target",
+   "title": "Source code › Import"
+  },
+  {
+   "id": "targets/source-code/name-identifier.md",
+   "kind": "target",
+   "title": "Source code › Name / identifier"
+  },
+  {
+   "id": "targets/source-code/other.md",
+   "kind": "target",
+   "title": "Source code › Other"
+  },
+  {
+   "id": "targets/source-code/source-file.md",
+   "kind": "target",
+   "title": "Source code › Source file"
+  },
+  {
+   "id": "targets/tests/assertion.md",
+   "kind": "target",
+   "title": "Tests › Assertion"
+  },
+  {
+   "id": "targets/tests/other.md",
+   "kind": "target",
+   "title": "Tests › Other"
+  },
+  {
+   "id": "targets/tests/test-case.md",
+   "kind": "target",
+   "title": "Tests › Test case"
+  },
+  {
+   "id": "targets/tests/test-file-suite.md",
+   "kind": "target",
+   "title": "Tests › Test file / suite"
+  },
+  {
+   "id": "targets/ui-media/accessibility.md",
+   "kind": "target",
+   "title": "UI / media › Accessibility"
+  },
+  {
+   "id": "targets/ui-media/image-media.md",
+   "kind": "target",
+   "title": "UI / media › Image / media"
+  },
+  {
+   "id": "targets/ui-media/layout-style.md",
+   "kind": "target",
+   "title": "UI / media › Layout / style"
+  },
+  {
+   "id": "targets/ui-media/other.md",
+   "kind": "target",
+   "title": "UI / media › Other"
+  },
+  {
+   "id": "targets/ui-media/page-screen.md",
+   "kind": "target",
+   "title": "UI / media › Page / screen"
+  },
+  {
+   "id": "targets/ui-media/ui-element.md",
+   "kind": "target",
+   "title": "UI / media › UI element"
+  },
+  {
+   "id": "targets/user-input/other.md",
+   "kind": "target",
+   "title": "User input › Other"
+  },
+  {
+   "id": "targets/user-input/request-prompt.md",
+   "kind": "target",
+   "title": "User input › Request / prompt"
+  },
+  {
+   "id": "targets/user-input/task-ticket.md",
+   "kind": "target",
+   "title": "User input › Task / ticket"
+  },
+  {
+   "id": "targets/version-control/branch.md",
+   "kind": "target",
+   "title": "Version control › Branch"
+  },
+  {
+   "id": "targets/version-control/commit-message.md",
+   "kind": "target",
+   "title": "Version control › Commit message"
+  },
+  {
+   "id": "targets/version-control/commit.md",
+   "kind": "target",
+   "title": "Version control › Commit"
+  },
+  {
+   "id": "targets/version-control/diff.md",
+   "kind": "target",
+   "title": "Version control › Diff"
+  },
+  {
+   "id": "targets/version-control/issue.md",
+   "kind": "target",
+   "title": "Version control › Issue"
+  },
+  {
+   "id": "targets/version-control/other.md",
+   "kind": "target",
+   "title": "Version control › Other"
+  },
+  {
+   "id": "targets/version-control/pull-request.md",
+   "kind": "target",
+   "title": "Version control › Pull request"
+  },
+  {
+   "id": "triggers/agent-action/ask-user.md",
+   "kind": "trigger",
+   "title": "Agent action › Ask user"
+  },
+  {
+   "id": "triggers/agent-action/file-read.md",
+   "kind": "trigger",
+   "title": "Agent action › File read"
+  },
+  {
+   "id": "triggers/agent-action/file-write-edit.md",
+   "kind": "trigger",
+   "title": "Agent action › File write / edit"
+  },
+  {
+   "id": "triggers/agent-action/other.md",
+   "kind": "trigger",
+   "title": "Agent action › Other"
+  },
+  {
+   "id": "triggers/agent-action/shell-command.md",
+   "kind": "trigger",
+   "title": "Agent action › Shell command"
+  },
+  {
+   "id": "triggers/agent-action/skill-subagent.md",
+   "kind": "trigger",
+   "title": "Agent action › Skill / subagent"
+  },
+  {
+   "id": "triggers/agent-action/tool-mcp-call.md",
+   "kind": "trigger",
+   "title": "Agent action › Tool / MCP call"
+  },
+  {
+   "id": "triggers/agent-loop/other.md",
+   "kind": "trigger",
+   "title": "Agent loop › Other"
+  },
+  {
+   "id": "triggers/agent-loop/prompt-received.md",
+   "kind": "trigger",
+   "title": "Agent loop › Prompt received"
+  },
+  {
+   "id": "triggers/agent-loop/response-sent.md",
+   "kind": "trigger",
+   "title": "Agent loop › Response sent"
+  },
+  {
+   "id": "triggers/agent-loop/session-start.md",
+   "kind": "trigger",
+   "title": "Agent loop › Session start"
+  },
+  {
+   "id": "triggers/agent-loop/task-completion.md",
+   "kind": "trigger",
+   "title": "Agent loop › Task completion"
+  },
+  {
+   "id": "triggers/always.md",
+   "kind": "trigger",
+   "title": "Always"
+  },
+  {
+   "id": "triggers/app-runtime/data-read-write.md",
+   "kind": "trigger",
+   "title": "App runtime › Data read / write"
+  },
+  {
+   "id": "triggers/app-runtime/log-error.md",
+   "kind": "trigger",
+   "title": "App runtime › Log / error"
+  },
+  {
+   "id": "triggers/app-runtime/message-send.md",
+   "kind": "trigger",
+   "title": "App runtime › Message send"
+  },
+  {
+   "id": "triggers/app-runtime/other.md",
+   "kind": "trigger",
+   "title": "App runtime › Other"
+  },
+  {
+   "id": "triggers/app-runtime/request-api-call.md",
+   "kind": "trigger",
+   "title": "App runtime › Request / API call"
+  },
+  {
+   "id": "triggers/app-runtime/schedule-timer.md",
+   "kind": "trigger",
+   "title": "App runtime › Schedule / timer"
+  },
+  {
+   "id": "triggers/app-runtime/ui-event.md",
+   "kind": "trigger",
+   "title": "App runtime › UI event"
+  },
+  {
+   "id": "triggers/git-delivery/commit.md",
+   "kind": "trigger",
+   "title": "Git / delivery › Commit"
+  },
+  {
+   "id": "triggers/git-delivery/deploy-release.md",
+   "kind": "trigger",
+   "title": "Git / delivery › Deploy / release"
+  },
+  {
+   "id": "triggers/git-delivery/other.md",
+   "kind": "trigger",
+   "title": "Git / delivery › Other"
+  },
+  {
+   "id": "triggers/git-delivery/publish.md",
+   "kind": "trigger",
+   "title": "Git / delivery › Publish"
+  },
+  {
+   "id": "triggers/git-delivery/pull-request.md",
+   "kind": "trigger",
+   "title": "Git / delivery › Pull request"
+  },
+  {
+   "id": "triggers/git-delivery/push-merge.md",
+   "kind": "trigger",
+   "title": "Git / delivery › Push / merge"
+  },
+  {
+   "id": "triggers/other.md",
+   "kind": "trigger",
+   "title": "Other"
+  }
+ ],
+ "edges": [
+  {
+   "from": "enforcers/analysis/code-scans/codeql.md",
+   "to": "enforcers/analysis/code-scans/semgrep.md",
+   "label": "nearest"
+  },
+  {
+   "from": "enforcers/analysis/code-scans/semgrep.md",
+   "to": "recipe:semgrep",
+   "label": "install"
+  },
+  {
+   "from": "enforcers/analysis/code-scans/semgrep.md",
+   "to": "skeletons/check.py",
+   "label": "rules"
+  },
+  {
+   "from": "enforcers/analysis/code-scans/semgrep.md",
+   "to": "skeletons/semgrep_check.py",
+   "label": "skeleton"
+  },
+  {
+   "from": "enforcers/analysis/languages/java-net/roslyn-analyzer.md",
+   "to": "enforcers/analysis/code-scans/semgrep.md",
+   "label": "nearest"
+  },
+  {
+   "from": "enforcers/analysis/languages/other.md",
+   "to": "skeletons/check.py",
+   "label": "check"
+  },
+  {
+   "from": "enforcers/analysis/languages/python-shell/other.md",
+   "to": "skeletons/check.py",
+   "label": "check"
+  },
+  {
+   "from": "enforcers/analysis/languages/python-shell/ruff.md",
+   "to": "recipe:ruff",
+   "label": "install"
+  },
+  {
+   "from": "enforcers/analysis/languages/python-shell/shellcheck.md",
+   "to": "recipe:shellcheck",
+   "label": "install"
+  },
+  {
+   "from": "enforcers/analysis/other.md",
+   "to": "skeletons/check.py",
+   "label": "check"
+  },
+  {
+   "from": "enforcers/analysis/text/commitlint.md",
+   "to": "recipe:commitlint",
+   "label": "install"
+  },
+  {
+   "from": "enforcers/analysis/text/markdownlint.md",
+   "to": "recipe:markdownlint",
+   "label": "install"
+  },
+  {
+   "from": "enforcers/analysis/text/other.md",
+   "to": "skeletons/check.py",
+   "label": "check"
+  },
+  {
+   "from": "enforcers/analysis/text/remark-lint.md",
+   "to": "recipe:remark-lint",
+   "label": "install"
+  },
+  {
+   "from": "enforcers/analysis/text/vale.md",
+   "to": "recipe:vale",
+   "label": "install"
+  },
+  {
+   "from": "enforcers/analysis/text/yamllint.md",
+   "to": "recipe:yamllint",
+   "label": "install"
+  },
+  {
+   "from": "enforcers/analysis/web/biome.md",
+   "to": "recipe:biome",
+   "label": "install"
+  },
+  {
+   "from": "enforcers/analysis/web/eslint.md",
+   "to": "recipe:eslint",
+   "label": "install"
+  },
+  {
+   "from": "enforcers/analysis/web/other.md",
+   "to": "skeletons/check.py",
+   "label": "check"
+  },
+  {
+   "from": "enforcers/analysis/web/stylelint.md",
+   "to": "recipe:stylelint",
+   "label": "install"
+  },
+  {
+   "from": "enforcers/build-ops/compilers/tsc.md",
+   "to": "recipe:typescript",
+   "label": "install"
+  },
+  {
+   "from": "enforcers/build-ops/operations/aws-config.md",
+   "to": "skeletons/check.py",
+   "label": "nearest"
+  },
+  {
+   "from": "enforcers/build-ops/operations/file-permissions.md",
+   "to": "mechanisms/file-permissions.md",
+   "label": "check"
+  },
+  {
+   "from": "enforcers/build-ops/operations/other.md",
+   "to": "skeletons/check.py",
+   "label": "check"
+  },
+  {
+   "from": "enforcers/build-ops/other.md",
+   "to": "skeletons/check.py",
+   "label": "check"
+  },
+  {
+   "from": "enforcers/build-ops/packages/npm-registry.md",
+   "to": "recipe:node",
+   "label": "install"
+  },
+  {
+   "from": "enforcers/build-ops/packages/npm-registry.md",
+   "to": "skeletons/check.py",
+   "label": "check"
+  },
+  {
+   "from": "enforcers/build-ops/packages/npm.md",
+   "to": "recipe:node",
+   "label": "install"
+  },
+  {
+   "from": "enforcers/build-ops/packages/npm.md",
+   "to": "skeletons/check.py",
+   "label": "check"
+  },
+  {
+   "from": "enforcers/build-ops/packages/other.md",
+   "to": "skeletons/check.py",
+   "label": "check"
+  },
+  {
+   "from": "enforcers/build-ops/packages/pnpm.md",
+   "to": "recipe:pnpm",
+   "label": "install"
+  },
+  {
+   "from": "enforcers/commands/data-tools/curl.md",
+   "to": "recipe:curl",
+   "label": "install"
+  },
+  {
+   "from": "enforcers/commands/data-tools/jq.md",
+   "to": "recipe:jq",
+   "label": "install"
+  },
+  {
+   "from": "enforcers/commands/data-tools/remark.md",
+   "to": "recipe:remark-lint",
+   "label": "install"
+  },
+  {
+   "from": "enforcers/commands/git.md",
+   "to": "recipe:git",
+   "label": "install"
+  },
+  {
+   "from": "enforcers/commands/text-tools/ripgrep.md",
+   "to": "recipe:ripgrep",
+   "label": "install"
+  },
+  {
+   "from": "enforcers/gates/ci-hosting/branch-protection.md",
+   "to": "enforcers/gates/tools/command-filter.md",
+   "label": "nearest"
+  },
+  {
+   "from": "enforcers/gates/ci-hosting/branch-protection.md",
+   "to": "mechanisms/git-hooks.md",
+   "label": "nearest"
+  },
+  {
+   "from": "enforcers/gates/git-hooks/commit-hook.md",
+   "to": "recipe:git",
+   "label": "install"
+  },
+  {
+   "from": "enforcers/gates/git-hooks/commit-hook.md",
+   "to": "mechanisms/git-hooks.md",
+   "label": "check"
+  },
+  {
+   "from": "enforcers/gates/git-hooks/other.md",
+   "to": "recipe:git",
+   "label": "install"
+  },
+  {
+   "from": "enforcers/gates/git-hooks/other.md",
+   "to": "mechanisms/git-hooks.md",
+   "label": "check"
+  },
+  {
+   "from": "enforcers/gates/git-hooks/pre-commit.md",
+   "to": "recipe:pre-commit",
+   "label": "install"
+  },
+  {
+   "from": "enforcers/gates/git-hooks/pre-commit.md",
+   "to": "skeletons/pre_commit_check.sh",
+   "label": "skeleton"
+  },
+  {
+   "from": "enforcers/gates/git-hooks/push-hook.md",
+   "to": "recipe:git",
+   "label": "install"
+  },
+  {
+   "from": "enforcers/gates/git-hooks/push-hook.md",
+   "to": "enforcers/gates/git-hooks/commit-hook.md",
+   "label": "check"
+  },
+  {
+   "from": "enforcers/gates/tools/command-filter.md",
+   "to": "mechanisms/policy-opa.md",
+   "label": "check"
+  },
+  {
+   "from": "enforcers/gates/tools/command-filter.md",
+   "to": "triggers/agent-action/shell-command.md",
+   "label": "check"
+  },
+  {
+   "from": "enforcers/gates/tools/other.md",
+   "to": "triggers/agent-action/",
+   "label": "check"
+  },
+  {
+   "from": "enforcers/gates/tools/tool-policy.md",
+   "to": "recipe:opa",
+   "label": "install"
+  },
+  {
+   "from": "enforcers/gates/tools/tool-policy.md",
+   "to": "mechanisms/policy-opa.md",
+   "label": "check"
+  },
+  {
+   "from": "enforcers/gates/tools/tool-policy.md",
+   "to": "triggers/agent-action/",
+   "label": "check"
+  },
+  {
+   "from": "enforcers/gates/workflow/agent-workflow.md",
+   "to": "mechanisms/policy-opa.md",
+   "label": "check"
+  },
+  {
+   "from": "enforcers/gates/workflow/approval.md",
+   "to": "enforcers/gates/tools/tool-policy.md",
+   "label": "nearest"
+  },
+  {
+   "from": "enforcers/gates/workflow/workflow.md",
+   "to": "enforcers/gates/workflow/agent-workflow.md",
+   "label": "nearest"
+  },
+  {
+   "from": "enforcers/other.md",
+   "to": "skeletons/check.py",
+   "label": "check"
+  },
+  {
+   "from": "enforcers/tests/other.md",
+   "to": "skeletons/check.py",
+   "label": "check"
+  },
+  {
+   "from": "enforcers/tests/runners/jest.md",
+   "to": "recipe:jest",
+   "label": "install"
+  },
+  {
+   "from": "enforcers/tests/runners/pytest.md",
+   "to": "recipe:pytest",
+   "label": "install"
+  },
+  {
+   "from": "enforcers/tests/synthesized-ci-tests/other.md",
+   "to": "skeletons/check.py",
+   "label": "check"
+  },
+  {
+   "from": "enforcers/validation/other.md",
+   "to": "skeletons/check.py",
+   "label": "check"
+  },
+  {
+   "from": "enforcers/validation/project-check.md",
+   "to": "skeletons/check.py",
+   "label": "check"
+  },
+  {
+   "from": "enforcers/validation/project-check.md",
+   "to": "skeletons/project_check.py",
+   "label": "skeleton"
+  },
+  {
+   "from": "enforcers/validation/regex/other.md",
+   "to": "skeletons/check.py",
+   "label": "check"
+  },
+  {
+   "from": "enforcers/validation/regex/regex-filter.md",
+   "to": "skeletons/regex_filter.py",
+   "label": "skeleton"
+  },
+  {
+   "from": "enforcers/validation/regex/regex-validator.md",
+   "to": "skeletons/check.py",
+   "label": "check"
+  },
+  {
+   "from": "enforcers/validation/regex/regex-validator.md",
+   "to": "skeletons/regex_validator.py",
+   "label": "skeleton"
+  },
+  {
+   "from": "enforcers/validation/schemas/ajv.md",
+   "to": "recipe:ajv",
+   "label": "install"
+  },
+  {
+   "from": "enforcers/validation/schemas/json-schema.md",
+   "to": "recipe:jsonschema",
+   "label": "install"
+  },
+  {
+   "from": "enforcers/validation/schemas/json-schema.md",
+   "to": "skeletons/json_schema.py",
+   "label": "check"
+  },
+  {
+   "from": "enforcers/validation/schemas/json-schema.md",
+   "to": "skeletons/check.py",
+   "label": "check"
+  },
+  {
+   "from": "enforcers/validation/schemas/openapi.md",
+   "to": "recipe:openapi",
+   "label": "install"
+  },
+  {
+   "from": "mechanisms/command-wrappers.md",
+   "to": "skeletons/wrapper.sh",
+   "label": "skeleton"
+  },
+  {
+   "from": "mechanisms/command-wrappers.md",
+   "to": "mechanisms/root-service.md",
+   "label": "runs as the agent"
+  },
+  {
+   "from": "mechanisms/file-watchers.md",
+   "to": "recipe:inotify-tools",
+   "label": "install"
+  },
+  {
+   "from": "mechanisms/file-watchers.md",
+   "to": "skeletons/watcher.sh",
+   "label": "skeleton"
+  },
+  {
+   "from": "mechanisms/framework-hooks.md",
+   "to": "skeletons/check.py",
+   "label": "runs"
+  },
+  {
+   "from": "mechanisms/framework-hooks.md",
+   "to": "mechanisms/policy-opa.md",
+   "label": "runs"
+  },
+  {
+   "from": "mechanisms/framework-hooks.md",
+   "to": "mechanisms/policy-dogwood.md",
+   "label": "runs"
+  },
+  {
+   "from": "mechanisms/framework-hooks.md",
+   "to": "mechanisms/root-service.md",
+   "label": "runs as the agent"
+  },
+  {
+   "from": "mechanisms/git-hooks.md",
+   "to": "recipe:git",
+   "label": "install"
+  },
+  {
+   "from": "mechanisms/git-hooks.md",
+   "to": "skeletons/pre-commit.sh",
+   "label": "skeleton"
+  },
+  {
+   "from": "mechanisms/git-hooks.md",
+   "to": "mechanisms/root-service.md",
+   "label": "runs as the agent"
+  },
+  {
+   "from": "mechanisms/keep-running.md",
+   "to": "skeletons/project_check.py",
+   "label": "runs"
+  },
+  {
+   "from": "mechanisms/policy-dogwood.md",
+   "to": "recipe:dogwood",
+   "label": "install"
+  },
+  {
+   "from": "mechanisms/policy-dogwood.md",
+   "to": "skeletons/policy.dw",
+   "label": "skeletons"
+  },
+  {
+   "from": "mechanisms/policy-dogwood.md",
+   "to": "skeletons/schema.cedarschema",
+   "label": "skeletons"
+  },
+  {
+   "from": "mechanisms/policy-dogwood.md",
+   "to": "skeletons/dogwood_gate.sh",
+   "label": "skeletons"
+  },
+  {
+   "from": "mechanisms/policy-dogwood.md",
+   "to": "mechanisms/root-service.md",
+   "label": "where it runs"
+  },
+  {
+   "from": "mechanisms/policy-opa.md",
+   "to": "recipe:opa",
+   "label": "install"
+  },
+  {
+   "from": "mechanisms/policy-opa.md",
+   "to": "skeletons/policy.rego",
+   "label": "skeletons"
+  },
+  {
+   "from": "mechanisms/policy-opa.md",
+   "to": "skeletons/opa_gate.sh",
+   "label": "skeletons"
+  },
+  {
+   "from": "mechanisms/policy-opa.md",
+   "to": "mechanisms/policy-dogwood.md",
+   "label": ""
+  },
+  {
+   "from": "mechanisms/root-service.md",
+   "to": "mechanisms/policy-opa.md",
+   "label": ""
+  },
+  {
+   "from": "mechanisms/root-service.md",
+   "to": "mechanisms/policy-dogwood.md",
+   "label": ""
+  },
+  {
+   "from": "mechanisms/root-service.md",
+   "to": "skeletons/service.py",
+   "label": "skeletons"
+  },
+  {
+   "from": "mechanisms/root-service.md",
+   "to": "skeletons/ask_service.py",
+   "label": "skeletons"
+  },
+  {
+   "from": "targets/agent-action/file-operation.md",
+   "to": "mechanisms/framework-hooks.md",
+   "label": "where"
+  },
+  {
+   "from": "targets/agent-action/file-operation.md",
+   "to": "mechanisms/file-watchers.md",
+   "label": "where"
+  },
+  {
+   "from": "targets/agent-action/git-command.md",
+   "to": "mechanisms/command-wrappers.md",
+   "label": "where"
+  },
+  {
+   "from": "targets/agent-action/git-command.md",
+   "to": "mechanisms/git-hooks.md",
+   "label": "where"
+  },
+  {
+   "from": "targets/agent-action/other.md",
+   "to": "mechanisms/framework-hooks.md",
+   "label": "where"
+  },
+  {
+   "from": "targets/agent-action/shell-command.md",
+   "to": "mechanisms/framework-hooks.md",
+   "label": "where"
+  },
+  {
+   "from": "targets/agent-action/shell-command.md",
+   "to": "mechanisms/command-wrappers.md",
+   "label": "where"
+  },
+  {
+   "from": "targets/agent-action/skill-subagent-call.md",
+   "to": "mechanisms/framework-hooks.md",
+   "label": "where"
+  },
+  {
+   "from": "targets/agent-action/tool-call.md",
+   "to": "mechanisms/framework-hooks.md",
+   "label": "where"
+  },
+  {
+   "from": "targets/agent-output/claim-decision.md",
+   "to": "targets/agent-output/response-message.md",
+   "label": "where"
+  },
+  {
+   "from": "targets/agent-output/findings.md",
+   "to": "targets/agent-output/response-message.md",
+   "label": "where"
+  },
+  {
+   "from": "targets/agent-output/other.md",
+   "to": "targets/agent-output/response-message.md",
+   "label": "where"
+  },
+  {
+   "from": "targets/agent-output/plan.md",
+   "to": "targets/agent-output/response-message.md",
+   "label": "where"
+  },
+  {
+   "from": "targets/agent-output/report-summary.md",
+   "to": "targets/agent-output/response-message.md",
+   "label": "where"
+  },
+  {
+   "from": "targets/docs-content/prose-copy.md",
+   "to": "targets/agent-output/response-message.md",
+   "label": "where"
+  },
+  {
+   "from": "targets/source-code/class-type.md",
+   "to": "skeletons/names_python.py",
+   "label": "where"
+  },
+  {
+   "from": "targets/source-code/class-type.md",
+   "to": "skeletons/names_js.py",
+   "label": "where"
+  },
+  {
+   "from": "targets/source-code/component.md",
+   "to": "skeletons/names_python.py",
+   "label": "where"
+  },
+  {
+   "from": "targets/source-code/component.md",
+   "to": "skeletons/names_js.py",
+   "label": "where"
+  },
+  {
+   "from": "targets/source-code/function-method.md",
+   "to": "skeletons/names_python.py",
+   "label": "where"
+  },
+  {
+   "from": "targets/source-code/function-method.md",
+   "to": "skeletons/names_js.py",
+   "label": "where"
+  },
+  {
+   "from": "targets/source-code/function-method.md",
+   "to": "targets/source-code/source-file.md",
+   "label": "which files"
+  },
+  {
+   "from": "targets/source-code/name-identifier.md",
+   "to": "skeletons/names_python.py",
+   "label": "where"
+  },
+  {
+   "from": "targets/source-code/name-identifier.md",
+   "to": "skeletons/names_js.py",
+   "label": "where"
+  },
+  {
+   "from": "targets/source-code/source-file.md",
+   "to": "mechanisms/framework-hooks.md",
+   "label": "where"
+  },
+  {
+   "from": "targets/tests/test-case.md",
+   "to": "skeletons/names_python.py",
+   "label": "where"
+  },
+  {
+   "from": "targets/tests/test-case.md",
+   "to": "skeletons/names_js.py",
+   "label": "where"
+  },
+  {
+   "from": "targets/ui-media/accessibility.md",
+   "to": "enforcers/tests/ui/axe-core.md",
+   "label": "where"
+  },
+  {
+   "from": "targets/user-input/other.md",
+   "to": "targets/user-input/request-prompt.md",
+   "label": "nearest"
+  },
+  {
+   "from": "targets/user-input/request-prompt.md",
+   "to": "mechanisms/framework-hooks.md",
+   "label": "where"
+  },
+  {
+   "from": "targets/user-input/task-ticket.md",
+   "to": "targets/user-input/request-prompt.md",
+   "label": "nearest"
+  },
+  {
+   "from": "targets/version-control/branch.md",
+   "to": "mechanisms/command-wrappers.md",
+   "label": "where"
+  },
+  {
+   "from": "targets/version-control/commit-message.md",
+   "to": "mechanisms/command-wrappers.md",
+   "label": "where"
+  },
+  {
+   "from": "targets/version-control/commit.md",
+   "to": "mechanisms/git-hooks.md",
+   "label": "where"
+  },
+  {
+   "from": "triggers/agent-action/ask-user.md",
+   "to": "mechanisms/framework-hooks.md",
+   "label": "before"
+  },
+  {
+   "from": "triggers/agent-action/file-read.md",
+   "to": "mechanisms/framework-hooks.md",
+   "label": "before"
+  },
+  {
+   "from": "triggers/agent-action/file-read.md",
+   "to": "mechanisms/file-permissions.md",
+   "label": "before"
+  },
+  {
+   "from": "triggers/agent-action/file-read.md",
+   "to": "mechanisms/file-watchers.md",
+   "label": "at"
+  },
+  {
+   "from": "triggers/agent-action/file-write-edit.md",
+   "to": "mechanisms/framework-hooks.md",
+   "label": "before"
+  },
+  {
+   "from": "triggers/agent-action/file-write-edit.md",
+   "to": "mechanisms/file-permissions.md",
+   "label": "before"
+  },
+  {
+   "from": "triggers/agent-action/file-write-edit.md",
+   "to": "mechanisms/framework-hooks.md",
+   "label": "at"
+  },
+  {
+   "from": "triggers/agent-action/file-write-edit.md",
+   "to": "mechanisms/file-watchers.md",
+   "label": "at"
+  },
+  {
+   "from": "triggers/agent-action/file-write-edit.md",
+   "to": "mechanisms/framework-hooks.md",
+   "label": "after"
+  },
+  {
+   "from": "triggers/agent-action/file-write-edit.md",
+   "to": "mechanisms/git-hooks.md",
+   "label": "after"
+  },
+  {
+   "from": "triggers/agent-action/file-write-edit.md",
+   "to": "mechanisms/keep-running.md",
+   "label": "after"
+  },
+  {
+   "from": "triggers/agent-action/other.md",
+   "to": "mechanisms/framework-hooks.md",
+   "label": "before"
+  },
+  {
+   "from": "triggers/agent-action/shell-command.md",
+   "to": "mechanisms/framework-hooks.md",
+   "label": "before"
+  },
+  {
+   "from": "triggers/agent-action/shell-command.md",
+   "to": "mechanisms/command-wrappers.md",
+   "label": "before"
+  },
+  {
+   "from": "triggers/agent-action/shell-command.md",
+   "to": "mechanisms/policy-opa.md",
+   "label": "before"
+  },
+  {
+   "from": "triggers/agent-action/shell-command.md",
+   "to": "mechanisms/policy-dogwood.md",
+   "label": "before"
+  },
+  {
+   "from": "triggers/agent-action/shell-command.md",
+   "to": "mechanisms/framework-hooks.md",
+   "label": ""
+  },
+  {
+   "from": "triggers/agent-action/shell-command.md",
+   "to": "mechanisms/file-watchers.md",
+   "label": ""
+  },
+  {
+   "from": "triggers/agent-action/skill-subagent.md",
+   "to": "mechanisms/framework-hooks.md",
+   "label": "before"
+  },
+  {
+   "from": "triggers/agent-action/tool-mcp-call.md",
+   "to": "mechanisms/framework-hooks.md",
+   "label": "before"
+  },
+  {
+   "from": "triggers/agent-action/tool-mcp-call.md",
+   "to": "mechanisms/policy-opa.md",
+   "label": "before"
+  },
+  {
+   "from": "triggers/agent-action/tool-mcp-call.md",
+   "to": "mechanisms/policy-dogwood.md",
+   "label": "before"
+  },
+  {
+   "from": "triggers/agent-loop/other.md",
+   "to": "mechanisms/framework-hooks.md",
+   "label": "before"
+  },
+  {
+   "from": "triggers/agent-loop/prompt-received.md",
+   "to": "mechanisms/framework-hooks.md",
+   "label": "at"
+  },
+  {
+   "from": "triggers/agent-loop/response-sent.md",
+   "to": "mechanisms/framework-hooks.md",
+   "label": ""
+  },
+  {
+   "from": "triggers/agent-loop/response-sent.md",
+   "to": "targets/agent-output/response-message.md",
+   "label": "after"
+  },
+  {
+   "from": "triggers/agent-loop/session-start.md",
+   "to": "mechanisms/framework-hooks.md",
+   "label": "at"
+  },
+  {
+   "from": "triggers/agent-loop/task-completion.md",
+   "to": "mechanisms/framework-hooks.md",
+   "label": "before"
+  },
+  {
+   "from": "triggers/always.md",
+   "to": "mechanisms/file-permissions.md",
+   "label": "before"
+  },
+  {
+   "from": "triggers/always.md",
+   "to": "mechanisms/framework-hooks.md",
+   "label": "before"
+  },
+  {
+   "from": "triggers/always.md",
+   "to": "mechanisms/file-watchers.md",
+   "label": "at"
+  },
+  {
+   "from": "triggers/always.md",
+   "to": "mechanisms/framework-hooks.md",
+   "label": "at"
+  },
+  {
+   "from": "triggers/always.md",
+   "to": "mechanisms/framework-hooks.md",
+   "label": "after"
+  },
+  {
+   "from": "triggers/always.md",
+   "to": "mechanisms/keep-running.md",
+   "label": "after"
+  },
+  {
+   "from": "triggers/app-runtime/data-read-write.md",
+   "to": "triggers/app-runtime/request-api-call.md",
+   "label": "not here"
+  },
+  {
+   "from": "triggers/app-runtime/log-error.md",
+   "to": "triggers/app-runtime/request-api-call.md",
+   "label": "not here"
+  },
+  {
+   "from": "triggers/app-runtime/message-send.md",
+   "to": "triggers/app-runtime/request-api-call.md",
+   "label": "not here"
+  },
+  {
+   "from": "triggers/app-runtime/message-send.md",
+   "to": "mechanisms/framework-hooks.md",
+   "label": "nearest"
+  },
+  {
+   "from": "triggers/app-runtime/other.md",
+   "to": "triggers/app-runtime/request-api-call.md",
+   "label": "not here"
+  },
+  {
+   "from": "triggers/app-runtime/schedule-timer.md",
+   "to": "mechanisms/keep-running.md",
+   "label": "at"
+  },
+  {
+   "from": "triggers/app-runtime/ui-event.md",
+   "to": "triggers/app-runtime/request-api-call.md",
+   "label": "not here"
+  },
+  {
+   "from": "triggers/git-delivery/commit.md",
+   "to": "mechanisms/git-hooks.md",
+   "label": "before"
+  },
+  {
+   "from": "triggers/git-delivery/commit.md",
+   "to": "mechanisms/command-wrappers.md",
+   "label": "before"
+  },
+  {
+   "from": "triggers/git-delivery/commit.md",
+   "to": "mechanisms/framework-hooks.md",
+   "label": "before"
+  },
+  {
+   "from": "triggers/git-delivery/deploy-release.md",
+   "to": "mechanisms/command-wrappers.md",
+   "label": "before"
+  },
+  {
+   "from": "triggers/git-delivery/deploy-release.md",
+   "to": "mechanisms/framework-hooks.md",
+   "label": "before"
+  },
+  {
+   "from": "triggers/git-delivery/other.md",
+   "to": "mechanisms/git-hooks.md",
+   "label": "before"
+  },
+  {
+   "from": "triggers/git-delivery/other.md",
+   "to": "mechanisms/command-wrappers.md",
+   "label": "before"
+  },
+  {
+   "from": "triggers/git-delivery/publish.md",
+   "to": "mechanisms/command-wrappers.md",
+   "label": "before"
+  },
+  {
+   "from": "triggers/git-delivery/publish.md",
+   "to": "mechanisms/framework-hooks.md",
+   "label": "before"
+  },
+  {
+   "from": "triggers/git-delivery/pull-request.md",
+   "to": "mechanisms/command-wrappers.md",
+   "label": "nearest"
+  },
+  {
+   "from": "triggers/git-delivery/push-merge.md",
+   "to": "mechanisms/git-hooks.md",
+   "label": "before"
+  },
+  {
+   "from": "triggers/git-delivery/push-merge.md",
+   "to": "mechanisms/command-wrappers.md",
+   "label": "before"
+  }
+ ]
+}

@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 37004,
+  "duration_api_ms": 36440,
+  "ttft_ms": 6340,
+  "ttft_stream_ms": 6338,
+  "time_to_request_ms": 84,
+  "num_turns": 3,
+  "result": "代码小灵已为开发者大大实现飞机移动功能，飞机可按掷骰子的步数沿棋盘顺时针路线向前移动，并已更新progress.md记录完成情况。\n\n哒～",
+  "stop_reason": "end_turn",
+  "session_id": "07b4cbf9-602a-406d-abde-54eed193c1f2",
+  "total_cost_usd": 0.0654786,
+  "usage": {
+   "input_tokens": 19,
+   "cache_creation_input_tokens": 13494,
+   "cache_read_input_tokens": 155321,
+   "output_tokens": 6612,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 13494
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 19,
+    "outputTokens": 6612,
+    "cacheReadInputTokens": 155321,
+    "cacheCreationInputTokens": 13494,
+    "webSearchRequests": 0,
+    "costUSD": 0.0654786,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "84cf881c-14bb-4afa-b658-95b020c1f01f"
+ },
+ "stderr": ""
+}

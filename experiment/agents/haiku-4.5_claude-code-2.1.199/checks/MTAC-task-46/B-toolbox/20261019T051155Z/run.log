@@ -1,0 +1,12 @@
+22:11:55 run task_046/BT/20261019T051155Z: task 46, arm BT, 1 task turns
+22:11:55 container ritw-t046-BT-20261019t051155z (alexgshaw/break-filter-js-from-html:20251031)
+22:11:58 Claude Code: ExitPlanMode patch: 1 replaced 2.1.199 (Claude Code)
+22:11:59 scripted model: chain_scenario.json (no model calls)
+22:12:03 session 1, message 1/2 (R1): exit 0, 3 s, $0.000 (Claude Code's own estimate), 3 model turns
+22:12:09 session 1, message 2/2 (R3): exit 0, 6 s, $0.000 (Claude Code's own estimate), 3 model turns
+22:12:12 install: 5 hooks wrapped; workspace {'created': 0, 'changed': 0, 'deleted': 0}; commands added for agent: none; Claude Code reported nothing about the settings.
+22:12:13 task session e06c0811-08d3-4a3a-9712-adf43c042fdc
+22:12:13 turn 1/1 (round 0) started
+22:12:18 turn 1/1: exit 0, 5 s, $0.000 (Claude Code's own estimate), 6 model turns, hook verdicts so far {'deny': 1, 'pass': 7, 'block': 2}
+22:12:18 done
+22:12:19 container stopped (kept)

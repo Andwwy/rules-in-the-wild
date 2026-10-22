@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 47231,
+  "duration_api_ms": 42375,
+  "ttft_ms": 3693,
+  "ttft_stream_ms": 3691,
+  "time_to_request_ms": 111,
+  "num_turns": 10,
+  "result": "<result>通过</result><description>成功实现地图控制面板和 POI 功能。在地图右上角添加控制面板，包含地图样式切换（标准/暗黑/地形）和沿途设施复选框（加油站/餐厅/酒店）；支持在路线两侧随机散布设施图标；所有变量名遵循 poi_ 前缀规则；循环嵌套不超过 1 层；验证了所有核心功能代码的完整性。</description>\n\n已完成地图控制面板和 POI 设施功能，用户现在可切换地图样式、勾选显示沿途加油站、餐厅和酒店。",
+  "stop_reason": "end_turn",
+  "session_id": "fe5e21ed-e952-4a7c-a5bd-b61eda522681",
+  "total_cost_usd": 0.2159816,
+  "usage": {
+   "input_tokens": 55,
+   "cache_creation_input_tokens": 73200,
+   "cache_read_input_tokens": 963016,
+   "output_tokens": 5625,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 73200
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 55,
+    "outputTokens": 5625,
+    "cacheReadInputTokens": 963016,
+    "cacheCreationInputTokens": 73200,
+    "webSearchRequests": 0,
+    "costUSD": 0.2159816,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "c9f4520c-b65b-4b60-b032-0c61242e2ded"
+ },
+ "stderr": ""
+}

@@ -1,0 +1,118 @@
+[
+ {
+  "id": 4,
+  "name": "Open Policy Agent",
+  "class": "Kubernetes",
+  "class_long": "Kubernetes cluster control plane and admission layer",
+  "rules": 67,
+  "variants": [
+   "Open Policy Agent (OPA)",
+   "OPA Gatekeeper",
+   "Open Policy Agent"
+  ],
+  "audit": {
+   "audited": 67,
+   "ok": 4,
+   "wrong": 61,
+   "not_a_rule": 2
+  },
+  "translation": null,
+  "reason": "red: 4/67 audited rows OK"
+ },
+ {
+  "id": 9,
+  "name": "agent harness (generic)",
+  "class": "Agent harness",
+  "class_long": "AI-agent harness and agent-CLI orchestration runtime",
+  "rules": 45,
+  "variants": [
+   "agent harness",
+   "agent orchestration harness",
+   "agent execution harness",
+   "MCP agent orchestration harness"
+  ],
+  "audit": {
+   "audited": 45,
+   "ok": 9,
+   "wrong": 33,
+   "not_a_rule": 3
+  },
+  "translation": null,
+  "reason": "red: 9/45 audited rows OK"
+ },
+ {
+  "id": 14,
+  "name": "PostgreSQL",
+  "class": "Database",
+  "class_long": "Database engine and storage backend",
+  "rules": 25,
+  "variants": [
+   "PostgreSQL",
+   "PostgreSQL trigger",
+   "PostgreSQL database trigger",
+   "PostgreSQL DDL engine"
+  ],
+  "audit": {
+   "audited": 24,
+   "ok": 6,
+   "wrong": 11,
+   "not_a_rule": 7
+  },
+  "translation": null,
+  "reason": "red: 6/24 audited rows OK"
+ },
+ {
+  "id": 26,
+  "name": "CLI argument parser",
+  "class": "Local dev machine",
+  "class_long": "Local workstation shell, developer-tool, and Git-hook processes",
+  "rules": 11,
+  "variants": [
+   "CLI argument parser"
+  ],
+  "audit": {
+   "audited": 11,
+   "ok": 3,
+   "wrong": 6,
+   "not_a_rule": 2
+  },
+  "translation": null,
+  "reason": "red: 3/11 audited rows OK"
+ },
+ {
+  "id": 40,
+  "name": "Microsoft Excel",
+  "class": "End-user client",
+  "class_long": "Browser, editor, and end-user application client",
+  "rules": 5,
+  "variants": [
+   "Microsoft Excel"
+  ],
+  "audit": {
+   "audited": 5,
+   "ok": 0,
+   "wrong": 5,
+   "not_a_rule": 0
+  },
+  "translation": null,
+  "reason": "red: 0/5 audited rows OK"
+ },
+ {
+  "id": 39,
+  "name": "Great Expectations",
+  "class": "App runtime / framework",
+  "class_long": "Application and framework runtime, including embedded libraries",
+  "rules": 5,
+  "variants": [
+   "Great Expectations"
+  ],
+  "audit": {
+   "audited": 5,
+   "ok": 2,
+   "wrong": 3,
+   "not_a_rule": 0
+  },
+  "translation": null,
+  "reason": "red: 2/5 audited rows OK"
+ }
+]

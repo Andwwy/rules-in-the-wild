@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 29955,
+  "duration_api_ms": 26948,
+  "ttft_ms": 6526,
+  "ttft_stream_ms": 6522,
+  "time_to_request_ms": 97,
+  "num_turns": 8,
+  "result": "<result>通过</result><description>成功集成 Leaflet.js 地图库，实现了点击放置标记、弹出坐标提示框、地图平移和缩放等核心功能。验证了 CDN 资源加载、地图容器、点击事件处理器和标记创建代码的完整性。</description>\n\n已完成 Leaflet 地图集成与交互功能实现，用户现在可以在地图上点击添加蓝色标记并查看坐标。",
+  "stop_reason": "end_turn",
+  "session_id": "fe5e21ed-e952-4a7c-a5bd-b61eda522681",
+  "total_cost_usd": 0.09041365,
+  "usage": {
+   "input_tokens": 47,
+   "cache_creation_input_tokens": 24217,
+   "cache_read_input_tokens": 424454,
+   "output_tokens": 3530,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 24217
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 47,
+    "outputTokens": 3530,
+    "cacheReadInputTokens": 424454,
+    "cacheCreationInputTokens": 24217,
+    "webSearchRequests": 0,
+    "costUSD": 0.09041365,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "2349f0f4-e543-4638-9b3d-b5fbea261dd2"
+ },
+ "stderr": ""
+}

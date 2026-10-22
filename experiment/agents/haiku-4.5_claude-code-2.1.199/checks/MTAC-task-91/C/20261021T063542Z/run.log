@@ -1,0 +1,31 @@
+02:35:42 run MTAC-task-91/C/20261021T063542Z: task 91, arm C, 0 task turns
+02:35:42 container ritw-t091-C-20261021t063542z (alexgshaw/break-filter-js-from-html:20251031)
+02:35:45 Claude Code: ExitPlanMode patch: 1 replaced 2.1.199 (Claude Code)
+02:35:45 scripted model: chain_compiled.json (no model calls)
+02:35:54 installed by the harness for C's routes: pre-commit (exit 0)
+02:36:07 installed by the harness for C's routes: semgrep (exit 0)
+02:36:08 phase 0, batch 1 (R7, R5, R6): compiled plan of 4 nodes
+02:36:11 phase 0, message 1 (b1-check-R7): exit 0, 3 s, $0.000 (Claude Code's own estimate), 2 model turns
+02:36:20 phase 0, batch 1, node check-R7: done, checked
+02:36:23 phase 0, message 2 (b1-check-R5): exit 0, 3 s, $0.000 (Claude Code's own estimate), 2 model turns
+02:36:25 phase 0, batch 1, node check-R5: done, checked
+02:36:28 phase 0, message 3 (b1-check-R6): exit 0, 3 s, $0.000 (Claude Code's own estimate), 2 model turns
+02:36:30 phase 0, batch 1, node check-R6: done, checked
+02:36:33 phase 0, message 4 (b1-binding-1): exit 0, 3 s, $0.000 (Claude Code's own estimate), 2 model turns
+02:37:52 phase 0, batch 1, node binding-1: done, checked
+02:37:52 phase 0, batch 2 (R2, R1, R3, R4, R8): compiled plan of 6 nodes
+02:37:55 phase 0, message 5 (b2-check-R2): exit 0, 3 s, $0.000 (Claude Code's own estimate), 2 model turns
+02:37:56 phase 0, batch 2, node check-R2: done, checked
+02:37:58 phase 0, message 6 (b2-check-R1): exit 0, 3 s, $0.000 (Claude Code's own estimate), 2 model turns
+02:37:59 phase 0, batch 2, node check-R1: done, checked
+02:38:01 phase 0, message 7 (b2-check-R3): exit 0, 3 s, $0.000 (Claude Code's own estimate), 2 model turns
+02:38:02 phase 0, batch 2, node check-R3: done, checked
+02:38:05 phase 0, message 8 (b2-check-R4): exit 0, 3 s, $0.000 (Claude Code's own estimate), 2 model turns
+02:38:06 phase 0, batch 2, node check-R4: done, checked
+02:38:08 phase 0, message 9 (b2-check-R8): exit 0, 3 s, $0.000 (Claude Code's own estimate), 2 model turns
+02:38:09 phase 0, batch 2, node check-R8: done, checked
+02:38:11 phase 0, message 10 (b2-binding-1): exit 0, 2 s, $0.000 (Claude Code's own estimate), 2 model turns
+02:38:24 phase 0, batch 2, node binding-1: done, checked
+02:38:29 settings: 3 hooks (3 project) in /workspace/.claude/settings.json; workspace {'created': 1, 'changed': 0, 'deleted': 0}; commands added for agent: none; Claude Code reported nothing about the settings.
+02:38:29 done
+02:38:30 container stopped (kept)

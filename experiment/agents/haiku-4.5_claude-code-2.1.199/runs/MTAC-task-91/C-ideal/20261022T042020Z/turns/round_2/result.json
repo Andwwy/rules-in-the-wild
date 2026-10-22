@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 143878,
+  "duration_api_ms": 132509,
+  "ttft_ms": 40759,
+  "ttft_stream_ms": 40742,
+  "time_to_request_ms": 95,
+  "num_turns": 8,
+  "result": "喵～\n\n代码小灵已为开发者大大完成了飞机初始化和起飞逻辑实现：每个玩家的准备区显示4架彩色飞机，掷骰子结果为6时可点击飞机起飞到出发点，同时更新了所有缩进为4个空格、所有数字全部使用常量定义，并通过全部测试验证。哒～",
+  "stop_reason": "end_turn",
+  "session_id": "a615e270-a3ac-4bff-908b-9f1ab0e3ef5c",
+  "total_cost_usd": 0.1966862,
+  "usage": {
+   "input_tokens": 48,
+   "cache_creation_input_tokens": 23396,
+   "cache_read_input_tokens": 419832,
+   "output_tokens": 25082,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 23396
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 48,
+    "outputTokens": 25082,
+    "cacheReadInputTokens": 419832,
+    "cacheCreationInputTokens": 23396,
+    "webSearchRequests": 0,
+    "costUSD": 0.1966862,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "0ac7936f-9182-4e6b-b42d-3598917dea7a"
+ },
+ "stderr": ""
+}

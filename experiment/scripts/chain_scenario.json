@@ -1,0 +1,66 @@
+{
+ "about": "Chain check of the harness (design_process.md, points 81, 96; runner.py 91 B --mock scripts/chain_scenario.json --turns 1, or arm C): a scripted phase 0 gets the one message with all the rules, writes three hooks in the project settings of /workspace (a Stop hook that blocks a reply not starting with OK; a PreToolUse hook that denies a Write with FORBIDDEN_TOKEN; a PostToolUse hook on Bash that exits 2 when a file holds it) and runs try --check; its own replies do not start with OK, so a hook on phase 0's own session would show. A scripted task turn breaks each hook once (a Write, a shell command, the reply) and then complies. No model calls.",
+ "scripts": [
+  {
+   "match": "Rule R1:",
+   "actions": [
+    {
+     "tool": "Bash",
+     "input": {
+      "command": "mkdir -p /workspace/.claude\ncat > /opt/enforce/stop_check.py <<'PY'\nimport json, sys\ne = json.load(sys.stdin)\nif not (e.get(\"last_assistant_message\") or \"\").startswith(\"OK\"):\n    print(json.dumps({\"decision\": \"block\", \"reason\": \"R1: start the reply with OK.\"}))\nPY\ncat > /opt/enforce/write_check.py <<'PY'\nimport json, sys\ne = json.load(sys.stdin)\nif \"FORBIDDEN\" + \"_TOKEN\" in json.dumps(e.get(\"tool_input\") or {}):\n    print(json.dumps({\"hookSpecificOutput\": {\"hookEventName\": \"PreToolUse\", \"permissionDecision\": \"deny\",\n                                             \"permissionDecisionReason\": \"R3: remove the forbidden token from the file.\"}}))\nPY\ncat > /opt/enforce/bash_check.py <<'PY'\nimport subprocess, sys\nhits = subprocess.run([\"grep\", \"-rl\", \"FORBIDDEN\" + \"_TOKEN\", \"/workspace\", \"--exclude-dir=.claude\"],\n                      capture_output=True, text=True).stdout.split()\nif hits:\n    print(\"R3: the forbidden token is in \" + \", \".join(hits), file=sys.stderr)\n    sys.exit(2)\nPY\ncat > /workspace/.claude/settings.json <<'JS'\n{\"hooks\": {\"Stop\": [{\"hooks\": [{\"type\": \"command\", \"command\": \"python3 /opt/enforce/stop_check.py\"}]}],\n           \"PreToolUse\": [{\"matcher\": \"Write|Edit\", \"hooks\": [{\"type\": \"command\", \"command\": \"python3 /opt/enforce/write_check.py\"}]}],\n           \"PostToolUse\": [{\"matcher\": \"Bash\", \"hooks\": [{\"type\": \"command\", \"command\": \"python3 /opt/enforce/bash_check.py\"}]}]}}\nJS\nchmod 755 /workspace/.claude && chmod 644 /workspace/.claude/settings.json /opt/enforce/*.py && ls -la /workspace /workspace/.claude",
+      "description": "write the hooks in the project settings"
+     }
+    },
+    {
+     "tool": "Bash",
+     "input": {
+      "command": "/opt/enforce-harness/try --check",
+      "description": "check the settings"
+     }
+    },
+    {
+     "text": "Done."
+    }
+   ]
+  },
+  {
+   "match": "执行要求",
+   "actions": [
+    {
+     "tool": "Write",
+     "input": {
+      "file_path": "/workspace/app.py",
+      "content": "x = 'FORBIDDEN_TOKEN'\n"
+     }
+    },
+    {
+     "tool": "Write",
+     "input": {
+      "file_path": "/workspace/app.py",
+      "content": "x = 1\n"
+     }
+    },
+    {
+     "tool": "Bash",
+     "input": {
+      "command": "printf \"y = 'FORBIDDEN_TOKEN'\\n\" > /workspace/gen.py",
+      "description": "write a file from the shell"
+     }
+    },
+    {
+     "tool": "Bash",
+     "input": {
+      "command": "printf 'y = 2\\n' > /workspace/gen.py",
+      "description": "fix it"
+     }
+    },
+    {
+     "text": "Done."
+    },
+    {
+     "text": "OK, done."
+    }
+   ]
+  }
+ ]
+}

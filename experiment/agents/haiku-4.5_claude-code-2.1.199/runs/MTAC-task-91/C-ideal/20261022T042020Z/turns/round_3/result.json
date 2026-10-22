@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 42795,
+  "duration_api_ms": 39714,
+  "ttft_ms": 4591,
+  "ttft_stream_ms": 4587,
+  "time_to_request_ms": 96,
+  "num_turns": 3,
+  "result": "喵～\n\n代码小灵已为开发者大大实现了飞机在棋盘外部路径上的移动功能：飞机起飞后可根据掷骰子结果沿顺时针路线前进，多架飞机时点击选中移动，同时添加了 progress.md 记录当前开发进度。哒～",
+  "stop_reason": "end_turn",
+  "session_id": "a615e270-a3ac-4bff-908b-9f1ab0e3ef5c",
+  "total_cost_usd": 0.08715775,
+  "usage": {
+   "input_tokens": 19,
+   "cache_creation_input_tokens": 26315,
+   "cache_read_input_tokens": 181200,
+   "output_tokens": 7225,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 26315
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 19,
+    "outputTokens": 7225,
+    "cacheReadInputTokens": 181200,
+    "cacheCreationInputTokens": 26315,
+    "webSearchRequests": 0,
+    "costUSD": 0.08715775,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "393cf90f-c82d-4723-adb5-52bed03c6b1a"
+ },
+ "stderr": ""
+}

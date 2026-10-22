@@ -1,0 +1,122 @@
+{
+ "task": 46,
+ "about": "Hidden fixtures for Session 1 (scripts/score_session1.py). Written from the rules' text only, not from MTAC's checker code; no agent sees them. The clean project follows all 8 rules (main.py and main.js: 7 characters each; UTF-8; 4-space indents; no tabs; two spaces around '='; function and method names with only the first letter capital; class name Box, 3 characters). Each case below breaks exactly one rule (rule null: a case that must pass).",
+ "pass": {
+  "reply": "代码已经完成了。",
+  "files": {
+   "main.py": "# 计算总数\nclass Box:\n    def Getsize(self):\n        size  =  3\n        return size\n\n\ndef Compute():\n    total  =  Box().Getsize()\n    return total\n",
+   "main.js": "class Box {\n    Getsize() {\n        return 3;\n    }\n}\n\nfunction Compute() {\n    let total  =  new Box().Getsize();\n    return total;\n}\n"
+  }
+ },
+ "cases": [
+  {
+   "rule": "R1",
+   "name": "an English sentence in the reply",
+   "reply": "代码已经完成了。Done."
+  },
+  {
+   "rule": "R2",
+   "name": "main.py saved as GBK (by a shell command: Claude Code's Write tool writes UTF-8)",
+   "files": {
+    "main.py": {
+     "text": "# 计算总数\nclass Box:\n    def Getsize(self):\n        size  =  3\n        return size\n\n\ndef Compute():\n    total  =  Box().Getsize()\n    return total\n",
+     "encoding": "gbk"
+    }
+   },
+   "channels": [
+    "shell"
+   ]
+  },
+  {
+   "rule": "R3",
+   "name": "a 2-space indent in Python",
+   "files": {
+    "main.py": "# 计算总数\nclass Box:\n  def Getsize(self):\n      size  =  3\n      return size\n\n\ndef Compute():\n    total  =  Box().Getsize()\n    return total\n"
+   }
+  },
+  {
+   "rule": "R3",
+   "name": "a 2-space indent in JS",
+   "files": {
+    "main.js": "class Box {\n    Getsize() {\n        return 3;\n    }\n}\n\nfunction Compute() {\n  let total  =  new Box().Getsize();\n  return total;\n}\n"
+   }
+  },
+  {
+   "rule": "R4",
+   "name": "a tab inside a comment",
+   "files": {
+    "main.py": "# 计算\t总数\nclass Box:\n    def Getsize(self):\n        size  =  3\n        return size\n\n\ndef Compute():\n    total  =  Box().Getsize()\n    return total\n"
+   }
+  },
+  {
+   "rule": "R5",
+   "name": "one space around = in Python",
+   "files": {
+    "main.py": "# 计算总数\nclass Box:\n    def Getsize(self):\n        size = 3\n        return size\n\n\ndef Compute():\n    total  =  Box().Getsize()\n    return total\n"
+   }
+  },
+  {
+   "rule": "R5",
+   "name": "no space around = in JS",
+   "files": {
+    "main.js": "class Box {\n    Getsize() {\n        return 3;\n    }\n}\n\nfunction Compute() {\n    let total=new Box().Getsize();\n    return total;\n}\n"
+   }
+  },
+  {
+   "rule": "R6",
+   "name": "a Python method in camelCase",
+   "files": {
+    "main.py": "# 计算总数\nclass Box:\n    def getSize(self):\n        size  =  3\n        return size\n\n\ndef Compute():\n    total  =  Box().getSize()\n    return total\n"
+   }
+  },
+  {
+   "rule": "R6",
+   "name": "a JS method in camelCase",
+   "files": {
+    "main.js": "class Box {\n    getSize() {\n        return 3;\n    }\n}\n\nfunction Compute() {\n    let total  =  new Box().getSize();\n    return total;\n}\n"
+   }
+  },
+  {
+   "rule": "R6",
+   "name": "a JS function with two capitals",
+   "files": {
+    "main.js": "class Box {\n    Getsize() {\n        return 3;\n    }\n}\n\nfunction ComputeAll() {\n    let total  =  new Box().Getsize();\n    return total;\n}\n"
+   }
+  },
+  {
+   "rule": "R7",
+   "name": "a Python class name of 4 characters",
+   "files": {
+    "main.py": "# 计算总数\nclass Boxy:\n    def Getsize(self):\n        size  =  3\n        return size\n\n\ndef Compute():\n    total  =  Boxy().Getsize()\n    return total\n"
+   }
+  },
+  {
+   "rule": "R7",
+   "name": "a JS class name of 6 characters",
+   "files": {
+    "main.js": "class Basket {\n    Getsize() {\n        return 3;\n    }\n}\n\nfunction Compute() {\n    let total  =  new Basket().Getsize();\n    return total;\n}\n"
+   }
+  },
+  {
+   "rule": "R8",
+   "name": "a code file named app.py (6 characters)",
+   "files": {
+    "app.py": "# 计算总数\nclass Box:\n    def Getsize(self):\n        size  =  3\n        return size\n\n\ndef Compute():\n    total  =  Box().Getsize()\n    return total\n"
+   }
+  },
+  {
+   "rule": "R8",
+   "name": "a code file named helpers.js (10 characters)",
+   "files": {
+    "helpers.js": "class Box {\n    Getsize() {\n        return 3;\n    }\n}\n\nfunction Compute() {\n    let total  =  new Box().Getsize();\n    return total;\n}\n"
+   }
+  },
+  {
+   "rule": null,
+   "name": "not code: notes.md with tabs and x = 1",
+   "files": {
+    "notes.md": "# 说明\n\tx = 1\n"
+   }
+  }
+ ]
+}

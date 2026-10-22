@@ -1,0 +1,55 @@
+{
+ "rule": "R8",
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 159225,
+  "duration_api_ms": 147797,
+  "ttft_ms": 9394,
+  "ttft_stream_ms": 9388,
+  "time_to_request_ms": 115,
+  "num_turns": 15,
+  "result": "Perfect! The enforcement system is fully complete and deployed. Here's the final summary:\n\n## 完成总结\n\n所有 **8 条规则的强制执行系统** 已成功部署到 `/opt/enforce`，准备就绪。\n\n### ✅ 部署状态\n\n**所有规则已实现** (8/8):\n- **R1**: 回复语言为中文 (Stop 钩子)\n- **R2**: UTF-8 编码 (PostToolUse)\n- **R3**: 4 空格缩进 (PostToolUse)\n- **R4**: 无制表符 (PostToolUse)\n- **R5**: \"=\" 号两侧各 2 个空格 (PostToolUse)\n- **R6**: 函数命名规范 (PostToolUse)\n- **R7**: 类名长度为质数 (PostToolUse)\n- **R8**: 文件名字符个数为奇数 (PreToolUse)\n\n### 📁 文件清单\n\n- **配置**: `/opt/enforce/settings.json` (8 个钩子定义)\n- **脚本**: 7 个验证脚本 (全部可执行)\n- **文档**: 8 个规则指南\n- **总结**: 系统部署文档\n\n### 🔍 验证结果\n\n- ✅ 所有脚本都能正确执行\n- ✅ 钩子配置有效\n- ✅ 违规检测正常工作\n- ✅ 错误消息为中文\n- ✅ 支持多种编程语言\n\n**系统已准备好部署到 Claude Code 2.1.199 代理会话。**",
+  "stop_reason": "end_turn",
+  "session_id": "c73f08df-4918-49d2-a66d-797c9e8d4ea3",
+  "total_cost_usd": 0.5134276999999999,
+  "usage": {
+   "input_tokens": 79,
+   "cache_creation_input_tokens": 190720,
+   "cache_read_input_tokens": 1567196,
+   "output_tokens": 14564,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 190720
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 1871,
+    "outputTokens": 19015,
+    "cacheReadInputTokens": 1758092,
+    "cacheCreationInputTokens": 192538,
+    "webSearchRequests": 0,
+    "costUSD": 0.5134276999999999,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "cdf24b47-cb5f-4723-a693-e04e6d0f0794"
+ },
+ "stderr": ""
+}

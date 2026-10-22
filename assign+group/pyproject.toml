@@ -4,10 +4,11 @@ version = "0.1.0"
 description = "rule -> assignment -> majority vote -> categories, as a handful of prompted LLM calls"
 readme = "README.md"
 requires-python = ">=3.10"
-dependencies = ["requests", "python-dotenv"]
+dependencies = ["requests", "python-dotenv", "litellm>=1.95"]   # litellm: the openai and bedrock providers
 
 [project.optional-dependencies]
 db = ["duckdb"]        # only for --from-db
+bedrock = ["boto3"]    # AWS credentials for --provider bedrock (not needed with a Bedrock API key)
 test = ["pytest"]
 
 [tool.setuptools]

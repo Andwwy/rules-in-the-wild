@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 26767,
+  "duration_api_ms": 28043,
+  "ttft_ms": 8595,
+  "ttft_stream_ms": 8585,
+  "time_to_request_ms": 158,
+  "num_turns": 7,
+  "result": "完成了！我已经为旅行地图应用搭建了完整的前端基础骨架：\n\n✅ **已实现的功能：**\n- 顶部导航栏（包含应用Logo和用户头像）\n- 左侧可折叠侧边栏（包含\"行程规划\"标题和折叠按钮）\n- 右侧地图主区域（带网格背景的灰色div）\n- 右下角悬浮\"新建行程\"按钮（FAB）\n- 完全自适应的现代简洁设计\n- 平滑的交互动画效果\n\n应用已部署在本地 http://localhost:8000/index.html，页面可直接访问。",
+  "stop_reason": "end_turn",
+  "session_id": "3bc2f66f-73fb-4cba-be67-80364052fb5e",
+  "total_cost_usd": 0.09536005,
+  "usage": {
+   "input_tokens": 46,
+   "cache_creation_input_tokens": 43087,
+   "cache_read_input_tokens": 223153,
+   "output_tokens": 3604,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 43087
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 1041,
+    "outputTokens": 3629,
+    "cacheReadInputTokens": 223153,
+    "cacheCreationInputTokens": 43087,
+    "webSearchRequests": 0,
+    "costUSD": 0.09536005,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "87f3552f-c75b-428d-ba8b-1f198c6dd22f"
+ },
+ "stderr": ""
+}

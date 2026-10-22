@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 18051,
+  "duration_api_ms": 19638,
+  "ttft_ms": 5569,
+  "ttft_stream_ms": 5565,
+  "time_to_request_ms": 164,
+  "num_turns": 4,
+  "result": "完成！代码小灵已为开发者大大搭建了飞行棋游戏的基础骨架，包括四个角落的玩家准备区（红、黄、蓝、绿）、页面中心的掷骰子按钮和点数显示区域，点击按钮可随机生成1-6的数字哒～",
+  "stop_reason": "end_turn",
+  "session_id": "f01beb59-3463-41ee-b07b-0372119f2626",
+  "total_cost_usd": 0.0764238,
+  "usage": {
+   "input_tokens": 24,
+   "cache_creation_input_tokens": 42062,
+   "cache_read_input_tokens": 110123,
+   "output_tokens": 2347,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 42062
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 979,
+    "outputTokens": 2371,
+    "cacheReadInputTokens": 110123,
+    "cacheCreationInputTokens": 42062,
+    "webSearchRequests": 0,
+    "costUSD": 0.0764238,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "d61fdbb3-cfd4-4db7-b76e-6a67cfc777eb"
+ },
+ "stderr": ""
+}

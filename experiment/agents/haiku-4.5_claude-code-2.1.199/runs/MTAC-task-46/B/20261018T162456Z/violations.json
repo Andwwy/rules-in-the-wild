@@ -1,0 +1,1242 @@
+{
+ "0|R5": [
+  {
+   "file": "index.html",
+   "line": 2,
+   "segs": [
+    [
+     "<html",
+     0
+    ],
+    [
+     " lang=",
+     1
+    ],
+    [
+     "\"zh-CN\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 4,
+   "segs": [
+    [
+     "    <meta",
+     0
+    ],
+    [
+     " charset=",
+     1
+    ],
+    [
+     "\"UTF-8\" />",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 5,
+   "segs": [
+    [
+     "    <meta name=\"viewport\" content=\"width=device-width, initial-",
+     0
+    ],
+    [
+     "scale=",
+     1
+    ],
+    [
+     "1.0\" />",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 242,
+   "segs": [
+    [
+     "    <div",
+     0
+    ],
+    [
+     " class=",
+     1
+    ],
+    [
+     "\"app-container\">",
+     0
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "0|R8": [
+  {
+   "file": "index.html",
+   "line": null,
+   "segs": [
+    [
+     "index.html",
+     1
+    ]
+   ],
+   "note": "10 characters"
+  }
+ ],
+ "1|R5": [
+  {
+   "file": "index.html",
+   "line": 2,
+   "segs": [
+    [
+     "<html",
+     0
+    ],
+    [
+     " lang=",
+     1
+    ],
+    [
+     "\"zh-CN\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 4,
+   "segs": [
+    [
+     "    <meta",
+     0
+    ],
+    [
+     " charset=",
+     1
+    ],
+    [
+     "\"UTF-8\" />",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 5,
+   "segs": [
+    [
+     "    <meta name=\"viewport\" content=\"width=device-width, initial-",
+     0
+    ],
+    [
+     "scale=",
+     1
+    ],
+    [
+     "1.0\" />",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 7,
+   "segs": [
+    [
+     "    <link rel=\"stylesheet\"",
+     0
+    ],
+    [
+     " href=",
+     1
+    ],
+    [
+     "\"https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css\" />",
+     0
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "1|R8": [
+  {
+   "file": "index.html",
+   "line": null,
+   "segs": [
+    [
+     "index.html",
+     1
+    ]
+   ],
+   "note": "10 characters"
+  }
+ ],
+ "2|R5": [
+  {
+   "file": "index.html",
+   "line": 2,
+   "segs": [
+    [
+     "<html lang",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"zh-CN\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 4,
+   "segs": [
+    [
+     "    <meta charset",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"UTF-8\" />",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 5,
+   "segs": [
+    [
+     "    <meta name=\"viewport\" content=\"width=device-width, initial-scale",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "1.0\" />",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 7,
+   "segs": [
+    [
+     "    <link rel=\"stylesheet\" href",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css\" />",
+     0
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "2|R6": [
+  {
+   "file": "index.html",
+   "line": 355,
+   "segs": [
+    [
+     "        function",
+     0
+    ],
+    [
+     " GenerateMarkerIcon(color) {",
+     1
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "2|R8": [
+  {
+   "file": "index.html",
+   "line": null,
+   "segs": [
+    [
+     "index.html",
+     1
+    ]
+   ],
+   "note": "10 characters"
+  }
+ ],
+ "3|R5": [],
+ "3|R6": [
+  {
+   "file": "index.html",
+   "line": 472,
+   "segs": [
+    [
+     "        function",
+     0
+    ],
+    [
+     " GenerateMarkerIcon(color) {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 507,
+   "segs": [
+    [
+     "        function",
+     0
+    ],
+    [
+     " GenerateWaypointMarkerIcon(index) {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 517,
+   "segs": [
+    [
+     "        function",
+     0
+    ],
+    [
+     " AddWaypoint() {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 555,
+   "segs": [
+    [
+     "        function",
+     0
+    ],
+    [
+     " DeleteWaypoint(id) {",
+     1
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "3|R8": [
+  {
+   "file": "index.html",
+   "line": null,
+   "segs": [
+    [
+     "index.html",
+     1
+    ]
+   ],
+   "note": "10 characters"
+  }
+ ],
+ "4|R5": [
+  {
+   "file": "index.html",
+   "line": 2,
+   "segs": [
+    [
+     "<html lang",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"zh-CN\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 4,
+   "segs": [
+    [
+     "    <meta charset",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"UTF-8\" />",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 5,
+   "segs": [
+    [
+     "    <meta name=\"viewport\" content=\"width=device-width, initial-scale",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "1.0\" />",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 7,
+   "segs": [
+    [
+     "    <link rel=\"stylesheet\" href",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css\" />",
+     0
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "4|R6": [
+  {
+   "file": "index.html",
+   "line": 562,
+   "segs": [
+    [
+     "        function",
+     0
+    ],
+    [
+     " GenerateMarkerIcon(color) {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 597,
+   "segs": [
+    [
+     "        function",
+     0
+    ],
+    [
+     " GenerateWaypointMarkerIcon(index) {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 607,
+   "segs": [
+    [
+     "        function",
+     0
+    ],
+    [
+     " AddWaypoint() {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 645,
+   "segs": [
+    [
+     "        function",
+     0
+    ],
+    [
+     " DeleteWaypoint(id) {",
+     1
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "4|R8": [
+  {
+   "file": "index.html",
+   "line": null,
+   "segs": [
+    [
+     "index.html",
+     1
+    ]
+   ],
+   "note": "10 characters"
+  }
+ ],
+ "5|R5": [
+  {
+   "file": "index.html",
+   "line": 2,
+   "segs": [
+    [
+     "<html lang",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"zh-CN\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 4,
+   "segs": [
+    [
+     "    <meta charset",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"UTF-8\" />",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 5,
+   "segs": [
+    [
+     "    <meta name=\"viewport\" content=\"width=device-width, initial-scale",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "1.0\" />",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 7,
+   "segs": [
+    [
+     "    <link rel=\"stylesheet\" href",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css\" />",
+     0
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "5|R6": [
+  {
+   "file": "index.html",
+   "line": 593,
+   "segs": [
+    [
+     "        function GenerateMarkerIcon(",
+     1
+    ],
+    [
+     "color) {",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 628,
+   "segs": [
+    [
+     "        function GenerateWaypointMarkerIcon(",
+     1
+    ],
+    [
+     "index) {",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 638,
+   "segs": [
+    [
+     "        function AddWaypoint(",
+     1
+    ],
+    [
+     ") {",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 676,
+   "segs": [
+    [
+     "        function DeleteWaypoint(",
+     1
+    ],
+    [
+     "id) {",
+     0
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "5|R8": [
+  {
+   "file": "index.html",
+   "line": null,
+   "segs": [
+    [
+     "index.html",
+     1
+    ]
+   ],
+   "note": "10 characters"
+  },
+  {
+   "file": "process-log.md",
+   "line": null,
+   "segs": [
+    [
+     "process-log.md",
+     1
+    ]
+   ],
+   "note": "14 characters"
+  }
+ ],
+ "6|R5": [
+  {
+   "file": "index.html",
+   "line": 2,
+   "segs": [
+    [
+     "<html lang",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"zh-CN\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 4,
+   "segs": [
+    [
+     "    <meta charset",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"UTF-8\" />",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 5,
+   "segs": [
+    [
+     "    <meta name=\"viewport\" content=\"width=device-width, initial-scale",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "1.0\" />",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 7,
+   "segs": [
+    [
+     "    <link rel=\"stylesheet\" href",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css\" />",
+     0
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "6|R6": [
+  {
+   "file": "index.html",
+   "line": 684,
+   "segs": [
+    [
+     "        function",
+     0
+    ],
+    [
+     " GenerateMarkerIcon(color) {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 720,
+   "segs": [
+    [
+     "        function",
+     0
+    ],
+    [
+     " SetDefaultDepartureTime() {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 737,
+   "segs": [
+    [
+     "        function",
+     0
+    ],
+    [
+     " GenerateWaypointMarkerIcon(index) {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 747,
+   "segs": [
+    [
+     "        function",
+     0
+    ],
+    [
+     " AddWaypoint() {",
+     1
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "6|R8": [
+  {
+   "file": "index.html",
+   "line": null,
+   "segs": [
+    [
+     "index.html",
+     1
+    ]
+   ],
+   "note": "10 characters"
+  }
+ ],
+ "7|R5": [],
+ "7|R6": [
+  {
+   "file": "index.html",
+   "line": 797,
+   "segs": [
+    [
+     "        function",
+     0
+    ],
+    [
+     " GenerateMarkerIcon(color) {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 833,
+   "segs": [
+    [
+     "        function",
+     0
+    ],
+    [
+     " SetDefaultDepartureTime() {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 853,
+   "segs": [
+    [
+     "        function",
+     0
+    ],
+    [
+     " GenerateWaypointMarkerIcon(index) {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 863,
+   "segs": [
+    [
+     "        function",
+     0
+    ],
+    [
+     " AddWaypoint() {",
+     1
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "7|R8": [
+  {
+   "file": "index.html",
+   "line": null,
+   "segs": [
+    [
+     "index.html",
+     1
+    ]
+   ],
+   "note": "10 characters"
+  }
+ ],
+ "8|R5": [
+  {
+   "file": "index.html",
+   "line": 2,
+   "segs": [
+    [
+     "<html lang",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"zh-CN\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 4,
+   "segs": [
+    [
+     "    <meta charset",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"UTF-8\" />",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 5,
+   "segs": [
+    [
+     "    <meta name=\"viewport\" content=\"width=device-width, initial-scale",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "1.0\" />",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 7,
+   "segs": [
+    [
+     "    <link rel=\"stylesheet\" href",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css\" />",
+     0
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "8|R6": [
+  {
+   "file": "index.html",
+   "line": 1001,
+   "segs": [
+    [
+     "        function",
+     0
+    ],
+    [
+     " GenerateMarkerIcon(color) {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 1037,
+   "segs": [
+    [
+     "        function",
+     0
+    ],
+    [
+     " SetDefaultDepartureTime() {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 1057,
+   "segs": [
+    [
+     "        function",
+     0
+    ],
+    [
+     " GenerateWaypointMarkerIcon(index) {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 1067,
+   "segs": [
+    [
+     "        function",
+     0
+    ],
+    [
+     " AddWaypoint() {",
+     1
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "8|R8": [
+  {
+   "file": "index.html",
+   "line": null,
+   "segs": [
+    [
+     "index.html",
+     1
+    ]
+   ],
+   "note": "10 characters"
+  }
+ ],
+ "9|R5": [
+  {
+   "file": "index.html",
+   "line": 2,
+   "segs": [
+    [
+     "<html lang",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"zh-CN\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 4,
+   "segs": [
+    [
+     "    <meta charset",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"UTF-8\" />",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 5,
+   "segs": [
+    [
+     "    <meta name=\"viewport\" content=\"width=device-width, initial-scale",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "1.0\" />",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 7,
+   "segs": [
+    [
+     "    <link rel=\"stylesheet\" href",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css\" />",
+     0
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "9|R6": [
+  {
+   "file": "index.html",
+   "line": 1168,
+   "segs": [
+    [
+     "        function",
+     0
+    ],
+    [
+     " GenerateMarkerIcon(color) {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 1204,
+   "segs": [
+    [
+     "        function",
+     0
+    ],
+    [
+     " SetDefaultDepartureTime() {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 1224,
+   "segs": [
+    [
+     "        function",
+     0
+    ],
+    [
+     " GenerateWaypointMarkerIcon(index) {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 1234,
+   "segs": [
+    [
+     "        function",
+     0
+    ],
+    [
+     " AddWaypoint() {",
+     1
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "9|R8": [
+  {
+   "file": "index.html",
+   "line": null,
+   "segs": [
+    [
+     "index.html",
+     1
+    ]
+   ],
+   "note": "10 characters"
+  },
+  {
+   "file": "process-log.md",
+   "line": null,
+   "segs": [
+    [
+     "process-log.md",
+     1
+    ]
+   ],
+   "note": "14 characters"
+  },
+  {
+   "file": "task_plan.md",
+   "line": null,
+   "segs": [
+    [
+     "task_plan.md",
+     1
+    ]
+   ],
+   "note": "12 characters"
+  }
+ ]
+}

@@ -1,0 +1,80 @@
+{
+ "session": "99f94ce6-ff4f-417c-a37d-9b1f303a1a28",
+ "messages": 5,
+ "settings": {
+  "files": [
+   {
+    "scope": "project",
+    "path": "/workspace/.claude/settings.json",
+    "keys": [
+     "hooks"
+    ]
+   }
+  ],
+  "hooks": [
+   {
+    "hook": 1,
+    "scope": "project",
+    "event": "Stop",
+    "matcher": null,
+    "type": "command",
+    "command": "python3 /opt/enforce/hooks/mock_hook.py files:/opt/enforce/checks/R3"
+   },
+   {
+    "hook": 2,
+    "scope": "project",
+    "event": "Stop",
+    "matcher": null,
+    "type": "command",
+    "command": "python3 /opt/enforce/hooks/mock_hook.py reply:/opt/enforce/checks/R1"
+   },
+   {
+    "hook": 3,
+    "scope": "project",
+    "event": "Stop",
+    "matcher": null,
+    "type": "command",
+    "command": "python3 /opt/enforce/hooks/mock_hook.py files:/opt/enforce/checks/R6"
+   },
+   {
+    "hook": 4,
+    "scope": "project",
+    "event": "PostToolUse",
+    "matcher": "Write|Edit|MultiEdit|NotebookEdit|Bash",
+    "type": "command",
+    "command": "python3 /opt/enforce/hooks/mock_hook.py files:/opt/enforce/checks/R5"
+   },
+   {
+    "hook": 5,
+    "scope": "project",
+    "event": "PostToolUse",
+    "matcher": "Bash",
+    "type": "command",
+    "command": "python3 /opt/enforce/hooks/mock_hook.py files:/opt/enforce/checks/R7 files:/opt/enforce/checks/R2 files:/opt/enforce/checks/R4 files:/opt/enforce/checks/R8"
+   },
+   {
+    "hook": 6,
+    "scope": "project",
+    "event": "PostToolUse",
+    "matcher": "Write|Edit|MultiEdit|NotebookEdit|Bash",
+    "type": "command",
+    "command": "python3 /opt/enforce/hooks/mock_hook.py files:/opt/enforce/checks/R6"
+   },
+   {
+    "hook": 7,
+    "scope": "project",
+    "event": "PreToolUse",
+    "matcher": "Write|Edit|MultiEdit|NotebookEdit",
+    "type": "command",
+    "command": "python3 /opt/enforce/hooks/mock_hook.py files:/opt/enforce/checks/R7 files:/opt/enforce/checks/R2 files:/opt/enforce/checks/R4 files:/opt/enforce/checks/R8"
+   }
+  ]
+ },
+ "claude_code_on_settings": null,
+ "commands_added_for_agent": [],
+ "workspace": {
+  "created": 1,
+  "changed": 0,
+  "deleted": 0
+ }
+}

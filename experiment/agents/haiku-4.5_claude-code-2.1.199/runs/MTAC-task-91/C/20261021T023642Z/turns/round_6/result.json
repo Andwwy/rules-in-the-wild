@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 47604,
+  "duration_api_ms": 46189,
+  "ttft_ms": 2050,
+  "ttft_stream_ms": 2045,
+  "time_to_request_ms": 97,
+  "num_turns": 6,
+  "result": "喵～代码小灵已实现跳跃和飞跃机制，停在同色格子时自动跳到下一个同色格子，停在飞行起点时飞跃到对面同色终点。哒～",
+  "stop_reason": "end_turn",
+  "session_id": "d46d12ec-bb2c-45be-8da3-6747e1371711",
+  "total_cost_usd": 0.1069244,
+  "usage": {
+   "input_tokens": 36,
+   "cache_creation_input_tokens": 10048,
+   "cache_read_input_tokens": 524784,
+   "output_tokens": 8370,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 10048
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 36,
+    "outputTokens": 8370,
+    "cacheReadInputTokens": 524784,
+    "cacheCreationInputTokens": 10048,
+    "webSearchRequests": 0,
+    "costUSD": 0.1069244,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "57bcacc2-182c-4387-93dd-20d66c8a7ee8"
+ },
+ "stderr": ""
+}

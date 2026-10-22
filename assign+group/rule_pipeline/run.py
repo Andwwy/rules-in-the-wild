@@ -30,7 +30,6 @@ import os
 import time
 from pathlib import Path
 
-from dotenv import load_dotenv
 
 from . import assign, categorize, llm, rules as rules_io, vote
 
@@ -57,9 +56,11 @@ def parse_args(argv=None):
     db.add_argument("--limit", type=int)
 
     m = p.add_argument_group("model (defaults = the lab's current settings; env: LLM_PROVIDER LLM_MODEL LLM_TIER LLM_WORKERS LLM_BATCH_SIZE)")
-    m.add_argument("--provider", default=os.environ.get("LLM_PROVIDER"))
-    m.add_argument("--model", default=os.environ.get("LLM_MODEL"))
-    m.add_argument("--tier", default=os.environ.get("LLM_TIER"))
+    m.add_argument("--provider", default=os.environ.get("LLM_PROVIDER"),
+                   help=f"{' | '.join(llm.ROUTES)} (aliases: {', '.join(llm.ALIASES)}) [perplexity]")
+    m.add_argument("--model", default=os.environ.get("LLM_MODEL"), help="vendor/model, the same for every provider "
+                   "[openai/gpt-5.6-terra]")
+    m.add_argument("--tier", default=os.environ.get("LLM_TIER"), help="service tier [flex where the provider has it]")
     m.add_argument("--workers", type=int, default=_env_int("LLM_WORKERS"), help="concurrent requests [20]")
     m.add_argument("--batch-size", type=int, default=_env_int("LLM_BATCH_SIZE"), help="rules per request [1]")
     for stage in ("assign", "vote"):
@@ -100,8 +101,7 @@ def read_jsonl(path: Path) -> list[dict]:
 
 
 def main(argv=None):
-    load_dotenv(ROOT / ".env")
-    load_dotenv()                                            # a .env in the working directory wins nothing already set
+    llm.load_env(Path.cwd(), ROOT)                           # nearest .env wins; DAPlab/.env fills in the rest
     args = parse_args(argv)
     out = args.out
     out.mkdir(parents=True, exist_ok=True)

@@ -1,0 +1,1225 @@
+{
+ "0|R5": [
+  {
+   "file": "index.html",
+   "line": 2,
+   "segs": [
+    [
+     "<html",
+     0
+    ],
+    [
+     " lang=",
+     1
+    ],
+    [
+     "\"zh-CN\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 4,
+   "segs": [
+    [
+     "    <meta",
+     0
+    ],
+    [
+     " charset=",
+     1
+    ],
+    [
+     "\"UTF-8\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 5,
+   "segs": [
+    [
+     "    <meta name=\"viewport\" content=\"width=device-width, initial-",
+     0
+    ],
+    [
+     "scale=",
+     1
+    ],
+    [
+     "1.0\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 173,
+   "segs": [
+    [
+     "    <div",
+     0
+    ],
+    [
+     " class=",
+     1
+    ],
+    [
+     "\"navbar\">",
+     0
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "0|R8": [
+  {
+   "file": "index.html",
+   "line": null,
+   "segs": [
+    [
+     "index.html",
+     1
+    ]
+   ],
+   "note": "10 characters"
+  }
+ ],
+ "1|R5": [
+  {
+   "file": "index.html",
+   "line": 2,
+   "segs": [
+    [
+     "<html",
+     0
+    ],
+    [
+     " lang=",
+     1
+    ],
+    [
+     "\"zh-CN\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 4,
+   "segs": [
+    [
+     "    <meta",
+     0
+    ],
+    [
+     " charset=",
+     1
+    ],
+    [
+     "\"UTF-8\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 5,
+   "segs": [
+    [
+     "    <meta name=\"viewport\" content=\"width=device-width, initial-",
+     0
+    ],
+    [
+     "scale=",
+     1
+    ],
+    [
+     "1.0\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 7,
+   "segs": [
+    [
+     "    <link rel=\"stylesheet\"",
+     0
+    ],
+    [
+     " href=",
+     1
+    ],
+    [
+     "\"https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css\" />",
+     0
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "1|R8": [
+  {
+   "file": "index.html",
+   "line": null,
+   "segs": [
+    [
+     "index.html",
+     1
+    ]
+   ],
+   "note": "10 characters"
+  }
+ ],
+ "2|R5": [
+  {
+   "file": "index.html",
+   "line": 2,
+   "segs": [
+    [
+     "<html lang",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"zh-CN\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 4,
+   "segs": [
+    [
+     "    <meta charset",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"UTF-8\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 5,
+   "segs": [
+    [
+     "    <meta name=\"viewport\" content=\"width=device-width, initial-scale",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "1.0\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 7,
+   "segs": [
+    [
+     "    <link rel=",
+     0
+    ],
+    [
+     "\"stylesheet\" href=",
+     1
+    ],
+    [
+     "\"https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css\" />",
+     0
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "2|R8": [
+  {
+   "file": "index.html",
+   "line": null,
+   "segs": [
+    [
+     "index.html",
+     1
+    ]
+   ],
+   "note": "10 characters"
+  }
+ ],
+ "3|R5": [],
+ "3|R6": [
+  {
+   "file": "index.html",
+   "line": 378,
+   "segs": [
+    [
+     "        function",
+     0
+    ],
+    [
+     "  GenerateWaypointCoord(index) {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 389,
+   "segs": [
+    [
+     "        function",
+     0
+    ],
+    [
+     "  GenerateWaypointIcon(index) {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 394,
+   "segs": [
+    [
+     "        function",
+     0
+    ],
+    [
+     "  AddWaypoint() {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 475,
+   "segs": [
+    [
+     "        function",
+     0
+    ],
+    [
+     "  RenumberWaypoints() {",
+     1
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "3|R8": [
+  {
+   "file": "index.html",
+   "line": null,
+   "segs": [
+    [
+     "index.html",
+     1
+    ]
+   ],
+   "note": "10 characters"
+  }
+ ],
+ "4|R5": [
+  {
+   "file": "index.html",
+   "line": 2,
+   "segs": [
+    [
+     "<html lang",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"zh-CN\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 4,
+   "segs": [
+    [
+     "    <meta charset",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"UTF-8\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 5,
+   "segs": [
+    [
+     "    <meta name=\"viewport\" content=\"width=device-width, initial-scale",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "1.0\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 7,
+   "segs": [
+    [
+     "    <link rel=\"stylesheet\" href",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css\" />",
+     0
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "4|R6": [
+  {
+   "file": "index.html",
+   "line": 472,
+   "segs": [
+    [
+     "        function",
+     0
+    ],
+    [
+     "  GenerateWaypointCoord(index) {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 483,
+   "segs": [
+    [
+     "        function",
+     0
+    ],
+    [
+     "  CalculateDistance(coord1, coord2) {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 492,
+   "segs": [
+    [
+     "        function",
+     0
+    ],
+    [
+     "  CalculateTime(distance) {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 496,
+   "segs": [
+    [
+     "        function",
+     0
+    ],
+    [
+     "  FormatTime(hours) {",
+     1
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "4|R8": [
+  {
+   "file": "index.html",
+   "line": null,
+   "segs": [
+    [
+     "index.html",
+     1
+    ]
+   ],
+   "note": "10 characters"
+  }
+ ],
+ "5|R5": [
+  {
+   "file": "index.html",
+   "line": 2,
+   "segs": [
+    [
+     "<html lang",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"zh-CN\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 4,
+   "segs": [
+    [
+     "    <meta charset",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"UTF-8\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 5,
+   "segs": [
+    [
+     "    <meta name=\"viewport\" content=\"width=device-width, initial-scale",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "1.0\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 7,
+   "segs": [
+    [
+     "    <link rel=",
+     0
+    ],
+    [
+     "\"stylesheet\" href=",
+     1
+    ],
+    [
+     "\"https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css\" />",
+     0
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "5|R6": [
+  {
+   "file": "index.html",
+   "line": 525,
+   "segs": [
+    [
+     "        function  GenerateWaypointCoord(",
+     1
+    ],
+    [
+     "index) {",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 536,
+   "segs": [
+    [
+     "        function  CalculateDistance(",
+     1
+    ],
+    [
+     "coord1, coord2) {",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 545,
+   "segs": [
+    [
+     "        function  CalculateTime(",
+     1
+    ],
+    [
+     "distance) {",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 549,
+   "segs": [
+    [
+     "        function  FormatTime(",
+     1
+    ],
+    [
+     "hours) {",
+     0
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "5|R8": [
+  {
+   "file": "index.html",
+   "line": null,
+   "segs": [
+    [
+     "index.html",
+     1
+    ]
+   ],
+   "note": "10 characters"
+  },
+  {
+   "file": "process-log.md",
+   "line": null,
+   "segs": [
+    [
+     "process-log.md",
+     1
+    ]
+   ],
+   "note": "14 characters"
+  }
+ ],
+ "6|R5": [
+  {
+   "file": "index.html",
+   "line": 2,
+   "segs": [
+    [
+     "<html lang",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"zh-CN\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 4,
+   "segs": [
+    [
+     "    <meta charset",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"UTF-8\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 5,
+   "segs": [
+    [
+     "    <meta name=\"viewport\" content=\"width=device-width, initial-scale",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "1.0\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 7,
+   "segs": [
+    [
+     "    <link rel=",
+     0
+    ],
+    [
+     "\"stylesheet\" href=",
+     1
+    ],
+    [
+     "\"https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css\" />",
+     0
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "6|R6": [
+  {
+   "file": "index.html",
+   "line": 628,
+   "segs": [
+    [
+     "        function",
+     0
+    ],
+    [
+     "  GenerateWaypointCoord(index) {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 639,
+   "segs": [
+    [
+     "        function",
+     0
+    ],
+    [
+     "  CalculateDistance(coord1, coord2) {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 648,
+   "segs": [
+    [
+     "        function",
+     0
+    ],
+    [
+     "  CalculateTime(distance) {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 652,
+   "segs": [
+    [
+     "        function",
+     0
+    ],
+    [
+     "  FormatTime(hours) {",
+     1
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "6|R8": [
+  {
+   "file": "index.html",
+   "line": null,
+   "segs": [
+    [
+     "index.html",
+     1
+    ]
+   ],
+   "note": "10 characters"
+  }
+ ],
+ "7|R5": [],
+ "7|R6": [
+  {
+   "file": "index.html",
+   "line": 714,
+   "segs": [
+    [
+     "        function",
+     0
+    ],
+    [
+     "  SwitchMapStyle(style) {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 744,
+   "segs": [
+    [
+     "        function",
+     0
+    ],
+    [
+     "  GenerateWaypointCoord(index) {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 755,
+   "segs": [
+    [
+     "        function",
+     0
+    ],
+    [
+     "  CalculateDistance(coord1, coord2) {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 764,
+   "segs": [
+    [
+     "        function",
+     0
+    ],
+    [
+     "  CalculateTime(distance) {",
+     1
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "7|R8": [
+  {
+   "file": "index.html",
+   "line": null,
+   "segs": [
+    [
+     "index.html",
+     1
+    ]
+   ],
+   "note": "10 characters"
+  }
+ ],
+ "8|R5": [
+  {
+   "file": "index.html",
+   "line": 2,
+   "segs": [
+    [
+     "<html lang",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"zh-CN\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 4,
+   "segs": [
+    [
+     "    <meta charset",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"UTF-8\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 5,
+   "segs": [
+    [
+     "    <meta name=\"viewport\" content=\"width=device-width, initial-scale",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "1.0\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 7,
+   "segs": [
+    [
+     "    <link rel=\"stylesheet\" href",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css\" />",
+     0
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "8|R6": [
+  {
+   "file": "index.html",
+   "line": 913,
+   "segs": [
+    [
+     "        function",
+     0
+    ],
+    [
+     "  SwitchMapStyle(style) {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 943,
+   "segs": [
+    [
+     "        function",
+     0
+    ],
+    [
+     "  GenerateWaypointCoord(index) {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 954,
+   "segs": [
+    [
+     "        function",
+     0
+    ],
+    [
+     "  CalculateDistance(coord1, coord2) {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 963,
+   "segs": [
+    [
+     "        function",
+     0
+    ],
+    [
+     "  CalculateTime(distance) {",
+     1
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "8|R8": [
+  {
+   "file": "index.html",
+   "line": null,
+   "segs": [
+    [
+     "index.html",
+     1
+    ]
+   ],
+   "note": "10 characters"
+  }
+ ],
+ "9|R5": [
+  {
+   "file": "index.html",
+   "line": 2,
+   "segs": [
+    [
+     "<html lang",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"zh-CN\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 4,
+   "segs": [
+    [
+     "    <meta charset",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"UTF-8\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 5,
+   "segs": [
+    [
+     "    <meta name=\"viewport\" content=\"width=device-width, initial-scale",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "1.0\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 7,
+   "segs": [
+    [
+     "    <link rel=",
+     0
+    ],
+    [
+     "\"stylesheet\" href=",
+     1
+    ],
+    [
+     "\"https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css\" />",
+     0
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "9|R6": [
+  {
+   "file": "index.html",
+   "line": 1075,
+   "segs": [
+    [
+     "        function",
+     0
+    ],
+    [
+     "  SwitchMapStyle(style) {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 1105,
+   "segs": [
+    [
+     "        function",
+     0
+    ],
+    [
+     "  GenerateWaypointCoord(index) {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 1116,
+   "segs": [
+    [
+     "        function",
+     0
+    ],
+    [
+     "  CalculateDistance(coord1, coord2) {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 1125,
+   "segs": [
+    [
+     "        function",
+     0
+    ],
+    [
+     "  CalculateTime(distance) {",
+     1
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "9|R8": [
+  {
+   "file": "index.html",
+   "line": null,
+   "segs": [
+    [
+     "index.html",
+     1
+    ]
+   ],
+   "note": "10 characters"
+  },
+  {
+   "file": "process-log.md",
+   "line": null,
+   "segs": [
+    [
+     "process-log.md",
+     1
+    ]
+   ],
+   "note": "14 characters"
+  },
+  {
+   "file": "task_plan.md",
+   "line": null,
+   "segs": [
+    [
+     "task_plan.md",
+     1
+    ]
+   ],
+   "note": "12 characters"
+  }
+ ]
+}

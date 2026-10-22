@@ -1,0 +1,11 @@
+{
+ "about": "Claude Haiku 4.5 in Claude Code 2.1.199, through the gateway (Bedrock). scripts/runner.py --agent haiku-4.5_claude-code-2.1.199 (the default). To try another model with Claude Code: copy this folder, change model (and the name). Another agent harness needs its own runner support (harness: claude-code is the only one now).",
+ "harness": "claude-code",
+ "claude_code": "2.1.199",
+ "package": "dataset/MTAC bench/base agent/data/offline_package/anthropic-ai-claude-code-linux-x64-2.1.199.tgz",
+ "model": "claude-haiku-4-5",
+ "max_output_tokens": 80000,
+ "max_thinking_tokens": 16000,
+ "flags": "--thinking adaptive --effort max",
+ "gateway": "http://host.docker.internal:4000"
+}

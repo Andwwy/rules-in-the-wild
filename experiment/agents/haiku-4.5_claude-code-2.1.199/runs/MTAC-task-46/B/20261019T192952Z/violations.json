@@ -1,0 +1,132 @@
+{
+ "1|R6": [
+  {
+   "file": "script.js",
+   "line": 91,
+   "segs": [
+    [
+     "        setTimeout(",
+     0
+    ],
+    [
+     "function()  {",
+     1
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "2|R6": [
+  {
+   "file": "script.js",
+   "line": 98,
+   "segs": [
+    [
+     "        setTimeout(",
+     0
+    ],
+    [
+     "function()  {",
+     1
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "4|R6": [
+  {
+   "file": "script.js",
+   "line": 105,
+   "segs": [
+    [
+     "        setTimeout(",
+     0
+    ],
+    [
+     "function()  {",
+     1
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "6|R6": [
+  {
+   "file": "script.js",
+   "line": 123,
+   "segs": [
+    [
+     "        setTimeout(",
+     0
+    ],
+    [
+     "function()  {",
+     1
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "7|R6": [
+  {
+   "file": "script.js",
+   "line": 158,
+   "segs": [
+    [
+     "        setTimeout(",
+     0
+    ],
+    [
+     "function()  {",
+     1
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "8|R6": [
+  {
+   "file": "script.js",
+   "line": 192,
+   "segs": [
+    [
+     "        setTimeout(",
+     0
+    ],
+    [
+     "function()  {",
+     1
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "9|R6": [
+  {
+   "file": "script.js",
+   "line": 213,
+   "segs": [
+    [
+     "        setTimeout(",
+     0
+    ],
+    [
+     "function()  {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "script.js",
+   "line": 943,
+   "segs": [
+    [
+     "    setTimeout(function()  {",
+     1
+    ]
+   ],
+   "note": null
+  }
+ ]
+}

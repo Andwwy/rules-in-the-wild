@@ -1,0 +1,56 @@
+{
+ "label": "b3-binding-1",
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 629,
+  "duration_api_ms": 145,
+  "ttft_ms": 148,
+  "ttft_stream_ms": 144,
+  "time_to_request_ms": 133,
+  "num_turns": 2,
+  "result": "Bound.",
+  "stop_reason": "end_turn",
+  "session_id": "376d1dc4-e296-4e70-b189-6a8f077ef5ab",
+  "total_cost_usd": 7.000000000000001e-05,
+  "usage": {
+   "input_tokens": 20,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 10,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 20,
+    "outputTokens": 10,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "webSearchRequests": 0,
+    "costUSD": 7.000000000000001e-05,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "733d7336-36d0-44fb-af91-55c380074700"
+ },
+ "text": "Node binding-1 (5 of 5): make the agent's Claude Code run the checks of R7, R2, R4, R8 (/opt/enforce/checks/R7, /opt/enforce/checks/R2, /opt/enforce/checks/R4, /opt/enforce/checks/R8) with 2 hooks, each one needed: (1) at PreToolUse on Write|Edit|MultiEdit|NotebookEdit; (2) at PostToolUse on Bash, in /workspace/.claude/settings.json: the project's settings, which load for the agent in /workspace and not for your own session; hooks that other rules' bindings already put there stay. The hook reads the file as it will be after the write, from the hook's tool_input (Write: content; Edit and MultiEdit: the file on disk with the edits applied); a shell command's writes cannot be seen before it runs, so after each shell command the files it changed; it runs every check on every file it reads (or on the reply) and reports all their violations in one message; on a violation it should refuse the write (permissionDecision \"deny\") with the check's message; after a shell command, exit 2 with it. Block only the violation, so the agent can fix its work and go on.\nDone when: `/opt/enforce-harness/try --check` reports nothing, and each test case of R7, R2, R4, R8, given to the hooks as the agent would make it (written by a file tool and by a shell command, or sent as the reply), is blocked with a message naming its rule when it breaks the rule, and passes when it follows it. The harness checks this when you reply.",
+ "stderr": ""
+}

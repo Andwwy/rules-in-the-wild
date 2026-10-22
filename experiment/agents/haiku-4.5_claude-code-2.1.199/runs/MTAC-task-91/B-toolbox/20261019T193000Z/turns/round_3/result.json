@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 52396,
+  "duration_api_ms": 49787,
+  "ttft_ms": 4691,
+  "ttft_stream_ms": 4687,
+  "time_to_request_ms": 101,
+  "num_turns": 7,
+  "result": "喵～代码小灵已将进度文件改为完全中文，避免了英文混用。哒～",
+  "stop_reason": "end_turn",
+  "session_id": "a0bb4d32-21a5-4f90-857a-c5186659037b",
+  "total_cost_usd": 0.11719285000000002,
+  "usage": {
+   "input_tokens": 46,
+   "cache_creation_input_tokens": 34733,
+   "cache_read_input_tokens": 378656,
+   "output_tokens": 7173,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 34733
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 46,
+    "outputTokens": 7173,
+    "cacheReadInputTokens": 378656,
+    "cacheCreationInputTokens": 34733,
+    "webSearchRequests": 0,
+    "costUSD": 0.11719285000000002,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "771b6350-2f6b-4725-a247-b362f686cb5e"
+ },
+ "stderr": ""
+}

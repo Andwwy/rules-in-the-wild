@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 100206,
+  "duration_api_ms": 98647,
+  "ttft_ms": 46205,
+  "ttft_stream_ms": 46185,
+  "time_to_request_ms": 96,
+  "num_turns": 5,
+  "result": "喵～代码小灵已实现终点通道机制，飞机进入家路需精确步数到达中心终点，步数过多时会后退，完成后隐藏显示。哒～",
+  "stop_reason": "end_turn",
+  "session_id": "d46d12ec-bb2c-45be-8da3-6747e1371711",
+  "total_cost_usd": 0.15424525,
+  "usage": {
+   "input_tokens": 31,
+   "cache_creation_input_tokens": 19041,
+   "cache_read_input_tokens": 471630,
+   "output_tokens": 16650,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 19041
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 31,
+    "outputTokens": 16650,
+    "cacheReadInputTokens": 471630,
+    "cacheCreationInputTokens": 19041,
+    "webSearchRequests": 0,
+    "costUSD": 0.15424525,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "b41877da-8707-47f4-ac43-fdbb9a4effb9"
+ },
+ "stderr": ""
+}

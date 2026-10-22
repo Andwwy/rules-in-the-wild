@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 55198,
+  "duration_api_ms": 53783,
+  "ttft_ms": 2974,
+  "ttft_stream_ms": 2970,
+  "time_to_request_ms": 97,
+  "num_turns": 6,
+  "result": "喵～代码小灵已实现掷骰子快速滚动动画和飞机平滑移动过渡效果，提升了游戏视觉体验。哒～",
+  "stop_reason": "end_turn",
+  "session_id": "d46d12ec-bb2c-45be-8da3-6747e1371711",
+  "total_cost_usd": 0.1366848,
+  "usage": {
+   "input_tokens": 35,
+   "cache_creation_input_tokens": 20200,
+   "cache_read_input_tokens": 633648,
+   "output_tokens": 9607,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 20200
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 35,
+    "outputTokens": 9607,
+    "cacheReadInputTokens": 633648,
+    "cacheCreationInputTokens": 20200,
+    "webSearchRequests": 0,
+    "costUSD": 0.1366848,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "e88887e3-a529-4d53-a388-a96a83d576e1"
+ },
+ "stderr": ""
+}

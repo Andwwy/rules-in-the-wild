@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 144134,
+  "duration_api_ms": 142359,
+  "ttft_ms": 119593,
+  "ttft_stream_ms": 119485,
+  "time_to_request_ms": 101,
+  "num_turns": 4,
+  "result": "喵～代码小灵已为开发者大大完成了飞行棋十字形棋盘的绘制，包括公共走步路线、四条彩色安全通道和中心终点区域，所有代码均采用2个空格缩进和常量定义所有数字。哒～",
+  "stop_reason": "end_turn",
+  "session_id": "a0bb4d32-21a5-4f90-857a-c5186659037b",
+  "total_cost_usd": 0.15500815,
+  "usage": {
+   "input_tokens": 24,
+   "cache_creation_input_tokens": 5441,
+   "cache_read_input_tokens": 161229,
+   "output_tokens": 26412,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 5441
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 24,
+    "outputTokens": 26412,
+    "cacheReadInputTokens": 161229,
+    "cacheCreationInputTokens": 5441,
+    "webSearchRequests": 0,
+    "costUSD": 0.15500815,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "80fa60ff-e612-48bc-9af2-31646d68945c"
+ },
+ "stderr": ""
+}

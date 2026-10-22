@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 75522,
+  "duration_api_ms": 64836,
+  "ttft_ms": 7523,
+  "ttft_stream_ms": 7521,
+  "time_to_request_ms": 133,
+  "num_turns": 14,
+  "result": "执行结果：通过\n\n详细说明：已成功集成开源地图库，用实时可交互的地图底图替换占位网格，支持用户点击任意位置添加蓝色位置标记并在标记处弹出信息窗显示具体经纬度坐标，实现了地图拖拽平移和鼠标滚轮缩放功能。所有核心交互功能均已验证通过，并保留了原有的导航栏、侧边栏和按钮等全部功能兼容性。\n\n本轮已完成地图库集成，用实时可交互的开源地图底图替换占位网格，支持点击添加蓝色标记和经纬度坐标查看等核心地图交互功能。",
+  "stop_reason": "end_turn",
+  "session_id": "16601f6e-d38d-4fa1-bae1-0f09351e3d50",
+  "total_cost_usd": 0.253367,
+  "usage": {
+   "input_tokens": 89,
+   "cache_creation_input_tokens": 78768,
+   "cache_read_input_tokens": 747028,
+   "output_tokens": 6778,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 78768
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 98,
+    "outputTokens": 7110,
+    "cacheReadInputTokens": 804040,
+    "cacheCreationInputTokens": 109852,
+    "webSearchRequests": 0,
+    "costUSD": 0.253367,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "0bee8c01-becf-4d10-9ee5-c83ca75d59b7"
+ },
+ "stderr": ""
+}

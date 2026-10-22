@@ -1,0 +1,63 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 1231,
+  "duration_api_ms": 139,
+  "ttft_ms": 173,
+  "ttft_stream_ms": 172,
+  "time_to_request_ms": 169,
+  "num_turns": 6,
+  "result": "OK, done.",
+  "stop_reason": "end_turn",
+  "session_id": "b535c2a5-bb92-4bf1-8e12-64704b209f97",
+  "total_cost_usd": 0.00024500000000000005,
+  "usage": {
+   "input_tokens": 60,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 30,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 70,
+    "outputTokens": 35,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "webSearchRequests": 0,
+    "costUSD": 0.00024500000000000005,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [
+   {
+    "tool_name": "Write",
+    "tool_use_id": "toolu_mock_6",
+    "tool_input": {
+     "file_path": "/workspace/app.py",
+     "content": "x = 'FORBIDDEN_TOKEN'\n"
+    }
+   }
+  ],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "7ee00cb4-37c5-473e-b926-b1ee436a4acd"
+ },
+ "stderr": ""
+}

@@ -1,0 +1,34 @@
+[
+ {
+  "rule": "R1",
+  "text": "Rule R1: 在为用户生成回复时，你必须永远只用中文\n\n- Enforcer: Regex validator (Validation › Regex › Regex validator)\n- Trigger: Response sent (Agent loop › Response sent), timing: at\n- Target: Response / message (Agent output › Response / message)\n\nImplement system enforcement for this rule with this enforcer, at this trigger, on this target.\n\n# Enforcer card: Regex validator (Validation › Regex › Regex validator)\n\nA regular expression that the checked text must match, or must not match. A match against the rule is a violation.\nWhat is read is part of the enforcer: a whole file, each line, only comments, a reply, the start or the end of a text.\n\nIn the toolbox: adapter `regex`, with `test` and `read` (README: Adapters › regex).\n\n# Trigger card: Response sent (Agent loop › Response sent)\n\nThe agent makes or sends a response, an answer or a message.\n\nIn the toolbox: trigger `end-of-turn` (README: Triggers).\n\n# Target card: Response / message (Agent output › Response / message)\n\nAn assistant response or a message from the agent.\n\nIn the toolbox: target `reply` (README: Targets).\n"
+ },
+ {
+  "rule": "R2",
+  "text": "Rule R2: 你所生成的所有代码文件都必须使用UTF-8进行编码\n\n- Enforcer: Project check (Validation › Project check)\n- Trigger: File write / edit (Agent action › File write / edit), timing: after\n- Target: Source file (Source code › Source file)\n\nImplement system enforcement for this rule with this enforcer, at this trigger, on this target.\n\n# Enforcer card: Project check (Validation › Project check)\n\nA check of a property of the whole project, or of each file as a whole, that a pattern on one piece of text cannot\nexpress: the folder structure, file names, counts (lines, files), encodings, or the files a change must come with.\n\nIn the toolbox: adapter `project-check` (README: Adapters › project-check).\n\n# Trigger card: File write / edit (Agent action › File write / edit)\n\nA file or code is created, changed, renamed or deleted.\n\nIn the toolbox: triggers `before-write`, `after-write` and `after-command`; `end-of-turn` checks every file once more\n(README: Triggers).\n\n# Target card: Source file (Source code › Source file)\n\nA source code file.\n\nIn the toolbox: target `code-file`, or `file-name` for its name (README: Targets).\n"
+ },
+ {
+  "rule": "R3",
+  "text": "Rule R3: 在生成的代码文件里，缩进必须严格保持为 4 个空格\n\n- Enforcer: Regex validator (Validation › Regex › Regex validator)\n- Trigger: File write / edit (Agent action › File write / edit), timing: at\n- Target: Source file (Source code › Source file)\n\nImplement system enforcement for this rule with this enforcer, at this trigger, on this target.\n"
+ },
+ {
+  "rule": "R4",
+  "text": "Rule R4: 你提供的代码文件不得含有制表符，请仅使用空格完成代码的缩进\n\n- Enforcer: Regex validator (Validation › Regex › Regex validator)\n- Trigger: File write / edit (Agent action › File write / edit), timing: none\n- Target: Source file (Source code › Source file)\n\nImplement system enforcement for this rule with this enforcer, at this trigger, on this target.\n"
+ },
+ {
+  "rule": "R5",
+  "text": "Rule R5: 生成代码时，请在“=”号的左侧和右侧各放置两个空格\n\n- Enforcer: Regex validator (Validation › Regex › Regex validator)\n- Trigger: File write / edit (Agent action › File write / edit), timing: at\n- Target: Source file (Source code › Source file)\n\nImplement system enforcement for this rule with this enforcer, at this trigger, on this target.\n"
+ },
+ {
+  "rule": "R6",
+  "text": "Rule R6: 你所输出的代码文件里，针对各个函数名的命名规范是：首字母严禁小写，首字母之外的字符严禁大写\n\n- Enforcer: Regex validator (Validation › Regex › Regex validator)\n- Trigger: File write / edit (Agent action › File write / edit), timing: none\n- Target: Name / identifier (Source code › Name / identifier)\n\nImplement system enforcement for this rule with this enforcer, at this trigger, on this target.\n\n# Target card: Name / identifier (Source code › Name / identifier)\n\nA name: a variable, function, file or other identifier.\n\nIn the toolbox: target `names`, or `file-name` for a file's name (README: Targets, the names helper).\n"
+ },
+ {
+  "rule": "R7",
+  "text": "Rule R7: 你所编写的代码文件内，所有类名的长度均需恰好为质数，不得有例外\n\n- Enforcer: Semgrep (Analysis › Code scans › Semgrep)\n- Trigger: File write / edit (Agent action › File write / edit), timing: at\n- Target: Class / type (Source code › Class / type)\n\nImplement system enforcement for this rule with this enforcer, at this trigger, on this target.\n\n# Enforcer card: Semgrep (Analysis › Code scans › Semgrep)\n\nA pattern-based static analyzer. A rule is a code pattern that Semgrep matches against each file's syntax tree, for\nmany languages.\n\nIn the toolbox: adapter `semgrep`, installed with `enforce install semgrep` (README: Adapters › semgrep).\n\n# Target card: Class / type (Source code › Class / type)\n\nA class, a type, an interface or a struct.\n\nIn the toolbox: target `names` with `kinds` `class` and `type` (README: Targets, the names helper).\n"
+ },
+ {
+  "rule": "R8",
+  "text": "Rule R8: 必须保证输出的每一份代码文件，其文件名包含的字符个数严格等于奇数\n\n- Enforcer: Regex validator (Validation › Regex › Regex validator)\n- Trigger: File write / edit (Agent action › File write / edit), timing: after\n- Target: Source file (Source code › Source file)\n\nImplement system enforcement for this rule with this enforcer, at this trigger, on this target.\n"
+ }
+]

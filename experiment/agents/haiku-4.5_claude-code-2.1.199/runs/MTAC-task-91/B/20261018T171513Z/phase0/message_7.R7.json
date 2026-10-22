@@ -1,0 +1,55 @@
+{
+ "rule": "R7",
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 130712,
+  "duration_api_ms": 107669,
+  "ttft_ms": 7038,
+  "ttft_stream_ms": 7032,
+  "time_to_request_ms": 131,
+  "num_turns": 14,
+  "result": "Excellent! Rule R7 enforcement is complete and fully operational. Here's the final summary:\n\n## Rule R7 Implementation Complete ✅\n\n**Rule R7 Requirement:**\nAll generated code files must satisfy: individual function size must not exceed 60 lines.\n\n**Implementation Details:**\n\n| Component | Status |\n|-----------|--------|\n| Setup Hook (setup-rule-r7.sh) | ✅ Created & Active |\n| Validation Hook (validate-rule-r7.sh) | ✅ Created & Active |\n| settings.json Updated | ✅ 14 hooks total |\n| CLAUDE.md Updated | ✅ Rule R7 documented |\n| Test Verification | ✅ All 14/14 hooks pass |\n\n**System Status:**\n- **Total Rules:** 7 (R1-R7)\n- **Total Hooks:** 14 (7 SessionStart + 7 Stop)\n- **Validation Patterns:** 32 total\n- **Enforcement Mode:** Non-blocking with violation logging\n\n**Rule R7 Coverage:**\n- Python functions (def)\n- JavaScript functions & arrow functions\n- Java methods\n- Go functions\n- Generic code blocks\n\n**Compliance Strategy:**\n1. Single Responsibility: Each function does one thing\n2. Helper Functions: Extract sub-logic into separate functions\n3. Early Returns: Reduce nesting with exit conditions\n4. Descriptive Names: Use clear names for helper functions\n5. Testing: Easier to test small, focused functions\n\n**Verification:**\n```bash\n/opt/enforce-harness/try --check  # Shows all 14 hooks installed\n/opt/enforce-harness/try \"请生成代码\"  # Test with agent\n```\n\n**Test Result:** All 7 rules working together seamlessly (R1-R7), with all 14 hooks passing and code generated showing full compliance across encoding declaration, AI-Assisted comment, and function size limits.",
+  "stop_reason": "end_turn",
+  "session_id": "e432c75f-d32c-4f20-b1ab-d9ec04c96bbe",
+  "total_cost_usd": 0.31325099999999995,
+  "usage": {
+   "input_tokens": 83,
+   "cache_creation_input_tokens": 111606,
+   "cache_read_input_tokens": 1106355,
+   "output_tokens": 12605,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 111606
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 83,
+    "outputTokens": 12605,
+    "cacheReadInputTokens": 1106355,
+    "cacheCreationInputTokens": 111606,
+    "webSearchRequests": 0,
+    "costUSD": 0.31325099999999995,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "e51869e8-72d2-4631-b4c0-9e1cbd3dc235"
+ },
+ "stderr": ""
+}

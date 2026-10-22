@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 35903,
+  "duration_api_ms": 36072,
+  "ttft_ms": 16825,
+  "ttft_stream_ms": 16813,
+  "time_to_request_ms": 157,
+  "num_turns": 3,
+  "result": "喵～\n\n代码小灵已为开发者大大完成了飞行棋游戏的基础骨架，搭建了四个玩家准备区（红、黄、蓝、绿四个角落）、掷骰子按钮和骰子点数显示区域。哒～",
+  "stop_reason": "end_turn",
+  "session_id": "d46d12ec-bb2c-45be-8da3-6747e1371711",
+  "total_cost_usd": 0.05937029999999999,
+  "usage": {
+   "input_tokens": 24,
+   "cache_creation_input_tokens": 15724,
+   "cache_read_input_tokens": 98663,
+   "output_tokens": 5750,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 15724
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 979,
+    "outputTokens": 5774,
+    "cacheReadInputTokens": 98663,
+    "cacheCreationInputTokens": 15724,
+    "webSearchRequests": 0,
+    "costUSD": 0.05937029999999999,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "89f46138-95ba-4a6f-bb89-7d66640302b6"
+ },
+ "stderr": ""
+}

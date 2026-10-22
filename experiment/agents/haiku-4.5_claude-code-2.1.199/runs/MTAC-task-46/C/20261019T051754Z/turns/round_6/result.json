@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 125397,
+  "duration_api_ms": 95130,
+  "ttft_ms": 4523,
+  "ttft_stream_ms": 4522,
+  "time_to_request_ms": 126,
+  "num_turns": 22,
+  "result": "执行结果：通过\n\n完成描述：添加了出发时间选择器和动态预计到达时间计算，根据路程耗时推算各个站点的到达时间。天气数据按照预计到达时间动态变化，时间轴和地图弹窗同步展示相应的天气信息。地图底部添加了行程进度滑块，用户拖动时高亮显示当前路段为鲜红色。更新了侧边栏、地图、应用主文件和工具函数文件。\n\n完成了时间动态天气预测和行程滑块功能。",
+  "stop_reason": "end_turn",
+  "session_id": "97b03103-d0f3-4825-991b-478998479f7c",
+  "total_cost_usd": 0.42258924999999997,
+  "usage": {
+   "input_tokens": 127,
+   "cache_creation_input_tokens": 99211,
+   "cache_read_input_tokens": 2375085,
+   "output_tokens": 12188,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 99211
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 127,
+    "outputTokens": 12188,
+    "cacheReadInputTokens": 2375085,
+    "cacheCreationInputTokens": 99211,
+    "webSearchRequests": 0,
+    "costUSD": 0.42258924999999997,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "3515ce11-001b-4100-8269-32d3a140009c"
+ },
+ "stderr": ""
+}

@@ -1,0 +1,56 @@
+{
+ "label": "b3-check-R2",
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 685,
+  "duration_api_ms": 145,
+  "ttft_ms": 141,
+  "ttft_stream_ms": 139,
+  "time_to_request_ms": 128,
+  "num_turns": 2,
+  "result": "Done.",
+  "stop_reason": "end_turn",
+  "session_id": "376d1dc4-e296-4e70-b189-6a8f077ef5ab",
+  "total_cost_usd": 7.000000000000001e-05,
+  "usage": {
+   "input_tokens": 20,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 10,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 20,
+    "outputTokens": 10,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "webSearchRequests": 0,
+    "costUSD": 7.000000000000001e-05,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "f8e17adc-383d-44ad-ae4a-fbb67bb4247d"
+ },
+ "text": "Node check-R2 (2 of 5): write test cases and the check of R2. It runs the route's tool: /opt/enforce/tool-installs/bin/pre-commit. The cases: at least two that break the rule, as files in /opt/enforce/fixtures/R2/flag, and at least two that follow it, in /opt/enforce/fixtures/R2/pass; each one file of what the check reads (A source code file. Where: /workspace/<path>, on disk for every mechanism; the content of a write before it happens: only the framework's hook (/opt/enforce-toolbox/mechanisms/framework-hooks.md) before its write tool Which files: decide when the check runs, from the file in hand: the files the agent will create cannot be known before. Map its name, or its content, to a language with a complete list, such as Pygments (`get_lexer_for_filename`, `guess_lexer`) or GitHub Linguist's list of languages: programming and markup languages that hold code count (Python, JavaScript, HTML, CSS, shell, …); documents and data do not (Markdown, plain text, JSON, YAML, CSV), unless the rule names them. A rule about the file itself (its first lines, its name, its encoding) applies once per file, in that file's own comment syntax (in HTML, an HTML comment); a rule about the code in it (functions, names, statements) also reaches code embedded in another file, such as a `<script>` in HTML. A file whose kind is unknown is checked, not passed.). Cover every kind of input the rule reaches, as the agent may really write it: for files, several languages each in its own comment syntax (Python, JavaScript, HTML with a <script>, a shell script, …), and also files the rule does not cover, which must pass; for a reply, short and long replies, with lists and code blocks. The check: the executable /opt/enforce/checks/R2; `/opt/enforce/checks/R2 <file>` exits 0 when the file follows the rule, and otherwise exits 1 and prints each violation: R2, where (the file and line, or the part of the text), and what to change. By the route: A framework that runs the checks in a `.pre-commit-config.yaml` file when a commit is made. Check: a `.pre-commit-config.yaml` (local hooks: `repo: local`, `entry: <check>`) and `pre-commit install`; or `pre-commit run --files <file>` Start from the skeleton: /opt/enforce-toolbox/skeletons/pre_commit_check.sh (pre-commit runs a check on one file, outside a commit) It reads A source code file. Where: /workspace/<path>, on disk for every mechanism; the content of a write before it happens: only the framework's hook (/opt/enforce-toolbox/mechanisms/framework-hooks.md) before its write tool Which files: decide when the check runs, from the file in hand: the files the agent will create cannot be known before. Map its name, or its content, to a language with a complete list, such as Pygments (`get_lexer_for_filename`, `guess_lexer`) or GitHub Linguist's list of languages: programming and markup languages that hold code count (Python, JavaScript, HTML, CSS, shell, …); documents and data do not (Markdown, plain text, JSON, YAML, CSV), unless the rule names them. A rule about the file itself (its first lines, its name, its encoding) applies once per file, in that file's own comment syntax (in HTML, an HTML comment); a rule about the code in it (functions, names, statements) also reaches code embedded in another file, such as a `<script>` in HTML. A file whose kind is unknown is checked, not passed..\nDone when: /opt/enforce/fixtures/R2/flag and /opt/enforce/fixtures/R2/pass each hold at least two files; as the agent, the check exits 1 and names R2 for every file in /opt/enforce/fixtures/R2/flag, and exits 0 for every file in /opt/enforce/fixtures/R2/pass, and it runs pre-commit. The harness checks this when you reply.",
+ "stderr": ""
+}

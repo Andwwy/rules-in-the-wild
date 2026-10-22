@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 60490,
+  "duration_api_ms": 55982,
+  "ttft_ms": 4626,
+  "ttft_stream_ms": 4625,
+  "time_to_request_ms": 119,
+  "num_turns": 11,
+  "result": "喵～代码小灵已为开发者大大完成飞机初始化和起飞逻辑，包括每个玩家4架飞机、掷出6时可选择飞机起飞、飞机在棋盘上绘制，所有代码使用4个空格缩进并通过了完整测试。哒～",
+  "stop_reason": "end_turn",
+  "session_id": "a0bb4d32-21a5-4f90-857a-c5186659037b",
+  "total_cost_usd": 0.11560525,
+  "usage": {
+   "input_tokens": 64,
+   "cache_creation_input_tokens": 14017,
+   "cache_read_input_tokens": 535200,
+   "output_tokens": 8900,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 14017
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 64,
+    "outputTokens": 8900,
+    "cacheReadInputTokens": 535200,
+    "cacheCreationInputTokens": 14017,
+    "webSearchRequests": 0,
+    "costUSD": 0.11560525,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "2b1f1588-3edf-4b5d-96be-8260d465a65d"
+ },
+ "stderr": ""
+}

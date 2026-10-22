@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 172858,
+  "duration_api_ms": 126206,
+  "ttft_ms": 3750,
+  "ttft_stream_ms": 3748,
+  "time_to_request_ms": 102,
+  "num_turns": 25,
+  "result": "喵～\n\n代码小灵已实现游戏日志侧边栏、胜利判定弹窗与重新开始功能，所有代码改为四空格缩进并通过四个播放剧本测试。\n\n哒～",
+  "stop_reason": "end_turn",
+  "session_id": "f96299d9-4701-4a4d-88df-0cefefed3f55",
+  "total_cost_usd": 0.5829270500000001,
+  "usage": {
+   "input_tokens": 141,
+   "cache_creation_input_tokens": 167429,
+   "cache_read_input_tokens": 2819048,
+   "output_tokens": 18319,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 167429
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 141,
+    "outputTokens": 18319,
+    "cacheReadInputTokens": 2819048,
+    "cacheCreationInputTokens": 167429,
+    "webSearchRequests": 0,
+    "costUSD": 0.5829270500000001,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "87535662-ecb1-45cd-b6f0-645fc0f3e8cb"
+ },
+ "stderr": ""
+}

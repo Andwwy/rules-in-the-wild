@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 32497,
+  "duration_api_ms": 26990,
+  "ttft_ms": 10217,
+  "ttft_stream_ms": 10212,
+  "time_to_request_ms": 105,
+  "num_turns": 2,
+  "result": "喵～\n\n代码小灵为开发者大大绘制了标准的飞行棋十字形棋盘，包含外围公共走步格子、四条彩色安全通道和中心终点区域，所有格子都用Canvas绘制并留有清晰的视觉界线。哒～",
+  "stop_reason": "end_turn",
+  "session_id": "4304bec1-2d86-4ee3-adfb-43a51f1ca19f",
+  "total_cost_usd": 0.039036799999999997,
+  "usage": {
+   "input_tokens": 14,
+   "cache_creation_input_tokens": 5168,
+   "cache_read_input_tokens": 82028,
+   "output_tokens": 4872,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 5168
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 14,
+    "outputTokens": 4872,
+    "cacheReadInputTokens": 82028,
+    "cacheCreationInputTokens": 5168,
+    "webSearchRequests": 0,
+    "costUSD": 0.039036799999999997,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "557b8e1e-c172-4b75-a3bc-364be8b4efa8"
+ },
+ "stderr": ""
+}

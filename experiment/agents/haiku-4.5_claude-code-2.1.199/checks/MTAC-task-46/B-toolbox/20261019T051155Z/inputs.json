@@ -1,0 +1,50 @@
+{
+ "run": "task_046/BT/20261019T051155Z",
+ "image": "alexgshaw/break-filter-js-from-html:20251031",
+ "claude_code": "2.1.199",
+ "model": "claude-haiku-4-5",
+ "gateway": "http://host.docker.internal:4000",
+ "flags": {
+  "session1": "claude -p --append-system-prompt-file /opt/enforce-harness/system.md --dangerously-skip-permissions --thinking adaptive --effort max --output-format json (root, cwd /opt/enforce, HOME=/root)",
+  "task": "claude -p --dangerously-skip-permissions --append-system-prompt-file /opt/agent/environment.md --thinking adaptive --effort max --output-format json (agent, cwd /workspace, HOME=/home/agent)"
+ },
+ "env": [
+  "ANTHROPIC_API_KEY",
+  "ANTHROPIC_AUTH_TOKEN",
+  "ANTHROPIC_BASE_URL",
+  "ANTHROPIC_CUSTOM_HEADERS",
+  "ANTHROPIC_DEFAULT_HAIKU_MODEL",
+  "ANTHROPIC_DEFAULT_OPUS_MODEL",
+  "ANTHROPIC_DEFAULT_SONNET_MODEL",
+  "ANTHROPIC_MODEL",
+  "CLAUDE_CODE_MAX_OUTPUT_TOKENS",
+  "DISABLE_AUTOUPDATER",
+  "IS_SANDBOX",
+  "MAX_THINKING_TOKENS"
+ ],
+ "task_note": "You work in a Debian 12 container, as the user `agent` (home /home/agent), without root and without sudo. The container has python3, pip and wget, and access to the internet; nothing else is installed. You can install software only inside the project or your home folder. The project owner's rules (CLAUDE.md) and the user's requests are in Mandarin Chinese.\n",
+ "session1": {
+  "system.md": "58b6cea16a2d1df0",
+  "messages.json": "9f921926961af08a",
+  "rules": "R1,R3",
+  "wrap.py": "70611384c04edb95",
+  "environment.py": "09de272b2f01229e",
+  "try": "4d9f10a65e67c9e7",
+  "toolbox": "0e9c1e89d8a3ce70c515beff39947a2b3485db4f7b32d5a83f86d08cc2681e36",
+  "toolbox_files": [
+   "enforce",
+   "README.md",
+   "enforce_lib/__init__.py",
+   "enforce_lib/adapters.py",
+   "enforce_lib/cli.py",
+   "enforce_lib/config.py",
+   "enforce_lib/core.py",
+   "enforce_lib/hook.py",
+   "enforce_lib/names.py"
+  ]
+ },
+ "preload": null,
+ "turns": 1,
+ "mock": "scripts/chain_scenario.json",
+ "workspace": "kept after Session 1 (no reset); given to `agent` once, before Session 1"
+}

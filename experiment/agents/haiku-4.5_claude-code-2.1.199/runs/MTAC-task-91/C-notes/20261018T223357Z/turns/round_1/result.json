@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 43396,
+  "duration_api_ms": 41869,
+  "ttft_ms": 5540,
+  "ttft_stream_ms": 5539,
+  "time_to_request_ms": 95,
+  "num_turns": 10,
+  "result": "喵～\n\n代码小灵已成功绘制了飞行棋的十字形棋盘，包含外围公共走步格子、四个彩色出发点、四条安全通道和中心终点区域。\n\n哒～",
+  "stop_reason": "end_turn",
+  "session_id": "f96299d9-4701-4a4d-88df-0cefefed3f55",
+  "total_cost_usd": 0.15694799999999998,
+  "usage": {
+   "input_tokens": 72,
+   "cache_creation_input_tokens": 69528,
+   "cache_read_input_tokens": 377960,
+   "output_tokens": 6434,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 69528
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 72,
+    "outputTokens": 6434,
+    "cacheReadInputTokens": 377960,
+    "cacheCreationInputTokens": 69528,
+    "webSearchRequests": 0,
+    "costUSD": 0.15694799999999998,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "0d20cf63-e694-47d1-a719-53c7a4dbf341"
+ },
+ "stderr": ""
+}

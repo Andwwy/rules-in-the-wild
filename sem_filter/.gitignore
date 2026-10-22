@@ -6,3 +6,6 @@ __pycache__/
 # not published
 data/
 archive/
+
+# jev test answers (dev-set data)
+jev test/out/

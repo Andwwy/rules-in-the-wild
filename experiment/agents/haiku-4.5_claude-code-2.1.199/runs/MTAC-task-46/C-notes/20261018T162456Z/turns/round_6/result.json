@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 115994,
+  "duration_api_ms": 111749,
+  "ttft_ms": 4245,
+  "ttft_stream_ms": 4241,
+  "time_to_request_ms": 104,
+  "num_turns": 27,
+  "result": "检验结果：通过\n\n描述：已完成动态天气预测和时间轴滑块功能。侧边栏添加出发时间选择器。根据路段耗时动态计算到达每个站点的预计到达时间，时间轴显示具体抵达时刻。天气工具模块支持基于时间偏移的天气变化模拟。地图实现当前时段高亮显示（橙色折线）。在地图底部放置时间轴滑块，用户拖动模拟旅程推进，同时显示当前时间和总耗时。应用主组件集成时间轴滑块和路线数据通信。所有文件名符合奇数字符要求。项目开发日志已更新记录七轮完成内容。\n\n已完成出发时间选择、预计到达时间计算、时间轴滑块和路段高亮显示功能。",
+  "stop_reason": "end_turn",
+  "session_id": "9fba17b4-6b45-41af-88fe-b5d1dc782a0e",
+  "total_cost_usd": 0.57047905,
+  "usage": {
+   "input_tokens": 160,
+   "cache_creation_input_tokens": 131483,
+   "cache_read_input_tokens": 3313403,
+   "output_tokens": 14925,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 131483
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 160,
+    "outputTokens": 14925,
+    "cacheReadInputTokens": 3313403,
+    "cacheCreationInputTokens": 131483,
+    "webSearchRequests": 0,
+    "costUSD": 0.57047905,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "93e28651-3e99-4fc6-b92a-9c57b2929540"
+ },
+ "stderr": ""
+}

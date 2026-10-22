@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 90366,
+  "duration_api_ms": 82324,
+  "ttft_ms": 2642,
+  "ttft_stream_ms": 2638,
+  "time_to_request_ms": 109,
+  "num_turns": 12,
+  "result": "喵～\n\n代码小灵已完整实现飞行棋的跳跃和飞跃机制，包括停在同色普通格子时自动跳跃到下一同色格子、停在同色飞行起点时飞跃到对面终点、跳跃飞跃后继续检测吃子、界面显示对应提示信息、所有缩进改为2个空格。\n\n<result>通过</result><description>跳跃机制：飞机停在同色格子自动查找下一同色格子并跳跃，支持递归跳跃。飞跃机制：飞机停在同色飞行起点时飞跃到对面对应位置。两种机制都在触发后检测吃子和继续机制，界面显示详细提示，代码规范符合2空格缩进要求。</description>\n\n哒～",
+  "stop_reason": "end_turn",
+  "session_id": "dbe6fa95-f096-4101-949f-928a963569f3",
+  "total_cost_usd": 0.2705082,
+  "usage": {
+   "input_tokens": 70,
+   "cache_creation_input_tokens": 74732,
+   "cache_read_input_tokens": 1161832,
+   "output_tokens": 12168,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 74732
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 70,
+    "outputTokens": 12168,
+    "cacheReadInputTokens": 1161832,
+    "cacheCreationInputTokens": 74732,
+    "webSearchRequests": 0,
+    "costUSD": 0.2705082,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "85d24de5-0e25-474b-af2a-869c0fa75c45"
+ },
+ "stderr": ""
+}

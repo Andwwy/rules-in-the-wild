@@ -95,6 +95,33 @@ directive on its own, but it is kept because it scopes everything under it (see 
 Emitted whole, never split. A fence is the *example*; the rule is the prose around it.
 Splitting `foo.bar(); baz()` at the `;` and `.` would produce nothing but noise.
 
+**A fence opened at the end of a prose line** (2.3.0). Generated policies write
+
+```
+3. Review the code in this format: ```
+Strengths: …
+```。
+```
+
+CommonMark opens a fence only at the start of a line, so the trailing ``` stays inline and
+the closing line *opens* a fence that never closes: everything after it, every later list
+item, became one structural `code` unit. `_orphan_fences` re-pairs such a fence before
+markdown-it reads the file, and only when all of these hold:
+
+- markdown-it leaves a fence unclosed (a balanced document is never touched);
+- that fence's line is a bare marker, at most followed by punctuation (`````。`): a word
+  after the marker is an info string, so the line really opens a fence;
+- the nearest earlier line with no fence line between is prose ending in an unpaired
+  marker of the same kind (``` or ~~~; an odd number of runs on the line, optionally
+  followed by an info word), at the same blockquote depth, at most 60 lines up;
+- neither line is in YAML front matter.
+
+The lines from after the opener through the closing line are one `code` unit and are
+blanked, offset-preserving, in the copy markdown-it parses; the opener line stays a
+`statement`. At most 16 repairs per file, since each re-parses the rest of it.
+`heading_spans` and `bulk._fenced` use the same regions. `tests/test_grammar.py` holds the
+adversarial cases.
+
 ### 3.4 Tables → one unit per row (`table_header`, `table_row`) — both structural
 
 The separator row (`|---|---|`) is dropped. The first row is typed `table_header`; the
@@ -326,7 +353,8 @@ Honest list of what this grammar does not do well.
 - **Terminal-less lines inside block scalars still merge** (`Triggers on: x, y⏎Part of
   the Frontend category.`) — a newline is not a boundary and nothing else marks one.
 - **Fence-parity misparses.** A document with an unbalanced ``` fence flips code/prose
-  for the rest of the file; the grammar inherits markdown-it's reading.
+  for the rest of the file; the grammar inherits markdown-it's reading. The one repaired
+  case is a fence opened at the end of a prose line (§3.3).
 - **A clause can still span a wrapped line.** `clause_text` keeps the source's newlines
   verbatim, because the offsets must round-trip. Normalize whitespace at display time
   (`re.sub(r"\s+", " ", text)`) — `text_sha256` is already computed that way.

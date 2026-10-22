@@ -1,0 +1,1206 @@
+{
+ "summary": {
+  "hooks": 8,
+  "rules": {
+   "R1": {
+    "reply": [
+     {
+      "case": "the reply does not start with 喵～",
+      "caught": true,
+      "early": false,
+      "at": [
+       "Stop"
+      ]
+     }
+    ]
+   },
+   "R2": {
+    "reply": [
+     {
+      "case": "the reply says 我",
+      "caught": false,
+      "early": false,
+      "at": []
+     }
+    ]
+   },
+   "R3": {
+    "reply": [
+     {
+      "case": "the reply calls the user 你",
+      "caught": false,
+      "early": false,
+      "at": []
+     }
+    ]
+   },
+   "R4": {
+    "reply": [
+     {
+      "case": "an English word in the reply",
+      "caught": true,
+      "early": false,
+      "at": [
+       "Stop"
+      ]
+     }
+    ]
+   },
+   "R8": {
+    "reply": [
+     {
+      "case": "the reply does not end with 哒～",
+      "caught": true,
+      "early": false,
+      "at": [
+       "Stop"
+      ]
+     }
+    ]
+   },
+   "R5": {
+    "tool": [
+     {
+      "case": "a Python file without the coding line",
+      "caught": false,
+      "early": false,
+      "at": []
+     },
+     {
+      "case": "a JS file without the coding line",
+      "caught": false,
+      "early": false,
+      "at": []
+     }
+    ],
+    "shell": [
+     {
+      "case": "a Python file without the coding line",
+      "caught": false,
+      "early": false,
+      "at": []
+     },
+     {
+      "case": "a JS file without the coding line",
+      "caught": false,
+      "early": false,
+      "at": []
+     }
+    ]
+   },
+   "R6": {
+    "tool": [
+     {
+      "case": "a Python file without the AI-Assisted line",
+      "caught": false,
+      "early": false,
+      "at": []
+     },
+     {
+      "case": "a JS file without the AI-Assisted line",
+      "caught": false,
+      "early": false,
+      "at": []
+     }
+    ],
+    "shell": [
+     {
+      "case": "a Python file without the AI-Assisted line",
+      "caught": false,
+      "early": false,
+      "at": []
+     },
+     {
+      "case": "a JS file without the AI-Assisted line",
+      "caught": false,
+      "early": false,
+      "at": []
+     }
+    ]
+   },
+   "R7": {
+    "tool": [
+     {
+      "case": "a Python function of 69 lines",
+      "caught": false,
+      "early": false,
+      "at": []
+     },
+     {
+      "case": "a JS function of 68 lines",
+      "caught": false,
+      "early": false,
+      "at": []
+     }
+    ],
+    "shell": [
+     {
+      "case": "a Python function of 69 lines",
+      "caught": false,
+      "early": false,
+      "at": []
+     },
+     {
+      "case": "a JS function of 68 lines",
+      "caught": false,
+      "early": false,
+      "at": []
+     }
+    ]
+   }
+  },
+  "false_flags": [],
+  "hook_errors": [
+   ".py \"$f\" 2>&1 | grep -q '\"'\"'violations'\"'\"' && exit 2 || exit 0; fi; exit 0; }'",
+   "First line must contain: # -*- coding: utf-8 -*-\" >&2 && exit 2); fi; }; exit 0'",
+   "by Claude Code; reviewed and modified by author.\" >&2 && exit 2); fi; }; exit 0'"
+  ]
+ },
+ "raw": {
+  "hooks": 8,
+  "cases": [
+   {
+    "rule": null,
+    "name": "clean project",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "First line must contain: # -*- coding: utf-8 -*-\" >&2 && exit 2); fi; }; exit 0'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "by Claude Code; reviewed and modified by author.\" >&2 && exit 2); fi; }; exit 0'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": ".py \"$f\" 2>&1 | grep -q '\"'\"'violations'\"'\"' && exit 2 || exit 0; fi; exit 0; }'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "First line must contain: # -*- coding: utf-8 -*-\" >&2 && exit 2); fi; }; exit 0'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "by Claude Code; reviewed and modified by author.\" >&2 && exit 2); fi; }; exit 0'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": ".py \"$f\" 2>&1 | grep -q '\"'\"'violations'\"'\"' && exit 2 || exit 0; fi; exit 0; }'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "\")'\"'\"' && exit 0 || (echo '\"'\"'Response must start with 喵～'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "onse must not use 你 to address the user. Use 开发者大大 instead.'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "onse must use only Chinese characters, not English letters.'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "～$\")'\"'\"' && exit 0 || (echo '\"'\"'Response must end with 哒～'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": null,
+    "name": "clean project",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "\")'\"'\"' && exit 0 || (echo '\"'\"'Response must start with 喵～'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "onse must not use 你 to address the user. Use 开发者大大 instead.'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "onse must use only Chinese characters, not English letters.'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "～$\")'\"'\"' && exit 0 || (echo '\"'\"'Response must end with 哒～'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R1",
+    "name": "the reply does not start with 喵～",
+    "channel": "reply",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "\")'\"'\"' && exit 0 || (echo '\"'\"'Response must start with 喵～'\"'\"' >&2 && exit 2)'",
+      "verdict": "flag",
+      "msg": "Response must start with 喵～\n"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "onse must not use 你 to address the user. Use 开发者大大 instead.'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "onse must use only Chinese characters, not English letters.'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "～$\")'\"'\"' && exit 0 || (echo '\"'\"'Response must end with 哒～'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R2",
+    "name": "the reply says 我",
+    "channel": "reply",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "\")'\"'\"' && exit 0 || (echo '\"'\"'Response must start with 喵～'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "onse must not use 你 to address the user. Use 开发者大大 instead.'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "onse must use only Chinese characters, not English letters.'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "～$\")'\"'\"' && exit 0 || (echo '\"'\"'Response must end with 哒～'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R3",
+    "name": "the reply calls the user 你",
+    "channel": "reply",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "\")'\"'\"' && exit 0 || (echo '\"'\"'Response must start with 喵～'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "onse must not use 你 to address the user. Use 开发者大大 instead.'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "onse must use only Chinese characters, not English letters.'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "～$\")'\"'\"' && exit 0 || (echo '\"'\"'Response must end with 哒～'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R4",
+    "name": "an English word in the reply",
+    "channel": "reply",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "\")'\"'\"' && exit 0 || (echo '\"'\"'Response must start with 喵～'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "onse must not use 你 to address the user. Use 开发者大大 instead.'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "onse must use only Chinese characters, not English letters.'\"'\"' >&2 && exit 2)'",
+      "verdict": "flag",
+      "msg": "Response must use only Chinese characters, not English letters.\n"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "～$\")'\"'\"' && exit 0 || (echo '\"'\"'Response must end with 哒～'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R8",
+    "name": "the reply does not end with 哒～",
+    "channel": "reply",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "\")'\"'\"' && exit 0 || (echo '\"'\"'Response must start with 喵～'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "onse must not use 你 to address the user. Use 开发者大大 instead.'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "onse must use only Chinese characters, not English letters.'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "～$\")'\"'\"' && exit 0 || (echo '\"'\"'Response must end with 哒～'\"'\"' >&2 && exit 2)'",
+      "verdict": "flag",
+      "msg": "Response must end with 哒～\n"
+     }
+    ]
+   },
+   {
+    "rule": null,
+    "name": "我们 is not a self-reference by 我 (out of R2's scope)",
+    "channel": "reply",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "\")'\"'\"' && exit 0 || (echo '\"'\"'Response must start with 喵～'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "onse must not use 你 to address the user. Use 开发者大大 instead.'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "onse must use only Chinese characters, not English letters.'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "～$\")'\"'\"' && exit 0 || (echo '\"'\"'Response must end with 哒～'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R5",
+    "name": "a Python file without the coding line",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "First line must contain: # -*- coding: utf-8 -*-\" >&2 && exit 2); fi; }; exit 0'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "by Claude Code; reviewed and modified by author.\" >&2 && exit 2); fi; }; exit 0'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": ".py \"$f\" 2>&1 | grep -q '\"'\"'violations'\"'\"' && exit 2 || exit 0; fi; exit 0; }'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "First line must contain: # -*- coding: utf-8 -*-\" >&2 && exit 2); fi; }; exit 0'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "by Claude Code; reviewed and modified by author.\" >&2 && exit 2); fi; }; exit 0'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": ".py \"$f\" 2>&1 | grep -q '\"'\"'violations'\"'\"' && exit 2 || exit 0; fi; exit 0; }'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "\")'\"'\"' && exit 0 || (echo '\"'\"'Response must start with 喵～'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "onse must not use 你 to address the user. Use 开发者大大 instead.'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "onse must use only Chinese characters, not English letters.'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "～$\")'\"'\"' && exit 0 || (echo '\"'\"'Response must end with 哒～'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R5",
+    "name": "a Python file without the coding line",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "\")'\"'\"' && exit 0 || (echo '\"'\"'Response must start with 喵～'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "onse must not use 你 to address the user. Use 开发者大大 instead.'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "onse must use only Chinese characters, not English letters.'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "～$\")'\"'\"' && exit 0 || (echo '\"'\"'Response must end with 哒～'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R5",
+    "name": "a JS file without the coding line",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "First line must contain: # -*- coding: utf-8 -*-\" >&2 && exit 2); fi; }; exit 0'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "by Claude Code; reviewed and modified by author.\" >&2 && exit 2); fi; }; exit 0'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": ".py \"$f\" 2>&1 | grep -q '\"'\"'violations'\"'\"' && exit 2 || exit 0; fi; exit 0; }'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "First line must contain: # -*- coding: utf-8 -*-\" >&2 && exit 2); fi; }; exit 0'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "by Claude Code; reviewed and modified by author.\" >&2 && exit 2); fi; }; exit 0'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": ".py \"$f\" 2>&1 | grep -q '\"'\"'violations'\"'\"' && exit 2 || exit 0; fi; exit 0; }'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "\")'\"'\"' && exit 0 || (echo '\"'\"'Response must start with 喵～'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "onse must not use 你 to address the user. Use 开发者大大 instead.'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "onse must use only Chinese characters, not English letters.'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "～$\")'\"'\"' && exit 0 || (echo '\"'\"'Response must end with 哒～'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R5",
+    "name": "a JS file without the coding line",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "\")'\"'\"' && exit 0 || (echo '\"'\"'Response must start with 喵～'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "onse must not use 你 to address the user. Use 开发者大大 instead.'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "onse must use only Chinese characters, not English letters.'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "～$\")'\"'\"' && exit 0 || (echo '\"'\"'Response must end with 哒～'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R6",
+    "name": "a Python file without the AI-Assisted line",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "First line must contain: # -*- coding: utf-8 -*-\" >&2 && exit 2); fi; }; exit 0'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "by Claude Code; reviewed and modified by author.\" >&2 && exit 2); fi; }; exit 0'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": ".py \"$f\" 2>&1 | grep -q '\"'\"'violations'\"'\"' && exit 2 || exit 0; fi; exit 0; }'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "First line must contain: # -*- coding: utf-8 -*-\" >&2 && exit 2); fi; }; exit 0'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "by Claude Code; reviewed and modified by author.\" >&2 && exit 2); fi; }; exit 0'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": ".py \"$f\" 2>&1 | grep -q '\"'\"'violations'\"'\"' && exit 2 || exit 0; fi; exit 0; }'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "\")'\"'\"' && exit 0 || (echo '\"'\"'Response must start with 喵～'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "onse must not use 你 to address the user. Use 开发者大大 instead.'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "onse must use only Chinese characters, not English letters.'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "～$\")'\"'\"' && exit 0 || (echo '\"'\"'Response must end with 哒～'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R6",
+    "name": "a Python file without the AI-Assisted line",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "\")'\"'\"' && exit 0 || (echo '\"'\"'Response must start with 喵～'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "onse must not use 你 to address the user. Use 开发者大大 instead.'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "onse must use only Chinese characters, not English letters.'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "～$\")'\"'\"' && exit 0 || (echo '\"'\"'Response must end with 哒～'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R6",
+    "name": "a JS file without the AI-Assisted line",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "First line must contain: # -*- coding: utf-8 -*-\" >&2 && exit 2); fi; }; exit 0'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "by Claude Code; reviewed and modified by author.\" >&2 && exit 2); fi; }; exit 0'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": ".py \"$f\" 2>&1 | grep -q '\"'\"'violations'\"'\"' && exit 2 || exit 0; fi; exit 0; }'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "First line must contain: # -*- coding: utf-8 -*-\" >&2 && exit 2); fi; }; exit 0'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "by Claude Code; reviewed and modified by author.\" >&2 && exit 2); fi; }; exit 0'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": ".py \"$f\" 2>&1 | grep -q '\"'\"'violations'\"'\"' && exit 2 || exit 0; fi; exit 0; }'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "\")'\"'\"' && exit 0 || (echo '\"'\"'Response must start with 喵～'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "onse must not use 你 to address the user. Use 开发者大大 instead.'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "onse must use only Chinese characters, not English letters.'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "～$\")'\"'\"' && exit 0 || (echo '\"'\"'Response must end with 哒～'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R6",
+    "name": "a JS file without the AI-Assisted line",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "\")'\"'\"' && exit 0 || (echo '\"'\"'Response must start with 喵～'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "onse must not use 你 to address the user. Use 开发者大大 instead.'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "onse must use only Chinese characters, not English letters.'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "～$\")'\"'\"' && exit 0 || (echo '\"'\"'Response must end with 哒～'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R7",
+    "name": "a Python function of 69 lines",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "First line must contain: # -*- coding: utf-8 -*-\" >&2 && exit 2); fi; }; exit 0'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "by Claude Code; reviewed and modified by author.\" >&2 && exit 2); fi; }; exit 0'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": ".py \"$f\" 2>&1 | grep -q '\"'\"'violations'\"'\"' && exit 2 || exit 0; fi; exit 0; }'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "First line must contain: # -*- coding: utf-8 -*-\" >&2 && exit 2); fi; }; exit 0'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "by Claude Code; reviewed and modified by author.\" >&2 && exit 2); fi; }; exit 0'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": ".py \"$f\" 2>&1 | grep -q '\"'\"'violations'\"'\"' && exit 2 || exit 0; fi; exit 0; }'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "\")'\"'\"' && exit 0 || (echo '\"'\"'Response must start with 喵～'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "onse must not use 你 to address the user. Use 开发者大大 instead.'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "onse must use only Chinese characters, not English letters.'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "～$\")'\"'\"' && exit 0 || (echo '\"'\"'Response must end with 哒～'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R7",
+    "name": "a Python function of 69 lines",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "\")'\"'\"' && exit 0 || (echo '\"'\"'Response must start with 喵～'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "onse must not use 你 to address the user. Use 开发者大大 instead.'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "onse must use only Chinese characters, not English letters.'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "～$\")'\"'\"' && exit 0 || (echo '\"'\"'Response must end with 哒～'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R7",
+    "name": "a JS function of 68 lines",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "First line must contain: # -*- coding: utf-8 -*-\" >&2 && exit 2); fi; }; exit 0'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "by Claude Code; reviewed and modified by author.\" >&2 && exit 2); fi; }; exit 0'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": ".py \"$f\" 2>&1 | grep -q '\"'\"'violations'\"'\"' && exit 2 || exit 0; fi; exit 0; }'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "First line must contain: # -*- coding: utf-8 -*-\" >&2 && exit 2); fi; }; exit 0'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "by Claude Code; reviewed and modified by author.\" >&2 && exit 2); fi; }; exit 0'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": ".py \"$f\" 2>&1 | grep -q '\"'\"'violations'\"'\"' && exit 2 || exit 0; fi; exit 0; }'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "\")'\"'\"' && exit 0 || (echo '\"'\"'Response must start with 喵～'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "onse must not use 你 to address the user. Use 开发者大大 instead.'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "onse must use only Chinese characters, not English letters.'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "～$\")'\"'\"' && exit 0 || (echo '\"'\"'Response must end with 哒～'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R7",
+    "name": "a JS function of 68 lines",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "\")'\"'\"' && exit 0 || (echo '\"'\"'Response must start with 喵～'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "onse must not use 你 to address the user. Use 开发者大大 instead.'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "onse must use only Chinese characters, not English letters.'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "～$\")'\"'\"' && exit 0 || (echo '\"'\"'Response must end with 哒～'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": null,
+    "name": "not code: notes.md without the header lines",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "First line must contain: # -*- coding: utf-8 -*-\" >&2 && exit 2); fi; }; exit 0'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "by Claude Code; reviewed and modified by author.\" >&2 && exit 2); fi; }; exit 0'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": ".py \"$f\" 2>&1 | grep -q '\"'\"'violations'\"'\"' && exit 2 || exit 0; fi; exit 0; }'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "First line must contain: # -*- coding: utf-8 -*-\" >&2 && exit 2); fi; }; exit 0'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "by Claude Code; reviewed and modified by author.\" >&2 && exit 2); fi; }; exit 0'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": ".py \"$f\" 2>&1 | grep -q '\"'\"'violations'\"'\"' && exit 2 || exit 0; fi; exit 0; }'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "First line must contain: # -*- coding: utf-8 -*-\" >&2 && exit 2); fi; }; exit 0'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "by Claude Code; reviewed and modified by author.\" >&2 && exit 2); fi; }; exit 0'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": ".py \"$f\" 2>&1 | grep -q '\"'\"'violations'\"'\"' && exit 2 || exit 0; fi; exit 0; }'",
+      "verdict": "flag",
+      "msg": "/bin/sh: 1: Syntax error: \"(\" unexpected (expecting \"then\")\n"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "\")'\"'\"' && exit 0 || (echo '\"'\"'Response must start with 喵～'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "onse must not use 你 to address the user. Use 开发者大大 instead.'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "onse must use only Chinese characters, not English letters.'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "～$\")'\"'\"' && exit 0 || (echo '\"'\"'Response must end with 哒～'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": null,
+    "name": "not code: notes.md without the header lines",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "\")'\"'\"' && exit 0 || (echo '\"'\"'Response must start with 喵～'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "onse must not use 你 to address the user. Use 开发者大大 instead.'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "onse must use only Chinese characters, not English letters.'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "～$\")'\"'\"' && exit 0 || (echo '\"'\"'Response must end with 哒～'\"'\"' >&2 && exit 2)'",
+      "verdict": "pass"
+     }
+    ]
+   }
+  ]
+ }
+}

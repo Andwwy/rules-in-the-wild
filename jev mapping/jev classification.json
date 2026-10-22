@@ -1,0 +1,502 @@
+[
+ {
+  "id": 1,
+  "name": "ESLint",
+  "variants": [
+   "ESLint",
+   "ESLint with @typescript-eslint/naming-convention",
+   "ESLint with eslint-plugin-vue",
+   "ESLint with eslint-plugin-unicorn"
+  ]
+ },
+ {
+  "id": 2,
+  "name": "JSON Schema (Ajv)",
+  "variants": [
+   "JSON Schema validator",
+   "Ajv JSON Schema validator",
+   "Ajv",
+   "AJV JSON Schema validator"
+  ]
+ },
+ {
+  "id": 3,
+  "name": "Git pre-commit hook",
+  "variants": [
+   "Git pre-commit hook",
+   "pre-commit"
+  ]
+ },
+ {
+  "id": 5,
+  "name": "Semgrep",
+  "variants": [
+   "Semgrep"
+  ]
+ },
+ {
+  "id": 6,
+  "name": "Playwright",
+  "variants": [
+   "Playwright",
+   "Playwright Test",
+   "Playwright Test runner"
+  ]
+ },
+ {
+  "id": 7,
+  "name": "GitHub Actions",
+  "variants": [
+   "GitHub Actions",
+   "GitHub Actions CI",
+   "GitHub Actions permissions",
+   "GitHub Actions CI gate"
+  ]
+ },
+ {
+  "id": 8,
+  "name": "Vale",
+  "variants": [
+   "Vale",
+   "Vale prose linter"
+  ]
+ },
+ {
+  "id": 10,
+  "name": "bash / POSIX sh",
+  "variants": [
+   "Bash",
+   "POSIX shell",
+   "Bash command filter"
+  ]
+ },
+ {
+  "id": 11,
+  "name": "grep",
+  "variants": [
+   "grep",
+   "GNU grep"
+  ]
+ },
+ {
+  "id": 12,
+  "name": "pytest",
+  "variants": [
+   "pytest"
+  ]
+ },
+ {
+  "id": 13,
+  "name": "CLI command filter",
+  "variants": [
+   "CLI command filter"
+  ]
+ },
+ {
+  "id": 15,
+  "name": "Claude Code harness",
+  "variants": [
+   "Claude Code agent harness",
+   "Claude Code tool-permission system",
+   "Claude Code PreToolUse hook",
+   "Claude Code tool permission system"
+  ]
+ },
+ {
+  "id": 16,
+  "name": "Roslyn analyzer",
+  "variants": [
+   "Roslyn analyzer",
+   "Roslyn .NET code analyzer (CA1851: Possible multiple enumerations of IEnumerable collection)",
+   "Roslyn compiler analyzer",
+   "Roslyn C# compiler"
+  ]
+ },
+ {
+  "id": 17,
+  "name": "Stylelint",
+  "variants": [
+   "Stylelint",
+   "Stylelint with stylelint-scss"
+  ]
+ },
+ {
+  "id": 19,
+  "name": "Jest",
+  "variants": [
+   "Jest",
+   "Jest test runner"
+  ]
+ },
+ {
+  "id": 18,
+  "name": "tool-call interceptor / policy",
+  "variants": [
+   "agent harness tool-call interceptor",
+   "agent harness tool-call validator",
+   "agent harness tool-call policy",
+   "agent harness tool-call policy layer"
+  ]
+ },
+ {
+  "id": 20,
+  "name": "jq",
+  "variants": [
+   "jq"
+  ]
+ },
+ {
+  "id": 21,
+  "name": "axe-core",
+  "variants": [
+   "axe-core"
+  ]
+ },
+ {
+  "id": 22,
+  "name": "CI/CD pipeline",
+  "variants": [
+   "CI/CD pipeline",
+   "CI pipeline",
+   "CI/CD pipeline gate",
+   "CI pipeline gate"
+  ]
+ },
+ {
+  "id": 23,
+  "name": "TypeScript compiler (tsc)",
+  "variants": [
+   "TypeScript compiler (tsc)",
+   "TypeScript compiler",
+   "Type checker",
+   "TypeScript Compiler API"
+  ]
+ },
+ {
+  "id": 24,
+  "name": "markdownlint",
+  "variants": [
+   "markdownlint"
+  ]
+ },
+ {
+  "id": 25,
+  "name": "approval gate",
+  "variants": [
+   "agent harness approval gate",
+   "human-in-the-loop approval gate",
+   "CI/CD workflow approval gate",
+   "agent execution harness approval gate"
+  ]
+ },
+ {
+  "id": 27,
+  "name": "CodeQL",
+  "variants": [
+   "CodeQL"
+  ]
+ },
+ {
+  "id": 28,
+  "name": "Git",
+  "variants": [
+   "Git"
+  ]
+ },
+ {
+  "id": 29,
+  "name": "commitlint",
+  "variants": [
+   "commitlint"
+  ]
+ },
+ {
+  "id": 30,
+  "name": "remark-lint",
+  "variants": [
+   "remark-lint",
+   "remark"
+  ]
+ },
+ {
+  "id": 31,
+  "name": "Ruff",
+  "variants": [
+   "Ruff"
+  ]
+ },
+ {
+  "id": 32,
+  "name": "go test / cargo test",
+  "variants": [
+   "Go test",
+   "cargo-nextest",
+   "go test",
+   "cargo test"
+  ]
+ },
+ {
+  "id": 33,
+  "name": "POSIX test",
+  "variants": [
+   "POSIX test",
+   "POSIX test utility",
+   "POSIX shell test"
+  ]
+ },
+ {
+  "id": 34,
+  "name": "ArchUnit",
+  "variants": [
+   "ArchUnit"
+  ]
+ },
+ {
+  "id": 35,
+  "name": "npm",
+  "variants": [
+   "npm CLI",
+   "npm",
+   "npm registry (npmjs.com) trusted-publisher OIDC validation"
+  ]
+ },
+ {
+  "id": 36,
+  "name": "XCTest",
+  "variants": [
+   "XCTest",
+   "XCTest UI testing",
+   "XCTest/XCUITest"
+  ]
+ },
+ {
+  "id": 37,
+  "name": "curl",
+  "variants": [
+   "curl"
+  ]
+ },
+ {
+  "id": 38,
+  "name": "GitHub branch protection rules",
+  "variants": [
+   "GitHub branch protection rules"
+  ]
+ },
+ {
+  "id": 41,
+  "name": "POSIX filesystem permissions",
+  "variants": [
+   "POSIX filesystem permissions"
+  ]
+ },
+ {
+  "id": 42,
+  "name": "agent workflow state machine",
+  "variants": [
+   "agent workflow state machine"
+  ]
+ },
+ {
+  "id": 43,
+  "name": "awk",
+  "variants": [
+   "awk"
+  ]
+ },
+ {
+  "id": 44,
+  "name": "Biome",
+  "variants": [
+   "Biome formatter",
+   "Biome"
+  ]
+ },
+ {
+  "id": 45,
+  "name": "CLI command parser",
+  "variants": [
+   "CLI command parser"
+  ]
+ },
+ {
+  "id": 46,
+  "name": "GNU wc",
+  "variants": [
+   "GNU wc"
+  ]
+ },
+ {
+  "id": 47,
+  "name": "MSBuild",
+  "variants": [
+   "MSBuild"
+  ]
+ },
+ {
+  "id": 48,
+  "name": "OpenAPI request validator",
+  "variants": [
+   "OpenAPI request validator"
+  ]
+ },
+ {
+  "id": 49,
+  "name": "PHPUnit",
+  "variants": [
+   "PHPUnit"
+  ]
+ },
+ {
+  "id": 50,
+  "name": "pnpm",
+  "variants": [
+   "pnpm check:kit-feature-edge-boundary",
+   "pnpm check:references",
+   "pnpm CLI",
+   "pnpm"
+  ]
+ },
+ {
+  "id": 51,
+  "name": "ShellCheck",
+  "variants": [
+   "ShellCheck"
+  ]
+ },
+ {
+  "id": 52,
+  "name": "agent harness workflow controller",
+  "variants": [
+   "agent harness workflow controller"
+  ]
+ },
+ {
+  "id": 53,
+  "name": "AWS Config",
+  "variants": [
+   "AWS Config"
+  ]
+ },
+ {
+  "id": 54,
+  "name": "Checkstyle",
+  "variants": [
+   "Checkstyle"
+  ]
+ },
+ {
+  "id": 55,
+  "name": "CI test runner",
+  "variants": [
+   "CI test runner"
+  ]
+ },
+ {
+  "id": 56,
+  "name": "custom_lint",
+  "variants": [
+   "custom_lint",
+   "custom_lint (Dart/Flutter)"
+  ]
+ },
+ {
+  "id": 57,
+  "name": "Dart analyzer",
+  "variants": [
+   "Dart analyzer",
+   "Dart analyzer with a custom lint rule"
+  ]
+ },
+ {
+  "id": 58,
+  "name": "flock",
+  "variants": [
+   "flock"
+  ]
+ },
+ {
+  "id": 59,
+  "name": "Git CLI",
+  "variants": [
+   "Git CLI"
+  ]
+ },
+ {
+  "id": 60,
+  "name": "Git pre-push hook",
+  "variants": [
+   "Git pre-push hook"
+  ]
+ },
+ {
+  "id": 61,
+  "name": "Gradle",
+  "variants": [
+   "Gradle"
+  ]
+ },
+ {
+  "id": 62,
+  "name": "PHP_CodeSniffer",
+  "variants": [
+   "PHP_CodeSniffer"
+  ]
+ },
+ {
+  "id": 63,
+  "name": "PHPStan",
+  "variants": [
+   "PHPStan"
+  ]
+ },
+ {
+  "id": 64,
+  "name": "PMD",
+  "variants": [
+   "PMD"
+  ]
+ },
+ {
+  "id": 65,
+  "name": "Prometheus",
+  "variants": [
+   "Prometheus"
+  ]
+ },
+ {
+  "id": 66,
+  "name": "regular expression validator",
+  "variants": [
+   "regular expression validator"
+  ]
+ },
+ {
+  "id": 67,
+  "name": "regular-expression output filter",
+  "variants": [
+   "regular-expression output filter"
+  ]
+ },
+ {
+  "id": 68,
+  "name": "ripgrep",
+  "variants": [
+   "ripgrep"
+  ]
+ },
+ {
+  "id": 69,
+  "name": "workflow state machine",
+  "variants": [
+   "workflow state machine"
+  ]
+ },
+ {
+  "id": 70,
+  "name": "yamllint",
+  "variants": [
+   "yamllint"
+  ]
+ }
+]

@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 60525,
+  "duration_api_ms": 46804,
+  "ttft_ms": 3648,
+  "ttft_stream_ms": 3644,
+  "time_to_request_ms": 95,
+  "num_turns": 6,
+  "result": "喵～\n\n代码小灵为开发者大大完成了回合制机制、当前玩家区域高亮、掷骰6点额外回合规则，所有条件判断采用单层三元运算符结构，已更新progress.md。哒～",
+  "stop_reason": "end_turn",
+  "session_id": "4304bec1-2d86-4ee3-adfb-43a51f1ca19f",
+  "total_cost_usd": 0.09621170000000001,
+  "usage": {
+   "input_tokens": 35,
+   "cache_creation_input_tokens": 15432,
+   "cache_read_input_tokens": 375367,
+   "output_tokens": 7870,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 15432
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 35,
+    "outputTokens": 7870,
+    "cacheReadInputTokens": 375367,
+    "cacheCreationInputTokens": 15432,
+    "webSearchRequests": 0,
+    "costUSD": 0.09621170000000001,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "e3addefc-4734-4d33-a092-8f2b9ecd2384"
+ },
+ "stderr": ""
+}

@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 47611,
+  "duration_api_ms": 39311,
+  "ttft_ms": 3945,
+  "ttft_stream_ms": 3941,
+  "time_to_request_ms": 105,
+  "num_turns": 9,
+  "result": "在侧边栏表单下方新增行程详情面板，展示总距离、预计驾驶时长，并用垂直时间轴列出起点到各途经点再到终点的完整行程，每个路段标注距离和耗时信息。",
+  "stop_reason": "end_turn",
+  "session_id": "16601f6e-d38d-4fa1-bae1-0f09351e3d50",
+  "total_cost_usd": 0.12501935,
+  "usage": {
+   "input_tokens": 51,
+   "cache_creation_input_tokens": 7479,
+   "cache_read_input_tokens": 763277,
+   "output_tokens": 5261,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 7479
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 54,
+    "outputTokens": 5313,
+    "cacheReadInputTokens": 811716,
+    "cacheCreationInputTokens": 13783,
+    "webSearchRequests": 0,
+    "costUSD": 0.12501935,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "d7948b08-ca96-455f-94f5-0bc1255f6de9"
+ },
+ "stderr": ""
+}

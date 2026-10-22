@@ -1,0 +1,1550 @@
+{
+ "0|R6": [
+  {
+   "file": "src/components/FAB.jsx",
+   "line": 5,
+   "segs": [
+    [
+     "    const HandleClick  =  () => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "0|R8": [
+  {
+   "file": "index.html",
+   "line": null,
+   "segs": [
+    [
+     "index.html",
+     1
+    ]
+   ],
+   "note": "10 characters"
+  },
+  {
+   "file": "package.json",
+   "line": null,
+   "segs": [
+    [
+     "package.json",
+     1
+    ]
+   ],
+   "note": "12 characters"
+  },
+  {
+   "file": "src/components/TopBar.jsx",
+   "line": null,
+   "segs": [
+    [
+     "TopBar.jsx",
+     1
+    ]
+   ],
+   "note": "10 characters"
+  }
+ ],
+ "1|R5": [
+  {
+   "file": "index.html",
+   "line": 5,
+   "segs": [
+    [
+     "    <meta name  =  \"viewport\" content  =  \"width=device-width, initial-",
+     0
+    ],
+    [
+     "scale=",
+     1
+    ],
+    [
+     "1.0\" />",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "main.html",
+   "line": 5,
+   "segs": [
+    [
+     "    <meta name  =  \"viewport\" content  =  \"width=device-width, initial-",
+     0
+    ],
+    [
+     "scale=",
+     1
+    ],
+    [
+     "1.0\" />",
+     0
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "1|R6": [
+  {
+   "file": "src/components/FAB.jsx",
+   "line": 5,
+   "segs": [
+    [
+     "    const HandleClick  =  () => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/components/MapArea.jsx",
+   "line": 31,
+   "segs": [
+    [
+     "    const HandleMapClick  =  (e) => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "1|R8": [
+  {
+   "file": "index.html",
+   "line": null,
+   "segs": [
+    [
+     "index.html",
+     1
+    ]
+   ],
+   "note": "10 characters"
+  },
+  {
+   "file": "package.json",
+   "line": null,
+   "segs": [
+    [
+     "package.json",
+     1
+    ]
+   ],
+   "note": "12 characters"
+  },
+  {
+   "file": "src/components/TopBar.jsx",
+   "line": null,
+   "segs": [
+    [
+     "TopBar.jsx",
+     1
+    ]
+   ],
+   "note": "10 characters"
+  }
+ ],
+ "2|R6": [
+  {
+   "file": "src/App.jsx",
+   "line": 12,
+   "segs": [
+    [
+     "    const HandlePlanRoute  =  (data) => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/components/FAB.jsx",
+   "line": 5,
+   "segs": [
+    [
+     "    const HandleClick  =  () => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/components/MapArea.jsx",
+   "line": 38,
+   "segs": [
+    [
+     "    const HandleMapClick  =  (e) => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/components/MapArea.jsx",
+   "line": 52,
+   "segs": [
+    [
+     "    const HandlePlanRoute  =  (data) => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/components/MapArea.jsx",
+   "line": 105,
+   "segs": [
+    [
+     "    const ClearRoute  =  () => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "2|R8": [
+  {
+   "file": "index.html",
+   "line": null,
+   "segs": [
+    [
+     "index.html",
+     1
+    ]
+   ],
+   "note": "10 characters"
+  },
+  {
+   "file": "package.json",
+   "line": null,
+   "segs": [
+    [
+     "package.json",
+     1
+    ]
+   ],
+   "note": "12 characters"
+  },
+  {
+   "file": "src/components/TopBar.jsx",
+   "line": null,
+   "segs": [
+    [
+     "TopBar.jsx",
+     1
+    ]
+   ],
+   "note": "10 characters"
+  }
+ ],
+ "3|R5": [],
+ "3|R6": [
+  {
+   "file": "src/App.jsx",
+   "line": 12,
+   "segs": [
+    [
+     "    const HandlePlanRoute  =  (data) => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/components/FAB.jsx",
+   "line": 5,
+   "segs": [
+    [
+     "    const HandleClick  =  () => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/components/MapArea.jsx",
+   "line": 38,
+   "segs": [
+    [
+     "    const HandleMapClick  =  (e) => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/components/MapArea.jsx",
+   "line": 52,
+   "segs": [
+    [
+     "    const CreateCustomIcon  =  (number) => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/components/MapArea.jsx",
+   "line": 68,
+   "segs": [
+    [
+     "    const HandlePlanRoute  =  (data) => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/components/MapArea.jsx",
+   "line": 141,
+   "segs": [
+    [
+     "    const ClearRoute  =  () => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "3|R8": [
+  {
+   "file": "index.html",
+   "line": null,
+   "segs": [
+    [
+     "index.html",
+     1
+    ]
+   ],
+   "note": "10 characters"
+  },
+  {
+   "file": "src/components/TopBar.jsx",
+   "line": null,
+   "segs": [
+    [
+     "TopBar.jsx",
+     1
+    ]
+   ],
+   "note": "10 characters"
+  },
+  {
+   "file": "src/main.jsx",
+   "line": null,
+   "segs": [
+    [
+     "main.jsx",
+     1
+    ]
+   ],
+   "note": "8 characters"
+  }
+ ],
+ "4|R5": [
+  {
+   "file": "index.html",
+   "line": 5,
+   "segs": [
+    [
+     "    <meta name  =  \"viewport\" content  =  \"width=device-width, initial-scale",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "1.0\" />",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "main.html",
+   "line": 5,
+   "segs": [
+    [
+     "    <meta name  =  \"viewport\" content  =  \"width=device-width, initial-scale",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "1.0\" />",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/components/MapArea.jsx",
+   "line": 54,
+   "segs": [
+    [
+     "            <svg width=\"30\" height=\"30\" viewBox=\"0 0 30 30\" xmlns",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"http://www.w3.org/2000/svg\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/components/MapArea.jsx",
+   "line": 55,
+   "segs": [
+    [
+     "                <circle cx=\"15\" cy=\"15\" r=\"12\" fill=\"#FF9800\" stroke=\"white\" stroke-width",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"2\"/>",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/components/MapArea.jsx",
+   "line": 56,
+   "segs": [
+    [
+     "                <text x=\"15\" y=\"18\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"white\">${number}</text>",
+     0
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "4|R6": [
+  {
+   "file": "src/App.jsx",
+   "line": 13,
+   "segs": [
+    [
+     "    const HandlePlanRoute  =  (data) => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/components/FAB.jsx",
+   "line": 5,
+   "segs": [
+    [
+     "    const HandleClick  =  () => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/components/MapArea.jsx",
+   "line": 38,
+   "segs": [
+    [
+     "    const HandleMapClick  =  (e) => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/components/MapArea.jsx",
+   "line": 52,
+   "segs": [
+    [
+     "    const CreateCustomIcon  =  (number) => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/components/MapArea.jsx",
+   "line": 68,
+   "segs": [
+    [
+     "    const HandlePlanRoute  =  (data) => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/components/MapArea.jsx",
+   "line": 141,
+   "segs": [
+    [
+     "    const ClearRoute  =  () => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "4|R8": [
+  {
+   "file": "index.html",
+   "line": null,
+   "segs": [
+    [
+     "index.html",
+     1
+    ]
+   ],
+   "note": "10 characters"
+  },
+  {
+   "file": "src/components/TopBar.jsx",
+   "line": null,
+   "segs": [
+    [
+     "TopBar.jsx",
+     1
+    ]
+   ],
+   "note": "10 characters"
+  },
+  {
+   "file": "src/main.jsx",
+   "line": null,
+   "segs": [
+    [
+     "main.jsx",
+     1
+    ]
+   ],
+   "note": "8 characters"
+  }
+ ],
+ "5|R5": [
+  {
+   "file": "src/components/MapArea.jsx",
+   "line": 58,
+   "segs": [
+    [
+     "                <text x=\"15\" y=\"18\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"white\">${number}</text>",
+     1
+    ]
+   ],
+   "note": "lines 58–58"
+  }
+ ],
+ "5|R6": [
+  {
+   "file": "src/App.jsx",
+   "line": 13,
+   "segs": [
+    [
+     "    const HandlePlanRoute  =  (data) => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/components/FAB.jsx",
+   "line": 5,
+   "segs": [
+    [
+     "    const HandleClick  =  () => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/components/MapArea.jsx",
+   "line": 39,
+   "segs": [
+    [
+     "    const HandleMapClick  =  (e) => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/components/MapArea.jsx",
+   "line": 54,
+   "segs": [
+    [
+     "    const CreateCustomIcon  =  (number) => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/components/MapArea.jsx",
+   "line": 76,
+   "segs": [
+    [
+     "    const HandlePlanRoute  =  (data) => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/components/MapArea.jsx",
+   "line": 150,
+   "segs": [
+    [
+     "    const ClearRoute  =  () => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "5|R8": [
+  {
+   "file": "index.html",
+   "line": null,
+   "segs": [
+    [
+     "index.html",
+     1
+    ]
+   ],
+   "note": "10 characters"
+  },
+  {
+   "file": "package.json",
+   "line": null,
+   "segs": [
+    [
+     "package.json",
+     1
+    ]
+   ],
+   "note": "12 characters"
+  },
+  {
+   "file": "process-log.md",
+   "line": null,
+   "segs": [
+    [
+     "process-log.md",
+     1
+    ]
+   ],
+   "note": "14 characters"
+  }
+ ],
+ "6|R6": [
+  {
+   "file": "src/App.jsx",
+   "line": 15,
+   "segs": [
+    [
+     "    const",
+     0
+    ],
+    [
+     " HandlePlanRoute  =  (data) => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/App.jsx",
+   "line": 20,
+   "segs": [
+    [
+     "    const",
+     0
+    ],
+    [
+     " HandleSlider  =  (pos) => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/components/FAB.jsx",
+   "line": 5,
+   "segs": [
+    [
+     "    const HandleClick  =  () => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/components/MapArea.jsx",
+   "line": 46,
+   "segs": [
+    [
+     "    const",
+     0
+    ],
+    [
+     " HandleMapClick  =  (e) => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/components/MapArea.jsx",
+   "line": 61,
+   "segs": [
+    [
+     "    const",
+     0
+    ],
+    [
+     " CreateCustomIcon  =  (number) => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/components/MapArea.jsx",
+   "line": 83,
+   "segs": [
+    [
+     "    const",
+     0
+    ],
+    [
+     " HandlePlanRoute  =  (data) => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/components/MapArea.jsx",
+   "line": 159,
+   "segs": [
+    [
+     "    const",
+     0
+    ],
+    [
+     " UpdateHighlight  =  (sliderPos) => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "6|R8": [
+  {
+   "file": "index.html",
+   "line": null,
+   "segs": [
+    [
+     "index.html",
+     1
+    ]
+   ],
+   "note": "10 characters"
+  },
+  {
+   "file": "package.json",
+   "line": null,
+   "segs": [
+    [
+     "package.json",
+     1
+    ]
+   ],
+   "note": "12 characters"
+  },
+  {
+   "file": "src/components/TimerSlide.jsx",
+   "line": null,
+   "segs": [
+    [
+     "TimerSlide.jsx",
+     1
+    ]
+   ],
+   "note": "14 characters"
+  }
+ ],
+ "7|R6": [
+  {
+   "file": "src/App.jsx",
+   "line": 15,
+   "segs": [
+    [
+     "    const HandlePlanRoute  =  (data) => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/App.jsx",
+   "line": 20,
+   "segs": [
+    [
+     "    const HandleSlider  =  (pos) => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/components/FAB.jsx",
+   "line": 5,
+   "segs": [
+    [
+     "    const HandleClick  =  () => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/components/MapArea.jsx",
+   "line": 68,
+   "segs": [
+    [
+     "    const HandleMapClick  =  (e) => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/components/MapArea.jsx",
+   "line": 83,
+   "segs": [
+    [
+     "    const CreateCustomIcon  =  (poi_number) => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/components/MapArea.jsx",
+   "line": 105,
+   "segs": [
+    [
+     "    const HandlePlanRoute  =  (poi_data) => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/components/MapArea.jsx",
+   "line": 181,
+   "segs": [
+    [
+     "    const UpdateHighlight  =  (poi_sliderPos) => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "7|R8": [
+  {
+   "file": "index.html",
+   "line": null,
+   "segs": [
+    [
+     "index.html",
+     1
+    ]
+   ],
+   "note": "10 characters"
+  },
+  {
+   "file": "src/components/TimerSlide.jsx",
+   "line": null,
+   "segs": [
+    [
+     "TimerSlide.jsx",
+     1
+    ]
+   ],
+   "note": "14 characters"
+  },
+  {
+   "file": "src/components/TopBar.jsx",
+   "line": null,
+   "segs": [
+    [
+     "TopBar.jsx",
+     1
+    ]
+   ],
+   "note": "10 characters"
+  }
+ ],
+ "8|R5": [
+  {
+   "file": "index.html",
+   "line": 5,
+   "segs": [
+    [
+     "    <meta name  =  \"viewport\" content  =  \"width=device-width, initial-scale",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "1.0\" />",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "main.html",
+   "line": 5,
+   "segs": [
+    [
+     "    <meta name  =  \"viewport\" content  =  \"width=device-width, initial-scale",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "1.0\" />",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/components/MapArea.jsx",
+   "line": 85,
+   "segs": [
+    [
+     "            <svg width=\"30\" height=\"30\" viewBox=\"0 0 30 30\" xmlns",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"http://www.w3.org/2000/svg\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/components/MapArea.jsx",
+   "line": 86,
+   "segs": [
+    [
+     "                <circle cx=\"15\" cy=\"15\" r=\"12\" fill=\"#FF9800\" stroke=\"white\" stroke-width",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"2\"/>",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/components/MapArea.jsx",
+   "line": 87,
+   "segs": [
+    [
+     "                <text x=\"15\" y=\"18\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"white\">${poi_number}</text>",
+     0
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "8|R6": [
+  {
+   "file": "src/App.jsx",
+   "line": 21,
+   "segs": [
+    [
+     "    const HandlePlanRoute  =  (trip_data) => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/App.jsx",
+   "line": 26,
+   "segs": [
+    [
+     "    const HandleSlider  =  (trip_pos) => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/App.jsx",
+   "line": 30,
+   "segs": [
+    [
+     "    const trip_handleSaveClick  =  () => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/App.jsx",
+   "line": 36,
+   "segs": [
+    [
+     "    const trip_handleConfirmSave  =  (trip_name, trip_data) => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/components/FAB.jsx",
+   "line": 5,
+   "segs": [
+    [
+     "    const HandleClick  =  () => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/components/MapArea.jsx",
+   "line": 68,
+   "segs": [
+    [
+     "    const HandleMapClick  =  (e) => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/components/MapArea.jsx",
+   "line": 83,
+   "segs": [
+    [
+     "    const CreateCustomIcon  =  (poi_number) => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/components/MapArea.jsx",
+   "line": 105,
+   "segs": [
+    [
+     "    const HandlePlanRoute  =  (poi_data) => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/components/MapArea.jsx",
+   "line": 181,
+   "segs": [
+    [
+     "    const UpdateHighlight  =  (poi_sliderPos) => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "8|R8": [
+  {
+   "file": "index.html",
+   "line": null,
+   "segs": [
+    [
+     "index.html",
+     1
+    ]
+   ],
+   "note": "10 characters"
+  },
+  {
+   "file": "src/components/TimerSlide.jsx",
+   "line": null,
+   "segs": [
+    [
+     "TimerSlide.jsx",
+     1
+    ]
+   ],
+   "note": "14 characters"
+  },
+  {
+   "file": "src/components/TopNavBars.jsx",
+   "line": null,
+   "segs": [
+    [
+     "TopNavBars.jsx",
+     1
+    ]
+   ],
+   "note": "14 characters"
+  }
+ ],
+ "9|R6": [
+  {
+   "file": "src/App.jsx",
+   "line": 23,
+   "segs": [
+    [
+     "    const",
+     0
+    ],
+    [
+     " HandlePlanRoute  =  (trip_data) => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/App.jsx",
+   "line": 28,
+   "segs": [
+    [
+     "    const",
+     0
+    ],
+    [
+     " HandleSlider  =  (trip_pos) => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/App.jsx",
+   "line": 32,
+   "segs": [
+    [
+     "    const",
+     0
+    ],
+    [
+     " trip_handleSaveClick  =  () => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/App.jsx",
+   "line": 38,
+   "segs": [
+    [
+     "    const",
+     0
+    ],
+    [
+     " trip_handleConfirmSave  =  (trip_name, trip_data) => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/components/FAB.jsx",
+   "line": 5,
+   "segs": [
+    [
+     "    const",
+     0
+    ],
+    [
+     " HandleClick  =  () => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/components/MapArea.jsx",
+   "line": 68,
+   "segs": [
+    [
+     "    const",
+     0
+    ],
+    [
+     " HandleMapClick  =  (e) => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/components/MapArea.jsx",
+   "line": 83,
+   "segs": [
+    [
+     "    const",
+     0
+    ],
+    [
+     " CreateCustomIcon  =  (poi_number) => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/components/MapArea.jsx",
+   "line": 105,
+   "segs": [
+    [
+     "    const",
+     0
+    ],
+    [
+     " HandlePlanRoute  =  (poi_data) => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/components/MapArea.jsx",
+   "line": 181,
+   "segs": [
+    [
+     "    const",
+     0
+    ],
+    [
+     " UpdateHighlight  =  (poi_sliderPos) => ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "9|R8": [
+  {
+   "file": "index.html",
+   "line": null,
+   "segs": [
+    [
+     "index.html",
+     1
+    ]
+   ],
+   "note": "10 characters"
+  },
+  {
+   "file": "package.json",
+   "line": null,
+   "segs": [
+    [
+     "package.json",
+     1
+    ]
+   ],
+   "note": "12 characters"
+  },
+  {
+   "file": "processlogs.md",
+   "line": null,
+   "segs": [
+    [
+     "processlogs.md",
+     1
+    ]
+   ],
+   "note": "14 characters"
+  }
+ ]
+}

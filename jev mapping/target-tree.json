@@ -1,0 +1,190 @@
+{
+  "Target": [
+    {
+      "Agent output": [
+        "Response / message",
+        "Plan",
+        "Report / summary",
+        "Findings",
+        "Question to user",
+        "Claim / decision",
+        "Other"
+      ]
+    },
+    {
+      "Agent action": [
+        "Tool call",
+        "Shell command",
+        "Git command",
+        "File operation",
+        "Skill / subagent call",
+        "Other"
+      ]
+    },
+    {
+      "User input": [
+        "Request / prompt",
+        "Task / ticket",
+        "Other"
+      ]
+    },
+    {
+      "Agent setup": [
+        "Instruction file",
+        "Skill",
+        "Agent / persona",
+        "Memory",
+        "Workflow",
+        "Other"
+      ]
+    },
+    {
+      "Source code": [
+        "Source file",
+        "Function / method",
+        "Class / type",
+        "Component",
+        "Name / identifier",
+        "Import",
+        "Other"
+      ]
+    },
+    {
+      "Tests": [
+        "Test case",
+        "Test file / suite",
+        "Assertion",
+        "Other"
+      ]
+    },
+    {
+      "Repo / config": [
+        "Config file",
+        "Dependency / package",
+        "Build / CI file",
+        "Infra / deployment",
+        "Any file / folder",
+        "Other"
+      ]
+    },
+    {
+      "Version control": [
+        "Commit",
+        "Commit message",
+        "Branch",
+        "Pull request",
+        "Diff",
+        "Issue",
+        "Other"
+      ]
+    },
+    {
+      "Docs / content": [
+        "Doc file",
+        "Section / heading",
+        "Code comment",
+        "Changelog",
+        "Prose / copy",
+        "Template",
+        "Other"
+      ]
+    },
+    {
+      "Runtime data": [
+        "Endpoint / request",
+        "API response",
+        "Query",
+        "Record / table",
+        "Field / value",
+        "Log entry",
+        "Error",
+        "Secret / credential",
+        "Domain object",
+        "Other"
+      ]
+    },
+    {
+      "UI / media": [
+        "Page / screen",
+        "UI element",
+        "Image / media",
+        "Layout / style",
+        "Accessibility",
+        "Other"
+      ]
+    },
+    "Other"
+  ],
+  "descriptions": {
+    "Agent output": "What the agent says or writes back to the user: a response, a plan, a report, findings, a question, a claim.",
+    "Agent output > Response / message": "An assistant response or a message from the agent.",
+    "Agent output > Plan": "A plan that the agent makes.",
+    "Agent output > Report / summary": "A report, a summary or a status update from the agent.",
+    "Agent output > Findings": "Review findings, issues found, or recommendations from the agent.",
+    "Agent output > Question to user": "A question that the agent asks the user.",
+    "Agent output > Claim / decision": "A claim, a decision, an estimate or an assessment that the agent states.",
+    "Agent action": "What the agent does: a tool call, a command, a git command, a file operation, a call to a skill or a subagent.",
+    "Agent action > Tool call": "A tool call or tool invocation of any kind.",
+    "Agent action > Shell command": "A shell, bash or CLI command.",
+    "Agent action > Git command": "A git command or git operation.",
+    "Agent action > File operation": "A file write, edit, move or delete operation as an action.",
+    "Agent action > Skill / subagent call": "A call to a skill or a subagent, or a delegation.",
+    "User input": "What the user gives the agent: a request, a prompt, a task.",
+    "User input > Request / prompt": "A user request, prompt, message or input.",
+    "User input > Task / ticket": "A task, a ticket, a story or a work item.",
+    "Agent setup": "The agent's own setup: instruction files, skills, agent definitions, memory, workflows.",
+    "Agent setup > Instruction file": "A rule or instruction file for the agent, such as CLAUDE.md or AGENTS.md.",
+    "Agent setup > Skill": "A skill or its SKILL.md file.",
+    "Agent setup > Agent / persona": "An agent, a subagent or a persona definition.",
+    "Agent setup > Memory": "The agent's memory or a memory file.",
+    "Agent setup > Workflow": "A workflow, its steps, or a handoff between agents.",
+    "Source code": "Code: source files and code units such as functions, classes, components, names, imports.",
+    "Source code > Source file": "A source code file.",
+    "Source code > Function / method": "A function or a method.",
+    "Source code > Class / type": "A class, a type, an interface or a struct.",
+    "Source code > Component": "A UI or software component in code (for example a React component).",
+    "Source code > Name / identifier": "A name: a variable, function, file or other identifier.",
+    "Source code > Import": "An import or a module reference in code.",
+    "Tests": "Tests: test cases, test files, assertions.",
+    "Tests > Test case": "A test case or a test.",
+    "Tests > Test file / suite": "A test file or a test suite.",
+    "Tests > Assertion": "An assertion inside a test.",
+    "Repo / config": "Project files that are not source code or docs: config, dependencies, build and CI files, infrastructure, any file or folder.",
+    "Repo / config > Config file": "A configuration or settings file (JSON, YAML, TOML, tsconfig).",
+    "Repo / config > Dependency / package": "A dependency, a package or a library version.",
+    "Repo / config > Build / CI file": "A build script, a Dockerfile, a Makefile or a CI workflow file.",
+    "Repo / config > Infra / deployment": "Infrastructure, environments, servers or deployments.",
+    "Repo / config > Any file / folder": "A file, a folder, a path or an artifact of no specific kind.",
+    "Version control": "Version-control objects: commits, commit messages, branches, pull requests, diffs, issues.",
+    "Version control > Commit": "A git commit.",
+    "Version control > Commit message": "A commit message.",
+    "Version control > Branch": "A branch or a tag.",
+    "Version control > Pull request": "A pull request, its title or its description.",
+    "Version control > Diff": "A diff, a patch or a code change.",
+    "Version control > Issue": "An issue in an issue tracker.",
+    "Docs / content": "Written content: documentation, sections, code comments, changelogs, prose, templates.",
+    "Docs / content > Doc file": "A documentation file, such as a README or a markdown document.",
+    "Docs / content > Section / heading": "A section, a heading or a part of a document.",
+    "Docs / content > Code comment": "A code comment or a docstring.",
+    "Docs / content > Changelog": "A changelog or release notes.",
+    "Docs / content > Prose / copy": "Text, prose, wording, copy or an article.",
+    "Docs / content > Template": "A template for documents or content.",
+    "Runtime data": "Data that a running system handles: requests, responses, queries, records, fields, logs, errors, secrets, business objects.",
+    "Runtime data > Endpoint / request": "An API endpoint, a route or an HTTP request.",
+    "Runtime data > API response": "An API or HTTP response.",
+    "Runtime data > Query": "A database or search query.",
+    "Runtime data > Record / table": "Stored data: a database record, a row or a table.",
+    "Runtime data > Field / value": "One field, parameter or value, inside a request, a record or an object.",
+    "Runtime data > Log entry": "A log entry or a log record.",
+    "Runtime data > Error": "An error, an exception or an error message.",
+    "Runtime data > Secret / credential": "A secret, a credential, a token or a password.",
+    "Runtime data > Domain object": "A whole business object: an order, an account, a user, a payment, a product.",
+    "UI / media": "What the user sees: pages, UI elements, images and media, layout and style, accessibility.",
+    "UI / media > Page / screen": "A page, a screen or a view.",
+    "UI / media > UI element": "A UI element: a button, a form, a card, a menu, a link.",
+    "UI / media > Image / media": "An image, a video, audio or another media file.",
+    "UI / media > Layout / style": "Layout, styling, fonts, colours or CSS rules.",
+    "UI / media > Accessibility": "Accessibility attributes, labels or alt text.",
+    "Other": "None of the options above fits."
+  }
+}

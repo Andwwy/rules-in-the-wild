@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 60774,
+  "duration_api_ms": 54856,
+  "ttft_ms": 3337,
+  "ttft_stream_ms": 3334,
+  "time_to_request_ms": 103,
+  "num_turns": 4,
+  "result": "喵～\n\n代码小灵已为开发者大大实现了完整的动画优化：骰子掷出时快速滚动1-6之间数字，飞机移动改为逐格平滑过渡，跳跃和飞跃也都有对应的流畅动画轨迹，同时改为2空格缩进并使用相对路径引用。哒～",
+  "stop_reason": "end_turn",
+  "session_id": "a615e270-a3ac-4bff-908b-9f1ab0e3ef5c",
+  "total_cost_usd": 0.1196764,
+  "usage": {
+   "input_tokens": 24,
+   "cache_creation_input_tokens": 20452,
+   "cache_read_input_tokens": 438474,
+   "output_tokens": 10048,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 20452
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 24,
+    "outputTokens": 10048,
+    "cacheReadInputTokens": 438474,
+    "cacheCreationInputTokens": 20452,
+    "webSearchRequests": 0,
+    "costUSD": 0.1196764,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "cca516d4-a006-4773-976a-6a3197f3f3c0"
+ },
+ "stderr": ""
+}

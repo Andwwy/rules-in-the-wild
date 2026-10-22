@@ -1,0 +1,55 @@
+{
+ "rule": "R6",
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 119827,
+  "duration_api_ms": 92860,
+  "ttft_ms": 9048,
+  "ttft_stream_ms": 9046,
+  "time_to_request_ms": 138,
+  "num_turns": 16,
+  "result": "All 6 rules are now fully implemented and comprehensive system documentation is complete. The enforcement system is production-ready with:\n\n- **21 hook entries** across 6 rules (R1-R6)\n- **17 hook triggers** covering PreToolUse, PostToolUse, and Stop events  \n- **100% test coverage** with all fixtures passing\n- **Complete Chinese documentation** for each rule\n\nThe system is ready for deployment to the agent session.",
+  "stop_reason": "end_turn",
+  "session_id": "4bf89dd4-94cd-4d39-8172-9e871937bcf0",
+  "total_cost_usd": 1.05943885,
+  "usage": {
+   "input_tokens": 86,
+   "cache_creation_input_tokens": 483857,
+   "cache_read_input_tokens": 2035295,
+   "output_tokens": 5810,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 483857
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 2349,
+    "outputTokens": 9934,
+    "cacheReadInputTokens": 2069836,
+    "cacheCreationInputTokens": 640349,
+    "webSearchRequests": 0,
+    "costUSD": 1.05943885,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "d918aec4-dbde-49a0-8649-7626f1f1159c"
+ },
+ "stderr": ""
+}

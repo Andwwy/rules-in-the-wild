@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 81387,
+  "duration_api_ms": 80255,
+  "ttft_ms": 3913,
+  "ttft_stream_ms": 3910,
+  "time_to_request_ms": 99,
+  "num_turns": 20,
+  "result": "<result>通过</result>\n<description>成功实现出发时间选择器、ETA动态计算、基于ETA的动态天气预测和地图底部行程滑块。滑块支持拖动模拟旅程推进，时间轴和地图标记弹窗显示ETA信息，天气数据根据到达时间动态变化，循环嵌套层级保持0层符合≤2层要求。</description>\n\n本轮完成了出发时间选择、ETA计算、时间关联天气预测和行程进度滑块功能。",
+  "stop_reason": "end_turn",
+  "session_id": "3bc2f66f-73fb-4cba-be67-80364052fb5e",
+  "total_cost_usd": 0.36303884999999997,
+  "usage": {
+   "input_tokens": 107,
+   "cache_creation_input_tokens": 80435,
+   "cache_read_input_tokens": 2057881,
+   "output_tokens": 11320,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 80435
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 107,
+    "outputTokens": 11320,
+    "cacheReadInputTokens": 2057881,
+    "cacheCreationInputTokens": 80435,
+    "webSearchRequests": 0,
+    "costUSD": 0.36303884999999997,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "78731ed8-6199-4cff-9bc4-c7cd958600df"
+ },
+ "stderr": ""
+}

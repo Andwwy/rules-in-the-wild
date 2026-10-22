@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 112366,
+  "duration_api_ms": 100757,
+  "ttft_ms": 4256,
+  "ttft_stream_ms": 4251,
+  "time_to_request_ms": 132,
+  "num_turns": 15,
+  "result": "<result>通过</result><description>已成功添加地图控制面板和 POI 功能。地图右上角新增半透明面板 [apps.js:247-325](apps.js#L247-L325)，包含\"地图样式\"下拉菜单（标准/暗黑/地形）[apps.js:333-340](apps.js#L333-L340) 和\"沿途设施\"复选框（加油站/餐厅/酒店）。勾选设施时随机散布标记 [apps.js:359-377](apps.js#L359-L377)，取消勾选时移除 [apps.js:379-386](apps.js#L379-L386)。所有 16 个 for 循环均为单层 [apps.js:193-872](apps.js#L193-L872)，所有变量以 poi_ 开头。样式在 [style.css:438-509](style.css#L438-L509)。</description>\n\n已实现地图样式切换和 POI 设施显示功能，所有循环为单层结构，变量命名规范。",
+  "stop_reason": "end_turn",
+  "session_id": "08a7ae89-c33b-4e07-be91-f884cbbf5fc9",
+  "total_cost_usd": 0.4241983999999999,
+  "usage": {
+   "input_tokens": 93,
+   "cache_creation_input_tokens": 120992,
+   "cache_read_input_tokens": 1931104,
+   "output_tokens": 15951,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 120992
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 93,
+    "outputTokens": 15951,
+    "cacheReadInputTokens": 1931104,
+    "cacheCreationInputTokens": 120992,
+    "webSearchRequests": 0,
+    "costUSD": 0.4241983999999999,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "248d2a41-81d6-4176-9c57-16ec5ba527fa"
+ },
+ "stderr": ""
+}

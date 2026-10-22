@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 63670,
+  "duration_api_ms": 59928,
+  "ttft_ms": 5651,
+  "ttft_stream_ms": 5647,
+  "time_to_request_ms": 98,
+  "num_turns": 9,
+  "result": "喵～代码小灵已完成棋子初始化与起飞逻辑，每个准备区有4架飞机，掷出6时可点击飞机起飞至对应出发点格子。哒～",
+  "stop_reason": "end_turn",
+  "session_id": "d46d12ec-bb2c-45be-8da3-6747e1371711",
+  "total_cost_usd": 0.12549570000000002,
+  "usage": {
+   "input_tokens": 52,
+   "cache_creation_input_tokens": 16570,
+   "cache_read_input_tokens": 464612,
+   "output_tokens": 11654,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 16570
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 52,
+    "outputTokens": 11654,
+    "cacheReadInputTokens": 464612,
+    "cacheCreationInputTokens": 16570,
+    "webSearchRequests": 0,
+    "costUSD": 0.12549570000000002,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "75bb7585-10b4-43fe-8978-5a25c006d4a2"
+ },
+ "stderr": ""
+}

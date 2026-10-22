@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 31654,
+  "duration_api_ms": 30345,
+  "ttft_ms": 7544,
+  "ttft_stream_ms": 7540,
+  "time_to_request_ms": 172,
+  "num_turns": 6,
+  "result": "喵～\n\n开发者大大，代码小灵刚才的总结没有以\"喵～\"开头，很抱歉。现在让代码小灵重新总结：\n\n代码小灵已为开发者大大完成了飞行棋游戏的基础骨架搭建，包括：四个玩家准备区（红、黄、蓝、绿四个角落）、中心掷骰子按钮、骰子点数显示区域，以及1-6随机点数的交互功能。所有代码均遵循了4个空格缩进规范。哒～",
+  "stop_reason": "end_turn",
+  "session_id": "a0bb4d32-21a5-4f90-857a-c5186659037b",
+  "total_cost_usd": 0.062272049999999995,
+  "usage": {
+   "input_tokens": 39,
+   "cache_creation_input_tokens": 17045,
+   "cache_read_input_tokens": 214268,
+   "output_tokens": 3685,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 17045
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 994,
+    "outputTokens": 3709,
+    "cacheReadInputTokens": 214268,
+    "cacheCreationInputTokens": 17045,
+    "webSearchRequests": 0,
+    "costUSD": 0.062272049999999995,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "20d99b81-bf81-4d24-96ed-814200985a9b"
+ },
+ "stderr": ""
+}

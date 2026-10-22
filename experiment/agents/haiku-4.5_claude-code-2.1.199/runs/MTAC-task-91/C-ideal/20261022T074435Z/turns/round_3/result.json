@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 48936,
+  "duration_api_ms": 40593,
+  "ttft_ms": 5553,
+  "ttft_stream_ms": 5549,
+  "time_to_request_ms": 110,
+  "num_turns": 4,
+  "result": "喵～\n\n代码小灵为开发者大大实现了飞机在外部路径上的移动功能，已起飞飞机可按骰子点数沿顺时针路线正确前进，并更新了progress.md文件记录本轮完成内容。哒～",
+  "stop_reason": "end_turn",
+  "session_id": "4304bec1-2d86-4ee3-adfb-43a51f1ca19f",
+  "total_cost_usd": 0.0734022,
+  "usage": {
+   "input_tokens": 24,
+   "cache_creation_input_tokens": 13508,
+   "cache_read_input_tokens": 213132,
+   "output_tokens": 7036,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 13508
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 24,
+    "outputTokens": 7036,
+    "cacheReadInputTokens": 213132,
+    "cacheCreationInputTokens": 13508,
+    "webSearchRequests": 0,
+    "costUSD": 0.0734022,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "9056d693-8dc2-4b6e-a1e7-52c9a365316e"
+ },
+ "stderr": ""
+}

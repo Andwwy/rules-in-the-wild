@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 98901,
+  "duration_api_ms": 93037,
+  "ttft_ms": 4315,
+  "ttft_stream_ms": 4311,
+  "time_to_request_ms": 100,
+  "num_turns": 20,
+  "result": "<result>通过</result><description>成功实现动态天气预测和时间轴滑块功能。新增出发时间选择器，根据驾驶时长计算 ETA 并显示于时间轴和 Popup；天气数据根据 ETA 时间动态变化；添加地图底部滑块支持模拟行程推进，高亮当前路段；所有功能代码已验证完整性。</description>\n\n已完成动态天气预测和时间轴滑块功能，用户可设置出发时间、查看 ETA、拖动滑块模拟行程推进并查看高亮路段。",
+  "stop_reason": "end_turn",
+  "session_id": "fe5e21ed-e952-4a7c-a5bd-b61eda522681",
+  "total_cost_usd": 0.28884719999999997,
+  "usage": {
+   "input_tokens": 114,
+   "cache_creation_input_tokens": 25794,
+   "cache_read_input_tokens": 1793257,
+   "output_tokens": 15433,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 25794
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 114,
+    "outputTokens": 15433,
+    "cacheReadInputTokens": 1793257,
+    "cacheCreationInputTokens": 25794,
+    "webSearchRequests": 0,
+    "costUSD": 0.28884719999999997,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "e5bd1d45-c459-49f7-b940-6f028bef9c21"
+ },
+ "stderr": ""
+}

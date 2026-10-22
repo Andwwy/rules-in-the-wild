@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 18867,
+  "duration_api_ms": 18384,
+  "ttft_ms": 11852,
+  "ttft_stream_ms": 11843,
+  "time_to_request_ms": 89,
+  "num_turns": 2,
+  "result": "代码小灵已经为开发者大大搭建了游戏基础骨架，包括四个角落的玩家准备区（红黄蓝绿四种颜色）、页面中央的掷骰子按钮和点数显示区域，点击按钮可随机生成1-6的数字。\n\n哒～",
+  "stop_reason": "end_turn",
+  "session_id": "07b4cbf9-602a-406d-abde-54eed193c1f2",
+  "total_cost_usd": 0.047418,
+  "usage": {
+   "input_tokens": 14,
+   "cache_creation_input_tokens": 19038,
+   "cache_read_input_tokens": 61615,
+   "output_tokens": 3489,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 19038
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 14,
+    "outputTokens": 3489,
+    "cacheReadInputTokens": 61615,
+    "cacheCreationInputTokens": 19038,
+    "webSearchRequests": 0,
+    "costUSD": 0.047418,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "908feeef-6fd6-4076-808a-91e21e10bade"
+ },
+ "stderr": ""
+}

@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 87392,
+  "duration_api_ms": 82943,
+  "ttft_ms": 5572,
+  "ttft_stream_ms": 5569,
+  "time_to_request_ms": 99,
+  "num_turns": 17,
+  "result": "喵～\n\n代码小灵已实现飞机沿着棋盘顺时针外围路径和安全区按骰子点数移动的功能。\n\n哒～",
+  "stop_reason": "end_turn",
+  "session_id": "f96299d9-4701-4a4d-88df-0cefefed3f55",
+  "total_cost_usd": 0.5053854,
+  "usage": {
+   "input_tokens": 118,
+   "cache_creation_input_tokens": 250088,
+   "cache_read_input_tokens": 1337374,
+   "output_tokens": 11784,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 250088
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 118,
+    "outputTokens": 11784,
+    "cacheReadInputTokens": 1337374,
+    "cacheCreationInputTokens": 250088,
+    "webSearchRequests": 0,
+    "costUSD": 0.5053854,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "2c09d8c8-965e-493d-a3aa-d3f4b2103067"
+ },
+ "stderr": ""
+}

@@ -1,0 +1,453 @@
+{
+ "0|R6": [
+  {
+   "file": "apps.js",
+   "line": 7,
+   "segs": [
+    [
+     "    InitializeApp() {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "apps.js",
+   "line": 13,
+   "segs": [
+    [
+     "    RenderLayout(container) {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "apps.js",
+   "line": 70,
+   "segs": [
+    [
+     "    AttachEventListeners() {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "apps.js",
+   "line": 83,
+   "segs": [
+    [
+     "    OnFabClick() {",
+     1
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "1|R6": [
+  {
+   "file": "apps.js",
+   "line": 9,
+   "segs": [
+    [
+     "    InitializeApp() {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "apps.js",
+   "line": 16,
+   "segs": [
+    [
+     "    RenderLayout(container) {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "apps.js",
+   "line": 77,
+   "segs": [
+    [
+     "    InitializeMap() {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "apps.js",
+   "line": 93,
+   "segs": [
+    [
+     "    OnMapClick(event) {",
+     1
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "2|R6": [
+  {
+   "file": "apps.js",
+   "line": 10,
+   "segs": [
+    [
+     "    InitializeApp() {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "apps.js",
+   "line": 17,
+   "segs": [
+    [
+     "    RenderLayout(container) {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "apps.js",
+   "line": 109,
+   "segs": [
+    [
+     "    InitializeMap() {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "apps.js",
+   "line": 125,
+   "segs": [
+    [
+     "    OnMapClick(event) {",
+     1
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "3|R6": [
+  {
+   "file": "apps.js",
+   "line": 12,
+   "segs": [
+    [
+     "    InitializeApp() {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "apps.js",
+   "line": 19,
+   "segs": [
+    [
+     "    RenderLayout(container) {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "apps.js",
+   "line": 126,
+   "segs": [
+    [
+     "    InitializeMap() {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "apps.js",
+   "line": 142,
+   "segs": [
+    [
+     "    OnMapClick(event) {",
+     1
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "4|R6": [
+  {
+   "file": "apps.js",
+   "line": 13,
+   "segs": [
+    [
+     "    InitializeApp() {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "apps.js",
+   "line": 20,
+   "segs": [
+    [
+     "    RenderLayout(container) {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "apps.js",
+   "line": 139,
+   "segs": [
+    [
+     "    InitializeMap() {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "apps.js",
+   "line": 155,
+   "segs": [
+    [
+     "    OnMapClick(event) {",
+     1
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "5|R8": [
+  {
+   "file": "process-log.md",
+   "line": null,
+   "segs": [
+    [
+     "process-log.md",
+     1
+    ]
+   ],
+   "note": "14 characters"
+  }
+ ],
+ "6|R6": [
+  {
+   "file": "apps.js",
+   "line": 17,
+   "segs": [
+    [
+     "    InitializeApp() {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "apps.js",
+   "line": 24,
+   "segs": [
+    [
+     "    RenderLayout(container) {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "apps.js",
+   "line": 181,
+   "segs": [
+    [
+     "    InitializeMap() {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "apps.js",
+   "line": 197,
+   "segs": [
+    [
+     "    OnMapClick(event) {",
+     1
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "7|R6": [
+  {
+   "file": "apps.js",
+   "line": 21,
+   "segs": [
+    [
+     "    InitializeApp() {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "apps.js",
+   "line": 28,
+   "segs": [
+    [
+     "    RenderLayout(container) {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "apps.js",
+   "line": 255,
+   "segs": [
+    [
+     "    InitializeMap() {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "apps.js",
+   "line": 266,
+   "segs": [
+    [
+     "    UpdateMapTile() {",
+     1
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "8|R6": [
+  {
+   "file": "apps.js",
+   "line": 22,
+   "segs": [
+    [
+     "    InitializeApp() {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "apps.js",
+   "line": 29,
+   "segs": [
+    [
+     "    RenderLayout(container) {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "apps.js",
+   "line": 302,
+   "segs": [
+    [
+     "    InitializeMap() {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "apps.js",
+   "line": 313,
+   "segs": [
+    [
+     "    UpdateMapTile() {",
+     1
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "9|R6": [
+  {
+   "file": "apps.js",
+   "line": 24,
+   "segs": [
+    [
+     "    InitializeApp() {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "apps.js",
+   "line": 31,
+   "segs": [
+    [
+     "    RenderLayout(container) {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "apps.js",
+   "line": 311,
+   "segs": [
+    [
+     "    InitializeMap() {",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "apps.js",
+   "line": 322,
+   "segs": [
+    [
+     "    UpdateMapTile() {",
+     1
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "9|R8": [
+  {
+   "file": "process-log.md",
+   "line": null,
+   "segs": [
+    [
+     "process-log.md",
+     1
+    ]
+   ],
+   "note": "14 characters"
+  },
+  {
+   "file": "task_plan.md",
+   "line": null,
+   "segs": [
+    [
+     "task_plan.md",
+     1
+    ]
+   ],
+   "note": "12 characters"
+  }
+ ]
+}

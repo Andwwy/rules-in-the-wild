@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 81990,
+  "duration_api_ms": 73039,
+  "ttft_ms": 4157,
+  "ttft_stream_ms": 4153,
+  "time_to_request_ms": 115,
+  "num_turns": 14,
+  "result": "已在侧边栏添加保存行程按钮和对话框，实现行程数据的序列化存储到本地存储，并在导航栏添加我的行程入口，支持右侧抽屉展示历史行程和重新加载功能。",
+  "stop_reason": "end_turn",
+  "session_id": "16601f6e-d38d-4fa1-bae1-0f09351e3d50",
+  "total_cost_usd": 0.39022355000000003,
+  "usage": {
+   "input_tokens": 85,
+   "cache_creation_input_tokens": 21801,
+   "cache_read_input_tokens": 1778040,
+   "output_tokens": 9720,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 21801
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 91,
+    "outputTokens": 9853,
+    "cacheReadInputTokens": 1877463,
+    "cacheCreationInputTokens": 122497,
+    "webSearchRequests": 0,
+    "costUSD": 0.39022355000000003,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "b25cdc50-2a64-491c-877b-88190663ef91"
+ },
+ "stderr": ""
+}

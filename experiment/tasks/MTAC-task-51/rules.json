@@ -1,0 +1,467 @@
+[
+ {
+  "item": 1,
+  "constraint": "任何回复的起始处都必须包含语气词\"汪～\"不可遗漏",
+  "tags": [
+   "Content",
+   "Persona"
+  ],
+  "scored": true,
+  "mapping": {
+   "leaf": "Regex validator",
+   "path": [
+    "Validation",
+    "Regex",
+    "Regex validator"
+   ],
+   "score": 0.8555,
+   "step_probabilities": [
+    0.74,
+    0.94,
+    0.9
+   ],
+   "separation": 2.154,
+   "alternatives": [
+    {
+     "path": [
+      "Validation",
+      "Regex",
+      "Regex filter"
+     ],
+     "score": 0.3971
+    },
+    {
+     "path": [
+      "Gates",
+      "Workflow",
+      "Workflow"
+     ],
+     "score": 0.3035
+    }
+   ],
+   "model": "jev-1.13.0",
+   "beam": 3,
+   "calls": 7,
+   "input_tokens": 3112,
+   "cost_usd": 0.0001307
+  },
+  "mechanism": {
+   "enforcer": "Regex validator",
+   "config": "enforcement/config/51-1.regex.json",
+   "target": "reply",
+   "triggers": [
+    "end-of-turn"
+   ],
+   "translated_by": "Claude Code (local), Claude Opus 5.5, effort Extra"
+  },
+  "constraint_en": "Every reply must begin with the particle \"汪～\" (\"woof~\"); never leave it out."
+ },
+ {
+  "item": 2,
+  "constraint": "所有回复都必须在结尾处加上\"呜～\"语气词",
+  "tags": [
+   "Content",
+   "Persona"
+  ],
+  "scored": true,
+  "mapping": {
+   "leaf": "Regex validator",
+   "path": [
+    "Validation",
+    "Regex",
+    "Regex validator"
+   ],
+   "score": 0.8695,
+   "step_probabilities": [
+    0.77,
+    0.97,
+    0.88
+   ],
+   "separation": 2.065,
+   "alternatives": [
+    {
+     "path": [
+      "Validation",
+      "Regex",
+      "Regex filter"
+     ],
+     "score": 0.4211
+    },
+    {
+     "path": [
+      "Gates",
+      "Workflow",
+      "Workflow"
+     ],
+     "score": 0.2689
+    }
+   ],
+   "model": "jev-1.13.0",
+   "beam": 3,
+   "calls": 7,
+   "input_tokens": 3084,
+   "cost_usd": 0.00012953
+  },
+  "mechanism": {
+   "enforcer": "Regex validator",
+   "config": "enforcement/config/51-2.regex.json",
+   "target": "reply",
+   "triggers": [
+    "end-of-turn"
+   ],
+   "translated_by": "Claude Code (local), Claude Opus 5.5, effort Extra"
+  },
+  "constraint_en": "Every reply must end with the particle \"呜～\" (\"wū~\", a whimper)."
+ },
+ {
+  "item": 3,
+  "constraint": "对于生成的每一个代码文件，都请不要在其中书写注释",
+  "tags": [
+   "Quantity",
+   "Exact Value"
+  ],
+  "scored": true,
+  "mapping": {
+   "leaf": "Semgrep",
+   "path": [
+    "Analysis",
+    "Code scans",
+    "Semgrep"
+   ],
+   "score": 0.6181,
+   "step_probabilities": [
+    0.3,
+    0.96,
+    0.82
+   ],
+   "separation": 1.057,
+   "alternatives": [
+    {
+     "path": [
+      "Validation",
+      "Regex",
+      "Regex validator"
+     ],
+     "score": 0.5847
+    },
+    {
+     "path": [
+      "Validation",
+      "Regex",
+      "Regex filter"
+     ],
+     "score": 0.551
+    }
+   ],
+   "model": "jev-1.13.0",
+   "beam": 3,
+   "calls": 7,
+   "input_tokens": 3101,
+   "cost_usd": 0.00013024
+  },
+  "mechanism": {
+   "enforcer": "Regex validator",
+   "config": "enforcement/config/51-3.regex.json",
+   "target": "code-file",
+   "triggers": [
+    "before-write",
+    "after-edit",
+    "end-of-turn"
+   ],
+   "why_enforcer_differs": "Implementer choice: comments are not syntax-tree nodes in Semgrep, so a Semgrep rule can only be a regex over the raw text, which cannot skip string literals that span lines (Python triple quotes, template literals) and so flags normal code (e.g. the glob \"./src/**/*.js\" in a config). The Regex validator reads the comments found by the toolbox's comment scanner, which skips strings first.",
+   "translated_by": "Claude Code (local), Claude Opus 5.5, effort Extra"
+  },
+  "constraint_en": "Do not write any comments in any code file you generate."
+ },
+ {
+  "item": 4,
+  "constraint": "生成的代码文件内不允许出现多层if",
+  "tags": [
+   "Quantity",
+   "Complexity"
+  ],
+  "scored": false,
+  "mapping": {
+   "leaf": "CodeQL",
+   "path": [
+    "Analysis",
+    "Code scans",
+    "CodeQL"
+   ],
+   "score": 0.6433,
+   "step_probabilities": [
+    0.53,
+    0.93,
+    0.54
+   ],
+   "separation": 1.071,
+   "alternatives": [
+    {
+     "path": [
+      "Analysis",
+      "Code scans",
+      "Semgrep"
+     ],
+     "score": 0.6008
+    },
+    {
+     "path": [
+      "Validation",
+      "Regex",
+      "Regex validator"
+     ],
+     "score": 0.4289
+    }
+   ],
+   "model": "jev-1.13.0",
+   "beam": 3,
+   "calls": 7,
+   "input_tokens": 3037,
+   "cost_usd": 0.00012755
+  },
+  "mechanism": {
+   "enforcer": "Semgrep",
+   "config": "enforcement/config/51-4.semgrep.yml",
+   "target": "code-file",
+   "triggers": [
+    "before-write",
+    "after-edit",
+    "end-of-turn"
+   ],
+   "why_enforcer_differs": "Implementer choice: CodeQL needs a ~1 GB bundle in the container and minutes per scan to build its database, too heavy to run at each write; Semgrep is from the same \"Code scans\" branch.",
+   "translated_by": "Claude Code (local), Claude Opus 5.5, effort Extra"
+  },
+  "constraint_en": "Nested if statements are not allowed in the generated code files."
+ },
+ {
+  "item": 5,
+  "constraint": "写代码时请杜绝过度设计，用最短路径去实现即可，千万别自作主张加入兜底或降级方案等需求外的东西",
+  "tags": [
+   "Style",
+   "Paradigm"
+  ],
+  "scored": false,
+  "mapping": {
+   "leaf": "Semgrep",
+   "path": [
+    "Analysis",
+    "Code scans",
+    "Semgrep"
+   ],
+   "score": 0.7021,
+   "step_probabilities": [
+    0.61,
+    0.93,
+    0.61
+   ],
+   "separation": 1.427,
+   "alternatives": [
+    {
+     "path": [
+      "Analysis",
+      "Code scans",
+      "CodeQL"
+     ],
+     "score": 0.4921
+    },
+    {
+     "path": [
+      "Analysis",
+      "Code scans",
+      "Other"
+     ],
+     "score": 0.4674
+    }
+   ],
+   "model": "jev-1.13.0",
+   "beam": 3,
+   "calls": 7,
+   "input_tokens": 3262,
+   "cost_usd": 0.000137
+  },
+  "mechanism": {
+   "enforcer": "Semgrep",
+   "config": "enforcement/config/51-5.semgrep.yml",
+   "target": "code-file",
+   "triggers": [
+    "after-write",
+    "after-edit"
+   ],
+   "max_blocks": 1,
+   "why_triggers": "Implementer choice: whether error handling is outside the requirements needs the user's request, which Semgrep cannot read. So the rule never refuses a write and does not scan the project at the end of the turn (which would repeat the same finding every turn): after a write or an edit it tells the agent once (max_blocks 1 per turn and trigger), and the agent decides. Files written by shell commands are not checked for this rule.",
+   "translated_by": "Claude Code (local), Claude Opus 5.5, effort Extra"
+  },
+  "constraint_en": "Avoid over-engineering when writing code: implement by the shortest path, and never add fallback or degradation schemes or anything else beyond the requirements on your own initiative."
+ },
+ {
+  "item": 6,
+  "constraint": "你生成的代码文件中不得出现while循环",
+  "tags": [
+   "Style",
+   "Paradigm"
+  ],
+  "scored": true,
+  "mapping": {
+   "leaf": "Semgrep",
+   "path": [
+    "Analysis",
+    "Code scans",
+    "Semgrep"
+   ],
+   "score": 0.7014,
+   "step_probabilities": [
+    0.48,
+    0.91,
+    0.79
+   ],
+   "separation": 1.262,
+   "alternatives": [
+    {
+     "path": [
+      "Validation",
+      "Regex",
+      "Regex validator"
+     ],
+     "score": 0.5557
+    },
+    {
+     "path": [
+      "Validation",
+      "Regex",
+      "Regex filter"
+     ],
+     "score": 0.5119
+    }
+   ],
+   "model": "jev-1.13.0",
+   "beam": 3,
+   "calls": 7,
+   "input_tokens": 3049,
+   "cost_usd": 0.00012806
+  },
+  "mechanism": {
+   "enforcer": "Semgrep",
+   "config": "enforcement/config/51-6.semgrep.yml",
+   "target": "code-file",
+   "triggers": [
+    "before-write",
+    "after-edit",
+    "end-of-turn"
+   ],
+   "translated_by": "Claude Code (local), Claude Opus 5.5, effort Extra"
+  },
+  "constraint_en": "The code files you generate must not contain while loops."
+ },
+ {
+  "item": 7,
+  "constraint": "生成的代码项目最多只能包含2个目录层级",
+  "tags": [
+   "Quantity",
+   "Complexity"
+  ],
+  "scored": true,
+  "mapping": {
+   "leaf": "Project check",
+   "path": [
+    "Validation",
+    "Project check"
+   ],
+   "score": 0.7436,
+   "step_probabilities": [
+    0.7,
+    0.79
+   ],
+   "separation": 1.655,
+   "alternatives": [
+    {
+     "path": [
+      "Validation",
+      "Schemas",
+      "JSON Schema"
+     ],
+     "score": 0.4493
+    },
+    {
+     "path": [
+      "Analysis",
+      "Code scans",
+      "Semgrep"
+     ],
+     "score": 0.4421
+    }
+   ],
+   "model": "jev-1.13.0",
+   "beam": 3,
+   "calls": 7,
+   "input_tokens": 3058,
+   "cost_usd": 0.00012844
+  },
+  "mechanism": {
+   "enforcer": "Project check",
+   "config": "enforcement/config/51-7.project-check.mjs",
+   "target": "any-file",
+   "triggers": [
+    "before-write",
+    "end-of-turn"
+   ],
+   "translated_by": "Claude Code (local), Claude Opus 5.5, effort Extra"
+  },
+  "constraint_en": "The generated code project may contain at most 2 directory levels."
+ },
+ {
+  "item": 8,
+  "constraint": "算上所有的空行，每个生成的代码文件的总行数必须保持为奇数",
+  "tags": [
+   "Quantity",
+   "Exact Value"
+  ],
+  "scored": true,
+  "mapping": {
+   "leaf": "Project check",
+   "path": [
+    "Validation",
+    "Project check"
+   ],
+   "score": 0.4893,
+   "step_probabilities": [
+    0.63,
+    0.38
+   ],
+   "separation": 1.057,
+   "alternatives": [
+    {
+     "path": [
+      "Validation",
+      "Other"
+     ],
+     "score": 0.4628
+    },
+    {
+     "path": [
+      "Validation",
+      "Schemas",
+      "JSON Schema"
+     ],
+     "score": 0.4098
+    }
+   ],
+   "model": "jev-1.13.0",
+   "beam": 3,
+   "calls": 7,
+   "input_tokens": 3147,
+   "cost_usd": 0.00013217
+  },
+  "mechanism": {
+   "enforcer": "Project check",
+   "config": "enforcement/config/51-8.project-check.mjs",
+   "target": "code-file",
+   "triggers": [
+    "before-write",
+    "after-edit",
+    "end-of-turn"
+   ],
+   "translated_by": "Claude Code (local), Claude Opus 5.5, effort Extra"
+  },
+  "constraint_en": "Counting all blank lines, the total number of lines in each generated code file must be odd."
+ }
+]

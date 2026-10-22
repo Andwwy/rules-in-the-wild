@@ -1,0 +1,56 @@
+{
+ "label": "b2-check-R2",
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 525,
+  "duration_api_ms": 109,
+  "ttft_ms": 151,
+  "ttft_stream_ms": 149,
+  "time_to_request_ms": 130,
+  "num_turns": 2,
+  "result": "Written.",
+  "stop_reason": "end_turn",
+  "session_id": "5a285723-3100-4349-82eb-b9ad044e4d45",
+  "total_cost_usd": 7.000000000000001e-05,
+  "usage": {
+   "input_tokens": 20,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 10,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 20,
+    "outputTokens": 10,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "webSearchRequests": 0,
+    "costUSD": 7.000000000000001e-05,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "a744c861-373f-4b2e-b121-dcdd755a6af9"
+ },
+ "text": "Node check-R2 (2 of 12): write the check of R2 as the executable /opt/enforce/checks/R2: `/opt/enforce/checks/R2 <file>` exits 0 when the file follows the rule, and otherwise exits 1 and prints each violation: R2, where (the file and line, or the part of the text), and what to change. By the route: A regular expression that finds text the rule forbids and replaces it, so the result follows the rule without a second attempt. Check: a regular expression that replaces what the rule forbids, so the result follows it; the mechanism must be able to write the target at that moment (or refuse the action and give the fixed text back) It reads An assistant response or a message from the agent. Where: the agent's reply exists only inside the agent framework: its hook at the end of the turn gets it, and its transcript keeps it (a file in the agent's home).\nDone when: as the agent, it exits 1 and names R2 for every file in /opt/enforce/fixtures/R2/flag, and exits 0 for every file in /opt/enforce/fixtures/R2/pass. The harness checks this when you reply.",
+ "stderr": ""
+}

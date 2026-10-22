@@ -1,0 +1,204 @@
+{
+ "a3b0e909-56a7-429a-8a4b-66ae6035cc86": [
+  {
+   "id": "1",
+   "subject": "R1: Create regex check for \"喵～\" prefix",
+   "description": "Create a check script that validates responses start with \"喵～\". This will be used by the framework hook.",
+   "status": "completed",
+   "blocks": [],
+   "blockedBy": []
+  },
+  {
+   "id": "2",
+   "subject": "R1: Create settings.json with Stop hook",
+   "description": "Create /opt/enforce/settings.json that configures a Stop hook to run the regex check on agent responses.",
+   "status": "completed",
+   "blocks": [],
+   "blockedBy": []
+  },
+  {
+   "id": "3",
+   "subject": "R1: Test enforcement with the harness",
+   "description": "Use /opt/enforce-harness/try to test that the enforcement works correctly on agent responses.",
+   "status": "completed",
+   "blocks": [],
+   "blockedBy": []
+  },
+  {
+   "id": "4",
+   "subject": "R2: Create regex filter for \"我\" → \"代码小灵\"",
+   "description": "Create a filter script that replaces \"我\" with \"代码小灵\" in responses. This will be used by the Stop hook.",
+   "status": "completed",
+   "blocks": [],
+   "blockedBy": []
+  },
+  {
+   "id": "5",
+   "subject": "R2: Create Stop hook that applies the filter",
+   "description": "Create hook that applies the regex filter and modifies responses. Update settings.json to include the R2 hook.",
+   "status": "completed",
+   "blocks": [],
+   "blockedBy": []
+  },
+  {
+   "id": "6",
+   "subject": "R2: Test filter enforcement with the harness",
+   "description": "Test that R2 enforcement correctly replaces \"我\" with \"代码小灵\" in agent responses.",
+   "status": "completed",
+   "blocks": [],
+   "blockedBy": []
+  },
+  {
+   "id": "7",
+   "subject": "R3: Create regex check for \"你\" usage",
+   "description": "Create a validator script that detects \"你\" and reports violations. Should flag when \"你\" is used to address the user.",
+   "status": "completed",
+   "blocks": [],
+   "blockedBy": []
+  },
+  {
+   "id": "8",
+   "subject": "R3: Create Stop hook that validates user reference",
+   "description": "Create hook that runs the R3 validator and blocks responses with \"你\". Update settings.json to include the R3 hook.",
+   "status": "completed",
+   "blocks": [],
+   "blockedBy": []
+  },
+  {
+   "id": "9",
+   "subject": "R3: Test validation enforcement with the harness",
+   "description": "Test that R3 enforcement correctly identifies and blocks \"你\" usage in agent responses.",
+   "status": "completed",
+   "blocks": [],
+   "blockedBy": []
+  },
+  {
+   "id": "10",
+   "subject": "R4: Create regex check for Chinese-only responses",
+   "description": "Create a validator script that detects non-Chinese text in responses and reports violations. Should allow common technical terms but flag excessive English.",
+   "status": "completed",
+   "blocks": [],
+   "blockedBy": []
+  },
+  {
+   "id": "11",
+   "subject": "R4: Create Stop hook that validates Chinese requirement",
+   "description": "Create hook that runs the R4 validator and blocks responses with too much non-Chinese text. Update settings.json to include the R4 hook.",
+   "status": "completed",
+   "blocks": [],
+   "blockedBy": []
+  },
+  {
+   "id": "12",
+   "subject": "R4: Test Chinese-only enforcement with the harness",
+   "description": "Test that R4 enforcement correctly identifies and blocks excessive English or non-Chinese content in agent responses.",
+   "status": "completed",
+   "blocks": [],
+   "blockedBy": []
+  },
+  {
+   "id": "13",
+   "subject": "R5: Create validator for encoding declaration",
+   "description": "Create a validator script that checks if source code files start with the encoding declaration. Should identify code files by extension and validate first line.",
+   "status": "completed",
+   "blocks": [],
+   "blockedBy": []
+  },
+  {
+   "id": "14",
+   "subject": "R5: Create PostToolUse hook for file writes",
+   "description": "Create hook that runs after Write/Edit tools to check if created/modified code files have the encoding declaration. Update settings.json to include the R5 hook.",
+   "status": "completed",
+   "blocks": [],
+   "blockedBy": []
+  },
+  {
+   "id": "15",
+   "subject": "R5: Test file encoding enforcement with the harness",
+   "description": "Test that R5 enforcement correctly identifies and blocks code files without the encoding declaration.",
+   "status": "completed",
+   "blocks": [],
+   "blockedBy": []
+  },
+  {
+   "id": "16",
+   "subject": "R6: Create validator for AI-assisted comment",
+   "description": "Create a validator script that checks if code files have the required AI-assisted comment declaration. Should handle different comment styles for different languages.",
+   "status": "completed",
+   "blocks": [],
+   "blockedBy": []
+  },
+  {
+   "id": "17",
+   "subject": "R6: Create PostToolUse hook for comment validation",
+   "description": "Create hook that runs after Write/Edit tools to check if code files have the AI-assisted comment. Update settings.json to include the R6 hook.",
+   "status": "completed",
+   "blocks": [],
+   "blockedBy": []
+  },
+  {
+   "id": "18",
+   "subject": "R6: Test comment declaration enforcement with the harness",
+   "description": "Test that R6 enforcement correctly identifies and flags code files without the required comment declaration.",
+   "status": "completed",
+   "blocks": [],
+   "blockedBy": []
+  },
+  {
+   "id": "19",
+   "subject": "R7: Create function line counter validator",
+   "description": "Create a validator script that parses code files and checks if any functions exceed 60 lines. Should support multiple languages (Python, JavaScript, etc.).",
+   "status": "completed",
+   "blocks": [],
+   "blockedBy": []
+  },
+  {
+   "id": "20",
+   "subject": "R7: Create Semgrep rules for function detection",
+   "description": "Create Semgrep YAML rules to detect and analyze functions in multiple languages. Integrate with check script via file watcher or similar mechanism.",
+   "status": "completed",
+   "blocks": [],
+   "blockedBy": []
+  },
+  {
+   "id": "21",
+   "subject": "R7: Create PostToolUse hook for function size validation",
+   "description": "Create hook that runs after Write/Edit to validate function sizes. Update settings.json to include the R7 hook.",
+   "status": "completed",
+   "blocks": [],
+   "blockedBy": []
+  },
+  {
+   "id": "22",
+   "subject": "R7: Test function size enforcement with the harness",
+   "description": "Test that R7 enforcement correctly identifies and flags functions that exceed 60 lines.",
+   "status": "completed",
+   "blocks": [],
+   "blockedBy": []
+  },
+  {
+   "id": "23",
+   "subject": "R8: Create regex validator for response suffix",
+   "description": "Create a validator script that checks if responses end with \"哒～\" interjection. Should validate the end of message text.",
+   "status": "completed",
+   "blocks": [],
+   "blockedBy": []
+  },
+  {
+   "id": "24",
+   "subject": "R8: Create Stop hook for response suffix validation",
+   "description": "Create hook that validates responses end with \"哒～\". Update settings.json to include the R8 hook.",
+   "status": "completed",
+   "blocks": [],
+   "blockedBy": []
+  },
+  {
+   "id": "25",
+   "subject": "R8: Test response suffix enforcement with the harness",
+   "description": "Test that R8 enforcement correctly identifies and blocks responses without \"哒～\" at the end.",
+   "status": "completed",
+   "blocks": [],
+   "blockedBy": []
+  }
+ ]
+}

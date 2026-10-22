@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 98764,
+  "duration_api_ms": 85409,
+  "ttft_ms": 4669,
+  "ttft_stream_ms": 4668,
+  "time_to_request_ms": 111,
+  "num_turns": 17,
+  "result": "<result>通过</result><description>已成功引入 Leaflet.js 地图库并实现完整的交互功能。用户可在地图上点击放置蓝色标记，点击标记弹出包含精确经纬度坐标的提示框。地图支持原生的鼠标拖拽平移和滚轮缩放功能。所有代码符合 CLAUDE.md 规范，保留了原有导航栏、侧边栏和 FAB 按钮功能。</description>\n\n已成功将占位网格替换为可交互的 Leaflet 地图，支持点击放置标记、弹出坐标提示框，以及原生拖拽和缩放功能。",
+  "stop_reason": "end_turn",
+  "session_id": "08a7ae89-c33b-4e07-be91-f884cbbf5fc9",
+  "total_cost_usd": 0.20350965000000001,
+  "usage": {
+   "input_tokens": 108,
+   "cache_creation_input_tokens": 48235,
+   "cache_read_input_tokens": 904829,
+   "output_tokens": 10525,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 48235
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 108,
+    "outputTokens": 10525,
+    "cacheReadInputTokens": 904829,
+    "cacheCreationInputTokens": 48235,
+    "webSearchRequests": 0,
+    "costUSD": 0.20350965000000001,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "9440445c-1491-4f5c-94f0-5cd235cf8d16"
+ },
+ "stderr": ""
+}

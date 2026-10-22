@@ -1,0 +1,898 @@
+{
+ "summary": {
+  "hooks": 3,
+  "rules": {
+   "R1": {
+    "reply": [
+     {
+      "case": "the reply does not start with 喵～",
+      "caught": true,
+      "named": true,
+      "early": false,
+      "at": [
+       "Stop"
+      ]
+     }
+    ]
+   },
+   "R2": {
+    "reply": [
+     {
+      "case": "the reply says 我",
+      "caught": true,
+      "named": true,
+      "early": false,
+      "at": [
+       "Stop"
+      ]
+     }
+    ]
+   },
+   "R3": {
+    "reply": [
+     {
+      "case": "the reply calls the user 你",
+      "caught": true,
+      "named": true,
+      "early": false,
+      "at": [
+       "Stop"
+      ]
+     }
+    ]
+   },
+   "R4": {
+    "reply": [
+     {
+      "case": "an English word in the reply",
+      "caught": true,
+      "named": true,
+      "early": false,
+      "at": [
+       "Stop"
+      ]
+     }
+    ]
+   },
+   "R8": {
+    "reply": [
+     {
+      "case": "the reply does not end with 哒～",
+      "caught": true,
+      "named": true,
+      "early": false,
+      "at": [
+       "Stop"
+      ]
+     }
+    ]
+   },
+   "R5": {
+    "tool": [
+     {
+      "case": "a Python file without the coding line",
+      "caught": true,
+      "named": true,
+      "early": true,
+      "at": [
+       "PreToolUse"
+      ]
+     },
+     {
+      "case": "a JS file without the coding line",
+      "caught": true,
+      "named": true,
+      "early": true,
+      "at": [
+       "PreToolUse"
+      ]
+     },
+     {
+      "case": "an HTML file without the coding line",
+      "caught": false,
+      "named": false,
+      "early": false,
+      "at": []
+     }
+    ],
+    "shell": [
+     {
+      "case": "a Python file without the coding line",
+      "caught": true,
+      "named": true,
+      "early": true,
+      "at": [
+       "PostToolUse"
+      ]
+     },
+     {
+      "case": "a JS file without the coding line",
+      "caught": true,
+      "named": true,
+      "early": true,
+      "at": [
+       "PostToolUse"
+      ]
+     },
+     {
+      "case": "an HTML file without the coding line",
+      "caught": false,
+      "named": false,
+      "early": false,
+      "at": []
+     }
+    ]
+   },
+   "R6": {
+    "tool": [
+     {
+      "case": "a Python file without the AI-Assisted line",
+      "caught": true,
+      "named": true,
+      "early": true,
+      "at": [
+       "PreToolUse"
+      ]
+     },
+     {
+      "case": "a JS file without the AI-Assisted line",
+      "caught": true,
+      "named": true,
+      "early": true,
+      "at": [
+       "PreToolUse"
+      ]
+     },
+     {
+      "case": "an HTML file without the AI-Assisted line",
+      "caught": false,
+      "named": false,
+      "early": false,
+      "at": []
+     }
+    ],
+    "shell": [
+     {
+      "case": "a Python file without the AI-Assisted line",
+      "caught": true,
+      "named": true,
+      "early": true,
+      "at": [
+       "PostToolUse"
+      ]
+     },
+     {
+      "case": "a JS file without the AI-Assisted line",
+      "caught": true,
+      "named": true,
+      "early": true,
+      "at": [
+       "PostToolUse"
+      ]
+     },
+     {
+      "case": "an HTML file without the AI-Assisted line",
+      "caught": false,
+      "named": false,
+      "early": false,
+      "at": []
+     }
+    ]
+   },
+   "R7": {
+    "tool": [
+     {
+      "case": "a Python function of 69 lines",
+      "caught": true,
+      "named": true,
+      "early": true,
+      "at": [
+       "PreToolUse"
+      ]
+     },
+     {
+      "case": "a JS function of 68 lines",
+      "caught": true,
+      "named": true,
+      "early": true,
+      "at": [
+       "PreToolUse"
+      ]
+     },
+     {
+      "case": "a JS function of 68 lines inside an HTML <script>",
+      "caught": false,
+      "named": false,
+      "early": false,
+      "at": []
+     }
+    ],
+    "shell": [
+     {
+      "case": "a Python function of 69 lines",
+      "caught": true,
+      "named": true,
+      "early": true,
+      "at": [
+       "PostToolUse"
+      ]
+     },
+     {
+      "case": "a JS function of 68 lines",
+      "caught": true,
+      "named": true,
+      "early": true,
+      "at": [
+       "PostToolUse"
+      ]
+     },
+     {
+      "case": "a JS function of 68 lines inside an HTML <script>",
+      "caught": false,
+      "named": false,
+      "early": false,
+      "at": []
+     }
+    ]
+   }
+  },
+  "false_flags": [],
+  "hook_errors": []
+ },
+ "raw": {
+  "hooks": 3,
+  "cases": [
+   {
+    "rule": null,
+    "name": "clean project",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "python3 /opt/enforce/hooks/pre_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "python3 /opt/enforce/hooks/pre_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "python3 /opt/enforce/hooks/pre_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "python3 /opt/enforce/hooks/stop_reply.py",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": null,
+    "name": "clean project",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "PostToolUse",
+      "tool": "Bash",
+      "hook": "python3 /opt/enforce/hooks/post_bash.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "python3 /opt/enforce/hooks/stop_reply.py",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R1",
+    "name": "the reply does not start with 喵～",
+    "channel": "reply",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "python3 /opt/enforce/hooks/stop_reply.py",
+      "verdict": "flag",
+      "msg": "R1: start the reply with 喵～"
+     }
+    ]
+   },
+   {
+    "rule": "R2",
+    "name": "the reply says 我",
+    "channel": "reply",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "python3 /opt/enforce/hooks/stop_reply.py",
+      "verdict": "flag",
+      "msg": "R2: say 代码小灵, not 我"
+     }
+    ]
+   },
+   {
+    "rule": "R3",
+    "name": "the reply calls the user 你",
+    "channel": "reply",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "python3 /opt/enforce/hooks/stop_reply.py",
+      "verdict": "flag",
+      "msg": "R3: call the user 开发者大大, not 你"
+     }
+    ]
+   },
+   {
+    "rule": "R4",
+    "name": "an English word in the reply",
+    "channel": "reply",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "python3 /opt/enforce/hooks/stop_reply.py",
+      "verdict": "flag",
+      "msg": "R4: reply in Chinese only"
+     }
+    ]
+   },
+   {
+    "rule": "R8",
+    "name": "the reply does not end with 哒～",
+    "channel": "reply",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "python3 /opt/enforce/hooks/stop_reply.py",
+      "verdict": "flag",
+      "msg": "R8: end the reply with 哒～"
+     }
+    ]
+   },
+   {
+    "rule": null,
+    "name": "我们 is not a self-reference by 我 (out of R2's scope)",
+    "channel": "reply",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "python3 /opt/enforce/hooks/stop_reply.py",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R5",
+    "name": "a Python file without the coding line",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "python3 /opt/enforce/hooks/pre_write.py",
+      "verdict": "flag",
+      "msg": "R5.......................................................................Failed\n- hook id: r5\n- exit code: 1\n\nR5: tmpyk9ab_z_.py:1: put -*- coding: utf-8 -*- on the first line"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "python3 /opt/enforce/hooks/pre_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "python3 /opt/enforce/hooks/pre_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "python3 /opt/enforce/hooks/stop_reply.py",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R5",
+    "name": "a Python file without the coding line",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "PostToolUse",
+      "tool": "Bash",
+      "hook": "python3 /opt/enforce/hooks/post_bash.py",
+      "verdict": "flag",
+      "msg": "R5.......................................................................Failed\n- hook id: r5\n- exit code: 1\n\nR5: main.py:1: put -*- coding: utf-8 -*- on the first line\n"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "python3 /opt/enforce/hooks/stop_reply.py",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R5",
+    "name": "a JS file without the coding line",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "python3 /opt/enforce/hooks/pre_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "python3 /opt/enforce/hooks/pre_write.py",
+      "verdict": "flag",
+      "msg": "R5.......................................................................Failed\n- hook id: r5\n- exit code: 1\n\nR5: tmph5dyqfu5.js:1: put -*- coding: utf-8 -*- on the first line"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "python3 /opt/enforce/hooks/pre_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "python3 /opt/enforce/hooks/stop_reply.py",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R5",
+    "name": "a JS file without the coding line",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "PostToolUse",
+      "tool": "Bash",
+      "hook": "python3 /opt/enforce/hooks/post_bash.py",
+      "verdict": "flag",
+      "msg": "R5.......................................................................Failed\n- hook id: r5\n- exit code: 1\n\nR5: main.js:1: put -*- coding: utf-8 -*- on the first line\n"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "python3 /opt/enforce/hooks/stop_reply.py",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R6",
+    "name": "a Python file without the AI-Assisted line",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "python3 /opt/enforce/hooks/pre_write.py",
+      "verdict": "flag",
+      "msg": "R6.......................................................................Failed\n- hook id: r6\n- exit code: 1\n\nR6: tmph4tpy6_8.py: put the AI-Assisted comment in the first two lines"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "python3 /opt/enforce/hooks/pre_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "python3 /opt/enforce/hooks/pre_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "python3 /opt/enforce/hooks/stop_reply.py",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R6",
+    "name": "a Python file without the AI-Assisted line",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "PostToolUse",
+      "tool": "Bash",
+      "hook": "python3 /opt/enforce/hooks/post_bash.py",
+      "verdict": "flag",
+      "msg": "R6.......................................................................Failed\n- hook id: r6\n- exit code: 1\n\nR6: main.py: put the AI-Assisted comment in the first two lines\n"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "python3 /opt/enforce/hooks/stop_reply.py",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R6",
+    "name": "a JS file without the AI-Assisted line",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "python3 /opt/enforce/hooks/pre_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "python3 /opt/enforce/hooks/pre_write.py",
+      "verdict": "flag",
+      "msg": "R6.......................................................................Failed\n- hook id: r6\n- exit code: 1\n\nR6: tmpxs9pm68v.js: put the AI-Assisted comment in the first two lines"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "python3 /opt/enforce/hooks/pre_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "python3 /opt/enforce/hooks/stop_reply.py",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R6",
+    "name": "a JS file without the AI-Assisted line",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "PostToolUse",
+      "tool": "Bash",
+      "hook": "python3 /opt/enforce/hooks/post_bash.py",
+      "verdict": "flag",
+      "msg": "R6.......................................................................Failed\n- hook id: r6\n- exit code: 1\n\nR6: main.js: put the AI-Assisted comment in the first two lines\n"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "python3 /opt/enforce/hooks/stop_reply.py",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R7",
+    "name": "a Python function of 69 lines",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "python3 /opt/enforce/hooks/pre_write.py",
+      "verdict": "flag",
+      "msg": "R7: /workspace/main.py:9: a function of 69 lines; split it to at most 60"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "python3 /opt/enforce/hooks/pre_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "python3 /opt/enforce/hooks/pre_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "python3 /opt/enforce/hooks/stop_reply.py",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R7",
+    "name": "a Python function of 69 lines",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "PostToolUse",
+      "tool": "Bash",
+      "hook": "python3 /opt/enforce/hooks/post_bash.py",
+      "verdict": "flag",
+      "msg": "R7: /workspace/main.py:9: a function of 69 lines; split it to at most 60\n"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "python3 /opt/enforce/hooks/stop_reply.py",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R7",
+    "name": "a JS function of 68 lines",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "python3 /opt/enforce/hooks/pre_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "python3 /opt/enforce/hooks/pre_write.py",
+      "verdict": "flag",
+      "msg": "R7: /workspace/main.js:8: a function of 68 lines; split it to at most 60"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "python3 /opt/enforce/hooks/pre_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "python3 /opt/enforce/hooks/stop_reply.py",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R7",
+    "name": "a JS function of 68 lines",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "PostToolUse",
+      "tool": "Bash",
+      "hook": "python3 /opt/enforce/hooks/post_bash.py",
+      "verdict": "flag",
+      "msg": "R7: /workspace/main.js:8: a function of 68 lines; split it to at most 60\n"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "python3 /opt/enforce/hooks/stop_reply.py",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": null,
+    "name": "not code: notes.md without the header lines",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "python3 /opt/enforce/hooks/pre_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "python3 /opt/enforce/hooks/pre_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "python3 /opt/enforce/hooks/pre_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "python3 /opt/enforce/hooks/pre_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "python3 /opt/enforce/hooks/stop_reply.py",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": null,
+    "name": "not code: notes.md without the header lines",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "PostToolUse",
+      "tool": "Bash",
+      "hook": "python3 /opt/enforce/hooks/post_bash.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "python3 /opt/enforce/hooks/stop_reply.py",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R5",
+    "name": "an HTML file without the coding line",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "python3 /opt/enforce/hooks/pre_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "python3 /opt/enforce/hooks/pre_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "python3 /opt/enforce/hooks/pre_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "python3 /opt/enforce/hooks/stop_reply.py",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R5",
+    "name": "an HTML file without the coding line",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "PostToolUse",
+      "tool": "Bash",
+      "hook": "python3 /opt/enforce/hooks/post_bash.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "python3 /opt/enforce/hooks/stop_reply.py",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R6",
+    "name": "an HTML file without the AI-Assisted line",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "python3 /opt/enforce/hooks/pre_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "python3 /opt/enforce/hooks/pre_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "python3 /opt/enforce/hooks/pre_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "python3 /opt/enforce/hooks/stop_reply.py",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R6",
+    "name": "an HTML file without the AI-Assisted line",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "PostToolUse",
+      "tool": "Bash",
+      "hook": "python3 /opt/enforce/hooks/post_bash.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "python3 /opt/enforce/hooks/stop_reply.py",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R7",
+    "name": "a JS function of 68 lines inside an HTML <script>",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "python3 /opt/enforce/hooks/pre_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "python3 /opt/enforce/hooks/pre_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "python3 /opt/enforce/hooks/pre_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "python3 /opt/enforce/hooks/stop_reply.py",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R7",
+    "name": "a JS function of 68 lines inside an HTML <script>",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "PostToolUse",
+      "tool": "Bash",
+      "hook": "python3 /opt/enforce/hooks/post_bash.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "python3 /opt/enforce/hooks/stop_reply.py",
+      "verdict": "pass"
+     }
+    ]
+   }
+  ]
+ }
+}

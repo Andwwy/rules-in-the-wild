@@ -1,0 +1,88 @@
+{
+ "session": "e581d06a-2b4e-4bf1-8be9-82323d6e4244",
+ "messages": 1,
+ "settings": {
+  "files": [
+   {
+    "scope": "user",
+    "path": "/home/agent/.claude/settings.json",
+    "keys": [
+     "hooks"
+    ]
+   }
+  ],
+  "hooks": [
+   {
+    "hook": 1,
+    "scope": "user",
+    "event": "Stop",
+    "matcher": null,
+    "type": "command",
+    "command": "/usr/bin/python3 /opt/enforce/hooks/response_enforce_v2.py"
+   },
+   {
+    "hook": 2,
+    "scope": "user",
+    "event": "PreToolUse",
+    "matcher": "Write|Edit|MultiEdit",
+    "type": "command",
+    "command": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py"
+   },
+   {
+    "hook": 3,
+    "scope": "user",
+    "event": "PostToolUse",
+    "matcher": "Write|Edit|MultiEdit",
+    "type": "command",
+    "command": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py"
+   }
+  ],
+  "malformed": []
+ },
+ "claude_code_on_settings": null,
+ "commands_added_for_agent": [
+  "cffi-gen-src",
+  "dotenv",
+  "git",
+  "git-receive-pack",
+  "git-shell",
+  "git-upload-archive",
+  "git-upload-pack",
+  "glom",
+  "httpx",
+  "jsonschema",
+  "less",
+  "lessecho",
+  "lessfile",
+  "lesskey",
+  "lesspipe",
+  "markdown-it",
+  "mcp",
+  "normalizer",
+  "opentelemetry-bootstrap",
+  "opentelemetry-instrument",
+  "patch",
+  "pwiz",
+  "pygmentize",
+  "pysemgrep",
+  "scalar",
+  "scp",
+  "semgrep",
+  "sftp",
+  "slogin",
+  "ssh",
+  "ssh-add",
+  "ssh-agent",
+  "ssh-argv0",
+  "ssh-copy-id",
+  "ssh-keygen",
+  "ssh-keyscan",
+  "uvicorn",
+  "xauth"
+ ],
+ "workspace": {
+  "created": 0,
+  "changed": 0,
+  "deleted": 0
+ }
+}

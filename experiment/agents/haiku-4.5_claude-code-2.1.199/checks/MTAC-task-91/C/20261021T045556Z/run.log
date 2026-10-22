@@ -1,0 +1,19 @@
+00:55:56 run MTAC-task-91/C/20261021T045556Z: task 91, arm C, 1 task turns
+00:55:58 container ritw-t091-C-20261021t045556z (alexgshaw/break-filter-js-from-html:20251031)
+00:56:01 Claude Code: ExitPlanMode patch: 1 replaced 2.1.199 (Claude Code)
+00:56:02 scripted model: chain_scenario.json (no model calls)
+00:56:05 phase 0, message 1 (b1-plan): exit 0, 3 s, $0.000 (Claude Code's own estimate), 2 model turns
+00:56:05 phase 0, batch 1 (R1, R2, R3, R4, R5, R6, R7, R8): 3 nodes, 1 with needs, 3 with a check
+00:56:08 phase 0, message 2 (b1-n1): exit 0, 3 s, $0.000 (Claude Code's own estimate), 2 model turns
+00:56:08 phase 0, batch 1, node n1: done, checked
+00:56:13 phase 0, message 3 (b1-n2): exit 0, 5 s, $0.000 (Claude Code's own estimate), 2 model turns
+00:56:15 phase 0, batch 1, node n2: done, checked
+00:56:17 phase 0, message 4 (b1-n3): exit 0, 2 s, $0.000 (Claude Code's own estimate), 1 model turns
+00:56:19 phase 0, message 5 (b1-n3-fix): exit 0, 2 s, $0.000 (Claude Code's own estimate), 1 model turns
+00:56:19 phase 0, batch 1, node n3: failed its check
+00:56:23 settings: 3 hooks (3 project) in /workspace/.claude/settings.json; workspace {'created': 1, 'changed': 0, 'deleted': 0}; commands added for agent: none; Claude Code reported nothing about the settings.
+00:56:23 task session 895da499-160e-472b-8825-f1e90f831074
+00:56:23 turn 1/1 (round 0) started
+00:56:27 turn 1/1: exit 0, 4 s, $0.000 (Claude Code's own estimate), 6 model turns, hook records so far {"hook_blocking_error": 2}
+00:56:27 done
+00:56:28 container stopped (kept)

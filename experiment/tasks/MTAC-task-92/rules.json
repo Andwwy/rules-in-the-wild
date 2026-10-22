@@ -1,0 +1,472 @@
+[
+ {
+  "item": 1,
+  "constraint": "凡是需要称呼用户的地方，均须严格使用\"阿橙\"，不得出现以\"你\"相称的情况",
+  "tags": [
+   "Content",
+   "Persona"
+  ],
+  "scored": true,
+  "mapping": {
+   "leaf": "Regex filter",
+   "path": [
+    "Validation",
+    "Regex",
+    "Regex filter"
+   ],
+   "score": 0.6952,
+   "step_probabilities": [
+    0.7,
+    0.96,
+    0.5
+   ],
+   "separation": 1.021,
+   "alternatives": [
+    {
+     "path": [
+      "Validation",
+      "Regex",
+      "Regex validator"
+     ],
+     "score": 0.681
+    },
+    {
+     "path": [
+      "Analysis",
+      "Text",
+      "Other"
+     ],
+     "score": 0.3737
+    }
+   ],
+   "model": "jev-1.13.0",
+   "beam": 3,
+   "calls": 7,
+   "input_tokens": 3230,
+   "cost_usd": 0.00013566
+  },
+  "mechanism": {
+   "enforcer": "Regex validator",
+   "config": "enforcement/config/92-1.regex.json",
+   "target": "reply",
+   "triggers": [
+    "end-of-turn"
+   ],
+   "why_enforcer_differs": "Implementer choice: a Regex filter rewrites the text it matches. A Stop hook cannot change the reply, so the filter's pattern is run as a validator: it finds the forbidden text and blocks, and the agent rewrites it (the same for file rules, so that every rule acts the same way).",
+   "translated_by": "Claude Code (local), Claude Opus 5.5, effort Extra"
+  },
+  "constraint_en": "Wherever you address the user, you must strictly use \"阿橙\" (\"A-Cheng\", \"Orange\"); never address the user as \"你\" (\"you\")."
+ },
+ {
+  "item": 2,
+  "constraint": "在回复过程中，请务必全程以\"代码小助理\"作为第一人称，切勿使用\"我\"来自称",
+  "tags": [
+   "Content",
+   "Persona"
+  ],
+  "scored": true,
+  "mapping": {
+   "leaf": "Regex validator",
+   "path": [
+    "Validation",
+    "Regex",
+    "Regex validator"
+   ],
+   "score": 0.663,
+   "step_probabilities": [
+    0.59,
+    0.95,
+    0.52
+   ],
+   "separation": 1.049,
+   "alternatives": [
+    {
+     "path": [
+      "Validation",
+      "Regex",
+      "Regex filter"
+     ],
+     "score": 0.6318
+    },
+    {
+     "path": [
+      "Analysis",
+      "Text",
+      "Other"
+     ],
+     "score": 0.467
+    }
+   ],
+   "model": "jev-1.13.0",
+   "beam": 3,
+   "calls": 7,
+   "input_tokens": 3230,
+   "cost_usd": 0.00013566
+  },
+  "mechanism": {
+   "enforcer": "Regex validator",
+   "config": "enforcement/config/92-2.regex.json",
+   "target": "reply",
+   "triggers": [
+    "end-of-turn"
+   ],
+   "translated_by": "Claude Code (local), Claude Opus 5.5, effort Extra"
+  },
+  "constraint_en": "Throughout your replies, always use \"代码小助理\" (\"Little Code Assistant\") as your first-person self-reference; never refer to yourself as \"我\" (\"I\")."
+ },
+ {
+  "item": 3,
+  "constraint": "你对用户作出的任何回复，都需在最末尾加上语气词\"嗷呜～\"",
+  "tags": [
+   "Content",
+   "Persona"
+  ],
+  "scored": true,
+  "mapping": {
+   "leaf": "Regex validator",
+   "path": [
+    "Validation",
+    "Regex",
+    "Regex validator"
+   ],
+   "score": 0.8384,
+   "step_probabilities": [
+    0.75,
+    0.97,
+    0.81
+   ],
+   "separation": 1.683,
+   "alternatives": [
+    {
+     "path": [
+      "Validation",
+      "Regex",
+      "Regex filter"
+     ],
+     "score": 0.4982
+    },
+    {
+     "path": [
+      "Gates",
+      "Workflow",
+      "Workflow"
+     ],
+     "score": 0.2996
+    }
+   ],
+   "model": "jev-1.13.0",
+   "beam": 3,
+   "calls": 7,
+   "input_tokens": 3147,
+   "cost_usd": 0.00013217
+  },
+  "mechanism": {
+   "enforcer": "Regex validator",
+   "config": "enforcement/config/92-3.regex.json",
+   "target": "reply",
+   "triggers": [
+    "end-of-turn"
+   ],
+   "translated_by": "Claude Code (local), Claude Opus 5.5, effort Extra"
+  },
+  "constraint_en": "Every reply you give the user must end with the particle \"嗷呜～\" (\"awoo~\", a howl)."
+ },
+ {
+  "item": 4,
+  "constraint": "无论生成哪个代码文件，里面的注释都只能使用英文",
+  "tags": [
+   "Language",
+   "Comment Language"
+  ],
+  "scored": false,
+  "mapping": {
+   "leaf": "Regex validator",
+   "path": [
+    "Validation",
+    "Regex",
+    "Regex validator"
+   ],
+   "score": 0.7031,
+   "step_probabilities": [
+    0.57,
+    0.91,
+    0.67
+   ],
+   "separation": 1.274,
+   "alternatives": [
+    {
+     "path": [
+      "Analysis",
+      "Code scans",
+      "Semgrep"
+     ],
+     "score": 0.5519
+    },
+    {
+     "path": [
+      "Validation",
+      "Regex",
+      "Regex filter"
+     ],
+     "score": 0.5496
+    }
+   ],
+   "model": "jev-1.13.0",
+   "beam": 3,
+   "calls": 7,
+   "input_tokens": 3094,
+   "cost_usd": 0.00012995
+  },
+  "mechanism": {
+   "enforcer": "Regex validator",
+   "config": "enforcement/config/92-4.regex.json",
+   "target": "code-file",
+   "triggers": [
+    "before-write",
+    "after-edit",
+    "end-of-turn"
+   ],
+   "translated_by": "Claude Code (local), Claude Opus 5.5, effort Extra"
+  },
+  "constraint_en": "Whatever code file you generate, the comments in it must be in English only."
+ },
+ {
+  "item": 5,
+  "constraint": "无论生成哪个代码文件，其起始第一行都必须严格添加 -*- coding: utf-8 -*- 以声明编码",
+  "tags": [
+   "Content",
+   "Format"
+  ],
+  "scored": true,
+  "mapping": {
+   "leaf": "Regex validator",
+   "path": [
+    "Validation",
+    "Regex",
+    "Regex validator"
+   ],
+   "score": 0.7379,
+   "step_probabilities": [
+    0.48,
+    0.9,
+    0.93
+   ],
+   "separation": 1.301,
+   "alternatives": [
+    {
+     "path": [
+      "Gates",
+      "Git hooks",
+      "pre-commit"
+     ],
+     "score": 0.5673
+    },
+    {
+     "path": [
+      "Commands",
+      "Text tools",
+      "grep"
+     ],
+     "score": 0.3368
+    }
+   ],
+   "model": "jev-1.13.0",
+   "beam": 3,
+   "calls": 7,
+   "input_tokens": 3225,
+   "cost_usd": 0.00013545
+  },
+  "mechanism": {
+   "enforcer": "Regex validator",
+   "config": "enforcement/config/92-5.regex.json",
+   "target": "code-file",
+   "triggers": [
+    "before-write",
+    "after-edit",
+    "end-of-turn"
+   ],
+   "translated_by": "Claude Code (local), Claude Opus 5.5, effort Extra"
+  },
+  "constraint_en": "Whatever code file you generate, its very first line must be the encoding declaration -*- coding: utf-8 -*-."
+ },
+ {
+  "item": 6,
+  "constraint": "你所生成的任何一个代码文件，其开头处都需另起一行进行清晰的注释声明：\"AI-Assisted: Initial draft generated by Claude Code; reviewed and modified by author.\"",
+  "tags": [
+   "Content",
+   "Format"
+  ],
+  "scored": true,
+  "mapping": {
+   "leaf": "Regex validator",
+   "path": [
+    "Validation",
+    "Regex",
+    "Regex validator"
+   ],
+   "score": 0.7412,
+   "step_probabilities": [
+    0.52,
+    0.88,
+    0.89
+   ],
+   "separation": 1.471,
+   "alternatives": [
+    {
+     "path": [
+      "Gates",
+      "Git hooks",
+      "pre-commit"
+     ],
+     "score": 0.5041
+    },
+    {
+     "path": [
+      "Gates",
+      "CI / hosting",
+      "CI pipeline"
+     ],
+     "score": 0.3553
+    }
+   ],
+   "model": "jev-1.13.0",
+   "beam": 3,
+   "calls": 7,
+   "input_tokens": 3309,
+   "cost_usd": 0.00013898
+  },
+  "mechanism": {
+   "enforcer": "Regex validator",
+   "config": "enforcement/config/92-6.regex.json",
+   "target": "code-file",
+   "triggers": [
+    "before-write",
+    "after-edit",
+    "end-of-turn"
+   ],
+   "translated_by": "Claude Code (local), Claude Opus 5.5, effort Extra"
+  },
+  "constraint_en": "At the top of every code file you generate, add a comment on its own line that clearly states: \"AI-Assisted: Initial draft generated by Claude Code; reviewed and modified by author.\""
+ },
+ {
+  "item": 7,
+  "constraint": "在为各个代码文件编写注释时，切勿使用 emoji表情符号",
+  "tags": [
+   "Content",
+   "Keyword"
+  ],
+  "scored": true,
+  "mapping": {
+   "leaf": "Regex filter",
+   "path": [
+    "Validation",
+    "Regex",
+    "Regex filter"
+   ],
+   "score": 0.7287,
+   "step_probabilities": [
+    0.62,
+    0.96,
+    0.65
+   ],
+   "separation": 1.241,
+   "alternatives": [
+    {
+     "path": [
+      "Validation",
+      "Regex",
+      "Regex validator"
+     ],
+     "score": 0.5871
+    },
+    {
+     "path": [
+      "Analysis",
+      "Code scans",
+      "Semgrep"
+     ],
+     "score": 0.5619
+    }
+   ],
+   "model": "jev-1.13.0",
+   "beam": 3,
+   "calls": 7,
+   "input_tokens": 3123,
+   "cost_usd": 0.00013117
+  },
+  "mechanism": {
+   "enforcer": "Regex validator",
+   "config": "enforcement/config/92-7.regex.json",
+   "target": "code-file",
+   "triggers": [
+    "before-write",
+    "after-edit",
+    "end-of-turn"
+   ],
+   "why_enforcer_differs": "Implementer choice: a Regex filter rewrites the text it matches. A Stop hook cannot change the reply, so the filter's pattern is run as a validator: it finds the forbidden text and blocks, and the agent rewrites it (the same for file rules, so that every rule acts the same way).",
+   "translated_by": "Claude Code (local), Claude Opus 5.5, effort Extra"
+  },
+  "constraint_en": "When writing comments in the code files, never use emoji."
+ },
+ {
+  "item": 8,
+  "constraint": "一旦对生成的代码测试完成，必须在回复中严格按照此XML格式，分项列出执行结果与描述内容：<result>通过/失败/部分失败/无法验证</result><description>xxxx</description>",
+  "tags": [
+   "Content",
+   "Format"
+  ],
+  "scored": false,
+  "mapping": {
+   "leaf": "JSON Schema",
+   "path": [
+    "Validation",
+    "Schemas",
+    "JSON Schema"
+   ],
+   "score": 0.8612,
+   "step_probabilities": [
+    0.9,
+    0.91,
+    0.78
+   ],
+   "separation": 1.773,
+   "alternatives": [
+    {
+     "path": [
+      "Validation",
+      "Schemas",
+      "Other"
+     ],
+     "score": 0.4858
+    },
+    {
+     "path": [
+      "Validation",
+      "Regex",
+      "Regex validator"
+     ],
+     "score": 0.4017
+    }
+   ],
+   "model": "jev-1.13.0",
+   "beam": 3,
+   "calls": 7,
+   "input_tokens": 3454,
+   "cost_usd": 0.00014507
+  },
+  "mechanism": {
+   "enforcer": "JSON Schema",
+   "config": "enforcement/config/92-8.jsonschema.json",
+   "target": "reply",
+   "triggers": [
+    "end-of-turn"
+   ],
+   "when": {
+    "command_ran": "^(?:(?:npm|pnpm|yarn|bun)\\s+(?:run\\s+)?test\\b|(?:npx\\s+|pnpm\\s+exec\\s+|yarn\\s+)?(?:jest|vitest|mocha|pytest|py\\.test|playwright\\s+test)\\b|python[\\d.]*\\s+(?:-m\\s+(?:pytest|unittest)\\b|-c\\b|(?!-)\\S+\\.py\\b)|node\\s+(?:--test\\b|(?!-)\\S+\\.[cm]?js\\b)|(?:go|cargo)\\s+test\\b|(?:bash|sh)\\s+\\S+\\.sh\\b|\\./\\S+)",
+    "note": "a test runner, a test script, or a run of a project script (python x.py, node x.js, ./x) counts as testing"
+   },
+   "translated_by": "Claude Code (local), Claude Opus 5.5, effort Extra"
+  },
+  "constraint_en": "Once testing of the generated code is complete, list the execution result and its description in your reply, strictly in this XML format: <result>通过/失败/部分失败/无法验证 (pass / fail / partly failed / cannot verify)</result><description>xxxx</description>"
+ }
+]

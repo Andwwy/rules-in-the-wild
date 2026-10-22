@@ -1,0 +1,107 @@
+{
+ "session": "158106ef-8afa-41c0-b60f-ff4fdc8dd2e9",
+ "messages": 8,
+ "install": {
+  "installed": 11,
+  "hooks": [
+   {
+    "hook": 1,
+    "event": "Stop",
+    "matcher": null,
+    "command": "/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1",
+    "form": "shell",
+    "timeout": 120
+   },
+   {
+    "hook": 2,
+    "event": "Stop",
+    "matcher": null,
+    "command": "/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2",
+    "form": "shell",
+    "timeout": 120
+   },
+   {
+    "hook": 3,
+    "event": "Stop",
+    "matcher": null,
+    "command": "/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3",
+    "form": "shell",
+    "timeout": 120
+   },
+   {
+    "hook": 4,
+    "event": "Stop",
+    "matcher": null,
+    "command": "/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4",
+    "form": "shell",
+    "timeout": 120
+   },
+   {
+    "hook": 5,
+    "event": "Stop",
+    "matcher": null,
+    "command": "/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5",
+    "form": "shell",
+    "timeout": 120
+   },
+   {
+    "hook": 6,
+    "event": "Stop",
+    "matcher": null,
+    "command": "/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6",
+    "form": "shell",
+    "timeout": 120
+   },
+   {
+    "hook": 7,
+    "event": "Stop",
+    "matcher": null,
+    "command": "/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7",
+    "form": "shell",
+    "timeout": 120
+   },
+   {
+    "hook": 8,
+    "event": "Stop",
+    "matcher": null,
+    "command": "/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8",
+    "form": "shell",
+    "timeout": 120
+   },
+   {
+    "hook": 9,
+    "event": "PreToolUse",
+    "matcher": "Write|Edit|MultiEdit",
+    "command": "/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5",
+    "form": "shell",
+    "timeout": 120
+   },
+   {
+    "hook": 10,
+    "event": "PreToolUse",
+    "matcher": "Write|Edit|MultiEdit",
+    "command": "/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6",
+    "form": "shell",
+    "timeout": 120
+   },
+   {
+    "hook": 11,
+    "event": "PreToolUse",
+    "matcher": "Write|Edit|MultiEdit",
+    "command": "/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7",
+    "form": "shell",
+    "timeout": 120
+   }
+  ],
+  "not_wrapped": [],
+  "other_settings": [],
+  "fingerprint": "0334e81bf4067639506a312ff9cc689e13615dd92bbb53f6dae07612b596be34"
+ },
+ "claude_code_on_settings": null,
+ "commands_added_for_agent": [],
+ "workspace": {
+  "created": 0,
+  "changed": 0,
+  "deleted": 0
+ }
+}

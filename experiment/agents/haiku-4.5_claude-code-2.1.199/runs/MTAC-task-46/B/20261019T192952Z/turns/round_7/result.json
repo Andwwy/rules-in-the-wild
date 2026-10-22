@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 80679,
+  "duration_api_ms": 71465,
+  "ttft_ms": 3874,
+  "ttft_stream_ms": 3870,
+  "time_to_request_ms": 105,
+  "num_turns": 15,
+  "result": "已在地图右上角添加半透明控制面板，支持地图样式切换（标准、暗黑、地形）和兴趣点管理（加油站、餐厅、酒店），所有兴趣点相关变量遵循指定命名规则，循环嵌套保持在一层以内。",
+  "stop_reason": "end_turn",
+  "session_id": "16601f6e-d38d-4fa1-bae1-0f09351e3d50",
+  "total_cost_usd": 0.5486736,
+  "usage": {
+   "input_tokens": 87,
+   "cache_creation_input_tokens": 178466,
+   "cache_read_input_tokens": 1586947,
+   "output_tokens": 8955,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 178466
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 93,
+    "outputTokens": 9122,
+    "cacheReadInputTokens": 1675481,
+    "cacheCreationInputTokens": 268338,
+    "webSearchRequests": 0,
+    "costUSD": 0.5486736,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "79b53518-9bab-4c12-8791-40344ee9eb83"
+ },
+ "stderr": ""
+}

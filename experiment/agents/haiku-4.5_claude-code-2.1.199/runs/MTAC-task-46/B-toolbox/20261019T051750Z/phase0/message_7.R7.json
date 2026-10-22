@@ -1,0 +1,55 @@
+{
+ "rule": "R7",
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 142389,
+  "duration_api_ms": 140201,
+  "ttft_ms": 6591,
+  "ttft_stream_ms": 6584,
+  "time_to_request_ms": 101,
+  "num_turns": 26,
+  "result": "Excellent! Now let me create comprehensive documentation for Rule R7:",
+  "stop_reason": "tool_use",
+  "session_id": "4bf89dd4-94cd-4d39-8172-9e871937bcf0",
+  "total_cost_usd": 0.2003112,
+  "usage": {
+   "input_tokens": 143,
+   "cache_creation_input_tokens": 34306,
+   "cache_read_input_tokens": 1212257,
+   "output_tokens": 7212,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 34306
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 143,
+    "outputTokens": 7212,
+    "cacheReadInputTokens": 1212257,
+    "cacheCreationInputTokens": 34306,
+    "webSearchRequests": 0,
+    "costUSD": 0.2003112,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "7f3e1167-b19b-41c3-a7cc-bed6df91cacb"
+ },
+ "stderr": ""
+}

@@ -1,0 +1,56 @@
+{
+ "label": "b1-install-pre-commit",
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 14878,
+  "duration_api_ms": 6188,
+  "ttft_ms": 1733,
+  "ttft_stream_ms": 1730,
+  "time_to_request_ms": 170,
+  "num_turns": 4,
+  "result": "Perfect! pre-commit 4.7.0 is successfully installed and accessible to both root and the agent user.\n\n**Node install-pre-commit complete**: pre-commit 4.7.0 is installed at `/opt/enforce/tool-installs/bin/pre-commit` and works for both root and the agent user.",
+  "stop_reason": "end_turn",
+  "session_id": "2458ddca-d8db-407b-9106-645fabbd2bfa",
+  "total_cost_usd": 0.020341500000000005,
+  "usage": {
+   "input_tokens": 28,
+   "cache_creation_input_tokens": 1764,
+   "cache_read_input_tokens": 160435,
+   "output_tokens": 413,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 1764
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 28,
+    "outputTokens": 413,
+    "cacheReadInputTokens": 160435,
+    "cacheCreationInputTokens": 1764,
+    "webSearchRequests": 0,
+    "costUSD": 0.020341500000000005,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "68c4eabe-5a31-4136-9977-3d2d875f58b0"
+ },
+ "text": "Node install-pre-commit (2 of 10): install pre-commit 4.7.0 for R5, R6: `enforce install pre-commit` (the recipe pins the version and tests it).\nDone when: `pre-commit --version` runs as root and as the agent, with /opt/enforce/tool-installs/bin on the PATH. The harness checks this when you reply.",
+ "stderr": ""
+}

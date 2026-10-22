@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 50542,
+  "duration_api_ms": 48169,
+  "ttft_ms": 3937,
+  "ttft_stream_ms": 3935,
+  "time_to_request_ms": 83,
+  "num_turns": 9,
+  "result": "代码小灵为开发者大大实现了吃子机制，包括检测碰撞、飞机销毁和动画提示弹窗。\n\n<result>通过</result>\n<description>已实现吃子逻辑：飞机移动到对方飞机所在格子时触发吃子，被吃飞机回到准备区，显示2秒动画提示；缩进改为4空格；支持同时吃多架飞机。</description>\n\n哒～",
+  "stop_reason": "end_turn",
+  "session_id": "07b4cbf9-602a-406d-abde-54eed193c1f2",
+  "total_cost_usd": 0.12195565,
+  "usage": {
+   "input_tokens": 54,
+   "cache_creation_input_tokens": 15031,
+   "cache_read_input_tokens": 633379,
+   "output_tokens": 7955,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 15031
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 54,
+    "outputTokens": 7955,
+    "cacheReadInputTokens": 633379,
+    "cacheCreationInputTokens": 15031,
+    "webSearchRequests": 0,
+    "costUSD": 0.12195565,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "4d2dd949-8080-4104-bc49-185eb461fef4"
+ },
+ "stderr": ""
+}

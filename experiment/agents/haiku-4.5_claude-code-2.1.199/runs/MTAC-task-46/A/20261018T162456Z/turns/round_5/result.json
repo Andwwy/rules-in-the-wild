@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 56921,
+  "duration_api_ms": 56076,
+  "ttft_ms": 3689,
+  "ttft_stream_ms": 3685,
+  "time_to_request_ms": 106,
+  "num_turns": 12,
+  "result": "<result>通过</result>\n<description>成功集成模拟天气数据系统，在时间轴每个站点显示天气图标、温度和降水概率，地图标记弹窗同步展示天气信息。循环嵌套层级优化至0层，符合≤2层要求。</description>\n\n本轮完成了天气数据集成，包括时间轴天气展示和地图标记天气弹窗联动。",
+  "stop_reason": "end_turn",
+  "session_id": "3bc2f66f-73fb-4cba-be67-80364052fb5e",
+  "total_cost_usd": 0.2303385,
+  "usage": {
+   "input_tokens": 68,
+   "cache_creation_input_tokens": 67004,
+   "cache_read_input_tokens": 1088905,
+   "output_tokens": 7525,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 67004
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 68,
+    "outputTokens": 7525,
+    "cacheReadInputTokens": 1088905,
+    "cacheCreationInputTokens": 67004,
+    "webSearchRequests": 0,
+    "costUSD": 0.2303385,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "cb21d4a8-e29d-4659-956f-5ad35a98d44d"
+ },
+ "stderr": ""
+}

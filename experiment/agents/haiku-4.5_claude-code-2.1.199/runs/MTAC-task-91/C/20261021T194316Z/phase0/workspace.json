@@ -1,0 +1,10 @@
+{
+ "created": {
+  "/workspace/.claude/settings.json": "6d72d6388b29c469419a00e5bdc2893d8028a1f11033183038e08b5a4f5e5bbf",
+  "/workspace/.claude/hooks/validate_file_write.py": "ab7fed07fa2b4f24e7731a442910f0fae2ce3da920dd6fd47ef668eb659e423c",
+  "/workspace/.claude/hooks/validate_response.py": "db97af274b679cb35516caadb7b03be70cd6e9807428ed3d1b1bd380bacceb9a",
+  "/workspace/.claude/hooks/validate_function_length.py": "756a428a5a637b91bcfc99d74e307789d88e05c03fe23919283607d1cc7d5807"
+ },
+ "changed": {},
+ "deleted": []
+}

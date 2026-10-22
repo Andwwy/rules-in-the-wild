@@ -1,0 +1,42 @@
+# LiteLLM gateway: the agent in the sandbox calls an Anthropic-format endpoint (/v1/messages); this sends the calls to
+# Claude Haiku 4.5 (the agent) on Amazon Bedrock. There is no judge model (design_process.md, point 26). Start it with ./start.sh (it reads the AWS keys from ~/Desktop/DAPlab/.env).
+model_list:
+  - model_name: claude-haiku-4-5
+    litellm_params:
+      # The lab account denies direct model calls (IAM policy RequiredTagsPolicy): each member calls through their own
+      # application inference profile, tagged project=rules-in-the-wild and billing-tag1=<uni>. model_id is that profile;
+      # model tells LiteLLM the request format and the price.
+      model: bedrock/invoke/anthropic.claude-haiku-4-5-20251001-v1:0
+      model_id: os.environ/BEDROCK_PROFILE_ARN
+      aws_region_name: os.environ/AWS_REGION_NAME
+      timeout: 1800
+      num_retries: 6
+      # Prices are set here because LiteLLM may not find one under the profile's model name, and then every call
+      # would cost $0 in the ledger and the cap would never trip. These are LiteLLM's prices for
+      # us.anthropic.claude-haiku-4-5-20251001-v1:0, the US cross-region profile the user's profile copies (10% above
+      # the in-region price).
+      input_cost_per_token: 1.1e-06
+      output_cost_per_token: 5.5e-06
+      cache_read_input_token_cost: 1.1e-07
+      cache_creation_input_token_cost: 1.375e-06
+  - model_name: claude-opus-5-5
+    litellm_params:
+      # Phase 0 with Opus 5.5 (design_process.md, point 103): the user's profile rules-in-the-wild-ww2780-opus-5-5, a
+      # copy of us.anthropic.claude-opus-5-5 with the same two tags; start.sh finds its ARN by name.
+      model: bedrock/invoke/anthropic.claude-opus-5-5
+      model_id: os.environ/BEDROCK_OPUS_PROFILE_ARN
+      aws_region_name: os.environ/AWS_REGION_NAME
+      timeout: 1800
+      num_retries: 6
+      # LiteLLM's prices for us.anthropic.claude-opus-5-5, the profile it copies
+      input_cost_per_token: 4.4e-06
+      output_cost_per_token: 2.2e-05
+      cache_read_input_token_cost: 2.2e-07
+      cache_creation_input_token_cost: 5.5e-06
+
+litellm_settings:
+  request_timeout: 1800
+  callbacks: budget.guard          # budget.py: the project's spend ledger and cap (RITW_BUDGET_USD)
+
+general_settings:
+  master_key: os.environ/GATEWAY_API_KEY

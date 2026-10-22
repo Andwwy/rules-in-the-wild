@@ -13,6 +13,8 @@ rule files ─► clause extraction ─► is_rule filter ─► assign ×3 ─�
 | [`rule clause extraction/`](rule%20clause%20extraction/) | cuts rule files into clauses (a markdown parser, no LLM) |
 | [`sem_filter/`](sem_filter/) | an LLM judge labels each clause: is it a rule? |
 | [`assign+group/`](assign+group/) | **the pipeline**: for each rule, an LLM assigns `enforcer / target / trigger / spec` three times, a judge reconciles the three, and regex aliases group the enforcers into subcategories |
+| [`jev mapping/`](jev%20mapping/) | Jev's trees (enforcer, trigger, target) and the tree classifier that puts each rule on a leaf of each; [`HISTORY.md`](jev%20mapping/HISTORY.md) says how the trees came to be. The experiment's routes come from here |
+| [`experiment/`](experiment/) | the enforcement experiment: an agent with the rules in `CLAUDE.md` only (A), enforcement written from the rules alone (B), and enforcement written from each rule's route (C), on MTAC-IFBench tasks; see [`experiment/README.md`](experiment/README.md) |
 
 ## Run the pipeline
 ```bash
@@ -83,7 +85,7 @@ erDiagram
     subcategory_class {
         varchar assign_version PK
         varchar subcategory PK "619 in v1.11.vote"
-        varchar class "14, LLM grouping, nullable"
+        varchar class "15, one gpt-6-sol call, nullable"
         varchar class_long
     }
 ```

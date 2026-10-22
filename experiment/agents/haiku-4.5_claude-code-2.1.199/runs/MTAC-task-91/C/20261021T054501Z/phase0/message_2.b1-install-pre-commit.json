@@ -1,0 +1,56 @@
+{
+ "label": "b1-install-pre-commit",
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 51042,
+  "duration_api_ms": 34850,
+  "ttft_ms": 1286,
+  "ttft_stream_ms": 1281,
+  "time_to_request_ms": 119,
+  "num_turns": 21,
+  "result": "Perfect! The installation is complete:\n\n- **pre-commit 4.7.0** is installed at `/opt/enforce/tool-installs/pre-commit/bin/pre-commit`\n- With `/opt/enforce/tool-installs/bin` on the PATH (which we configured in the global settings earlier), `pre-commit --version` returns `pre-commit 4.7.0`\n- This PATH configuration is in `/root/.claude/settings.json` under `env.PATH`, so both root and the agent user will have access to pre-commit when running Claude Code sessions\n- The symlink/wrapper at `/opt/enforce/tool-installs/bin/pre-commit` points to the executable\n\nBoth R5 and R6 (the encoding and AI-Assisted comment rules) can now use pre-commit hooks for enforcement. Ready for the next node.",
+  "stop_reason": "end_turn",
+  "session_id": "5575d3f4-988e-4e5b-bbe0-6a1f884ba685",
+  "total_cost_usd": 0.19119399999999998,
+  "usage": {
+   "input_tokens": 137,
+   "cache_creation_input_tokens": 8250,
+   "cache_read_input_tokens": 1673195,
+   "output_tokens": 2685,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 8250
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 137,
+    "outputTokens": 2685,
+    "cacheReadInputTokens": 1673195,
+    "cacheCreationInputTokens": 8250,
+    "webSearchRequests": 0,
+    "costUSD": 0.19119399999999998,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "909026a8-8169-477c-ad3d-d3c7e4a5c14c"
+ },
+ "text": "Node install-pre-commit (2 of 6): install pre-commit 4.7.0 for R5, R6: `enforce install pre-commit` (the recipe pins the version and tests it).\nDone when: `pre-commit --version` runs as root and as the agent, with /opt/enforce/tool-installs/bin on the PATH. The harness checks this when you reply.",
+ "stderr": ""
+}

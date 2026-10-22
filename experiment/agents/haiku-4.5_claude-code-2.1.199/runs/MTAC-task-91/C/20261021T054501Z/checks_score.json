@@ -1,0 +1,536 @@
+{
+ "R1": [
+  {
+   "why": "the clean reply",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "R1: the reply does not start with 喵～",
+   "expect": "flag",
+   "got": "flag",
+   "named": true,
+   "said": "R1: /tmp/tmp1butxnsv/reply.txt:1: Response must start with '喵～'; currently starts with: 代码小灵已经为开发者大大完成了修改哒～"
+  },
+  {
+   "why": "R2: the reply says 我",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "R3: the reply calls the user 你",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "R4: an English word in the reply",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "R8: the reply does not end with 哒～",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "out of scope: 我们 is not a self-reference by 我 (out of R2's scope)",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  }
+ ],
+ "R2": [
+  {
+   "why": "the clean reply",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "R1: the reply does not start with 喵～",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "R2: the reply says 我",
+   "expect": "flag",
+   "got": "flag",
+   "named": true,
+   "said": "R2: /tmp/tmp7e0_etty/reply.txt:1: Found '我已经' - should use '代码小灵' instead; context: ...喵～ 我已经为开发者大大完成了修改哒～..."
+  },
+  {
+   "why": "R3: the reply calls the user 你",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "R4: an English word in the reply",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "R8: the reply does not end with 哒～",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "out of scope: 我们 is not a self-reference by 我 (out of R2's scope)",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  }
+ ],
+ "R3": [
+  {
+   "why": "the clean reply",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "R1: the reply does not start with 喵～",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "R2: the reply says 我",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "R3: the reply calls the user 你",
+   "expect": "flag",
+   "got": "flag",
+   "named": true,
+   "said": "R3: /tmp/tmp07m5n_an/reply.txt:1: Found '为你' - should use '开发者大大' instead; context: ...喵～ 代码小灵已经为你完成了修改哒～..."
+  },
+  {
+   "why": "R4: an English word in the reply",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "R8: the reply does not end with 哒～",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "out of scope: 我们 is not a self-reference by 我 (out of R2's scope)",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  }
+ ],
+ "R4": [
+  {
+   "why": "the clean reply",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "R1: the reply does not start with 喵～",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "R2: the reply says 我",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "R3: the reply calls the user 你",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "R4: an English word in the reply",
+   "expect": "flag",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "R8: the reply does not end with 哒～",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "out of scope: 我们 is not a self-reference by 我 (out of R2's scope)",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  }
+ ],
+ "R5": [
+  {
+   "why": "clean main.py",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "clean main.js",
+   "expect": "pass",
+   "got": "flag",
+   "named": true,
+   "said": "R5: ../tmpvx_d2u5w/main.js:1: Missing or incorrect encoding declaration; first line must be: # -*- coding: utf-8 -*-"
+  },
+  {
+   "why": "clean index.html",
+   "expect": "pass",
+   "got": "flag",
+   "named": true,
+   "said": "R5: ../tmpffdaxgm8/index.html:1: Missing or incorrect encoding declaration; first line must be: # -*- coding: utf-8 -*-"
+  },
+  {
+   "why": "R5: a Python file without the coding line",
+   "expect": "flag",
+   "got": "flag",
+   "named": true,
+   "said": "R5: ../tmpg3mkv21j/main.py:1: Missing or incorrect encoding declaration; first line must be: # -*- coding: utf-8 -*-"
+  },
+  {
+   "why": "R5: a JS file without the coding line",
+   "expect": "flag",
+   "got": "flag",
+   "named": true,
+   "said": "R5: ../tmp44o0f4lz/main.js:1: Missing or incorrect encoding declaration; first line must be: # -*- coding: utf-8 -*-"
+  },
+  {
+   "why": "R6: a Python file without the AI-Assisted line",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "R6: a JS file without the AI-Assisted line",
+   "expect": "pass",
+   "got": "flag",
+   "named": true,
+   "said": "R5: ../tmp24zgyq6w/main.js:1: Missing or incorrect encoding declaration; first line must be: # -*- coding: utf-8 -*-"
+  },
+  {
+   "why": "R7: a Python function of 69 lines",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "R7: a JS function of 68 lines",
+   "expect": "pass",
+   "got": "flag",
+   "named": true,
+   "said": "R5: ../tmpmug35uh5/main.js:1: Missing or incorrect encoding declaration; first line must be: # -*- coding: utf-8 -*-"
+  },
+  {
+   "why": "not code: not code: notes.md without the header lines",
+   "expect": "pass",
+   "got": "flag",
+   "named": true,
+   "said": "R5: ../tmp8eujclln/notes.md:1: Missing or incorrect encoding declaration; first line must be: # -*- coding: utf-8 -*-"
+  },
+  {
+   "why": "R5: an HTML file without the coding line",
+   "expect": "flag",
+   "got": "flag",
+   "named": true,
+   "said": "R5: ../tmprdemfmvs/index.html:1: Missing or incorrect encoding declaration; first line must be: # -*- coding: utf-8 -*-"
+  },
+  {
+   "why": "R6: an HTML file without the AI-Assisted line",
+   "expect": "pass",
+   "got": "flag",
+   "named": true,
+   "said": "R5: ../tmp684pglz7/index.html:1: Missing or incorrect encoding declaration; first line must be: # -*- coding: utf-8 -*-"
+  },
+  {
+   "why": "R7: a JS function of 68 lines inside an HTML <script>",
+   "expect": "pass",
+   "got": "flag",
+   "named": true,
+   "said": "R5: ../tmpkmocchkp/index.html:1: Missing or incorrect encoding declaration; first line must be: # -*- coding: utf-8 -*-"
+  }
+ ],
+ "R6": [
+  {
+   "why": "clean main.py",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "clean main.js",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "clean index.html",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "R5: a Python file without the coding line",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "R5: a JS file without the coding line",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "R6: a Python file without the AI-Assisted line",
+   "expect": "flag",
+   "got": "flag",
+   "named": true,
+   "said": "R6: ../tmpv77h448g/main.py:2: Missing AI-Assisted comment; add: # AI-Assisted: Initial draft generated by Claude Code; reviewed and modified by author."
+  },
+  {
+   "why": "R6: a JS file without the AI-Assisted line",
+   "expect": "flag",
+   "got": "flag",
+   "named": true,
+   "said": "R6: ../tmpjrtrk30i/main.js:2: Missing AI-Assisted comment; add: // AI-Assisted: Initial draft generated by Claude Code; reviewed and modified by author."
+  },
+  {
+   "why": "R7: a Python function of 69 lines",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "R7: a JS function of 68 lines",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "not code: not code: notes.md without the header lines",
+   "expect": "pass",
+   "got": "flag",
+   "named": true,
+   "said": "R6: ../tmptrr0b6jb/notes.md:2: Missing AI-Assisted comment; add: # AI-Assisted: Initial draft generated by Claude Code; reviewed and modified by author."
+  },
+  {
+   "why": "R5: an HTML file without the coding line",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "R6: an HTML file without the AI-Assisted line",
+   "expect": "flag",
+   "got": "flag",
+   "named": true,
+   "said": "R6: ../tmp_y1g02rn/index.html:2: Missing AI-Assisted comment; add: # AI-Assisted: Initial draft generated by Claude Code; reviewed and modified by author."
+  },
+  {
+   "why": "R7: a JS function of 68 lines inside an HTML <script>",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  }
+ ],
+ "R7": [
+  {
+   "why": "clean main.py",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "clean main.js",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "clean index.html",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "R5: a Python file without the coding line",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "R5: a JS file without the coding line",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "R6: a Python file without the AI-Assisted line",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "R6: a JS file without the AI-Assisted line",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "R7: a Python function of 69 lines",
+   "expect": "flag",
+   "got": "flag",
+   "named": true,
+   "said": "R7: /tmp/tmpgqaq6wwu/main.py:9: Function 'build' is 69 lines (limit is 60); split into smaller functions"
+  },
+  {
+   "why": "R7: a JS function of 68 lines",
+   "expect": "flag",
+   "got": "flag",
+   "named": true,
+   "said": "R7: /tmp/tmprkxckmmx/main.js:8: Function 'build' is 68 lines (limit is 60); split into smaller functions"
+  },
+  {
+   "why": "not code: not code: notes.md without the header lines",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "R5: an HTML file without the coding line",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "R6: an HTML file without the AI-Assisted line",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "R7: a JS function of 68 lines inside an HTML <script>",
+   "expect": "flag",
+   "got": "flag",
+   "named": true,
+   "said": "R7: /tmp/tmp4tvn20l7/index.html:9: Function 'draw' is 68 lines (limit is 60); split into smaller functions"
+  }
+ ],
+ "R8": [
+  {
+   "why": "the clean reply",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "R1: the reply does not start with 喵～",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "R2: the reply says 我",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "R3: the reply calls the user 你",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "R4: an English word in the reply",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "R8: the reply does not end with 哒～",
+   "expect": "flag",
+   "got": "flag",
+   "named": true,
+   "said": "R8: /tmp/tmp33ygpk29/reply.txt:end: Response must end with '哒～'; currently ends with: 喵～ 代码小灵已经为开发者大大完成了修改。"
+  },
+  {
+   "why": "out of scope: 我们 is not a self-reference by 我 (out of R2's scope)",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  }
+ ]
+}

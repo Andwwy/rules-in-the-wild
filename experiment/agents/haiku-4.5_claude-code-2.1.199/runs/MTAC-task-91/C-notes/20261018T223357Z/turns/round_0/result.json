@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 55030,
+  "duration_api_ms": 52814,
+  "ttft_ms": 5411,
+  "ttft_stream_ms": 5404,
+  "time_to_request_ms": 129,
+  "num_turns": 10,
+  "result": "喵～\n\n开发者大大，代码小灵已经成功完成了飞行棋游戏的基础骨架搭建！现在可以在浏览器中打开本地服务器查看游戏页面，点击\"掷骰子\"按钮就能看到随机生成的一到六点数字，同时伴有动画效果。\n\n页面包含：\n- 四个彩色玩家准备区（红、黄、蓝、绿分别位于四个角落）\n- 中间的骰子显示区和掷骰子按钮\n- 响应式的用户界面设计和平滑的交互动画\n\n所有代码文件都已按照规范编写完成。\n\n哒～",
+  "stop_reason": "end_turn",
+  "session_id": "f96299d9-4701-4a4d-88df-0cefefed3f55",
+  "total_cost_usd": 0.11407349999999998,
+  "usage": {
+   "input_tokens": 83,
+   "cache_creation_input_tokens": 31598,
+   "cache_read_input_tokens": 397580,
+   "output_tokens": 6731,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 31598
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 1038,
+    "outputTokens": 6756,
+    "cacheReadInputTokens": 397580,
+    "cacheCreationInputTokens": 31598,
+    "webSearchRequests": 0,
+    "costUSD": 0.11407349999999998,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "8a9a4985-d518-4177-9925-400a4b710431"
+ },
+ "stderr": ""
+}

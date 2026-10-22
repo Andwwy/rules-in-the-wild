@@ -1,0 +1,28 @@
+# Kept on this machine only (README.md, "Not in the repository")
+
+# superseded runs (the root .gitignore also leaves out every archive/)
+agents/*/earlier/
+
+# the runs' own snapshots: the agent's workspace after each turn, and what phase 0 left in /opt/enforce
+workspace_snapshot/
+workspace.tar.gz
+**/phase0/files.json
+
+# trajectories: the task and phase 0 transcripts, the scripted model's log, the debug log, and the page built from them
+traces/
+**/phase0/*.jsonl
+mock_api.jsonl
+claude_debug.log
+agents/*/trajectories.html
+
+# downloads: each benchmark's README says where it comes from
+dataset/**/*.pdf
+dataset/MTAC bench/base agent/
+dataset/MTAC bench/task data/
+dataset/τ²-bench/tau2-bench/
+dataset/ST-WebAgentBench enforcement eval/ST-WebAgentBench/
+
+# the gateway's environment and runtime files
+scripts/gateway/.venv/
+scripts/gateway/gateway.log
+scripts/gateway/gateway.pid

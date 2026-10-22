@@ -1,0 +1,13 @@
+18:42:52 run task_046/B/20261020T224252Z: task 46, arm B, 1 task turns
+18:42:52 container ritw-t046-B-20261020t224252z (alexgshaw/break-filter-js-from-html:20251031)
+18:42:58 Claude Code: ExitPlanMode patch: 1 replaced 2.1.199 (Claude Code)
+18:42:59 scripted model: e2e_scenario.json (no model calls)
+18:43:13 phase 0, message 1/1 (R1): exit 0, 11 s, $0.000 (Claude Code's own estimate), 5 model turns
+18:43:13 phase 0 DAG: 0 tasks, 0 with dependencies, 0 completed
+18:43:21 install: 0 hooks wrapped; workspace {'created': 2, 'changed': 0, 'deleted': 0}; commands added for agent: ['demo-tool']; Claude Code reported nothing about the settings.
+18:43:21 recorder started (/run/enforce/recorder.sock; log in /var/lib/enforce, root-only)
+18:43:21 task session 65cc9c9e-3e50-4938-9bfa-fc768605184b
+18:43:22 turn 1/1 (round 0) started
+18:43:32 turn 1/1: exit 0, 11 s, $0.000 (Claude Code's own estimate), 4 model turns, hook verdicts so far {'rejected': 1, 'violation': 1}
+18:43:33 done
+18:43:33 container removed

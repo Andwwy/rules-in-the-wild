@@ -1,0 +1,87 @@
+{
+ "session": "2988f22f-b20f-4cd8-ac99-336497eb8054",
+ "messages": 8,
+ "install": {
+  "installed": 8,
+  "hooks": [
+   {
+    "hook": 1,
+    "event": "MessageDisplay",
+    "matcher": "",
+    "command": "/opt/enforce/validate_chinese.sh",
+    "form": "shell",
+    "timeout": 5
+   },
+   {
+    "hook": 2,
+    "event": "PreToolUse",
+    "matcher": "Write|Edit",
+    "command": "/opt/enforce/validate_indentation.sh",
+    "form": "shell",
+    "timeout": 5
+   },
+   {
+    "hook": 3,
+    "event": "PreToolUse",
+    "matcher": "Write|Edit",
+    "command": "/opt/enforce/validate_equals_spacing.sh",
+    "form": "shell",
+    "timeout": 5
+   },
+   {
+    "hook": 4,
+    "event": "PreToolUse",
+    "matcher": "Write|Edit",
+    "command": "/opt/enforce/validate_class_names.sh",
+    "form": "shell",
+    "timeout": 5
+   },
+   {
+    "hook": 5,
+    "event": "PostToolUse",
+    "matcher": "Write|Edit",
+    "command": "/opt/enforce/validate_utf8_encoding.sh",
+    "form": "shell",
+    "timeout": 5
+   },
+   {
+    "hook": 6,
+    "event": "PostToolUse",
+    "matcher": "Write|Edit",
+    "command": "/opt/enforce/validate_no_tabs.sh",
+    "form": "shell",
+    "timeout": 5
+   },
+   {
+    "hook": 7,
+    "event": "PostToolUse",
+    "matcher": "Write|Edit",
+    "command": "/opt/enforce/validate_function_names.sh",
+    "form": "shell",
+    "timeout": 5
+   },
+   {
+    "hook": 8,
+    "event": "PostToolUse",
+    "matcher": "Write|Edit",
+    "command": "/opt/enforce/validate_filename_length.sh",
+    "form": "shell",
+    "timeout": 5
+   }
+  ],
+  "not_wrapped": [],
+  "other_settings": [
+   "$schema"
+  ],
+  "fingerprint": "d2555f3edb90293c40a6349839617680c21cae782c094782f833c56b7239f019"
+ },
+ "claude_code_on_settings": null,
+ "commands_added_for_agent": [
+  "chardetect"
+ ],
+ "workspace": {
+  "created": 0,
+  "changed": 0,
+  "deleted": 0
+ }
+}

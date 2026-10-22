@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 71681,
+  "duration_api_ms": 56024,
+  "ttft_ms": 4302,
+  "ttft_stream_ms": 4298,
+  "time_to_request_ms": 118,
+  "num_turns": 16,
+  "result": "<result>通过</result><description>侧边栏完善途经点功能：实现了\"添加途经点\"按钮（最多5个）、拖拽排序功能、每个途经点的删除按钮。规划路线时按排序顺序重新连接，途经点用数字标记蓝色圆形图标显示。已清理旧图层并自动调整地图视图。所有导入使用相对路径。</description>\n\n完成了途经点动态管理和拖拽排序功能。",
+  "stop_reason": "end_turn",
+  "session_id": "97b03103-d0f3-4825-991b-478998479f7c",
+  "total_cost_usd": 0.16617005,
+  "usage": {
+   "input_tokens": 94,
+   "cache_creation_input_tokens": 10909,
+   "cache_read_input_tokens": 1193198,
+   "output_tokens": 6624,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 10909
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 94,
+    "outputTokens": 6624,
+    "cacheReadInputTokens": 1193198,
+    "cacheCreationInputTokens": 10909,
+    "webSearchRequests": 0,
+    "costUSD": 0.16617005,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "8e36aa0b-0661-4aa6-bf92-4968765bdc5b"
+ },
+ "stderr": ""
+}

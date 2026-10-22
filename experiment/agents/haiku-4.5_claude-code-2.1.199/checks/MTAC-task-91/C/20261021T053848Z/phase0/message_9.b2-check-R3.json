@@ -1,0 +1,56 @@
+{
+ "label": "b2-check-R3",
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 706,
+  "duration_api_ms": 150,
+  "ttft_ms": 152,
+  "ttft_stream_ms": 150,
+  "time_to_request_ms": 136,
+  "num_turns": 2,
+  "result": "Done.",
+  "stop_reason": "end_turn",
+  "session_id": "326d654f-ed91-4c62-8cd6-15b9d9bdf622",
+  "total_cost_usd": 7.000000000000001e-05,
+  "usage": {
+   "input_tokens": 20,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 10,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 20,
+    "outputTokens": 10,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "webSearchRequests": 0,
+    "costUSD": 7.000000000000001e-05,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "483d0236-4646-4014-9cf9-a42851cbd65c"
+ },
+ "text": "Node check-R3 (3 of 6): write test cases and the check of R3. The cases: at least two that break the rule, as files in /opt/enforce/fixtures/R3/flag, and at least two that follow it, in /opt/enforce/fixtures/R3/pass; each one file of what the check reads (An assistant response or a message from the agent. Where: the agent's reply exists only inside the agent framework: its hook at the end of the turn gets it, and its transcript keeps it (a file in the agent's home)), like what the agent may really write. The check: the executable /opt/enforce/checks/R3; `/opt/enforce/checks/R3 <file>` exits 0 when the file follows the rule, and otherwise exits 1 and prints each violation: R3, where (the file and line, or the part of the text), and what to change. By the route: A regular expression that the checked text must match, or must not match. A match against the rule is a violation. What is read is part of the enforcer: a whole file, each line, only comments, a reply, the start or the end of a text. Check: a check script (/opt/enforce-toolbox/skeletons/check.py) with a regular expression; read what the rule is about (the whole text, each line, comments, the start or the end). It reads An assistant response or a message from the agent. Where: the agent's reply exists only inside the agent framework: its hook at the end of the turn gets it, and its transcript keeps it (a file in the agent's home).\nDone when: /opt/enforce/fixtures/R3/flag and /opt/enforce/fixtures/R3/pass each hold at least two files; as the agent, the check exits 1 and names R3 for every file in /opt/enforce/fixtures/R3/flag, and exits 0 for every file in /opt/enforce/fixtures/R3/pass. The harness checks this when you reply.",
+ "stderr": ""
+}

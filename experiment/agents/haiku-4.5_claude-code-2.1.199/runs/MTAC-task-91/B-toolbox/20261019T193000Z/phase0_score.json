@@ -1,0 +1,1736 @@
+{
+ "summary": {
+  "hooks": 11,
+  "rules": {
+   "R1": {
+    "reply": [
+     {
+      "case": "the reply does not start with 喵～",
+      "caught": true,
+      "early": false,
+      "at": [
+       "Stop"
+      ]
+     }
+    ]
+   },
+   "R2": {
+    "reply": [
+     {
+      "case": "the reply says 我",
+      "caught": true,
+      "early": false,
+      "at": [
+       "Stop"
+      ]
+     }
+    ]
+   },
+   "R3": {
+    "reply": [
+     {
+      "case": "the reply calls the user 你",
+      "caught": true,
+      "early": false,
+      "at": [
+       "Stop"
+      ]
+     }
+    ]
+   },
+   "R4": {
+    "reply": [
+     {
+      "case": "an English word in the reply",
+      "caught": true,
+      "early": false,
+      "at": [
+       "Stop"
+      ]
+     }
+    ]
+   },
+   "R8": {
+    "reply": [
+     {
+      "case": "the reply does not end with 哒～",
+      "caught": true,
+      "early": false,
+      "at": [
+       "Stop"
+      ]
+     }
+    ]
+   },
+   "R5": {
+    "tool": [
+     {
+      "case": "a Python file without the coding line",
+      "caught": true,
+      "early": true,
+      "at": [
+       "PreToolUse",
+       "Stop"
+      ]
+     },
+     {
+      "case": "a JS file without the coding line",
+      "caught": true,
+      "early": true,
+      "at": [
+       "PreToolUse",
+       "Stop"
+      ]
+     }
+    ],
+    "shell": [
+     {
+      "case": "a Python file without the coding line",
+      "caught": true,
+      "early": false,
+      "at": [
+       "Stop"
+      ]
+     },
+     {
+      "case": "a JS file without the coding line",
+      "caught": true,
+      "early": false,
+      "at": [
+       "Stop"
+      ]
+     }
+    ]
+   },
+   "R6": {
+    "tool": [
+     {
+      "case": "a Python file without the AI-Assisted line",
+      "caught": true,
+      "early": true,
+      "at": [
+       "PreToolUse",
+       "Stop"
+      ]
+     },
+     {
+      "case": "a JS file without the AI-Assisted line",
+      "caught": true,
+      "early": true,
+      "at": [
+       "PreToolUse",
+       "Stop"
+      ]
+     }
+    ],
+    "shell": [
+     {
+      "case": "a Python file without the AI-Assisted line",
+      "caught": true,
+      "early": false,
+      "at": [
+       "Stop"
+      ]
+     },
+     {
+      "case": "a JS file without the AI-Assisted line",
+      "caught": true,
+      "early": false,
+      "at": [
+       "Stop"
+      ]
+     }
+    ]
+   },
+   "R7": {
+    "tool": [
+     {
+      "case": "a Python function of 69 lines",
+      "caught": true,
+      "early": true,
+      "at": [
+       "PreToolUse",
+       "Stop"
+      ]
+     },
+     {
+      "case": "a JS function of 68 lines",
+      "caught": true,
+      "early": true,
+      "at": [
+       "PreToolUse",
+       "Stop"
+      ]
+     }
+    ],
+    "shell": [
+     {
+      "case": "a Python function of 69 lines",
+      "caught": true,
+      "early": false,
+      "at": [
+       "Stop"
+      ]
+     },
+     {
+      "case": "a JS function of 68 lines",
+      "caught": true,
+      "early": false,
+      "at": [
+       "Stop"
+      ]
+     }
+    ]
+   }
+  },
+  "false_flags": [
+   "我们 is not a self-reference by 我 (out of R2's scope) (reply): Stop: [CLAUDE.md R2] 无论何时提到自身，都请始终用\"代码小灵\"替代\"我\"来进行自我指代"
+  ],
+  "hook_errors": []
+ },
+ "raw": {
+  "hooks": 11,
+  "cases": [
+   {
+    "rule": null,
+    "name": "clean project",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": null,
+    "name": "clean project",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R1",
+    "name": "the reply does not start with 喵～",
+    "channel": "reply",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "flag",
+      "msg": "[CLAUDE.md R1] 每次给用户生成回复时，必须首先输出\"喵～\"这一语气词\n- it does not match /^喵～/\n每次回复必须以\"喵～\"开头。\nFix this before you finish the turn."
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R2",
+    "name": "the reply says 我",
+    "channel": "reply",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "flag",
+      "msg": "[CLAUDE.md R2] 无论何时提到自身，都请始终用\"代码小灵\"替代\"我\"来进行自我指代\n- forbidden text, 1×: 我\n请用\"代码小灵\"替代\"我\"来进行自我指代。\nFix this before you finish the turn."
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R3",
+    "name": "the reply calls the user 你",
+    "channel": "reply",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "flag",
+      "msg": "[CLAUDE.md R3] 凡是需要称呼用户的地方，均须严格使用\"开发者大大\"，不得出现以\"你\"相称的情况\n- forbidden text, 1×: 你\n请用\"开发者大大\"称呼用户，不要使用\"你\"。\nFix this before you finish the turn."
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R4",
+    "name": "an English word in the reply",
+    "channel": "reply",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "flag",
+      "msg": "[CLAUDE.md R4] 请确保在所有情况下都使用中文来生成用户回复\n- forbidden text, 1×: done\n请用中文生成回复，避免使用英文或其他非中文语言。\nFix this before you finish the turn."
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R8",
+    "name": "the reply does not end with 哒～",
+    "channel": "reply",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "flag",
+      "msg": "[CLAUDE.md R8] 你的所有回复都必须在结尾处加上\"哒～\"语气词\n- it does not match /哒～\\s*$/\n每条回复都必须以\"哒～\"结尾。\nFix this before you finish the turn."
+     }
+    ]
+   },
+   {
+    "rule": null,
+    "name": "我们 is not a self-reference by 我 (out of R2's scope)",
+    "channel": "reply",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "flag",
+      "msg": "[CLAUDE.md R2] 无论何时提到自身，都请始终用\"代码小灵\"替代\"我\"来进行自我指代\n- forbidden text, 1×: 我\n请用\"代码小灵\"替代\"我\"来进行自我指代。\nFix this before you finish the turn."
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R5",
+    "name": "a Python file without the coding line",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "flag",
+      "msg": "[CLAUDE.md R5] 无论生成哪个代码文件，其起始第一行都必须严格添加 -*- coding: utf-8 -*- 以声明编码\n- main.py: line 1 do not match /-\\*-\\s*coding[:=]\\s*(utf-?8|UTF-?8)\\s*-\\*-/\n代码文件的第一行必须添加编码声明：# -*- coding: utf-8 -*-\nThe file was not written. Write it again so that it follows the rule."
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "flag",
+      "msg": "[CLAUDE.md R5] 无论生成哪个代码文件，其起始第一行都必须严格添加 -*- coding: utf-8 -*- 以声明编码\n- main.py: line 1 do not match /-\\*-\\s*coding[:=]\\s*(utf-?8|UTF-?8)\\s*-\\*-/\n代码文件的第一行必须添加编码声明：# -*- coding: utf-8 -*-\nFix this before you finish the turn."
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R5",
+    "name": "a Python file without the coding line",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "flag",
+      "msg": "[CLAUDE.md R5] 无论生成哪个代码文件，其起始第一行都必须严格添加 -*- coding: utf-8 -*- 以声明编码\n- main.py: line 1 do not match /-\\*-\\s*coding[:=]\\s*(utf-?8|UTF-?8)\\s*-\\*-/\n代码文件的第一行必须添加编码声明：# -*- coding: utf-8 -*-\nFix this before you finish the turn."
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R5",
+    "name": "a JS file without the coding line",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "flag",
+      "msg": "[CLAUDE.md R5] 无论生成哪个代码文件，其起始第一行都必须严格添加 -*- coding: utf-8 -*- 以声明编码\n- main.js: line 1 do not match /-\\*-\\s*coding[:=]\\s*(utf-?8|UTF-?8)\\s*-\\*-/\n代码文件的第一行必须添加编码声明：# -*- coding: utf-8 -*-\nThe file was not written. Write it again so that it follows the rule."
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "flag",
+      "msg": "[CLAUDE.md R5] 无论生成哪个代码文件，其起始第一行都必须严格添加 -*- coding: utf-8 -*- 以声明编码\n- main.js: line 1 do not match /-\\*-\\s*coding[:=]\\s*(utf-?8|UTF-?8)\\s*-\\*-/\n代码文件的第一行必须添加编码声明：# -*- coding: utf-8 -*-\nFix this before you finish the turn."
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R5",
+    "name": "a JS file without the coding line",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "flag",
+      "msg": "[CLAUDE.md R5] 无论生成哪个代码文件，其起始第一行都必须严格添加 -*- coding: utf-8 -*- 以声明编码\n- main.js: line 1 do not match /-\\*-\\s*coding[:=]\\s*(utf-?8|UTF-?8)\\s*-\\*-/\n代码文件的第一行必须添加编码声明：# -*- coding: utf-8 -*-\nFix this before you finish the turn."
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R6",
+    "name": "a Python file without the AI-Assisted line",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "flag",
+      "msg": "[CLAUDE.md R6] 你所生成的任何一个代码文件，其开头处都需另起一行进行清晰的注释声明：\"AI-Assisted: Initial draft generated by Claude Code; reviewed and modified by author.\"\n- main.py: it does not match /AI-Assisted:\\s*Initial draft generated by Claude Code;\\s*reviewed and modified by author\\./\n代码文件的开头处需要添加AI-Assisted注释：# AI-Assisted: "
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "flag",
+      "msg": "[CLAUDE.md R6] 你所生成的任何一个代码文件，其开头处都需另起一行进行清晰的注释声明：\"AI-Assisted: Initial draft generated by Claude Code; reviewed and modified by author.\"\n- main.py: it does not match /AI-Assisted:\\s*Initial draft generated by Claude Code;\\s*reviewed and modified by author\\./\n代码文件的开头处需要添加AI-Assisted注释：# AI-Assisted: "
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R6",
+    "name": "a Python file without the AI-Assisted line",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "flag",
+      "msg": "[CLAUDE.md R6] 你所生成的任何一个代码文件，其开头处都需另起一行进行清晰的注释声明：\"AI-Assisted: Initial draft generated by Claude Code; reviewed and modified by author.\"\n- main.py: it does not match /AI-Assisted:\\s*Initial draft generated by Claude Code;\\s*reviewed and modified by author\\./\n代码文件的开头处需要添加AI-Assisted注释：# AI-Assisted: "
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R6",
+    "name": "a JS file without the AI-Assisted line",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "flag",
+      "msg": "[CLAUDE.md R6] 你所生成的任何一个代码文件，其开头处都需另起一行进行清晰的注释声明：\"AI-Assisted: Initial draft generated by Claude Code; reviewed and modified by author.\"\n- main.js: it does not match /AI-Assisted:\\s*Initial draft generated by Claude Code;\\s*reviewed and modified by author\\./\n代码文件的开头处需要添加AI-Assisted注释：# AI-Assisted: "
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "flag",
+      "msg": "[CLAUDE.md R6] 你所生成的任何一个代码文件，其开头处都需另起一行进行清晰的注释声明：\"AI-Assisted: Initial draft generated by Claude Code; reviewed and modified by author.\"\n- main.js: it does not match /AI-Assisted:\\s*Initial draft generated by Claude Code;\\s*reviewed and modified by author\\./\n代码文件的开头处需要添加AI-Assisted注释：# AI-Assisted: "
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R6",
+    "name": "a JS file without the AI-Assisted line",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "flag",
+      "msg": "[CLAUDE.md R6] 你所生成的任何一个代码文件，其开头处都需另起一行进行清晰的注释声明：\"AI-Assisted: Initial draft generated by Claude Code; reviewed and modified by author.\"\n- main.js: it does not match /AI-Assisted:\\s*Initial draft generated by Claude Code;\\s*reviewed and modified by author\\./\n代码文件的开头处需要添加AI-Assisted注释：# AI-Assisted: "
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R7",
+    "name": "a Python function of 69 lines",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "flag",
+      "msg": "[CLAUDE.md R7] 生成的代码文件必须满足：单个函数的规模不得大于 60 行\n- main.py: build has 69 lines (exceeds 60 line limit)\n代码文件中的函数超过了60行的限制。请重构函数，使其每个函数都不超过60行。\nThe file was not written. Write it again so that it follows the rule."
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "flag",
+      "msg": "[CLAUDE.md R7] 生成的代码文件必须满足：单个函数的规模不得大于 60 行\n- main.py: build has 69 lines (exceeds 60 line limit)\n代码文件中的函数超过了60行的限制。请重构函数，使其每个函数都不超过60行。\nFix this before you finish the turn."
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R7",
+    "name": "a Python function of 69 lines",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "flag",
+      "msg": "[CLAUDE.md R7] 生成的代码文件必须满足：单个函数的规模不得大于 60 行\n- main.py: build has 69 lines (exceeds 60 line limit)\n代码文件中的函数超过了60行的限制。请重构函数，使其每个函数都不超过60行。\nFix this before you finish the turn."
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R7",
+    "name": "a JS function of 68 lines",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "flag",
+      "msg": "[CLAUDE.md R7] 生成的代码文件必须满足：单个函数的规模不得大于 60 行\n- main.js: build has 68 lines (exceeds 60 line limit)\n代码文件中的函数超过了60行的限制。请重构函数，使其每个函数都不超过60行。\nThe file was not written. Write it again so that it follows the rule."
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "flag",
+      "msg": "[CLAUDE.md R7] 生成的代码文件必须满足：单个函数的规模不得大于 60 行\n- main.js: build has 68 lines (exceeds 60 line limit)\n代码文件中的函数超过了60行的限制。请重构函数，使其每个函数都不超过60行。\nFix this before you finish the turn."
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R7",
+    "name": "a JS function of 68 lines",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "flag",
+      "msg": "[CLAUDE.md R7] 生成的代码文件必须满足：单个函数的规模不得大于 60 行\n- main.js: build has 68 lines (exceeds 60 line limit)\n代码文件中的函数超过了60行的限制。请重构函数，使其每个函数都不超过60行。\nFix this before you finish the turn."
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": null,
+    "name": "not code: notes.md without the header lines",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": null,
+    "name": "not code: notes.md without the header lines",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "meout 120 -- '/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8'",
+      "verdict": "pass"
+     }
+    ]
+   }
+  ]
+ }
+}

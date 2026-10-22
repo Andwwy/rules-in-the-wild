@@ -1,0 +1,79 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 111196,
+  "duration_api_ms": 98097,
+  "ttft_ms": 36955,
+  "ttft_stream_ms": 36867,
+  "time_to_request_ms": 156,
+  "num_turns": 26,
+  "result": "已完成项目前端基础骨架搭建，包括顶部导航栏、可折叠侧边栏、地图占位区域和悬浮新建行程按钮，采用现代简洁自适应设计。",
+  "stop_reason": "end_turn",
+  "session_id": "9fba17b4-6b45-41af-88fe-b5d1dc782a0e",
+  "total_cost_usd": 0.2144731,
+  "usage": {
+   "input_tokens": 164,
+   "cache_creation_input_tokens": 32636,
+   "cache_read_input_tokens": 1034791,
+   "output_tokens": 13783,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 32636
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 1159,
+    "outputTokens": 13808,
+    "cacheReadInputTokens": 1034791,
+    "cacheCreationInputTokens": 32636,
+    "webSearchRequests": 0,
+    "costUSD": 0.2144731,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [
+   {
+    "tool_name": "Write",
+    "tool_use_id": "toolu_bdrk_01Ekz3JL6jr65JBL6e2L4xwN",
+    "tool_input": {
+     "file_path": "/workspace/index.html",
+     "content": "<!DOCTYPE html>\n<html lang=\"zh-CN\">\n<head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>旅行地图应用</title>\n</head>\n<body>\n    <div id=\"root\"></div>\n    <script type=\"module\" src=\"/src/main.jsx\"></script>\n</body>\n</html>\n"
+    }
+   },
+   {
+    "tool_name": "Write",
+    "tool_use_id": "toolu_bdrk_01WonUHG6mnpbCRQQsCcVxeV",
+    "tool_input": {
+     "file_path": "/workspace/src/App.jsx",
+     "content": "import React, { useState } from 'react';\nimport TopBar from './components/TopBar';\nimport Sidebar from './components/Sidebar';\nimport MapArea from './components/MapArea';\nimport FAB from './components/FAB';\nimport './styles/app.css';\n\nfunction AppModule() {\n    const [isSidebarOpen, setIsSidebarOpen]  =  useState(true);\n\n    return (\n        <div className  =  \"app-container\">\n            <TopBar onMenuClick  =  {() => setIsSidebarOpen(!isSidebarOpen)} />\n            <div className  =  \"main-content\">\n                <Sidebar isOpen  =  {isSidebarOpen} />\n                <MapArea />\n                <FAB />\n            </div>\n        </div>\n    );\n}\n\nexport default AppModule;\n"
+    }
+   },
+   {
+    "tool_name": "Write",
+    "tool_use_id": "toolu_bdrk_01LVeBhR9CZwdtR3FCLNFfft",
+    "tool_input": {
+     "file_path": "/workspace/src/App.jsx",
+     "content": "import React, { useState } from 'react';\nimport TopBar from './components/TopBar';\nimport Sidebar from './components/Sidebar';\nimport MapArea from './components/MapArea';\nimport FAB from './components/FAB';\nimport './styles/app.css';\n\nfunction App() {\n    const [isSidebarOpen, setIsSidebarOpen]  =  useState(true);\n\n    return (\n        <div className  =  \"app-container\">\n            <TopBar onMenuClick  =  {() => setIsSidebarOpen(!isSidebarOpen)} />\n            <div className  =  \"main-content\">\n                <Sidebar isOpen  =  {isSidebarOpen} />\n                <MapArea />\n                <FAB />\n            </div>\n        </div>\n    );\n}\n\nexport default App;\n"
+    }
+   }
+  ],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "3e44b63f-787d-432c-abfe-bb2e0e69bc63"
+ },
+ "stderr": ""
+}

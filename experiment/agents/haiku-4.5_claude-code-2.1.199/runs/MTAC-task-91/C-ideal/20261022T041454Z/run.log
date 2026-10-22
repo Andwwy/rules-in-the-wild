@@ -1,0 +1,7 @@
+00:14:54 run MTAC-task-91/C-ideal/20261022T041454Z: task 91, arm C-ideal, 0 task turns
+00:14:54 container ritw-t091-C-ideal-20261022t041454z (alexgshaw/break-filter-js-from-html:20251031)
+00:14:57 Claude Code: ExitPlanMode patch: 1 replaced 2.1.199 (Claude Code)
+00:15:22 phase 0 by hand: 14 files, install.sh exit 0, 24 s
+00:15:26 settings: 3 hooks (3 project) in /workspace/.claude/settings.json; workspace {'created': 1, 'changed': 0, 'deleted': 0}; commands added for agent: ['git', 'git-receive-pack', 'git-shell', 'git-upload-archive', 'git-upload-pack', 'scalar']; Claude Code reported nothing about the settings.
+00:15:26 done
+00:15:28 container stopped (kept)

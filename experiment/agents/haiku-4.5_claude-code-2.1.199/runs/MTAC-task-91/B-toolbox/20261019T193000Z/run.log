@@ -1,0 +1,35 @@
+15:30:00 run task_091/BT/20261019T193000Z: task 91, arm BT, 10 task turns
+15:30:00 container ritw-t091-BT-20261019t193000z (alexgshaw/break-filter-js-from-html:20251031)
+15:30:03 Claude Code: ExitPlanMode patch: 1 replaced 2.1.199 (Claude Code)
+15:30:55 session 1, message 1/8 (R1): exit 0, 50 s, $0.137 (Claude Code's own estimate), 16 model turns
+15:32:11 session 1, message 2/8 (R2): exit 0, 76 s, $0.124 (Claude Code's own estimate), 18 model turns
+15:32:45 session 1, message 3/8 (R3): exit 0, 34 s, $0.079 (Claude Code's own estimate), 9 model turns
+15:33:39 session 1, message 4/8 (R4): exit 0, 54 s, $0.091 (Claude Code's own estimate), 9 model turns
+15:38:13 session 1, message 5/8 (R5): exit 0, 275 s, $0.425 (Claude Code's own estimate), 32 model turns
+15:39:16 session 1, message 6/8 (R6): exit 0, 63 s, $0.205 (Claude Code's own estimate), 12 model turns
+15:40:19 session 1, message 7/8 (R7): exit 0, 63 s, $0.190 (Claude Code's own estimate), 13 model turns
+15:41:29 session 1, message 8/8 (R8): exit 0, 70 s, $0.175 (Claude Code's own estimate), 10 model turns
+15:41:33 install: 11 hooks wrapped; workspace {'created': 0, 'changed': 0, 'deleted': 0}; commands added for agent: none; Claude Code reported nothing about the settings.
+15:41:33 task session a0bb4d32-21a5-4f90-857a-c5186659037b
+15:41:33 turn 1/10 (round 0) started
+15:42:07 turn 1/10: exit 0, 34 s, $0.062 (Claude Code's own estimate), 6 model turns, hook verdicts so far {'pass': 24, 'block': 1}
+15:42:07 turn 2/10 (round 1) started
+15:44:34 turn 2/10: exit 0, 147 s, $0.155 (Claude Code's own estimate), 4 model turns, hook verdicts so far {'pass': 41, 'block': 1}
+15:44:34 turn 3/10 (round 2) started
+15:45:37 turn 3/10: exit 0, 63 s, $0.116 (Claude Code's own estimate), 11 model turns, hook verdicts so far {'pass': 58, 'block': 1}
+15:45:37 turn 4/10 (round 3) started
+15:46:32 turn 4/10: exit 0, 55 s, $0.117 (Claude Code's own estimate), 7 model turns, hook verdicts so far {'pass': 82, 'block': 2}
+15:46:32 turn 5/10 (round 4) started
+15:47:28 turn 5/10: exit 0, 56 s, $0.094 (Claude Code's own estimate), 6 model turns, hook verdicts so far {'pass': 102, 'block': 2}
+15:47:28 turn 6/10 (round 5) started
+15:48:39 turn 6/10: exit 0, 71 s, $0.138 (Claude Code's own estimate), 8 model turns, hook verdicts so far {'pass': 128, 'block': 4}
+15:48:39 turn 7/10 (round 6) started
+15:49:55 turn 7/10: exit 0, 76 s, $0.132 (Claude Code's own estimate), 7 model turns, hook verdicts so far {'pass': 148, 'block': 4}
+15:49:56 turn 8/10 (round 7) started
+15:51:05 turn 8/10: exit 0, 69 s, $0.152 (Claude Code's own estimate), 7 model turns, hook verdicts so far {'pass': 169, 'block': 5}
+15:51:05 turn 9/10 (round 8) started
+15:52:29 turn 9/10: exit 0, 84 s, $0.181 (Claude Code's own estimate), 8 model turns, hook verdicts so far {'pass': 196, 'block': 6}
+15:52:29 turn 10/10 (round 9) started
+15:55:16 turn 10/10: exit 0, 168 s, $0.249 (Claude Code's own estimate), 11 model turns, hook verdicts so far {'pass': 218, 'block': 6, 'deny': 1}
+15:55:17 done
+15:55:18 container stopped (kept)

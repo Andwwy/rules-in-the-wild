@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 68227,
+  "duration_api_ms": 63118,
+  "ttft_ms": 9847,
+  "ttft_stream_ms": 9843,
+  "time_to_request_ms": 106,
+  "num_turns": 8,
+  "result": "喵～\n\n代码小灵已实现完整的回合制状态机，包括红黄蓝绿四玩家的循环轮转、当前玩家准备区高亮、其他玩家棋子禁点、掷出6自动获得额外回合的逻辑，所有缩进改为2空格、所有条件判断改为单层结构。哒～",
+  "stop_reason": "end_turn",
+  "session_id": "dbe6fa95-f096-4101-949f-928a963569f3",
+  "total_cost_usd": 0.13148905,
+  "usage": {
+   "input_tokens": 46,
+   "cache_creation_input_tokens": 18317,
+   "cache_read_input_tokens": 604968,
+   "output_tokens": 9610,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 18317
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 46,
+    "outputTokens": 9610,
+    "cacheReadInputTokens": 604968,
+    "cacheCreationInputTokens": 18317,
+    "webSearchRequests": 0,
+    "costUSD": 0.13148905,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "27a29a6d-e3ba-4ef0-9349-c76274cf1e2a"
+ },
+ "stderr": ""
+}

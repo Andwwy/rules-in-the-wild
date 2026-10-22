@@ -1,0 +1,940 @@
+{
+ "summary": {
+  "hooks": 3,
+  "rules": {
+   "R1": {
+    "reply": [
+     {
+      "case": "the reply does not start with 喵～",
+      "caught": true,
+      "named": true,
+      "early": false,
+      "at": [
+       "Stop"
+      ]
+     }
+    ]
+   },
+   "R2": {
+    "reply": [
+     {
+      "case": "the reply says 我",
+      "caught": true,
+      "named": true,
+      "early": false,
+      "at": [
+       "Stop"
+      ]
+     }
+    ]
+   },
+   "R3": {
+    "reply": [
+     {
+      "case": "the reply calls the user 你",
+      "caught": true,
+      "named": true,
+      "early": false,
+      "at": [
+       "Stop"
+      ]
+     }
+    ]
+   },
+   "R4": {
+    "reply": [
+     {
+      "case": "an English word in the reply",
+      "caught": true,
+      "named": true,
+      "early": false,
+      "at": [
+       "Stop"
+      ]
+     }
+    ]
+   },
+   "R8": {
+    "reply": [
+     {
+      "case": "the reply does not end with 哒～",
+      "caught": true,
+      "named": true,
+      "early": false,
+      "at": [
+       "Stop"
+      ]
+     }
+    ]
+   },
+   "R5": {
+    "tool": [
+     {
+      "case": "a Python file without the coding line",
+      "caught": true,
+      "named": true,
+      "early": true,
+      "at": [
+       "PreToolUse",
+       "Stop"
+      ]
+     },
+     {
+      "case": "a JS file without the coding line",
+      "caught": true,
+      "named": true,
+      "early": true,
+      "at": [
+       "PreToolUse",
+       "Stop"
+      ]
+     },
+     {
+      "case": "an HTML file without the coding line",
+      "caught": true,
+      "named": true,
+      "early": true,
+      "at": [
+       "PreToolUse",
+       "Stop"
+      ]
+     }
+    ],
+    "shell": [
+     {
+      "case": "a Python file without the coding line",
+      "caught": true,
+      "named": true,
+      "early": true,
+      "at": [
+       "PostToolUse",
+       "Stop"
+      ]
+     },
+     {
+      "case": "a JS file without the coding line",
+      "caught": true,
+      "named": true,
+      "early": true,
+      "at": [
+       "PostToolUse",
+       "Stop"
+      ]
+     },
+     {
+      "case": "an HTML file without the coding line",
+      "caught": true,
+      "named": true,
+      "early": true,
+      "at": [
+       "PostToolUse",
+       "Stop"
+      ]
+     }
+    ]
+   },
+   "R6": {
+    "tool": [
+     {
+      "case": "a Python file without the AI-Assisted line",
+      "caught": true,
+      "named": true,
+      "early": false,
+      "at": [
+       "Stop"
+      ]
+     },
+     {
+      "case": "a JS file without the AI-Assisted line",
+      "caught": true,
+      "named": true,
+      "early": false,
+      "at": [
+       "Stop"
+      ]
+     },
+     {
+      "case": "an HTML file without the AI-Assisted line",
+      "caught": true,
+      "named": true,
+      "early": false,
+      "at": [
+       "Stop"
+      ]
+     }
+    ],
+    "shell": [
+     {
+      "case": "a Python file without the AI-Assisted line",
+      "caught": true,
+      "named": true,
+      "early": false,
+      "at": [
+       "Stop"
+      ]
+     },
+     {
+      "case": "a JS file without the AI-Assisted line",
+      "caught": true,
+      "named": true,
+      "early": false,
+      "at": [
+       "Stop"
+      ]
+     },
+     {
+      "case": "an HTML file without the AI-Assisted line",
+      "caught": true,
+      "named": true,
+      "early": false,
+      "at": [
+       "Stop"
+      ]
+     }
+    ]
+   },
+   "R7": {
+    "tool": [
+     {
+      "case": "a Python function of 69 lines",
+      "caught": true,
+      "named": true,
+      "early": true,
+      "at": [
+       "PreToolUse",
+       "Stop"
+      ]
+     },
+     {
+      "case": "a JS function of 68 lines",
+      "caught": true,
+      "named": true,
+      "early": true,
+      "at": [
+       "PreToolUse",
+       "Stop"
+      ]
+     },
+     {
+      "case": "a JS function of 68 lines inside an HTML <script>",
+      "caught": true,
+      "named": true,
+      "early": true,
+      "at": [
+       "PreToolUse",
+       "Stop"
+      ]
+     }
+    ],
+    "shell": [
+     {
+      "case": "a Python function of 69 lines",
+      "caught": true,
+      "named": true,
+      "early": true,
+      "at": [
+       "PostToolUse",
+       "Stop"
+      ]
+     },
+     {
+      "case": "a JS function of 68 lines",
+      "caught": true,
+      "named": true,
+      "early": true,
+      "at": [
+       "PostToolUse",
+       "Stop"
+      ]
+     },
+     {
+      "case": "a JS function of 68 lines inside an HTML <script>",
+      "caught": true,
+      "named": true,
+      "early": true,
+      "at": [
+       "PostToolUse",
+       "Stop"
+      ]
+     }
+    ]
+   }
+  },
+  "false_flags": [],
+  "hook_errors": []
+ },
+ "raw": {
+  "hooks": 3,
+  "cases": [
+   {
+    "rule": null,
+    "name": "clean project",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/before_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/before_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/before_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/end_of_turn.py",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": null,
+    "name": "clean project",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "PostToolUse",
+      "tool": "Bash",
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/after_bash.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/end_of_turn.py",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R1",
+    "name": "the reply does not start with 喵～",
+    "channel": "reply",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/end_of_turn.py",
+      "verdict": "flag",
+      "msg": "The project's enforcement of CLAUDE.md: the turn cannot end yet. Fix every violation below, then end the turn with the whole reply written again (complete, as the user should get it), not a note about the fix.\nR1 the reply: it begins with '代码小灵已经为开发者大大完成了修改哒～'; the reply must begin with 喵～ (its very first characters)"
+     }
+    ]
+   },
+   {
+    "rule": "R2",
+    "name": "the reply says 我",
+    "channel": "reply",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/end_of_turn.py",
+      "verdict": "flag",
+      "msg": "The project's enforcement of CLAUDE.md: the turn cannot end yet. Fix every violation below, then end the turn with the whole reply written again (complete, as the user should get it), not a note about the fix.\nR2 the reply: it refers to itself as 我 on 1 line(s); the agent refers to itself only as 代码小灵. The filtered lines (我 -> 代码小灵; rephrase if a line reads badly):\n    line 1: 喵～ 代码小灵已经为开发者大大完成了修改哒～"
+     }
+    ]
+   },
+   {
+    "rule": "R3",
+    "name": "the reply calls the user 你",
+    "channel": "reply",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/end_of_turn.py",
+      "verdict": "flag",
+      "msg": "The project's enforcement of CLAUDE.md: the turn cannot end yet. Fix every violation below, then end the turn with the whole reply written again (complete, as the user should get it), not a note about the fix.\nR3 the reply: it addresses the user as 你/您 1 time(s); address the user only as 开发者大大:\n    line 1: '...喵～ 代码小灵已经为你完成了修改哒～...'"
+     }
+    ]
+   },
+   {
+    "rule": "R4",
+    "name": "an English word in the reply",
+    "channel": "reply",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/end_of_turn.py",
+      "verdict": "flag",
+      "msg": "The project's enforcement of CLAUDE.md: the turn cannot end yet. Fix every violation below, then end the turn with the whole reply written again (complete, as the user should get it), not a note about the fix.\nR4 the reply: it has English where Chinese belongs; say it in Chinese (technical terms, names and code may stay):\n    'done'"
+     }
+    ]
+   },
+   {
+    "rule": "R8",
+    "name": "the reply does not end with 哒～",
+    "channel": "reply",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/end_of_turn.py",
+      "verdict": "flag",
+      "msg": "The project's enforcement of CLAUDE.md: the turn cannot end yet. Fix every violation below, then end the turn with the whole reply written again (complete, as the user should get it), not a note about the fix.\nR8 the reply: it ends with '～ 代码小灵已经为开发者大大完成了修改。'; the reply must end with 哒～ (its very last characters)"
+     }
+    ]
+   },
+   {
+    "rule": null,
+    "name": "我们 is not a self-reference by 我 (out of R2's scope)",
+    "channel": "reply",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/end_of_turn.py",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R5",
+    "name": "a Python file without the coding line",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/before_write.py",
+      "verdict": "flag",
+      "msg": "Refused by the project's enforcement of CLAUDE.md: the file would break these rules. Nothing was written. Fix all of them and write the file again.\nR5 /workspace/main.py:1: the first line is '# AI-Assisted: Initial draft generated by Claude Code; revie'; line 1 of every code file must be the encoding declaration, as a comment in the file's own syntax, here: # -*- coding: utf-8 -*-"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/before_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/before_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/end_of_turn.py",
+      "verdict": "flag",
+      "msg": "The project's enforcement of CLAUDE.md: the turn cannot end yet. Fix every violation below, then end the turn with the whole reply written again (complete, as the user should get it), not a note about the fix.\nR5 /workspace/main.py:1: the first line is '# AI-Assisted: Initial draft generated by Claude Code; revie'; line 1 of every code file must be the encoding declaration, as a comment in the file's own syntax, here: # -*- coding: utf-8 -*-"
+     }
+    ]
+   },
+   {
+    "rule": "R5",
+    "name": "a Python file without the coding line",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "PostToolUse",
+      "tool": "Bash",
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/after_bash.py",
+      "verdict": "flag",
+      "msg": "The project's enforcement of CLAUDE.md: after this command, these code files break its rules. Fix every one now; the turn cannot end while they do (a file that a tool generated and the project does not need: delete it, or keep it out of /workspace).\nR5 /workspace/main.py:1: the first line is '# AI-Assisted: Initial draft generated by Claude Code; revie'; line 1 of every code file must be the encoding declaration, as a comment in the file's own syntax, here: # -*- coding: utf-8 -*-"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/end_of_turn.py",
+      "verdict": "flag",
+      "msg": "The project's enforcement of CLAUDE.md: the turn cannot end yet. Fix every violation below, then end the turn with the whole reply written again (complete, as the user should get it), not a note about the fix.\nR5 /workspace/main.py:1: the first line is '# AI-Assisted: Initial draft generated by Claude Code; revie'; line 1 of every code file must be the encoding declaration, as a comment in the file's own syntax, here: # -*- coding: utf-8 -*-"
+     }
+    ]
+   },
+   {
+    "rule": "R5",
+    "name": "a JS file without the coding line",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/before_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/before_write.py",
+      "verdict": "flag",
+      "msg": "Refused by the project's enforcement of CLAUDE.md: the file would break these rules. Nothing was written. Fix all of them and write the file again.\nR5 /workspace/main.js:1: the first line is '// AI-Assisted: Initial draft generated by Claude Code; revi'; line 1 of every code file must be the encoding declaration, as a comment in the file's own syntax, here: // -*- coding: utf-8 -*-"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/before_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/end_of_turn.py",
+      "verdict": "flag",
+      "msg": "The project's enforcement of CLAUDE.md: the turn cannot end yet. Fix every violation below, then end the turn with the whole reply written again (complete, as the user should get it), not a note about the fix.\nR5 /workspace/main.js:1: the first line is '// AI-Assisted: Initial draft generated by Claude Code; revi'; line 1 of every code file must be the encoding declaration, as a comment in the file's own syntax, here: // -*- coding: utf-8 -*-"
+     }
+    ]
+   },
+   {
+    "rule": "R5",
+    "name": "a JS file without the coding line",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "PostToolUse",
+      "tool": "Bash",
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/after_bash.py",
+      "verdict": "flag",
+      "msg": "The project's enforcement of CLAUDE.md: after this command, these code files break its rules. Fix every one now; the turn cannot end while they do (a file that a tool generated and the project does not need: delete it, or keep it out of /workspace).\nR5 /workspace/main.js:1: the first line is '// AI-Assisted: Initial draft generated by Claude Code; revi'; line 1 of every code file must be the encoding declaration, as a comment in the file's own syntax, here: // -*- coding: utf-8 -*-"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/end_of_turn.py",
+      "verdict": "flag",
+      "msg": "The project's enforcement of CLAUDE.md: the turn cannot end yet. Fix every violation below, then end the turn with the whole reply written again (complete, as the user should get it), not a note about the fix.\nR5 /workspace/main.js:1: the first line is '// AI-Assisted: Initial draft generated by Claude Code; revi'; line 1 of every code file must be the encoding declaration, as a comment in the file's own syntax, here: // -*- coding: utf-8 -*-"
+     }
+    ]
+   },
+   {
+    "rule": "R6",
+    "name": "a Python file without the AI-Assisted line",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/before_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/before_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/before_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/end_of_turn.py",
+      "verdict": "flag",
+      "msg": "The project's enforcement of CLAUDE.md: the turn cannot end yet. Fix every violation below, then end the turn with the whole reply written again (complete, as the user should get it), not a note about the fix.\nR6 /workspace/main.py: no comment line with the AI-Assisted sentence at the top; add it on its own line right after the encoding line (line 2), here: # AI-Assisted: Initial draft generated by Claude Code; reviewed and modified by author."
+     }
+    ]
+   },
+   {
+    "rule": "R6",
+    "name": "a Python file without the AI-Assisted line",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "PostToolUse",
+      "tool": "Bash",
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/after_bash.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/end_of_turn.py",
+      "verdict": "flag",
+      "msg": "The project's enforcement of CLAUDE.md: the turn cannot end yet. Fix every violation below, then end the turn with the whole reply written again (complete, as the user should get it), not a note about the fix.\nR6 /workspace/main.py: no comment line with the AI-Assisted sentence at the top; add it on its own line right after the encoding line (line 2), here: # AI-Assisted: Initial draft generated by Claude Code; reviewed and modified by author."
+     }
+    ]
+   },
+   {
+    "rule": "R6",
+    "name": "a JS file without the AI-Assisted line",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/before_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/before_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/before_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/end_of_turn.py",
+      "verdict": "flag",
+      "msg": "The project's enforcement of CLAUDE.md: the turn cannot end yet. Fix every violation below, then end the turn with the whole reply written again (complete, as the user should get it), not a note about the fix.\nR6 /workspace/main.js: no comment line with the AI-Assisted sentence at the top; add it on its own line right after the encoding line (line 2), here: // AI-Assisted: Initial draft generated by Claude Code; reviewed and modified by author."
+     }
+    ]
+   },
+   {
+    "rule": "R6",
+    "name": "a JS file without the AI-Assisted line",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "PostToolUse",
+      "tool": "Bash",
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/after_bash.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/end_of_turn.py",
+      "verdict": "flag",
+      "msg": "The project's enforcement of CLAUDE.md: the turn cannot end yet. Fix every violation below, then end the turn with the whole reply written again (complete, as the user should get it), not a note about the fix.\nR6 /workspace/main.js: no comment line with the AI-Assisted sentence at the top; add it on its own line right after the encoding line (line 2), here: // AI-Assisted: Initial draft generated by Claude Code; reviewed and modified by author."
+     }
+    ]
+   },
+   {
+    "rule": "R7",
+    "name": "a Python function of 69 lines",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/before_write.py",
+      "verdict": "flag",
+      "msg": "Refused by the project's enforcement of CLAUDE.md: the file would break these rules. Nothing was written. Fix all of them and write the file again.\nR7 /workspace/main.py:9: this function is 69 lines (lines 9 to 77): 'def build():'; no function may be longer than 60 lines: split it into smaller functions"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/before_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/before_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/end_of_turn.py",
+      "verdict": "flag",
+      "msg": "The project's enforcement of CLAUDE.md: the turn cannot end yet. Fix every violation below, then end the turn with the whole reply written again (complete, as the user should get it), not a note about the fix.\nR7 /workspace/main.py:9: this function is 69 lines (lines 9 to 77): 'def build():'; no function may be longer than 60 lines: split it into smaller functions"
+     }
+    ]
+   },
+   {
+    "rule": "R7",
+    "name": "a Python function of 69 lines",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "PostToolUse",
+      "tool": "Bash",
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/after_bash.py",
+      "verdict": "flag",
+      "msg": "The project's enforcement of CLAUDE.md: after this command, these code files break its rules. Fix every one now; the turn cannot end while they do (a file that a tool generated and the project does not need: delete it, or keep it out of /workspace).\nR7 /workspace/main.py:9: this function is 69 lines (lines 9 to 77): 'def build():'; no function may be longer than 60 lines: split it into smaller functions"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/end_of_turn.py",
+      "verdict": "flag",
+      "msg": "The project's enforcement of CLAUDE.md: the turn cannot end yet. Fix every violation below, then end the turn with the whole reply written again (complete, as the user should get it), not a note about the fix.\nR7 /workspace/main.py:9: this function is 69 lines (lines 9 to 77): 'def build():'; no function may be longer than 60 lines: split it into smaller functions"
+     }
+    ]
+   },
+   {
+    "rule": "R7",
+    "name": "a JS function of 68 lines",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/before_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/before_write.py",
+      "verdict": "flag",
+      "msg": "Refused by the project's enforcement of CLAUDE.md: the file would break these rules. Nothing was written. Fix all of them and write the file again.\nR7 /workspace/main.js:8: this function is 68 lines (lines 8 to 75): 'function build() {'; no function may be longer than 60 lines: split it into smaller functions"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/before_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/end_of_turn.py",
+      "verdict": "flag",
+      "msg": "The project's enforcement of CLAUDE.md: the turn cannot end yet. Fix every violation below, then end the turn with the whole reply written again (complete, as the user should get it), not a note about the fix.\nR7 /workspace/main.js:8: this function is 68 lines (lines 8 to 75): 'function build() {'; no function may be longer than 60 lines: split it into smaller functions"
+     }
+    ]
+   },
+   {
+    "rule": "R7",
+    "name": "a JS function of 68 lines",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "PostToolUse",
+      "tool": "Bash",
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/after_bash.py",
+      "verdict": "flag",
+      "msg": "The project's enforcement of CLAUDE.md: after this command, these code files break its rules. Fix every one now; the turn cannot end while they do (a file that a tool generated and the project does not need: delete it, or keep it out of /workspace).\nR7 /workspace/main.js:8: this function is 68 lines (lines 8 to 75): 'function build() {'; no function may be longer than 60 lines: split it into smaller functions"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/end_of_turn.py",
+      "verdict": "flag",
+      "msg": "The project's enforcement of CLAUDE.md: the turn cannot end yet. Fix every violation below, then end the turn with the whole reply written again (complete, as the user should get it), not a note about the fix.\nR7 /workspace/main.js:8: this function is 68 lines (lines 8 to 75): 'function build() {'; no function may be longer than 60 lines: split it into smaller functions"
+     }
+    ]
+   },
+   {
+    "rule": null,
+    "name": "not code: notes.md without the header lines",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/before_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/before_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/before_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/before_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/end_of_turn.py",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": null,
+    "name": "not code: notes.md without the header lines",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "PostToolUse",
+      "tool": "Bash",
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/after_bash.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/end_of_turn.py",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R5",
+    "name": "an HTML file without the coding line",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/before_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/before_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/before_write.py",
+      "verdict": "flag",
+      "msg": "Refused by the project's enforcement of CLAUDE.md: the file would break these rules. Nothing was written. Fix all of them and write the file again.\nR5 /workspace/index.html:1: the first line is '<!-- AI-Assisted: Initial draft generated by Claude Code; re'; line 1 of every code file must be the encoding declaration, as a comment in the file's own syntax, here: <!-- -*- coding: utf-8 -*- -->"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/end_of_turn.py",
+      "verdict": "flag",
+      "msg": "The project's enforcement of CLAUDE.md: the turn cannot end yet. Fix every violation below, then end the turn with the whole reply written again (complete, as the user should get it), not a note about the fix.\nR5 /workspace/index.html:1: the first line is '<!-- AI-Assisted: Initial draft generated by Claude Code; re'; line 1 of every code file must be the encoding declaration, as a comment in the file's own syntax, here: <!-- -*- coding: utf-8 -*- -->"
+     }
+    ]
+   },
+   {
+    "rule": "R5",
+    "name": "an HTML file without the coding line",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "PostToolUse",
+      "tool": "Bash",
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/after_bash.py",
+      "verdict": "flag",
+      "msg": "The project's enforcement of CLAUDE.md: after this command, these code files break its rules. Fix every one now; the turn cannot end while they do (a file that a tool generated and the project does not need: delete it, or keep it out of /workspace).\nR5 /workspace/index.html:1: the first line is '<!-- AI-Assisted: Initial draft generated by Claude Code; re'; line 1 of every code file must be the encoding declaration, as a comment in the file's own syntax, here: <!-- -*- coding: utf-8 -*- -->"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/end_of_turn.py",
+      "verdict": "flag",
+      "msg": "The project's enforcement of CLAUDE.md: the turn cannot end yet. Fix every violation below, then end the turn with the whole reply written again (complete, as the user should get it), not a note about the fix.\nR5 /workspace/index.html:1: the first line is '<!-- AI-Assisted: Initial draft generated by Claude Code; re'; line 1 of every code file must be the encoding declaration, as a comment in the file's own syntax, here: <!-- -*- coding: utf-8 -*- -->"
+     }
+    ]
+   },
+   {
+    "rule": "R6",
+    "name": "an HTML file without the AI-Assisted line",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/before_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/before_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/before_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/end_of_turn.py",
+      "verdict": "flag",
+      "msg": "The project's enforcement of CLAUDE.md: the turn cannot end yet. Fix every violation below, then end the turn with the whole reply written again (complete, as the user should get it), not a note about the fix.\nR6 /workspace/index.html: no comment line with the AI-Assisted sentence at the top; add it on its own line right after the encoding line (line 2), here: <!-- AI-Assisted: Initial draft generated by Claude Code; reviewed and modified by author. -->"
+     }
+    ]
+   },
+   {
+    "rule": "R6",
+    "name": "an HTML file without the AI-Assisted line",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "PostToolUse",
+      "tool": "Bash",
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/after_bash.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/end_of_turn.py",
+      "verdict": "flag",
+      "msg": "The project's enforcement of CLAUDE.md: the turn cannot end yet. Fix every violation below, then end the turn with the whole reply written again (complete, as the user should get it), not a note about the fix.\nR6 /workspace/index.html: no comment line with the AI-Assisted sentence at the top; add it on its own line right after the encoding line (line 2), here: <!-- AI-Assisted: Initial draft generated by Claude Code; reviewed and modified by author. -->"
+     }
+    ]
+   },
+   {
+    "rule": "R7",
+    "name": "a JS function of 68 lines inside an HTML <script>",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/before_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/before_write.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/before_write.py",
+      "verdict": "flag",
+      "msg": "Refused by the project's enforcement of CLAUDE.md: the file would break these rules. Nothing was written. Fix all of them and write the file again.\nR7 /workspace/index.html:9: this function is 68 lines (lines 9 to 76): 'function draw() {'; no function may be longer than 60 lines: split it into smaller functions"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/end_of_turn.py",
+      "verdict": "flag",
+      "msg": "The project's enforcement of CLAUDE.md: the turn cannot end yet. Fix every violation below, then end the turn with the whole reply written again (complete, as the user should get it), not a note about the fix.\nR7 /workspace/index.html:9: this function is 68 lines (lines 9 to 76): 'function draw() {'; no function may be longer than 60 lines: split it into smaller functions"
+     }
+    ]
+   },
+   {
+    "rule": "R7",
+    "name": "a JS function of 68 lines inside an HTML <script>",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "PostToolUse",
+      "tool": "Bash",
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/after_bash.py",
+      "verdict": "flag",
+      "msg": "The project's enforcement of CLAUDE.md: after this command, these code files break its rules. Fix every one now; the turn cannot end while they do (a file that a tool generated and the project does not need: delete it, or keep it out of /workspace).\nR7 /workspace/index.html:9: this function is 68 lines (lines 9 to 76): 'function draw() {'; no function may be longer than 60 lines: split it into smaller functions"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 -I /opt/enforce/hooks/end_of_turn.py",
+      "verdict": "flag",
+      "msg": "The project's enforcement of CLAUDE.md: the turn cannot end yet. Fix every violation below, then end the turn with the whole reply written again (complete, as the user should get it), not a note about the fix.\nR7 /workspace/index.html:9: this function is 68 lines (lines 9 to 76): 'function draw() {'; no function may be longer than 60 lines: split it into smaller functions"
+     }
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,84 @@
+{
+ "session": "5f0befca-5225-4f42-9ab5-878479fc1ff3",
+ "messages": 8,
+ "install": {
+  "installed": 8,
+  "hooks": [
+   {
+    "hook": 1,
+    "event": "PreToolUse",
+    "matcher": "Write|Edit|MultiEdit|NotebookEdit",
+    "command": "/opt/enforce/check-indent-spaces.py",
+    "form": "shell",
+    "timeout": 60
+   },
+   {
+    "hook": 2,
+    "event": "PreToolUse",
+    "matcher": "Write|Edit|MultiEdit|NotebookEdit",
+    "command": "/opt/enforce/check-equal-spaces.py",
+    "form": "shell",
+    "timeout": 60
+   },
+   {
+    "hook": 3,
+    "event": "PreToolUse",
+    "matcher": "Write|Edit|MultiEdit|NotebookEdit",
+    "command": "/opt/enforce/check-function-names.py",
+    "form": "shell",
+    "timeout": 60
+   },
+   {
+    "hook": 4,
+    "event": "PreToolUse",
+    "matcher": "Write|Edit|MultiEdit|NotebookEdit",
+    "command": "/opt/enforce/check-class-names.py",
+    "form": "shell",
+    "timeout": 60
+   },
+   {
+    "hook": 5,
+    "event": "PostToolUse",
+    "matcher": "Write|Edit|MultiEdit|NotebookEdit",
+    "command": "/opt/enforce/check-utf8-encoding.py",
+    "form": "shell",
+    "timeout": 60
+   },
+   {
+    "hook": 6,
+    "event": "PostToolUse",
+    "matcher": "Write|Edit|MultiEdit|NotebookEdit",
+    "command": "/opt/enforce/check-no-tabs.py",
+    "form": "shell",
+    "timeout": 60
+   },
+   {
+    "hook": 7,
+    "event": "PostToolUse",
+    "matcher": "Write|Edit|MultiEdit|NotebookEdit",
+    "command": "/opt/enforce/check-filename-length.py",
+    "form": "shell",
+    "timeout": 60
+   },
+   {
+    "hook": 8,
+    "event": "Stop",
+    "matcher": null,
+    "command": "/opt/enforce/check-chinese-only.py",
+    "form": "shell",
+    "timeout": 60
+   }
+  ],
+  "not_wrapped": [],
+  "other_settings": [],
+  "replaced_managed_settings": "{\n \"hooks\": {\n  \"PreToolUse\": [\n   {\n    \"matcher\": \"Write|Edit|MultiEdit|NotebookEdit\",\n    \"hooks\": [\n     {\n      \"type\": \"command\",\n      \"command\": \"/usr/local/bin/python3.13 /opt/enforce-harness/wrap.py --hook 1 --event PreToolUse --timeout 60 -- '/opt/enforce/check-indent-spaces.py'\",\n      \"timeout\": 90\n     },\n     {\n      \"type\": \"command\",\n      \"command\": \"/usr/local/bin/python3.13 /opt/enforce-harness/wrap.py --hook 2 --event PreToolUse --timeout 60 -- '/opt/enforce/check-equal-spaces.py'\",\n      \"timeout\": 90\n     },\n     {\n      \"type\": \"command\",\n      \"command\": \"/usr/local/bin/python3.13 /opt/enforce-harness/wrap.py --hook 3 --event PreToolUse --timeout 60 -- '/opt/enforce/check-function-names.py'\",\n      \"timeout\": 90\n     },\n     {\n      \"type\": \"command\",\n      \"command\": \"/usr/local/bin/python3.13 /opt/enforce-harness/wrap.py --hook 4 --event PreToolUse --timeout 60 -- '/opt/enforce/check-class-names.py'\",\n      \"timeout\": 90\n     }\n    ]\n   }\n  ],\n  \"PostToolUse\": [\n   {\n    \"matcher\": \"Write|Edit|MultiEdit|NotebookEdit\",\n    \"hooks\": [\n     {\n      \"type\": \"command\",\n      \"command\": \"/usr/local/bin/python3.13 /opt/enforce-harness/wrap.py --hook 5 --event PostToolUse --timeout 60 -- '/opt/enforce/check-utf8-encoding.py'\",\n      \"timeout\": 90\n     },\n     {\n      \"type\": \"command\",\n      \"command\": \"/usr/local/bin/python3.13 /opt/enforce-harness/wrap.py --hook 6 --event PostToolUse --timeout 60 -- '/opt/enforce/check-no-tabs.py'\",\n      \"timeout\": 90\n     },\n     {\n      \"type\": \"command\",\n      \"command\": \"/usr/local/bin/python3.13 /opt/enforce-harness/wrap.py --hook 7 --event PostToolUse --timeout 60 -- '/opt/enforce/check-filename-length.py'\",\n      \"timeout\": 90\n     }\n    ]\n   }\n  ],\n  \"Stop\": [\n   {\n    \"hooks\": [\n     {\n      \"type\": \"command\",\n      \"command\": \"/usr/local/bin/python3.13 /opt/enforce-harness/wrap.py --hook 8 --event Stop --timeout 60 -- '/opt/enforce/check-chinese-only.py'\",\n      \"timeout\": 90\n     }\n    ]\n   }\n  ]\n }\n}",
+  "fingerprint": "6dd20dcd0fdd4508de30264a3cecd3eea09d92d223a74f8964251016235c34c4"
+ },
+ "claude_code_on_settings": null,
+ "commands_added_for_agent": [],
+ "workspace": {
+  "created": 0,
+  "changed": 0,
+  "deleted": 0
+ }
+}

@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 91951,
+  "duration_api_ms": 91746,
+  "ttft_ms": 67634,
+  "ttft_stream_ms": 67616,
+  "time_to_request_ms": 138,
+  "num_turns": 4,
+  "result": "代码小灵已用Canvas绘制了标准飞行棋十字形棋盘路径，包含四个出发点、公共走步格子、四条彩色安全通道和中心终点区域，缩进改为2个空格，所有数字均用常量表示哒～",
+  "stop_reason": "end_turn",
+  "session_id": "f01beb59-3463-41ee-b07b-0372119f2626",
+  "total_cost_usd": 0.1091428,
+  "usage": {
+   "input_tokens": 24,
+   "cache_creation_input_tokens": 7310,
+   "cache_read_input_tokens": 157263,
+   "output_tokens": 16851,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 7310
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 24,
+    "outputTokens": 16851,
+    "cacheReadInputTokens": 157263,
+    "cacheCreationInputTokens": 7310,
+    "webSearchRequests": 0,
+    "costUSD": 0.1091428,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "2dded47e-f4b5-44a0-9274-8d148d3dacdd"
+ },
+ "stderr": ""
+}

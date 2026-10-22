@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 126298,
+  "duration_api_ms": 122066,
+  "ttft_ms": 6219,
+  "ttft_stream_ms": 6214,
+  "time_to_request_ms": 96,
+  "num_turns": 31,
+  "result": "喵～\n\n代码小灵已将所有代码改为二空格缩进、掷骰子改为快速滚动动画（数字在一到六间切换）、飞机移动改为平滑过渡效果（零点三秒过渡时间），所有文件引用仅使用相对路径。\n\n哒～",
+  "stop_reason": "end_turn",
+  "session_id": "f96299d9-4701-4a4d-88df-0cefefed3f55",
+  "total_cost_usd": 0.6331388499999999,
+  "usage": {
+   "input_tokens": 183,
+   "cache_creation_input_tokens": 232099,
+   "cache_read_input_tokens": 2522521,
+   "output_tokens": 18116,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 232099
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 183,
+    "outputTokens": 18116,
+    "cacheReadInputTokens": 2522521,
+    "cacheCreationInputTokens": 232099,
+    "webSearchRequests": 0,
+    "costUSD": 0.6331388499999999,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "af6b4f33-9450-42b9-adf8-7ddf8b5cb2cc"
+ },
+ "stderr": ""
+}

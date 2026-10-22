@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 92658,
+  "duration_api_ms": 87290,
+  "ttft_ms": 2871,
+  "ttft_stream_ms": 2870,
+  "time_to_request_ms": 95,
+  "num_turns": 13,
+  "result": "喵～\n\n代码小灵已完成吃子机制实现，包括检测对手飞机并销毁、强制送回准备区、显示\"XX队击毁了XX队\"提示信息并自动消失、支持一次吃多架飞机、使用4空格缩进、保留所有前向兼容功能。\n\n<result>通过</result><description>吃子机制已完整实现：1) checkCapture函数检测目标格子上的敌方飞机；2) destroyPiece函数将飞机移除棋盘并重新创建到准备区；3) showNotification函数显示吃子提示并2秒后自动消失；4) 移动后自动检查并处理吃子；5) 所有代码使用4空格缩进；6) 保留了棋盘、掷骰子、起飞、移动、回合制、6点再掷等所有前向功能</description>\n\n哒～",
+  "stop_reason": "end_turn",
+  "session_id": "3abddb79-d401-412b-9335-f083b4af7291",
+  "total_cost_usd": 0.3078186500000001,
+  "usage": {
+   "input_tokens": 74,
+   "cache_creation_input_tokens": 82835,
+   "cache_read_input_tokens": 1335109,
+   "output_tokens": 14138,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 82835
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 74,
+    "outputTokens": 14138,
+    "cacheReadInputTokens": 1335109,
+    "cacheCreationInputTokens": 82835,
+    "webSearchRequests": 0,
+    "costUSD": 0.3078186500000001,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "90112f9b-4563-4774-bef8-3e01075ff905"
+ },
+ "stderr": ""
+}

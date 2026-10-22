@@ -1,0 +1,55 @@
+{
+ "rule": "R7",
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 57689,
+  "duration_api_ms": 56276,
+  "ttft_ms": 5503,
+  "ttft_stream_ms": 5499,
+  "time_to_request_ms": 129,
+  "num_turns": 10,
+  "result": "喵～\n\n代码小灵理解了。回复中包含了英文词汇，违反了第4条规则。\n\n七条规则执行系统已全部部署完成。代码小灵已充分理解并准备好在所有后续工作中严格遵守。\n\n哒～",
+  "stop_reason": "end_turn",
+  "session_id": "7079e091-9d6d-4803-89ac-4b1abb15c4bb",
+  "total_cost_usd": 0.6850761000000001,
+  "usage": {
+   "input_tokens": 60,
+   "cache_creation_input_tokens": 418358,
+   "cache_read_input_tokens": 1319636,
+   "output_tokens": 6021,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 418358
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 60,
+    "outputTokens": 6021,
+    "cacheReadInputTokens": 1319636,
+    "cacheCreationInputTokens": 418358,
+    "webSearchRequests": 0,
+    "costUSD": 0.6850761000000001,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "e1ab9857-f879-4d5c-8224-55bb3235bff8"
+ },
+ "stderr": ""
+}

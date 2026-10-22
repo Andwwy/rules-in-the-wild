@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 42925,
+  "duration_api_ms": 42306,
+  "ttft_ms": 4065,
+  "ttft_stream_ms": 4064,
+  "time_to_request_ms": 96,
+  "num_turns": 8,
+  "result": "<result>通过</result>\n<description>成功实现路线规划表单升级：添加\"添加途经点\"按钮（支持最多5个），实现完整的拖拽排序功能，每个途经点配置删除按钮，路线绘制严格按排序后顺序连接起点→途经点→终点，途经点标记显示数字序号，地图自动缩放显示完整路线。功能测试通过。</description>\n\n本轮完成了途经点的动态添加、拖拽排序、删除功能，以及基于排序顺序的路线绘制和数字标记展示。",
+  "stop_reason": "end_turn",
+  "session_id": "3bc2f66f-73fb-4cba-be67-80364052fb5e",
+  "total_cost_usd": 0.1038745,
+  "usage": {
+   "input_tokens": 46,
+   "cache_creation_input_tokens": 18422,
+   "cache_read_input_tokens": 452760,
+   "output_tokens": 7105,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 18422
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 46,
+    "outputTokens": 7105,
+    "cacheReadInputTokens": 452760,
+    "cacheCreationInputTokens": 18422,
+    "webSearchRequests": 0,
+    "costUSD": 0.1038745,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "4192bafb-4f46-4623-b1b9-bbcd1ca5489b"
+ },
+ "stderr": ""
+}

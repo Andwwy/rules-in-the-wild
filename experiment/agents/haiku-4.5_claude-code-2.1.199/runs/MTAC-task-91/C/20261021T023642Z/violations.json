@@ -1,0 +1,65 @@
+{
+ "1|R7": [
+  {
+   "file": "index.html",
+   "line": 150,
+   "segs": [
+    [
+     "  <script>",
+     1
+    ]
+   ],
+   "note": "lines 150–269"
+  },
+  {
+   "file": "index.html",
+   "line": 151,
+   "segs": [
+    [
+     "    const GRID_SIZE = 30;",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 152,
+   "segs": [
+    [
+     "    const CELLS_PER_SIDE = 12;",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 153,
+   "segs": [
+    [
+     "    const SAFE_PATH_CELLS = 4;",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 154,
+   "segs": [
+    [
+     "    const CENTER_CELL_SIZE = 40;",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "index.html",
+   "line": 155,
+   "segs": [],
+   "note": null
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+00:55:06 run MTAC-task-91/C-ideal/20261022T045506Z: task 91, arm C-ideal, 1 task turns
+00:55:06 container ritw-t091-C-ideal-20261022t045506z (alexgshaw/break-filter-js-from-html:20251031)
+00:55:08 Claude Code: ExitPlanMode patch: 1 replaced 2.1.199 (Claude Code)
+00:55:09 scripted model: chain_scenario.json (no model calls)
+00:56:12 phase 0 by hand: 16 files, install.sh exit 0, 62 s
+00:56:17 settings: 3 hooks (3 project) in /workspace/.claude/settings.json; workspace {'created': 1, 'changed': 0, 'deleted': 0}; commands added for agent: ['git', 'git-receive-pack', 'git-shell', 'git-upload-archive', 'git-upload-pack', 'scalar']; Claude Code reported nothing about the settings.
+00:56:17 task session 5416324d-0992-436b-a7b1-0f06021dcbe3
+00:56:17 turn 1/1 (round 0) started
+00:56:40 turn 1/1: exit 0, 23 s, $0.000 (Claude Code's own estimate), 8 model turns, hook records so far {"tool_denied": 2, "hook_blocking_error": 3}
+00:56:40 done
+00:56:41 container stopped (kept)

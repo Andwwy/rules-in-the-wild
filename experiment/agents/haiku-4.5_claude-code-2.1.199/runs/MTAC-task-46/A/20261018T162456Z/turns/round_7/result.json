@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 58988,
+  "duration_api_ms": 57926,
+  "ttft_ms": 3535,
+  "ttft_stream_ms": 3534,
+  "time_to_request_ms": 112,
+  "num_turns": 15,
+  "result": "<result>通过</result>\n<description>成功实现地图控制面板，包含地图样式切换（标准视图、暗黑模式、地形图）和POI复选框（加油站、餐厅、酒店）。沿途支持随机散布设施标记，勾选/取消时动态显示/隐藏，所有POI变量遵循poi_开头命名规则，循环嵌套层级保持0层符合≤1层要求。</description>\n\n本轮完成了地图样式切换和沿途POI设施管理功能。",
+  "stop_reason": "end_turn",
+  "session_id": "3bc2f66f-73fb-4cba-be67-80364052fb5e",
+  "total_cost_usd": 0.31582085000000004,
+  "usage": {
+   "input_tokens": 85,
+   "cache_creation_input_tokens": 88953,
+   "cache_read_input_tokens": 1686496,
+   "output_tokens": 7179,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 88953
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 85,
+    "outputTokens": 7179,
+    "cacheReadInputTokens": 1686496,
+    "cacheCreationInputTokens": 88953,
+    "webSearchRequests": 0,
+    "costUSD": 0.31582085000000004,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "b4f637d5-7b0e-447b-b881-6be5a1c93737"
+ },
+ "stderr": ""
+}

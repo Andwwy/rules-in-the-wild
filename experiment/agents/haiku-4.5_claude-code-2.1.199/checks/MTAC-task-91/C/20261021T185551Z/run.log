@@ -1,0 +1,40 @@
+14:55:51 run MTAC-task-91/C/20261021T185551Z: task 91, arm C, 1 task turns
+14:55:52 container ritw-t091-C-20261021t185551z (alexgshaw/break-filter-js-from-html:20251031)
+14:55:55 Claude Code: ExitPlanMode patch: 1 replaced 2.1.199 (Claude Code)
+14:55:56 scripted model: compiled (no model calls)
+14:56:07 installed by the harness for C's routes: pre-commit (exit 0)
+14:56:29 installed by the harness for C's routes: semgrep (exit 0)
+14:56:30 phase 0, batch 1 (R6): compiled plan of 2 nodes, session dcb07868-44db-48e6-b8ec-e2eb275df20c
+14:56:30 phase 0, batch 2 (R7, R5): compiled plan of 3 nodes, session 5c5283cf-2ebf-4cea-a1a9-f0c348a3318c
+14:56:30 phase 0, batch 3 (R3, R1, R2, R8): compiled plan of 5 nodes, session 331758ee-8003-407d-b1d6-785a2778d154
+14:56:30 phase 0, batch 4 (R4): compiled plan of 2 nodes, session 7ee815f0-1532-446e-9295-9ba607addd30
+14:56:33 phase 0, message 1 (b4-check-R4): exit 0, 3 s, $0.000 (Claude Code's own estimate), 2 model turns
+14:56:33 phase 0, message 2 (b1-check-R6): exit 0, 3 s, $0.000 (Claude Code's own estimate), 2 model turns
+14:56:33 phase 0, message 3 (b3-check-R3): exit 0, 3 s, $0.000 (Claude Code's own estimate), 2 model turns
+14:56:33 phase 0, message 4 (b2-check-R7): exit 0, 3 s, $0.000 (Claude Code's own estimate), 2 model turns
+14:56:34 phase 0, batch 4, node check-R4: done, checked
+14:56:34 phase 0, batch 1, node check-R6: done, checked
+14:56:34 phase 0, batch 3, node check-R3: done, checked
+14:56:36 phase 0, message 5 (b3-check-R1): exit 0, 3 s, $0.000 (Claude Code's own estimate), 2 model turns
+14:56:37 phase 0, batch 3, node check-R1: done, checked
+14:56:39 phase 0, batch 2, node check-R7: done, checked
+14:56:40 phase 0, message 6 (b3-check-R2): exit 0, 3 s, $0.000 (Claude Code's own estimate), 2 model turns
+14:56:41 phase 0, batch 3, node check-R2: done, checked
+14:56:42 phase 0, message 7 (b2-check-R5): exit 0, 3 s, $0.000 (Claude Code's own estimate), 2 model turns
+14:56:43 phase 0, batch 2, node check-R5: done, checked
+14:56:43 phase 0, message 8 (b3-check-R8): exit 0, 3 s, $0.000 (Claude Code's own estimate), 2 model turns
+14:56:44 phase 0, batch 3, node check-R8: done, checked
+14:56:47 phase 0, message 9 (b1-binding-1): exit 0, 3 s, $0.000 (Claude Code's own estimate), 2 model turns
+14:56:51 phase 0, batch 1, node binding-1: done, checked
+14:56:54 phase 0, message 10 (b2-binding-1): exit 0, 3 s, $0.000 (Claude Code's own estimate), 2 model turns
+14:57:35 phase 0, batch 2, node binding-1: done, checked
+14:57:37 phase 0, message 11 (b3-binding-1): exit 0, 3 s, $0.000 (Claude Code's own estimate), 2 model turns
+14:57:47 phase 0, batch 3, node binding-1: done, checked
+14:57:49 phase 0, message 12 (b4-binding-1): exit 0, 3 s, $0.000 (Claude Code's own estimate), 2 model turns
+14:57:55 phase 0, batch 4, node binding-1: done, checked
+14:58:00 settings: 6 hooks (6 project) in /workspace/.claude/settings.json; workspace {'created': 1, 'changed': 0, 'deleted': 0}; commands added for agent: none; Claude Code reported nothing about the settings.
+14:58:00 task session 271957d7-893a-463f-97c6-4c600faea762
+14:58:00 turn 1/1 (round 0) started
+14:58:06 turn 1/1: exit 0, 6 s, $0.000 (Claude Code's own estimate), 3 model turns, hook records so far {"tool_denied": 1}
+14:58:06 done
+14:58:06 container removed

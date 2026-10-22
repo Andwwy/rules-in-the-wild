@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 86855,
+  "duration_api_ms": 84337,
+  "ttft_ms": 53640,
+  "ttft_stream_ms": 53465,
+  "time_to_request_ms": 80,
+  "num_turns": 9,
+  "result": "代码小灵已为开发者大大完成飞机初始化、起飞逻辑的实现和全面测试，验证通过所有功能正常。\n\n哒～",
+  "stop_reason": "end_turn",
+  "session_id": "07b4cbf9-602a-406d-abde-54eed193c1f2",
+  "total_cost_usd": 0.15078585,
+  "usage": {
+   "input_tokens": 57,
+   "cache_creation_input_tokens": 17329,
+   "cache_read_input_tokens": 441826,
+   "output_tokens": 16977,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 17329
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 57,
+    "outputTokens": 16977,
+    "cacheReadInputTokens": 441826,
+    "cacheCreationInputTokens": 17329,
+    "webSearchRequests": 0,
+    "costUSD": 0.15078585,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "8f3c8446-f742-40a3-8bf2-19fcab371f37"
+ },
+ "stderr": ""
+}

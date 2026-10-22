@@ -1,0 +1,37 @@
+{
+ "run": "MTAC-task-91/B/20261022T001558Z",
+ "agent": "haiku-4.5_claude-code-2.1.199",
+ "image": "alexgshaw/break-filter-js-from-html:20251031",
+ "claude_code": "2.1.199",
+ "model": "claude-haiku-4-5",
+ "gateway": "http://host.docker.internal:4000",
+ "flags": {
+  "phase0": "claude -p --append-system-prompt-file /opt/enforce-harness/system.md --dangerously-skip-permissions --thinking adaptive --effort max --output-format json (root, cwd /opt/enforce, HOME=/root)",
+  "task": "claude -p --dangerously-skip-permissions --append-system-prompt-file /opt/agent/environment.md --thinking adaptive --effort max --max-turns 100 --output-format json (agent, cwd /workspace, HOME=/home/agent)"
+ },
+ "env": [
+  "ANTHROPIC_API_KEY",
+  "ANTHROPIC_AUTH_TOKEN",
+  "ANTHROPIC_BASE_URL",
+  "ANTHROPIC_CUSTOM_HEADERS",
+  "ANTHROPIC_DEFAULT_HAIKU_MODEL",
+  "ANTHROPIC_DEFAULT_OPUS_MODEL",
+  "ANTHROPIC_DEFAULT_SONNET_MODEL",
+  "ANTHROPIC_MODEL",
+  "CLAUDE_CODE_MAX_OUTPUT_TOKENS",
+  "DISABLE_AUTOUPDATER",
+  "IS_SANDBOX",
+  "MAX_THINKING_TOKENS"
+ ],
+ "task_note": "You work in a Debian 12 container, as the user `agent` (home /home/agent), without root and without sudo. The container has python3, pip and wget, and access to the internet; nothing else is installed. You can install software only inside the project or your home folder. The project owner's rules (CLAUDE.md) and the user's requests are in Mandarin Chinese.\n",
+ "phase0": {
+  "system.md": "5108658705554de8",
+  "messages.json": "0422549db9c04a4b",
+  "framework.md": "fc9b69e73c57b9e45811633d94a887d1ab7628a8d6490aa8b79104ac9f76252f",
+  "environment.py": "f5190193135f6b57",
+  "try": "a8d3f3c8648d0932"
+ },
+ "turns": 1,
+ "mock": "/private/tmp/claude-501/-Users-andwwy-Desktop-DAPlab-rules-in-the-wild/f4f242f0-94d4-4715-bf58-34c2b6b247b8/scratchpad/spec_check2.json",
+ "workspace": "kept after phase 0 (no reset); given to `agent` once, before phase 0"
+}

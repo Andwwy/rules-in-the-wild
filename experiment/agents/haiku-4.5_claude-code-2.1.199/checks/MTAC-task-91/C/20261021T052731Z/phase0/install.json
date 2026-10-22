@@ -1,0 +1,55 @@
+{
+ "session": "e14c87f8-bbb5-4a61-8ce9-dbb7e7a92b06",
+ "messages": 2,
+ "settings": {
+  "files": [
+   {
+    "scope": "project",
+    "path": "/workspace/.claude/settings.json",
+    "keys": [
+     "hooks"
+    ]
+   }
+  ],
+  "hooks": [
+   {
+    "hook": 1,
+    "scope": "project",
+    "event": "PreToolUse",
+    "matcher": "Write|Edit|MultiEdit|NotebookEdit",
+    "type": "command",
+    "command": "python3 /opt/enforce/hooks/pre_write.py"
+   },
+   {
+    "hook": 2,
+    "scope": "project",
+    "event": "PostToolUse",
+    "matcher": "Bash",
+    "type": "command",
+    "command": "python3 /opt/enforce/hooks/post_bash.py"
+   },
+   {
+    "hook": 3,
+    "scope": "project",
+    "event": "Stop",
+    "matcher": null,
+    "type": "command",
+    "command": "python3 /opt/enforce/hooks/stop_reply.py"
+   }
+  ]
+ },
+ "claude_code_on_settings": null,
+ "commands_added_for_agent": [
+  "git",
+  "git-receive-pack",
+  "git-shell",
+  "git-upload-archive",
+  "git-upload-pack",
+  "scalar"
+ ],
+ "workspace": {
+  "created": 1,
+  "changed": 0,
+  "deleted": 0
+ }
+}

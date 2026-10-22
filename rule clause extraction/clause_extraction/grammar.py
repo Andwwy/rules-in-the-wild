@@ -108,6 +108,90 @@ def _line_offsets(text):
     return offs
 
 
+# A prose line that ends by opening a fence (`Use this format: ```` or `…如下：```json`):
+# text before the marker, an odd number of marker runs on the line (an even count is a
+# closed inline span), and nothing after but an info word.
+_INLINE_OPENER = re.compile(r"\S.*?(?<![`~])(`{3,}|~{3,})[\w+.-]*[ \t\r]*$")
+# Its closing line: the marker alone, behind any `>` / indent, with at most trailing
+# punctuation (`````。`). A word after the marker is an info string, so that line opens a
+# fence of its own and is never taken as a closer.
+_ORPHAN_CLOSER = re.compile(r"[ \t>]*(`{3,}|~{3,})[^\w`~]*$")
+_ORPHAN_SPAN = 60                                           # max lines from opener to closer
+_ORPHAN_MAX = 16                    # repairs per file: each re-parses the rest, so a hostile
+                                    # file of thousands of pairs would cost quadratic time
+
+
+def _quote_depth(line):
+    """How many `>` blockquote markers open the line."""
+    return re.match(r"[ \t>]*", line).group().count(">")
+
+
+def _orphan_fences(text):
+    """[(char_start, char_end)] of fenced blocks whose opening marker ends a prose line.
+
+    CommonMark opens a fence only at the start of a line, so in
+        3. Review in this format: ```
+        Strengths: …
+        ```。
+    the trailing ``` stays inline and the closing ``` line OPENS a fence that never
+    closes — every later list item became one `code` unit and was dropped as
+    structural. Each region runs from the line after the opener through the closing
+    line; callers treat it as code. A fence is re-paired only when markdown-it leaves
+    it unclosed, its line is a bare marker (no info word), and the nearest earlier line
+    with no fence line between is prose ending in an unpaired marker of the same kind,
+    at the same blockquote depth, at most _ORPHAN_SPAN lines up; at most _ORPHAN_MAX
+    repairs per file, none in YAML front matter. A balanced document is never touched."""
+    if _MD is None or ("```" not in text and "~~~" not in text):
+        return []
+    lines = text.split("\n")
+    # YAML front matter is cut field by field, not as markdown: the repair starts after it
+    close = re.search(r"\n---[ \t]*(?:\n|$)", text[3:]) if text.startswith("---\n") else None
+    body = text[:3 + close.end()].count("\n") if close else 0
+    openers = {}
+    for k, ln in enumerate(lines):
+        m = None if k < body or _FENCE.match(ln) else _INLINE_OPENER.search(ln)
+        if m and len(re.findall(re.escape(m.group(1)[0]) + "{3,}", ln)) % 2:
+            openers[k] = (m.group(1)[0], _quote_depth(ln))
+    if not openers:
+        return []
+    offs = _line_offsets(text)
+    regions, work, first = [], text, body
+    while len(regions) < _ORPHAN_MAX:
+        # Re-parse only what follows the last repair: an unclosed fence runs to the end
+        # of its container, so nothing before it can change.
+        bad = None
+        for t in _MD.parse(work[offs[first]:]):
+            if t.type != "fence" or not t.map:
+                continue
+            last = first + t.map[1] - 1
+            if last >= len(lines):                          # bare `\r` breaks: lines disagree
+                return regions
+            closed = last > first + t.map[0] and re.fullmatch(
+                rf"[ \t>]*{re.escape(t.markup[0])}{{{len(t.markup)},}}\s*", lines[last])
+            if not closed:
+                bad = first + t.map[0]
+                break
+        if bad is None or not _ORPHAN_CLOSER.fullmatch(lines[bad].rstrip("\r")):
+            return regions
+        kind = (_ORPHAN_CLOSER.fullmatch(lines[bad].rstrip("\r")).group(1)[0], _quote_depth(lines[bad]))
+        opener = None
+        for k in range(bad - 1, max(first, bad - _ORPHAN_SPAN) - 1, -1):
+            if openers.get(k) == kind:                      # same marker, same `>` depth
+                opener = k
+                break
+            if _FENCE.match(lines[k]):
+                break
+        if opener is None:
+            return regions
+        a, b = offs[opener + 1], offs[bad] + len(lines[bad])
+        regions.append((a, b))
+        work = work[:a] + re.sub(r"[^\n]", " ", work[a:b]) + work[b:]
+        first = bad + 1
+        if first >= len(lines):
+            break
+    return regions
+
+
 def _mask(seg):
     """`seg` with every protected region replaced by NULs. Same length, so offsets found
     in the mask are valid in the original — that is the whole trick."""
@@ -400,8 +484,17 @@ def _segment_v2(text):
             raw.append(("statement", a, b))
         return _retype_v2(text, raw)
 
+    # A fence opened mid-line is code the parser cannot see: emit it here and blank it
+    # (offset-preserving) so markdown-it reads the prose after it as prose.
+    orphans, parse_text = _orphan_fences(text), text
+    for a, b in orphans:
+        span = _trim(text, a, b)
+        if span:
+            raw.append(("code", span[0], span[1]))
+        parse_text = parse_text[:a] + re.sub(r"[^\n]", " ", parse_text[a:b]) + parse_text[b:]
+
     stack, table_depth, tmap, list_depth = [], 0, None, 0
-    for t in _MD.parse(text):
+    for t in _MD.parse(parse_text):
         # markdown-it does not know front matter; whatever it makes of those lines
         # (thematic breaks, indented code) is already emitted as field leaves
         if t.map and offs[min(t.map[0], len(offs) - 1)] < fm_end:
@@ -550,9 +643,12 @@ def heading_spans(content):
     """[(char_start, level, title)] for every ATX heading, skipping fenced code so a
     `# comment` inside a bash block is not mistaken for a section."""
     out, pos, fence = [], 0, None
+    orphans = _orphan_fences(content or "")
     for ln in (content or "").split("\n"):
         f = _FENCE.match(ln)
-        if f:
+        if any(a <= pos < b for a, b in orphans):
+            pass                                               # code opened mid-line
+        elif f:
             marker = f.group(1)
             if fence is None:
                 fence = marker

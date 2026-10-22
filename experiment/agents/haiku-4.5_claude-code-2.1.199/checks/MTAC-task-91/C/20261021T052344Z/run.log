@@ -1,0 +1,70 @@
+01:23:44 run MTAC-task-91/C/20261021T052344Z: task 91, arm C, 1 task turns
+01:23:46 container ritw-t091-C-20261021t052344z (alexgshaw/break-filter-js-from-html:20251031)
+01:23:49 Claude Code: ExitPlanMode patch: 1 replaced 2.1.199 (Claude Code)
+01:23:50 scripted model: chain_compiled.json (no model calls)
+01:23:51 phase 0, batch 1 (R7, R5, R6): compiled plan of 10 nodes
+01:24:09 phase 0, message 1 (b1-install-semgrep): exit 0, 18 s, $0.000 (Claude Code's own estimate), 2 model turns
+01:24:11 phase 0, batch 1, node install-semgrep: done, checked
+01:24:22 phase 0, message 2 (b1-install-pre-commit): exit 0, 10 s, $0.000 (Claude Code's own estimate), 2 model turns
+01:24:22 phase 0, batch 1, node install-pre-commit: done, checked
+01:24:25 phase 0, message 3 (b1-fixtures-R7): exit 0, 3 s, $0.000 (Claude Code's own estimate), 2 model turns
+01:24:27 phase 0, message 4 (b1-fixtures-R7-fix): exit 0, 2 s, $0.000 (Claude Code's own estimate), 1 model turns
+01:24:27 phase 0, batch 1, node fixtures-R7: failed its check: /opt/enforce/fixtures/R7/flag holds 1 files and /opt/enforce/fixtures/R7/pass holds 0 (at least 2 each)
+01:24:30 phase 0, message 5 (b1-check-R7): exit 0, 2 s, $0.000 (Claude Code's own estimate), 2 model turns
+01:24:34 phase 0, message 6 (b1-check-R7-fix): exit 0, 2 s, $0.000 (Claude Code's own estimate), 1 model turns
+01:24:37 phase 0, batch 1, node check-R7: failed its check: /opt/enforce/checks/R7 does not run semgrep, the route's enforcer
+01:24:39 phase 0, message 7 (b1-fixtures-R5): exit 0, 2 s, $0.000 (Claude Code's own estimate), 2 model turns
+01:24:41 phase 0, message 8 (b1-fixtures-R5-fix): exit 0, 2 s, $0.000 (Claude Code's own estimate), 1 model turns
+01:24:42 phase 0, batch 1, node fixtures-R5: failed its check: /opt/enforce/fixtures/R5/flag holds 1 files and /opt/enforce/fixtures/R5/pass holds 0 (at least 2 each)
+01:24:44 phase 0, message 9 (b1-check-R5): exit 0, 3 s, $0.000 (Claude Code's own estimate), 2 model turns
+01:24:47 phase 0, message 10 (b1-check-R5-fix): exit 0, 2 s, $0.000 (Claude Code's own estimate), 1 model turns
+01:24:48 phase 0, batch 1, node check-R5: failed its check: /opt/enforce/checks/R5 does not run pre-commit, the route's enforcer
+01:24:50 phase 0, message 11 (b1-fixtures-R6): exit 0, 2 s, $0.000 (Claude Code's own estimate), 2 model turns
+01:24:53 phase 0, message 12 (b1-fixtures-R6-fix): exit 0, 2 s, $0.000 (Claude Code's own estimate), 1 model turns
+01:24:53 phase 0, batch 1, node fixtures-R6: failed its check: /opt/enforce/fixtures/R6/flag holds 1 files and /opt/enforce/fixtures/R6/pass holds 0 (at least 2 each)
+01:24:55 phase 0, message 13 (b1-check-R6): exit 0, 3 s, $0.000 (Claude Code's own estimate), 2 model turns
+01:24:58 phase 0, message 14 (b1-check-R6-fix): exit 0, 2 s, $0.000 (Claude Code's own estimate), 1 model turns
+01:24:59 phase 0, batch 1, node check-R6: failed its check: /opt/enforce/checks/R6 does not run pre-commit, the route's enforcer
+01:25:02 phase 0, message 15 (b1-binding-1): exit 0, 3 s, $0.000 (Claude Code's own estimate), 2 model turns
+01:25:04 phase 0, batch 1, node binding-1: done, checked
+01:25:07 phase 0, message 16 (b1-trial-1): exit 0, 2 s, $0.000 (Claude Code's own estimate), 2 model turns
+01:25:15 phase 0, message 17 (b1-trial-1-fix): exit 0, 2 s, $0.000 (Claude Code's own estimate), 1 model turns
+01:25:20 phase 0, batch 1, node trial-1: failed its check: the trial blocked R5; not R7, R6
+01:25:20 phase 0, batch 2 (R2, R1, R3, R4, R8): compiled plan of 12 nodes
+01:25:23 phase 0, message 18 (b2-fixtures-R2): exit 0, 3 s, $0.000 (Claude Code's own estimate), 2 model turns
+01:25:25 phase 0, message 19 (b2-fixtures-R2-fix): exit 0, 2 s, $0.000 (Claude Code's own estimate), 1 model turns
+01:25:25 phase 0, batch 2, node fixtures-R2: failed its check: /opt/enforce/fixtures/R2/flag holds 1 files and /opt/enforce/fixtures/R2/pass holds 0 (at least 2 each)
+01:25:28 phase 0, message 20 (b2-check-R2): exit 0, 2 s, $0.000 (Claude Code's own estimate), 2 model turns
+01:25:28 phase 0, batch 2, node check-R2: done, checked
+01:25:31 phase 0, message 21 (b2-fixtures-R1): exit 0, 2 s, $0.000 (Claude Code's own estimate), 2 model turns
+01:25:33 phase 0, message 22 (b2-fixtures-R1-fix): exit 0, 2 s, $0.000 (Claude Code's own estimate), 1 model turns
+01:25:33 phase 0, batch 2, node fixtures-R1: failed its check: /opt/enforce/fixtures/R1/flag holds 1 files and /opt/enforce/fixtures/R1/pass holds 0 (at least 2 each)
+01:25:36 phase 0, message 23 (b2-check-R1): exit 0, 3 s, $0.000 (Claude Code's own estimate), 2 model turns
+01:25:36 phase 0, batch 2, node check-R1: done, checked
+01:25:38 phase 0, message 24 (b2-fixtures-R3): exit 0, 2 s, $0.000 (Claude Code's own estimate), 2 model turns
+01:25:41 phase 0, message 25 (b2-fixtures-R3-fix): exit 0, 2 s, $0.000 (Claude Code's own estimate), 1 model turns
+01:25:41 phase 0, batch 2, node fixtures-R3: failed its check: /opt/enforce/fixtures/R3/flag holds 1 files and /opt/enforce/fixtures/R3/pass holds 0 (at least 2 each)
+01:25:43 phase 0, message 26 (b2-check-R3): exit 0, 2 s, $0.000 (Claude Code's own estimate), 2 model turns
+01:25:43 phase 0, batch 2, node check-R3: done, checked
+01:25:46 phase 0, message 27 (b2-fixtures-R4): exit 0, 3 s, $0.000 (Claude Code's own estimate), 2 model turns
+01:25:48 phase 0, message 28 (b2-fixtures-R4-fix): exit 0, 2 s, $0.000 (Claude Code's own estimate), 1 model turns
+01:25:49 phase 0, batch 2, node fixtures-R4: failed its check: /opt/enforce/fixtures/R4/flag holds 1 files and /opt/enforce/fixtures/R4/pass holds 0 (at least 2 each)
+01:25:51 phase 0, message 29 (b2-check-R4): exit 0, 3 s, $0.000 (Claude Code's own estimate), 2 model turns
+01:25:52 phase 0, batch 2, node check-R4: done, checked
+01:25:54 phase 0, message 30 (b2-fixtures-R8): exit 0, 3 s, $0.000 (Claude Code's own estimate), 2 model turns
+01:25:57 phase 0, message 31 (b2-fixtures-R8-fix): exit 0, 3 s, $0.000 (Claude Code's own estimate), 1 model turns
+01:25:57 phase 0, batch 2, node fixtures-R8: failed its check: /opt/enforce/fixtures/R8/flag holds 1 files and /opt/enforce/fixtures/R8/pass holds 0 (at least 2 each)
+01:26:00 phase 0, message 32 (b2-check-R8): exit 0, 2 s, $0.000 (Claude Code's own estimate), 2 model turns
+01:26:02 phase 0, message 33 (b2-check-R8-fix): exit 0, 2 s, $0.000 (Claude Code's own estimate), 1 model turns
+01:26:02 phase 0, batch 2, node check-R8: failed its check: /opt/enforce/fixtures/R8/flag/a.txt: exit 0, names no R8 (want exit 1 naming R8)
+01:26:05 phase 0, message 34 (b2-binding-1): exit 0, 2 s, $0.000 (Claude Code's own estimate), 2 model turns
+01:26:07 phase 0, batch 2, node binding-1: done, checked
+01:26:10 phase 0, message 35 (b2-trial-1): exit 0, 2 s, $0.000 (Claude Code's own estimate), 2 model turns
+01:26:16 phase 0, message 36 (b2-trial-1-fix): exit 0, 2 s, $0.000 (Claude Code's own estimate), 1 model turns
+01:26:19 phase 0, batch 2, node trial-1: failed its check: the trial blocked R1; not R2, R3, R4, R8
+01:26:23 settings: 3 hooks (3 project) in /workspace/.claude/settings.json; workspace {'created': 1, 'changed': 0, 'deleted': 0}; commands added for agent: ['git', 'git-receive-pack', 'git-shell', 'git-upload-archive', 'git-upload-pack', 'scalar']; Claude Code reported nothing about the settings.
+01:26:24 task session faea973a-7d0a-4f77-9ca0-48f5d5de6efe
+01:26:24 turn 1/1 (round 0) started
+01:26:30 turn 1/1: exit 0, 6 s, $0.000 (Claude Code's own estimate), 2 model turns, hook records so far {}
+01:26:30 done
+01:26:31 container stopped (kept)

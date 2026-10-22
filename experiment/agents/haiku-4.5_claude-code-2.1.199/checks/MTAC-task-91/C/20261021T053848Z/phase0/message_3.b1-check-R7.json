@@ -1,0 +1,56 @@
+{
+ "label": "b1-check-R7",
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 711,
+  "duration_api_ms": 154,
+  "ttft_ms": 160,
+  "ttft_stream_ms": 155,
+  "time_to_request_ms": 136,
+  "num_turns": 2,
+  "result": "Done.",
+  "stop_reason": "end_turn",
+  "session_id": "326d654f-ed91-4c62-8cd6-15b9d9bdf622",
+  "total_cost_usd": 7.000000000000001e-05,
+  "usage": {
+   "input_tokens": 20,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 10,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 20,
+    "outputTokens": 10,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "webSearchRequests": 0,
+    "costUSD": 7.000000000000001e-05,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "2b128c12-6d48-4030-9bd9-97247a6d3f57"
+ },
+ "text": "Node check-R7 (3 of 6): write test cases and the check of R7. The cases: at least two that break the rule, as files in /opt/enforce/fixtures/R7/flag, and at least two that follow it, in /opt/enforce/fixtures/R7/pass; each one file of what the check reads (A function or a method. Where: in the source files; read them with a parser (/opt/enforce-toolbox/skeletons/names_python.py, /opt/enforce-toolbox/skeletons/names_js.py), or with Semgrep patterns Which files: every file that holds code, decided when the check runs (/opt/enforce-toolbox/targets/source-code/source-file.md); take embedded code out of its container first (a `<script>` in HTML), then parse it), like what the agent may really write. The check: the executable /opt/enforce/checks/R7; `/opt/enforce/checks/R7 <file>` exits 0 when the file follows the rule, and otherwise exits 1 and prints each violation: R7, where (the file and line, or the part of the text), and what to change. By the route: A pattern-based static analyzer. A rule is a code pattern that Semgrep matches against each file's syntax tree, for many languages (Python, JavaScript, TypeScript, HTML script blocks, Bash, …). Check: `semgrep scan --config <rules.yml> --error --metrics=off --quiet <file>` (exit 1 on a finding; `--json` for a report) Rules: `rules: [{id: <id>, languages: [<language>], severity: ERROR, message: \"<what to change>\", pattern: \"<code pattern>\"}]`; Semgrep matches syntax, it cannot compute values (a length, a count): use a check script (/opt/enforce-toolbox/skeletons/check.py) for those It reads A function or a method. Where: in the source files; read them with a parser (/opt/enforce-toolbox/skeletons/names_python.py, /opt/enforce-toolbox/skeletons/names_js.py), or with Semgrep patterns Which files: every file that holds code, decided when the check runs (/opt/enforce-toolbox/targets/source-code/source-file.md); take embedded code out of its container first (a `<script>` in HTML), then parse it.\nDone when: /opt/enforce/fixtures/R7/flag and /opt/enforce/fixtures/R7/pass each hold at least two files; as the agent, the check exits 1 and names R7 for every file in /opt/enforce/fixtures/R7/flag, and exits 0 for every file in /opt/enforce/fixtures/R7/pass, and it runs semgrep. The harness checks this when you reply.",
+ "stderr": ""
+}

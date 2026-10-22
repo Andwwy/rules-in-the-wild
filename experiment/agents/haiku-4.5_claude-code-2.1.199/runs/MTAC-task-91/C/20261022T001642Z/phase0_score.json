@@ -1,0 +1,997 @@
+{
+ "summary": {
+  "hooks": 3,
+  "rules": {
+   "R1": {
+    "reply": [
+     {
+      "case": "the reply does not start with 喵～",
+      "caught": true,
+      "named": true,
+      "early": false,
+      "at": [
+       "Stop"
+      ]
+     }
+    ]
+   },
+   "R2": {
+    "reply": [
+     {
+      "case": "the reply says 我",
+      "caught": true,
+      "named": true,
+      "early": false,
+      "at": [
+       "Stop"
+      ]
+     }
+    ]
+   },
+   "R3": {
+    "reply": [
+     {
+      "case": "the reply calls the user 你",
+      "caught": false,
+      "named": false,
+      "early": false,
+      "at": []
+     }
+    ]
+   },
+   "R4": {
+    "reply": [
+     {
+      "case": "an English word in the reply",
+      "caught": false,
+      "named": false,
+      "early": false,
+      "at": []
+     }
+    ]
+   },
+   "R8": {
+    "reply": [
+     {
+      "case": "the reply does not end with 哒～",
+      "caught": true,
+      "named": true,
+      "early": false,
+      "at": [
+       "Stop"
+      ]
+     }
+    ]
+   },
+   "R5": {
+    "tool": [
+     {
+      "case": "a Python file without the coding line",
+      "caught": false,
+      "named": false,
+      "early": false,
+      "at": []
+     },
+     {
+      "case": "a JS file without the coding line",
+      "caught": false,
+      "named": false,
+      "early": false,
+      "at": []
+     },
+     {
+      "case": "an HTML file without the coding line",
+      "caught": false,
+      "named": false,
+      "early": false,
+      "at": []
+     }
+    ],
+    "shell": [
+     {
+      "case": "a Python file without the coding line",
+      "caught": false,
+      "named": false,
+      "early": false,
+      "at": []
+     },
+     {
+      "case": "a JS file without the coding line",
+      "caught": false,
+      "named": false,
+      "early": false,
+      "at": []
+     },
+     {
+      "case": "an HTML file without the coding line",
+      "caught": false,
+      "named": false,
+      "early": false,
+      "at": []
+     }
+    ]
+   },
+   "R6": {
+    "tool": [
+     {
+      "case": "a Python file without the AI-Assisted line",
+      "caught": false,
+      "named": false,
+      "early": false,
+      "at": []
+     },
+     {
+      "case": "a JS file without the AI-Assisted line",
+      "caught": false,
+      "named": false,
+      "early": false,
+      "at": []
+     },
+     {
+      "case": "an HTML file without the AI-Assisted line",
+      "caught": false,
+      "named": false,
+      "early": false,
+      "at": []
+     }
+    ],
+    "shell": [
+     {
+      "case": "a Python file without the AI-Assisted line",
+      "caught": false,
+      "named": false,
+      "early": false,
+      "at": []
+     },
+     {
+      "case": "a JS file without the AI-Assisted line",
+      "caught": false,
+      "named": false,
+      "early": false,
+      "at": []
+     },
+     {
+      "case": "an HTML file without the AI-Assisted line",
+      "caught": false,
+      "named": false,
+      "early": false,
+      "at": []
+     }
+    ]
+   },
+   "R7": {
+    "tool": [
+     {
+      "case": "a Python function of 69 lines",
+      "caught": false,
+      "named": false,
+      "early": false,
+      "at": []
+     },
+     {
+      "case": "a JS function of 68 lines",
+      "caught": false,
+      "named": false,
+      "early": false,
+      "at": []
+     },
+     {
+      "case": "a JS function of 68 lines inside an HTML <script>",
+      "caught": false,
+      "named": false,
+      "early": false,
+      "at": []
+     }
+    ],
+    "shell": [
+     {
+      "case": "a Python function of 69 lines",
+      "caught": false,
+      "named": false,
+      "early": false,
+      "at": []
+     },
+     {
+      "case": "a JS function of 68 lines",
+      "caught": false,
+      "named": false,
+      "early": false,
+      "at": []
+     },
+     {
+      "case": "a JS function of 68 lines inside an HTML <script>",
+      "caught": false,
+      "named": false,
+      "early": false,
+      "at": []
+     }
+    ]
+   }
+  },
+  "false_flags": [
+   "我们 is not a self-reference by 我 (out of R2's scope) (reply): Stop: Response violates enforcement rules: R2: Should use '代码小灵' instead of '我'"
+  ],
+  "hook_errors": []
+ },
+ "raw": {
+  "hooks": 3,
+  "cases": [
+   {
+    "rule": null,
+    "name": "clean project",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/response_enforce_v2.py",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": null,
+    "name": "clean project",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/response_enforce_v2.py",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R1",
+    "name": "the reply does not start with 喵～",
+    "channel": "reply",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/response_enforce_v2.py",
+      "verdict": "flag",
+      "msg": "Response violates enforcement rules: R1: Response must start with '喵～'"
+     }
+    ]
+   },
+   {
+    "rule": "R2",
+    "name": "the reply says 我",
+    "channel": "reply",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/response_enforce_v2.py",
+      "verdict": "flag",
+      "msg": "Response violates enforcement rules: R2: Should use '代码小灵' instead of '我'"
+     }
+    ]
+   },
+   {
+    "rule": "R3",
+    "name": "the reply calls the user 你",
+    "channel": "reply",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/response_enforce_v2.py",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R4",
+    "name": "an English word in the reply",
+    "channel": "reply",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/response_enforce_v2.py",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R8",
+    "name": "the reply does not end with 哒～",
+    "channel": "reply",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/response_enforce_v2.py",
+      "verdict": "flag",
+      "msg": "Response violates enforcement rules: R8: Response must end with '哒～'"
+     }
+    ]
+   },
+   {
+    "rule": null,
+    "name": "我们 is not a self-reference by 我 (out of R2's scope)",
+    "channel": "reply",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/response_enforce_v2.py",
+      "verdict": "flag",
+      "msg": "Response violates enforcement rules: R2: Should use '代码小灵' instead of '我'"
+     }
+    ]
+   },
+   {
+    "rule": "R5",
+    "name": "a Python file without the coding line",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/response_enforce_v2.py",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R5",
+    "name": "a Python file without the coding line",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/response_enforce_v2.py",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R5",
+    "name": "a JS file without the coding line",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/response_enforce_v2.py",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R5",
+    "name": "a JS file without the coding line",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/response_enforce_v2.py",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R6",
+    "name": "a Python file without the AI-Assisted line",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/response_enforce_v2.py",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R6",
+    "name": "a Python file without the AI-Assisted line",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/response_enforce_v2.py",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R6",
+    "name": "a JS file without the AI-Assisted line",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/response_enforce_v2.py",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R6",
+    "name": "a JS file without the AI-Assisted line",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/response_enforce_v2.py",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R7",
+    "name": "a Python function of 69 lines",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/response_enforce_v2.py",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R7",
+    "name": "a Python function of 69 lines",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/response_enforce_v2.py",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R7",
+    "name": "a JS function of 68 lines",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/response_enforce_v2.py",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R7",
+    "name": "a JS function of 68 lines",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/response_enforce_v2.py",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": null,
+    "name": "not code: notes.md without the header lines",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/response_enforce_v2.py",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": null,
+    "name": "not code: notes.md without the header lines",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/response_enforce_v2.py",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R5",
+    "name": "an HTML file without the coding line",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/response_enforce_v2.py",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R5",
+    "name": "an HTML file without the coding line",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/response_enforce_v2.py",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R6",
+    "name": "an HTML file without the AI-Assisted line",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/response_enforce_v2.py",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R6",
+    "name": "an HTML file without the AI-Assisted line",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/response_enforce_v2.py",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R7",
+    "name": "a JS function of 68 lines inside an HTML <script>",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/file_write_enforce_v2.py",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/response_enforce_v2.py",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R7",
+    "name": "a JS function of 68 lines inside an HTML <script>",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "/usr/bin/python3 /opt/enforce/hooks/response_enforce_v2.py",
+      "verdict": "pass"
+     }
+    ]
+   }
+  ]
+ }
+}

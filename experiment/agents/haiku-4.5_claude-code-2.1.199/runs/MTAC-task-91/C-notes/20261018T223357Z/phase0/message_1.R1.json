@@ -1,0 +1,55 @@
+{
+ "rule": "R1",
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 38887,
+  "duration_api_ms": 40224,
+  "ttft_ms": 9365,
+  "ttft_stream_ms": 9356,
+  "time_to_request_ms": 135,
+  "num_turns": 16,
+  "result": "Perfect! I've created `/opt/enforce/settings.json` with a Stop hook that enforces Rule R1. Here's what it does:\n\n**Hook Configuration:**\n- **Event**: `Stop` — fires when the agent finishes responding\n- **Target**: The agent's final message via `last_assistant_message` field\n- **Validation**: Uses regex `^喵～` to check if the message starts with \"喵～\"\n- **Behavior**: \n  - Exit code 0 if the pattern matches (validation passes)\n  - Exit code 2 with error message if it doesn't match (validation fails, blocks the agent from stopping)\n\nThe hook uses `jq` to extract and test the `last_assistant_message` field against the regex pattern. When validation fails, the agent will see the error message \"Response must start with 喵～\" and won't be allowed to stop.\n\nTest this with:\n```bash\n/opt/enforce-harness/try --check\n/opt/enforce-harness/try \"write a hello world program\"\n```",
+  "stop_reason": "end_turn",
+  "session_id": "88f88158-c078-4fa3-8014-cbf643cb298e",
+  "total_cost_usd": 0.25764375,
+  "usage": {
+   "input_tokens": 85,
+   "cache_creation_input_tokens": 143637,
+   "cache_read_input_tokens": 607455,
+   "output_tokens": 3279,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 143637
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 842,
+    "outputTokens": 3302,
+    "cacheReadInputTokens": 607455,
+    "cacheCreationInputTokens": 143637,
+    "webSearchRequests": 0,
+    "costUSD": 0.25764375,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "93cb30f1-c9a6-4acc-8179-ed076c40b47d"
+ },
+ "stderr": ""
+}

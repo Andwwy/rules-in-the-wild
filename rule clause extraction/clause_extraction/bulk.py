@@ -33,7 +33,7 @@ import pyarrow as pa
 import pyarrow.parquet as pq
 
 from .config import BASE_DIR, MOTHERDUCK_DB, MOTHERDUCK_TOKEN
-from .grammar import (STRUCTURAL_TYPES, _line_offsets, heading_path_at,
+from .grammar import (STRUCTURAL_TYPES, _line_offsets, _orphan_fences, heading_path_at,
                       heading_spans, line_of, segment)
 
 LOCAL = os.path.join(BASE_DIR, "local")
@@ -64,9 +64,14 @@ def _fenced(lines):
     clause (the lead-in, the sibling bullets). Measured: without this, over half
     the before-window on long sections is spent on fence tails."""
     mask, fence = [False] * len(lines), None
+    orphans = _orphan_fences("\n".join(lines))                  # fences opened mid-line
+    pos = 0
     for i, ln in enumerate(lines):
         m = _FENCE_RE.match(ln)
-        if m:
+        start, pos = pos, pos + len(ln) + 1
+        if any(a <= start < b for a, b in orphans):
+            mask[i] = True
+        elif m:
             mask[i] = True
             fence = None if (fence and ln.strip().startswith(fence)) else (fence or m.group(1))
         elif fence is not None:

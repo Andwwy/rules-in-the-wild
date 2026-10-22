@@ -1,0 +1,56 @@
+{
+ "label": "b1-fixtures-R6",
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 499,
+  "duration_api_ms": 100,
+  "ttft_ms": 152,
+  "ttft_stream_ms": 150,
+  "time_to_request_ms": 138,
+  "num_turns": 2,
+  "result": "Written.",
+  "stop_reason": "end_turn",
+  "session_id": "5a285723-3100-4349-82eb-b9ad044e4d45",
+  "total_cost_usd": 7.000000000000001e-05,
+  "usage": {
+   "input_tokens": 20,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 10,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 20,
+    "outputTokens": 10,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "webSearchRequests": 0,
+    "costUSD": 7.000000000000001e-05,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "74c870fe-48e5-47fe-a388-dce650f623af"
+ },
+ "text": "Node fixtures-R6 (7 of 10): write test cases for R6: at least two that break the rule, as files in /opt/enforce/fixtures/R6/flag, and at least two that follow it, in /opt/enforce/fixtures/R6/pass. Each is one file of what the check reads (A source code file. Where: /workspace/<path>, on disk for every mechanism; the content of a write before it happens: only the framework's hook (/opt/enforce-toolbox/mechanisms/framework-hooks.md) before its write tool Which files: decide when the check runs, from the file in hand: the files the agent will create cannot be known before. Map its name, or its content, to a language with a complete list, such as Pygments (`get_lexer_for_filename`, `guess_lexer`) or GitHub Linguist's list of languages. Code also sits inside other files: a `<script>` or `<style>` in HTML, a notebook cell, a code block in Markdown. A file of an unknown kind is checked, not passed.); make them like what the agent may really write.\nDone when: /opt/enforce/fixtures/R6/flag and /opt/enforce/fixtures/R6/pass each hold at least two files. The harness checks this when you reply.",
+ "stderr": ""
+}

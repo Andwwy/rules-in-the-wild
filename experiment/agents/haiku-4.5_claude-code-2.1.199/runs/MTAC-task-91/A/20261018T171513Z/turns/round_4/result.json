@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 53316,
+  "duration_api_ms": 52541,
+  "ttft_ms": 3776,
+  "ttft_stream_ms": 3773,
+  "time_to_request_ms": 93,
+  "num_turns": 7,
+  "result": "代码小灵已为开发者大大实现了红黄蓝绿回合制流转、当前玩家区域高亮、掷出6可再掷的机制，缩进改为2个空格并保持单层if结构哒～",
+  "stop_reason": "end_turn",
+  "session_id": "f01beb59-3463-41ee-b07b-0372119f2626",
+  "total_cost_usd": 0.10642870000000001,
+  "usage": {
+   "input_tokens": 40,
+   "cache_creation_input_tokens": 15514,
+   "cache_read_input_tokens": 453512,
+   "output_tokens": 8329,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 15514
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 40,
+    "outputTokens": 8329,
+    "cacheReadInputTokens": 453512,
+    "cacheCreationInputTokens": 15514,
+    "webSearchRequests": 0,
+    "costUSD": 0.10642870000000001,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "ca6920b5-b2e9-4d38-ac5a-43fc17891565"
+ },
+ "stderr": ""
+}

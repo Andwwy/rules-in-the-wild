@@ -1,0 +1,1426 @@
+[
+ {
+  "item": 1,
+  "constraint": "每次给用户生成回复时，必须首先输出\"喵～\"这一语气词",
+  "tags": [
+   "Content",
+   "Persona"
+  ],
+  "scored": true,
+  "mapping": {
+   "leaf": "Regex validator",
+   "path": [
+    "Validation",
+    "Regex",
+    "Regex validator"
+   ],
+   "score": 0.7615,
+   "step_probabilities": [
+    0.61,
+    0.94,
+    0.77
+   ],
+   "separation": 1.542,
+   "alternatives": [
+    {
+     "path": [
+      "Validation",
+      "Regex",
+      "Regex filter"
+     ],
+     "score": 0.4938
+    },
+    {
+     "path": [
+      "Gates",
+      "Workflow",
+      "Workflow"
+     ],
+     "score": 0.349
+    },
+    {
+     "path": [
+      "Gates",
+      "Workflow",
+      "Agent workflow"
+     ],
+     "score": 0.3171
+    }
+   ],
+   "model": "jev-1.13.0",
+   "beam": 4,
+   "calls": 9,
+   "input_tokens": 4062,
+   "cost_usd": 0.0001706
+  },
+  "mapping_trigger": {
+   "leaf": "Response sent",
+   "path": [
+    "Agent loop",
+    "Response sent"
+   ],
+   "score": 0.7618,
+   "step_probabilities": [
+    0.96,
+    0.94,
+    0.49
+   ],
+   "separation": 1.079,
+   "alternatives": [
+    {
+     "path": [
+      "Agent loop",
+      "Response sent"
+     ],
+     "timing": "before",
+     "timing_p": 0.39,
+     "score": 0.706
+    },
+    {
+     "path": [
+      "Agent loop",
+      "Response sent"
+     ],
+     "timing": "after",
+     "timing_p": 0.12,
+     "score": 0.4766
+    },
+    {
+     "path": [
+      "Agent loop",
+      "Prompt received"
+     ],
+     "timing": "at",
+     "timing_p": 1.0,
+     "score": 0.3862
+    }
+   ],
+   "attributes": {
+    "state_p": 0.16,
+    "timing": "at",
+    "timing_p": 0.49
+   },
+   "model": "jev-1.13.0",
+   "beam": 4,
+   "calls": 5,
+   "input_tokens": 2713,
+   "cost_usd": 0.00011395
+  },
+  "mapping_target": {
+   "leaf": "Response / message",
+   "path": [
+    "Agent output",
+    "Response / message"
+   ],
+   "score": 1.0,
+   "step_probabilities": [
+    1.0,
+    1.0
+   ],
+   "separation": 31622.777,
+   "alternatives": [
+    {
+     "path": [
+      "Agent output",
+      "Plan"
+     ],
+     "score": 0.0
+    },
+    {
+     "path": [
+      "Agent output",
+      "Report / summary"
+     ],
+     "score": 0.0
+    },
+    {
+     "path": [
+      "Agent output",
+      "Findings"
+     ],
+     "score": 0.0
+    }
+   ],
+   "model": "jev-1.13.0",
+   "beam": 4,
+   "calls": 5,
+   "input_tokens": 2867,
+   "cost_usd": 0.00012041
+  },
+  "route": {
+   "enforcer": [
+    "Validation",
+    "Regex",
+    "Regex validator"
+   ],
+   "trigger": [
+    "Agent loop",
+    "Response sent"
+   ],
+   "timing": "before",
+   "target": [
+    "Agent output",
+    "Response / message"
+   ],
+   "by": "beam select",
+   "p": 0.78,
+   "separation": 8.667
+  },
+  "mechanism": {
+   "enforcer": "Regex validator",
+   "config": "enforcement/config/91-1.regex.json",
+   "target": "reply",
+   "triggers": [
+    "end-of-turn"
+   ],
+   "translated_by": "Claude Code (local), Claude Opus 5.5, effort Extra"
+  },
+  "constraint_en": "Every time you generate a reply to the user, you must first output the particle \"喵～\" (\"meow~\")."
+ },
+ {
+  "item": 2,
+  "constraint": "无论何时提到自身，都请始终用\"代码小灵\"替代\"我\"来进行自我指代",
+  "tags": [
+   "Content",
+   "Persona"
+  ],
+  "scored": true,
+  "mapping": {
+   "leaf": "Regex filter",
+   "path": [
+    "Validation",
+    "Regex",
+    "Regex filter"
+   ],
+   "score": 0.7288,
+   "step_probabilities": [
+    0.63,
+    0.96,
+    0.64
+   ],
+   "separation": 1.235,
+   "alternatives": [
+    {
+     "path": [
+      "Validation",
+      "Regex",
+      "Regex validator"
+     ],
+     "score": 0.5902
+    },
+    {
+     "path": [
+      "Analysis",
+      "Text",
+      "Other"
+     ],
+     "score": 0.4171
+    },
+    {
+     "path": [
+      "Analysis",
+      "Text",
+      "remark-lint"
+     ],
+     "score": 0.3352
+    }
+   ],
+   "model": "jev-1.13.0",
+   "beam": 4,
+   "calls": 9,
+   "input_tokens": 4090,
+   "cost_usd": 0.00017178
+  },
+  "mapping_trigger": {
+   "leaf": "Always",
+   "path": [
+    "Always"
+   ],
+   "score": 0.59,
+   "step_probabilities": [
+    0.59
+   ],
+   "separation": 1.049,
+   "alternatives": [
+    {
+     "path": [
+      "Agent loop",
+      "Response sent"
+     ],
+     "timing": "at",
+     "timing_p": 0.53,
+     "score": 0.5626
+    },
+    {
+     "path": [
+      "Agent loop",
+      "Response sent"
+     ],
+     "timing": "before",
+     "timing_p": 0.42,
+     "score": 0.5206
+    },
+    {
+     "path": [
+      "Agent loop",
+      "Prompt received"
+     ],
+     "timing": "at",
+     "timing_p": 1.0,
+     "score": 0.3634
+    }
+   ],
+   "attributes": {
+    "state_p": 0.15,
+    "timing": "always"
+   },
+   "model": "jev-1.13.0",
+   "beam": 4,
+   "calls": 5,
+   "input_tokens": 2738,
+   "cost_usd": 0.000115
+  },
+  "mapping_target": {
+   "leaf": "Response / message",
+   "path": [
+    "Agent output",
+    "Response / message"
+   ],
+   "score": 0.9644,
+   "step_probabilities": [
+    0.93,
+    1.0
+   ],
+   "separation": 5.0,
+   "alternatives": [
+    {
+     "path": [
+      "Docs / content",
+      "Prose / copy"
+     ],
+     "score": 0.1929
+    },
+    {
+     "path": [
+      "Agent setup",
+      "Agent / persona"
+     ],
+     "score": 0.1288
+    },
+    {
+     "path": [
+      "Agent setup",
+      "Instruction file"
+     ],
+     "score": 0.0583
+    }
+   ],
+   "model": "jev-1.13.0",
+   "beam": 4,
+   "calls": 5,
+   "input_tokens": 2990,
+   "cost_usd": 0.00012558
+  },
+  "route": {
+   "enforcer": [
+    "Validation",
+    "Regex",
+    "Regex filter"
+   ],
+   "trigger": [
+    "Agent loop",
+    "Response sent"
+   ],
+   "timing": "before",
+   "target": [
+    "Agent output",
+    "Response / message"
+   ],
+   "by": "beam select",
+   "p": 0.59,
+   "separation": 3.933
+  },
+  "mechanism": {
+   "enforcer": "Regex validator",
+   "config": "enforcement/config/91-2.regex.json",
+   "target": "reply",
+   "triggers": [
+    "end-of-turn"
+   ],
+   "why_enforcer_differs": "Implementer choice: a Regex filter rewrites the text it matches. A Stop hook cannot change the reply, so the filter's pattern is run as a validator: it finds the forbidden text and blocks, and the agent rewrites it (the same for file rules, so that every rule acts the same way).",
+   "translated_by": "Claude Code (local), Claude Opus 5.5, effort Extra"
+  },
+  "constraint_en": "Whenever you mention yourself, always use \"代码小灵\" (\"Little Code Sprite\") instead of \"我\" (\"I\") to refer to yourself."
+ },
+ {
+  "item": 3,
+  "constraint": "凡是需要称呼用户的地方，均须严格使用\"开发者大大\"，不得出现以\"你\"相称的情况",
+  "tags": [
+   "Content",
+   "Persona"
+  ],
+  "scored": true,
+  "mapping": {
+   "leaf": "Regex filter",
+   "path": [
+    "Validation",
+    "Regex",
+    "Regex filter"
+   ],
+   "score": 0.7142,
+   "step_probabilities": [
+    0.69,
+    0.96,
+    0.55
+   ],
+   "separation": 1.094,
+   "alternatives": [
+    {
+     "path": [
+      "Validation",
+      "Regex",
+      "Regex validator"
+     ],
+     "score": 0.6528
+    },
+    {
+     "path": [
+      "Analysis",
+      "Text",
+      "Other"
+     ],
+     "score": 0.3921
+    },
+    {
+     "path": [
+      "Analysis",
+      "Text",
+      "remark-lint"
+     ],
+     "score": 0.3327
+    }
+   ],
+   "model": "jev-1.13.0",
+   "beam": 4,
+   "calls": 9,
+   "input_tokens": 4155,
+   "cost_usd": 0.00017451
+  },
+  "mapping_trigger": {
+   "leaf": "Response sent",
+   "path": [
+    "Agent loop",
+    "Response sent"
+   ],
+   "score": 0.7535,
+   "step_probabilities": [
+    0.79,
+    0.95,
+    0.57
+   ],
+   "separation": 1.283,
+   "alternatives": [
+    {
+     "path": [
+      "Agent loop",
+      "Response sent"
+     ],
+     "timing": "before",
+     "timing_p": 0.27,
+     "score": 0.5874
+    },
+    {
+     "path": [
+      "Agent loop",
+      "Response sent"
+     ],
+     "timing": "after",
+     "timing_p": 0.16,
+     "score": 0.4934
+    },
+    {
+     "path": [
+      "Agent loop",
+      "Prompt received"
+     ],
+     "timing": "at",
+     "timing_p": 1.0,
+     "score": 0.3162
+    }
+   ],
+   "attributes": {
+    "state_p": 0.24,
+    "timing": "at",
+    "timing_p": 0.57
+   },
+   "model": "jev-1.13.0",
+   "beam": 4,
+   "calls": 5,
+   "input_tokens": 2773,
+   "cost_usd": 0.00011647
+  },
+  "mapping_target": {
+   "leaf": "Response / message",
+   "path": [
+    "Agent output",
+    "Response / message"
+   ],
+   "score": 0.9387,
+   "step_probabilities": [
+    0.89,
+    0.99
+   ],
+   "separation": 2.998,
+   "alternatives": [
+    {
+     "path": [
+      "Docs / content",
+      "Prose / copy"
+     ],
+     "score": 0.313
+    },
+    {
+     "path": [
+      "Agent output",
+      "Other"
+     ],
+     "score": 0.0943
+    },
+    {
+     "path": [
+      "Agent setup",
+      "Agent / persona"
+     ],
+     "score": 0.0906
+    }
+   ],
+   "model": "jev-1.13.0",
+   "beam": 4,
+   "calls": 5,
+   "input_tokens": 3025,
+   "cost_usd": 0.00012705
+  },
+  "route": {
+   "enforcer": [
+    "Validation",
+    "Regex",
+    "Regex validator"
+   ],
+   "trigger": [
+    "Agent loop",
+    "Response sent"
+   ],
+   "timing": "before",
+   "target": [
+    "Agent output",
+    "Response / message"
+   ],
+   "by": "beam select",
+   "p": 0.44,
+   "separation": 1.073
+  },
+  "mechanism": {
+   "enforcer": "Regex validator",
+   "config": "enforcement/config/91-3.regex.json",
+   "target": "reply",
+   "triggers": [
+    "end-of-turn"
+   ],
+   "translated_by": "Claude Code (local), Claude Opus 5.5, effort Extra"
+  },
+  "constraint_en": "Wherever you address the user, you must strictly use \"开发者大大\" (\"Esteemed Developer\"); never address the user as \"你\" (\"you\")."
+ },
+ {
+  "item": 4,
+  "constraint": "请确保在所有情况下都使用中文来生成用户回复",
+  "tags": [
+   "Language",
+   "Response Language"
+  ],
+  "scored": false,
+  "mapping": {
+   "leaf": "Regex validator",
+   "path": [
+    "Validation",
+    "Regex",
+    "Regex validator"
+   ],
+   "score": 0.71,
+   "step_probabilities": [
+    0.71,
+    0.84,
+    0.6
+   ],
+   "separation": 1.186,
+   "alternatives": [
+    {
+     "path": [
+      "Validation",
+      "Regex",
+      "Regex filter"
+     ],
+     "score": 0.5988
+    },
+    {
+     "path": [
+      "Analysis",
+      "Languages",
+      "Python / shell",
+      "Other"
+     ],
+     "score": 0.346
+    },
+    {
+     "path": [
+      "Validation",
+      "Schemas",
+      "JSON Schema"
+     ],
+     "score": 0.3152
+    }
+   ],
+   "model": "jev-1.13.0",
+   "beam": 4,
+   "calls": 13,
+   "input_tokens": 5733,
+   "cost_usd": 0.00024079
+  },
+  "mapping_trigger": {
+   "leaf": "Response sent",
+   "path": [
+    "Agent loop",
+    "Response sent"
+   ],
+   "score": 0.6306,
+   "step_probabilities": [
+    0.53,
+    0.91,
+    0.52
+   ],
+   "separation": 1.141,
+   "alternatives": [
+    {
+     "path": [
+      "Agent loop",
+      "Response sent"
+     ],
+     "timing": "before",
+     "timing_p": 0.35,
+     "score": 0.5527
+    },
+    {
+     "path": [
+      "Always"
+     ],
+     "timing": "always",
+     "score": 0.46
+    },
+    {
+     "path": [
+      "Agent loop",
+      "Response sent"
+     ],
+     "timing": "after",
+     "timing_p": 0.13,
+     "score": 0.3973
+    }
+   ],
+   "attributes": {
+    "state_p": 0.21,
+    "timing": "at",
+    "timing_p": 0.52
+   },
+   "model": "jev-1.13.0",
+   "beam": 4,
+   "calls": 5,
+   "input_tokens": 2688,
+   "cost_usd": 0.0001129
+  },
+  "mapping_target": {
+   "leaf": "Response / message",
+   "path": [
+    "Agent output",
+    "Response / message"
+   ],
+   "score": 1.0,
+   "step_probabilities": [
+    1.0,
+    1.0
+   ],
+   "separation": 31622.777,
+   "alternatives": [
+    {
+     "path": [
+      "Agent output",
+      "Plan"
+     ],
+     "score": 0.0
+    },
+    {
+     "path": [
+      "Agent output",
+      "Report / summary"
+     ],
+     "score": 0.0
+    },
+    {
+     "path": [
+      "Agent output",
+      "Findings"
+     ],
+     "score": 0.0
+    }
+   ],
+   "model": "jev-1.13.0",
+   "beam": 4,
+   "calls": 5,
+   "input_tokens": 2842,
+   "cost_usd": 0.00011936
+  },
+  "route": {
+   "enforcer": [
+    "Validation",
+    "Regex",
+    "Regex validator"
+   ],
+   "trigger": [
+    "Always"
+   ],
+   "timing": "always",
+   "target": [
+    "Agent output",
+    "Response / message"
+   ],
+   "by": "beam select",
+   "p": 0.4,
+   "separation": 1.333
+  },
+  "mechanism": {
+   "enforcer": "Regex validator",
+   "config": "enforcement/config/91-4.regex.json",
+   "target": "reply",
+   "triggers": [
+    "end-of-turn"
+   ],
+   "translated_by": "Claude Code (local), Claude Opus 5.5, effort Extra"
+  },
+  "constraint_en": "Make sure you use Chinese to generate replies to the user in all situations."
+ },
+ {
+  "item": 5,
+  "constraint": "无论生成哪个代码文件，其起始第一行都必须严格添加 -*- coding: utf-8 -*- 以声明编码",
+  "tags": [
+   "Content",
+   "Format"
+  ],
+  "scored": true,
+  "mapping": {
+   "leaf": "Regex validator",
+   "path": [
+    "Validation",
+    "Regex",
+    "Regex validator"
+   ],
+   "score": 0.7273,
+   "step_probabilities": [
+    0.47,
+    0.88,
+    0.93
+   ],
+   "separation": 1.285,
+   "alternatives": [
+    {
+     "path": [
+      "Gates",
+      "Git hooks",
+      "pre-commit"
+     ],
+     "score": 0.5659
+    },
+    {
+     "path": [
+      "Gates",
+      "Tools",
+      "Tool policy"
+     ],
+     "score": 0.3252
+    },
+    {
+     "path": [
+      "Commands",
+      "Text tools",
+      "grep"
+     ],
+     "score": 0.3176
+    }
+   ],
+   "model": "jev-1.13.0",
+   "beam": 4,
+   "calls": 9,
+   "input_tokens": 4157,
+   "cost_usd": 0.00017459
+  },
+  "mapping_trigger": {
+   "leaf": "File write / edit",
+   "path": [
+    "Agent action",
+    "File write / edit"
+   ],
+   "score": 0.7894,
+   "step_probabilities": [
+    0.82,
+    1.0,
+    0.6
+   ],
+   "separation": 1.233,
+   "alternatives": [
+    {
+     "path": [
+      "Agent action",
+      "File write / edit"
+     ],
+     "timing": "after",
+     "timing_p": 0.32,
+     "score": 0.6402
+    },
+    {
+     "path": [
+      "Agent action",
+      "File write / edit"
+     ],
+     "timing": "before",
+     "timing_p": 0.08,
+     "score": 0.4033
+    },
+    {
+     "path": [
+      "Agent loop",
+      "Response sent"
+     ],
+     "timing": "at",
+     "timing_p": 0.37,
+     "score": 0.2053
+    }
+   ],
+   "attributes": {
+    "state_p": 0.19,
+    "timing": "at",
+    "timing_p": 0.6
+   },
+   "model": "jev-1.13.0",
+   "beam": 4,
+   "calls": 6,
+   "input_tokens": 3253,
+   "cost_usd": 0.00013663
+  },
+  "mapping_target": {
+   "leaf": "Source file",
+   "path": [
+    "Source code",
+    "Source file"
+   ],
+   "score": 0.911,
+   "step_probabilities": [
+    0.83,
+    1.0
+   ],
+   "separation": 3.327,
+   "alternatives": [
+    {
+     "path": [
+      "Docs / content",
+      "Code comment"
+     ],
+     "score": 0.2739
+    },
+    {
+     "path": [
+      "Docs / content",
+      "Other"
+     ],
+     "score": 0.1936
+    },
+    {
+     "path": [
+      "Docs / content",
+      "Template"
+     ],
+     "score": 0.1285
+    }
+   ],
+   "model": "jev-1.13.0",
+   "beam": 4,
+   "calls": 5,
+   "input_tokens": 3030,
+   "cost_usd": 0.00012726
+  },
+  "route": {
+   "enforcer": [
+    "Gates",
+    "Git hooks",
+    "pre-commit"
+   ],
+   "trigger": [
+    "Agent action",
+    "File write / edit"
+   ],
+   "timing": "before",
+   "target": [
+    "Source code",
+    "Source file"
+   ],
+   "by": "beam select",
+   "p": 0.44,
+   "separation": 1.63
+  },
+  "mechanism": {
+   "enforcer": "Regex validator",
+   "config": "enforcement/config/91-5.regex.json",
+   "target": "code-file",
+   "triggers": [
+    "before-write",
+    "after-edit",
+    "end-of-turn"
+   ],
+   "translated_by": "Claude Code (local), Claude Opus 5.5, effort Extra"
+  },
+  "constraint_en": "Whatever code file you generate, its very first line must be the encoding declaration -*- coding: utf-8 -*-."
+ },
+ {
+  "item": 6,
+  "constraint": "你所生成的任何一个代码文件，其开头处都需另起一行进行清晰的注释声明：“AI-Assisted: Initial draft generated by Claude Code; reviewed and modified by author.”",
+  "tags": [
+   "Content",
+   "Format"
+  ],
+  "scored": true,
+  "mapping": {
+   "leaf": "Regex validator",
+   "path": [
+    "Validation",
+    "Regex",
+    "Regex validator"
+   ],
+   "score": 0.7233,
+   "step_probabilities": [
+    0.5,
+    0.87,
+    0.87
+   ],
+   "separation": 1.406,
+   "alternatives": [
+    {
+     "path": [
+      "Gates",
+      "Git hooks",
+      "pre-commit"
+     ],
+     "score": 0.5144
+    },
+    {
+     "path": [
+      "Validation",
+      "Regex",
+      "Regex filter"
+     ],
+     "score": 0.363
+    },
+    {
+     "path": [
+      "Gates",
+      "CI / hosting",
+      "CI pipeline"
+     ],
+     "score": 0.3375
+    }
+   ],
+   "model": "jev-1.13.0",
+   "beam": 4,
+   "calls": 9,
+   "input_tokens": 4295,
+   "cost_usd": 0.00018039
+  },
+  "mapping_trigger": {
+   "leaf": "File write / edit",
+   "path": [
+    "Agent action",
+    "File write / edit"
+   ],
+   "score": 0.7747,
+   "step_probabilities": [
+    0.93,
+    1.0,
+    0.5
+   ],
+   "separation": 1.036,
+   "alternatives": [
+    {
+     "path": [
+      "Agent action",
+      "File write / edit"
+     ],
+     "timing": "after",
+     "timing_p": 0.45,
+     "score": 0.748
+    },
+    {
+     "path": [
+      "Agent action",
+      "File write / edit"
+     ],
+     "timing": "before",
+     "timing_p": 0.05,
+     "score": 0.3596
+    },
+    {
+     "path": [
+      "Agent loop",
+      "Response sent"
+     ],
+     "timing": "after",
+     "timing_p": 0.52,
+     "score": 0.1501
+    }
+   ],
+   "attributes": {
+    "state_p": 0.2,
+    "timing": "at",
+    "timing_p": 0.5
+   },
+   "model": "jev-1.13.0",
+   "beam": 4,
+   "calls": 6,
+   "input_tokens": 3343,
+   "cost_usd": 0.00014041
+  },
+  "mapping_target": {
+   "leaf": "Source file",
+   "path": [
+    "Source code",
+    "Source file"
+   ],
+   "score": 0.8,
+   "step_probabilities": [
+    0.64,
+    1.0
+   ],
+   "separation": 1.408,
+   "alternatives": [
+    {
+     "path": [
+      "Docs / content",
+      "Code comment"
+     ],
+     "score": 0.5683
+    },
+    {
+     "path": [
+      "Agent action",
+      "File operation"
+     ],
+     "score": 0.0995
+    },
+    {
+     "path": [
+      "Agent output",
+      "Response / message"
+     ],
+     "score": 0.0854
+    }
+   ],
+   "model": "jev-1.13.0",
+   "beam": 4,
+   "calls": 5,
+   "input_tokens": 3105,
+   "cost_usd": 0.00013041
+  },
+  "route": {
+   "enforcer": [
+    "Validation",
+    "Regex",
+    "Regex validator"
+   ],
+   "trigger": [
+    "Agent action",
+    "File write / edit"
+   ],
+   "timing": "after",
+   "target": [
+    "Source code",
+    "Source file"
+   ],
+   "by": "beam select",
+   "p": 0.3,
+   "separation": 2.0
+  },
+  "mechanism": {
+   "enforcer": "Regex validator",
+   "config": "enforcement/config/91-6.regex.json",
+   "target": "code-file",
+   "triggers": [
+    "before-write",
+    "after-edit",
+    "end-of-turn"
+   ],
+   "translated_by": "Claude Code (local), Claude Opus 5.5, effort Extra"
+  },
+  "constraint_en": "At the top of every code file you generate, add a comment on its own line that clearly states: \"AI-Assisted: Initial draft generated by Claude Code; reviewed and modified by author.\""
+ },
+ {
+  "item": 7,
+  "constraint": "生成的代码文件必须满足：单个函数的规模不得大于 60 行",
+  "tags": [
+   "Quantity",
+   "Range"
+  ],
+  "scored": true,
+  "mapping": {
+   "leaf": "Semgrep",
+   "path": [
+    "Analysis",
+    "Code scans",
+    "Semgrep"
+   ],
+   "score": 0.6361,
+   "step_probabilities": [
+    0.44,
+    0.9,
+    0.65
+   ],
+   "separation": 1.309,
+   "alternatives": [
+    {
+     "path": [
+      "Analysis",
+      "Code scans",
+      "CodeQL"
+     ],
+     "score": 0.4861
+    },
+    {
+     "path": [
+      "Validation",
+      "Project check"
+     ],
+     "score": 0.417
+    },
+    {
+     "path": [
+      "Validation",
+      "Schemas",
+      "JSON Schema"
+     ],
+     "score": 0.3393
+    }
+   ],
+   "model": "jev-1.13.0",
+   "beam": 4,
+   "calls": 9,
+   "input_tokens": 4027,
+   "cost_usd": 0.00016913
+  },
+  "mapping_trigger": {
+   "leaf": "File write / edit",
+   "path": [
+    "Agent action",
+    "File write / edit"
+   ],
+   "score": 0.7013,
+   "step_probabilities": [
+    0.69,
+    0.98,
+    0.51
+   ],
+   "separation": 1.05,
+   "alternatives": [
+    {
+     "path": [
+      "Agent action",
+      "File write / edit"
+     ],
+     "timing": "after",
+     "timing_p": 0.44,
+     "score": 0.6676
+    },
+    {
+     "path": [
+      "Agent action",
+      "File write / edit"
+     ],
+     "timing": "before",
+     "timing_p": 0.05,
+     "score": 0.3234
+    },
+    {
+     "path": [
+      "Git / delivery",
+      "Push / merge"
+     ],
+     "timing": "before",
+     "timing_p": 1.0,
+     "score": 0.3227
+    }
+   ],
+   "attributes": {
+    "state_p": 0.36,
+    "timing": "at",
+    "timing_p": 0.51
+   },
+   "model": "jev-1.13.0",
+   "beam": 4,
+   "calls": 8,
+   "input_tokens": 4129,
+   "cost_usd": 0.00017342
+  },
+  "mapping_target": {
+   "leaf": "Function / method",
+   "path": [
+    "Source code",
+    "Function / method"
+   ],
+   "score": 0.9695,
+   "step_probabilities": [
+    1.0,
+    0.94
+   ],
+   "separation": 3.958,
+   "alternatives": [
+    {
+     "path": [
+      "Source code",
+      "Source file"
+     ],
+     "score": 0.2449
+    },
+    {
+     "path": [
+      "Source code",
+      "Class / type"
+     ],
+     "score": 0.0
+    },
+    {
+     "path": [
+      "Source code",
+      "Component"
+     ],
+     "score": 0.0
+    }
+   ],
+   "model": "jev-1.13.0",
+   "beam": 4,
+   "calls": 5,
+   "input_tokens": 2892,
+   "cost_usd": 0.00012146
+  },
+  "route": {
+   "enforcer": [
+    "Analysis",
+    "Code scans",
+    "Semgrep"
+   ],
+   "trigger": [
+    "Agent action",
+    "File write / edit"
+   ],
+   "timing": "before",
+   "target": [
+    "Source code",
+    "Function / method"
+   ],
+   "by": "beam select",
+   "p": 0.54,
+   "separation": 4.154
+  },
+  "mechanism": {
+   "enforcer": "Semgrep",
+   "config": "enforcement/config/91-7.semgrep.yml",
+   "target": "code-file",
+   "triggers": [
+    "before-write",
+    "after-edit",
+    "end-of-turn"
+   ],
+   "translated_by": "Claude Code (local), Claude Opus 5.5, effort Extra"
+  },
+  "constraint_en": "The generated code files must meet this condition: no single function may be longer than 60 lines."
+ },
+ {
+  "item": 8,
+  "constraint": "你的所有回复都必须在结尾处加上\"哒～\"语气词",
+  "tags": [
+   "Content",
+   "Persona"
+  ],
+  "scored": true,
+  "mapping": {
+   "leaf": "Regex validator",
+   "path": [
+    "Validation",
+    "Regex",
+    "Regex validator"
+   ],
+   "score": 0.8561,
+   "step_probabilities": [
+    0.76,
+    0.96,
+    0.86
+   ],
+   "separation": 1.928,
+   "alternatives": [
+    {
+     "path": [
+      "Validation",
+      "Regex",
+      "Regex filter"
+     ],
+     "score": 0.444
+    },
+    {
+     "path": [
+      "Tests",
+      "Synthesized CI tests",
+      "ASSERT"
+     ],
+     "score": 0.272
+    },
+    {
+     "path": [
+      "Validation",
+      "Regex",
+      "Other"
+     ],
+     "score": 0.2444
+    }
+   ],
+   "model": "jev-1.13.0",
+   "beam": 4,
+   "calls": 9,
+   "input_tokens": 4009,
+   "cost_usd": 0.00016838
+  },
+  "mapping_trigger": {
+   "leaf": "Response sent",
+   "path": [
+    "Agent loop",
+    "Response sent"
+   ],
+   "score": 0.7251,
+   "step_probabilities": [
+    0.82,
+    0.93,
+    0.5
+   ],
+   "separation": 1.244,
+   "alternatives": [
+    {
+     "path": [
+      "Agent loop",
+      "Response sent"
+     ],
+     "timing": "before",
+     "timing_p": 0.26,
+     "score": 0.5831
+    },
+    {
+     "path": [
+      "Agent loop",
+      "Response sent"
+     ],
+     "timing": "after",
+     "timing_p": 0.24,
+     "score": 0.5678
+    },
+    {
+     "path": [
+      "Agent loop",
+      "Prompt received"
+     ],
+     "timing": "at",
+     "timing_p": 1.0,
+     "score": 0.3201
+    }
+   ],
+   "attributes": {
+    "state_p": 0.16,
+    "timing": "at",
+    "timing_p": 0.5
+   },
+   "model": "jev-1.13.0",
+   "beam": 4,
+   "calls": 5,
+   "input_tokens": 2693,
+   "cost_usd": 0.00011311
+  },
+  "mapping_target": {
+   "leaf": "Response / message",
+   "path": [
+    "Agent output",
+    "Response / message"
+   ],
+   "score": 0.9849,
+   "step_probabilities": [
+    0.97,
+    1.0
+   ],
+   "separation": 7.3,
+   "alternatives": [
+    {
+     "path": [
+      "Docs / content",
+      "Prose / copy"
+     ],
+     "score": 0.1349
+    },
+    {
+     "path": [
+      "Agent setup",
+      "Agent / persona"
+     ],
+     "score": 0.09
+    },
+    {
+     "path": [
+      "Agent setup",
+      "Instruction file"
+     ],
+     "score": 0.0412
+    }
+   ],
+   "model": "jev-1.13.0",
+   "beam": 4,
+   "calls": 5,
+   "input_tokens": 2945,
+   "cost_usd": 0.00012369
+  },
+  "route": {
+   "enforcer": [
+    "Validation",
+    "Regex",
+    "Regex validator"
+   ],
+   "trigger": [
+    "Agent loop",
+    "Response sent"
+   ],
+   "timing": "at",
+   "target": [
+    "Agent output",
+    "Response / message"
+   ],
+   "by": "beam select",
+   "p": 0.58,
+   "separation": 2.522
+  },
+  "mechanism": {
+   "enforcer": "Regex validator",
+   "config": "enforcement/config/91-8.regex.json",
+   "target": "reply",
+   "triggers": [
+    "end-of-turn"
+   ],
+   "translated_by": "Claude Code (local), Claude Opus 5.5, effort Extra"
+  },
+  "constraint_en": "Every reply must end with the particle \"哒～\" (\"dā~\")."
+ }
+]

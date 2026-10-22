@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 112993,
+  "duration_api_ms": 109885,
+  "ttft_ms": 2729,
+  "ttft_stream_ms": 2728,
+  "time_to_request_ms": 100,
+  "num_turns": 12,
+  "result": "代码小灵已为开发者大大实现了游戏日志面板、重新开始按钮、胜利判定弹窗，并创建了Python测试脚本覆盖三个核心功能，所有缩进为4个空格、相对路径引用，所有测试均已通过哒～",
+  "stop_reason": "end_turn",
+  "session_id": "f01beb59-3463-41ee-b07b-0372119f2626",
+  "total_cost_usd": 0.39204789999999995,
+  "usage": {
+   "input_tokens": 69,
+   "cache_creation_input_tokens": 114776,
+   "cache_read_input_tokens": 1556639,
+   "output_tokens": 18569,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 114776
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 69,
+    "outputTokens": 18569,
+    "cacheReadInputTokens": 1556639,
+    "cacheCreationInputTokens": 114776,
+    "webSearchRequests": 0,
+    "costUSD": 0.39204789999999995,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "6fde8cf8-38ff-490a-ac24-28bb912c5fa9"
+ },
+ "stderr": ""
+}

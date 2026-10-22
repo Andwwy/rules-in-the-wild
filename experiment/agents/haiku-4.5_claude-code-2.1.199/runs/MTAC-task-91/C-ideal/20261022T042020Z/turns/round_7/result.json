@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 67625,
+  "duration_api_ms": 58983,
+  "ttft_ms": 5505,
+  "ttft_stream_ms": 5501,
+  "time_to_request_ms": 102,
+  "num_turns": 5,
+  "result": "喵～\n\n代码小灵已为开发者大大实现了终点进场机制：飞机进入安全通道后需\"刚好\"到达终点才算完成，掷出步数过多时自动向回退，完成任务的飞机隐藏消失，同时改为4空格缩进并创建fly-chess-progress.txt文件记录进度。哒～",
+  "stop_reason": "end_turn",
+  "session_id": "a615e270-a3ac-4bff-908b-9f1ab0e3ef5c",
+  "total_cost_usd": 0.12592825000000002,
+  "usage": {
+   "input_tokens": 30,
+   "cache_creation_input_tokens": 19289,
+   "cache_read_input_tokens": 506370,
+   "output_tokens": 10230,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 19289
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 30,
+    "outputTokens": 10230,
+    "cacheReadInputTokens": 506370,
+    "cacheCreationInputTokens": 19289,
+    "webSearchRequests": 0,
+    "costUSD": 0.12592825000000002,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "67581099-244b-4be8-9a4e-e5ce7fd1c21e"
+ },
+ "stderr": ""
+}

@@ -1,0 +1,22 @@
+// The actions that the policy talks about: who takes them, on what, with which input and output.
+namespace Agent {
+  type RunTestsInput = { command: String };
+  type RunTestsOutput = { passed: Bool };
+  type PushInput = { command: String };
+  type PushOutput = { };
+
+  entity User;
+  entity Workspace;
+
+  action "RunTests" appliesTo {
+    principal: [User],
+    resource: [Workspace],
+    context: { input: RunTestsInput, output?: RunTestsOutput }
+  };
+
+  action "Push" appliesTo {
+    principal: [User],
+    resource: [Workspace],
+    context: { input: PushInput, output?: PushOutput }
+  };
+}

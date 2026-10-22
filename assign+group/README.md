@@ -28,12 +28,33 @@ prompt, an input template, an output schema, and whatever plain code checks the 
 ```bash
 cd assign+group
 pip install -e .                 # add ".[db]" to read rules from the online DB, ".[test]" for the tests
-cp .env.example .env             # then put your PERPLEXITY_API_KEY in it
+cp ../.env.example .env          # or fill in the slots in DAPlab/.env: every .env up the tree is read, nearest first
+python -m rule_pipeline.llm --check perplexity                                       # one tiny request: is the key good?
 python -m rule_pipeline.run examples/rules.sample.json --out runs/first --dry-run    # counts the requests, calls nothing
 python -m rule_pipeline.run examples/rules.sample.json --out runs/first
 ```
 Run the same command again and it **resumes**: every finished request is in the run folder, only what is missing or failed is
 called. A rejected key or an exhausted quota stops the run at once with the provider's message.
+
+## Providers
+One switch, `--provider`, and the same model name for all three:
+
+| `--provider` | reached through | key | `openai/gpt-5.6-terra` is sent as | default tier |
+|---|---|---|---|---|
+| `perplexity` (`pplx`), default | Agent API `/v1/agent`, called directly | `PERPLEXITY_API_KEY` | `openai/gpt-5.6-terra` | flex |
+| `openai` | LiteLLM → Chat Completions | `OPENAI_API_KEY` | `gpt-5.6-terra` | flex |
+| `bedrock` (`aws`) | LiteLLM → Bedrock's OpenAI-compatible (Mantle) endpoint; other vendors → Converse | `AWS_BEARER_TOKEN_BEDROCK`, else the AWS credential chain (`~/.aws`), region `AWS_REGION_NAME` | `openai.gpt-5.6-terra` | none (Mantle has no flex) |
+
+* Every request asks for the stage's JSON schema in strict mode (each object closed, every property required); without it a vote
+  reply once came back in the wrong shape and crashed the vote.
+* A setting a provider cannot take stops the run instead of being dropped silently: `--provider bedrock --tier flex` fails at
+  once. (LiteLLM's own `bedrock/openai.*` route drops the schema and the effort without a word, which is why it is not used.)
+* A 429 waits for the provider's `Retry-After` (else 10, 20, 40 … s, up to 6 times); `insufficient_quota` stops the run.
+* `python -m rule_pipeline.llm --check perplexity openai bedrock` sends one tiny request to each and prints the answer or the
+  error.
+* **Spend:** every answered request goes into the project's ledger (`rules in the wild/spend.jsonl`, shared with the MTAC
+  experiment's gateway), and no request starts once `RITW_BUDGET_USD` (default $50) is spent. `python -m rule_pipeline.spend`
+  prints the totals by source and by day.
 
 ## Input
 A JSON list of rules in our draw schema — see [`examples/rules.sample.json`](examples/rules.sample.json).
@@ -73,8 +94,8 @@ Defaults are the lab's current settings. Command line beats environment beats de
 |---|---|---|---|
 | concurrent requests | 20 | `--workers`, `--assign-workers`, `--vote-workers` | `LLM_WORKERS` |
 | rules per request | 1 | `--batch-size`, `--assign-batch-size`, `--vote-batch-size` | `LLM_BATCH_SIZE` |
-| provider | `perplexity` | `--provider` | `LLM_PROVIDER` |
-| model, tier | `openai/gpt-5.6-terra`, `flex` | `--model`, `--tier` | `LLM_MODEL`, `LLM_TIER` |
+| provider | `perplexity` | `--provider perplexity\|openai\|bedrock` | `LLM_PROVIDER` |
+| model, tier | `openai/gpt-5.6-terra`, the provider's default tier | `--model`, `--tier` | `LLM_MODEL`, `LLM_TIER` |
 | reasoning effort | assign `high`, vote `medium`, classes `high` | `--assign-effort`, `--vote-effort`, `--class-effort` | |
 | replicates | 3 | `--replicates` | |
 | stages | `assign,vote,subcategory` | `--stages vote`, `--stages assign,vote,subcategory,class`, … | |
@@ -98,18 +119,21 @@ data expect more values to stay verbatim until you add rules for them. `--class-
 shorter display names (the model's name is kept as `class_long`).
 
 ## Adding a provider
-A provider is one entry in `PROVIDERS` in [`llm.py`](rule_pipeline/llm.py): the URL, the name of the key variable, a function that
-builds the request body and one that reads the reply into `(text, usage)`. Nothing else in the code knows which provider is used.
+A provider is one entry in `ROUTES` in [`llm.py`](rule_pipeline/llm.py): its key variables, how it spells a `vendor/model` name,
+its default tier, and the function that sends a request (`_send_litellm` for anything LiteLLM serves well, or a direct HTTP call
+like `_send_perplexity`). Nothing else in the code knows which provider is used. Add a request-capture test to
+`tests/test_providers.py`.
 
 ## Code map
 ```
-rule_pipeline/llm.py          call() + run_many(): providers, retries, threads, batching, checkpoint/resume
+rule_pipeline/llm.py          call() + run_many(): the provider routes, retries, threads, batching, checkpoint/resume
 rule_pipeline/rules.py        load rules from JSON or the DB, validate them
 rule_pipeline/assign.py       stage 1: input template + schema
 rule_pipeline/vote.py         stage 2: routing, the rails on the judge's answer, spec pick
 rule_pipeline/categorize.py   stage 3: the regex aliases (deterministic); the optional class call with its partition check + repair
+rule_pipeline/spend.py        the project's spend ledger and budget (standard library only)
 rule_pipeline/run.py          the command line; writes the run folder
-tests/                        offline, a fake model stands in for llm.call
+tests/                        offline: a fake model stands in for llm.call; test_providers.py records what each route sends
 ```
 ```bash
 python -m pytest              # 19 tests, no network, < 1 s

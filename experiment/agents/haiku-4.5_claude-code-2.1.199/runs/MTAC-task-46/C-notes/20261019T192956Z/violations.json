@@ -1,0 +1,2006 @@
+{
+ "0|R2": [],
+ "0|R3": [
+  {
+   "file": "package.json",
+   "line": 2,
+   "segs": [
+    [
+     "  \"",
+     1
+    ],
+    [
+     "name\": \"travel-map-app\",",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "package.json",
+   "line": 3,
+   "segs": [
+    [
+     "  \"",
+     1
+    ],
+    [
+     "version\": \"1.0.0\",",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "package.json",
+   "line": 4,
+   "segs": [
+    [
+     "  \"",
+     1
+    ],
+    [
+     "description\": \"集成路线规划和天气数据的交互式旅行地图应用\",",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "package.json",
+   "line": 5,
+   "segs": [
+    [
+     "  \"",
+     1
+    ],
+    [
+     "main\": \"index.js\",",
+     0
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "0|R8": [
+  {
+   "file": "package.json",
+   "line": null,
+   "segs": [
+    [
+     "package.json",
+     1
+    ]
+   ],
+   "note": "12 characters"
+  }
+ ],
+ "1|R3": [
+  {
+   "file": "package.json",
+   "line": 2,
+   "segs": [
+    [
+     "  \"",
+     1
+    ],
+    [
+     "name\": \"travel-map-app\",",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "package.json",
+   "line": 3,
+   "segs": [
+    [
+     "  \"",
+     1
+    ],
+    [
+     "version\": \"1.0.0\",",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "package.json",
+   "line": 4,
+   "segs": [
+    [
+     "  \"",
+     1
+    ],
+    [
+     "description\": \"集成路线规划和天气数据的交互式旅行地图应用\",",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "package.json",
+   "line": 5,
+   "segs": [
+    [
+     "  \"",
+     1
+    ],
+    [
+     "main\": \"index.js\",",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "packages.json",
+   "line": 2,
+   "segs": [
+    [
+     "  \"",
+     1
+    ],
+    [
+     "name\": \"travel-map-app\",",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "packages.json",
+   "line": 3,
+   "segs": [
+    [
+     "  \"",
+     1
+    ],
+    [
+     "version\": \"1.0.0\",",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "packages.json",
+   "line": 4,
+   "segs": [
+    [
+     "  \"",
+     1
+    ],
+    [
+     "description\": \"集成路线规划和天气数据的交互式旅行地图应用\",",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "packages.json",
+   "line": 5,
+   "segs": [
+    [
+     "  \"",
+     1
+    ],
+    [
+     "scripts\": {",
+     0
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "1|R5": [
+  {
+   "file": "webpack.config.js",
+   "line": 1,
+   "segs": [
+    [
+     "const path",
+     0
+    ],
+    [
+     " = ",
+     1
+    ],
+    [
+     "require('path');",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "webpack.config.js",
+   "line": 2,
+   "segs": [
+    [
+     "const HtmlWebpackPlugin",
+     0
+    ],
+    [
+     " = ",
+     1
+    ],
+    [
+     "require('html-webpack-plugin');",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "webpack.config.js",
+   "line": 4,
+   "segs": [
+    [
+     "module.exports",
+     0
+    ],
+    [
+     " = ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "1|R8": [
+  {
+   "file": "package.json",
+   "line": null,
+   "segs": [
+    [
+     "package.json",
+     1
+    ]
+   ],
+   "note": "12 characters"
+  }
+ ],
+ "2|R3": [
+  {
+   "file": "package.json",
+   "line": 2,
+   "segs": [
+    [
+     "  \"",
+     1
+    ],
+    [
+     "name\": \"travel-map-app\",",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "package.json",
+   "line": 3,
+   "segs": [
+    [
+     "  \"",
+     1
+    ],
+    [
+     "version\": \"1.0.0\",",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "package.json",
+   "line": 4,
+   "segs": [
+    [
+     "  \"",
+     1
+    ],
+    [
+     "description\": \"集成路线规划和天气数据的交互式旅行地图应用\",",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "package.json",
+   "line": 5,
+   "segs": [
+    [
+     "  \"",
+     1
+    ],
+    [
+     "main\": \"index.js\",",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "packages.json",
+   "line": 2,
+   "segs": [
+    [
+     "  \"",
+     1
+    ],
+    [
+     "name\": \"travel-map-app\",",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "packages.json",
+   "line": 3,
+   "segs": [
+    [
+     "  \"",
+     1
+    ],
+    [
+     "version\": \"1.0.0\",",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "packages.json",
+   "line": 4,
+   "segs": [
+    [
+     "  \"",
+     1
+    ],
+    [
+     "description\": \"集成路线规划和天气数据的交互式旅行地图应用\",",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "packages.json",
+   "line": 5,
+   "segs": [
+    [
+     "  \"",
+     1
+    ],
+    [
+     "scripts\": {",
+     0
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "2|R5": [
+  {
+   "file": "public/indx.html",
+   "line": 2,
+   "segs": [
+    [
+     "<html lang",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"zh-CN\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "public/indx.html",
+   "line": 4,
+   "segs": [
+    [
+     "    <meta charset",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"UTF-8\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "public/indx.html",
+   "line": 5,
+   "segs": [
+    [
+     "    <meta name=\"viewport\" content=\"width=device-width, initial-scale",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "1.0\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "public/indx.html",
+   "line": 7,
+   "segs": [
+    [
+     "    <link rel=",
+     0
+    ],
+    [
+     "\"stylesheet\" href=",
+     1
+    ],
+    [
+     "\"https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css\">",
+     0
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "2|R8": [
+  {
+   "file": "package.json",
+   "line": null,
+   "segs": [
+    [
+     "package.json",
+     1
+    ]
+   ],
+   "note": "12 characters"
+  }
+ ],
+ "3|R3": [
+  {
+   "file": "package.json",
+   "line": 2,
+   "segs": [
+    [
+     "  \"",
+     1
+    ],
+    [
+     "name\": \"travel-map-app\",",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "package.json",
+   "line": 3,
+   "segs": [
+    [
+     "  \"",
+     1
+    ],
+    [
+     "version\": \"1.0.0\",",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "package.json",
+   "line": 4,
+   "segs": [
+    [
+     "  \"",
+     1
+    ],
+    [
+     "description\": \"集成路线规划和天气数据的交互式旅行地图应用\",",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "package.json",
+   "line": 5,
+   "segs": [
+    [
+     "  \"",
+     1
+    ],
+    [
+     "main\": \"index.js\",",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "packages.json",
+   "line": 2,
+   "segs": [
+    [
+     "  \"",
+     1
+    ],
+    [
+     "name\": \"travel-map-app\",",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "packages.json",
+   "line": 3,
+   "segs": [
+    [
+     "  \"",
+     1
+    ],
+    [
+     "version\": \"1.0.0\",",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "packages.json",
+   "line": 4,
+   "segs": [
+    [
+     "  \"",
+     1
+    ],
+    [
+     "description\": \"集成路线规划和天气数据的交互式旅行地图应用\",",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "packages.json",
+   "line": 5,
+   "segs": [
+    [
+     "  \"",
+     1
+    ],
+    [
+     "scripts\": {",
+     0
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "3|R5": [],
+ "3|R8": [
+  {
+   "file": "public/index.html",
+   "line": null,
+   "segs": [
+    [
+     "index.html",
+     1
+    ]
+   ],
+   "note": "10 characters"
+  }
+ ],
+ "4|R3": [
+  {
+   "file": "package.json",
+   "line": 2,
+   "segs": [
+    [
+     "  \"",
+     1
+    ],
+    [
+     "name\": \"travel-map-app\",",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "package.json",
+   "line": 3,
+   "segs": [
+    [
+     "  \"",
+     1
+    ],
+    [
+     "version\": \"1.0.0\",",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "package.json",
+   "line": 4,
+   "segs": [
+    [
+     "  \"",
+     1
+    ],
+    [
+     "description\": \"集成路线规划和天气数据的交互式旅行地图应用\",",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "package.json",
+   "line": 5,
+   "segs": [
+    [
+     "  \"",
+     1
+    ],
+    [
+     "scripts\": {",
+     0
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "4|R5": [
+  {
+   "file": "public/index.html",
+   "line": 2,
+   "segs": [
+    [
+     "<html lang",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"zh-CN\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "public/index.html",
+   "line": 4,
+   "segs": [
+    [
+     "    <meta charset",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"UTF-8\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "public/index.html",
+   "line": 5,
+   "segs": [
+    [
+     "    <meta name=\"viewport\" content=\"width=device-width, initial-scale",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "1.0\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "public/index.html",
+   "line": 7,
+   "segs": [
+    [
+     "    <link rel=\"stylesheet\" href",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css\">",
+     0
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "4|R8": [
+  {
+   "file": "public/index.html",
+   "line": null,
+   "segs": [
+    [
+     "index.html",
+     1
+    ]
+   ],
+   "note": "10 characters"
+  },
+  {
+   "file": "src/index.js",
+   "line": null,
+   "segs": [
+    [
+     "index.js",
+     1
+    ]
+   ],
+   "note": "8 characters"
+  }
+ ],
+ "5|R3": [
+  {
+   "file": "package.json",
+   "line": 2,
+   "segs": [
+    [
+     "  \"",
+     1
+    ],
+    [
+     "name\": \"travel-map-app\",",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "package.json",
+   "line": 3,
+   "segs": [
+    [
+     "  \"",
+     1
+    ],
+    [
+     "version\": \"1.0.0\",",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "package.json",
+   "line": 4,
+   "segs": [
+    [
+     "  \"",
+     1
+    ],
+    [
+     "description\": \"集成路线规划和天气数据的交互式旅行地图应用\",",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "package.json",
+   "line": 5,
+   "segs": [
+    [
+     "  \"",
+     1
+    ],
+    [
+     "scripts\": {",
+     0
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "5|R5": [
+  {
+   "file": "public/index.html",
+   "line": 2,
+   "segs": [
+    [
+     "<html lang",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"zh-CN\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "public/index.html",
+   "line": 4,
+   "segs": [
+    [
+     "    <meta charset",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"UTF-8\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "public/index.html",
+   "line": 5,
+   "segs": [
+    [
+     "    <meta name=\"viewport\" content=\"width=device-width, initial-scale",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "1.0\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "public/index.html",
+   "line": 7,
+   "segs": [
+    [
+     "    <link rel=",
+     0
+    ],
+    [
+     "\"stylesheet\" href=",
+     1
+    ],
+    [
+     "\"https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/App.jsx",
+   "line": 40,
+   "segs": [
+    [
+     "        <div className",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"app-container\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/App.jsx",
+   "line": 41,
+   "segs": [
+    [
+     "            <Map ref={mapRef} route",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "{route} />",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/App.jsx",
+   "line": 42,
+   "segs": [
+    [
+     "            <Sidebar onGenerateRoute",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "{GenerateRoute} />",
+     0
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "5|R6": [
+  {
+   "file": "src/App.jsx",
+   "line": 11,
+   "segs": [
+    [
+     "    const GenerateRoute  =  (startName, endName, waypointNames)  =>  ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "5|R8": [
+  {
+   "file": "package.json",
+   "line": null,
+   "segs": [
+    [
+     "package.json",
+     1
+    ]
+   ],
+   "note": "12 characters"
+  },
+  {
+   "file": "public/index.html",
+   "line": null,
+   "segs": [
+    [
+     "index.html",
+     1
+    ]
+   ],
+   "note": "10 characters"
+  },
+  {
+   "file": "src/index.js",
+   "line": null,
+   "segs": [
+    [
+     "index.js",
+     1
+    ]
+   ],
+   "note": "8 characters"
+  }
+ ],
+ "6|R3": [
+  {
+   "file": "package.json",
+   "line": 2,
+   "segs": [
+    [
+     "  \"",
+     1
+    ],
+    [
+     "name\": \"travel-map-app\",",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "package.json",
+   "line": 3,
+   "segs": [
+    [
+     "  \"",
+     1
+    ],
+    [
+     "version\": \"1.0.0\",",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "package.json",
+   "line": 4,
+   "segs": [
+    [
+     "  \"",
+     1
+    ],
+    [
+     "description\": \"集成路线规划和天气数据的交互式旅行地图应用\",",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "package.json",
+   "line": 5,
+   "segs": [
+    [
+     "  \"",
+     1
+    ],
+    [
+     "scripts\": {",
+     0
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "6|R5": [
+  {
+   "file": "public/index.html",
+   "line": 2,
+   "segs": [
+    [
+     "<html lang",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"zh-CN\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "public/index.html",
+   "line": 4,
+   "segs": [
+    [
+     "    <meta charset",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"UTF-8\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "public/index.html",
+   "line": 5,
+   "segs": [
+    [
+     "    <meta name=\"viewport\" content=\"width=device-width, initial-scale",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "1.0\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "public/index.html",
+   "line": 7,
+   "segs": [
+    [
+     "    <link rel=",
+     0
+    ],
+    [
+     "\"stylesheet\" href=",
+     1
+    ],
+    [
+     "\"https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/App.jsx",
+   "line": 76,
+   "segs": [
+    [
+     "        <div className",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"app-container\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/App.jsx",
+   "line": 77,
+   "segs": [
+    [
+     "            <Mapview ref={mapRef} route={route} slider={slider} calWeather",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "{Calweather} />",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/App.jsx",
+   "line": 78,
+   "segs": [
+    [
+     "            <Sidebar onRoute={Routegen} slider={slider} onSlider={Handleslide} route={route} calWeather",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "{Calweather} />",
+     0
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "6|R8": [
+  {
+   "file": "package.json",
+   "line": null,
+   "segs": [
+    [
+     "package.json",
+     1
+    ]
+   ],
+   "note": "12 characters"
+  },
+  {
+   "file": "public/index.html",
+   "line": null,
+   "segs": [
+    [
+     "index.html",
+     1
+    ]
+   ],
+   "note": "10 characters"
+  },
+  {
+   "file": "src/index.js",
+   "line": null,
+   "segs": [
+    [
+     "index.js",
+     1
+    ]
+   ],
+   "note": "8 characters"
+  }
+ ],
+ "7|R5": [],
+ "7|R6": [
+  {
+   "file": "src/Mapview.jsx",
+   "line": 26,
+   "segs": [
+    [
+     "    const Poi_addTile  =  (poi_mapInst, poi_style)  =>  ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/Mapview.jsx",
+   "line": 42,
+   "segs": [
+    [
+     "    const Poi_showMarkers  =  ()  =>  ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/Mapview.jsx",
+   "line": 83,
+   "segs": [
+    [
+     "    const Poi_changeStyle  =  (poi_val)  =>  ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "7|R8": [
+  {
+   "file": "public/index.html",
+   "line": null,
+   "segs": [
+    [
+     "index.html",
+     1
+    ]
+   ],
+   "note": "10 characters"
+  },
+  {
+   "file": "src/index.js",
+   "line": null,
+   "segs": [
+    [
+     "index.js",
+     1
+    ]
+   ],
+   "note": "8 characters"
+  }
+ ],
+ "8|R3": [
+  {
+   "file": "package.json",
+   "line": 2,
+   "segs": [
+    [
+     "  \"",
+     1
+    ],
+    [
+     "name\": \"travel-map-app\",",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "package.json",
+   "line": 3,
+   "segs": [
+    [
+     "  \"",
+     1
+    ],
+    [
+     "version\": \"1.0.0\",",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "package.json",
+   "line": 4,
+   "segs": [
+    [
+     "  \"",
+     1
+    ],
+    [
+     "description\": \"集成路线规划和天气数据的交互式旅行地图应用\",",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "package.json",
+   "line": 5,
+   "segs": [
+    [
+     "  \"",
+     1
+    ],
+    [
+     "scripts\": {",
+     0
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "8|R5": [
+  {
+   "file": "public/index.html",
+   "line": 2,
+   "segs": [
+    [
+     "<html lang",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"zh-CN\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "public/index.html",
+   "line": 4,
+   "segs": [
+    [
+     "    <meta charset",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"UTF-8\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "public/index.html",
+   "line": 5,
+   "segs": [
+    [
+     "    <meta name=\"viewport\" content=\"width=device-width, initial-scale",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "1.0\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "public/index.html",
+   "line": 7,
+   "segs": [
+    [
+     "    <link rel=\"stylesheet\" href",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/App.jsx",
+   "line": 76,
+   "segs": [
+    [
+     "        <div className",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"app-container\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/App.jsx",
+   "line": 77,
+   "segs": [
+    [
+     "            <Mapview ref={mapRef} route={route} slider={slider} calWeather",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "{Calweather} />",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/App.jsx",
+   "line": 78,
+   "segs": [
+    [
+     "            <Sidebar onRoute={Routegen} slider={slider} onSlider={Handleslide} route={route} calWeather",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "{Calweather} />",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/Mapview.jsx",
+   "line": 127,
+   "segs": [
+    [
+     "        <div className",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"map-section\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/Mapview.jsx",
+   "line": 128,
+   "segs": [
+    [
+     "            <div id=\"map\" style",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "{{ width: '100%', height: '100%' }}></div>",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/Mapview.jsx",
+   "line": 129,
+   "segs": [
+    [
+     "            <div className",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"poi-control-panel\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/Mapview.jsx",
+   "line": 130,
+   "segs": [
+    [
+     "                <div className",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"poi-section-title\">地图样式</div>",
+     0
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "8|R6": [
+  {
+   "file": "src/Mapview.jsx",
+   "line": 26,
+   "segs": [
+    [
+     "    const Poi_addTile  =  (poi_mapInst, poi_style)  =>  ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/Mapview.jsx",
+   "line": 42,
+   "segs": [
+    [
+     "    const Poi_showMarkers  =  ()  =>  ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/Mapview.jsx",
+   "line": 83,
+   "segs": [
+    [
+     "    const Poi_changeStyle  =  (poi_val)  =>  ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "8|R8": [
+  {
+   "file": "public/index.html",
+   "line": null,
+   "segs": [
+    [
+     "index.html",
+     1
+    ]
+   ],
+   "note": "10 characters"
+  },
+  {
+   "file": "src/index.js",
+   "line": null,
+   "segs": [
+    [
+     "index.js",
+     1
+    ]
+   ],
+   "note": "8 characters"
+  }
+ ],
+ "9|R5": [
+  {
+   "file": "public/index.html",
+   "line": 2,
+   "segs": [
+    [
+     "<html lang",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"zh-CN\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "public/index.html",
+   "line": 4,
+   "segs": [
+    [
+     "    <meta charset",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"UTF-8\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "public/index.html",
+   "line": 5,
+   "segs": [
+    [
+     "    <meta name=\"viewport\" content=\"width=device-width, initial-scale",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "1.0\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "public/index.html",
+   "line": 7,
+   "segs": [
+    [
+     "    <link rel=",
+     0
+    ],
+    [
+     "\"stylesheet\" href=",
+     1
+    ],
+    [
+     "\"https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/App.jsx",
+   "line": 78,
+   "segs": [
+    [
+     "        <div className",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"app-container\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/App.jsx",
+   "line": 79,
+   "segs": [
+    [
+     "            <Mapview ref={mapRef} route={route} slider={slider} calWeather",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "{Calweather} />",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/App.jsx",
+   "line": 80,
+   "segs": [
+    [
+     "            <Sidebar onRoute={Routegen} slider={slider} onSlider={Handleslide} route={route} calWeather",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "{Calweather} />",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/Mapview.jsx",
+   "line": 127,
+   "segs": [
+    [
+     "        <div className",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"map-section\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/Mapview.jsx",
+   "line": 128,
+   "segs": [
+    [
+     "            <div id=\"map\" style",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "{{ width: '100%', height: '100%' }}></div>",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/Mapview.jsx",
+   "line": 129,
+   "segs": [
+    [
+     "            <div className",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"poi-control-panel\">",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/Mapview.jsx",
+   "line": 130,
+   "segs": [
+    [
+     "                <div className",
+     0
+    ],
+    [
+     "=",
+     1
+    ],
+    [
+     "\"poi-section-title\">地图样式</div>",
+     0
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "9|R6": [
+  {
+   "file": "src/Mapview.jsx",
+   "line": 14,
+   "segs": [
+    [
+     "        poi_script.",
+     0
+    ],
+    [
+     "onload  =  ()  =>  ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/Mapview.jsx",
+   "line": 26,
+   "segs": [
+    [
+     "    const",
+     0
+    ],
+    [
+     " Poi_addTile  =  (poi_mapInst, poi_style)  =>  ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/Mapview.jsx",
+   "line": 42,
+   "segs": [
+    [
+     "    const",
+     0
+    ],
+    [
+     " Poi_showMarkers  =  ()  =>  ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "src/Mapview.jsx",
+   "line": 83,
+   "segs": [
+    [
+     "    const",
+     0
+    ],
+    [
+     " Poi_changeStyle  =  (poi_val)  =>  ",
+     1
+    ],
+    [
+     "{",
+     0
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "9|R8": [
+  {
+   "file": "package.json",
+   "line": null,
+   "segs": [
+    [
+     "package.json",
+     1
+    ]
+   ],
+   "note": "12 characters"
+  },
+  {
+   "file": "public/index.html",
+   "line": null,
+   "segs": [
+    [
+     "index.html",
+     1
+    ]
+   ],
+   "note": "10 characters"
+  },
+  {
+   "file": "src/index.js",
+   "line": null,
+   "segs": [
+    [
+     "index.js",
+     1
+    ]
+   ],
+   "note": "8 characters"
+  }
+ ]
+}

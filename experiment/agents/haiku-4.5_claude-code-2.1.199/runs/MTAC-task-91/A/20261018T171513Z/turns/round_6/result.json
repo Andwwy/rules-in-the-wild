@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 80286,
+  "duration_api_ms": 79185,
+  "ttft_ms": 3561,
+  "ttft_stream_ms": 3559,
+  "time_to_request_ms": 94,
+  "num_turns": 10,
+  "result": "代码小灵已为开发者大大实现了跳跃和飞跃机制，飞机停在同色格子自动跳跃到下一个同色点，停在飞行起点自动飞跃到对面安全通道入口，所有缩进改为2个空格哒～",
+  "stop_reason": "end_turn",
+  "session_id": "f01beb59-3463-41ee-b07b-0372119f2626",
+  "total_cost_usd": 0.22931729999999997,
+  "usage": {
+   "input_tokens": 58,
+   "cache_creation_input_tokens": 64596,
+   "cache_read_input_tokens": 852493,
+   "output_tokens": 12653,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 64596
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 58,
+    "outputTokens": 12653,
+    "cacheReadInputTokens": 852493,
+    "cacheCreationInputTokens": 64596,
+    "webSearchRequests": 0,
+    "costUSD": 0.22931729999999997,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "fd243b2c-3e85-4f2d-b243-ca8932bb09fd"
+ },
+ "stderr": ""
+}

@@ -1,0 +1,56 @@
+{
+ "label": "b1-install-pre-commit",
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 8555,
+  "duration_api_ms": 97,
+  "ttft_ms": 149,
+  "ttft_stream_ms": 148,
+  "time_to_request_ms": 136,
+  "num_turns": 2,
+  "result": "Installed.",
+  "stop_reason": "end_turn",
+  "session_id": "326d654f-ed91-4c62-8cd6-15b9d9bdf622",
+  "total_cost_usd": 7.000000000000001e-05,
+  "usage": {
+   "input_tokens": 20,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 10,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 20,
+    "outputTokens": 10,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "webSearchRequests": 0,
+    "costUSD": 7.000000000000001e-05,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "0b163890-e858-43ac-95ec-6ddad06b5237"
+ },
+ "text": "Node install-pre-commit (2 of 6): install pre-commit 4.7.0 for R5, R6: `enforce install pre-commit` (the recipe pins the version and tests it).\nDone when: `pre-commit --version` runs as root and as the agent, with /opt/enforce/tool-installs/bin on the PATH. The harness checks this when you reply.",
+ "stderr": ""
+}

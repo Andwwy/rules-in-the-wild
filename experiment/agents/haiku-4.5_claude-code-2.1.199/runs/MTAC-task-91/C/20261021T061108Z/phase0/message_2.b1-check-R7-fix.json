@@ -1,0 +1,56 @@
+{
+ "label": "b1-check-R7-fix",
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 66945,
+  "duration_api_ms": 43215,
+  "ttft_ms": 4375,
+  "ttft_stream_ms": 4371,
+  "time_to_request_ms": 123,
+  "num_turns": 11,
+  "result": "Perfect! R7 is now fully implemented using Semgrep as required by the route:\n\n✅ **Check Script** (`/opt/enforce/checks/R7`):\n- Uses Semgrep (`/opt/enforce/tool-installs/bin/semgrep`) to find all function definitions\n- Creates a Semgrep config with patterns for Python functions, JavaScript function declarations, expressions, and async functions\n- Processes Semgrep JSON output to extract line ranges\n- Validates each function size ≤ 60 lines\n- Reports violations with file, line, function name, and size\n\n✅ **Test Fixtures**:\n- **Flag cases** (violations): Python file with 61-line function, JavaScript file with 64-line function\n- **Pass cases** (compliant): Python and JavaScript files with functions under 60 lines\n\n✅ **Behavior**:\n- Exits 0 (success) when all functions ≤ 60 lines\n- Exits 1 (failure) with violation report when functions exceed 60 lines\n- Properly ignores non-code files\n\nThe check is ready for the framework hook integration (before file write/edit actions).",
+  "stop_reason": "end_turn",
+  "session_id": "852366a0-50ce-4b99-9f78-7cdfbec775cc",
+  "total_cost_usd": 0.11691215000000002,
+  "usage": {
+   "input_tokens": 64,
+   "cache_creation_input_tokens": 23775,
+   "cache_read_input_tokens": 586994,
+   "output_tokens": 5686,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 23775
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 64,
+    "outputTokens": 5686,
+    "cacheReadInputTokens": 586994,
+    "cacheCreationInputTokens": 23775,
+    "webSearchRequests": 0,
+    "costUSD": 0.11691215000000002,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "8cf0cd98-e3c5-43a5-9b2b-44c6fd0e53f8"
+ },
+ "text": "The harness's check of node check-R7 failed: /opt/enforce/checks/R7 does not run semgrep, the route's enforcer\nFix the node.",
+ "stderr": ""
+}

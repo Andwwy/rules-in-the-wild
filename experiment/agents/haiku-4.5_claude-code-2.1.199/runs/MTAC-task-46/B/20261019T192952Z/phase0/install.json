@@ -1,0 +1,95 @@
+{
+ "session": "c73f08df-4918-49d2-a66d-797c9e8d4ea3",
+ "messages": 8,
+ "install": {
+  "installed": 7,
+  "hooks": [
+   {
+    "hook": 1,
+    "event": "PreToolUse",
+    "matcher": "Write|Edit",
+    "command": "/opt/enforce/check-filename-length.sh",
+    "args": [],
+    "form": "exec",
+    "timeout": 60
+   },
+   {
+    "hook": 2,
+    "event": "PostToolUse",
+    "matcher": "Write|Edit",
+    "command": "/opt/enforce/check-utf8.sh",
+    "args": [],
+    "form": "exec",
+    "timeout": 60
+   },
+   {
+    "hook": 3,
+    "event": "PostToolUse",
+    "matcher": "Write|Edit",
+    "command": "/opt/enforce/check-indentation.sh",
+    "args": [],
+    "form": "exec",
+    "timeout": 60
+   },
+   {
+    "hook": 4,
+    "event": "PostToolUse",
+    "matcher": "Write|Edit",
+    "command": "/opt/enforce/check-no-tabs.sh",
+    "args": [],
+    "form": "exec",
+    "timeout": 60
+   },
+   {
+    "hook": 5,
+    "event": "PostToolUse",
+    "matcher": "Write|Edit",
+    "command": "/opt/enforce/check-spacing-equals.sh",
+    "args": [],
+    "form": "exec",
+    "timeout": 60
+   },
+   {
+    "hook": 6,
+    "event": "PostToolUse",
+    "matcher": "Write|Edit",
+    "command": "/opt/enforce/check-function-naming.sh",
+    "args": [],
+    "form": "exec",
+    "timeout": 60
+   },
+   {
+    "hook": 7,
+    "event": "PostToolUse",
+    "matcher": "Write|Edit",
+    "command": "/opt/enforce/check-class-naming.sh",
+    "args": [],
+    "form": "exec",
+    "timeout": 60
+   }
+  ],
+  "not_wrapped": [
+   {
+    "event": "Stop",
+    "matcher": null,
+    "hook": {
+     "type": "prompt",
+     "prompt": "规则 R1 要求在为用户生成回复时必须永远只用中文。\n\n请分析以下最后一条助手消息:\n$ARGUMENTS\n\n检查消息是否满足以下条件:\n1. 所有内容都是中文\n2. 没有英文单词、数字编号、代码块或其他非中文文本\n3. 可以包含中文标点符号\n\n如果消息违反了这个规则(包含任何英文、代码或非中文内容),返回 {\"ok\": false, \"reason\": \"消息违反规则 R1: 必须使用中文回复。检测到非中文内容。\"}\n\n如果消息完全用中文,返回 {\"ok\": true}",
+     "statusMessage": "验证回复语言 (规则 R1: 只用中文)"
+    }
+   }
+  ],
+  "other_settings": [],
+  "fingerprint": "8116512002ff71536ac8a3d41e183a31058ec854933a3a323d16558f7a532445"
+ },
+ "claude_code_on_settings": null,
+ "commands_added_for_agent": [
+  "file",
+  "jq"
+ ],
+ "workspace": {
+  "created": 0,
+  "changed": 0,
+  "deleted": 0
+ }
+}

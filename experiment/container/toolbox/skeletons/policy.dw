@@ -1,0 +1,9 @@
+// A permission that depends on what happened before, and when (Dogwood; enforce install dogwood).
+// Here: a push is allowed only if the last test run passed within 15 minutes and no test run has failed since.
+@id("<rule id>")
+permit (principal, action == Agent::Action::"Push", resource)
+when temporal {
+    !Agent::Action::"RunTests"::response{ output.passed: false }
+    since within 15m
+    Agent::Action::"RunTests"::response{ output.passed: true }
+};

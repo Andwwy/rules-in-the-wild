@@ -1,0 +1,23 @@
+{
+ "session": "e2cd14a5-e094-459c-9574-1835e9e03d3b",
+ "messages": 1,
+ "settings": {
+  "files": [
+   {
+    "scope": "project",
+    "path": "/workspace/.claude/settings.json",
+    "keys": [
+     "hooks"
+    ]
+   }
+  ],
+  "hooks": []
+ },
+ "claude_code_on_settings": null,
+ "commands_added_for_agent": [],
+ "workspace": {
+  "created": 4,
+  "changed": 0,
+  "deleted": 0
+ }
+}

@@ -1,0 +1,7 @@
+# Source code › Source file
+target · A source code file.
+
+- where: /workspace/<path>, on disk for every mechanism; the content of a write before it happens: only the framework's hook (/opt/enforce-toolbox/mechanisms/framework-hooks.md) before its write tool
+- which files: decide when the check runs, from the file in hand: the files the agent will create cannot be known before. Map its name, or its content, to a language with a complete list, such as Pygments (`get_lexer_for_filename`, `guess_lexer`) or GitHub Linguist's list of languages: programming and markup languages that hold code count (Python, JavaScript, HTML, CSS, shell, …); documents and data do not (Markdown, plain text, JSON, YAML, CSV), unless the rule names them. A rule about the file itself (its first lines, its name, its encoding) applies once per file, in that file's own comment syntax (in HTML, an HTML comment); a rule about the code in it (functions, names, statements) also reaches code embedded in another file, such as a `<script>` in HTML. A file whose kind is unknown is checked, not passed.
+- how the agent writes: with the framework's file tools, and with shell commands (`cat >`, `sed -i`, a script, a generator). A check that watches one way misses the others; a check of the files on disk sees them all.
+- docs: https://pygments.org/docs/api/#module-pygments.lexers (Pygments), https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml (Linguist)

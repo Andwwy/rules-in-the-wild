@@ -1,0 +1,959 @@
+{
+ "0|R6": [
+  {
+   "file": "ludo_game.html",
+   "line": 1,
+   "segs": [
+    [
+     "# -*- coding: utf-8 -*-",
+     1
+    ]
+   ],
+   "note": "start of the file"
+  },
+  {
+   "file": "ludo_game.html",
+   "line": 2,
+   "segs": [
+    [
+     "<!DOCTYPE html>",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "ludo_game.html",
+   "line": 3,
+   "segs": [
+    [
+     "<html lang=\"zh-CN\">",
+     1
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "1|R6": [
+  {
+   "file": "ludo_game.html",
+   "line": 1,
+   "segs": [
+    [
+     "# -*- coding: utf-8 -*-",
+     1
+    ]
+   ],
+   "note": "start of the file"
+  },
+  {
+   "file": "ludo_game.html",
+   "line": 2,
+   "segs": [
+    [
+     "<!DOCTYPE html>",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "ludo_game.html",
+   "line": 3,
+   "segs": [
+    [
+     "<html lang=\"zh-CN\">",
+     1
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "2|R5": [
+  {
+   "file": "test_game.js",
+   "line": 1,
+   "segs": [
+    [
+     "// 测试脚本 - 验证游戏逻辑",
+     1
+    ]
+   ],
+   "note": "start of the file"
+  },
+  {
+   "file": "test_game.js",
+   "line": 2,
+   "segs": [
+    [
+     "const jsdom = require('jsdom').JSDOM;",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "test_game.js",
+   "line": 3,
+   "segs": [
+    [
+     "const fs = require('fs');",
+     1
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "2|R6": [
+  {
+   "file": "ludo_game.html",
+   "line": 1,
+   "segs": [
+    [
+     "# -*- coding: utf-8 -*-",
+     1
+    ]
+   ],
+   "note": "start of the file"
+  },
+  {
+   "file": "ludo_game.html",
+   "line": 2,
+   "segs": [
+    [
+     "<!DOCTYPE html>",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "ludo_game.html",
+   "line": 3,
+   "segs": [
+    [
+     "<html lang=\"zh-CN\">",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "test_game.js",
+   "line": 1,
+   "segs": [
+    [
+     "// 测试脚本 - 验证游戏逻辑",
+     1
+    ]
+   ],
+   "note": "start of the file"
+  },
+  {
+   "file": "test_game.js",
+   "line": 2,
+   "segs": [
+    [
+     "const jsdom = require('jsdom').JSDOM;",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "test_game.js",
+   "line": 3,
+   "segs": [
+    [
+     "const fs = require('fs');",
+     1
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "3|R5": [
+  {
+   "file": "test_game.js",
+   "line": 1,
+   "segs": [
+    [
+     "// 测试脚本 - 验证游戏逻辑",
+     1
+    ]
+   ],
+   "note": "start of the file"
+  },
+  {
+   "file": "test_game.js",
+   "line": 2,
+   "segs": [
+    [
+     "const jsdom = require('jsdom').JSDOM;",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "test_game.js",
+   "line": 3,
+   "segs": [
+    [
+     "const fs = require('fs');",
+     1
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "3|R6": [
+  {
+   "file": "ludo_game.html",
+   "line": 1,
+   "segs": [
+    [
+     "# -*- coding: utf-8 -*-",
+     1
+    ]
+   ],
+   "note": "start of the file"
+  },
+  {
+   "file": "ludo_game.html",
+   "line": 2,
+   "segs": [
+    [
+     "<!DOCTYPE html>",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "ludo_game.html",
+   "line": 3,
+   "segs": [
+    [
+     "<html lang=\"zh-CN\">",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "test_game.js",
+   "line": 1,
+   "segs": [
+    [
+     "// 测试脚本 - 验证游戏逻辑",
+     1
+    ]
+   ],
+   "note": "start of the file"
+  },
+  {
+   "file": "test_game.js",
+   "line": 2,
+   "segs": [
+    [
+     "const jsdom = require('jsdom').JSDOM;",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "test_game.js",
+   "line": 3,
+   "segs": [
+    [
+     "const fs = require('fs');",
+     1
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "4|R5": [
+  {
+   "file": "test_game.js",
+   "line": 1,
+   "segs": [
+    [
+     "// 测试脚本 - 验证游戏逻辑",
+     1
+    ]
+   ],
+   "note": "start of the file"
+  },
+  {
+   "file": "test_game.js",
+   "line": 2,
+   "segs": [
+    [
+     "const jsdom = require('jsdom').JSDOM;",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "test_game.js",
+   "line": 3,
+   "segs": [
+    [
+     "const fs = require('fs');",
+     1
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "4|R6": [
+  {
+   "file": "ludo_game.html",
+   "line": 1,
+   "segs": [
+    [
+     "# -*- coding: utf-8 -*-",
+     1
+    ]
+   ],
+   "note": "start of the file"
+  },
+  {
+   "file": "ludo_game.html",
+   "line": 2,
+   "segs": [
+    [
+     "<!DOCTYPE html>",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "ludo_game.html",
+   "line": 3,
+   "segs": [
+    [
+     "<html lang=\"zh-CN\">",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "test_game.js",
+   "line": 1,
+   "segs": [
+    [
+     "// 测试脚本 - 验证游戏逻辑",
+     1
+    ]
+   ],
+   "note": "start of the file"
+  },
+  {
+   "file": "test_game.js",
+   "line": 2,
+   "segs": [
+    [
+     "const jsdom = require('jsdom').JSDOM;",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "test_game.js",
+   "line": 3,
+   "segs": [
+    [
+     "const fs = require('fs');",
+     1
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "5|R5": [
+  {
+   "file": "test_game.js",
+   "line": 1,
+   "segs": [
+    [
+     "// 测试脚本 - 验证游戏逻辑",
+     1
+    ]
+   ],
+   "note": "start of the file"
+  },
+  {
+   "file": "test_game.js",
+   "line": 2,
+   "segs": [
+    [
+     "const jsdom = require('jsdom').JSDOM;",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "test_game.js",
+   "line": 3,
+   "segs": [
+    [
+     "const fs = require('fs');",
+     1
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "5|R6": [
+  {
+   "file": "ludo_game.html",
+   "line": 1,
+   "segs": [
+    [
+     "# -*- coding: utf-8 -*-",
+     1
+    ]
+   ],
+   "note": "start of the file"
+  },
+  {
+   "file": "ludo_game.html",
+   "line": 2,
+   "segs": [
+    [
+     "<!DOCTYPE html>",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "ludo_game.html",
+   "line": 3,
+   "segs": [
+    [
+     "<html lang=\"zh-CN\">",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "test_game.js",
+   "line": 1,
+   "segs": [
+    [
+     "// 测试脚本 - 验证游戏逻辑",
+     1
+    ]
+   ],
+   "note": "start of the file"
+  },
+  {
+   "file": "test_game.js",
+   "line": 2,
+   "segs": [
+    [
+     "const jsdom = require('jsdom').JSDOM;",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "test_game.js",
+   "line": 3,
+   "segs": [
+    [
+     "const fs = require('fs');",
+     1
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "6|R5": [
+  {
+   "file": "test_game.js",
+   "line": 1,
+   "segs": [
+    [
+     "// 测试脚本 - 验证游戏逻辑",
+     1
+    ]
+   ],
+   "note": "start of the file"
+  },
+  {
+   "file": "test_game.js",
+   "line": 2,
+   "segs": [
+    [
+     "const jsdom = require('jsdom').JSDOM;",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "test_game.js",
+   "line": 3,
+   "segs": [
+    [
+     "const fs = require('fs');",
+     1
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "6|R6": [
+  {
+   "file": "ludo_game.html",
+   "line": 1,
+   "segs": [
+    [
+     "# -*- coding: utf-8 -*-",
+     1
+    ]
+   ],
+   "note": "start of the file"
+  },
+  {
+   "file": "ludo_game.html",
+   "line": 2,
+   "segs": [
+    [
+     "<!DOCTYPE html>",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "ludo_game.html",
+   "line": 3,
+   "segs": [
+    [
+     "<html lang=\"zh-CN\">",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "test_game.js",
+   "line": 1,
+   "segs": [
+    [
+     "// 测试脚本 - 验证游戏逻辑",
+     1
+    ]
+   ],
+   "note": "start of the file"
+  },
+  {
+   "file": "test_game.js",
+   "line": 2,
+   "segs": [
+    [
+     "const jsdom = require('jsdom').JSDOM;",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "test_game.js",
+   "line": 3,
+   "segs": [
+    [
+     "const fs = require('fs');",
+     1
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "6|R7": [
+  {
+   "file": "script.js",
+   "line": 517,
+   "segs": [
+    [
+     "function movePiece(color, pieceId) {",
+     1
+    ]
+   ],
+   "note": "lines 517–580"
+  },
+  {
+   "file": "script.js",
+   "line": 518,
+   "segs": [
+    [
+     "  const piece = gameState.pieces[color][pieceId];",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "script.js",
+   "line": 519,
+   "segs": [
+    [
+     "  let isOnBoard = piece.position === 'board' && piece.pathIndex !== null;",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "script.js",
+   "line": 520,
+   "segs": [
+    [
+     "  isOnBoard || (function() { return; })();",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "script.js",
+   "line": 521,
+   "segs": [],
+   "note": null
+  },
+  {
+   "file": "script.js",
+   "line": 522,
+   "segs": [
+    [
+     "  const steps = gameState.lastDiceResult;",
+     1
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "7|R5": [
+  {
+   "file": "test_game.js",
+   "line": 1,
+   "segs": [
+    [
+     "// 测试脚本 - 验证游戏逻辑",
+     1
+    ]
+   ],
+   "note": "start of the file"
+  },
+  {
+   "file": "test_game.js",
+   "line": 2,
+   "segs": [
+    [
+     "const jsdom = require('jsdom').JSDOM;",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "test_game.js",
+   "line": 3,
+   "segs": [
+    [
+     "const fs = require('fs');",
+     1
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "7|R6": [
+  {
+   "file": "ludo_game.html",
+   "line": 1,
+   "segs": [
+    [
+     "# -*- coding: utf-8 -*-",
+     1
+    ]
+   ],
+   "note": "start of the file"
+  },
+  {
+   "file": "ludo_game.html",
+   "line": 2,
+   "segs": [
+    [
+     "<!DOCTYPE html>",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "ludo_game.html",
+   "line": 3,
+   "segs": [
+    [
+     "<html lang=\"zh-CN\">",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "test_game.js",
+   "line": 1,
+   "segs": [
+    [
+     "// 测试脚本 - 验证游戏逻辑",
+     1
+    ]
+   ],
+   "note": "start of the file"
+  },
+  {
+   "file": "test_game.js",
+   "line": 2,
+   "segs": [
+    [
+     "const jsdom = require('jsdom').JSDOM;",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "test_game.js",
+   "line": 3,
+   "segs": [
+    [
+     "const fs = require('fs');",
+     1
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "8|R5": [
+  {
+   "file": "test_game.js",
+   "line": 1,
+   "segs": [
+    [
+     "// 测试脚本 - 验证游戏逻辑",
+     1
+    ]
+   ],
+   "note": "start of the file"
+  },
+  {
+   "file": "test_game.js",
+   "line": 2,
+   "segs": [
+    [
+     "const jsdom = require('jsdom').JSDOM;",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "test_game.js",
+   "line": 3,
+   "segs": [
+    [
+     "const fs = require('fs');",
+     1
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "8|R6": [
+  {
+   "file": "ludo_game.html",
+   "line": 1,
+   "segs": [
+    [
+     "# -*- coding: utf-8 -*-",
+     1
+    ]
+   ],
+   "note": "start of the file"
+  },
+  {
+   "file": "ludo_game.html",
+   "line": 2,
+   "segs": [
+    [
+     "<!DOCTYPE html>",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "ludo_game.html",
+   "line": 3,
+   "segs": [
+    [
+     "<html lang=\"zh-CN\">",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "test_game.js",
+   "line": 1,
+   "segs": [
+    [
+     "// 测试脚本 - 验证游戏逻辑",
+     1
+    ]
+   ],
+   "note": "start of the file"
+  },
+  {
+   "file": "test_game.js",
+   "line": 2,
+   "segs": [
+    [
+     "const jsdom = require('jsdom').JSDOM;",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "test_game.js",
+   "line": 3,
+   "segs": [
+    [
+     "const fs = require('fs');",
+     1
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "9|R5": [
+  {
+   "file": "test_game.js",
+   "line": 1,
+   "segs": [
+    [
+     "// 测试脚本 - 验证游戏逻辑",
+     1
+    ]
+   ],
+   "note": "start of the file"
+  },
+  {
+   "file": "test_game.js",
+   "line": 2,
+   "segs": [
+    [
+     "const jsdom = require('jsdom').JSDOM;",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "test_game.js",
+   "line": 3,
+   "segs": [
+    [
+     "const fs = require('fs');",
+     1
+    ]
+   ],
+   "note": null
+  }
+ ],
+ "9|R6": [
+  {
+   "file": "ludo_game.html",
+   "line": 1,
+   "segs": [
+    [
+     "<!-- -*- coding: utf-8 -*- -->",
+     1
+    ]
+   ],
+   "note": "start of the file"
+  },
+  {
+   "file": "ludo_game.html",
+   "line": 2,
+   "segs": [
+    [
+     "<!DOCTYPE html>",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "ludo_game.html",
+   "line": 3,
+   "segs": [
+    [
+     "<html lang=\"zh-CN\">",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "test_game.js",
+   "line": 1,
+   "segs": [
+    [
+     "// 测试脚本 - 验证游戏逻辑",
+     1
+    ]
+   ],
+   "note": "start of the file"
+  },
+  {
+   "file": "test_game.js",
+   "line": 2,
+   "segs": [
+    [
+     "const jsdom = require('jsdom').JSDOM;",
+     1
+    ]
+   ],
+   "note": null
+  },
+  {
+   "file": "test_game.js",
+   "line": 3,
+   "segs": [
+    [
+     "const fs = require('fs');",
+     1
+    ]
+   ],
+   "note": null
+  }
+ ]
+}

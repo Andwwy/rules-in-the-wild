@@ -1,0 +1,102 @@
+{
+ "R1": null,
+ "R2": null,
+ "R3": null,
+ "R4": null,
+ "R5": [
+  {
+   "why": "clean main.py",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "clean main.js",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "clean index.html",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "R5: a Python file without the coding line",
+   "expect": "flag",
+   "got": "flag",
+   "named": true,
+   "said": "R5: /tmp/tmp10w7gx8_/main.py:1: Missing encoding declaration. First line should contain: # -*- coding: utf-8 -*-"
+  },
+  {
+   "why": "R5: a JS file without the coding line",
+   "expect": "flag",
+   "got": "flag",
+   "named": true,
+   "said": "R5: /tmp/tmpxsdyxv26/main.js:1: Missing encoding declaration. First line should contain: // -*- coding: utf-8 -*-"
+  },
+  {
+   "why": "R6: a Python file without the AI-Assisted line",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "R6: a JS file without the AI-Assisted line",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "R7: a Python function of 69 lines",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "R7: a JS function of 68 lines",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "not code: not code: notes.md without the header lines",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "R5: an HTML file without the coding line",
+   "expect": "flag",
+   "got": "flag",
+   "named": true,
+   "said": "R5: /tmp/tmp8cv9r2mk/index.html:1: Missing encoding declaration. First line should contain: <!-- -*- coding: utf-8 -*- -->"
+  },
+  {
+   "why": "R6: an HTML file without the AI-Assisted line",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  },
+  {
+   "why": "R7: a JS function of 68 lines inside an HTML <script>",
+   "expect": "pass",
+   "got": "pass",
+   "named": false,
+   "said": ""
+  }
+ ],
+ "R6": null,
+ "R7": null,
+ "R8": null
+}

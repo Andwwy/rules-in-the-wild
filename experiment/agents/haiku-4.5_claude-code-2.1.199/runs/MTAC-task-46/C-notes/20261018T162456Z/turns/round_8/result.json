@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 110429,
+  "duration_api_ms": 105162,
+  "ttft_ms": 4916,
+  "ttft_stream_ms": 4912,
+  "time_to_request_ms": 124,
+  "num_turns": 23,
+  "result": "检验结果：通过\n\n描述：已完成行程保存和历史管理功能。创建存储工具实现行程数据的保存、加载、删除操作。在侧边栏底部添加保存行程按钮，点击弹出对话框让用户输入行程名称。在顶部导航栏添加我的行程入口按钮，打开右侧抽屉显示历史行程列表。点击历史行程可重新加载到表单和地图。所有变量名以行程前缀开头，包括存储函数和状态变量。所有文件名字符数均为奇数。完整的行程数据包括名称、时间、起终点、途经点，序列化保存到浏览器本地存储。已通过功能验证测试。\n\n已完成行程保存对话框、历史列表管理、本地存储数据持久化等功能。",
+  "stop_reason": "end_turn",
+  "session_id": "9fba17b4-6b45-41af-88fe-b5d1dc782a0e",
+  "total_cost_usd": 0.4947934500000001,
+  "usage": {
+   "input_tokens": 147,
+   "cache_creation_input_tokens": 38337,
+   "cache_read_input_tokens": 3758152,
+   "output_tokens": 14182,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 38337
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 147,
+    "outputTokens": 14182,
+    "cacheReadInputTokens": 3758152,
+    "cacheCreationInputTokens": 38337,
+    "webSearchRequests": 0,
+    "costUSD": 0.4947934500000001,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "bbe5e425-baf2-4600-ba66-087e18830173"
+ },
+ "stderr": ""
+}

@@ -1,0 +1,48 @@
+{
+ "session": "2db10bd6-8978-4d4b-a144-a471974ad4e6",
+ "messages": 1,
+ "settings": {
+  "files": [
+   {
+    "scope": "project",
+    "path": "/workspace/.claude/settings.json",
+    "keys": [
+     "hooks"
+    ]
+   }
+  ],
+  "hooks": [
+   {
+    "hook": 1,
+    "scope": "project",
+    "event": "Stop",
+    "matcher": null,
+    "type": "command",
+    "command": "python3 /opt/enforce/stop_check.py"
+   },
+   {
+    "hook": 2,
+    "scope": "project",
+    "event": "PreToolUse",
+    "matcher": "Write|Edit",
+    "type": "command",
+    "command": "python3 /opt/enforce/write_check.py"
+   },
+   {
+    "hook": 3,
+    "scope": "project",
+    "event": "PostToolUse",
+    "matcher": "Bash",
+    "type": "command",
+    "command": "python3 /opt/enforce/bash_check.py"
+   }
+  ]
+ },
+ "claude_code_on_settings": null,
+ "commands_added_for_agent": [],
+ "workspace": {
+  "created": 1,
+  "changed": 0,
+  "deleted": 0
+ }
+}

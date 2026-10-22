@@ -1,0 +1,1906 @@
+{
+ "summary": {
+  "hooks": 8,
+  "rules": {
+   "R1": {
+    "reply": [
+     {
+      "case": "an English sentence in the reply",
+      "caught": false,
+      "early": false,
+      "at": []
+     }
+    ]
+   },
+   "R2": {
+    "shell": [
+     {
+      "case": "main.py saved as GBK (by a shell command: Claude Code's Write tool writes UTF-8)",
+      "caught": false,
+      "early": false,
+      "at": []
+     }
+    ]
+   },
+   "R3": {
+    "tool": [
+     {
+      "case": "a 2-space indent in Python",
+      "caught": false,
+      "early": false,
+      "at": []
+     },
+     {
+      "case": "a 2-space indent in JS",
+      "caught": false,
+      "early": false,
+      "at": []
+     }
+    ],
+    "shell": [
+     {
+      "case": "a 2-space indent in Python",
+      "caught": false,
+      "early": false,
+      "at": []
+     },
+     {
+      "case": "a 2-space indent in JS",
+      "caught": false,
+      "early": false,
+      "at": []
+     }
+    ]
+   },
+   "R4": {
+    "tool": [
+     {
+      "case": "a tab inside a comment",
+      "caught": false,
+      "early": false,
+      "at": []
+     }
+    ],
+    "shell": [
+     {
+      "case": "a tab inside a comment",
+      "caught": false,
+      "early": false,
+      "at": []
+     }
+    ]
+   },
+   "R5": {
+    "tool": [
+     {
+      "case": "one space around = in Python",
+      "caught": false,
+      "early": false,
+      "at": []
+     },
+     {
+      "case": "no space around = in JS",
+      "caught": false,
+      "early": false,
+      "at": []
+     }
+    ],
+    "shell": [
+     {
+      "case": "one space around = in Python",
+      "caught": false,
+      "early": false,
+      "at": []
+     },
+     {
+      "case": "no space around = in JS",
+      "caught": false,
+      "early": false,
+      "at": []
+     }
+    ]
+   },
+   "R6": {
+    "tool": [
+     {
+      "case": "a Python method in camelCase",
+      "caught": false,
+      "early": false,
+      "at": []
+     },
+     {
+      "case": "a JS method in camelCase",
+      "caught": false,
+      "early": false,
+      "at": []
+     },
+     {
+      "case": "a JS function with two capitals",
+      "caught": false,
+      "early": false,
+      "at": []
+     }
+    ],
+    "shell": [
+     {
+      "case": "a Python method in camelCase",
+      "caught": false,
+      "early": false,
+      "at": []
+     },
+     {
+      "case": "a JS method in camelCase",
+      "caught": false,
+      "early": false,
+      "at": []
+     },
+     {
+      "case": "a JS function with two capitals",
+      "caught": false,
+      "early": false,
+      "at": []
+     }
+    ]
+   },
+   "R7": {
+    "tool": [
+     {
+      "case": "a Python class name of 4 characters",
+      "caught": false,
+      "early": false,
+      "at": []
+     },
+     {
+      "case": "a JS class name of 6 characters",
+      "caught": false,
+      "early": false,
+      "at": []
+     }
+    ],
+    "shell": [
+     {
+      "case": "a Python class name of 4 characters",
+      "caught": false,
+      "early": false,
+      "at": []
+     },
+     {
+      "case": "a JS class name of 6 characters",
+      "caught": false,
+      "early": false,
+      "at": []
+     }
+    ]
+   },
+   "R8": {
+    "tool": [
+     {
+      "case": "a code file named app.py (6 characters)",
+      "caught": false,
+      "early": false,
+      "at": []
+     },
+     {
+      "case": "a code file named helpers.js (10 characters)",
+      "caught": false,
+      "early": false,
+      "at": []
+     }
+    ],
+    "shell": [
+     {
+      "case": "a code file named app.py (6 characters)",
+      "caught": false,
+      "early": false,
+      "at": []
+     },
+     {
+      "case": "a code file named helpers.js (10 characters)",
+      "caught": false,
+      "early": false,
+      "at": []
+     }
+    ]
+   }
+  },
+  "false_flags": [],
+  "hook_errors": []
+ },
+ "raw": {
+  "hooks": 8,
+  "cases": [
+   {
+    "rule": null,
+    "name": "clean project",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": " --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-utf8-encoding.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-4space-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-equals-spacing.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "vent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-class-name-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "nt PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-filename-odd-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": " --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-utf8-encoding.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-4space-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-equals-spacing.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "vent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-class-name-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "nt PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-filename-odd-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "ok 1 --event Stop --timeout 60 -- '/opt/enforce/hooks/check-chinese-response.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": null,
+    "name": "clean project",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "ok 1 --event Stop --timeout 60 -- '/opt/enforce/hooks/check-chinese-response.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R1",
+    "name": "an English sentence in the reply",
+    "channel": "reply",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "ok 1 --event Stop --timeout 60 -- '/opt/enforce/hooks/check-chinese-response.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R2",
+    "name": "main.py saved as GBK (by a shell command: Claude Code's Write tool writes UTF-8)",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "ok 1 --event Stop --timeout 60 -- '/opt/enforce/hooks/check-chinese-response.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R3",
+    "name": "a 2-space indent in Python",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": " --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-utf8-encoding.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-4space-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-equals-spacing.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "vent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-class-name-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "nt PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-filename-odd-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": " --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-utf8-encoding.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-4space-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-equals-spacing.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "vent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-class-name-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "nt PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-filename-odd-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "ok 1 --event Stop --timeout 60 -- '/opt/enforce/hooks/check-chinese-response.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R3",
+    "name": "a 2-space indent in Python",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "ok 1 --event Stop --timeout 60 -- '/opt/enforce/hooks/check-chinese-response.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R3",
+    "name": "a 2-space indent in JS",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": " --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-utf8-encoding.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-4space-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-equals-spacing.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "vent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-class-name-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "nt PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-filename-odd-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": " --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-utf8-encoding.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-4space-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-equals-spacing.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "vent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-class-name-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "nt PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-filename-odd-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "ok 1 --event Stop --timeout 60 -- '/opt/enforce/hooks/check-chinese-response.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R3",
+    "name": "a 2-space indent in JS",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "ok 1 --event Stop --timeout 60 -- '/opt/enforce/hooks/check-chinese-response.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R4",
+    "name": "a tab inside a comment",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": " --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-utf8-encoding.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-4space-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-equals-spacing.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "vent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-class-name-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "nt PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-filename-odd-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": " --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-utf8-encoding.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-4space-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-equals-spacing.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "vent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-class-name-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "nt PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-filename-odd-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "ok 1 --event Stop --timeout 60 -- '/opt/enforce/hooks/check-chinese-response.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R4",
+    "name": "a tab inside a comment",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "ok 1 --event Stop --timeout 60 -- '/opt/enforce/hooks/check-chinese-response.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R5",
+    "name": "one space around = in Python",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": " --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-utf8-encoding.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-4space-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-equals-spacing.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "vent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-class-name-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "nt PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-filename-odd-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": " --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-utf8-encoding.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-4space-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-equals-spacing.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "vent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-class-name-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "nt PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-filename-odd-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "ok 1 --event Stop --timeout 60 -- '/opt/enforce/hooks/check-chinese-response.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R5",
+    "name": "one space around = in Python",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "ok 1 --event Stop --timeout 60 -- '/opt/enforce/hooks/check-chinese-response.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R5",
+    "name": "no space around = in JS",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": " --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-utf8-encoding.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-4space-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-equals-spacing.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "vent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-class-name-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "nt PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-filename-odd-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": " --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-utf8-encoding.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-4space-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-equals-spacing.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "vent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-class-name-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "nt PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-filename-odd-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "ok 1 --event Stop --timeout 60 -- '/opt/enforce/hooks/check-chinese-response.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R5",
+    "name": "no space around = in JS",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "ok 1 --event Stop --timeout 60 -- '/opt/enforce/hooks/check-chinese-response.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R6",
+    "name": "a Python method in camelCase",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": " --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-utf8-encoding.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-4space-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-equals-spacing.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "vent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-class-name-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "nt PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-filename-odd-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": " --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-utf8-encoding.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-4space-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-equals-spacing.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "vent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-class-name-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "nt PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-filename-odd-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "ok 1 --event Stop --timeout 60 -- '/opt/enforce/hooks/check-chinese-response.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R6",
+    "name": "a Python method in camelCase",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "ok 1 --event Stop --timeout 60 -- '/opt/enforce/hooks/check-chinese-response.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R6",
+    "name": "a JS method in camelCase",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": " --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-utf8-encoding.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-4space-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-equals-spacing.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "vent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-class-name-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "nt PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-filename-odd-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": " --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-utf8-encoding.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-4space-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-equals-spacing.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "vent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-class-name-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "nt PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-filename-odd-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "ok 1 --event Stop --timeout 60 -- '/opt/enforce/hooks/check-chinese-response.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R6",
+    "name": "a JS method in camelCase",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "ok 1 --event Stop --timeout 60 -- '/opt/enforce/hooks/check-chinese-response.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R6",
+    "name": "a JS function with two capitals",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": " --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-utf8-encoding.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-4space-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-equals-spacing.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "vent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-class-name-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "nt PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-filename-odd-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": " --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-utf8-encoding.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-4space-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-equals-spacing.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "vent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-class-name-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "nt PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-filename-odd-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "ok 1 --event Stop --timeout 60 -- '/opt/enforce/hooks/check-chinese-response.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R6",
+    "name": "a JS function with two capitals",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "ok 1 --event Stop --timeout 60 -- '/opt/enforce/hooks/check-chinese-response.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R7",
+    "name": "a Python class name of 4 characters",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": " --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-utf8-encoding.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-4space-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-equals-spacing.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "vent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-class-name-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "nt PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-filename-odd-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": " --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-utf8-encoding.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-4space-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-equals-spacing.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "vent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-class-name-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "nt PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-filename-odd-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "ok 1 --event Stop --timeout 60 -- '/opt/enforce/hooks/check-chinese-response.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R7",
+    "name": "a Python class name of 4 characters",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "ok 1 --event Stop --timeout 60 -- '/opt/enforce/hooks/check-chinese-response.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R7",
+    "name": "a JS class name of 6 characters",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": " --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-utf8-encoding.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-4space-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-equals-spacing.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "vent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-class-name-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "nt PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-filename-odd-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": " --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-utf8-encoding.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-4space-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-equals-spacing.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "vent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-class-name-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "nt PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-filename-odd-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "ok 1 --event Stop --timeout 60 -- '/opt/enforce/hooks/check-chinese-response.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R7",
+    "name": "a JS class name of 6 characters",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "ok 1 --event Stop --timeout 60 -- '/opt/enforce/hooks/check-chinese-response.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R8",
+    "name": "a code file named app.py (6 characters)",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": " --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-utf8-encoding.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-4space-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-equals-spacing.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "vent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-class-name-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "nt PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-filename-odd-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": " --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-utf8-encoding.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-4space-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-equals-spacing.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "vent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-class-name-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "nt PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-filename-odd-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": " --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-utf8-encoding.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-4space-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-equals-spacing.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "vent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-class-name-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "nt PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-filename-odd-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "ok 1 --event Stop --timeout 60 -- '/opt/enforce/hooks/check-chinese-response.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R8",
+    "name": "a code file named app.py (6 characters)",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "ok 1 --event Stop --timeout 60 -- '/opt/enforce/hooks/check-chinese-response.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R8",
+    "name": "a code file named helpers.js (10 characters)",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": " --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-utf8-encoding.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-4space-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-equals-spacing.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "vent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-class-name-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "nt PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-filename-odd-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": " --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-utf8-encoding.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-4space-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-equals-spacing.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "vent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-class-name-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "nt PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-filename-odd-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": " --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-utf8-encoding.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-4space-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-equals-spacing.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "vent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-class-name-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "nt PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-filename-odd-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "ok 1 --event Stop --timeout 60 -- '/opt/enforce/hooks/check-chinese-response.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R8",
+    "name": "a code file named helpers.js (10 characters)",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "ok 1 --event Stop --timeout 60 -- '/opt/enforce/hooks/check-chinese-response.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": null,
+    "name": "not code: notes.md with tabs and x = 1",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": " --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-utf8-encoding.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-4space-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-equals-spacing.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "vent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-class-name-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "nt PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-filename-odd-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": " --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-utf8-encoding.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-4space-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-equals-spacing.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "vent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-class-name-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "nt PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-filename-odd-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": " --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-utf8-encoding.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-4space-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-equals-spacing.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-event PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "vent PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-class-name-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "nt PostToolUse --timeout 60 -- '/opt/enforce/hooks/check-filename-odd-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "ok 1 --event Stop --timeout 60 -- '/opt/enforce/hooks/check-chinese-response.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": null,
+    "name": "not code: notes.md with tabs and x = 1",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "ok 1 --event Stop --timeout 60 -- '/opt/enforce/hooks/check-chinese-response.sh'",
+      "verdict": "pass"
+     }
+    ]
+   }
+  ]
+ }
+}

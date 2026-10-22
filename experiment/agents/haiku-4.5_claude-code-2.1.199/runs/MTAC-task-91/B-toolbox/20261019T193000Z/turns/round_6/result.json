@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 74039,
+  "duration_api_ms": 71684,
+  "ttft_ms": 13336,
+  "ttft_stream_ms": 13331,
+  "time_to_request_ms": 106,
+  "num_turns": 7,
+  "result": "喵～代码小灵已为开发者大大实现了跳跃和飞跃机制，飞机停在同色格可自动跳到下一同色格，停在飞行起点可直接飞到对面同色格，支持连续跳跃且全部进行吃子检查，代码使用2空格缩进。哒～",
+  "stop_reason": "end_turn",
+  "session_id": "a0bb4d32-21a5-4f90-857a-c5186659037b",
+  "total_cost_usd": 0.1322288,
+  "usage": {
+   "input_tokens": 41,
+   "cache_creation_input_tokens": 11942,
+   "cache_read_input_tokens": 597853,
+   "output_tokens": 11495,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 11942
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 41,
+    "outputTokens": 11495,
+    "cacheReadInputTokens": 597853,
+    "cacheCreationInputTokens": 11942,
+    "webSearchRequests": 0,
+    "costUSD": 0.1322288,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "9fc84e78-dbc0-4c42-88b4-c2c6b60b128c"
+ },
+ "stderr": ""
+}

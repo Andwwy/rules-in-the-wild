@@ -56,7 +56,10 @@ MD_COLUMNS = {
 # re-cuts any file whose stored clauses carry a different (grammar, parser_version), so
 # a bump is the switch that reprocesses the corpus.
 GRAMMAR = os.environ.get("CLAUSE_GRAMMAR", "v2")
-PARSER_VERSION = "2.2.0"   # 2.2.0 (audit of 1,000 sampled clauses): terminals consume
+PARSER_VERSION = "2.3.0"   # 2.3.0: a fence opened at the end of a prose line (`format: ```⏎…⏎```。`)
+                           # is code; its closing line no longer opens a fence that swallows
+                           # the rest of the file (`_orphan_fences`).
+                           # 2.2.0 (audit of 1,000 sampled clauses): terminals consume
                            # trailing closers; quoted literals / paren groups / line-start
                            # enumerators / HTML comments protected; CJK terminals split;
                            # colon-at-EOL and **Label**: line boundaries; fullwidth-colon

@@ -1,0 +1,503 @@
+{
+ "batches": [
+  {
+   "batch": 1,
+   "rules": [
+    "R7",
+    "R5",
+    "R6"
+   ],
+   "compiled": true,
+   "nodes": [
+    {
+     "id": "install-semgrep",
+     "kind": "install",
+     "rules": [
+      "R7"
+     ],
+     "needs": [],
+     "recipe": "semgrep",
+     "tool": "Semgrep 1.177.0",
+     "smoke": [
+      "semgrep",
+      "--version"
+     ],
+     "done_when": "`semgrep --version` runs as root and as the agent, with /opt/enforce/tool-installs/bin on the PATH",
+     "status": "done, checked",
+     "problem": null,
+     "checks": [
+      "1.177.0\n\nA new version of Semgrep is available. See https://semgrep.dev/docs/upgrading\n1.177.0\n\nA new version of Semgrep is available. See https://semgrep.dev/docs/upgrading\n"
+     ]
+    },
+    {
+     "id": "install-pre-commit",
+     "kind": "install",
+     "rules": [
+      "R5",
+      "R6"
+     ],
+     "needs": [],
+     "recipe": "pre-commit",
+     "tool": "pre-commit 4.7.0",
+     "smoke": [
+      "pre-commit",
+      "--version"
+     ],
+     "done_when": "`pre-commit --version` runs as root and as the agent, with /opt/enforce/tool-installs/bin on the PATH",
+     "status": "done, checked",
+     "problem": null,
+     "checks": [
+      "pre-commit 4.7.0\npre-commit 4.7.0\n"
+     ]
+    },
+    {
+     "id": "fixtures-R7",
+     "kind": "fixtures",
+     "rules": [
+      "R7"
+     ],
+     "needs": [],
+     "flag": "/opt/enforce/fixtures/R7/flag",
+     "pass": "/opt/enforce/fixtures/R7/pass",
+     "reads": "A function or a method. Where: in the source files; read them with a parser (/opt/enforce-toolbox/skeletons/names_python.py, /opt/enforce-toolbox/skeletons/names_js.py), or with Semgrep patterns Which files: every file that holds code, decided when the check runs (/opt/enforce-toolbox/targets/source-code/source-file.md); take embedded code out of its container first (a `<script>` in HTML), then parse it",
+     "done_when": "/opt/enforce/fixtures/R7/flag and /opt/enforce/fixtures/R7/pass each hold at least two files",
+     "status": "failed its check",
+     "problem": "/opt/enforce/fixtures/R7/flag holds 1 files and /opt/enforce/fixtures/R7/pass holds 0 (at least 2 each)",
+     "checks": [
+      "1 0",
+      "1 0"
+     ]
+    },
+    {
+     "id": "check-R7",
+     "kind": "check",
+     "rules": [
+      "R7"
+     ],
+     "needs": [
+      "fixtures-R7",
+      "install-semgrep"
+     ],
+     "check": "/opt/enforce/checks/R7",
+     "flag": "/opt/enforce/fixtures/R7/flag",
+     "pass": "/opt/enforce/fixtures/R7/pass",
+     "enforcer_how": "A pattern-based static analyzer. A rule is a code pattern that Semgrep matches against each file's syntax tree, for many languages (Python, JavaScript, TypeScript, HTML script blocks, Bash, …). Check: `semgrep scan --config <rules.yml> --error --metrics=off --quiet <file>` (exit 1 on a finding; `--json` for a report) Rules: `rules: [{id: <id>, languages: [<language>], severity: ERROR, message: \"<what to change>\", pattern: \"<code pattern>\"}]`; Semgrep matches syntax, it cannot compute values (a length, a count): use a check script (/opt/enforce-toolbox/skeletons/check.py) for those",
+     "reads": "A function or a method. Where: in the source files; read them with a parser (/opt/enforce-toolbox/skeletons/names_python.py, /opt/enforce-toolbox/skeletons/names_js.py), or with Semgrep patterns Which files: every file that holds code, decided when the check runs (/opt/enforce-toolbox/targets/source-code/source-file.md); take embedded code out of its container first (a `<script>` in HTML), then parse it",
+     "uses": [
+      "semgrep"
+     ],
+     "done_when": "as the agent, it exits 1 and names R7 for every file in /opt/enforce/fixtures/R7/flag, and exits 0 for every file in /opt/enforce/fixtures/R7/pass, and it runs semgrep",
+     "status": "failed its check",
+     "problem": "/opt/enforce/checks/R7 does not run semgrep, the route's enforcer",
+     "checks": [
+      "== /opt/enforce/fixtures/R7/flag/a.py exit 1 names:1\nR7: /opt/enforce/fixtures/R7/flag/a.py:1: a function of 72 lines; split it to at most 60\n",
+      "== /opt/enforce/fixtures/R7/flag/a.py exit 1 names:1\nR7: /opt/enforce/fixtures/R7/flag/a.py:1: a function of 72 lines; split it to at most 60\n"
+     ]
+    },
+    {
+     "id": "fixtures-R5",
+     "kind": "fixtures",
+     "rules": [
+      "R5"
+     ],
+     "needs": [],
+     "flag": "/opt/enforce/fixtures/R5/flag",
+     "pass": "/opt/enforce/fixtures/R5/pass",
+     "reads": "A source code file. Where: /workspace/<path>, on disk for every mechanism; the content of a write before it happens: only the framework's hook (/opt/enforce-toolbox/mechanisms/framework-hooks.md) before its write tool Which files: decide when the check runs, from the file in hand: the files the agent will create cannot be known before. Map its name, or its content, to a language with a complete list, such as Pygments (`get_lexer_for_filename`, `guess_lexer`) or GitHub Linguist's list of languages. Code also sits inside other files: a `<script>` or `<style>` in HTML, a notebook cell, a code block in Markdown. A file of an unknown kind is checked, not passed.",
+     "done_when": "/opt/enforce/fixtures/R5/flag and /opt/enforce/fixtures/R5/pass each hold at least two files",
+     "status": "failed its check",
+     "problem": "/opt/enforce/fixtures/R5/flag holds 1 files and /opt/enforce/fixtures/R5/pass holds 0 (at least 2 each)",
+     "checks": [
+      "1 0",
+      "1 0"
+     ]
+    },
+    {
+     "id": "check-R5",
+     "kind": "check",
+     "rules": [
+      "R5"
+     ],
+     "needs": [
+      "fixtures-R5",
+      "install-pre-commit"
+     ],
+     "check": "/opt/enforce/checks/R5",
+     "flag": "/opt/enforce/fixtures/R5/flag",
+     "pass": "/opt/enforce/fixtures/R5/pass",
+     "enforcer_how": "A framework that runs the checks in a `.pre-commit-config.yaml` file when a commit is made. Check: a `.pre-commit-config.yaml` (local hooks: `repo: local`, `entry: <check>`) and `pre-commit install`; or `pre-commit run --files <file>`",
+     "reads": "A source code file. Where: /workspace/<path>, on disk for every mechanism; the content of a write before it happens: only the framework's hook (/opt/enforce-toolbox/mechanisms/framework-hooks.md) before its write tool Which files: decide when the check runs, from the file in hand: the files the agent will create cannot be known before. Map its name, or its content, to a language with a complete list, such as Pygments (`get_lexer_for_filename`, `guess_lexer`) or GitHub Linguist's list of languages. Code also sits inside other files: a `<script>` or `<style>` in HTML, a notebook cell, a code block in Markdown. A file of an unknown kind is checked, not passed.",
+     "uses": [
+      "pre-commit"
+     ],
+     "done_when": "as the agent, it exits 1 and names R5 for every file in /opt/enforce/fixtures/R5/flag, and exits 0 for every file in /opt/enforce/fixtures/R5/pass, and it runs pre-commit",
+     "status": "failed its check",
+     "problem": "/opt/enforce/checks/R5 does not run pre-commit, the route's enforcer",
+     "checks": [
+      "== /opt/enforce/fixtures/R5/flag/a.py exit 1 names:2\nR5.......................................................................Failed\n- hook id: r5\n- exit code: 1\n\nR5: a.py:1: put -*- coding: utf-8 -*- on the first line\n",
+      "== /opt/enforce/fixtures/R5/flag/a.py exit 1 names:2\nR5.......................................................................Failed\n- hook id: r5\n- exit code: 1\n\nR5: a.py:1: put -*- coding: utf-8 -*- on the first line\n"
+     ]
+    },
+    {
+     "id": "fixtures-R6",
+     "kind": "fixtures",
+     "rules": [
+      "R6"
+     ],
+     "needs": [],
+     "flag": "/opt/enforce/fixtures/R6/flag",
+     "pass": "/opt/enforce/fixtures/R6/pass",
+     "reads": "A source code file. Where: /workspace/<path>, on disk for every mechanism; the content of a write before it happens: only the framework's hook (/opt/enforce-toolbox/mechanisms/framework-hooks.md) before its write tool Which files: decide when the check runs, from the file in hand: the files the agent will create cannot be known before. Map its name, or its content, to a language with a complete list, such as Pygments (`get_lexer_for_filename`, `guess_lexer`) or GitHub Linguist's list of languages. Code also sits inside other files: a `<script>` or `<style>` in HTML, a notebook cell, a code block in Markdown. A file of an unknown kind is checked, not passed.",
+     "done_when": "/opt/enforce/fixtures/R6/flag and /opt/enforce/fixtures/R6/pass each hold at least two files",
+     "status": "failed its check",
+     "problem": "/opt/enforce/fixtures/R6/flag holds 1 files and /opt/enforce/fixtures/R6/pass holds 0 (at least 2 each)",
+     "checks": [
+      "1 0",
+      "1 0"
+     ]
+    },
+    {
+     "id": "check-R6",
+     "kind": "check",
+     "rules": [
+      "R6"
+     ],
+     "needs": [
+      "fixtures-R6",
+      "install-pre-commit"
+     ],
+     "check": "/opt/enforce/checks/R6",
+     "flag": "/opt/enforce/fixtures/R6/flag",
+     "pass": "/opt/enforce/fixtures/R6/pass",
+     "enforcer_how": "A framework that runs the checks in a `.pre-commit-config.yaml` file when a commit is made. Check: a `.pre-commit-config.yaml` (local hooks: `repo: local`, `entry: <check>`) and `pre-commit install`; or `pre-commit run --files <file>`",
+     "reads": "A source code file. Where: /workspace/<path>, on disk for every mechanism; the content of a write before it happens: only the framework's hook (/opt/enforce-toolbox/mechanisms/framework-hooks.md) before its write tool Which files: decide when the check runs, from the file in hand: the files the agent will create cannot be known before. Map its name, or its content, to a language with a complete list, such as Pygments (`get_lexer_for_filename`, `guess_lexer`) or GitHub Linguist's list of languages. Code also sits inside other files: a `<script>` or `<style>` in HTML, a notebook cell, a code block in Markdown. A file of an unknown kind is checked, not passed.",
+     "uses": [
+      "pre-commit"
+     ],
+     "done_when": "as the agent, it exits 1 and names R6 for every file in /opt/enforce/fixtures/R6/flag, and exits 0 for every file in /opt/enforce/fixtures/R6/pass, and it runs pre-commit",
+     "status": "failed its check",
+     "problem": "/opt/enforce/checks/R6 does not run pre-commit, the route's enforcer",
+     "checks": [
+      "== /opt/enforce/fixtures/R6/flag/a.py exit 1 names:2\nR6.......................................................................Failed\n- hook id: r6\n- exit code: 1\n\nR6: a.py: put the AI-Assisted comment in the first two lines\n",
+      "== /opt/enforce/fixtures/R6/flag/a.py exit 1 names:2\nR6.......................................................................Failed\n- hook id: r6\n- exit code: 1\n\nR6: a.py: put the AI-Assisted comment in the first two lines\n"
+     ]
+    },
+    {
+     "id": "binding-1",
+     "kind": "binding",
+     "rules": [
+      "R7",
+      "R5",
+      "R6"
+     ],
+     "needs": [
+      "check-R7",
+      "check-R5",
+      "check-R6"
+     ],
+     "trigger": [
+      "Agent action",
+      "File write / edit"
+     ],
+     "timing": "before",
+     "checks": [
+      "{\"files\": [{\"scope\": \"project\", \"path\": \"/workspace/.claude/settings.json\", \"keys\": [\"hooks\"]}], \"hooks\": [{\"hook\": 1, \"scope\": \"project\", \"event\": \"PreToolUse\", \"matcher\": \"Write|Edit|MultiEdit|NotebookEdit\", \"type\": \"command\", \"command\": \"python3 /opt/enforce/hooks/pre_write.py\"}, {\"hook\": 2, \"scope\": \"project\", \"event\": \"PostToolUse\", \"matcher\": \"Bash\", \"type\": \"command\", \"command\": \"python3 /opt/enforce/hooks/post_bash.py\"}]}\n\nClaude Code reported nothing about the settings.\n"
+     ],
+     "where": "the agent framework's hook (/opt/enforce-toolbox/mechanisms/framework-hooks.md) before its write tools (it sees the new content); file permissions (/opt/enforce-toolbox/mechanisms/file-permissions.md) (the write fails)",
+     "reads": "A function or a method. Where: in the source files; read them with a parser (/opt/enforce-toolbox/skeletons/names_python.py, /opt/enforce-toolbox/skeletons/names_js.py), or with Semgrep patterns Which files: every file that holds code, decided when the check runs (/opt/enforce-toolbox/targets/source-code/source-file.md); take embedded code out of its container first (a `<script>` in HTML), then parse it; A source code file. Where: /workspace/<path>, on disk for every mechanism; the content of a write before it happens: only the framework's hook (/opt/enforce-toolbox/mechanisms/framework-hooks.md) before its write tool Which files: decide when the check runs, from the file in hand: the files the agent will create cannot be known before. Map its name, or its content, to a language with a complete list, such as Pygments (`get_lexer_for_filename`, `guess_lexer`) or GitHub Linguist's list of languages. Code also sits inside other files: a `<script>` or `<style>` in HTML, a notebook cell, a code block in Markdown. A file of an unknown kind is checked, not passed.",
+     "done_when": "`/opt/enforce-harness/try --check` reports nothing, and /workspace/.claude/settings.json has hooks at at PreToolUse on Write|Edit|MultiEdit|NotebookEdit and at PostToolUse on Bash that run /opt/enforce/checks/R7, /opt/enforce/checks/R5, /opt/enforce/checks/R6",
+     "status": "done, checked",
+     "problem": null
+    },
+    {
+     "id": "trial-1",
+     "kind": "trial",
+     "rules": [
+      "R7",
+      "R5",
+      "R6"
+     ],
+     "needs": [
+      "binding-1"
+     ],
+     "trial": "/opt/enforce/trials/batch-1-1.txt",
+     "done_when": "the trial of /opt/enforce/trials/batch-1-1.txt blocks each of R7, R5, R6 at least once",
+     "status": "failed its check",
+     "problem": "the trial blocked R5; not R7, R6",
+     "checks": [
+      "the agent's actions and the hooks' outcomes:\n  Write: /workspace/big.py\n    -> error: R5.......................................................................Failed\n- hook id: r5\n- exit code: 1\n\nR5: tmpun9qj3jy.py:1: put -*- coding: utf-8 -*- on the first line\nR6.......................................................................Failed\n- hook id: r6\n- exit code: 1\n\nR6: tmpun9qj3j\nthe agent's reply: 喵～ 代码小灵 写不了。哒～\n",
+      "the agent's actions and the hooks' outcomes:\n  Write: /workspace/big.py\n    -> error: R5.......................................................................Failed\n- hook id: r5\n- exit code: 1\n\nR5: tmpm6qmhfzp.py:1: put -*- coding: utf-8 -*- on the first line\nR6.......................................................................Failed\n- hook id: r6\n- exit code: 1\n\nR6: tmpm6qmhfz\nthe agent's reply: 喵～ 代码小灵 写不了。哒～\n"
+     ]
+    }
+   ]
+  },
+  {
+   "batch": 2,
+   "rules": [
+    "R2",
+    "R1",
+    "R3",
+    "R4",
+    "R8"
+   ],
+   "compiled": true,
+   "nodes": [
+    {
+     "id": "fixtures-R2",
+     "kind": "fixtures",
+     "rules": [
+      "R2"
+     ],
+     "needs": [],
+     "flag": "/opt/enforce/fixtures/R2/flag",
+     "pass": "/opt/enforce/fixtures/R2/pass",
+     "reads": "An assistant response or a message from the agent. Where: the agent's reply exists only inside the agent framework: its hook at the end of the turn gets it, and its transcript keeps it (a file in the agent's home)",
+     "done_when": "/opt/enforce/fixtures/R2/flag and /opt/enforce/fixtures/R2/pass each hold at least two files",
+     "status": "failed its check",
+     "problem": "/opt/enforce/fixtures/R2/flag holds 1 files and /opt/enforce/fixtures/R2/pass holds 0 (at least 2 each)",
+     "checks": [
+      "1 0",
+      "1 0"
+     ]
+    },
+    {
+     "id": "check-R2",
+     "kind": "check",
+     "rules": [
+      "R2"
+     ],
+     "needs": [
+      "fixtures-R2"
+     ],
+     "check": "/opt/enforce/checks/R2",
+     "flag": "/opt/enforce/fixtures/R2/flag",
+     "pass": "/opt/enforce/fixtures/R2/pass",
+     "enforcer_how": "A regular expression that finds text the rule forbids and replaces it, so the result follows the rule without a second attempt. Check: a regular expression that replaces what the rule forbids, so the result follows it; the mechanism must be able to write the target at that moment (or refuse the action and give the fixed text back)",
+     "reads": "An assistant response or a message from the agent. Where: the agent's reply exists only inside the agent framework: its hook at the end of the turn gets it, and its transcript keeps it (a file in the agent's home)",
+     "uses": [],
+     "done_when": "as the agent, it exits 1 and names R2 for every file in /opt/enforce/fixtures/R2/flag, and exits 0 for every file in /opt/enforce/fixtures/R2/pass",
+     "status": "done, checked",
+     "problem": null,
+     "checks": [
+      "== /opt/enforce/fixtures/R2/flag/a.txt exit 1 names:1\nR2: say 代码小灵, not 我: 代码小灵\n"
+     ]
+    },
+    {
+     "id": "fixtures-R1",
+     "kind": "fixtures",
+     "rules": [
+      "R1"
+     ],
+     "needs": [],
+     "flag": "/opt/enforce/fixtures/R1/flag",
+     "pass": "/opt/enforce/fixtures/R1/pass",
+     "reads": "An assistant response or a message from the agent. Where: the agent's reply exists only inside the agent framework: its hook at the end of the turn gets it, and its transcript keeps it (a file in the agent's home)",
+     "done_when": "/opt/enforce/fixtures/R1/flag and /opt/enforce/fixtures/R1/pass each hold at least two files",
+     "status": "failed its check",
+     "problem": "/opt/enforce/fixtures/R1/flag holds 1 files and /opt/enforce/fixtures/R1/pass holds 0 (at least 2 each)",
+     "checks": [
+      "1 0",
+      "1 0"
+     ]
+    },
+    {
+     "id": "check-R1",
+     "kind": "check",
+     "rules": [
+      "R1"
+     ],
+     "needs": [
+      "fixtures-R1"
+     ],
+     "check": "/opt/enforce/checks/R1",
+     "flag": "/opt/enforce/fixtures/R1/flag",
+     "pass": "/opt/enforce/fixtures/R1/pass",
+     "enforcer_how": "A regular expression that the checked text must match, or must not match. A match against the rule is a violation. What is read is part of the enforcer: a whole file, each line, only comments, a reply, the start or the end of a text. Check: a check script (/opt/enforce-toolbox/skeletons/check.py) with a regular expression; read what the rule is about (the whole text, each line, comments, the start or the end).",
+     "reads": "An assistant response or a message from the agent. Where: the agent's reply exists only inside the agent framework: its hook at the end of the turn gets it, and its transcript keeps it (a file in the agent's home)",
+     "uses": [],
+     "done_when": "as the agent, it exits 1 and names R1 for every file in /opt/enforce/fixtures/R1/flag, and exits 0 for every file in /opt/enforce/fixtures/R1/pass",
+     "status": "done, checked",
+     "problem": null,
+     "checks": [
+      "== /opt/enforce/fixtures/R1/flag/a.txt exit 1 names:1\nR1: start the reply with 喵～\n"
+     ]
+    },
+    {
+     "id": "fixtures-R3",
+     "kind": "fixtures",
+     "rules": [
+      "R3"
+     ],
+     "needs": [],
+     "flag": "/opt/enforce/fixtures/R3/flag",
+     "pass": "/opt/enforce/fixtures/R3/pass",
+     "reads": "An assistant response or a message from the agent. Where: the agent's reply exists only inside the agent framework: its hook at the end of the turn gets it, and its transcript keeps it (a file in the agent's home)",
+     "done_when": "/opt/enforce/fixtures/R3/flag and /opt/enforce/fixtures/R3/pass each hold at least two files",
+     "status": "failed its check",
+     "problem": "/opt/enforce/fixtures/R3/flag holds 1 files and /opt/enforce/fixtures/R3/pass holds 0 (at least 2 each)",
+     "checks": [
+      "1 0",
+      "1 0"
+     ]
+    },
+    {
+     "id": "check-R3",
+     "kind": "check",
+     "rules": [
+      "R3"
+     ],
+     "needs": [
+      "fixtures-R3"
+     ],
+     "check": "/opt/enforce/checks/R3",
+     "flag": "/opt/enforce/fixtures/R3/flag",
+     "pass": "/opt/enforce/fixtures/R3/pass",
+     "enforcer_how": "A regular expression that the checked text must match, or must not match. A match against the rule is a violation. What is read is part of the enforcer: a whole file, each line, only comments, a reply, the start or the end of a text. Check: a check script (/opt/enforce-toolbox/skeletons/check.py) with a regular expression; read what the rule is about (the whole text, each line, comments, the start or the end).",
+     "reads": "An assistant response or a message from the agent. Where: the agent's reply exists only inside the agent framework: its hook at the end of the turn gets it, and its transcript keeps it (a file in the agent's home)",
+     "uses": [],
+     "done_when": "as the agent, it exits 1 and names R3 for every file in /opt/enforce/fixtures/R3/flag, and exits 0 for every file in /opt/enforce/fixtures/R3/pass",
+     "status": "done, checked",
+     "problem": null,
+     "checks": [
+      "== /opt/enforce/fixtures/R3/flag/a.txt exit 1 names:1\nR3: call the user 开发者大大, not 你\n"
+     ]
+    },
+    {
+     "id": "fixtures-R4",
+     "kind": "fixtures",
+     "rules": [
+      "R4"
+     ],
+     "needs": [],
+     "flag": "/opt/enforce/fixtures/R4/flag",
+     "pass": "/opt/enforce/fixtures/R4/pass",
+     "reads": "An assistant response or a message from the agent. Where: the agent's reply exists only inside the agent framework: its hook at the end of the turn gets it, and its transcript keeps it (a file in the agent's home)",
+     "done_when": "/opt/enforce/fixtures/R4/flag and /opt/enforce/fixtures/R4/pass each hold at least two files",
+     "status": "failed its check",
+     "problem": "/opt/enforce/fixtures/R4/flag holds 1 files and /opt/enforce/fixtures/R4/pass holds 0 (at least 2 each)",
+     "checks": [
+      "1 0",
+      "1 0"
+     ]
+    },
+    {
+     "id": "check-R4",
+     "kind": "check",
+     "rules": [
+      "R4"
+     ],
+     "needs": [
+      "fixtures-R4"
+     ],
+     "check": "/opt/enforce/checks/R4",
+     "flag": "/opt/enforce/fixtures/R4/flag",
+     "pass": "/opt/enforce/fixtures/R4/pass",
+     "enforcer_how": "A regular expression that the checked text must match, or must not match. A match against the rule is a violation. What is read is part of the enforcer: a whole file, each line, only comments, a reply, the start or the end of a text. Check: a check script (/opt/enforce-toolbox/skeletons/check.py) with a regular expression; read what the rule is about (the whole text, each line, comments, the start or the end).",
+     "reads": "An assistant response or a message from the agent. Where: the agent's reply exists only inside the agent framework: its hook at the end of the turn gets it, and its transcript keeps it (a file in the agent's home)",
+     "uses": [],
+     "done_when": "as the agent, it exits 1 and names R4 for every file in /opt/enforce/fixtures/R4/flag, and exits 0 for every file in /opt/enforce/fixtures/R4/pass",
+     "status": "done, checked",
+     "problem": null,
+     "checks": [
+      "== /opt/enforce/fixtures/R4/flag/a.txt exit 1 names:1\nR4: reply in Chinese only\n"
+     ]
+    },
+    {
+     "id": "fixtures-R8",
+     "kind": "fixtures",
+     "rules": [
+      "R8"
+     ],
+     "needs": [],
+     "flag": "/opt/enforce/fixtures/R8/flag",
+     "pass": "/opt/enforce/fixtures/R8/pass",
+     "reads": "An assistant response or a message from the agent. Where: the agent's reply exists only inside the agent framework: its hook at the end of the turn gets it, and its transcript keeps it (a file in the agent's home)",
+     "done_when": "/opt/enforce/fixtures/R8/flag and /opt/enforce/fixtures/R8/pass each hold at least two files",
+     "status": "failed its check",
+     "problem": "/opt/enforce/fixtures/R8/flag holds 1 files and /opt/enforce/fixtures/R8/pass holds 0 (at least 2 each)",
+     "checks": [
+      "1 0",
+      "1 0"
+     ]
+    },
+    {
+     "id": "check-R8",
+     "kind": "check",
+     "rules": [
+      "R8"
+     ],
+     "needs": [
+      "fixtures-R8"
+     ],
+     "check": "/opt/enforce/checks/R8",
+     "flag": "/opt/enforce/fixtures/R8/flag",
+     "pass": "/opt/enforce/fixtures/R8/pass",
+     "enforcer_how": "A regular expression that the checked text must match, or must not match. A match against the rule is a violation. What is read is part of the enforcer: a whole file, each line, only comments, a reply, the start or the end of a text. Check: a check script (/opt/enforce-toolbox/skeletons/check.py) with a regular expression; read what the rule is about (the whole text, each line, comments, the start or the end).",
+     "reads": "An assistant response or a message from the agent. Where: the agent's reply exists only inside the agent framework: its hook at the end of the turn gets it, and its transcript keeps it (a file in the agent's home)",
+     "uses": [],
+     "done_when": "as the agent, it exits 1 and names R8 for every file in /opt/enforce/fixtures/R8/flag, and exits 0 for every file in /opt/enforce/fixtures/R8/pass",
+     "status": "failed its check",
+     "problem": "/opt/enforce/fixtures/R8/flag/a.txt: exit 0, names no R8 (want exit 1 naming R8)",
+     "checks": [
+      "== /opt/enforce/fixtures/R8/flag/a.txt exit 0 names:0\n\n",
+      "== /opt/enforce/fixtures/R8/flag/a.txt exit 0 names:0\n\n"
+     ]
+    },
+    {
+     "id": "binding-1",
+     "kind": "binding",
+     "rules": [
+      "R2",
+      "R1",
+      "R3",
+      "R4",
+      "R8"
+     ],
+     "needs": [
+      "check-R2",
+      "check-R1",
+      "check-R3",
+      "check-R4",
+      "check-R8"
+     ],
+     "trigger": [
+      "Agent loop",
+      "Response sent"
+     ],
+     "timing": "before",
+     "checks": [
+      "{\"files\": [{\"scope\": \"project\", \"path\": \"/workspace/.claude/settings.json\", \"keys\": [\"hooks\"]}], \"hooks\": [{\"hook\": 1, \"scope\": \"project\", \"event\": \"PreToolUse\", \"matcher\": \"Write|Edit|MultiEdit|NotebookEdit\", \"type\": \"command\", \"command\": \"python3 /opt/enforce/hooks/pre_write.py\"}, {\"hook\": 2, \"scope\": \"project\", \"event\": \"PostToolUse\", \"matcher\": \"Bash\", \"type\": \"command\", \"command\": \"python3 /opt/enforce/hooks/post_bash.py\"}, {\"hook\": 3, \"scope\": \"project\", \"event\": \"Stop\", \"matcher\": null, \"type\": \"command\", \"command\": \"python3 /opt/enforce/hooks/stop_reply.py\"}]}\n\nClaude Code reported nothing about the settings.\n"
+     ],
+     "where": "the agent framework's hook (/opt/enforce-toolbox/mechanisms/framework-hooks.md) at the end of the turn: it sees the reply, and can keep the agent working until the reply follows the rule",
+     "reads": "An assistant response or a message from the agent. Where: the agent's reply exists only inside the agent framework: its hook at the end of the turn gets it, and its transcript keeps it (a file in the agent's home)",
+     "done_when": "`/opt/enforce-harness/try --check` reports nothing, and /workspace/.claude/settings.json has hooks at at Stop that run /opt/enforce/checks/R2, /opt/enforce/checks/R1, /opt/enforce/checks/R3, /opt/enforce/checks/R4, /opt/enforce/checks/R8",
+     "status": "done, checked",
+     "problem": null
+    },
+    {
+     "id": "trial-1",
+     "kind": "trial",
+     "rules": [
+      "R2",
+      "R1",
+      "R3",
+      "R4",
+      "R8"
+     ],
+     "needs": [
+      "binding-1"
+     ],
+     "trial": "/opt/enforce/trials/batch-2-1.txt",
+     "done_when": "the trial of /opt/enforce/trials/batch-2-1.txt blocks each of R2, R1, R3, R4, R8 at least once",
+     "status": "failed its check",
+     "problem": "the trial blocked R1; not R2, R3, R4, R8",
+     "checks": [
+      "the agent's actions and the hooks' outcomes:\n  [hook feedback] Stop hook feedback:\nR1: start the reply with 喵～\nR2: say 代码小灵, not 我: 代码小灵\nR3: call the user 开发者大大, not 你\nR4: reply in Chinese only\nR8: end the reply with 哒～\n  [hook_blocking_error] Stop exit : R1: start the reply with 喵～\nR2: say 代码小灵, not 我: 代码小灵\nR3: call the user 开发者大大, not 你\nR4: reply in Chinese only\nR8: end the reply with 哒～\nthe agent's reply: 喵～ 代码小灵 为开发者大大 好。哒～\n",
+      "the agent's actions and the hooks' outcomes:\n  [hook feedback] Stop hook feedback:\nR1: start the reply with 喵～\nR2: say 代码小灵, not 我: 代码小灵\nR3: call the user 开发者大大, not 你\nR4: reply in Chinese only\nR8: end the reply with 哒～\n  [hook_blocking_error] Stop exit : R1: start the reply with 喵～\nR2: say 代码小灵, not 我: 代码小灵\nR3: call the user 开发者大大, not 你\nR4: reply in Chinese only\nR8: end the reply with 哒～\nthe agent's reply: 喵～ 代码小灵 为开发者大大 好。哒～\n"
+     ]
+    }
+   ]
+  }
+ ],
+ "deviations": {}
+}

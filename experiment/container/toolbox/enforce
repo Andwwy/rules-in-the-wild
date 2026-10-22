@@ -1,0 +1,9 @@
+#!/usr/bin/env python3
+"""The library's command: `enforce install NAME` installs a tested tool; `enforce help` lists the commands."""
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from enforce_lib.cli import main  # noqa: E402
+
+sys.exit(main(sys.argv[1:]))

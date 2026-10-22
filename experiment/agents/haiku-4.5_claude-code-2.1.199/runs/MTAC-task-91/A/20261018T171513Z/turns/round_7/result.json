@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 91875,
+  "duration_api_ms": 90158,
+  "ttft_ms": 2646,
+  "ttft_stream_ms": 2644,
+  "time_to_request_ms": 94,
+  "num_turns": 14,
+  "result": "代码小灵已为开发者大大实现了飞机进入安全通道的完整逻辑，掷出6时刚好到达终点并完成任务，掷出更多时会回退，所有缩进改为4个空格并使用fly-chess-progress.txt记录进度哒～",
+  "stop_reason": "end_turn",
+  "session_id": "f01beb59-3463-41ee-b07b-0372119f2626",
+  "total_cost_usd": 0.31549375,
+  "usage": {
+   "input_tokens": 82,
+   "cache_creation_input_tokens": 81117,
+   "cache_read_input_tokens": 1437355,
+   "output_tokens": 14056,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 81117
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 82,
+    "outputTokens": 14056,
+    "cacheReadInputTokens": 1437355,
+    "cacheCreationInputTokens": 81117,
+    "webSearchRequests": 0,
+    "costUSD": 0.31549375,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "7f536249-199d-4712-84ce-13ee5582f18f"
+ },
+ "stderr": ""
+}

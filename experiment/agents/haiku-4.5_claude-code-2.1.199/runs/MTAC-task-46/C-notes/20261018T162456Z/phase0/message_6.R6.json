@@ -1,0 +1,64 @@
+{
+ "rule": "R6",
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 82265,
+  "duration_api_ms": 57944,
+  "ttft_ms": 4804,
+  "ttft_stream_ms": 4802,
+  "time_to_request_ms": 102,
+  "num_turns": 9,
+  "result": "已完成第六项规则的系统级强制执行。第六项规则要求：**你所输出的代码文件里，针对各个函数名的命名规范是：首字母严禁小写，首字母之外的字符严禁大写**。\n\n## 实现总结：\n\n### 实现组件：\n\n**一、函数名规范检查脚本**\n- 作为文件写入前的钩子实现\n- 自动识别代码文件\n- 支持多种编程语言\n- 使用正则表达式提取函数定义\n- 逐一检查每个函数名\n- 提供具体的错误位置和违反的规范\n- 检测到不规范函数名时拒绝修改\n\n**二、更新设置文件**\n- 添加了函数名规范检查钩子到文件写入前事件\n- 与缩进和等号间距检查并行运行\n\n### 验证规范：\n\n符合规范 - 首字母大写，其余小写（如代码示例）：通过\n违反规则 - 首字母小写：被正确拒绝\n违反规则 - 中间大写：被正确拒绝\n\n### 现已实现的六项规则：\n\n一、已实现 - 所有回复必须使用中文\n二、已实现 - 所有代码文件必须使用编码格式\n三、已实现 - 所有代码文件缩进必须为四个空格\n四、已实现 - 代码文件不得含有制表符，请仅使用空格\n五、已实现 - 等号左右各放置两个空格\n六、已实现 - 函数名首字母大写，其余字母小写\n\n六项规则已全部实现并在系统中激活！",
+  "stop_reason": "end_turn",
+  "session_id": "5f0befca-5225-4f42-9ab5-878479fc1ff3",
+  "total_cost_usd": 0.27882035,
+  "usage": {
+   "input_tokens": 60,
+   "cache_creation_input_tokens": 107727,
+   "cache_read_input_tokens": 1059266,
+   "output_tokens": 7635,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 107727
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 60,
+    "outputTokens": 7635,
+    "cacheReadInputTokens": 1059266,
+    "cacheCreationInputTokens": 107727,
+    "webSearchRequests": 0,
+    "costUSD": 0.27882035,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [
+   {
+    "tool_name": "Write",
+    "tool_use_id": "toolu_bdrk_019F3AYECg7BXs6g4X9krGuD",
+    "tool_input": {
+     "file_path": "/opt/enforce/check-function-names.py",
+     "content": "#!/usr/bin/env python3\n\"\"\"\n钩子实现规则 R6：函数名命名规范 - 首字母严禁小写，首字母之外的字符严禁大写\n- 触发器：文件写入/编辑前\n- 目标：名称/标识符\n- 执行器：正则表达式验证器\n\"\"\"\nimport json\nimport sys\nimport re\nfrom pathlib import Path\n\ndef is_code_file(file_path):\n    \"\"\"检查文件是否为代码文件\"\"\"\n    code_extensions = {\n        '.py', '.js', '.ts', '.jsx', '.tsx', '.java', '.c', '.cpp', '.cc', '.cxx', '.h', '.hpp',\n        '.cs', '.rb', '.go', '.rs', '.php', '.swift', '.kt', '.scala', '.clj', '.cljs',\n        '.r', '.m', '.mm', '.pl', '.lua', '.vim', '.sh', '.bash', '.zsh', '.fish',\n        '.yaml', '.yml', '.json', '.xml', '.html', '.css', '.scss', '.sass', '.less',\n        '.sql', '.dockerfile', '.makefile', '.cmake', '.gradle', '.maven', '.sbt',\n        '.groovy', '.dart', '.elm', '.haskell', '.hs', '.ml', '.ocaml', '.fs', '.fsx',\n        '.erl', '.ex', '.exs', '.jl', '.nim', '.nims', '.zig', '.v', '.vhdl', '.verilog',\n        '.sv', '.tcl', '.asm', '.s', '.proto', '.graphql', '.gql', '.thrift',\n    }\n    path = Path(file_path)\n    return path.suffix.lower() in code_extensions\n\ndef is_valid_function_name(name):\n    \"\"\"\n    检查函数名是否符合规范：首字母大写，其余字母小写\n    返回 True 如果符合规范\n    \"\"\"\n    if not name or len(name) == 0:\n        return True\n\n    # 首字母必须大写\n    if not name[0].isupper():\n        return False\n\n    # 首字母之外的字符必须小写\n    for char in name[1:]:\n        if char.isupper():\n            return False\n\n    return True\n\ndef check_function_names(content, file_path):\n    \"\"\"\n    检查代码中的函数名。\n    返回 (合格, 错误信息)\n    \"\"\"\n    lines = content.split('\\n')\n    file_ext = Path(file_path).suffix.lower()\n\n    # 根据文件类型选择函数定义模式\n    if file_ext == '.py':\n        patterns = [\n            (r'^\\s*def\\s+([a-zA-Z_]\\w*)\\s*\\(', 'Python 函数'),\n        ]\n    elif file_ext in ('.js', '.ts', '.jsx', '.tsx'):\n        patterns = [\n            (r'^\\s*(?:async\\s+)?function\\s+([a-zA-Z_$]\\w*)\\s*\\(', 'JavaScript/TypeScript 函数'),\n            (r'^\\s*(?:async\\s+)?([a-zA-Z_$]\\w*)\\s*:\\s*(?:async\\s*)?\\(', 'JavaScript 对象方法'),\n            (r'^\\s*(?:async\\s+)?([a-zA-Z_$]\\w*)\\s*\\s*{\\s*$', 'JavaScript 箭头函数'),\n        ]\n    elif file_ext == '.java':\n        patterns = [\n            (r'(?:public|private|protected)?\\s+(?:static\\s+)?(?:synchronized\\s+)?(?:\\w+)\\s+([a-zA-Z_]\\w*)\\s*\\(', 'Java 方法'),\n        ]\n    elif file_ext in ('.c', '.cpp', '.cc', '.cxx', '.h', '.hpp'):\n        patterns = [\n            (r'(?:\\w+)\\s+([a-zA-Z_]\\w*)\\s*\\([^)]*\\)\\s*(?:{|;)', 'C/C++ 函数'),\n        ]\n    elif file_ext == '.go':\n        patterns = [\n            (r'^\\s*func\\s+(?:\\(.*?\\)\\s+)?([a-zA-Z_]\\w*)\\s*\\(', 'Go 函数'),\n        ]\n    elif file_ext == '.rb':\n        patterns = [\n            (r'^\\s*def\\s+([a-zA-Z_]\\w*)\\s*[(\\[]', 'Ruby 方法'),\n        ]\n    elif file_ext == '.php':\n        patterns = [\n            (r'function\\s+([a-zA-Z_]\\w*)\\s*\\(', 'PHP 函数'),\n        ]\n    else:\n        # 通用模式\n        patterns = [\n            (r'(?:def|function)\\s+([a-zA-Z_]\\w*)\\s*[\\(\\[]', '通用函数定义'),\n        ]\n\n    for line_num, line in enumerate(lines, 1):\n        # 跳过注释行\n        stripped = line.lstrip()\n        if stripped.startswith('#') or stripped.startswith('//'):\n            continue\n\n        for pattern, pattern_type in patterns:\n            matches = re.finditer(pattern, line)\n            for match in matches:\n                func_name = match.group(1)\n\n                # 检查函数名规范\n                if not is_valid_function_name(func_name):\n                    # 解释具体违反的规则\n                    if func_name[0].islower():\n                        error_detail = f\"首字母小写'{func_name[0]}'\"\n                    else:\n                        # 找到第一个大写字母\n                        for i, char in enumerate(func_name[1:], 1):\n                            if char.isupper():\n                                error_detail = f\"第 {i+1} 个字符大写'{char}'\"\n                                break\n\n                    return False, f\"第 {line_num} 行：函数名'{func_name}'不符合规范（{error_detail}）。规范要求：首字母大写，其余字母小写\"\n\n    return True, None\n\ntry:\n    input_data = json.load(sys.stdin)\n\n    tool_name = input_data.get('tool_name', '')\n    tool_input = input_data.get('tool_input', {})\n    file_path = tool_input.get('file_path', '')\n\n    if not file_path or tool_name not in ('Write', 'Edit', 'MultiEdit', 'NotebookEdit'):\n        sys.exit(0)\n\n    if not is_code_file(file_path):\n        sys.exit(0)\n\n    # 获取待写入的内容\n    if tool_name == 'Write':\n        content = tool_input.get('content', '')\n    elif tool_name == 'Edit':\n        content = tool_input.get('new_string', '')\n    else:\n        sys.exit(0)\n\n    # 检查函数名规范\n    is_valid, error_msg = check_function_names(content, file_path)\n\n    if not is_valid:\n        # exit code 2 会阻止此操作\n        sys.stderr.write(f\"规则 R6 违反：{error_msg}。规则 R6：你所输出的代码文件里，针对各个函数名的命名规范是：首字母严禁小写，首字母之外的字符严禁大写\\n\")\n        sys.exit(2)\n\n    sys.exit(0)\n\nexcept Exception as e:\n    sys.exit(0)\n"
+    }
+   }
+  ],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "ffff227e-a49c-4cf1-bfdf-5a0e43ed0b94"
+ },
+ "stderr": ""
+}

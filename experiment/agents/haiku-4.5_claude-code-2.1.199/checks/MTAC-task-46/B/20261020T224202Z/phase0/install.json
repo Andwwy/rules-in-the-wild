@@ -1,0 +1,17 @@
+{
+ "session": "b6fa2414-dc05-4eff-a257-a9a593c4fbfa",
+ "messages": 1,
+ "install": {
+  "installed": 0,
+  "error": "/opt/enforce/settings.json: FileNotFoundError: [Errno 2] No such file or directory: '/opt/enforce/settings.json'"
+ },
+ "claude_code_on_settings": null,
+ "commands_added_for_agent": [
+  "demo-tool"
+ ],
+ "workspace": {
+  "created": 1,
+  "changed": 0,
+  "deleted": 0
+ }
+}

@@ -1,0 +1,626 @@
+[
+ {
+  "rules": [
+   "R3"
+  ],
+  "specs": [
+   {
+    "rule": "R3",
+    "text": "在生成的代码文件里，缩进必须严格保持为 4 个空格",
+    "enforcer": [
+     "Validation",
+     "Regex",
+     "Regex validator"
+    ],
+    "trigger": [
+     "Agent action",
+     "File write / edit"
+    ],
+    "timing": "after",
+    "target": [
+     "Source code",
+     "Source file"
+    ],
+    "enforcer_how": "A regular expression that the checked text must match, or must not match. A match against the rule is a violation. What is read is part of the enforcer: a whole file, each line, only comments, a reply, the start or the end of a text. Check: a check script (/opt/enforce-toolbox/skeletons/check.py) with a regular expression; read what the rule is about (the whole text, each line, comments, the start or the end). Start from the skeleton: /opt/enforce-toolbox/skeletons/regex_validator.py",
+    "where": "the framework's hook (/opt/enforce-toolbox/mechanisms/framework-hooks.md) at the end of the turn (every file); git hooks (/opt/enforce-toolbox/mechanisms/git-hooks.md) (at commit); checks that keep running (/opt/enforce-toolbox/mechanisms/keep-running.md)",
+    "reads": "A source code file. Where: /workspace/<path>, on disk for every mechanism; the content of a write before it happens: only the framework's hook (/opt/enforce-toolbox/mechanisms/framework-hooks.md) before its write tool Which files: decide when the check runs, from the file in hand: the files the agent will create cannot be known before. Map its name, or its content, to a language with a complete list, such as Pygments (`get_lexer_for_filename`, `guess_lexer`) or GitHub Linguist's list of languages: programming and markup languages that hold code count (Python, JavaScript, HTML, CSS, shell, …); documents and data do not (Markdown, plain text, JSON, YAML, CSV), unless the rule names them. A rule about the file itself (its first lines, its name, its encoding) applies once per file, in that file's own comment syntax (in HTML, an HTML comment); a rule about the code in it (functions, names, statements) also reaches code embedded in another file, such as a `<script>` in HTML. A file whose kind is unknown is checked, not passed.",
+    "recipes": [],
+    "uses": [],
+    "tools": [],
+    "nodes": [
+     "/opt/enforce-toolbox/enforcers/validation/regex/regex-validator.md",
+     "/opt/enforce-toolbox/triggers/agent-action/file-write-edit.md",
+     "/opt/enforce-toolbox/targets/source-code/source-file.md"
+    ],
+    "check": "/opt/enforce/checks/R3",
+    "flag": "/opt/enforce/fixtures/R3/flag",
+    "pass": "/opt/enforce/fixtures/R3/pass"
+   }
+  ],
+  "plan": [
+   {
+    "id": "check-R3",
+    "kind": "check",
+    "rules": [
+     "R3"
+    ],
+    "needs": [],
+    "check": "/opt/enforce/checks/R3",
+    "tools": [],
+    "flag": "/opt/enforce/fixtures/R3/flag",
+    "pass": "/opt/enforce/fixtures/R3/pass",
+    "enforcer_how": "A regular expression that the checked text must match, or must not match. A match against the rule is a violation. What is read is part of the enforcer: a whole file, each line, only comments, a reply, the start or the end of a text. Check: a check script (/opt/enforce-toolbox/skeletons/check.py) with a regular expression; read what the rule is about (the whole text, each line, comments, the start or the end). Start from the skeleton: /opt/enforce-toolbox/skeletons/regex_validator.py",
+    "reads": "A source code file. Where: /workspace/<path>, on disk for every mechanism; the content of a write before it happens: only the framework's hook (/opt/enforce-toolbox/mechanisms/framework-hooks.md) before its write tool Which files: decide when the check runs, from the file in hand: the files the agent will create cannot be known before. Map its name, or its content, to a language with a complete list, such as Pygments (`get_lexer_for_filename`, `guess_lexer`) or GitHub Linguist's list of languages: programming and markup languages that hold code count (Python, JavaScript, HTML, CSS, shell, …); documents and data do not (Markdown, plain text, JSON, YAML, CSV), unless the rule names them. A rule about the file itself (its first lines, its name, its encoding) applies once per file, in that file's own comment syntax (in HTML, an HTML comment); a rule about the code in it (functions, names, statements) also reaches code embedded in another file, such as a `<script>` in HTML. A file whose kind is unknown is checked, not passed.",
+    "uses": []
+   },
+   {
+    "id": "binding-1",
+    "kind": "binding",
+    "rules": [
+     "R3"
+    ],
+    "needs": [
+     "check-R3"
+    ],
+    "trigger": [
+     "Agent action",
+     "File write / edit"
+    ],
+    "timing": "after",
+    "checks": [
+     "/opt/enforce/checks/R3"
+    ],
+    "where": "the framework's hook (/opt/enforce-toolbox/mechanisms/framework-hooks.md) at the end of the turn (every file); git hooks (/opt/enforce-toolbox/mechanisms/git-hooks.md) (at commit); checks that keep running (/opt/enforce-toolbox/mechanisms/keep-running.md)",
+    "reads": "A source code file. Where: /workspace/<path>, on disk for every mechanism; the content of a write before it happens: only the framework's hook (/opt/enforce-toolbox/mechanisms/framework-hooks.md) before its write tool Which files: decide when the check runs, from the file in hand: the files the agent will create cannot be known before. Map its name, or its content, to a language with a complete list, such as Pygments (`get_lexer_for_filename`, `guess_lexer`) or GitHub Linguist's list of languages: programming and markup languages that hold code count (Python, JavaScript, HTML, CSS, shell, …); documents and data do not (Markdown, plain text, JSON, YAML, CSV), unless the rule names them. A rule about the file itself (its first lines, its name, its encoding) applies once per file, in that file's own comment syntax (in HTML, an HTML comment); a rule about the code in it (functions, names, statements) also reaches code embedded in another file, such as a `<script>` in HTML. A file whose kind is unknown is checked, not passed.",
+    "fixtures": [
+     {
+      "rule": "R3",
+      "flag": "/opt/enforce/fixtures/R3/flag",
+      "pass": "/opt/enforce/fixtures/R3/pass",
+      "reply": false
+     }
+    ]
+   }
+  ],
+  "text": "These rules are for the agent's later session in /workspace. They do not apply to you: implement system enforcement for each rule with its enforcer, at its trigger, on its target.\n\nRule R3: 在生成的代码文件里，缩进必须严格保持为 4 个空格\n\n- Route: Regex validator (Validation › Regex › Regex validator) · File write / edit (Agent action › File write / edit), timing: after · Source file (Source code › Source file)\n- The check, by the enforcer: A regular expression that the checked text must match, or must not match. A match against the rule is a violation. What is read is part of the enforcer: a whole file, each line, only comments, a reply, the start or the end of a text. Check: a check script (/opt/enforce-toolbox/skeletons/check.py) with a regular expression; read what the rule is about (the whole text, each line, comments, the start or the end). Start from the skeleton: /opt/enforce-toolbox/skeletons/regex_validator.py\n- Where it runs, by the trigger: the framework's hook (/opt/enforce-toolbox/mechanisms/framework-hooks.md) at the end of the turn (every file); git hooks (/opt/enforce-toolbox/mechanisms/git-hooks.md) (at commit); checks that keep running (/opt/enforce-toolbox/mechanisms/keep-running.md)\n- What it reads, by the target: A source code file. Where: /workspace/<path>, on disk for every mechanism; the content of a write before it happens: only the framework's hook (/opt/enforce-toolbox/mechanisms/framework-hooks.md) before its write tool Which files: decide when the check runs, from the file in hand: the files the agent will create cannot be known before. Map its name, or its content, to a language with a complete list, such as Pygments (`get_lexer_for_filename`, `guess_lexer`) or GitHub Linguist's list of languages: programming and markup languages that hold code count (Python, JavaScript, HTML, CSS, shell, …); documents and data do not (Markdown, plain text, JSON, YAML, CSV), unless the rule names them. A rule about the file itself (its first lines, its name, its encoding) applies once per file, in that file's own comment syntax (in HTML, an HTML comment); a rule about the code in it (functions, names, statements) also reaches code embedded in another file, such as a `<script>` in HTML. A file whose kind is unknown is checked, not passed.\n- Tools: none to install\n- Toolbox nodes: /opt/enforce-toolbox/enforcers/validation/regex/regex-validator.md, /opt/enforce-toolbox/triggers/agent-action/file-write-edit.md, /opt/enforce-toolbox/targets/source-code/source-file.md\n\nThe work for these rules comes as nodes, one at a time; when you reply to a node, the harness checks it. The nodes: check-R3, binding-1.\nBuild exactly what each rule's route says. If a part of a route cannot work here, write why in /opt/enforce/deviations.json ({\"R<n>\": \"<why>\"}) and build the nearest thing that keeps the rest of the route.\n"
+ },
+ {
+  "rules": [
+   "R5"
+  ],
+  "specs": [
+   {
+    "rule": "R5",
+    "text": "生成代码时，请在“=”号的左侧和右侧各放置两个空格",
+    "enforcer": [
+     "Validation",
+     "Regex",
+     "Regex validator"
+    ],
+    "trigger": [
+     "Agent action",
+     "File write / edit"
+    ],
+    "timing": "at",
+    "target": [
+     "Source code",
+     "Source file"
+    ],
+    "enforcer_how": "A regular expression that the checked text must match, or must not match. A match against the rule is a violation. What is read is part of the enforcer: a whole file, each line, only comments, a reply, the start or the end of a text. Check: a check script (/opt/enforce-toolbox/skeletons/check.py) with a regular expression; read what the rule is about (the whole text, each line, comments, the start or the end). Start from the skeleton: /opt/enforce-toolbox/skeletons/regex_validator.py",
+    "where": "the framework's hook (/opt/enforce-toolbox/mechanisms/framework-hooks.md) after its write tools; file watchers (/opt/enforce-toolbox/mechanisms/file-watchers.md); the framework's hook after a shell command (files that the command changed)",
+    "reads": "A source code file. Where: /workspace/<path>, on disk for every mechanism; the content of a write before it happens: only the framework's hook (/opt/enforce-toolbox/mechanisms/framework-hooks.md) before its write tool Which files: decide when the check runs, from the file in hand: the files the agent will create cannot be known before. Map its name, or its content, to a language with a complete list, such as Pygments (`get_lexer_for_filename`, `guess_lexer`) or GitHub Linguist's list of languages: programming and markup languages that hold code count (Python, JavaScript, HTML, CSS, shell, …); documents and data do not (Markdown, plain text, JSON, YAML, CSV), unless the rule names them. A rule about the file itself (its first lines, its name, its encoding) applies once per file, in that file's own comment syntax (in HTML, an HTML comment); a rule about the code in it (functions, names, statements) also reaches code embedded in another file, such as a `<script>` in HTML. A file whose kind is unknown is checked, not passed.",
+    "recipes": [],
+    "uses": [],
+    "tools": [],
+    "nodes": [
+     "/opt/enforce-toolbox/enforcers/validation/regex/regex-validator.md",
+     "/opt/enforce-toolbox/triggers/agent-action/file-write-edit.md",
+     "/opt/enforce-toolbox/targets/source-code/source-file.md"
+    ],
+    "check": "/opt/enforce/checks/R5",
+    "flag": "/opt/enforce/fixtures/R5/flag",
+    "pass": "/opt/enforce/fixtures/R5/pass"
+   }
+  ],
+  "plan": [
+   {
+    "id": "check-R5",
+    "kind": "check",
+    "rules": [
+     "R5"
+    ],
+    "needs": [],
+    "check": "/opt/enforce/checks/R5",
+    "tools": [],
+    "flag": "/opt/enforce/fixtures/R5/flag",
+    "pass": "/opt/enforce/fixtures/R5/pass",
+    "enforcer_how": "A regular expression that the checked text must match, or must not match. A match against the rule is a violation. What is read is part of the enforcer: a whole file, each line, only comments, a reply, the start or the end of a text. Check: a check script (/opt/enforce-toolbox/skeletons/check.py) with a regular expression; read what the rule is about (the whole text, each line, comments, the start or the end). Start from the skeleton: /opt/enforce-toolbox/skeletons/regex_validator.py",
+    "reads": "A source code file. Where: /workspace/<path>, on disk for every mechanism; the content of a write before it happens: only the framework's hook (/opt/enforce-toolbox/mechanisms/framework-hooks.md) before its write tool Which files: decide when the check runs, from the file in hand: the files the agent will create cannot be known before. Map its name, or its content, to a language with a complete list, such as Pygments (`get_lexer_for_filename`, `guess_lexer`) or GitHub Linguist's list of languages: programming and markup languages that hold code count (Python, JavaScript, HTML, CSS, shell, …); documents and data do not (Markdown, plain text, JSON, YAML, CSV), unless the rule names them. A rule about the file itself (its first lines, its name, its encoding) applies once per file, in that file's own comment syntax (in HTML, an HTML comment); a rule about the code in it (functions, names, statements) also reaches code embedded in another file, such as a `<script>` in HTML. A file whose kind is unknown is checked, not passed.",
+    "uses": []
+   },
+   {
+    "id": "binding-1",
+    "kind": "binding",
+    "rules": [
+     "R5"
+    ],
+    "needs": [
+     "check-R5"
+    ],
+    "trigger": [
+     "Agent action",
+     "File write / edit"
+    ],
+    "timing": "at",
+    "checks": [
+     "/opt/enforce/checks/R5"
+    ],
+    "where": "the framework's hook (/opt/enforce-toolbox/mechanisms/framework-hooks.md) after its write tools; file watchers (/opt/enforce-toolbox/mechanisms/file-watchers.md); the framework's hook after a shell command (files that the command changed)",
+    "reads": "A source code file. Where: /workspace/<path>, on disk for every mechanism; the content of a write before it happens: only the framework's hook (/opt/enforce-toolbox/mechanisms/framework-hooks.md) before its write tool Which files: decide when the check runs, from the file in hand: the files the agent will create cannot be known before. Map its name, or its content, to a language with a complete list, such as Pygments (`get_lexer_for_filename`, `guess_lexer`) or GitHub Linguist's list of languages: programming and markup languages that hold code count (Python, JavaScript, HTML, CSS, shell, …); documents and data do not (Markdown, plain text, JSON, YAML, CSV), unless the rule names them. A rule about the file itself (its first lines, its name, its encoding) applies once per file, in that file's own comment syntax (in HTML, an HTML comment); a rule about the code in it (functions, names, statements) also reaches code embedded in another file, such as a `<script>` in HTML. A file whose kind is unknown is checked, not passed.",
+    "fixtures": [
+     {
+      "rule": "R5",
+      "flag": "/opt/enforce/fixtures/R5/flag",
+      "pass": "/opt/enforce/fixtures/R5/pass",
+      "reply": false
+     }
+    ]
+   }
+  ],
+  "text": "These rules are for the agent's later session in /workspace. They do not apply to you: implement system enforcement for each rule with its enforcer, at its trigger, on its target.\n\nRule R5: 生成代码时，请在“=”号的左侧和右侧各放置两个空格\n\n- Route: Regex validator (Validation › Regex › Regex validator) · File write / edit (Agent action › File write / edit), timing: at · Source file (Source code › Source file)\n- The check, by the enforcer: A regular expression that the checked text must match, or must not match. A match against the rule is a violation. What is read is part of the enforcer: a whole file, each line, only comments, a reply, the start or the end of a text. Check: a check script (/opt/enforce-toolbox/skeletons/check.py) with a regular expression; read what the rule is about (the whole text, each line, comments, the start or the end). Start from the skeleton: /opt/enforce-toolbox/skeletons/regex_validator.py\n- Where it runs, by the trigger: the framework's hook (/opt/enforce-toolbox/mechanisms/framework-hooks.md) after its write tools; file watchers (/opt/enforce-toolbox/mechanisms/file-watchers.md); the framework's hook after a shell command (files that the command changed)\n- What it reads, by the target: A source code file. Where: /workspace/<path>, on disk for every mechanism; the content of a write before it happens: only the framework's hook (/opt/enforce-toolbox/mechanisms/framework-hooks.md) before its write tool Which files: decide when the check runs, from the file in hand: the files the agent will create cannot be known before. Map its name, or its content, to a language with a complete list, such as Pygments (`get_lexer_for_filename`, `guess_lexer`) or GitHub Linguist's list of languages: programming and markup languages that hold code count (Python, JavaScript, HTML, CSS, shell, …); documents and data do not (Markdown, plain text, JSON, YAML, CSV), unless the rule names them. A rule about the file itself (its first lines, its name, its encoding) applies once per file, in that file's own comment syntax (in HTML, an HTML comment); a rule about the code in it (functions, names, statements) also reaches code embedded in another file, such as a `<script>` in HTML. A file whose kind is unknown is checked, not passed.\n- Tools: none to install\n- Toolbox nodes: /opt/enforce-toolbox/enforcers/validation/regex/regex-validator.md, /opt/enforce-toolbox/triggers/agent-action/file-write-edit.md, /opt/enforce-toolbox/targets/source-code/source-file.md\n\nThe work for these rules comes as nodes, one at a time; when you reply to a node, the harness checks it. The nodes: check-R5, binding-1.\nBuild exactly what each rule's route says. If a part of a route cannot work here, write why in /opt/enforce/deviations.json ({\"R<n>\": \"<why>\"}) and build the nearest thing that keeps the rest of the route.\n"
+ },
+ {
+  "rules": [
+   "R7",
+   "R2",
+   "R4",
+   "R8"
+  ],
+  "specs": [
+   {
+    "rule": "R7",
+    "text": "你所编写的代码文件内，所有类名的长度均需恰好为质数，不得有例外",
+    "enforcer": [
+     "Analysis",
+     "Code scans",
+     "Semgrep"
+    ],
+    "trigger": [
+     "Agent action",
+     "File write / edit"
+    ],
+    "timing": "before",
+    "target": [
+     "Source code",
+     "Class / type"
+    ],
+    "enforcer_how": "A pattern-based static analyzer. A rule is a code pattern that Semgrep matches against each file's syntax tree, for many languages (Python, JavaScript, TypeScript, HTML script blocks, Bash, …). Check: `semgrep scan --config <rules.yml> --error --metrics=off --quiet <file>` (exit 1 on a finding; `--json` for a report) Rules: `rules: [{id: <id>, languages: [<language>], severity: ERROR, message: \"<what to change>\", pattern: \"<code pattern>\"}]`; Semgrep matches syntax, it cannot compute values (a length, a count): let Semgrep find the code (`--json` gives each match's file, start and end lines), and compute the value from that in a check script (/opt/enforce-toolbox/skeletons/check.py) Start from the skeleton: /opt/enforce-toolbox/skeletons/semgrep_check.py (Semgrep finds the code; judge() decides, and computes what Semgrep cannot)",
+    "where": "the agent framework's hook (/opt/enforce-toolbox/mechanisms/framework-hooks.md) before its write tools (it sees the new content); file permissions (/opt/enforce-toolbox/mechanisms/file-permissions.md) (the write fails)",
+    "reads": "A class, a type, an interface or a struct. Where: in the source files (/opt/enforce-toolbox/skeletons/names_python.py, /opt/enforce-toolbox/skeletons/names_js.py)",
+    "recipes": [
+     "semgrep"
+    ],
+    "uses": [
+     "semgrep"
+    ],
+    "tools": [
+     "/opt/enforce/tool-installs/bin/semgrep"
+    ],
+    "nodes": [
+     "/opt/enforce-toolbox/enforcers/analysis/code-scans/semgrep.md",
+     "/opt/enforce-toolbox/triggers/agent-action/file-write-edit.md",
+     "/opt/enforce-toolbox/targets/source-code/class-type.md"
+    ],
+    "check": "/opt/enforce/checks/R7",
+    "flag": "/opt/enforce/fixtures/R7/flag",
+    "pass": "/opt/enforce/fixtures/R7/pass"
+   },
+   {
+    "rule": "R2",
+    "text": "你所生成的所有代码文件都必须使用UTF-8进行编码",
+    "enforcer": [
+     "Gates",
+     "Git hooks",
+     "pre-commit"
+    ],
+    "trigger": [
+     "Agent action",
+     "File write / edit"
+    ],
+    "timing": "before",
+    "target": [
+     "Source code",
+     "Source file"
+    ],
+    "enforcer_how": "A framework that runs the checks in a `.pre-commit-config.yaml` file when a commit is made. Check: a `.pre-commit-config.yaml` (local hooks: `repo: local`, `entry: <check>`) and `pre-commit install`; or `pre-commit run --files <file>` Start from the skeleton: /opt/enforce-toolbox/skeletons/pre_commit_check.sh (pre-commit runs a check on one file, outside a commit)",
+    "where": "the agent framework's hook (/opt/enforce-toolbox/mechanisms/framework-hooks.md) before its write tools (it sees the new content); file permissions (/opt/enforce-toolbox/mechanisms/file-permissions.md) (the write fails)",
+    "reads": "A source code file. Where: /workspace/<path>, on disk for every mechanism; the content of a write before it happens: only the framework's hook (/opt/enforce-toolbox/mechanisms/framework-hooks.md) before its write tool Which files: decide when the check runs, from the file in hand: the files the agent will create cannot be known before. Map its name, or its content, to a language with a complete list, such as Pygments (`get_lexer_for_filename`, `guess_lexer`) or GitHub Linguist's list of languages: programming and markup languages that hold code count (Python, JavaScript, HTML, CSS, shell, …); documents and data do not (Markdown, plain text, JSON, YAML, CSV), unless the rule names them. A rule about the file itself (its first lines, its name, its encoding) applies once per file, in that file's own comment syntax (in HTML, an HTML comment); a rule about the code in it (functions, names, statements) also reaches code embedded in another file, such as a `<script>` in HTML. A file whose kind is unknown is checked, not passed.",
+    "recipes": [
+     "pre-commit"
+    ],
+    "uses": [
+     "pre-commit"
+    ],
+    "tools": [
+     "/opt/enforce/tool-installs/bin/pre-commit"
+    ],
+    "nodes": [
+     "/opt/enforce-toolbox/enforcers/gates/git-hooks/pre-commit.md",
+     "/opt/enforce-toolbox/triggers/agent-action/file-write-edit.md",
+     "/opt/enforce-toolbox/targets/source-code/source-file.md"
+    ],
+    "check": "/opt/enforce/checks/R2",
+    "flag": "/opt/enforce/fixtures/R2/flag",
+    "pass": "/opt/enforce/fixtures/R2/pass"
+   },
+   {
+    "rule": "R4",
+    "text": "你提供的代码文件不得含有制表符，请仅使用空格完成代码的缩进",
+    "enforcer": [
+     "Gates",
+     "Git hooks",
+     "pre-commit"
+    ],
+    "trigger": [
+     "Agent action",
+     "File write / edit"
+    ],
+    "timing": "before",
+    "target": [
+     "Source code",
+     "Source file"
+    ],
+    "enforcer_how": "A framework that runs the checks in a `.pre-commit-config.yaml` file when a commit is made. Check: a `.pre-commit-config.yaml` (local hooks: `repo: local`, `entry: <check>`) and `pre-commit install`; or `pre-commit run --files <file>` Start from the skeleton: /opt/enforce-toolbox/skeletons/pre_commit_check.sh (pre-commit runs a check on one file, outside a commit)",
+    "where": "the agent framework's hook (/opt/enforce-toolbox/mechanisms/framework-hooks.md) before its write tools (it sees the new content); file permissions (/opt/enforce-toolbox/mechanisms/file-permissions.md) (the write fails)",
+    "reads": "A source code file. Where: /workspace/<path>, on disk for every mechanism; the content of a write before it happens: only the framework's hook (/opt/enforce-toolbox/mechanisms/framework-hooks.md) before its write tool Which files: decide when the check runs, from the file in hand: the files the agent will create cannot be known before. Map its name, or its content, to a language with a complete list, such as Pygments (`get_lexer_for_filename`, `guess_lexer`) or GitHub Linguist's list of languages: programming and markup languages that hold code count (Python, JavaScript, HTML, CSS, shell, …); documents and data do not (Markdown, plain text, JSON, YAML, CSV), unless the rule names them. A rule about the file itself (its first lines, its name, its encoding) applies once per file, in that file's own comment syntax (in HTML, an HTML comment); a rule about the code in it (functions, names, statements) also reaches code embedded in another file, such as a `<script>` in HTML. A file whose kind is unknown is checked, not passed.",
+    "recipes": [
+     "pre-commit"
+    ],
+    "uses": [
+     "pre-commit"
+    ],
+    "tools": [
+     "/opt/enforce/tool-installs/bin/pre-commit"
+    ],
+    "nodes": [
+     "/opt/enforce-toolbox/enforcers/gates/git-hooks/pre-commit.md",
+     "/opt/enforce-toolbox/triggers/agent-action/file-write-edit.md",
+     "/opt/enforce-toolbox/targets/source-code/source-file.md"
+    ],
+    "check": "/opt/enforce/checks/R4",
+    "flag": "/opt/enforce/fixtures/R4/flag",
+    "pass": "/opt/enforce/fixtures/R4/pass"
+   },
+   {
+    "rule": "R8",
+    "text": "必须保证输出的每一份代码文件，其文件名包含的字符个数严格等于奇数",
+    "enforcer": [
+     "Validation",
+     "Regex",
+     "Regex validator"
+    ],
+    "trigger": [
+     "Agent action",
+     "File write / edit"
+    ],
+    "timing": "before",
+    "target": [
+     "Source code",
+     "Source file"
+    ],
+    "enforcer_how": "A regular expression that the checked text must match, or must not match. A match against the rule is a violation. What is read is part of the enforcer: a whole file, each line, only comments, a reply, the start or the end of a text. Check: a check script (/opt/enforce-toolbox/skeletons/check.py) with a regular expression; read what the rule is about (the whole text, each line, comments, the start or the end). Start from the skeleton: /opt/enforce-toolbox/skeletons/regex_validator.py",
+    "where": "the agent framework's hook (/opt/enforce-toolbox/mechanisms/framework-hooks.md) before its write tools (it sees the new content); file permissions (/opt/enforce-toolbox/mechanisms/file-permissions.md) (the write fails)",
+    "reads": "A source code file. Where: /workspace/<path>, on disk for every mechanism; the content of a write before it happens: only the framework's hook (/opt/enforce-toolbox/mechanisms/framework-hooks.md) before its write tool Which files: decide when the check runs, from the file in hand: the files the agent will create cannot be known before. Map its name, or its content, to a language with a complete list, such as Pygments (`get_lexer_for_filename`, `guess_lexer`) or GitHub Linguist's list of languages: programming and markup languages that hold code count (Python, JavaScript, HTML, CSS, shell, …); documents and data do not (Markdown, plain text, JSON, YAML, CSV), unless the rule names them. A rule about the file itself (its first lines, its name, its encoding) applies once per file, in that file's own comment syntax (in HTML, an HTML comment); a rule about the code in it (functions, names, statements) also reaches code embedded in another file, such as a `<script>` in HTML. A file whose kind is unknown is checked, not passed.",
+    "recipes": [],
+    "uses": [],
+    "tools": [],
+    "nodes": [
+     "/opt/enforce-toolbox/enforcers/validation/regex/regex-validator.md",
+     "/opt/enforce-toolbox/triggers/agent-action/file-write-edit.md",
+     "/opt/enforce-toolbox/targets/source-code/source-file.md"
+    ],
+    "check": "/opt/enforce/checks/R8",
+    "flag": "/opt/enforce/fixtures/R8/flag",
+    "pass": "/opt/enforce/fixtures/R8/pass"
+   }
+  ],
+  "plan": [
+   {
+    "id": "check-R7",
+    "kind": "check",
+    "rules": [
+     "R7"
+    ],
+    "needs": [],
+    "check": "/opt/enforce/checks/R7",
+    "tools": [
+     "/opt/enforce/tool-installs/bin/semgrep"
+    ],
+    "flag": "/opt/enforce/fixtures/R7/flag",
+    "pass": "/opt/enforce/fixtures/R7/pass",
+    "enforcer_how": "A pattern-based static analyzer. A rule is a code pattern that Semgrep matches against each file's syntax tree, for many languages (Python, JavaScript, TypeScript, HTML script blocks, Bash, …). Check: `semgrep scan --config <rules.yml> --error --metrics=off --quiet <file>` (exit 1 on a finding; `--json` for a report) Rules: `rules: [{id: <id>, languages: [<language>], severity: ERROR, message: \"<what to change>\", pattern: \"<code pattern>\"}]`; Semgrep matches syntax, it cannot compute values (a length, a count): let Semgrep find the code (`--json` gives each match's file, start and end lines), and compute the value from that in a check script (/opt/enforce-toolbox/skeletons/check.py) Start from the skeleton: /opt/enforce-toolbox/skeletons/semgrep_check.py (Semgrep finds the code; judge() decides, and computes what Semgrep cannot)",
+    "reads": "A class, a type, an interface or a struct. Where: in the source files (/opt/enforce-toolbox/skeletons/names_python.py, /opt/enforce-toolbox/skeletons/names_js.py)",
+    "uses": [
+     "semgrep"
+    ]
+   },
+   {
+    "id": "check-R2",
+    "kind": "check",
+    "rules": [
+     "R2"
+    ],
+    "needs": [],
+    "check": "/opt/enforce/checks/R2",
+    "tools": [
+     "/opt/enforce/tool-installs/bin/pre-commit"
+    ],
+    "flag": "/opt/enforce/fixtures/R2/flag",
+    "pass": "/opt/enforce/fixtures/R2/pass",
+    "enforcer_how": "A framework that runs the checks in a `.pre-commit-config.yaml` file when a commit is made. Check: a `.pre-commit-config.yaml` (local hooks: `repo: local`, `entry: <check>`) and `pre-commit install`; or `pre-commit run --files <file>` Start from the skeleton: /opt/enforce-toolbox/skeletons/pre_commit_check.sh (pre-commit runs a check on one file, outside a commit)",
+    "reads": "A source code file. Where: /workspace/<path>, on disk for every mechanism; the content of a write before it happens: only the framework's hook (/opt/enforce-toolbox/mechanisms/framework-hooks.md) before its write tool Which files: decide when the check runs, from the file in hand: the files the agent will create cannot be known before. Map its name, or its content, to a language with a complete list, such as Pygments (`get_lexer_for_filename`, `guess_lexer`) or GitHub Linguist's list of languages: programming and markup languages that hold code count (Python, JavaScript, HTML, CSS, shell, …); documents and data do not (Markdown, plain text, JSON, YAML, CSV), unless the rule names them. A rule about the file itself (its first lines, its name, its encoding) applies once per file, in that file's own comment syntax (in HTML, an HTML comment); a rule about the code in it (functions, names, statements) also reaches code embedded in another file, such as a `<script>` in HTML. A file whose kind is unknown is checked, not passed.",
+    "uses": [
+     "pre-commit"
+    ]
+   },
+   {
+    "id": "check-R4",
+    "kind": "check",
+    "rules": [
+     "R4"
+    ],
+    "needs": [],
+    "check": "/opt/enforce/checks/R4",
+    "tools": [
+     "/opt/enforce/tool-installs/bin/pre-commit"
+    ],
+    "flag": "/opt/enforce/fixtures/R4/flag",
+    "pass": "/opt/enforce/fixtures/R4/pass",
+    "enforcer_how": "A framework that runs the checks in a `.pre-commit-config.yaml` file when a commit is made. Check: a `.pre-commit-config.yaml` (local hooks: `repo: local`, `entry: <check>`) and `pre-commit install`; or `pre-commit run --files <file>` Start from the skeleton: /opt/enforce-toolbox/skeletons/pre_commit_check.sh (pre-commit runs a check on one file, outside a commit)",
+    "reads": "A source code file. Where: /workspace/<path>, on disk for every mechanism; the content of a write before it happens: only the framework's hook (/opt/enforce-toolbox/mechanisms/framework-hooks.md) before its write tool Which files: decide when the check runs, from the file in hand: the files the agent will create cannot be known before. Map its name, or its content, to a language with a complete list, such as Pygments (`get_lexer_for_filename`, `guess_lexer`) or GitHub Linguist's list of languages: programming and markup languages that hold code count (Python, JavaScript, HTML, CSS, shell, …); documents and data do not (Markdown, plain text, JSON, YAML, CSV), unless the rule names them. A rule about the file itself (its first lines, its name, its encoding) applies once per file, in that file's own comment syntax (in HTML, an HTML comment); a rule about the code in it (functions, names, statements) also reaches code embedded in another file, such as a `<script>` in HTML. A file whose kind is unknown is checked, not passed.",
+    "uses": [
+     "pre-commit"
+    ]
+   },
+   {
+    "id": "check-R8",
+    "kind": "check",
+    "rules": [
+     "R8"
+    ],
+    "needs": [],
+    "check": "/opt/enforce/checks/R8",
+    "tools": [],
+    "flag": "/opt/enforce/fixtures/R8/flag",
+    "pass": "/opt/enforce/fixtures/R8/pass",
+    "enforcer_how": "A regular expression that the checked text must match, or must not match. A match against the rule is a violation. What is read is part of the enforcer: a whole file, each line, only comments, a reply, the start or the end of a text. Check: a check script (/opt/enforce-toolbox/skeletons/check.py) with a regular expression; read what the rule is about (the whole text, each line, comments, the start or the end). Start from the skeleton: /opt/enforce-toolbox/skeletons/regex_validator.py",
+    "reads": "A source code file. Where: /workspace/<path>, on disk for every mechanism; the content of a write before it happens: only the framework's hook (/opt/enforce-toolbox/mechanisms/framework-hooks.md) before its write tool Which files: decide when the check runs, from the file in hand: the files the agent will create cannot be known before. Map its name, or its content, to a language with a complete list, such as Pygments (`get_lexer_for_filename`, `guess_lexer`) or GitHub Linguist's list of languages: programming and markup languages that hold code count (Python, JavaScript, HTML, CSS, shell, …); documents and data do not (Markdown, plain text, JSON, YAML, CSV), unless the rule names them. A rule about the file itself (its first lines, its name, its encoding) applies once per file, in that file's own comment syntax (in HTML, an HTML comment); a rule about the code in it (functions, names, statements) also reaches code embedded in another file, such as a `<script>` in HTML. A file whose kind is unknown is checked, not passed.",
+    "uses": []
+   },
+   {
+    "id": "binding-1",
+    "kind": "binding",
+    "rules": [
+     "R7",
+     "R2",
+     "R4",
+     "R8"
+    ],
+    "needs": [
+     "check-R7",
+     "check-R2",
+     "check-R4",
+     "check-R8"
+    ],
+    "trigger": [
+     "Agent action",
+     "File write / edit"
+    ],
+    "timing": "before",
+    "checks": [
+     "/opt/enforce/checks/R7",
+     "/opt/enforce/checks/R2",
+     "/opt/enforce/checks/R4",
+     "/opt/enforce/checks/R8"
+    ],
+    "where": "the agent framework's hook (/opt/enforce-toolbox/mechanisms/framework-hooks.md) before its write tools (it sees the new content); file permissions (/opt/enforce-toolbox/mechanisms/file-permissions.md) (the write fails)",
+    "reads": "A class, a type, an interface or a struct. Where: in the source files (/opt/enforce-toolbox/skeletons/names_python.py, /opt/enforce-toolbox/skeletons/names_js.py); A source code file. Where: /workspace/<path>, on disk for every mechanism; the content of a write before it happens: only the framework's hook (/opt/enforce-toolbox/mechanisms/framework-hooks.md) before its write tool Which files: decide when the check runs, from the file in hand: the files the agent will create cannot be known before. Map its name, or its content, to a language with a complete list, such as Pygments (`get_lexer_for_filename`, `guess_lexer`) or GitHub Linguist's list of languages: programming and markup languages that hold code count (Python, JavaScript, HTML, CSS, shell, …); documents and data do not (Markdown, plain text, JSON, YAML, CSV), unless the rule names them. A rule about the file itself (its first lines, its name, its encoding) applies once per file, in that file's own comment syntax (in HTML, an HTML comment); a rule about the code in it (functions, names, statements) also reaches code embedded in another file, such as a `<script>` in HTML. A file whose kind is unknown is checked, not passed.",
+    "fixtures": [
+     {
+      "rule": "R7",
+      "flag": "/opt/enforce/fixtures/R7/flag",
+      "pass": "/opt/enforce/fixtures/R7/pass",
+      "reply": false
+     },
+     {
+      "rule": "R2",
+      "flag": "/opt/enforce/fixtures/R2/flag",
+      "pass": "/opt/enforce/fixtures/R2/pass",
+      "reply": false
+     },
+     {
+      "rule": "R4",
+      "flag": "/opt/enforce/fixtures/R4/flag",
+      "pass": "/opt/enforce/fixtures/R4/pass",
+      "reply": false
+     },
+     {
+      "rule": "R8",
+      "flag": "/opt/enforce/fixtures/R8/flag",
+      "pass": "/opt/enforce/fixtures/R8/pass",
+      "reply": false
+     }
+    ]
+   }
+  ],
+  "text": "These rules are for the agent's later session in /workspace. They do not apply to you: implement system enforcement for each rule with its enforcer, at its trigger, on its target.\n\nRule R7: 你所编写的代码文件内，所有类名的长度均需恰好为质数，不得有例外\n\n- Route: Semgrep (Analysis › Code scans › Semgrep) · File write / edit (Agent action › File write / edit), timing: before · Class / type (Source code › Class / type)\n- The check, by the enforcer: A pattern-based static analyzer. A rule is a code pattern that Semgrep matches against each file's syntax tree, for many languages (Python, JavaScript, TypeScript, HTML script blocks, Bash, …). Check: `semgrep scan --config <rules.yml> --error --metrics=off --quiet <file>` (exit 1 on a finding; `--json` for a report) Rules: `rules: [{id: <id>, languages: [<language>], severity: ERROR, message: \"<what to change>\", pattern: \"<code pattern>\"}]`; Semgrep matches syntax, it cannot compute values (a length, a count): let Semgrep find the code (`--json` gives each match's file, start and end lines), and compute the value from that in a check script (/opt/enforce-toolbox/skeletons/check.py) Start from the skeleton: /opt/enforce-toolbox/skeletons/semgrep_check.py (Semgrep finds the code; judge() decides, and computes what Semgrep cannot)\n- Where it runs, by the trigger: the agent framework's hook (/opt/enforce-toolbox/mechanisms/framework-hooks.md) before its write tools (it sees the new content); file permissions (/opt/enforce-toolbox/mechanisms/file-permissions.md) (the write fails)\n- What it reads, by the target: A class, a type, an interface or a struct. Where: in the source files (/opt/enforce-toolbox/skeletons/names_python.py, /opt/enforce-toolbox/skeletons/names_js.py)\n- Tools: /opt/enforce/tool-installs/bin/semgrep: installed already; call each by this full path, since the agent's PATH does not have that folder\n- Toolbox nodes: /opt/enforce-toolbox/enforcers/analysis/code-scans/semgrep.md, /opt/enforce-toolbox/triggers/agent-action/file-write-edit.md, /opt/enforce-toolbox/targets/source-code/class-type.md\n\nRule R2: 你所生成的所有代码文件都必须使用UTF-8进行编码\n\n- Route: pre-commit (Gates › Git hooks › pre-commit) · File write / edit (Agent action › File write / edit), timing: before · Source file (Source code › Source file)\n- The check, by the enforcer: A framework that runs the checks in a `.pre-commit-config.yaml` file when a commit is made. Check: a `.pre-commit-config.yaml` (local hooks: `repo: local`, `entry: <check>`) and `pre-commit install`; or `pre-commit run --files <file>` Start from the skeleton: /opt/enforce-toolbox/skeletons/pre_commit_check.sh (pre-commit runs a check on one file, outside a commit)\n- Where it runs, by the trigger: the agent framework's hook (/opt/enforce-toolbox/mechanisms/framework-hooks.md) before its write tools (it sees the new content); file permissions (/opt/enforce-toolbox/mechanisms/file-permissions.md) (the write fails)\n- What it reads, by the target: A source code file. Where: /workspace/<path>, on disk for every mechanism; the content of a write before it happens: only the framework's hook (/opt/enforce-toolbox/mechanisms/framework-hooks.md) before its write tool Which files: decide when the check runs, from the file in hand: the files the agent will create cannot be known before. Map its name, or its content, to a language with a complete list, such as Pygments (`get_lexer_for_filename`, `guess_lexer`) or GitHub Linguist's list of languages: programming and markup languages that hold code count (Python, JavaScript, HTML, CSS, shell, …); documents and data do not (Markdown, plain text, JSON, YAML, CSV), unless the rule names them. A rule about the file itself (its first lines, its name, its encoding) applies once per file, in that file's own comment syntax (in HTML, an HTML comment); a rule about the code in it (functions, names, statements) also reaches code embedded in another file, such as a `<script>` in HTML. A file whose kind is unknown is checked, not passed.\n- Tools: /opt/enforce/tool-installs/bin/pre-commit: installed already; call each by this full path, since the agent's PATH does not have that folder\n- Toolbox nodes: /opt/enforce-toolbox/enforcers/gates/git-hooks/pre-commit.md, /opt/enforce-toolbox/triggers/agent-action/file-write-edit.md, /opt/enforce-toolbox/targets/source-code/source-file.md\n\nRule R4: 你提供的代码文件不得含有制表符，请仅使用空格完成代码的缩进\n\n- Route: pre-commit (Gates › Git hooks › pre-commit) · File write / edit (Agent action › File write / edit), timing: before · Source file (Source code › Source file)\n- The check, by the enforcer: A framework that runs the checks in a `.pre-commit-config.yaml` file when a commit is made. Check: a `.pre-commit-config.yaml` (local hooks: `repo: local`, `entry: <check>`) and `pre-commit install`; or `pre-commit run --files <file>` Start from the skeleton: /opt/enforce-toolbox/skeletons/pre_commit_check.sh (pre-commit runs a check on one file, outside a commit)\n- Where it runs, by the trigger: the agent framework's hook (/opt/enforce-toolbox/mechanisms/framework-hooks.md) before its write tools (it sees the new content); file permissions (/opt/enforce-toolbox/mechanisms/file-permissions.md) (the write fails)\n- What it reads, by the target: A source code file. Where: /workspace/<path>, on disk for every mechanism; the content of a write before it happens: only the framework's hook (/opt/enforce-toolbox/mechanisms/framework-hooks.md) before its write tool Which files: decide when the check runs, from the file in hand: the files the agent will create cannot be known before. Map its name, or its content, to a language with a complete list, such as Pygments (`get_lexer_for_filename`, `guess_lexer`) or GitHub Linguist's list of languages: programming and markup languages that hold code count (Python, JavaScript, HTML, CSS, shell, …); documents and data do not (Markdown, plain text, JSON, YAML, CSV), unless the rule names them. A rule about the file itself (its first lines, its name, its encoding) applies once per file, in that file's own comment syntax (in HTML, an HTML comment); a rule about the code in it (functions, names, statements) also reaches code embedded in another file, such as a `<script>` in HTML. A file whose kind is unknown is checked, not passed.\n- Tools: /opt/enforce/tool-installs/bin/pre-commit: installed already; call each by this full path, since the agent's PATH does not have that folder\n- Toolbox nodes: /opt/enforce-toolbox/enforcers/gates/git-hooks/pre-commit.md, /opt/enforce-toolbox/triggers/agent-action/file-write-edit.md, /opt/enforce-toolbox/targets/source-code/source-file.md\n\nRule R8: 必须保证输出的每一份代码文件，其文件名包含的字符个数严格等于奇数\n\n- Route: Regex validator (Validation › Regex › Regex validator) · File write / edit (Agent action › File write / edit), timing: before · Source file (Source code › Source file)\n- The check, by the enforcer: A regular expression that the checked text must match, or must not match. A match against the rule is a violation. What is read is part of the enforcer: a whole file, each line, only comments, a reply, the start or the end of a text. Check: a check script (/opt/enforce-toolbox/skeletons/check.py) with a regular expression; read what the rule is about (the whole text, each line, comments, the start or the end). Start from the skeleton: /opt/enforce-toolbox/skeletons/regex_validator.py\n- Where it runs, by the trigger: the agent framework's hook (/opt/enforce-toolbox/mechanisms/framework-hooks.md) before its write tools (it sees the new content); file permissions (/opt/enforce-toolbox/mechanisms/file-permissions.md) (the write fails)\n- What it reads, by the target: A source code file. Where: /workspace/<path>, on disk for every mechanism; the content of a write before it happens: only the framework's hook (/opt/enforce-toolbox/mechanisms/framework-hooks.md) before its write tool Which files: decide when the check runs, from the file in hand: the files the agent will create cannot be known before. Map its name, or its content, to a language with a complete list, such as Pygments (`get_lexer_for_filename`, `guess_lexer`) or GitHub Linguist's list of languages: programming and markup languages that hold code count (Python, JavaScript, HTML, CSS, shell, …); documents and data do not (Markdown, plain text, JSON, YAML, CSV), unless the rule names them. A rule about the file itself (its first lines, its name, its encoding) applies once per file, in that file's own comment syntax (in HTML, an HTML comment); a rule about the code in it (functions, names, statements) also reaches code embedded in another file, such as a `<script>` in HTML. A file whose kind is unknown is checked, not passed.\n- Tools: none to install\n- Toolbox nodes: /opt/enforce-toolbox/enforcers/validation/regex/regex-validator.md, /opt/enforce-toolbox/triggers/agent-action/file-write-edit.md, /opt/enforce-toolbox/targets/source-code/source-file.md\n\nThe work for these rules comes as nodes, one at a time; when you reply to a node, the harness checks it. The nodes: check-R7, check-R2, check-R4, check-R8, binding-1.\nBuild exactly what each rule's route says. If a part of a route cannot work here, write why in /opt/enforce/deviations.json ({\"R<n>\": \"<why>\"}) and build the nearest thing that keeps the rest of the route.\n"
+ },
+ {
+  "rules": [
+   "R1"
+  ],
+  "specs": [
+   {
+    "rule": "R1",
+    "text": "在为用户生成回复时，你必须永远只用中文",
+    "enforcer": [
+     "Validation",
+     "Regex",
+     "Regex validator"
+    ],
+    "trigger": [
+     "Agent loop",
+     "Response sent"
+    ],
+    "timing": "before",
+    "target": [
+     "Agent output",
+     "Response / message"
+    ],
+    "enforcer_how": "A regular expression that the checked text must match, or must not match. A match against the rule is a violation. What is read is part of the enforcer: a whole file, each line, only comments, a reply, the start or the end of a text. Check: a check script (/opt/enforce-toolbox/skeletons/check.py) with a regular expression; read what the rule is about (the whole text, each line, comments, the start or the end). Start from the skeleton: /opt/enforce-toolbox/skeletons/regex_validator.py",
+    "where": "the agent framework's hook (/opt/enforce-toolbox/mechanisms/framework-hooks.md) at the end of the turn: it sees the reply, and can keep the agent working until the reply follows the rule",
+    "reads": "An assistant response or a message from the agent. Where: the agent's reply exists only inside the agent framework: its hook at the end of the turn gets it, and its transcript keeps it (a file in the agent's home)",
+    "recipes": [],
+    "uses": [],
+    "tools": [],
+    "nodes": [
+     "/opt/enforce-toolbox/enforcers/validation/regex/regex-validator.md",
+     "/opt/enforce-toolbox/triggers/agent-loop/response-sent.md",
+     "/opt/enforce-toolbox/targets/agent-output/response-message.md"
+    ],
+    "check": "/opt/enforce/checks/R1",
+    "flag": "/opt/enforce/fixtures/R1/flag",
+    "pass": "/opt/enforce/fixtures/R1/pass"
+   }
+  ],
+  "plan": [
+   {
+    "id": "check-R1",
+    "kind": "check",
+    "rules": [
+     "R1"
+    ],
+    "needs": [],
+    "check": "/opt/enforce/checks/R1",
+    "tools": [],
+    "flag": "/opt/enforce/fixtures/R1/flag",
+    "pass": "/opt/enforce/fixtures/R1/pass",
+    "enforcer_how": "A regular expression that the checked text must match, or must not match. A match against the rule is a violation. What is read is part of the enforcer: a whole file, each line, only comments, a reply, the start or the end of a text. Check: a check script (/opt/enforce-toolbox/skeletons/check.py) with a regular expression; read what the rule is about (the whole text, each line, comments, the start or the end). Start from the skeleton: /opt/enforce-toolbox/skeletons/regex_validator.py",
+    "reads": "An assistant response or a message from the agent. Where: the agent's reply exists only inside the agent framework: its hook at the end of the turn gets it, and its transcript keeps it (a file in the agent's home)",
+    "uses": []
+   },
+   {
+    "id": "binding-1",
+    "kind": "binding",
+    "rules": [
+     "R1"
+    ],
+    "needs": [
+     "check-R1"
+    ],
+    "trigger": [
+     "Agent loop",
+     "Response sent"
+    ],
+    "timing": "before",
+    "checks": [
+     "/opt/enforce/checks/R1"
+    ],
+    "where": "the agent framework's hook (/opt/enforce-toolbox/mechanisms/framework-hooks.md) at the end of the turn: it sees the reply, and can keep the agent working until the reply follows the rule",
+    "reads": "An assistant response or a message from the agent. Where: the agent's reply exists only inside the agent framework: its hook at the end of the turn gets it, and its transcript keeps it (a file in the agent's home)",
+    "fixtures": [
+     {
+      "rule": "R1",
+      "flag": "/opt/enforce/fixtures/R1/flag",
+      "pass": "/opt/enforce/fixtures/R1/pass",
+      "reply": true
+     }
+    ]
+   }
+  ],
+  "text": "These rules are for the agent's later session in /workspace. They do not apply to you: implement system enforcement for each rule with its enforcer, at its trigger, on its target.\n\nRule R1: 在为用户生成回复时，你必须永远只用中文\n\n- Route: Regex validator (Validation › Regex › Regex validator) · Response sent (Agent loop › Response sent), timing: before · Response / message (Agent output › Response / message)\n- The check, by the enforcer: A regular expression that the checked text must match, or must not match. A match against the rule is a violation. What is read is part of the enforcer: a whole file, each line, only comments, a reply, the start or the end of a text. Check: a check script (/opt/enforce-toolbox/skeletons/check.py) with a regular expression; read what the rule is about (the whole text, each line, comments, the start or the end). Start from the skeleton: /opt/enforce-toolbox/skeletons/regex_validator.py\n- Where it runs, by the trigger: the agent framework's hook (/opt/enforce-toolbox/mechanisms/framework-hooks.md) at the end of the turn: it sees the reply, and can keep the agent working until the reply follows the rule\n- What it reads, by the target: An assistant response or a message from the agent. Where: the agent's reply exists only inside the agent framework: its hook at the end of the turn gets it, and its transcript keeps it (a file in the agent's home)\n- Tools: none to install\n- Toolbox nodes: /opt/enforce-toolbox/enforcers/validation/regex/regex-validator.md, /opt/enforce-toolbox/triggers/agent-loop/response-sent.md, /opt/enforce-toolbox/targets/agent-output/response-message.md\n\nThe work for these rules comes as nodes, one at a time; when you reply to a node, the harness checks it. The nodes: check-R1, binding-1.\nBuild exactly what each rule's route says. If a part of a route cannot work here, write why in /opt/enforce/deviations.json ({\"R<n>\": \"<why>\"}) and build the nearest thing that keeps the rest of the route.\n"
+ },
+ {
+  "rules": [
+   "R6"
+  ],
+  "specs": [
+   {
+    "rule": "R6",
+    "text": "你所输出的代码文件里，针对各个函数名的命名规范是：首字母严禁小写，首字母之外的字符严禁大写",
+    "enforcer": [
+     "Validation",
+     "Regex",
+     "Regex validator"
+    ],
+    "trigger": [
+     "Always"
+    ],
+    "timing": "always",
+    "target": [
+     "Source code",
+     "Function / method"
+    ],
+    "enforcer_how": "A regular expression that the checked text must match, or must not match. A match against the rule is a violation. What is read is part of the enforcer: a whole file, each line, only comments, a reply, the start or the end of a text. Check: a check script (/opt/enforce-toolbox/skeletons/check.py) with a regular expression; read what the rule is about (the whole text, each line, comments, the start or the end). Start from the skeleton: /opt/enforce-toolbox/skeletons/regex_validator.py",
+    "where": "before: file permissions (/opt/enforce-toolbox/mechanisms/file-permissions.md); the agent framework's hooks (/opt/enforce-toolbox/mechanisms/framework-hooks.md) before each action; at: file watchers (/opt/enforce-toolbox/mechanisms/file-watchers.md); the framework's hooks (/opt/enforce-toolbox/mechanisms/framework-hooks.md) after each action; after: the framework's hook (/opt/enforce-toolbox/mechanisms/framework-hooks.md) at the end of the turn; checks that keep running (/opt/enforce-toolbox/mechanisms/keep-running.md)",
+    "reads": "A function or a method. Where: in the source files; read them with a parser (/opt/enforce-toolbox/skeletons/names_python.py, /opt/enforce-toolbox/skeletons/names_js.py), or with Semgrep patterns Which files: every file that holds code, decided when the check runs (/opt/enforce-toolbox/targets/source-code/source-file.md); take embedded code out of its container first (a `<script>` in HTML), then parse it",
+    "recipes": [],
+    "uses": [],
+    "tools": [],
+    "nodes": [
+     "/opt/enforce-toolbox/enforcers/validation/regex/regex-validator.md",
+     "/opt/enforce-toolbox/triggers/always.md",
+     "/opt/enforce-toolbox/targets/source-code/function-method.md"
+    ],
+    "check": "/opt/enforce/checks/R6",
+    "flag": "/opt/enforce/fixtures/R6/flag",
+    "pass": "/opt/enforce/fixtures/R6/pass"
+   }
+  ],
+  "plan": [
+   {
+    "id": "check-R6",
+    "kind": "check",
+    "rules": [
+     "R6"
+    ],
+    "needs": [],
+    "check": "/opt/enforce/checks/R6",
+    "tools": [],
+    "flag": "/opt/enforce/fixtures/R6/flag",
+    "pass": "/opt/enforce/fixtures/R6/pass",
+    "enforcer_how": "A regular expression that the checked text must match, or must not match. A match against the rule is a violation. What is read is part of the enforcer: a whole file, each line, only comments, a reply, the start or the end of a text. Check: a check script (/opt/enforce-toolbox/skeletons/check.py) with a regular expression; read what the rule is about (the whole text, each line, comments, the start or the end). Start from the skeleton: /opt/enforce-toolbox/skeletons/regex_validator.py",
+    "reads": "A function or a method. Where: in the source files; read them with a parser (/opt/enforce-toolbox/skeletons/names_python.py, /opt/enforce-toolbox/skeletons/names_js.py), or with Semgrep patterns Which files: every file that holds code, decided when the check runs (/opt/enforce-toolbox/targets/source-code/source-file.md); take embedded code out of its container first (a `<script>` in HTML), then parse it",
+    "uses": []
+   },
+   {
+    "id": "binding-1",
+    "kind": "binding",
+    "rules": [
+     "R6"
+    ],
+    "needs": [
+     "check-R6"
+    ],
+    "trigger": [
+     "Always"
+    ],
+    "timing": "always",
+    "checks": [
+     "/opt/enforce/checks/R6"
+    ],
+    "where": "before: file permissions (/opt/enforce-toolbox/mechanisms/file-permissions.md); the agent framework's hooks (/opt/enforce-toolbox/mechanisms/framework-hooks.md) before each action; at: file watchers (/opt/enforce-toolbox/mechanisms/file-watchers.md); the framework's hooks (/opt/enforce-toolbox/mechanisms/framework-hooks.md) after each action; after: the framework's hook (/opt/enforce-toolbox/mechanisms/framework-hooks.md) at the end of the turn; checks that keep running (/opt/enforce-toolbox/mechanisms/keep-running.md)",
+    "reads": "A function or a method. Where: in the source files; read them with a parser (/opt/enforce-toolbox/skeletons/names_python.py, /opt/enforce-toolbox/skeletons/names_js.py), or with Semgrep patterns Which files: every file that holds code, decided when the check runs (/opt/enforce-toolbox/targets/source-code/source-file.md); take embedded code out of its container first (a `<script>` in HTML), then parse it",
+    "fixtures": [
+     {
+      "rule": "R6",
+      "flag": "/opt/enforce/fixtures/R6/flag",
+      "pass": "/opt/enforce/fixtures/R6/pass",
+      "reply": false
+     }
+    ]
+   }
+  ],
+  "text": "These rules are for the agent's later session in /workspace. They do not apply to you: implement system enforcement for each rule with its enforcer, at its trigger, on its target.\n\nRule R6: 你所输出的代码文件里，针对各个函数名的命名规范是：首字母严禁小写，首字母之外的字符严禁大写\n\n- Route: Regex validator (Validation › Regex › Regex validator) · Always (Always), timing: always · Function / method (Source code › Function / method)\n- The check, by the enforcer: A regular expression that the checked text must match, or must not match. A match against the rule is a violation. What is read is part of the enforcer: a whole file, each line, only comments, a reply, the start or the end of a text. Check: a check script (/opt/enforce-toolbox/skeletons/check.py) with a regular expression; read what the rule is about (the whole text, each line, comments, the start or the end). Start from the skeleton: /opt/enforce-toolbox/skeletons/regex_validator.py\n- Where it runs, by the trigger: before: file permissions (/opt/enforce-toolbox/mechanisms/file-permissions.md); the agent framework's hooks (/opt/enforce-toolbox/mechanisms/framework-hooks.md) before each action; at: file watchers (/opt/enforce-toolbox/mechanisms/file-watchers.md); the framework's hooks (/opt/enforce-toolbox/mechanisms/framework-hooks.md) after each action; after: the framework's hook (/opt/enforce-toolbox/mechanisms/framework-hooks.md) at the end of the turn; checks that keep running (/opt/enforce-toolbox/mechanisms/keep-running.md)\n- What it reads, by the target: A function or a method. Where: in the source files; read them with a parser (/opt/enforce-toolbox/skeletons/names_python.py, /opt/enforce-toolbox/skeletons/names_js.py), or with Semgrep patterns Which files: every file that holds code, decided when the check runs (/opt/enforce-toolbox/targets/source-code/source-file.md); take embedded code out of its container first (a `<script>` in HTML), then parse it\n- Tools: none to install\n- Toolbox nodes: /opt/enforce-toolbox/enforcers/validation/regex/regex-validator.md, /opt/enforce-toolbox/triggers/always.md, /opt/enforce-toolbox/targets/source-code/function-method.md\n\nThe work for these rules comes as nodes, one at a time; when you reply to a node, the harness checks it. The nodes: check-R6, binding-1.\nBuild exactly what each rule's route says. If a part of a route cannot work here, write why in /opt/enforce/deviations.json ({\"R<n>\": \"<why>\"}) and build the nearest thing that keeps the rest of the route.\n"
+ }
+]

@@ -16,3 +16,6 @@ __pycache__/
 .DS_Store
 .claude/
 .venv/
+
+# jev test answers (built from unpublished data)
+jev test/out/

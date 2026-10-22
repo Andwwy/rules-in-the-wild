@@ -1,0 +1,23 @@
+{
+ "session": "19c93f23-cef9-42e0-bc62-1ba81c53584e",
+ "messages": 1,
+ "settings": {
+  "files": [],
+  "hooks": [],
+  "malformed": []
+ },
+ "claude_code_on_settings": null,
+ "commands_added_for_agent": [
+  "git",
+  "git-receive-pack",
+  "git-shell",
+  "git-upload-archive",
+  "git-upload-pack",
+  "scalar"
+ ],
+ "workspace": {
+  "created": 0,
+  "changed": 0,
+  "deleted": 0
+ }
+}

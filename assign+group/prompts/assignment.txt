@@ -23,7 +23,7 @@ The team ask you to use the provided context to comprehend the complete rule int
 * spec: a specification of how this rule can be enforced by enforcer component, at trigger time on the target or targets (or description if it does not take a formal specification).
 * enforcer: what system component it could be enforced by,
 * target: the noun/object that is being acting or checking against
-* trigger: the circumstances that would trigger the rule to be evaluated,
+* trigger: the event in the agent's or the project's work that starts the rule's evaluation, never the enforcer's own run,
 
 You can be open about the assignment, there's no defined examples to refer to.
 Each axis can have multiple values. Consider carefully to cover all that satisfies.
@@ -51,6 +51,7 @@ For instance, a file, a branch, a function name, a document, a record, a line of
 **Trigger Definition**: it is the predicate describing under what circumstances the rule should be evaluated.
 - It should be a terse, natural language statement.
 - It should be something deterministically captureable/observable on computer system or softwares. For instance, "at commit time", "when a file is written", "before querying the database", "after querying the database".
+- It is an event in the agent's or the project's work (a file is written, a command runs, a commit is made, a request arrives, a response is sent), never the enforcer's own run: "at lint time", "when tests run" or "during CI" only say that the check runs when it runs. Name the event that makes the enforcer run (for a linter: a file write or a commit), or "always", or NULL.
 - If the rule should always be evaluated by the enforcer, then the trigger should be "always".
 - If there's no suitable Trigger, assign NULL.
 

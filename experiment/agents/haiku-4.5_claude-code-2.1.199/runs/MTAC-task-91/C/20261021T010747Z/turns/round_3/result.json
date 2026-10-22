@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 80907,
+  "duration_api_ms": 76515,
+  "ttft_ms": 29217,
+  "ttft_stream_ms": 29202,
+  "time_to_request_ms": 92,
+  "num_turns": 8,
+  "result": "喵～\n\n代码小灵已完成飞机移动功能，包括掷骰子后点击棋盘飞机按步数沿外部路径移动、支持多飞机独立点击移动、数字直接使用不再使用常量，并更新了progress.md记录进度。哒～",
+  "stop_reason": "end_turn",
+  "session_id": "3abddb79-d401-412b-9335-f083b4af7291",
+  "total_cost_usd": 0.17695650000000002,
+  "usage": {
+   "input_tokens": 48,
+   "cache_creation_input_tokens": 45628,
+   "cache_read_input_tokens": 562685,
+   "output_tokens": 12721,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 45628
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 48,
+    "outputTokens": 12721,
+    "cacheReadInputTokens": 562685,
+    "cacheCreationInputTokens": 45628,
+    "webSearchRequests": 0,
+    "costUSD": 0.17695650000000002,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "25ba8153-bd31-4b91-a5e0-c9cd8605b367"
+ },
+ "stderr": ""
+}

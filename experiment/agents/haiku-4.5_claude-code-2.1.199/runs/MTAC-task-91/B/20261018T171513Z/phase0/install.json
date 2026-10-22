@@ -1,0 +1,149 @@
+{
+ "session": "e432c75f-d32c-4f20-b1ab-d9ec04c96bbe",
+ "messages": 8,
+ "install": {
+  "installed": 16,
+  "hooks": [
+   {
+    "hook": 1,
+    "event": "SessionStart",
+    "matcher": null,
+    "command": "/opt/enforce-harness/.claude/hooks/setup-rule-r1.sh",
+    "form": "shell",
+    "timeout": 60
+   },
+   {
+    "hook": 2,
+    "event": "SessionStart",
+    "matcher": null,
+    "command": "/opt/enforce-harness/.claude/hooks/setup-rule-r2.sh",
+    "form": "shell",
+    "timeout": 60
+   },
+   {
+    "hook": 3,
+    "event": "SessionStart",
+    "matcher": null,
+    "command": "/opt/enforce-harness/.claude/hooks/setup-rule-r3.sh",
+    "form": "shell",
+    "timeout": 60
+   },
+   {
+    "hook": 4,
+    "event": "SessionStart",
+    "matcher": null,
+    "command": "/opt/enforce-harness/.claude/hooks/setup-rule-r4.sh",
+    "form": "shell",
+    "timeout": 60
+   },
+   {
+    "hook": 5,
+    "event": "SessionStart",
+    "matcher": null,
+    "command": "/opt/enforce-harness/.claude/hooks/setup-rule-r5.sh",
+    "form": "shell",
+    "timeout": 60
+   },
+   {
+    "hook": 6,
+    "event": "SessionStart",
+    "matcher": null,
+    "command": "/opt/enforce-harness/.claude/hooks/setup-rule-r6.sh",
+    "form": "shell",
+    "timeout": 60
+   },
+   {
+    "hook": 7,
+    "event": "SessionStart",
+    "matcher": null,
+    "command": "/opt/enforce-harness/.claude/hooks/setup-rule-r7.sh",
+    "form": "shell",
+    "timeout": 60
+   },
+   {
+    "hook": 8,
+    "event": "SessionStart",
+    "matcher": null,
+    "command": "/opt/enforce-harness/.claude/hooks/setup-rule-r8.sh",
+    "form": "shell",
+    "timeout": 60
+   },
+   {
+    "hook": 9,
+    "event": "Stop",
+    "matcher": null,
+    "command": "/opt/enforce-harness/.claude/hooks/validate-rule-r1.sh",
+    "form": "shell",
+    "timeout": 60
+   },
+   {
+    "hook": 10,
+    "event": "Stop",
+    "matcher": null,
+    "command": "/opt/enforce-harness/.claude/hooks/validate-rule-r2.sh",
+    "form": "shell",
+    "timeout": 60
+   },
+   {
+    "hook": 11,
+    "event": "Stop",
+    "matcher": null,
+    "command": "/opt/enforce-harness/.claude/hooks/validate-rule-r3.sh",
+    "form": "shell",
+    "timeout": 60
+   },
+   {
+    "hook": 12,
+    "event": "Stop",
+    "matcher": null,
+    "command": "/opt/enforce-harness/.claude/hooks/validate-rule-r4.sh",
+    "form": "shell",
+    "timeout": 60
+   },
+   {
+    "hook": 13,
+    "event": "Stop",
+    "matcher": null,
+    "command": "/opt/enforce-harness/.claude/hooks/validate-rule-r5.sh",
+    "form": "shell",
+    "timeout": 60
+   },
+   {
+    "hook": 14,
+    "event": "Stop",
+    "matcher": null,
+    "command": "/opt/enforce-harness/.claude/hooks/validate-rule-r6.sh",
+    "form": "shell",
+    "timeout": 60
+   },
+   {
+    "hook": 15,
+    "event": "Stop",
+    "matcher": null,
+    "command": "/opt/enforce-harness/.claude/hooks/validate-rule-r7.sh",
+    "form": "shell",
+    "timeout": 60
+   },
+   {
+    "hook": 16,
+    "event": "Stop",
+    "matcher": null,
+    "command": "/opt/enforce-harness/.claude/hooks/validate-rule-r8.sh",
+    "form": "shell",
+    "timeout": 60
+   }
+  ],
+  "not_wrapped": [],
+  "other_settings": [
+   "$schema"
+  ],
+  "fingerprint": "0019e890b786f66ecbdd8bdd026d26884343ad079aa264ed573207c775ea8233"
+ },
+ "claude_code_on_settings": null,
+ "commands_added_for_agent": [],
+ "workspace": {
+  "created": 0,
+  "changed": 0,
+  "deleted": 0
+ }
+}

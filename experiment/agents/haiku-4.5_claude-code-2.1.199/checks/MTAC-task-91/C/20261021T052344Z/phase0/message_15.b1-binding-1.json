@@ -1,0 +1,56 @@
+{
+ "label": "b1-binding-1",
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 621,
+  "duration_api_ms": 137,
+  "ttft_ms": 153,
+  "ttft_stream_ms": 150,
+  "time_to_request_ms": 139,
+  "num_turns": 2,
+  "result": "Bound.",
+  "stop_reason": "end_turn",
+  "session_id": "5a285723-3100-4349-82eb-b9ad044e4d45",
+  "total_cost_usd": 7.000000000000001e-05,
+  "usage": {
+   "input_tokens": 20,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 10,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 20,
+    "outputTokens": 10,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "webSearchRequests": 0,
+    "costUSD": 7.000000000000001e-05,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "d55f6ac4-c30b-4e5f-8ee9-f8474acf2d2b"
+ },
+ "text": "Node binding-1 (9 of 10): make the agent's Claude Code run the checks of R7, R5, R6 (/opt/enforce/checks/R7, /opt/enforce/checks/R5, /opt/enforce/checks/R6) at PreToolUse on Write|Edit|MultiEdit|NotebookEdit and at PostToolUse on Bash, in /workspace/.claude/settings.json: the project's settings, which load for the agent in /workspace and not for your own session. The hook reads the file as it will be after the write, from the hook's tool_input (Write: content; Edit and MultiEdit: the file on disk with the edits applied); a shell command's writes cannot be seen before it runs, so after each shell command the files it changed; on a violation it should refuse the write (permissionDecision \"deny\") with the check's message; after a shell command, exit 2 with it. Block only the violation, so the agent can fix its work and go on.\nDone when: `/opt/enforce-harness/try --check` reports nothing, and /workspace/.claude/settings.json has hooks at at PreToolUse on Write|Edit|MultiEdit|NotebookEdit and at PostToolUse on Bash that run /opt/enforce/checks/R7, /opt/enforce/checks/R5, /opt/enforce/checks/R6. The harness checks this when you reply.",
+ "stderr": ""
+}

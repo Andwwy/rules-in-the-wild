@@ -1,0 +1,1 @@
+{"files_total": 1, "by_folder": {"/opt/mock": 1}, "outside_opt_enforce": [{"path": "/opt/mock/api.jsonl", "size": 109323, "sha256": "0087fbd17ad814cf50648908a90befb6bed48ba458cbf48a05a5c1c3b28b2445"}], "outside_listed": 1, "outside_total": 1, "packages_added": [], "users_added": [], "processes_started": [], "git_system_config": null, "crontabs": null}

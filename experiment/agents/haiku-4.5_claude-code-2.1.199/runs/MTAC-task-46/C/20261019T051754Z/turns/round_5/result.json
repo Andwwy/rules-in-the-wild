@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 91024,
+  "duration_api_ms": 72866,
+  "ttft_ms": 3532,
+  "ttft_stream_ms": 3528,
+  "time_to_request_ms": 114,
+  "num_turns": 19,
+  "result": "执行结果：通过\n\n完成描述：集成天气数据系统，创建工具模块提供四类天气模型（晴、雨、多云、雪）。时间轴中每个站点右侧显示天气图标、温度、降水概率。地图标记弹窗同步展示地名和相应的天气信息。实现了天气数据在时间轴和地图弹窗间的联动显示。\n\n完成了天气数据集成和地图弹窗的联动展示功能。",
+  "stop_reason": "end_turn",
+  "session_id": "97b03103-d0f3-4825-991b-478998479f7c",
+  "total_cost_usd": 0.38896745,
+  "usage": {
+   "input_tokens": 114,
+   "cache_creation_input_tokens": 137777,
+   "cache_read_input_tokens": 1728122,
+   "output_tokens": 8764,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 137777
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 114,
+    "outputTokens": 8764,
+    "cacheReadInputTokens": 1728122,
+    "cacheCreationInputTokens": 137777,
+    "webSearchRequests": 0,
+    "costUSD": 0.38896745,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "1a2ec0a3-7b34-4142-b7df-a73ddbaff462"
+ },
+ "stderr": ""
+}

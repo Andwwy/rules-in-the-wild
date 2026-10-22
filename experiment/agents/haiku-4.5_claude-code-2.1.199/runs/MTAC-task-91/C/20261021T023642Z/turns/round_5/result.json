@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 48361,
+  "duration_api_ms": 46769,
+  "ttft_ms": 3047,
+  "ttft_stream_ms": 3044,
+  "time_to_request_ms": 96,
+  "num_turns": 6,
+  "result": "喵～\n\n<测试结果>通过</测试结果><描述>成功实现吃子碰撞检测、击毁逻辑、被击毁棋子回归准备区，以及吃子提示弹窗的完整功能链。代码采用4空格缩进，所有测试项目均通过验证。</描述>\n\n哒～",
+  "stop_reason": "end_turn",
+  "session_id": "d46d12ec-bb2c-45be-8da3-6747e1371711",
+  "total_cost_usd": 0.10859715,
+  "usage": {
+   "input_tokens": 35,
+   "cache_creation_input_tokens": 23487,
+   "cache_read_input_tokens": 382034,
+   "output_tokens": 8200,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 23487
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 35,
+    "outputTokens": 8200,
+    "cacheReadInputTokens": 382034,
+    "cacheCreationInputTokens": 23487,
+    "webSearchRequests": 0,
+    "costUSD": 0.10859715,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "72bcf4c2-dd54-48bf-97dc-74ccdeba15a7"
+ },
+ "stderr": ""
+}

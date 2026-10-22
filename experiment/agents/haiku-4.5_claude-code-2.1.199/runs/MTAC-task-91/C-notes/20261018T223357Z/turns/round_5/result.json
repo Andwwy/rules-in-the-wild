@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 91798,
+  "duration_api_ms": 87666,
+  "ttft_ms": 5354,
+  "ttft_stream_ms": 5350,
+  "time_to_request_ms": 125,
+  "num_turns": 14,
+  "result": "喵～\n\n代码小灵已实现吃子机制：飞机移动到对手飞机所在格子时触发，受害飞机被送回准备区，界面顶部显示吃子通知弹窗。\n\n执行结果：通过\n描述：成功实现吃子机制。当一个玩家的飞机移动到其他玩家飞机所在位置时，自动触发捕获逻辑，受害飞机被强制送回准备区，同时在界面顶部显示吃子通知弹窗，标注捕获者和被击毁方。所有代码遵循四空格缩进规范。\n\n哒～",
+  "stop_reason": "end_turn",
+  "session_id": "f96299d9-4701-4a4d-88df-0cefefed3f55",
+  "total_cost_usd": 0.7315381000000002,
+  "usage": {
+   "input_tokens": 106,
+   "cache_creation_input_tokens": 409302,
+   "cache_read_input_tokens": 1593246,
+   "output_tokens": 12096,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 409302
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 106,
+    "outputTokens": 12096,
+    "cacheReadInputTokens": 1593246,
+    "cacheCreationInputTokens": 409302,
+    "webSearchRequests": 0,
+    "costUSD": 0.7315381000000002,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "3fca891b-ca40-427b-ad61-77e6321c4394"
+ },
+ "stderr": ""
+}

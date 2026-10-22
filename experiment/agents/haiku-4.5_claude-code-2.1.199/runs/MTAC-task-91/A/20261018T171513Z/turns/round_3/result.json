@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 40762,
+  "duration_api_ms": 40095,
+  "ttft_ms": 6447,
+  "ttft_stream_ms": 6444,
+  "time_to_request_ms": 97,
+  "num_turns": 5,
+  "result": "代码小灵已为开发者大大实现了飞机的移动功能，支持沿着顺时针路线移动对应步数，点击哪架飞机就移动哪架，并创建了progress.md记录进度哒～",
+  "stop_reason": "end_turn",
+  "session_id": "f01beb59-3463-41ee-b07b-0372119f2626",
+  "total_cost_usd": 0.0947828,
+  "usage": {
+   "input_tokens": 31,
+   "cache_creation_input_tokens": 28344,
+   "cache_read_input_tokens": 270468,
+   "output_tokens": 6455,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 28344
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 31,
+    "outputTokens": 6455,
+    "cacheReadInputTokens": 270468,
+    "cacheCreationInputTokens": 28344,
+    "webSearchRequests": 0,
+    "costUSD": 0.0947828,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "692375b6-40d3-4e8f-b7f5-a7977ff1cc32"
+ },
+ "stderr": ""
+}

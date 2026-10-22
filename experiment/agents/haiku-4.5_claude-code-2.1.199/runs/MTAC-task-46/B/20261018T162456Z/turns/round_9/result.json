@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 80364,
+  "duration_api_ms": 74625,
+  "ttft_ms": 3925,
+  "ttft_stream_ms": 3799,
+  "time_to_request_ms": 107,
+  "num_turns": 14,
+  "result": "<result>通过</result><description>成功实现导出路书沉浸模式。在侧边栏添加\"生成路书\"按钮，点击后进入全屏沉浸式模式；上方40%显示缩小的地图，下方60%显示精美排版的路书卡片网格；卡片包含站点名称、ETA、天气预测和路段信息；提供打印/保存为PDF按钮和退出按钮；所有变量名遵循 guidebook_ 前缀；31/31 功能检查全部通过；应用完全就绪。</description>\n\n已完成导出路书功能，用户可生成沉浸式路书并打印或保存为 PDF。",
+  "stop_reason": "end_turn",
+  "session_id": "fe5e21ed-e952-4a7c-a5bd-b61eda522681",
+  "total_cost_usd": 0.3259892,
+  "usage": {
+   "input_tokens": 81,
+   "cache_creation_input_tokens": 93260,
+   "cache_read_input_tokens": 1598932,
+   "output_tokens": 9888,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 93260
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 81,
+    "outputTokens": 9888,
+    "cacheReadInputTokens": 1598932,
+    "cacheCreationInputTokens": 93260,
+    "webSearchRequests": 0,
+    "costUSD": 0.3259892,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "d32e9e6b-4092-41be-a3fc-0182dcc13bbe"
+ },
+ "stderr": ""
+}

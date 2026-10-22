@@ -1,0 +1,448 @@
+<meta charset="utf-8">
+<title>MTAC Run Trajectories</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: three chat threads side by side (A | B | C). Each rule and each turn is one row across the three, so the same
+   step of each arm sits level. In a thread, what the agent receives is on the left; what the agent says and does is on
+   the right. */
+:root {
+  --bg: #f4f6f5; --surface: #ffffff; --fg: #1b2321; --dim: #67736e; --line: #dce2df;
+  --in: #e9edeb; --out: #d6ede6; --out-fg: #0f2e27; --accent: #1d7663; --root: #b0502a;
+  --hook: #855d00; --hook-bg: #faf0d6; --warn: #b38600; --pass: #2b7a39; --fail: #bf3a2c; --fail-bg: #fae3df; --add-bg: #e1f3e5; --code: #eef1ef;
+  --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --hdr: 52px;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #111514; --surface: #181d1c; --fg: #dbe3e0; --dim: #8b9792; --line: #29312e;
+  --in: #212826; --out: #173932; --out-fg: #d5f1ea; --accent: #5ec6ae; --root: #ef9068;
+  --hook: #e6bf62; --hook-bg: #31280f; --warn: #f2c94c; --pass: #7ccf88; --fail: #ff8a7c; --fail-bg: #3a1d19; --add-bg: #14301b; --code: #131816;
+  color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #111514; --surface: #181d1c; --fg: #dbe3e0; --dim: #8b9792; --line: #29312e;
+  --in: #212826; --out: #173932; --out-fg: #d5f1ea; --accent: #5ec6ae; --root: #ef9068;
+  --hook: #e6bf62; --hook-bg: #31280f; --warn: #f2c94c; --pass: #7ccf88; --fail: #ff8a7c; --fail-bg: #3a1d19; --add-bg: #14301b; --code: #131816;
+  color-scheme: dark }
+* { box-sizing: border-box }
+[hidden] { display: none !important }
+body { background: var(--bg); color: var(--fg); font: 14px/1.5 var(--sans);
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 0 48px }
+button { font: inherit; color: inherit }
+button:focus-visible, summary:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }
+pre, code, .mono { font-family: var(--mono); font-size: 12px }
+
+/* header */
+.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); border-bottom: 1px solid var(--line);
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; padding-block: 10px }
+.top h1 { font-size: 15px; font-weight: 600; margin: 0 }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--surface) }
+.seg span { padding: 3px 8px; color: var(--dim) }
+.seg button { border: 0; border-left: 1px solid var(--line); background: none; padding: 3px 12px; cursor: pointer; font-variant-numeric: tabular-nums }
+.seg button[aria-pressed="true"] { background: var(--accent); color: var(--surface) }
+.opts { display: flex; gap: 16px; color: var(--dim); flex-wrap: wrap }
+.opts label { display: inline-flex; gap: 6px; align-items: center; cursor: pointer }
+.opts input { accent-color: var(--accent) }
+
+/* overview */
+.mats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 16px }
+.mat { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; min-width: 0 }
+.mat h2, .colhead b { font-size: 13px; font-weight: 600; margin: 0 0 6px }
+.mat h2 small, .colhead small { color: var(--dim); font-weight: 400 }
+.scroll { overflow-x: auto }
+.mat table { border-collapse: collapse; font: 12px/1.4 var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap }
+.mat td, .mat th { padding: 1px 4px; text-align: center; font-weight: 400 }
+.mat td:first-child, .mat th:first-child { text-align: right; padding-left: 0 }
+.mat td:last-child { text-align: left; padding-left: 8px }
+.mat .tot td { border-top: 1px solid var(--line); padding-top: 3px }
+.big { font-size: 20px; font-weight: 600; margin-top: 6px; font-variant-numeric: tabular-nums }
+.ok { color: var(--pass) } .no { color: var(--fail) } .dim { color: var(--dim) } .warn { color: var(--warn); font-weight: 600 }
+.legend { margin-top: 8px; font-size: 12px; color: var(--dim) }
+.hs { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 2px 10px; margin-top: 6px; font-size: 13px }
+.hs b { font-weight: 600 }
+.rid { background: none; border: 0; padding: 0; cursor: pointer; color: var(--accent); font: 500 12px var(--mono) }
+.rid:hover { text-decoration: underline }
+.failbtn { background: none; border: 0; padding: 0 2px; cursor: pointer; color: var(--fail); font: inherit; border-radius: 3px }
+.failbtn:hover { background: var(--fail-bg) }
+.ruleinfo { margin-top: 10px; padding: 8px 12px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; overflow-wrap: anywhere }
+
+/* threads */
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 12px; margin-top: 20px }
+.colhead { position: sticky; top: calc(env(safe-area-inset-top, 0px) + var(--hdr)); z-index: 4; background: var(--bg);
+  padding: 8px 2px; border-bottom: 1px solid var(--line); min-width: 0 }
+.colhead small { display: block; font: 11px var(--mono); overflow: hidden; text-overflow: ellipsis; white-space: nowrap }
+.band { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; padding: 28px 0 6px;
+  border-bottom: 1px solid var(--line); min-width: 0 }
+.band h3 { margin: 0; font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase }
+.pill { font-size: 12px; padding: 0 8px; border-radius: 999px; border: 1px solid currentColor }
+.pill.root { color: var(--root) } .pill.agent { color: var(--accent) }
+.band .dim { font-size: 13px; overflow-wrap: anywhere }
+.rowhead { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; padding: 16px 0 4px; min-width: 0 }
+.rowhead b { font-size: 13px; font-weight: 600 }
+.fold-btn { background: none; border: 0; padding: 0; cursor: pointer; font-size: 13px; font-weight: 600; color: var(--fg); text-align: left }
+.fold-btn::before { content: "▸ "; color: var(--dim) } .fold-btn[aria-expanded="true"]::before { content: "▾ " }
+.fold-btn span { font-weight: 400; color: var(--dim) }
+.brief { font-size: 12px; color: var(--dim); cursor: pointer } .brief:hover { color: var(--fg) }
+.rowhead > .box { flex-basis: 100% }
+.link { background: none; border: 0; padding: 0; cursor: pointer; color: var(--accent); font-size: 13px }
+.link:hover { text-decoration: underline }
+.cell { display: flex; flex-direction: column; gap: 6px; min-width: 0; padding-bottom: 8px }
+.armtag { display: none; font-size: 12px; font-weight: 600; color: var(--dim) }
+.empty { color: var(--dim); font-size: 13px; padding: 6px 0 }
+
+/* messages */
+.msg { max-width: 92%; padding: 7px 11px; border-radius: 14px; min-width: 0; overflow-wrap: anywhere }
+.msg.in { align-self: flex-start; background: var(--in); border-bottom-left-radius: 4px }
+.msg.out { align-self: flex-end; background: var(--out); color: var(--out-fg); border-bottom-right-radius: 4px }
+.msg.hook { background: var(--hook-bg) }
+.msg.think { background: none; border: 1px dashed var(--line); color: var(--dim); font-style: italic }
+.who { font-size: 11px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; color: var(--dim); margin-bottom: 1px }
+.hook .who { color: var(--hook) }
+.txt { white-space: pre-wrap }
+.clamp { display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; overflow: hidden }
+details.msg > summary { list-style: none; cursor: pointer }
+details.msg > summary::-webkit-details-marker { display: none }
+details.msg[open] .clamp { display: block; -webkit-line-clamp: unset }
+.more { font-size: 12px; color: var(--accent) }
+.msg.out .more { color: inherit; opacity: .7 }
+.more::after { content: "more" } details[open] > summary .more::after { content: "less" }
+.route { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 0 8px; margin-top: 4px; font-size: 13px }
+.route dt { color: var(--dim) } .route dd { margin: 0 }
+.msg pre { margin: 6px 0 2px; padding: 6px 8px; background: var(--surface); border-radius: 6px; white-space: pre-wrap;
+  max-height: 420px; overflow: auto; color: var(--fg); font-style: normal }
+.scored { align-self: flex-end; font-size: 11px; color: var(--accent); margin-top: -3px }
+.sysnote { align-self: center; font-size: 12px; color: var(--dim); text-align: center; max-width: 92% }
+
+/* actions: compact lines under the agent's side */
+.acts { align-self: flex-end; width: 92%; border-left: 2px solid var(--out); padding-left: 8px; display: grid; gap: 1px; min-width: 0 }
+details.act > summary { list-style: none; cursor: pointer; display: flex; gap: 8px; align-items: baseline; min-width: 0; padding: 1px 4px; border-radius: 4px }
+details.act > summary::-webkit-details-marker { display: none }
+details.act > summary:hover { background: var(--in) }
+.verb { flex: none; font: 500 12px var(--mono); color: var(--accent) }
+.verb.file { color: var(--root) }
+.what { font: 12px var(--mono); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; color: var(--fg) }
+details.act[open] .what { white-space: normal; overflow-wrap: anywhere }
+.tag { flex: none; font-size: 11px; color: var(--dim); border: 1px solid var(--line); border-radius: 999px; padding: 0 6px }
+.bad { flex: none; font-size: 11px; color: var(--fail) }
+details.act pre { margin: 2px 0 6px; padding: 6px 8px; background: var(--code); border-radius: 6px; white-space: pre-wrap;
+  overflow-wrap: anywhere; max-height: 420px; overflow-y: auto }
+pre.err { color: var(--fail) }
+
+/* the note at the end of each step, and harness steps */
+.foot { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 12px; color: var(--dim); padding-top: 4px; border-top: 1px solid var(--line); margin-top: 2px }
+.scores { display: flex; flex-wrap: wrap; gap: 2px 8px; font: 12px var(--mono) }
+.note { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 8px 12px; display: grid; gap: 4px; min-width: 0 }
+.note ul { margin: 0; padding-left: 18px; font: 12px/1.5 var(--mono); overflow-wrap: anywhere }
+.note summary { cursor: pointer; color: var(--accent); font-size: 13px }
+.items { list-style: none; margin: 0; padding: 0; display: grid; font-size: 13px; min-width: 0 }
+.items li { padding: 4px 0; border-bottom: 1px dashed var(--line); overflow-wrap: anywhere }
+
+/* diffs */
+.box { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 8px 12px; overflow-wrap: anywhere; min-width: 0 }
+.diff { margin-top: 6px; font: 12px/1.5 var(--mono); max-height: 520px; overflow: auto; border: 1px solid var(--line); border-radius: 6px }
+.diff div { white-space: pre-wrap; padding: 0 8px }
+.diff .add { background: var(--add-bg); color: var(--pass) } .diff .del { background: var(--fail-bg); color: var(--fail) }
+.diff .same, .diff .fold { color: var(--dim) } .diff .fold { font-style: italic }
+.diff .hd { font-family: var(--sans); font-weight: 600; color: var(--fg); border-bottom: 1px solid var(--line); padding-block: 4px }
+
+/* the popup for a failed cell */
+dialog#fail { background: var(--surface); color: var(--fg); border: 1px solid var(--line); border-radius: 12px;
+  max-width: min(760px, calc(100vw - 32px)); width: 100%; padding: 16px 18px }
+dialog#fail::backdrop { background: rgba(0, 0, 0, .45) }
+.fbody { display: grid; gap: 8px; min-width: 0 }
+.fhead { font-weight: 600 }
+.fsnip { white-space: pre-wrap; overflow-wrap: anywhere; background: var(--code); border-radius: 6px; padding: 6px 10px; font: 12px/1.5 var(--mono) }
+.fsnip .mark { background: var(--fail-bg); color: var(--fail); outline: 1px solid var(--fail) }
+dialog pre { white-space: pre-wrap; overflow-wrap: anywhere; background: var(--code); border-radius: 6px; padding: 6px 10px; max-height: 320px; overflow: auto; margin: 0 }
+.fclose { text-align: right; margin-top: 8px }
+
+.hide-think .think { display: none }
+.hide-acts .acts { display: none }
+@media (max-width: 900px) {
+  .grid, .mats { grid-template-columns: minmax(0, 1fr) }
+  .colhead { display: none } .armtag { display: block }
+  .cell { border-top: 1px dashed var(--line); padding-top: 8px }
+}
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto } }
+</style>
+
+<header class="top" id="top">
+  <h1>MTAC trajectories</h1>
+  <span class="seg" id="tabs" role="group" aria-label="Task"></span>
+  <span class="opts">
+    <label><input type="checkbox" id="opt-acts" checked> actions</label>
+    <label><input type="checkbox" id="opt-think"> thinking</label>
+  </span>
+</header>
+<div id="sum"></div>
+<div class="grid" id="grid"></div>
+
+<dialog id="fail" aria-label="Where the check failed">
+  <div class="fbody"></div>
+  <form method="dialog" class="fclose"><button class="link" type="submit">Close</button></form>
+</dialog>
+
+<script id="data" type="application/json">/*__DATA__*/null</script>
+<script>
+const RUNS = JSON.parse(document.getElementById("data").textContent);
+const ARMS = [["A", "CLAUDE.md only"], ["B", "naive translation"], ["C", "routed translation"]];
+const CC = "[Claude Code 2.1.199's own system prompt]";
+const tasks = [...new Set(RUNS.map(r => r.task))].sort((a, b) => a - b);
+const store = { get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }, set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
+let task = tasks.includes(Number(store.get("traj-task"))) ? Number(store.get("traj-task")) : tasks[tasks.length - 1];
+for (const id of ["opt-acts", "opt-think"]) { const v = store.get("traj-" + id); if (v != null) document.getElementById(id).checked = v === "1"; }
+
+const h = (tag, cls, ...kids) => {
+  const el = document.createElement(tag);
+  if (cls) el.className = cls;
+  for (const k of kids.flat()) if (k != null && k !== false) el.append(k instanceof Node ? k : document.createTextNode(String(k)));
+  return el;
+};
+const $ = (x) => x == null ? "" : "$" + Number(x).toFixed(2);
+const first = (s, n = 200) => { const l = String(s || "").trim().split("\n")[0]; return l.length > n ? l.slice(0, n) + "…" : l; };
+const lazy = (d, build) => { let done = false; d.addEventListener("toggle", () => { if (d.open && !done) { done = true; d.append(...[].concat(build()).filter(Boolean)); } }); return d; };
+
+// ---- line diff (LCS) --------------------------------------------------------------------------------------------
+function diffLines(a, b) {
+  const A = a.split("\n"), B = b.split("\n"), n = A.length, m = B.length;
+  const L = Array.from({ length: n + 1 }, () => new Uint16Array(m + 1));
+  for (let i = n - 1; i >= 0; i--) for (let j = m - 1; j >= 0; j--) L[i][j] = A[i] === B[j] ? L[i + 1][j + 1] + 1 : Math.max(L[i + 1][j], L[i][j + 1]);
+  const out = []; let i = 0, j = 0;
+  while (i < n && j < m) { if (A[i] === B[j]) { out.push([" ", A[i]]); i++; j++; } else if (L[i + 1][j] >= L[i][j + 1]) out.push(["-", A[i++]]); else out.push(["+", B[j++]]); }
+  while (i < n) out.push(["-", A[i++]]); while (j < m) out.push(["+", B[j++]]);
+  return out;
+}
+function diffView(title, la, a, lb, b) {
+  const box = h("div", "diff", h("div", "hd", title));
+  if (a === b) { box.append(h("div", "same", `${la} and ${lb} are identical (${a.split("\n").length} lines)`)); return box; }
+  let run = [];
+  const flush = () => { if (run.length > 6) box.append(...run.slice(0, 2).map(x => h("div", "same", "  " + x)), h("div", "fold", `  … ${run.length - 4} unchanged lines …`), ...run.slice(-2).map(x => h("div", "same", "  " + x))); else box.append(...run.map(x => h("div", "same", "  " + x))); run = []; };
+  for (const [op, text] of diffLines(a, b)) { if (op === " ") { run.push(text); continue; } flush(); box.append(h("div", op === "+" ? "add" : "del", `${op} ${text}`)); }
+  flush();
+  box.append(h("div", "fold", `"- " only in ${la} · "+ " only in ${lb}`));
+  return box;
+}
+// a link in a row head that opens a box under the row
+function toggleBox(label, build) {
+  const btn = h("button", "link", label); btn.type = "button"; let box = null;
+  btn.onclick = () => { if (box) { box.hidden = !box.hidden; return; } box = h("div", "box", build()); btn.closest(".rowhead, .band").append(box); };
+  return btn;
+}
+
+// ---- messages and actions -----------------------------------------------------------------------------------------
+// side "in": what the agent receives; side "out": what the agent says. `more` adds nodes when the bubble opens.
+function msg(side, kind, label, text, more) {
+  text = String(text || "");
+  const head = label ? h("div", "who", label) : null;
+  const long = more || text.length > 420 || text.split("\n").length > 6;
+  if (!long) return h("div", `msg ${side} ${kind}`, head, h("div", "txt", text));
+  const d = h("details", `msg ${side} ${kind}`, h("summary", null, head, h("div", "txt clamp", text), h("span", "more")));
+  return more ? lazy(d, more) : d;
+}
+function action(ev) {
+  const files = ev.files || [];
+  let verb, what, file = false;
+  if (ev.name === "Write") { verb = "wrote"; what = `${ev.summary} · ${(ev.detail || "").split("\n").length} lines`; file = true; }
+  else if (["Edit", "MultiEdit", "NotebookEdit"].includes(ev.name)) { verb = "changed"; what = ev.summary; file = true; }
+  else if (ev.try) { verb = "used try"; what = first((ev.detail || "").replace(/^[\s\S]*?\/opt\/enforce-harness\/try\s*/, ""), 160); }
+  else if (ev.name === "Bash" && files.length) { verb = "wrote"; what = files.map(f => f.path).join(", ") + " · by a shell command"; file = true; }
+  else if (ev.name === "Bash") { verb = "used Bash"; what = first(ev.detail || ev.summary, 200); }
+  else { verb = "used " + ev.name; what = ev.summary || ""; }
+  const d = h("details", "act", h("summary", null, h("span", "verb" + (file ? " file" : ""), verb), h("span", "what", what),
+    ev.try ? h("span", "tag", "trial, as agent") : (ev.as || "").includes("runuser") ? h("span", "tag", "as agent") : null,
+    ev.error ? h("span", "bad", "error") : null));
+  return lazy(d, () => [ev.detail ? h("pre", null, ev.detail) : null, ev.result ? h("pre", ev.error ? "err" : "dim", ev.result) : null]);
+}
+function hookLabel(ev) { return `hook ${ev.verdict === "block" ? "blocked" : ev.verdict === "error" ? "error" : ev.verdict} · ${ev.event}`; }
+// one thread: replies and hook feedback as bubbles; runs of tool calls as one block of action lines
+function thread(evs, scoredAt = -1) {
+  const out = []; let acts = null;
+  evs.forEach((ev, i) => {
+    if (ev.k === "tool") { if (!acts) { acts = h("div", "acts"); out.push(acts); } acts.append(action(ev)); return; }
+    if (ev.k === "hook" && ev.verdict !== "block" && ev.verdict !== "error") return;   // passes: counted in the step's note
+    acts = null;
+    if (ev.k === "text" && ev.synthetic) out.push(h("div", "sysnote", "Claude Code: " + first(ev.text, 160)));
+    else if (ev.k === "text") { out.push(msg("out", "reply", null, ev.text)); if (i === scoredAt) out.push(h("div", "scored", "scored reply")); }
+    else if (ev.k === "think") out.push(msg("out", "think", "thinking", ev.text));
+    else if (ev.k === "hook") out.push(msg("in", "hook", hookLabel(ev), ev.msg || "(no message)"));
+    else if (ev.k === "compact") out.push(h("div", "sysnote", "context compacted"));
+  });
+  return out;
+}
+const lastReplyAt = (evs) => { for (let i = evs.length - 1; i >= 0; i--) if (evs[i].k === "text" && !evs[i].synthetic) return i; return -1; };
+// a row that folds: its button goes in the row head; each arm's cell shows `brief` when folded and `body` when open
+function folding(label, sub, group) {
+  const btn = h("button", "fold-btn", label + " ", sub ? h("span", null, sub) : null); btn.type = "button"; btn.setAttribute("aria-expanded", "false");
+  const cells = [];
+  const setOpen = (open) => { btn.setAttribute("aria-expanded", String(open)); for (const c of cells) { c.brief.hidden = open; c.body.hidden = !open; } };
+  btn.onclick = () => setOpen(btn.getAttribute("aria-expanded") !== "true");
+  group.push(setOpen);
+  const add = (briefText, ...kids) => {
+    const brief = h("div", "brief", briefText), body = h("div", "cell", ...kids);
+    body.style.padding = "0"; body.hidden = true; brief.onclick = () => setOpen(true);
+    cells.push({ brief, body }); return [brief, body];
+  };
+  return { btn, add };
+}
+function allToggle(group, what) {
+  const b = h("button", "link", "expand all " + what); b.type = "button";
+  b.onclick = () => { const open = b.textContent.startsWith("expand"); group.forEach(f => f(open)); b.textContent = (open ? "collapse all " : "expand all ") + what; };
+  return b;
+}
+const sysBubble = (label, text) => msg("in", "sys", "system prompt", label, () => h("pre", null, text));
+function cell(arm, ...kids) { return h("div", "cell", h("div", "armtag", arm), ...kids); }
+
+// ---- overview -----------------------------------------------------------------------------------------------------
+function matrices(runs) {
+  const rules = runs.find(Boolean).rules;
+  const nT = Math.max(...runs.map(r => r ? r.task_part.turns.length : 0));
+  const info = h("div", "ruleinfo"); info.hidden = true; let shown = null;
+  const showRule = (x) => { if (shown === x.id && !info.hidden) { info.hidden = true; return; } shown = x.id; info.hidden = false;
+    info.replaceChildren(h("div", null, h("b", null, x.id + "  "), x.text, x.scored ? "" : h("span", "dim", "  (no checker script: not scored)")),
+      h("div", "hs", ...runs.flatMap((r, i) => { const st = i > 0 && r && r.hook_status ? r.hook_status[x.id] : null; if (!st) return [];
+        return [h("b", null, ARMS[i][0]), h("span", st.working ? "" : "warn", st.working ? (st.stops ? `hook works: it stopped the agent ${st.stops} times` : "hook ran without failing, but never had to stop the agent") : "no working hook: " + st.why)]; }))); };
+  const mats = runs.map((r, i) => {
+    const box = h("div", "mat", h("h2", null, `${ARMS[i][0]} `, h("small", null, ARMS[i][1])));
+    if (!r) { box.append(h("div", "empty", "no run")); return box; }
+    const t = h("table", null, h("tr", null, h("th", "dim", "turn"), ...Array.from({ length: nT }, (_, k) => h("th", "dim", String(k + 1))), h("th", "dim", "")));
+    const col = Array.from({ length: nT }, () => [0, 0]); let P = 0, N = 0;
+    for (const x of rules) {
+      const b = h("button", "rid" + (x.scored ? "" : " dim"), x.id); b.type = "button"; b.title = "show the rule"; b.onclick = () => showRule(x);
+      let p = 0, n = 0;
+      const cells = Array.from({ length: nT }, (_, k) => {
+        const turn = r.task_part.turns[k], s = turn && turn.scores.find(s => s.rule === x.id);
+        if (!s || s.passed === null) return h("td", "dim", "·");
+        n++; col[k][1]++;
+        const hs = i > 0 && r.hook_status ? r.hook_status[x.id] : null;
+        if (s.passed && hs && !hs.working) { p++; col[k][0]++; const c = h("td", "warn", "✓"); c.title = `${x.id}, turn ${k + 1}: pass, without a working hook (${hs.why})`; return c; }
+        if (s.passed) { p++; col[k][0]++; const c = h("td", "ok", "✓"); c.title = `${x.id}, turn ${k + 1}: pass`; return c; }
+        const f = h("button", "failbtn", "✗"); f.type = "button"; f.title = `${x.id}, turn ${k + 1}: fail. Show where`;
+        f.onclick = () => openFail(r, i, k, x); return h("td", "no", f);
+      });
+      P += p; N += n;
+      t.append(h("tr", null, h("td", null, b), ...cells, h("td", n ? (p === n ? "ok" : p === 0 ? "no" : "") : "dim", n ? `${p}/${n}` : "–")));
+    }
+    t.append(h("tr", "tot", h("td", "dim", "Σ"), ...col.map(([p, n]) => h("td", "dim", n ? String(p) : "")), h("td", null, "")));
+    box.append(h("div", "scroll", t), h("div", "big", `${P}/${N}`, h("span", "dim", `  ${Math.round(100 * P / Math.max(1, N))}%`)),
+      h("div", "dim", r.cost[0] ? `${$(r.cost[0])} phase 0 + ${$(r.cost[1])} task` : `${$(r.cost[1])} task`));
+    return box;
+  });
+  const legend = h("div", "legend", h("span", "ok", "✓"), " pass · ", h("span", "warn", "✓"), " pass, but the rule had no working hook (B and C) · ",
+    h("span", "no", "✗"), " fail: click it for where · click a rule number for its text and hook status");
+  document.getElementById("sum").replaceChildren(h("div", "mats", ...mats), legend, info);
+}
+// the popup for a failed cell: where MTAC's checker failed, found black-box
+function openFail(run, armIndex, k, rule) {
+  const dlg = document.getElementById("fail"), body = dlg.querySelector(".fbody");
+  const turn = run.task_part.turns[k], rows = turn && turn.fails ? turn.fails[rule.id] : undefined;
+  body.replaceChildren(h("div", "fhead", `${ARMS[armIndex][0]} · turn ${k + 1} · ${rule.id} `, h("span", "no", "failed")), h("div", null, rule.text));
+  if (rows && rows.length) {
+    body.append(h("div", "dim", "Where MTAC's checker fails (found by running it again on reduced copies; the marked part fails):"));
+    for (const r of rows) body.append(h("div", null, h("b", null, r.file === "reply" ? "the reply" : r.file), r.line != null ? h("span", "dim", `  line ${r.line}`) : null),
+      h("div", "fsnip", ...(r.segs || []).map(([t, m]) => h("span", m ? "mark" : null, t))), r.note ? h("div", "dim", r.note) : null);
+  } else body.append(h("div", "dim", rows === null ? "MTAC's checker fails this, but no single place could be found." : "No place recorded for this cell."));
+  body.append(h("div", "dim", "The reply that was scored:"), h("pre", null, turn ? turn.reply || "(no reply)" : ""));
+  dlg.showModal();
+}
+
+// ---- the threads ----------------------------------------------------------------------------------------------------
+function render() {
+  const runs = ARMS.map(([a]) => RUNS.find(r => r.task === task && r.arm === a));
+  const tabs = document.getElementById("tabs"); tabs.replaceChildren(h("span", null, "task"));
+  for (const t of tasks) {
+    const b = h("button", null, String(t)); b.type = "button"; b.setAttribute("aria-pressed", String(t === task));
+    b.onclick = () => { task = t; store.set("traj-task", String(t)); render(); }; tabs.append(b);
+  }
+  matrices(runs);
+  const g = document.getElementById("grid"); g.replaceChildren();
+  g.className = "grid" + (document.getElementById("opt-think").checked ? "" : " hide-think") + (document.getElementById("opt-acts").checked ? "" : " hide-acts");
+  ARMS.forEach(([a, d], i) => g.append(h("div", "colhead", h("b", null, `${a} `, h("small", null, d)), h("small", "dim", runs[i] ? runs[i].run : "no run"))));
+  const band = (title, pill, ...kids) => g.append(h("div", "band", h("h3", null, title), pill ? h("span", "pill " + pill[0], pill[1]) : null, ...kids));
+  const rowhead = (...kids) => g.append(h("div", "rowhead", ...kids));
+  const ref = runs.find(Boolean);
+
+  band("Setup", null, h("span", "dim", `${ref.image} · Claude Code ${ref.claude_code} · ${ref.model}`), toggleBox("CLAUDE.md", () => h("pre", "mono", ref.policy)));
+
+  // phase 0
+  const s1 = runs.map(r => r && r.phase0);
+  const sysText = (s) => `${CC}\n\n${s.system}`;
+  const folds = [];
+  band("phase 0 · translation", ["root", "agent runs as root"], allToggle(folds, "rules"),
+    toggleBox("system prompt diff, B ↔ C", () => s1[1] && s1[2] ? diffView("system prompt, B ↔ C", "B", sysText(s1[1]), "C", sysText(s1[2])) : h("div", "dim", "no B or C")));
+  runs.forEach((run, i) => g.append(cell(ARMS[i][0], s1[i] ? sysBubble("Claude Code's own + phase 0's system prompt (prompts/)", sysText(s1[i]))
+    : h("div", "empty", i === 0 ? "Arm A has no phase 0." : "No phase 0."))));
+  const nRules = Math.max(0, ...s1.map(s => s ? s.rules.length : 0));
+  for (let k = 0; k < nRules; k++) {
+    const r0 = s1.map(s => s && s.rules[k]).find(Boolean);
+    const full = (i) => s1[i] && s1[i].rules[k] ? `${sysText(s1[i])}\n\n─── user prompt ───\n${s1[i].rules[k].full}` : "";
+    const fold = folding(r0.rule, first(r0.text, 60), folds);
+    rowhead(fold.btn, toggleBox("input diff, B ↔ C", () => diffView(`${r0.rule}: system prompt + user prompt, B ↔ C`, "B", full(1), "C", full(2))));
+    runs.forEach((run, i) => {
+      const r = s1[i] && s1[i].rules[k];
+      if (!r) { g.append(cell(ARMS[i][0], h("div", "empty", "—"))); return; }
+      const user = msg("in", "user", "user", `Rule ${r.rule}: ${r.text}`, () => h("pre", null, r.full));
+      const sm = user.querySelector("summary");
+      if (r.enforcer) sm.insertBefore(h("dl", "route",
+        h("dt", null, "enforcer"), h("dd", null, r.enforcer.replace(/ \(.*\)$/, "")),
+        h("dt", null, "trigger"), h("dd", null, r.trigger.replace(/ \(.*?\)/, "")),
+        h("dt", null, "target"), h("dd", null, r.target.replace(/ \(.*\)$/, ""))), sm.lastChild);
+      const tools = r.events.filter(e => e.k === "tool"), wr = r.events.filter(e => e.files).length, tr = r.events.filter(e => e.try).length;
+      const stats = `${tools.length} actions · ${wr} files written · ${tr} trials` + (r.cost != null ? ` · ${$(r.cost)}` : "");
+      g.append(cell(ARMS[i][0], ...fold.add(stats, user, ...thread(r.events), h("div", "foot", h("span", null, stats)))));
+    });
+  }
+
+  band("Install", ["root", "harness, as root"], h("span", "dim", "settings.json becomes Claude Code's managed settings; each command hook is wrapped and logged; a hook stops after 10 violations per turn"));
+  runs.forEach((run, i) => {
+    const ins = s1[i] && s1[i].install;
+    if (!ins) { g.append(cell(ARMS[i][0], h("div", "empty", "Nothing installed."))); return; }
+    const hooks = h("details", null, h("summary", null, `${ins.hooks.length} hooks`),
+      h("ul", null, ...ins.hooks.map(x => h("li", null, `${x.event}${x.matcher ? " [" + x.matcher + "]" : ""}: ${x.command.replace(/^python3 /, "")}`))));
+    const files = lazy(h("details", null, h("summary", null, `${Object.keys(ins.enforce_files).length} files in /opt/enforce`)),
+      () => Object.entries(ins.enforce_files).map(([p, c]) => lazy(h("details", "act", h("summary", null, h("span", "verb file", "file"), h("span", "what", p))), () => h("pre", null, c))));
+    g.append(cell(ARMS[i][0], h("div", "note",
+      h("div", ins.verdict ? "no" : "ok", ins.verdict ? "Claude Code: " + ins.verdict : "Claude Code accepted the settings"),
+      hooks, files,
+      h("div", "dim", `${(ins.workspace.created || []).length} files created in /workspace · commands added for agent: ${ins.commands_added.join(", ") || "none"}`))));
+  });
+
+  band("Phase 0 summary", null, h("span", "dim", "what each phase 0 agent implemented"));
+  runs.forEach((run, i) => {
+    const items = s1[i] && s1[i].summary;
+    if (!items) { g.append(cell(ARMS[i][0], h("div", "empty", i === 0 ? "Arm A has no phase 0." : "No phase 0."))); return; }
+    g.append(cell(ARMS[i][0], h("ul", "items", ...items.map(t => h("li", null, t)))));
+  });
+
+  // the task
+  const taskSys = (r) => `${CC}\n\n${r.note.trim()}\n\n[/workspace/CLAUDE.md as project memory]\n${r.policy}`;
+  const tfolds = [];
+  band("Task · MTAC's turns", ["agent", "agent runs as user agent"], allToggle(tfolds, "turns"),
+    toggleBox("system prompt diff, A ↔ B ↔ C", () => h("div", null, diffView("task system prompt, A ↔ B", "A", taskSys(runs[0]), "B", taskSys(runs[1])), diffView("task system prompt, A ↔ C", "A", taskSys(runs[0]), "C", taskSys(runs[2])))));
+  runs.forEach((run, i) => g.append(cell(ARMS[i][0], run ? sysBubble("Claude Code's own + task note + CLAUDE.md", taskSys(run)) : h("div", "empty", "No run."))));
+  const nTurns = Math.max(...runs.map(r => r ? r.task_part.turns.length : 0));
+  for (let k = 0; k < nTurns; k++) {
+    const inp = (i) => runs[i] && runs[i].task_part.turns[k] ? runs[i].task_part.turns[k].prompt : "";
+    const t0 = runs.map(r => r && r.task_part.turns[k]).find(Boolean);
+    const fold = folding(`Turn ${k + 1}`, first(t0.request, 60), tfolds);
+    rowhead(fold.btn, toggleBox("user prompt diff, A ↔ B ↔ C", () => h("div", null, diffView(`turn ${k + 1}, A ↔ B`, "A", inp(0), "B", inp(1)), diffView(`turn ${k + 1}, A ↔ C`, "A", inp(0), "C", inp(2)))));
+    runs.forEach((run, i) => {
+      const t = run && run.task_part.turns[k];
+      if (!t) { g.append(cell(ARMS[i][0], h("div", "empty", "No turn."))); return; }
+      const v = t.verdicts || {};
+      const sc = t.scores.filter(s => s.rule && s.passed !== null), ok = sc.filter(s => s.passed).length;
+      const stops = (v.block || 0) + (v.deny || 0);
+      const brief = `${ok}/${sc.length} rules · ${t.events.filter(e => e.k === "tool").length} actions` + (stops ? ` · ${stops} hook stops` : "") + (t.cost != null ? ` · ${$(t.cost)}` : "");
+      g.append(cell(ARMS[i][0], ...fold.add(brief, msg("in", "user", "user", t.request, () => h("pre", null, t.prompt)), ...thread(t.events, lastReplyAt(t.events)),
+        h("div", "foot",
+          h("span", "scores", ...t.scores.filter(s => s.rule).map(s => h("span", s.passed === null ? "dim" : s.passed ? "ok" : "no", `${s.rule}${s.passed === null ? "–" : s.passed ? "✓" : "✗"}`))),
+          Object.keys(v).length ? h("span", null, "hooks " + Object.entries(v).map(([x, n]) => `${n} ${x}`).join(" · ")) : null,
+          t.cost != null ? h("span", null, $(t.cost)) : null))));
+    });
+  }
+}
+for (const id of ["opt-acts", "opt-think"]) document.getElementById(id).addEventListener("change", (e) => { store.set("traj-" + id, e.target.checked ? "1" : "0"); render(); });
+document.getElementById("fail").addEventListener("click", (e) => { if (e.target.id === "fail") e.target.close(); });
+new ResizeObserver(([e]) => document.documentElement.style.setProperty("--hdr", Math.ceil(e.target.getBoundingClientRect().height) + "px")).observe(document.getElementById("top"));
+render();
+</script>

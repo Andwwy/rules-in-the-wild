@@ -1,0 +1,35 @@
+{
+ "files": [
+  "enforcers/analysis/code-scans/semgrep.md",
+  "enforcers/gates/git-hooks/pre-commit.md",
+  "enforcers/validation/regex/regex-filter.md",
+  "enforcers/validation/regex/regex-validator.md",
+  "mechanisms/file-permissions.md",
+  "mechanisms/file-watchers.md",
+  "mechanisms/framework-hooks.md",
+  "mechanisms/git-hooks.md",
+  "mechanisms/keep-running.md",
+  "skeletons/check.py",
+  "skeletons/names_js.py",
+  "skeletons/names_python.py",
+  "skeletons/pre-commit.sh",
+  "skeletons/pre_commit_check.sh",
+  "skeletons/project_check.py",
+  "skeletons/regex_filter.py",
+  "skeletons/regex_validator.py",
+  "skeletons/semgrep_check.py",
+  "skeletons/watcher.sh",
+  "targets/agent-output/response-message.md",
+  "targets/source-code/function-method.md",
+  "targets/source-code/source-file.md",
+  "triggers/agent-action/file-write-edit.md",
+  "triggers/agent-loop/response-sent.md",
+  "triggers/always.md"
+ ],
+ "recipes": [
+  "git",
+  "inotify-tools",
+  "pre-commit",
+  "semgrep"
+ ]
+}

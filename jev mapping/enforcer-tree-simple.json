@@ -1,0 +1,233 @@
+{
+  "Enforcer": [
+    {
+      "Analysis": [
+        {
+          "Web": [
+            "ESLint",
+            "Stylelint",
+            "Biome",
+            "Other"
+          ]
+        },
+        {
+          "Languages": [
+            {
+              "Python / shell": [
+                "Ruff",
+                "ShellCheck",
+                "Other"
+              ]
+            },
+            {
+              "Java / .NET": [
+                "Roslyn analyzer",
+                "Checkstyle",
+                "PMD",
+                "Other"
+              ]
+            },
+            {
+              "Dart": [
+                "custom_lint",
+                "Dart analyzer",
+                "Other"
+              ]
+            },
+            {
+              "PHP": [
+                "PHP_CodeSniffer",
+                "PHPStan",
+                "Other"
+              ]
+            },
+            "Other"
+          ]
+        },
+        {
+          "Code scans": [
+            "Semgrep",
+            "CodeQL",
+            "Other"
+          ]
+        },
+        {
+          "Text": [
+            "Vale",
+            "markdownlint",
+            "remark-lint",
+            "yamllint",
+            "commitlint",
+            "Other"
+          ]
+        },
+        "Other"
+      ]
+    },
+    {
+      "Tests": [
+        {
+          "UI": [
+            "Playwright",
+            "axe-core",
+            "XCTest",
+            "Other"
+          ]
+        },
+        {
+          "Runners": [
+            "pytest",
+            "Jest",
+            "PHPUnit",
+            "go test",
+            {
+              "Rust": [
+                "cargo test",
+                "cargo-nextest",
+                "Other"
+              ]
+            },
+            "Other"
+          ]
+        },
+        {
+          "Synthesized CI tests": [
+            "ASSERT",
+            "Other"
+          ]
+        },
+        "ArchUnit",
+        "CI tests",
+        "Other"
+      ]
+    },
+    {
+      "Validation": [
+        {
+          "Schemas": [
+            "Ajv",
+            "JSON Schema",
+            "OpenAPI",
+            "Other"
+          ]
+        },
+        {
+          "Regex": [
+            "Regex validator",
+            "Regex filter",
+            "Other"
+          ]
+        },
+        "Project check",
+        "Other"
+      ]
+    },
+    {
+      "Gates": [
+        {
+          "Tools": [
+            "Claude Code",
+            "Tool policy",
+            "Command filter",
+            "Other"
+          ]
+        },
+        {
+          "Workflow": [
+            "Approval",
+            "Agent workflow",
+            "Workflow",
+            "Other"
+          ]
+        },
+        {
+          "Git hooks": [
+            "Commit hook",
+            "pre-commit",
+            "Push hook",
+            "Other"
+          ]
+        },
+        {
+          "CI / hosting": [
+            "GitHub Actions",
+            "CI pipeline",
+            "Branch protection",
+            "Other"
+          ]
+        },
+        "Other"
+      ]
+    },
+    {
+      "Commands": [
+        {
+          "Shell": [
+            "Bash",
+            "POSIX sh",
+            "POSIX test",
+            "CLI parser",
+            "Other"
+          ]
+        },
+        {
+          "Text tools": [
+            "grep",
+            "ripgrep",
+            "awk",
+            "wc",
+            "Other"
+          ]
+        },
+        {
+          "Data tools": [
+            "jq",
+            "remark",
+            "curl",
+            "Other"
+          ]
+        },
+        "Git",
+        "flock",
+        "Other"
+      ]
+    },
+    {
+      "Build / ops": [
+        {
+          "Compilers": [
+            "tsc",
+            "Type checker",
+            "Roslyn compiler",
+            "Other"
+          ]
+        },
+        {
+          "Builds": [
+            "MSBuild",
+            "Gradle",
+            "Other"
+          ]
+        },
+        {
+          "Packages": [
+            "npm",
+            "pnpm",
+            "npm registry",
+            "Other"
+          ]
+        },
+        {
+          "Operations": [
+            "File permissions",
+            "AWS Config",
+            "Prometheus",
+            "Other"
+          ]
+        },
+        "Other"
+      ]
+    },
+    "Other"
+  ]
+}

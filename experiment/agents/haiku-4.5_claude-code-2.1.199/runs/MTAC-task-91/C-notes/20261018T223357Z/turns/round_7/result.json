@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 154379,
+  "duration_api_ms": 148898,
+  "ttft_ms": 5269,
+  "ttft_stream_ms": 5265,
+  "time_to_request_ms": 143,
+  "num_turns": 32,
+  "result": "喵～\n\n代码小灵已完成第8轮需求：实现了飞机到达终点的逻辑（包括恰好到达完成、骰子多出时往回退），并将整个项目代码统一为四空格缩进，新增了终点管理文件，更新了进度记录文件。\n\n哒～",
+  "stop_reason": "end_turn",
+  "session_id": "f96299d9-4701-4a4d-88df-0cefefed3f55",
+  "total_cost_usd": 1.01306405,
+  "usage": {
+   "input_tokens": 187,
+   "cache_creation_input_tokens": 422261,
+   "cache_read_input_tokens": 1930494,
+   "output_tokens": 14513,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 422261
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 1646,
+    "outputTokens": 17460,
+    "cacheReadInputTokens": 1964368,
+    "cacheCreationInputTokens": 582145,
+    "webSearchRequests": 0,
+    "costUSD": 1.01306405,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "8245a56d-378c-41a5-b911-ccd44108356d"
+ },
+ "stderr": ""
+}

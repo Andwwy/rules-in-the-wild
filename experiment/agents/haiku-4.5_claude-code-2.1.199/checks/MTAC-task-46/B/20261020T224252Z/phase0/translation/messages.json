@@ -1,0 +1,34 @@
+[
+ {
+  "rule": "R1",
+  "text": "Rule R1: 在为用户生成回复时，你必须永远只用中文\n\nImplement system enforcement for this rule.\n"
+ },
+ {
+  "rule": "R2",
+  "text": "Rule R2: 你所生成的所有代码文件都必须使用UTF-8进行编码\n\nImplement system enforcement for this rule.\n"
+ },
+ {
+  "rule": "R3",
+  "text": "Rule R3: 在生成的代码文件里，缩进必须严格保持为 4 个空格\n\nImplement system enforcement for this rule.\n"
+ },
+ {
+  "rule": "R4",
+  "text": "Rule R4: 你提供的代码文件不得含有制表符，请仅使用空格完成代码的缩进\n\nImplement system enforcement for this rule.\n"
+ },
+ {
+  "rule": "R5",
+  "text": "Rule R5: 生成代码时，请在“=”号的左侧和右侧各放置两个空格\n\nImplement system enforcement for this rule.\n"
+ },
+ {
+  "rule": "R6",
+  "text": "Rule R6: 你所输出的代码文件里，针对各个函数名的命名规范是：首字母严禁小写，首字母之外的字符严禁大写\n\nImplement system enforcement for this rule.\n"
+ },
+ {
+  "rule": "R7",
+  "text": "Rule R7: 你所编写的代码文件内，所有类名的长度均需恰好为质数，不得有例外\n\nImplement system enforcement for this rule.\n"
+ },
+ {
+  "rule": "R8",
+  "text": "Rule R8: 必须保证输出的每一份代码文件，其文件名包含的字符个数严格等于奇数\n\nImplement system enforcement for this rule.\n"
+ }
+]

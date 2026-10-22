@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 26974,
+  "duration_api_ms": 25474,
+  "ttft_ms": 6476,
+  "ttft_stream_ms": 6466,
+  "time_to_request_ms": 155,
+  "num_turns": 6,
+  "result": "喵～\n\n代码小灵已完成飞行棋游戏的基础骨架搭建，包括：\n\n1. **HTML5 结构** - 四个玩家准备区（红、黄、蓝、绿）分别位于四个角落\n2. **CSS3 美化** - 响应式网格布局，梯度背景，四个颜色区域清晰标注\n3. **JavaScript 交互** - \"掷骰子\"按钮可随机生成 1-6 的数字，显示区域有脉冲动画效果\n\n所有文件已遵循规范（4 空格缩进、UTF-8 编码声明、AI 辅助注释）。开发者大大现在就可以在浏览器中打开 `ludo_game.html` 文件查看效果。哒～",
+  "stop_reason": "end_turn",
+  "session_id": "3abddb79-d401-412b-9335-f083b4af7291",
+  "total_cost_usd": 0.060029250000000006,
+  "usage": {
+   "input_tokens": 36,
+   "cache_creation_input_tokens": 15425,
+   "cache_read_input_tokens": 215920,
+   "output_tokens": 3608,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 15425
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 991,
+    "outputTokens": 3633,
+    "cacheReadInputTokens": 215920,
+    "cacheCreationInputTokens": 15425,
+    "webSearchRequests": 0,
+    "costUSD": 0.060029250000000006,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "3a36b3d1-bd52-4f4c-b466-e21f5f8f26c9"
+ },
+ "stderr": ""
+}

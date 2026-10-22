@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 97674,
+  "duration_api_ms": 87854,
+  "ttft_ms": 9151,
+  "ttft_stream_ms": 9144,
+  "time_to_request_ms": 101,
+  "num_turns": 16,
+  "result": "喵～\n\n代码小灵已完成飞机初始化和起飞逻辑的实现，包括在四个准备区各放置4架飞机、掷出6才能起飞的规则、点击飞机起飞到出发点的交互功能，所有代码已通过集成测试和功能验证。哒～",
+  "stop_reason": "end_turn",
+  "session_id": "dbe6fa95-f096-4101-949f-928a963569f3",
+  "total_cost_usd": 0.18253160000000004,
+  "usage": {
+   "input_tokens": 92,
+   "cache_creation_input_tokens": 20926,
+   "cache_read_input_tokens": 868671,
+   "output_tokens": 13883,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 20926
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 92,
+    "outputTokens": 13883,
+    "cacheReadInputTokens": 868671,
+    "cacheCreationInputTokens": 20926,
+    "webSearchRequests": 0,
+    "costUSD": 0.18253160000000004,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "e1cacaf1-ceb0-429d-a32b-87d417c07444"
+ },
+ "stderr": ""
+}

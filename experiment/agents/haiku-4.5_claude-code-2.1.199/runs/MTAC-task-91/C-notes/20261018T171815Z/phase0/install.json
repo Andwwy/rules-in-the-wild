@@ -1,0 +1,85 @@
+{
+ "session": "e4da50c4-3377-45f1-ad28-946e57406caf",
+ "messages": 8,
+ "install": {
+  "installed": 8,
+  "hooks": [
+   {
+    "hook": 1,
+    "event": "Stop",
+    "matcher": null,
+    "command": "/opt/enforce/check-meow-prefix.sh",
+    "form": "shell",
+    "timeout": 60
+   },
+   {
+    "hook": 2,
+    "event": "Stop",
+    "matcher": null,
+    "command": "/opt/enforce/check-self-reference.sh",
+    "form": "shell",
+    "timeout": 60
+   },
+   {
+    "hook": 3,
+    "event": "Stop",
+    "matcher": null,
+    "command": "/opt/enforce/check-user-address.sh",
+    "form": "shell",
+    "timeout": 60
+   },
+   {
+    "hook": 4,
+    "event": "Stop",
+    "matcher": null,
+    "command": "/opt/enforce/check-chinese-response.sh",
+    "form": "shell",
+    "timeout": 60
+   },
+   {
+    "hook": 5,
+    "event": "Stop",
+    "matcher": null,
+    "command": "/opt/enforce/check-ending-particle.sh",
+    "form": "shell",
+    "timeout": 60
+   },
+   {
+    "hook": 6,
+    "event": "PostToolUse",
+    "matcher": "Write|Edit|MultiEdit|NotebookEdit",
+    "command": "/opt/enforce/check-coding-declaration.sh",
+    "form": "shell",
+    "timeout": 60
+   },
+   {
+    "hook": 7,
+    "event": "PostToolUse",
+    "matcher": "Write|Edit|MultiEdit|NotebookEdit",
+    "command": "/opt/enforce/check-ai-assisted-comment.sh",
+    "form": "shell",
+    "timeout": 60
+   },
+   {
+    "hook": 8,
+    "event": "PostToolUse",
+    "matcher": "Write|Edit|MultiEdit|NotebookEdit",
+    "command": "/opt/enforce/check-function-size.sh",
+    "form": "shell",
+    "timeout": 60
+   }
+  ],
+  "not_wrapped": [],
+  "other_settings": [],
+  "fingerprint": "570bd56b9533068b18c28f1f8e4899e6acea14f7f0ef242e9269b172a2219f41"
+ },
+ "claude_code_on_settings": null,
+ "commands_added_for_agent": [
+  "jq"
+ ],
+ "workspace": {
+  "created": 0,
+  "changed": 0,
+  "deleted": 0
+ }
+}

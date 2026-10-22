@@ -1,0 +1,8 @@
+22:39:46 run MTAC-task-91/C/20261022T023946Z: task 91, arm C, 0 task turns
+22:39:47 container ritw-t091-C-20261022t023946z (alexgshaw/break-filter-js-from-html:20251031)
+22:39:50 Claude Code: ExitPlanMode patch: 1 replaced 2.1.199 (Claude Code)
+22:39:51 scripted model: chain_scenario.json (no model calls)
+22:39:57 phase 0, message 1 of 1: exit 0, 5 s, $0.001 (Claude Code's own estimate), 3 model turns
+22:40:01 settings: 3 hooks (3 project) in /workspace/.claude/settings.json; workspace {'created': 1, 'changed': 0, 'deleted': 0}; commands added for agent: none; Claude Code reported nothing about the settings.
+22:40:01 done
+22:40:01 container removed

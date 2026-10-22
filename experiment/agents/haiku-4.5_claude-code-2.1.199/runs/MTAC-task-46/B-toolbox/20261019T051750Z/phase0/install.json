@@ -1,0 +1,251 @@
+{
+ "session": "4bf89dd4-94cd-4d39-8172-9e871937bcf0",
+ "messages": 8,
+ "install": {
+  "installed": 29,
+  "hooks": [
+   {
+    "hook": 1,
+    "event": "Stop",
+    "matcher": null,
+    "command": "/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R1",
+    "form": "shell",
+    "timeout": 120
+   },
+   {
+    "hook": 2,
+    "event": "Stop",
+    "matcher": null,
+    "command": "/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2",
+    "form": "shell",
+    "timeout": 120
+   },
+   {
+    "hook": 3,
+    "event": "Stop",
+    "matcher": null,
+    "command": "/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3",
+    "form": "shell",
+    "timeout": 120
+   },
+   {
+    "hook": 4,
+    "event": "Stop",
+    "matcher": null,
+    "command": "/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4",
+    "form": "shell",
+    "timeout": 120
+   },
+   {
+    "hook": 5,
+    "event": "Stop",
+    "matcher": null,
+    "command": "/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5",
+    "form": "shell",
+    "timeout": 120
+   },
+   {
+    "hook": 6,
+    "event": "Stop",
+    "matcher": null,
+    "command": "/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6",
+    "form": "shell",
+    "timeout": 120
+   },
+   {
+    "hook": 7,
+    "event": "Stop",
+    "matcher": null,
+    "command": "/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7",
+    "form": "shell",
+    "timeout": 120
+   },
+   {
+    "hook": 8,
+    "event": "Stop",
+    "matcher": null,
+    "command": "/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8",
+    "form": "shell",
+    "timeout": 120
+   },
+   {
+    "hook": 9,
+    "event": "PreToolUse",
+    "matcher": "Bash",
+    "command": "/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2",
+    "form": "shell",
+    "timeout": 120
+   },
+   {
+    "hook": 10,
+    "event": "PreToolUse",
+    "matcher": "Bash",
+    "command": "/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3",
+    "form": "shell",
+    "timeout": 120
+   },
+   {
+    "hook": 11,
+    "event": "PreToolUse",
+    "matcher": "Bash",
+    "command": "/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4",
+    "form": "shell",
+    "timeout": 120
+   },
+   {
+    "hook": 12,
+    "event": "PreToolUse",
+    "matcher": "Bash",
+    "command": "/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5",
+    "form": "shell",
+    "timeout": 120
+   },
+   {
+    "hook": 13,
+    "event": "PreToolUse",
+    "matcher": "Bash",
+    "command": "/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6",
+    "form": "shell",
+    "timeout": 120
+   },
+   {
+    "hook": 14,
+    "event": "PreToolUse",
+    "matcher": "Bash",
+    "command": "/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7",
+    "form": "shell",
+    "timeout": 120
+   },
+   {
+    "hook": 15,
+    "event": "PreToolUse",
+    "matcher": "Bash",
+    "command": "/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8",
+    "form": "shell",
+    "timeout": 120
+   },
+   {
+    "hook": 16,
+    "event": "PostToolUse",
+    "matcher": "Write|Edit|MultiEdit|NotebookEdit",
+    "command": "/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2",
+    "form": "shell",
+    "timeout": 120
+   },
+   {
+    "hook": 17,
+    "event": "PostToolUse",
+    "matcher": "Bash",
+    "command": "/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R2",
+    "form": "shell",
+    "timeout": 120
+   },
+   {
+    "hook": 18,
+    "event": "PostToolUse",
+    "matcher": "Write|Edit|MultiEdit|NotebookEdit",
+    "command": "/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3",
+    "form": "shell",
+    "timeout": 120
+   },
+   {
+    "hook": 19,
+    "event": "PostToolUse",
+    "matcher": "Bash",
+    "command": "/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R3",
+    "form": "shell",
+    "timeout": 120
+   },
+   {
+    "hook": 20,
+    "event": "PostToolUse",
+    "matcher": "Write|Edit|MultiEdit|NotebookEdit",
+    "command": "/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4",
+    "form": "shell",
+    "timeout": 120
+   },
+   {
+    "hook": 21,
+    "event": "PostToolUse",
+    "matcher": "Bash",
+    "command": "/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R4",
+    "form": "shell",
+    "timeout": 120
+   },
+   {
+    "hook": 22,
+    "event": "PostToolUse",
+    "matcher": "Write|Edit|MultiEdit|NotebookEdit",
+    "command": "/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5",
+    "form": "shell",
+    "timeout": 120
+   },
+   {
+    "hook": 23,
+    "event": "PostToolUse",
+    "matcher": "Bash",
+    "command": "/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R5",
+    "form": "shell",
+    "timeout": 120
+   },
+   {
+    "hook": 24,
+    "event": "PostToolUse",
+    "matcher": "Write|Edit|MultiEdit|NotebookEdit",
+    "command": "/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6",
+    "form": "shell",
+    "timeout": 120
+   },
+   {
+    "hook": 25,
+    "event": "PostToolUse",
+    "matcher": "Bash",
+    "command": "/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R6",
+    "form": "shell",
+    "timeout": 120
+   },
+   {
+    "hook": 26,
+    "event": "PostToolUse",
+    "matcher": "Write|Edit|MultiEdit|NotebookEdit",
+    "command": "/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7",
+    "form": "shell",
+    "timeout": 120
+   },
+   {
+    "hook": 27,
+    "event": "PostToolUse",
+    "matcher": "Bash",
+    "command": "/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R7",
+    "form": "shell",
+    "timeout": 120
+   },
+   {
+    "hook": 28,
+    "event": "PostToolUse",
+    "matcher": "Write|Edit|MultiEdit|NotebookEdit",
+    "command": "/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8",
+    "form": "shell",
+    "timeout": 120
+   },
+   {
+    "hook": 29,
+    "event": "PostToolUse",
+    "matcher": "Bash",
+    "command": "/usr/local/bin/python3 /opt/enforce-toolbox/enforce run --rule R8",
+    "form": "shell",
+    "timeout": 120
+   }
+  ],
+  "not_wrapped": [],
+  "other_settings": [],
+  "fingerprint": "51d12d1689d3f13744c326ecdb3df48c020d03b8578a31cb738f7f563be3b4c0"
+ },
+ "claude_code_on_settings": null,
+ "commands_added_for_agent": [],
+ "workspace": {
+  "created": 0,
+  "changed": 0,
+  "deleted": 0
+ }
+}

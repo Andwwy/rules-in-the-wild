@@ -5,8 +5,12 @@ Two functions do all the work of the pipeline:
     call(prompt, user_input, schema, settings)     one request, answer constrained to a JSON schema
     run_many(items, ...)                           `call` over many items: threaded, batched, checkpointed, resumable
 
-A provider is a URL, the name of the key variable, and two small functions (build the request body, read the reply).
-Perplexity is the default and the only one written; adding another means adding one entry to PROVIDERS.
+The provider is one switch, `Settings.provider`: `perplexity` (alias `pplx`, the default), `openai` or `bedrock`. ROUTES
+says how each one is reached; nothing outside this module knows. Perplexity's Agent API is called directly (LiteLLM's
+Perplexity route posts to the old /v1/responses and cannot send `response_format`); OpenAI and Bedrock go through LiteLLM.
+A model is named once, vendor-first (`openai/gpt-5.6-terra`), and each route spells it its own way.
+
+    python -m rule_pipeline.llm --check perplexity openai bedrock      one tiny request per provider, to test the keys
 """
 from __future__ import annotations
 
@@ -22,14 +26,16 @@ from typing import Callable
 
 import requests
 
+from . import spend
+
 
 # ── settings ─────────────────────────────────────────────────────────────────────────────────────────────────────────────
 @dataclass(frozen=True)
 class Settings:
     """Defaults are the lab's current settings."""
     provider: str = "perplexity"
-    model: str = "openai/gpt-5.6-terra"
-    tier: str = "flex"
+    model: str = "openai/gpt-5.6-terra"   # vendor/model; each route spells it its own way
+    tier: str | None = None               # None = the route's own default (flex where the provider has it)
     effort: str = "high"
     workers: int = 20          # concurrent requests
     batch_size: int = 1        # items per request
@@ -38,27 +44,103 @@ class Settings:
         return replace(self, **{k: v for k, v in changes.items() if v is not None})
 
 
-# ── providers ────────────────────────────────────────────────────────────────────────────────────────────────────────────
+class LLMError(RuntimeError):
+    """One request failed after its retries; the item is recorded with the error and retried on the next run."""
+
+
+class FatalLLMError(LLMError):
+    """Retrying cannot help (bad key, no quota, unknown provider, a setting the provider rejects) — the whole run stops."""
+
+
+class _RateLimited(Exception):
+    def __init__(self, message: str, wait: float | None):
+        super().__init__(message)
+        self.wait = wait
+
+
+# ── routes ───────────────────────────────────────────────────────────────────────────────────────────────────────────────
 @dataclass(frozen=True)
-class Provider:
-    url: str
-    key_env: str
-    build_body: Callable[[Settings, str, str, dict], dict]
-    parse: Callable[[dict], tuple[str, dict]]          # raw reply -> (answer text, usage)
+class Route:
+    keys: tuple[str, ...]                  # env variables, any one of which authenticates; () = AWS credential chain
+    model: Callable[[str], str]            # vendor/model -> the name this route sends
+    tier: str | None                       # default service tier; None = send none
+    send: Callable[["Route", Settings, str, str, dict], tuple[str, dict]]   # -> (answer text, usage)
 
 
-def _perplexity_body(s: Settings, prompt: str, user_input: str, schema: dict) -> dict:
-    return {
-        "model": s.model,
+def _vendor_model(model: str) -> tuple[str, str]:
+    vendor, _, name = model.partition("/")
+    return (vendor, name) if name else ("", vendor)
+
+
+def _openai_model(model: str) -> str:
+    vendor, name = _vendor_model(model)
+    if vendor not in ("", "openai"):
+        raise FatalLLMError(f"the openai provider only serves OpenAI models, not {model!r}")
+    return f"openai/{name}"
+
+
+def _bedrock_model(model: str) -> str:
+    """Bedrock spells a model `vendor.name`. OpenAI models go to Bedrock's OpenAI-compatible (Mantle) endpoint, which
+    keeps strict JSON schemas; other vendors go through the Converse API."""
+    vendor, name = _vendor_model(model)
+    if not vendor:
+        return f"bedrock/converse/{name}"                  # already a Bedrock model id
+    return f"bedrock_mantle/{vendor}.{name}" if vendor == "openai" else f"bedrock/converse/{vendor}.{name}"
+
+
+def strict_schema(schema):
+    """The same schema in the form strict mode accepts (every object closed, every property required), or None.
+
+    Strict mode makes the reply follow the schema; without it a vote reply once came back with an axis as plain strings
+    instead of {value, attempts} objects and crashed the vote. The pipeline's schemas already require every property;
+    the assignment schema only lacks `additionalProperties: false`, which this adds."""
+    if isinstance(schema, list):
+        out = [strict_schema(s) for s in schema]
+        return None if any(s is None for s in out) else out
+    if not isinstance(schema, dict):
+        return schema
+    out = {}
+    for k, v in schema.items():
+        if isinstance(v, (dict, list)):
+            v = strict_schema(v) if k != "properties" else {p: strict_schema(sub) for p, sub in v.items()}
+            if v is None or (isinstance(v, dict) and any(x is None for x in v.values())):
+                return None
+        out[k] = v
+    if out.get("type") == "object" and "properties" in out:
+        if set(out.get("required", [])) != set(out["properties"]):
+            return None                                   # an optional property: strict mode cannot express it
+        out["additionalProperties"] = False
+    return out
+
+
+def _json_format(schema: dict) -> dict:
+    strict = strict_schema(schema)
+    return {"name": "answer", "schema": strict or schema, "strict": strict is not None}
+
+
+PERPLEXITY_URL = "https://api.perplexity.ai/v1/agent"
+
+
+def _send_perplexity(route: Route, s: Settings, prompt: str, user_input: str, schema: dict) -> tuple[str, dict]:
+    """Perplexity's Agent API, directly."""
+    body = {
+        "model": route.model(s.model),
         "instructions": prompt,
         "input": [{"type": "message", "role": "user", "content": user_input}],
         "reasoning": {"effort": s.effort},
-        "service_tier": s.tier,
-        "response_format": {"type": "json_schema", "json_schema": {"schema": schema}},
+        "response_format": {"type": "json_schema", "json_schema": _json_format(schema)},
     }
-
-
-def _perplexity_parse(raw: dict) -> tuple[str, dict]:
+    if tier := s.tier or route.tier:
+        body["service_tier"] = tier
+    key = os.environ[route.keys[0]]
+    response = requests.post(PERPLEXITY_URL, headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json"},
+                             json=body, timeout=900)
+    if response.status_code in (401, 403):               # rejected key or exhausted quota
+        raise FatalLLMError(f"perplexity refused the request ({response.status_code}): {response.text[:300]}")
+    if response.status_code == 429:
+        _rate_limited(response.text, response.headers.get("retry-after"))
+    response.raise_for_status()
+    raw = response.json()
     text = "".join(part.get("text", "")
                    for item in raw.get("output", []) if item.get("type") == "message"
                    for part in item.get("content", []) if part.get("type") == "output_text")
@@ -67,49 +149,105 @@ def _perplexity_parse(raw: dict) -> tuple[str, dict]:
                   "cost": (usage.get("cost") or {}).get("total_cost")}
 
 
-PROVIDERS = {
-    "perplexity": Provider("https://api.perplexity.ai/v1/agent", "PERPLEXITY_API_KEY", _perplexity_body, _perplexity_parse),
+def _send_litellm(route: Route, s: Settings, prompt: str, user_input: str, schema: dict) -> tuple[str, dict]:
+    """OpenAI and Bedrock through LiteLLM. drop_params stays off: a setting the route cannot take stops the run instead
+    of being dropped silently (LiteLLM's plain `bedrock/openai.*` route, for one, sends neither schema nor effort)."""
+    import litellm                                         # imported here: slow to import, and only these routes need it
+
+    kwargs = {
+        "model": route.model(s.model),
+        "messages": [{"role": "system", "content": prompt}, {"role": "user", "content": user_input}],
+        "response_format": {"type": "json_schema", "json_schema": _json_format(schema)},
+        "reasoning_effort": s.effort,
+        "timeout": 900,
+        "num_retries": 0,                                  # retries are call()'s job
+        "drop_params": False,
+    }
+    if tier := s.tier or route.tier:
+        kwargs["service_tier"] = tier
+    if region := os.environ.get("AWS_REGION_NAME") or os.environ.get("AWS_REGION"):
+        if kwargs["model"].startswith("bedrock"):
+            kwargs["aws_region_name"] = region
+    try:
+        response = litellm.completion(**kwargs)
+    except (litellm.AuthenticationError, litellm.PermissionDeniedError, litellm.UnsupportedParamsError,
+            litellm.NotFoundError) as e:
+        raise FatalLLMError(f"{s.provider} refused the request: {str(e)[:300]}") from e
+    except litellm.RateLimitError as e:
+        headers = getattr(getattr(e, "response", None), "headers", None) or {}
+        _rate_limited(str(e), headers.get("retry-after"))
+    text = response.choices[0].message.content or ""
+    usage = response.usage
+    details = getattr(usage, "completion_tokens_details", None)
+    try:
+        cost = litellm.completion_cost(completion_response=response)
+    except Exception:                                      # a model missing from LiteLLM's price list
+        cost = None
+    return text, {"input": usage.prompt_tokens, "output": usage.completion_tokens,
+                  "reasoning": getattr(details, "reasoning_tokens", None), "cost": cost}
+
+
+def _rate_limited(message: str, retry_after) -> None:
+    if "insufficient_quota" in message:                   # out of credit: waiting will not help
+        raise FatalLLMError(f"no quota left: {message[:300]}")
+    try:
+        wait = float(retry_after) if retry_after else None
+    except ValueError:
+        wait = None
+    raise _RateLimited(message[:300], wait)
+
+
+ROUTES = {
+    "perplexity": Route(("PERPLEXITY_API_KEY",), lambda m: m, "flex", _send_perplexity),
+    "openai": Route(("OPENAI_API_KEY",), _openai_model, "flex", _send_litellm),
+    # Bedrock: a Bedrock API key, else the standard AWS credential chain (env, ~/.aws, role). Mantle takes no flex tier.
+    "bedrock": Route((), _bedrock_model, None, _send_litellm),
 }
+ALIASES = {"pplx": "perplexity", "aws": "bedrock"}
 
 
-class LLMError(RuntimeError):
-    """One request failed after its retries; the item is recorded with the error and retried on the next run."""
-
-
-class FatalLLMError(LLMError):
-    """Retrying cannot help (bad key, no quota, unknown provider) — the whole run stops."""
-
-
-def _provider(settings: Settings) -> tuple[Provider, str]:
-    if settings.provider not in PROVIDERS:
-        raise FatalLLMError(f"unknown provider {settings.provider!r}; available: {sorted(PROVIDERS)}")
-    provider = PROVIDERS[settings.provider]
-    key = os.environ.get(provider.key_env)
-    if not key:
-        raise FatalLLMError(f"{provider.key_env} is not set — put it in .env or export it")
-    return provider, key
+def route_of(settings: Settings) -> Route:
+    name = ALIASES.get(settings.provider, settings.provider)
+    if name not in ROUTES:
+        raise FatalLLMError(f"unknown provider {settings.provider!r}; available: {sorted(ROUTES)} (aliases {ALIASES})")
+    route = ROUTES[name]
+    if route.keys and not any(os.environ.get(k) for k in route.keys):
+        raise FatalLLMError(f"{' or '.join(route.keys)} is not set — put it in DAPlab/.env, a .env next to the run, "
+                            f"or export it")
+    return route
 
 
 # ── one request ──────────────────────────────────────────────────────────────────────────────────────────────────────────
+RATE_LIMIT_ATTEMPTS = 6
+
+
 def call(prompt: str, user_input: str, schema: dict, settings: Settings, attempts: int = 3) -> tuple[dict, dict]:
-    """One request. Returns (parsed JSON answer, usage). Retries with backoff, then raises LLMError."""
-    provider, key = _provider(settings)
-    headers = {"Authorization": f"Bearer {key}", "Content-Type": "application/json"}
-    body = provider.build_body(settings, prompt, user_input, schema)
-    error = None
-    for attempt in range(1, attempts + 1):
+    """One request. Returns (parsed JSON answer, usage). Retries with backoff, then raises LLMError.
+
+    A 429 gets its own, longer budget: it waits as long as the provider's Retry-After says (else 10, 20, 40 … s).
+    Every answered request goes into the project's spend ledger, and none starts once its budget is spent (spend.py)."""
+    route = route_of(settings)
+    error, failures, limited = None, 0, 0
+    while failures < attempts and limited < RATE_LIMIT_ATTEMPTS:
         try:
-            response = requests.post(provider.url, headers=headers, json=body, timeout=900)
-            if response.status_code in (401, 403):   # rejected key or exhausted quota
-                raise FatalLLMError(f"{settings.provider} refused the request ({response.status_code}): {response.text[:300]}")
-            response.raise_for_status()
-            text, usage = provider.parse(response.json())
+            spend.check(f"rule pipeline / {settings.provider}")
+        except spend.BudgetExceeded as e:
+            raise FatalLLMError(str(e)) from e
+        try:
+            text, usage = route.send(route, settings, prompt, user_input, schema)
+            spend.record(f"rule pipeline / {settings.provider}", route.model(settings.model), usage.get("cost"),
+                         usage.get("input"), usage.get("output"))
             return json.loads(text), usage
         except FatalLLMError:
             raise
+        except _RateLimited as e:
+            limited += 1
+            error = f"rate limited: {e}"
+            time.sleep(min(e.wait if e.wait is not None else 10 * 2 ** (limited - 1), 300))
         except Exception as e:                       # network, HTTP status, or an answer that is not JSON
+            failures += 1
             error = f"{type(e).__name__}: {e}"
-            time.sleep(2 * attempt)
+            time.sleep(2 * failures)
     raise LLMError(error)
 
 
@@ -214,3 +352,41 @@ def run_many(items: list[dict], *, key: str, make_input: Callable[[dict], str], 
     if failed:
         print(f"  {label}: {failed} items failed and will be retried on the next run", flush=True)
     return done
+
+
+# ── key check ────────────────────────────────────────────────────────────────────────────────────────────────────────────
+def load_env(*starts: Path) -> None:
+    """Every `.env` from each start folder up to the root, nearest first; a variable already set is never overwritten,
+    so the nearest file wins and a lab-wide DAPlab/.env fills in the rest."""
+    from dotenv import load_dotenv
+    seen = set()
+    for start in starts:
+        for folder in (start.resolve(), *start.resolve().parents):
+            if folder not in seen and (folder / ".env").is_file():
+                load_dotenv(folder / ".env", override=False)
+            seen.add(folder)
+
+
+def main(argv=None):
+    import argparse
+    p = argparse.ArgumentParser(prog="rule_pipeline.llm", description="Send one tiny request per provider to test the keys.")
+    p.add_argument("--check", nargs="+", required=True, metavar="PROVIDER", help=f"any of {sorted(ROUTES)}")
+    p.add_argument("--model", default=Settings.model)
+    p.add_argument("--effort", default="low")
+    args = p.parse_args(argv)
+    load_env(Path.cwd(), Path(__file__).parent)
+    schema = {"type": "object", "properties": {"ok": {"type": "boolean"}}, "required": ["ok"]}
+    failed = 0
+    for provider in args.check:
+        settings = Settings(provider=provider, model=args.model, effort=args.effort)
+        try:
+            answer, usage = call('Reply with {"ok": true}.', "ping", schema, settings, attempts=1)
+            print(f"{provider:<11} ok    {answer}  {usage}")
+        except LLMError as e:
+            failed += 1
+            print(f"{provider:<11} FAIL  {str(e)[:300]}")
+    raise SystemExit(1 if failed else 0)
+
+
+if __name__ == "__main__":
+    main()

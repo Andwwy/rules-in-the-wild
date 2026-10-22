@@ -1,0 +1,91 @@
+{
+ "session": "a3b0e909-56a7-429a-8a4b-66ae6035cc86",
+ "messages": 8,
+ "install": {
+  "installed": 8,
+  "hooks": [
+   {
+    "hook": 1,
+    "event": "Stop",
+    "matcher": null,
+    "command": "/opt/enforce/hook-r1-stop.sh",
+    "args": [],
+    "form": "exec",
+    "timeout": 60
+   },
+   {
+    "hook": 2,
+    "event": "Stop",
+    "matcher": null,
+    "command": "/opt/enforce/hook-r2-stop.sh",
+    "args": [],
+    "form": "exec",
+    "timeout": 60
+   },
+   {
+    "hook": 3,
+    "event": "Stop",
+    "matcher": null,
+    "command": "/opt/enforce/hook-r3-stop.sh",
+    "args": [],
+    "form": "exec",
+    "timeout": 60
+   },
+   {
+    "hook": 4,
+    "event": "Stop",
+    "matcher": null,
+    "command": "/opt/enforce/hook-r4-stop.sh",
+    "args": [],
+    "form": "exec",
+    "timeout": 60
+   },
+   {
+    "hook": 5,
+    "event": "Stop",
+    "matcher": null,
+    "command": "/opt/enforce/hook-r8-stop.sh",
+    "args": [],
+    "form": "exec",
+    "timeout": 60
+   },
+   {
+    "hook": 6,
+    "event": "PostToolUse",
+    "matcher": "Write|Edit",
+    "command": "/opt/enforce/hook-r5-posttooluse.sh",
+    "args": [],
+    "form": "exec",
+    "timeout": 60
+   },
+   {
+    "hook": 7,
+    "event": "PostToolUse",
+    "matcher": "Write|Edit",
+    "command": "/opt/enforce/hook-r6-posttooluse.sh",
+    "args": [],
+    "form": "exec",
+    "timeout": 60
+   },
+   {
+    "hook": 8,
+    "event": "PostToolUse",
+    "matcher": "Write|Edit",
+    "command": "/opt/enforce/hook-r7-posttooluse.sh",
+    "args": [],
+    "form": "exec",
+    "timeout": 60
+   }
+  ],
+  "not_wrapped": [],
+  "other_settings": [],
+  "fingerprint": "8493fac28752974bb7944abbca9ccaf8445c4882f7ada2f168f25a5f2feb8707"
+ },
+ "claude_code_on_settings": null,
+ "commands_added_for_agent": [],
+ "workspace": {
+  "created": 0,
+  "changed": 0,
+  "deleted": 0
+ }
+}

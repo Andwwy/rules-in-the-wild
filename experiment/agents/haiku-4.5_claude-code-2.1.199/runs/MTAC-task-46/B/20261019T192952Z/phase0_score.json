@@ -1,0 +1,1753 @@
+{
+ "summary": {
+  "hooks": 8,
+  "rules": {
+   "R1": {
+    "reply": [
+     {
+      "case": "an English sentence in the reply",
+      "caught": false,
+      "early": false,
+      "at": []
+     }
+    ]
+   },
+   "R2": {
+    "shell": [
+     {
+      "case": "main.py saved as GBK (by a shell command: Claude Code's Write tool writes UTF-8)",
+      "caught": false,
+      "early": false,
+      "at": []
+     }
+    ]
+   },
+   "R3": {
+    "tool": [
+     {
+      "case": "a 2-space indent in Python",
+      "caught": true,
+      "early": true,
+      "at": [
+       "PostToolUse"
+      ]
+     },
+     {
+      "case": "a 2-space indent in JS",
+      "caught": true,
+      "early": true,
+      "at": [
+       "PostToolUse"
+      ]
+     }
+    ],
+    "shell": [
+     {
+      "case": "a 2-space indent in Python",
+      "caught": false,
+      "early": false,
+      "at": []
+     },
+     {
+      "case": "a 2-space indent in JS",
+      "caught": false,
+      "early": false,
+      "at": []
+     }
+    ]
+   },
+   "R4": {
+    "tool": [
+     {
+      "case": "a tab inside a comment",
+      "caught": true,
+      "early": true,
+      "at": [
+       "PostToolUse"
+      ]
+     }
+    ],
+    "shell": [
+     {
+      "case": "a tab inside a comment",
+      "caught": false,
+      "early": false,
+      "at": []
+     }
+    ]
+   },
+   "R5": {
+    "tool": [
+     {
+      "case": "one space around = in Python",
+      "caught": true,
+      "early": true,
+      "at": [
+       "PostToolUse"
+      ]
+     },
+     {
+      "case": "no space around = in JS",
+      "caught": true,
+      "early": true,
+      "at": [
+       "PostToolUse"
+      ]
+     }
+    ],
+    "shell": [
+     {
+      "case": "one space around = in Python",
+      "caught": false,
+      "early": false,
+      "at": []
+     },
+     {
+      "case": "no space around = in JS",
+      "caught": false,
+      "early": false,
+      "at": []
+     }
+    ]
+   },
+   "R6": {
+    "tool": [
+     {
+      "case": "a Python method in camelCase",
+      "caught": true,
+      "early": true,
+      "at": [
+       "PostToolUse"
+      ]
+     },
+     {
+      "case": "a JS method in camelCase",
+      "caught": false,
+      "early": false,
+      "at": []
+     },
+     {
+      "case": "a JS function with two capitals",
+      "caught": true,
+      "early": true,
+      "at": [
+       "PostToolUse"
+      ]
+     }
+    ],
+    "shell": [
+     {
+      "case": "a Python method in camelCase",
+      "caught": false,
+      "early": false,
+      "at": []
+     },
+     {
+      "case": "a JS method in camelCase",
+      "caught": false,
+      "early": false,
+      "at": []
+     },
+     {
+      "case": "a JS function with two capitals",
+      "caught": false,
+      "early": false,
+      "at": []
+     }
+    ]
+   },
+   "R7": {
+    "tool": [
+     {
+      "case": "a Python class name of 4 characters",
+      "caught": true,
+      "early": true,
+      "at": [
+       "PostToolUse"
+      ]
+     },
+     {
+      "case": "a JS class name of 6 characters",
+      "caught": true,
+      "early": true,
+      "at": [
+       "PostToolUse"
+      ]
+     }
+    ],
+    "shell": [
+     {
+      "case": "a Python class name of 4 characters",
+      "caught": false,
+      "early": false,
+      "at": []
+     },
+     {
+      "case": "a JS class name of 6 characters",
+      "caught": false,
+      "early": false,
+      "at": []
+     }
+    ]
+   },
+   "R8": {
+    "tool": [
+     {
+      "case": "a code file named app.py (6 characters)",
+      "caught": true,
+      "early": true,
+      "at": [
+       "PreToolUse"
+      ]
+     },
+     {
+      "case": "a code file named helpers.js (10 characters)",
+      "caught": true,
+      "early": true,
+      "at": [
+       "PreToolUse"
+      ]
+     }
+    ],
+    "shell": [
+     {
+      "case": "a code file named app.py (6 characters)",
+      "caught": false,
+      "early": false,
+      "at": []
+     },
+     {
+      "case": "a code file named helpers.js (10 characters)",
+      "caught": false,
+      "early": false,
+      "at": []
+     }
+    ]
+   }
+  },
+  "false_flags": [
+   "not code: notes.md with tabs and x = 1 (tool): PreToolUse: {\"hookSpecificOutput\": {\"hookEventName\": \"PreToolUse\", \"permissionDecision\": \"deny\", \"permissionDecisionReason",
+   "not code: notes.md with tabs and x = 1 (tool): PostToolUse: {",
+   "not code: notes.md with tabs and x = 1 (tool): PostToolUse: {",
+   "not code: notes.md with tabs and x = 1 (tool): PostToolUse: 规则 R5 违规："
+  ],
+  "hook_errors": []
+ },
+ "raw": {
+  "hooks": 8,
+  "cases": [
+   {
+    "rule": null,
+    "name": "clean project",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "ook 1 --event PreToolUse --timeout 60 -- '/opt/enforce/check-filename-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "rap.py --hook 2 --event PostToolUse --timeout 60 -- '/opt/enforce/check-utf8.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--hook 3 --event PostToolUse --timeout 60 -- '/opt/enforce/check-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": ".py --hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ook 5 --event PostToolUse --timeout 60 -- '/opt/enforce/check-spacing-equals.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ok 6 --event PostToolUse --timeout 60 -- '/opt/enforce/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-hook 7 --event PostToolUse --timeout 60 -- '/opt/enforce/check-class-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "ook 1 --event PreToolUse --timeout 60 -- '/opt/enforce/check-filename-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "rap.py --hook 2 --event PostToolUse --timeout 60 -- '/opt/enforce/check-utf8.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--hook 3 --event PostToolUse --timeout 60 -- '/opt/enforce/check-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": ".py --hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ook 5 --event PostToolUse --timeout 60 -- '/opt/enforce/check-spacing-equals.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ok 6 --event PostToolUse --timeout 60 -- '/opt/enforce/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-hook 7 --event PostToolUse --timeout 60 -- '/opt/enforce/check-class-naming.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": null,
+    "name": "clean project",
+    "channel": "shell",
+    "rows": []
+   },
+   {
+    "rule": "R1",
+    "name": "an English sentence in the reply",
+    "channel": "reply",
+    "rows": []
+   },
+   {
+    "rule": "R2",
+    "name": "main.py saved as GBK (by a shell command: Claude Code's Write tool writes UTF-8)",
+    "channel": "shell",
+    "rows": []
+   },
+   {
+    "rule": "R3",
+    "name": "a 2-space indent in Python",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "ook 1 --event PreToolUse --timeout 60 -- '/opt/enforce/check-filename-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "rap.py --hook 2 --event PostToolUse --timeout 60 -- '/opt/enforce/check-utf8.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--hook 3 --event PostToolUse --timeout 60 -- '/opt/enforce/check-indentation.sh'",
+      "verdict": "flag",
+      "msg": "{\n  \"hookSpecificOutput\": {\n    \"hookEventName\": \"PostToolUse\"\n  }\n}\n规则 R3 违规：文件 'main.py' 第 3 行的缩进为 2 个空格，不是 4 的倍数。缩进必须严格为 4 的倍数（1 级缩进 = 4 个空格，2 级 = 8 个，等等）。\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": ".py --hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ook 5 --event PostToolUse --timeout 60 -- '/opt/enforce/check-spacing-equals.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ok 6 --event PostToolUse --timeout 60 -- '/opt/enforce/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-hook 7 --event PostToolUse --timeout 60 -- '/opt/enforce/check-class-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "ook 1 --event PreToolUse --timeout 60 -- '/opt/enforce/check-filename-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "rap.py --hook 2 --event PostToolUse --timeout 60 -- '/opt/enforce/check-utf8.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--hook 3 --event PostToolUse --timeout 60 -- '/opt/enforce/check-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": ".py --hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ook 5 --event PostToolUse --timeout 60 -- '/opt/enforce/check-spacing-equals.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ok 6 --event PostToolUse --timeout 60 -- '/opt/enforce/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-hook 7 --event PostToolUse --timeout 60 -- '/opt/enforce/check-class-naming.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R3",
+    "name": "a 2-space indent in Python",
+    "channel": "shell",
+    "rows": []
+   },
+   {
+    "rule": "R3",
+    "name": "a 2-space indent in JS",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "ook 1 --event PreToolUse --timeout 60 -- '/opt/enforce/check-filename-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "rap.py --hook 2 --event PostToolUse --timeout 60 -- '/opt/enforce/check-utf8.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--hook 3 --event PostToolUse --timeout 60 -- '/opt/enforce/check-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": ".py --hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ook 5 --event PostToolUse --timeout 60 -- '/opt/enforce/check-spacing-equals.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ok 6 --event PostToolUse --timeout 60 -- '/opt/enforce/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-hook 7 --event PostToolUse --timeout 60 -- '/opt/enforce/check-class-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "ook 1 --event PreToolUse --timeout 60 -- '/opt/enforce/check-filename-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "rap.py --hook 2 --event PostToolUse --timeout 60 -- '/opt/enforce/check-utf8.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--hook 3 --event PostToolUse --timeout 60 -- '/opt/enforce/check-indentation.sh'",
+      "verdict": "flag",
+      "msg": "{\n  \"hookSpecificOutput\": {\n    \"hookEventName\": \"PostToolUse\"\n  }\n}\n规则 R3 违规：文件 'main.js' 第 8 行的缩进为 2 个空格，不是 4 的倍数。缩进必须严格为 4 的倍数（1 级缩进 = 4 个空格，2 级 = 8 个，等等）。\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": ".py --hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ook 5 --event PostToolUse --timeout 60 -- '/opt/enforce/check-spacing-equals.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ok 6 --event PostToolUse --timeout 60 -- '/opt/enforce/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-hook 7 --event PostToolUse --timeout 60 -- '/opt/enforce/check-class-naming.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R3",
+    "name": "a 2-space indent in JS",
+    "channel": "shell",
+    "rows": []
+   },
+   {
+    "rule": "R4",
+    "name": "a tab inside a comment",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "ook 1 --event PreToolUse --timeout 60 -- '/opt/enforce/check-filename-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "rap.py --hook 2 --event PostToolUse --timeout 60 -- '/opt/enforce/check-utf8.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--hook 3 --event PostToolUse --timeout 60 -- '/opt/enforce/check-indentation.sh'",
+      "verdict": "flag",
+      "msg": "{\n  \"hookSpecificOutput\": {\n    \"hookEventName\": \"PostToolUse\"\n  }\n}\n规则 R3 和 R4 违规：文件 'main.py' 包含制表符（Tab）。请仅使用空格进行缩进（4 个空格为一级）。\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": ".py --hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/check-no-tabs.sh'",
+      "verdict": "flag",
+      "msg": "{\n  \"hookSpecificOutput\": {\n    \"hookEventName\": \"PostToolUse\"\n  }\n}\n规则 R4 违规：文件 'main.py' 包含制表符（Tab），位于第 1 行。请删除所有制表符，仅使用空格进行缩进。\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ook 5 --event PostToolUse --timeout 60 -- '/opt/enforce/check-spacing-equals.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ok 6 --event PostToolUse --timeout 60 -- '/opt/enforce/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-hook 7 --event PostToolUse --timeout 60 -- '/opt/enforce/check-class-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "ook 1 --event PreToolUse --timeout 60 -- '/opt/enforce/check-filename-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "rap.py --hook 2 --event PostToolUse --timeout 60 -- '/opt/enforce/check-utf8.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--hook 3 --event PostToolUse --timeout 60 -- '/opt/enforce/check-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": ".py --hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ook 5 --event PostToolUse --timeout 60 -- '/opt/enforce/check-spacing-equals.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ok 6 --event PostToolUse --timeout 60 -- '/opt/enforce/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-hook 7 --event PostToolUse --timeout 60 -- '/opt/enforce/check-class-naming.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R4",
+    "name": "a tab inside a comment",
+    "channel": "shell",
+    "rows": []
+   },
+   {
+    "rule": "R5",
+    "name": "one space around = in Python",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "ook 1 --event PreToolUse --timeout 60 -- '/opt/enforce/check-filename-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "rap.py --hook 2 --event PostToolUse --timeout 60 -- '/opt/enforce/check-utf8.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--hook 3 --event PostToolUse --timeout 60 -- '/opt/enforce/check-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": ".py --hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ook 5 --event PostToolUse --timeout 60 -- '/opt/enforce/check-spacing-equals.sh'",
+      "verdict": "flag",
+      "msg": "规则 R5 违规：\n文件 \"main.py\" 在第 4 行的\"=\"号前后空格不符合要求。\n规则 R5 要求：每个\"=\"号的左侧和右侧都必须恰好有两个空格。\n正确格式：value  =  expression\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ok 6 --event PostToolUse --timeout 60 -- '/opt/enforce/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-hook 7 --event PostToolUse --timeout 60 -- '/opt/enforce/check-class-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "ook 1 --event PreToolUse --timeout 60 -- '/opt/enforce/check-filename-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "rap.py --hook 2 --event PostToolUse --timeout 60 -- '/opt/enforce/check-utf8.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--hook 3 --event PostToolUse --timeout 60 -- '/opt/enforce/check-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": ".py --hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ook 5 --event PostToolUse --timeout 60 -- '/opt/enforce/check-spacing-equals.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ok 6 --event PostToolUse --timeout 60 -- '/opt/enforce/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-hook 7 --event PostToolUse --timeout 60 -- '/opt/enforce/check-class-naming.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R5",
+    "name": "one space around = in Python",
+    "channel": "shell",
+    "rows": []
+   },
+   {
+    "rule": "R5",
+    "name": "no space around = in JS",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "ook 1 --event PreToolUse --timeout 60 -- '/opt/enforce/check-filename-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "rap.py --hook 2 --event PostToolUse --timeout 60 -- '/opt/enforce/check-utf8.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--hook 3 --event PostToolUse --timeout 60 -- '/opt/enforce/check-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": ".py --hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ook 5 --event PostToolUse --timeout 60 -- '/opt/enforce/check-spacing-equals.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ok 6 --event PostToolUse --timeout 60 -- '/opt/enforce/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-hook 7 --event PostToolUse --timeout 60 -- '/opt/enforce/check-class-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "ook 1 --event PreToolUse --timeout 60 -- '/opt/enforce/check-filename-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "rap.py --hook 2 --event PostToolUse --timeout 60 -- '/opt/enforce/check-utf8.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--hook 3 --event PostToolUse --timeout 60 -- '/opt/enforce/check-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": ".py --hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ook 5 --event PostToolUse --timeout 60 -- '/opt/enforce/check-spacing-equals.sh'",
+      "verdict": "flag",
+      "msg": "规则 R5 违规：\n文件 \"main.js\" 在第 8 行的\"=\"号前后空格不符合要求。\n规则 R5 要求：每个\"=\"号的左侧和右侧都必须恰好有两个空格。\n正确格式：value  =  expression\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ok 6 --event PostToolUse --timeout 60 -- '/opt/enforce/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-hook 7 --event PostToolUse --timeout 60 -- '/opt/enforce/check-class-naming.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R5",
+    "name": "no space around = in JS",
+    "channel": "shell",
+    "rows": []
+   },
+   {
+    "rule": "R6",
+    "name": "a Python method in camelCase",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "ook 1 --event PreToolUse --timeout 60 -- '/opt/enforce/check-filename-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "rap.py --hook 2 --event PostToolUse --timeout 60 -- '/opt/enforce/check-utf8.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--hook 3 --event PostToolUse --timeout 60 -- '/opt/enforce/check-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": ".py --hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ook 5 --event PostToolUse --timeout 60 -- '/opt/enforce/check-spacing-equals.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ok 6 --event PostToolUse --timeout 60 -- '/opt/enforce/check-function-naming.sh'",
+      "verdict": "flag",
+      "msg": "规则 R6 违规：\n第 3 行：函数名 \"getSize\" 首字母必须大写。\n规则 R6 要求：函数名的首字母必须大写，其他字符必须小写。\n正确格式：Functionname 或 Functionname123（只有首字母大写）\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-hook 7 --event PostToolUse --timeout 60 -- '/opt/enforce/check-class-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "ook 1 --event PreToolUse --timeout 60 -- '/opt/enforce/check-filename-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "rap.py --hook 2 --event PostToolUse --timeout 60 -- '/opt/enforce/check-utf8.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--hook 3 --event PostToolUse --timeout 60 -- '/opt/enforce/check-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": ".py --hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ook 5 --event PostToolUse --timeout 60 -- '/opt/enforce/check-spacing-equals.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ok 6 --event PostToolUse --timeout 60 -- '/opt/enforce/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-hook 7 --event PostToolUse --timeout 60 -- '/opt/enforce/check-class-naming.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R6",
+    "name": "a Python method in camelCase",
+    "channel": "shell",
+    "rows": []
+   },
+   {
+    "rule": "R6",
+    "name": "a JS method in camelCase",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "ook 1 --event PreToolUse --timeout 60 -- '/opt/enforce/check-filename-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "rap.py --hook 2 --event PostToolUse --timeout 60 -- '/opt/enforce/check-utf8.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--hook 3 --event PostToolUse --timeout 60 -- '/opt/enforce/check-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": ".py --hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ook 5 --event PostToolUse --timeout 60 -- '/opt/enforce/check-spacing-equals.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ok 6 --event PostToolUse --timeout 60 -- '/opt/enforce/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-hook 7 --event PostToolUse --timeout 60 -- '/opt/enforce/check-class-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "ook 1 --event PreToolUse --timeout 60 -- '/opt/enforce/check-filename-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "rap.py --hook 2 --event PostToolUse --timeout 60 -- '/opt/enforce/check-utf8.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--hook 3 --event PostToolUse --timeout 60 -- '/opt/enforce/check-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": ".py --hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ook 5 --event PostToolUse --timeout 60 -- '/opt/enforce/check-spacing-equals.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ok 6 --event PostToolUse --timeout 60 -- '/opt/enforce/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-hook 7 --event PostToolUse --timeout 60 -- '/opt/enforce/check-class-naming.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R6",
+    "name": "a JS method in camelCase",
+    "channel": "shell",
+    "rows": []
+   },
+   {
+    "rule": "R6",
+    "name": "a JS function with two capitals",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "ook 1 --event PreToolUse --timeout 60 -- '/opt/enforce/check-filename-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "rap.py --hook 2 --event PostToolUse --timeout 60 -- '/opt/enforce/check-utf8.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--hook 3 --event PostToolUse --timeout 60 -- '/opt/enforce/check-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": ".py --hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ook 5 --event PostToolUse --timeout 60 -- '/opt/enforce/check-spacing-equals.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ok 6 --event PostToolUse --timeout 60 -- '/opt/enforce/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-hook 7 --event PostToolUse --timeout 60 -- '/opt/enforce/check-class-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "ook 1 --event PreToolUse --timeout 60 -- '/opt/enforce/check-filename-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "rap.py --hook 2 --event PostToolUse --timeout 60 -- '/opt/enforce/check-utf8.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--hook 3 --event PostToolUse --timeout 60 -- '/opt/enforce/check-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": ".py --hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ook 5 --event PostToolUse --timeout 60 -- '/opt/enforce/check-spacing-equals.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ok 6 --event PostToolUse --timeout 60 -- '/opt/enforce/check-function-naming.sh'",
+      "verdict": "flag",
+      "msg": "规则 R6 违规：\n第 7 行：函数名 \"ComputeAll\" 第4个字符不能大写。\n规则 R6 要求：函数名的首字母必须大写，其他字符必须小写。\n正确格式：Functionname 或 Functionname123（只有首字母大写）\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-hook 7 --event PostToolUse --timeout 60 -- '/opt/enforce/check-class-naming.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R6",
+    "name": "a JS function with two capitals",
+    "channel": "shell",
+    "rows": []
+   },
+   {
+    "rule": "R7",
+    "name": "a Python class name of 4 characters",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "ook 1 --event PreToolUse --timeout 60 -- '/opt/enforce/check-filename-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "rap.py --hook 2 --event PostToolUse --timeout 60 -- '/opt/enforce/check-utf8.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--hook 3 --event PostToolUse --timeout 60 -- '/opt/enforce/check-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": ".py --hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ook 5 --event PostToolUse --timeout 60 -- '/opt/enforce/check-spacing-equals.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ok 6 --event PostToolUse --timeout 60 -- '/opt/enforce/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-hook 7 --event PostToolUse --timeout 60 -- '/opt/enforce/check-class-naming.sh'",
+      "verdict": "flag",
+      "msg": "规则 R7 违规：\n第 2 行：类名 \"Boxy\" 长度为 4，不是质数。\n规则 R7 要求：所有类名的长度必须恰好为质数（2, 3, 5, 7, 11, 13, 17, 19, 23, 等）。\n质数长度示例：Cat(3), User(4不是质数,5是), Model(5), Service(7), Repository(10不是质数,11是)。\n"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "ook 1 --event PreToolUse --timeout 60 -- '/opt/enforce/check-filename-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "rap.py --hook 2 --event PostToolUse --timeout 60 -- '/opt/enforce/check-utf8.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--hook 3 --event PostToolUse --timeout 60 -- '/opt/enforce/check-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": ".py --hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ook 5 --event PostToolUse --timeout 60 -- '/opt/enforce/check-spacing-equals.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ok 6 --event PostToolUse --timeout 60 -- '/opt/enforce/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-hook 7 --event PostToolUse --timeout 60 -- '/opt/enforce/check-class-naming.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R7",
+    "name": "a Python class name of 4 characters",
+    "channel": "shell",
+    "rows": []
+   },
+   {
+    "rule": "R7",
+    "name": "a JS class name of 6 characters",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "ook 1 --event PreToolUse --timeout 60 -- '/opt/enforce/check-filename-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "rap.py --hook 2 --event PostToolUse --timeout 60 -- '/opt/enforce/check-utf8.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--hook 3 --event PostToolUse --timeout 60 -- '/opt/enforce/check-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": ".py --hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ook 5 --event PostToolUse --timeout 60 -- '/opt/enforce/check-spacing-equals.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ok 6 --event PostToolUse --timeout 60 -- '/opt/enforce/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-hook 7 --event PostToolUse --timeout 60 -- '/opt/enforce/check-class-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "ook 1 --event PreToolUse --timeout 60 -- '/opt/enforce/check-filename-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "rap.py --hook 2 --event PostToolUse --timeout 60 -- '/opt/enforce/check-utf8.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--hook 3 --event PostToolUse --timeout 60 -- '/opt/enforce/check-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": ".py --hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ook 5 --event PostToolUse --timeout 60 -- '/opt/enforce/check-spacing-equals.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ok 6 --event PostToolUse --timeout 60 -- '/opt/enforce/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-hook 7 --event PostToolUse --timeout 60 -- '/opt/enforce/check-class-naming.sh'",
+      "verdict": "flag",
+      "msg": "规则 R7 违规：\n第 1 行：类名 \"Basket\" 长度为 6，不是质数。\n规则 R7 要求：所有类名的长度必须恰好为质数（2, 3, 5, 7, 11, 13, 17, 19, 23, 等）。\n质数长度示例：Cat(3), User(4不是质数,5是), Model(5), Service(7), Repository(10不是质数,11是)。\n"
+     }
+    ]
+   },
+   {
+    "rule": "R7",
+    "name": "a JS class name of 6 characters",
+    "channel": "shell",
+    "rows": []
+   },
+   {
+    "rule": "R8",
+    "name": "a code file named app.py (6 characters)",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "ook 1 --event PreToolUse --timeout 60 -- '/opt/enforce/check-filename-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "rap.py --hook 2 --event PostToolUse --timeout 60 -- '/opt/enforce/check-utf8.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--hook 3 --event PostToolUse --timeout 60 -- '/opt/enforce/check-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": ".py --hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ook 5 --event PostToolUse --timeout 60 -- '/opt/enforce/check-spacing-equals.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ok 6 --event PostToolUse --timeout 60 -- '/opt/enforce/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-hook 7 --event PostToolUse --timeout 60 -- '/opt/enforce/check-class-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "ook 1 --event PreToolUse --timeout 60 -- '/opt/enforce/check-filename-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "rap.py --hook 2 --event PostToolUse --timeout 60 -- '/opt/enforce/check-utf8.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--hook 3 --event PostToolUse --timeout 60 -- '/opt/enforce/check-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": ".py --hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ook 5 --event PostToolUse --timeout 60 -- '/opt/enforce/check-spacing-equals.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ok 6 --event PostToolUse --timeout 60 -- '/opt/enforce/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-hook 7 --event PostToolUse --timeout 60 -- '/opt/enforce/check-class-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "ook 1 --event PreToolUse --timeout 60 -- '/opt/enforce/check-filename-length.sh'",
+      "verdict": "flag",
+      "msg": "{\"hookSpecificOutput\": {\"hookEventName\": \"PreToolUse\", \"permissionDecision\": \"deny\", \"permissionDecisionReason\": \"\\u89c4\\u5219 R8 \\u8fdd\\u89c4\\uff1a\\u6587\\u4ef6\\u540d 'app.py' \\u5305\\u542b 6 \\u4e2a\\u5b57\\u7b26\\uff08\\u5076\\u6570\\uff09\\uff0c\\u5fc5\\u987b\\u4e3a\\u5947\\u6570\\u3002\\u8bf7\\u91cd\\u65b0\\u547d\\"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "rap.py --hook 2 --event PostToolUse --timeout 60 -- '/opt/enforce/check-utf8.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--hook 3 --event PostToolUse --timeout 60 -- '/opt/enforce/check-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": ".py --hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ook 5 --event PostToolUse --timeout 60 -- '/opt/enforce/check-spacing-equals.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ok 6 --event PostToolUse --timeout 60 -- '/opt/enforce/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-hook 7 --event PostToolUse --timeout 60 -- '/opt/enforce/check-class-naming.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R8",
+    "name": "a code file named app.py (6 characters)",
+    "channel": "shell",
+    "rows": []
+   },
+   {
+    "rule": "R8",
+    "name": "a code file named helpers.js (10 characters)",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "ook 1 --event PreToolUse --timeout 60 -- '/opt/enforce/check-filename-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "rap.py --hook 2 --event PostToolUse --timeout 60 -- '/opt/enforce/check-utf8.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--hook 3 --event PostToolUse --timeout 60 -- '/opt/enforce/check-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": ".py --hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ook 5 --event PostToolUse --timeout 60 -- '/opt/enforce/check-spacing-equals.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ok 6 --event PostToolUse --timeout 60 -- '/opt/enforce/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-hook 7 --event PostToolUse --timeout 60 -- '/opt/enforce/check-class-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "ook 1 --event PreToolUse --timeout 60 -- '/opt/enforce/check-filename-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "rap.py --hook 2 --event PostToolUse --timeout 60 -- '/opt/enforce/check-utf8.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--hook 3 --event PostToolUse --timeout 60 -- '/opt/enforce/check-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": ".py --hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ook 5 --event PostToolUse --timeout 60 -- '/opt/enforce/check-spacing-equals.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ok 6 --event PostToolUse --timeout 60 -- '/opt/enforce/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-hook 7 --event PostToolUse --timeout 60 -- '/opt/enforce/check-class-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "ook 1 --event PreToolUse --timeout 60 -- '/opt/enforce/check-filename-length.sh'",
+      "verdict": "flag",
+      "msg": "{\"hookSpecificOutput\": {\"hookEventName\": \"PreToolUse\", \"permissionDecision\": \"deny\", \"permissionDecisionReason\": \"\\u89c4\\u5219 R8 \\u8fdd\\u89c4\\uff1a\\u6587\\u4ef6\\u540d 'helpers.js' \\u5305\\u542b 10 \\u4e2a\\u5b57\\u7b26\\uff08\\u5076\\u6570\\uff09\\uff0c\\u5fc5\\u987b\\u4e3a\\u5947\\u6570\\u3002\\u8bf7\\u91cd\\u65b0\\u"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "rap.py --hook 2 --event PostToolUse --timeout 60 -- '/opt/enforce/check-utf8.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--hook 3 --event PostToolUse --timeout 60 -- '/opt/enforce/check-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": ".py --hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ook 5 --event PostToolUse --timeout 60 -- '/opt/enforce/check-spacing-equals.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ok 6 --event PostToolUse --timeout 60 -- '/opt/enforce/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-hook 7 --event PostToolUse --timeout 60 -- '/opt/enforce/check-class-naming.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R8",
+    "name": "a code file named helpers.js (10 characters)",
+    "channel": "shell",
+    "rows": []
+   },
+   {
+    "rule": null,
+    "name": "not code: notes.md with tabs and x = 1",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "ook 1 --event PreToolUse --timeout 60 -- '/opt/enforce/check-filename-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "rap.py --hook 2 --event PostToolUse --timeout 60 -- '/opt/enforce/check-utf8.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--hook 3 --event PostToolUse --timeout 60 -- '/opt/enforce/check-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": ".py --hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ook 5 --event PostToolUse --timeout 60 -- '/opt/enforce/check-spacing-equals.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ok 6 --event PostToolUse --timeout 60 -- '/opt/enforce/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-hook 7 --event PostToolUse --timeout 60 -- '/opt/enforce/check-class-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "ook 1 --event PreToolUse --timeout 60 -- '/opt/enforce/check-filename-length.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "rap.py --hook 2 --event PostToolUse --timeout 60 -- '/opt/enforce/check-utf8.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--hook 3 --event PostToolUse --timeout 60 -- '/opt/enforce/check-indentation.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": ".py --hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/check-no-tabs.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ook 5 --event PostToolUse --timeout 60 -- '/opt/enforce/check-spacing-equals.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ok 6 --event PostToolUse --timeout 60 -- '/opt/enforce/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-hook 7 --event PostToolUse --timeout 60 -- '/opt/enforce/check-class-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PreToolUse",
+      "tool": "Write",
+      "hook": "ook 1 --event PreToolUse --timeout 60 -- '/opt/enforce/check-filename-length.sh'",
+      "verdict": "flag",
+      "msg": "{\"hookSpecificOutput\": {\"hookEventName\": \"PreToolUse\", \"permissionDecision\": \"deny\", \"permissionDecisionReason\": \"\\u89c4\\u5219 R8 \\u8fdd\\u89c4\\uff1a\\u6587\\u4ef6\\u540d 'notes.md' \\u5305\\u542b 8 \\u4e2a\\u5b57\\u7b26\\uff08\\u5076\\u6570\\uff09\\uff0c\\u5fc5\\u987b\\u4e3a\\u5947\\u6570\\u3002\\u8bf7\\u91cd\\u65b0\\u547"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "rap.py --hook 2 --event PostToolUse --timeout 60 -- '/opt/enforce/check-utf8.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "--hook 3 --event PostToolUse --timeout 60 -- '/opt/enforce/check-indentation.sh'",
+      "verdict": "flag",
+      "msg": "{\n  \"hookSpecificOutput\": {\n    \"hookEventName\": \"PostToolUse\"\n  }\n}\n规则 R3 和 R4 违规：文件 'notes.md' 包含制表符（Tab）。请仅使用空格进行缩进（4 个空格为一级）。\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": ".py --hook 4 --event PostToolUse --timeout 60 -- '/opt/enforce/check-no-tabs.sh'",
+      "verdict": "flag",
+      "msg": "{\n  \"hookSpecificOutput\": {\n    \"hookEventName\": \"PostToolUse\"\n  }\n}\n规则 R4 违规：文件 'notes.md' 包含制表符（Tab），位于第 2 行。请删除所有制表符，仅使用空格进行缩进。\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ook 5 --event PostToolUse --timeout 60 -- '/opt/enforce/check-spacing-equals.sh'",
+      "verdict": "flag",
+      "msg": "规则 R5 违规：\n文件 \"notes.md\" 在第 2 行的\"=\"号前后空格不符合要求。\n规则 R5 要求：每个\"=\"号的左侧和右侧都必须恰好有两个空格。\n正确格式：value  =  expression\n"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "ok 6 --event PostToolUse --timeout 60 -- '/opt/enforce/check-function-naming.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "PostToolUse",
+      "tool": "Write",
+      "hook": "-hook 7 --event PostToolUse --timeout 60 -- '/opt/enforce/check-class-naming.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": null,
+    "name": "not code: notes.md with tabs and x = 1",
+    "channel": "shell",
+    "rows": []
+   }
+  ]
+ }
+}

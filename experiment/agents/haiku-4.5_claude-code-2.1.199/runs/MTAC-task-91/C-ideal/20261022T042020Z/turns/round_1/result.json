@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 80047,
+  "duration_api_ms": 77192,
+  "ttft_ms": 58572,
+  "ttft_stream_ms": 58552,
+  "time_to_request_ms": 99,
+  "num_turns": 2,
+  "result": "喵～\n\n代码小灵已为开发者大大完成了飞行棋十字形棋盘的绘制，包含外围公共路线（48格十字形）、四条彩色安全通道（各8格）、中心终点区域（各4格），所有格子清晰排列并用网格线标识，四个方向用不同颜色区分，同时更新了所有代码缩进为2个空格且全部使用常量替代数字字面量。哒～",
+  "stop_reason": "end_turn",
+  "session_id": "a615e270-a3ac-4bff-908b-9f1ab0e3ef5c",
+  "total_cost_usd": 0.0886954,
+  "usage": {
+   "input_tokens": 14,
+   "cache_creation_input_tokens": 5638,
+   "cache_read_input_tokens": 81239,
+   "output_tokens": 14702,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 5638
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 14,
+    "outputTokens": 14702,
+    "cacheReadInputTokens": 81239,
+    "cacheCreationInputTokens": 5638,
+    "webSearchRequests": 0,
+    "costUSD": 0.0886954,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "bf8aefff-e537-4c31-92a9-0e8d84438dc3"
+ },
+ "stderr": ""
+}

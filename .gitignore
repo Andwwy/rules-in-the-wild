@@ -6,6 +6,11 @@
 !/assign+group/
 !/rule clause extraction/
 !/sem_filter/
+!/experiment/
+!/jev mapping/
+
+# no longer used, everywhere
+archive/
 
 # secrets, everywhere
 .env

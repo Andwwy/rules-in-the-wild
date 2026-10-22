@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 43357,
+  "duration_api_ms": 40197,
+  "ttft_ms": 4175,
+  "ttft_stream_ms": 4172,
+  "time_to_request_ms": 96,
+  "num_turns": 3,
+  "result": "喵～\n\n代码小灵已为开发者大大实现了完整的回合流转机制：按红黄蓝绿顺序轮流掷骰子，当前玩家区域高亮显示，禁用其他玩家棋子点击，掷出6点后可额外再掷一次，同时改为2空格缩进和单层条件判断结构。哒～",
+  "stop_reason": "end_turn",
+  "session_id": "a615e270-a3ac-4bff-908b-9f1ab0e3ef5c",
+  "total_cost_usd": 0.07712715000000002,
+  "usage": {
+   "input_tokens": 19,
+   "cache_creation_input_tokens": 14855,
+   "cache_read_input_tokens": 215044,
+   "output_tokens": 7407,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 14855
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 19,
+    "outputTokens": 7407,
+    "cacheReadInputTokens": 215044,
+    "cacheCreationInputTokens": 14855,
+    "webSearchRequests": 0,
+    "costUSD": 0.07712715000000002,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "63e328fd-0d7a-4338-af03-8212c684f970"
+ },
+ "stderr": ""
+}

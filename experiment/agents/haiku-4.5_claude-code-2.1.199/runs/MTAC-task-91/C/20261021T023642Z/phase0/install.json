@@ -1,0 +1,84 @@
+{
+ "session": "7079e091-9d6d-4803-89ac-4b1abb15c4bb",
+ "messages": 8,
+ "install": {
+  "installed": 8,
+  "hooks": [
+   {
+    "hook": 1,
+    "event": "PreToolUse",
+    "matcher": "Write",
+    "command": "/opt/enforce/r5-write-check.py",
+    "form": "shell",
+    "timeout": 5
+   },
+   {
+    "hook": 2,
+    "event": "PreToolUse",
+    "matcher": "Write",
+    "command": "/opt/enforce/r6-write-check.py",
+    "form": "shell",
+    "timeout": 5
+   },
+   {
+    "hook": 3,
+    "event": "PreToolUse",
+    "matcher": "Write",
+    "command": "/opt/enforce/r7-write-check.py",
+    "form": "shell",
+    "timeout": 5
+   },
+   {
+    "hook": 4,
+    "event": "Stop",
+    "matcher": null,
+    "command": "/opt/enforce/r1-check.py",
+    "form": "shell",
+    "timeout": 5
+   },
+   {
+    "hook": 5,
+    "event": "Stop",
+    "matcher": null,
+    "command": "/opt/enforce/r2-filter.py",
+    "form": "shell",
+    "timeout": 5
+   },
+   {
+    "hook": 6,
+    "event": "Stop",
+    "matcher": null,
+    "command": "/opt/enforce/r3-check.py",
+    "form": "shell",
+    "timeout": 5
+   },
+   {
+    "hook": 7,
+    "event": "Stop",
+    "matcher": null,
+    "command": "/opt/enforce/r4-check.py",
+    "form": "shell",
+    "timeout": 5
+   },
+   {
+    "hook": 8,
+    "event": "Stop",
+    "matcher": null,
+    "command": "/opt/enforce/r8-check.py",
+    "form": "shell",
+    "timeout": 5
+   }
+  ],
+  "not_wrapped": [],
+  "other_settings": [],
+  "replaced_managed_settings": "{\n \"hooks\": {\n  \"Stop\": [\n   {\n    \"hooks\": [\n     {\n      \"type\": \"command\",\n      \"command\": \"/usr/local/bin/python3.13 /opt/enforce-harness/wrap.py --hook 1 --event Stop --timeout 5 -- '/opt/enforce/r1-check.py'\",\n      \"timeout\": 35\n     },\n     {\n      \"type\": \"command\",\n      \"command\": \"/usr/local/bin/python3.13 /opt/enforce-harness/wrap.py --hook 2 --event Stop --timeout 5 -- '/opt/enforce/r2-filter.py'\",\n      \"timeout\": 35\n     },\n     {\n      \"type\": \"command\",\n      \"command\": \"/usr/local/bin/python3.13 /opt/enforce-harness/wrap.py --hook 3 --event Stop --timeout 5 -- '/opt/enforce/r3-check.py'\",\n      \"timeout\": 35\n     },\n     {\n      \"type\": \"command\",\n      \"command\": \"/usr/local/bin/python3.13 /opt/enforce-harness/wrap.py --hook 4 --event Stop --timeout 5 -- '/opt/enforce/r4-check.py'\",\n      \"timeout\": 35\n     }\n    ]\n   }\n  ]\n }\n}",
+  "fingerprint": "4c245b611405b40b30ae42d0f59057a13a2a9642aede4c13f9e70270f460e4f2"
+ },
+ "claude_code_on_settings": null,
+ "commands_added_for_agent": [],
+ "workspace": {
+  "created": 0,
+  "changed": 0,
+  "deleted": 0
+ }
+}

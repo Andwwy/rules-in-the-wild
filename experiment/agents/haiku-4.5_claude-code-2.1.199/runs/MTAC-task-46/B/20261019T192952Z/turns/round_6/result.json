@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 75204,
+  "duration_api_ms": 65095,
+  "ttft_ms": 3931,
+  "ttft_stream_ms": 3927,
+  "time_to_request_ms": 107,
+  "num_turns": 14,
+  "result": "已实现出发时间选择器、动态 ETA 计算、时间感知的天气预报以及地图底部时间轴滑块，拖动滑块时当前路段用金色高亮标注并显示预计到达时间。",
+  "stop_reason": "end_turn",
+  "session_id": "16601f6e-d38d-4fa1-bae1-0f09351e3d50",
+  "total_cost_usd": 0.46324170000000003,
+  "usage": {
+   "input_tokens": 77,
+   "cache_creation_input_tokens": 147488,
+   "cache_read_input_tokens": 1349667,
+   "output_tokens": 9021,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 147488
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 80,
+    "outputTokens": 9106,
+    "cacheReadInputTokens": 1349667,
+    "cacheCreationInputTokens": 226132,
+    "webSearchRequests": 0,
+    "costUSD": 0.46324170000000003,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "1b0a0720-b0e6-49d8-87ee-14355747fe92"
+ },
+ "stderr": ""
+}

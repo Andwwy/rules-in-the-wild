@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 72655,
+  "duration_api_ms": 57230,
+  "ttft_ms": 2828,
+  "ttft_stream_ms": 2825,
+  "time_to_request_ms": 105,
+  "num_turns": 15,
+  "result": "<result>通过</result><description>侧边栏添加行程详情面板，规划路线后显示总距离和预计驾驶时长。实现垂直时间轴列表展示起点、途经点、终点，每段显示距离和耗时。时间轴采用蓝色圆形节点设计，路段距离用红色、耗时用蓝色标记。代码循环嵌套不超过3层。</description>\n\n完成了行程详情面板和时间轴功能展示。",
+  "stop_reason": "end_turn",
+  "session_id": "97b03103-d0f3-4825-991b-478998479f7c",
+  "total_cost_usd": 0.23426985,
+  "usage": {
+   "input_tokens": 86,
+   "cache_creation_input_tokens": 57657,
+   "cache_read_input_tokens": 1244076,
+   "output_tokens": 7541,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 57657
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 86,
+    "outputTokens": 7541,
+    "cacheReadInputTokens": 1244076,
+    "cacheCreationInputTokens": 57657,
+    "webSearchRequests": 0,
+    "costUSD": 0.23426985,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "5d29ccdd-540d-4079-b4bd-3a32bcb49c18"
+ },
+ "stderr": ""
+}

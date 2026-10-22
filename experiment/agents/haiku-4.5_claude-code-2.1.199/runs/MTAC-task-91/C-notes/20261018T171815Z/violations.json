@@ -1,0 +1,54 @@
+{
+ "7|R1": [
+  {
+   "file": "reply",
+   "line": 1,
+   "segs": [
+    [
+     "No response requested.",
+     1
+    ]
+   ],
+   "note": "start of the reply"
+  }
+ ],
+ "7|R8": [
+  {
+   "file": "reply",
+   "line": 1,
+   "segs": [
+    [
+     "No response requested.",
+     1
+    ]
+   ],
+   "note": "end of the reply"
+  }
+ ],
+ "8|R1": [
+  {
+   "file": "reply",
+   "line": 1,
+   "segs": [
+    [
+     "No response requested.",
+     1
+    ]
+   ],
+   "note": "start of the reply"
+  }
+ ],
+ "8|R8": [
+  {
+   "file": "reply",
+   "line": 1,
+   "segs": [
+    [
+     "No response requested.",
+     1
+    ]
+   ],
+   "note": "end of the reply"
+  }
+ ]
+}

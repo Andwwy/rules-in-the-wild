@@ -1,0 +1,1364 @@
+{
+ "summary": {
+  "hooks": 16,
+  "rules": {
+   "R1": {
+    "reply": [
+     {
+      "case": "the reply does not start with 喵～",
+      "caught": false,
+      "early": false,
+      "at": []
+     }
+    ]
+   },
+   "R2": {
+    "reply": [
+     {
+      "case": "the reply says 我",
+      "caught": false,
+      "early": false,
+      "at": []
+     }
+    ]
+   },
+   "R3": {
+    "reply": [
+     {
+      "case": "the reply calls the user 你",
+      "caught": false,
+      "early": false,
+      "at": []
+     }
+    ]
+   },
+   "R4": {
+    "reply": [
+     {
+      "case": "an English word in the reply",
+      "caught": false,
+      "early": false,
+      "at": []
+     }
+    ]
+   },
+   "R8": {
+    "reply": [
+     {
+      "case": "the reply does not end with 哒～",
+      "caught": false,
+      "early": false,
+      "at": []
+     }
+    ]
+   },
+   "R5": {
+    "tool": [
+     {
+      "case": "a Python file without the coding line",
+      "caught": false,
+      "early": false,
+      "at": []
+     },
+     {
+      "case": "a JS file without the coding line",
+      "caught": false,
+      "early": false,
+      "at": []
+     }
+    ],
+    "shell": [
+     {
+      "case": "a Python file without the coding line",
+      "caught": false,
+      "early": false,
+      "at": []
+     },
+     {
+      "case": "a JS file without the coding line",
+      "caught": false,
+      "early": false,
+      "at": []
+     }
+    ]
+   },
+   "R6": {
+    "tool": [
+     {
+      "case": "a Python file without the AI-Assisted line",
+      "caught": false,
+      "early": false,
+      "at": []
+     },
+     {
+      "case": "a JS file without the AI-Assisted line",
+      "caught": false,
+      "early": false,
+      "at": []
+     }
+    ],
+    "shell": [
+     {
+      "case": "a Python file without the AI-Assisted line",
+      "caught": false,
+      "early": false,
+      "at": []
+     },
+     {
+      "case": "a JS file without the AI-Assisted line",
+      "caught": false,
+      "early": false,
+      "at": []
+     }
+    ]
+   },
+   "R7": {
+    "tool": [
+     {
+      "case": "a Python function of 69 lines",
+      "caught": false,
+      "early": false,
+      "at": []
+     },
+     {
+      "case": "a JS function of 68 lines",
+      "caught": false,
+      "early": false,
+      "at": []
+     }
+    ],
+    "shell": [
+     {
+      "case": "a Python function of 69 lines",
+      "caught": false,
+      "early": false,
+      "at": []
+     },
+     {
+      "case": "a JS function of 68 lines",
+      "caught": false,
+      "early": false,
+      "at": []
+     }
+    ]
+   }
+  },
+  "false_flags": [],
+  "hook_errors": []
+ },
+ "raw": {
+  "hooks": 16,
+  "cases": [
+   {
+    "rule": null,
+    "name": "clean project",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r1.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r2.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r3.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r4.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r5.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r6.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r7.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r8.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": null,
+    "name": "clean project",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r1.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r2.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r3.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r4.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r5.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r6.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r7.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r8.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R1",
+    "name": "the reply does not start with 喵～",
+    "channel": "reply",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r1.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r2.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r3.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r4.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r5.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r6.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r7.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r8.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R2",
+    "name": "the reply says 我",
+    "channel": "reply",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r1.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r2.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r3.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r4.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r5.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r6.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r7.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r8.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R3",
+    "name": "the reply calls the user 你",
+    "channel": "reply",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r1.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r2.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r3.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r4.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r5.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r6.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r7.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r8.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R4",
+    "name": "an English word in the reply",
+    "channel": "reply",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r1.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r2.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r3.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r4.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r5.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r6.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r7.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r8.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R8",
+    "name": "the reply does not end with 哒～",
+    "channel": "reply",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r1.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r2.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r3.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r4.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r5.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r6.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r7.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r8.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": null,
+    "name": "我们 is not a self-reference by 我 (out of R2's scope)",
+    "channel": "reply",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r1.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r2.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r3.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r4.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r5.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r6.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r7.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r8.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R5",
+    "name": "a Python file without the coding line",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r1.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r2.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r3.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r4.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r5.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r6.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r7.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r8.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R5",
+    "name": "a Python file without the coding line",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r1.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r2.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r3.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r4.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r5.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r6.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r7.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r8.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R5",
+    "name": "a JS file without the coding line",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r1.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r2.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r3.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r4.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r5.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r6.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r7.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r8.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R5",
+    "name": "a JS file without the coding line",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r1.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r2.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r3.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r4.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r5.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r6.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r7.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r8.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R6",
+    "name": "a Python file without the AI-Assisted line",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r1.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r2.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r3.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r4.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r5.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r6.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r7.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r8.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R6",
+    "name": "a Python file without the AI-Assisted line",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r1.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r2.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r3.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r4.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r5.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r6.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r7.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r8.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R6",
+    "name": "a JS file without the AI-Assisted line",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r1.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r2.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r3.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r4.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r5.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r6.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r7.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r8.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R6",
+    "name": "a JS file without the AI-Assisted line",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r1.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r2.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r3.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r4.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r5.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r6.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r7.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r8.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R7",
+    "name": "a Python function of 69 lines",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r1.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r2.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r3.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r4.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r5.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r6.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r7.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r8.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R7",
+    "name": "a Python function of 69 lines",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r1.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r2.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r3.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r4.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r5.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r6.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r7.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r8.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R7",
+    "name": "a JS function of 68 lines",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r1.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r2.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r3.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r4.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r5.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r6.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r7.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r8.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": "R7",
+    "name": "a JS function of 68 lines",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r1.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r2.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r3.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r4.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r5.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r6.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r7.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r8.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": null,
+    "name": "not code: notes.md without the header lines",
+    "channel": "tool",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r1.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r2.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r3.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r4.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r5.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r6.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r7.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r8.sh'",
+      "verdict": "pass"
+     }
+    ]
+   },
+   {
+    "rule": null,
+    "name": "not code: notes.md without the header lines",
+    "channel": "shell",
+    "rows": [
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r1.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r2.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r3.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r4.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r5.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r6.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r7.sh'",
+      "verdict": "pass"
+     },
+     {
+      "event": "Stop",
+      "tool": null,
+      "hook": "nt Stop --timeout 60 -- '/opt/enforce-harness/.claude/hooks/validate-rule-r8.sh'",
+      "verdict": "pass"
+     }
+    ]
+   }
+  ]
+ }
+}

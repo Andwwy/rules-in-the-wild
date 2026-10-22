@@ -1,0 +1,54 @@
+{
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 37744,
+  "duration_api_ms": 35591,
+  "ttft_ms": 8465,
+  "ttft_stream_ms": 8458,
+  "time_to_request_ms": 93,
+  "num_turns": 4,
+  "result": "喵～\n\n代码小灵已完成十字形飞行棋棋盘的绘制，包含标准的52个外围公共格子、四条彩色安全通道、出发点标记和中心终点，所有数字已使用常量定义，缩进改为2空格。哒～",
+  "stop_reason": "end_turn",
+  "session_id": "3abddb79-d401-412b-9335-f083b4af7291",
+  "total_cost_usd": 0.061620100000000004,
+  "usage": {
+   "input_tokens": 24,
+   "cache_creation_input_tokens": 9884,
+   "cache_read_input_tokens": 161711,
+   "output_tokens": 6614,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 9884
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 24,
+    "outputTokens": 6614,
+    "cacheReadInputTokens": 161711,
+    "cacheCreationInputTokens": 9884,
+    "webSearchRequests": 0,
+    "costUSD": 0.061620100000000004,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "815a2dd3-118e-4154-94b3-a4b1063134b0"
+ },
+ "stderr": ""
+}

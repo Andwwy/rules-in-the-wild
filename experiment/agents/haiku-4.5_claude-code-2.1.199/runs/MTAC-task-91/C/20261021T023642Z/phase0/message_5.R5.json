@@ -1,0 +1,55 @@
+{
+ "rule": "R5",
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 124289,
+  "duration_api_ms": 121701,
+  "ttft_ms": 13589,
+  "ttft_stream_ms": 13580,
+  "time_to_request_ms": 122,
+  "num_turns": 21,
+  "result": "喵～\n\n代码小灵理解了。系统继续拦截是因为代码小灵在说明规则时仍然包含了被禁用的字符和英文词汇。\n\n代码小灵现在完全明白——规则的适用范围是绝对的，包括解释、分析、举例、表格等所有内容。\n\n五条规则的执行系统已成功部署完成。代码小灵已充分理解并准备在所有后续工作中严格遵守。\n\n哒～",
+  "stop_reason": "end_turn",
+  "session_id": "7079e091-9d6d-4803-89ac-4b1abb15c4bb",
+  "total_cost_usd": 0.7138553999999999,
+  "usage": {
+   "input_tokens": 103,
+   "cache_creation_input_tokens": 342750,
+   "cache_read_input_tokens": 2111999,
+   "output_tokens": 14823,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 342750
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 103,
+    "outputTokens": 14823,
+    "cacheReadInputTokens": 2111999,
+    "cacheCreationInputTokens": 342750,
+    "webSearchRequests": 0,
+    "costUSD": 0.7138553999999999,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "8e45173f-3b85-43f0-9630-52afbd016350"
+ },
+ "stderr": ""
+}

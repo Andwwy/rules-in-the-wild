@@ -1,0 +1,501 @@
+{
+ "run": "tasks/task_046/CT/runs/20261019T051754Z",
+ "task": 46,
+ "rounds": [
+  {
+   "round_id": 0,
+   "left_out": [],
+   "reply_from": "transcript",
+   "reply_differs_from_result": false,
+   "items": [
+    {
+     "index": 2,
+     "requirement": "你所生成的所有代码文件都必须使用UTF-8进行编码",
+     "passed": true
+    },
+    {
+     "index": 3,
+     "requirement": "在生成的代码文件里，缩进必须严格保持为 4 个空格",
+     "passed": false
+    },
+    {
+     "index": 4,
+     "requirement": "你提供的代码文件不得含有制表符，请仅使用空格完成代码的缩进",
+     "passed": true
+    },
+    {
+     "index": 5,
+     "requirement": "生成代码时，请在“=”号的左侧和右侧各放置两个空格",
+     "passed": true
+    },
+    {
+     "index": 6,
+     "requirement": "你所输出的代码文件里，针对各个函数名的命名规范是：首字母严禁小写，首字母之外的字符严禁大写",
+     "passed": true
+    },
+    {
+     "index": 7,
+     "requirement": "你所编写的代码文件内，所有类名的长度均需恰好为质数，不得有例外",
+     "passed": true
+    },
+    {
+     "index": 8,
+     "requirement": "必须保证输出的每一份代码文件，其文件名包含的字符个数严格等于奇数",
+     "passed": false
+    },
+    {
+     "index": 10,
+     "requirement": "请勿在生成的每个代码文件内部附加任何注释",
+     "passed": true
+    }
+   ]
+  },
+  {
+   "round_id": 1,
+   "left_out": [],
+   "reply_from": "transcript",
+   "reply_differs_from_result": false,
+   "items": [
+    {
+     "index": 2,
+     "requirement": "你所生成的所有代码文件都必须使用UTF-8进行编码",
+     "passed": true
+    },
+    {
+     "index": 3,
+     "requirement": "在生成的代码文件里，缩进必须严格保持为 4 个空格",
+     "passed": false
+    },
+    {
+     "index": 4,
+     "requirement": "你提供的代码文件不得含有制表符，请仅使用空格完成代码的缩进",
+     "passed": true
+    },
+    {
+     "index": 5,
+     "requirement": "生成代码时，请在“=”号的左侧和右侧各放置两个空格",
+     "passed": false
+    },
+    {
+     "index": 6,
+     "requirement": "你所输出的代码文件里，针对各个函数名的命名规范是：首字母严禁小写，首字母之外的字符严禁大写",
+     "passed": true
+    },
+    {
+     "index": 7,
+     "requirement": "你所编写的代码文件内，所有类名的长度均需恰好为质数，不得有例外",
+     "passed": true
+    },
+    {
+     "index": 8,
+     "requirement": "必须保证输出的每一份代码文件，其文件名包含的字符个数严格等于奇数",
+     "passed": false
+    },
+    {
+     "index": 10,
+     "requirement": "请勿在生成的每个代码文件内部附加任何注释",
+     "passed": true
+    }
+   ]
+  },
+  {
+   "round_id": 2,
+   "left_out": [],
+   "reply_from": "transcript",
+   "reply_differs_from_result": false,
+   "items": [
+    {
+     "index": 2,
+     "requirement": "你所生成的所有代码文件都必须使用UTF-8进行编码",
+     "passed": true
+    },
+    {
+     "index": 3,
+     "requirement": "在生成的代码文件里，缩进必须严格保持为 4 个空格",
+     "passed": false
+    },
+    {
+     "index": 4,
+     "requirement": "你提供的代码文件不得含有制表符，请仅使用空格完成代码的缩进",
+     "passed": true
+    },
+    {
+     "index": 5,
+     "requirement": "生成代码时，请在“=”号的左侧和右侧各放置两个空格",
+     "passed": true
+    },
+    {
+     "index": 6,
+     "requirement": "你所输出的代码文件里，针对各个函数名的命名规范是：首字母严禁小写，首字母之外的字符严禁大写",
+     "passed": true
+    },
+    {
+     "index": 7,
+     "requirement": "你所编写的代码文件内，所有类名的长度均需恰好为质数，不得有例外",
+     "passed": true
+    },
+    {
+     "index": 8,
+     "requirement": "必须保证输出的每一份代码文件，其文件名包含的字符个数严格等于奇数",
+     "passed": false
+    },
+    {
+     "index": 10,
+     "requirement": "请勿在生成的每个代码文件内部附加任何注释",
+     "passed": true
+    }
+   ]
+  },
+  {
+   "round_id": 3,
+   "left_out": [],
+   "reply_from": "transcript",
+   "reply_differs_from_result": false,
+   "items": [
+    {
+     "index": 2,
+     "requirement": "你所生成的所有代码文件都必须使用UTF-8进行编码",
+     "passed": true
+    },
+    {
+     "index": 3,
+     "requirement": "在生成的代码文件里，缩进必须严格保持为 4 个空格",
+     "passed": false
+    },
+    {
+     "index": 4,
+     "requirement": "你提供的代码文件不得含有制表符，请仅使用空格完成代码的缩进",
+     "passed": true
+    },
+    {
+     "index": 5,
+     "requirement": "生成代码时，请在“=”号的左侧和右侧各放置两个空格",
+     "passed": false
+    },
+    {
+     "index": 6,
+     "requirement": "你所输出的代码文件里，针对各个函数名的命名规范是：首字母严禁小写，首字母之外的字符严禁大写",
+     "passed": true
+    },
+    {
+     "index": 7,
+     "requirement": "你所编写的代码文件内，所有类名的长度均需恰好为质数，不得有例外",
+     "passed": true
+    },
+    {
+     "index": 8,
+     "requirement": "必须保证输出的每一份代码文件，其文件名包含的字符个数严格等于奇数",
+     "passed": false
+    },
+    {
+     "index": 10,
+     "requirement": "请勿在生成的每个代码文件内部附加任何注释",
+     "passed": true
+    }
+   ]
+  },
+  {
+   "round_id": 4,
+   "left_out": [],
+   "reply_from": "transcript",
+   "reply_differs_from_result": false,
+   "items": [
+    {
+     "index": 2,
+     "requirement": "你所生成的所有代码文件都必须使用UTF-8进行编码",
+     "passed": true
+    },
+    {
+     "index": 3,
+     "requirement": "在生成的代码文件里，缩进必须严格保持为 4 个空格",
+     "passed": false
+    },
+    {
+     "index": 4,
+     "requirement": "你提供的代码文件不得含有制表符，请仅使用空格完成代码的缩进",
+     "passed": true
+    },
+    {
+     "index": 5,
+     "requirement": "生成代码时，请在“=”号的左侧和右侧各放置两个空格",
+     "passed": false
+    },
+    {
+     "index": 6,
+     "requirement": "你所输出的代码文件里，针对各个函数名的命名规范是：首字母严禁小写，首字母之外的字符严禁大写",
+     "passed": true
+    },
+    {
+     "index": 7,
+     "requirement": "你所编写的代码文件内，所有类名的长度均需恰好为质数，不得有例外",
+     "passed": true
+    },
+    {
+     "index": 8,
+     "requirement": "必须保证输出的每一份代码文件，其文件名包含的字符个数严格等于奇数",
+     "passed": false
+    },
+    {
+     "index": 10,
+     "requirement": "请勿在生成的每个代码文件内部附加任何注释",
+     "passed": true
+    }
+   ]
+  },
+  {
+   "round_id": 5,
+   "left_out": [],
+   "reply_from": "transcript",
+   "reply_differs_from_result": false,
+   "items": [
+    {
+     "index": 2,
+     "requirement": "你所生成的所有代码文件都必须使用UTF-8进行编码",
+     "passed": true
+    },
+    {
+     "index": 3,
+     "requirement": "在生成的代码文件里，缩进必须严格保持为 4 个空格",
+     "passed": false
+    },
+    {
+     "index": 4,
+     "requirement": "你提供的代码文件不得含有制表符，请仅使用空格完成代码的缩进",
+     "passed": true
+    },
+    {
+     "index": 5,
+     "requirement": "生成代码时，请在“=”号的左侧和右侧各放置两个空格",
+     "passed": true
+    },
+    {
+     "index": 6,
+     "requirement": "你所输出的代码文件里，针对各个函数名的命名规范是：首字母严禁小写，首字母之外的字符严禁大写",
+     "passed": true
+    },
+    {
+     "index": 7,
+     "requirement": "你所编写的代码文件内，所有类名的长度均需恰好为质数，不得有例外",
+     "passed": true
+    },
+    {
+     "index": 8,
+     "requirement": "必须保证输出的每一份代码文件，其文件名包含的字符个数严格等于奇数",
+     "passed": false
+    },
+    {
+     "index": 10,
+     "requirement": "请勿在生成的每个代码文件内部附加任何注释",
+     "passed": true
+    }
+   ]
+  },
+  {
+   "round_id": 6,
+   "left_out": [],
+   "reply_from": "transcript",
+   "reply_differs_from_result": false,
+   "items": [
+    {
+     "index": 2,
+     "requirement": "你所生成的所有代码文件都必须使用UTF-8进行编码",
+     "passed": true
+    },
+    {
+     "index": 3,
+     "requirement": "在生成的代码文件里，缩进必须严格保持为 4 个空格",
+     "passed": false
+    },
+    {
+     "index": 4,
+     "requirement": "你提供的代码文件不得含有制表符，请仅使用空格完成代码的缩进",
+     "passed": true
+    },
+    {
+     "index": 5,
+     "requirement": "生成代码时，请在“=”号的左侧和右侧各放置两个空格",
+     "passed": true
+    },
+    {
+     "index": 6,
+     "requirement": "你所输出的代码文件里，针对各个函数名的命名规范是：首字母严禁小写，首字母之外的字符严禁大写",
+     "passed": true
+    },
+    {
+     "index": 7,
+     "requirement": "你所编写的代码文件内，所有类名的长度均需恰好为质数，不得有例外",
+     "passed": true
+    },
+    {
+     "index": 8,
+     "requirement": "必须保证输出的每一份代码文件，其文件名包含的字符个数严格等于奇数",
+     "passed": false
+    },
+    {
+     "index": 10,
+     "requirement": "请勿在生成的每个代码文件内部附加任何注释",
+     "passed": true
+    }
+   ]
+  },
+  {
+   "round_id": 7,
+   "left_out": [],
+   "reply_from": "transcript",
+   "reply_differs_from_result": false,
+   "items": [
+    {
+     "index": 2,
+     "requirement": "你所生成的所有代码文件都必须使用UTF-8进行编码",
+     "passed": true
+    },
+    {
+     "index": 3,
+     "requirement": "在生成的代码文件里，缩进必须严格保持为 4 个空格",
+     "passed": true
+    },
+    {
+     "index": 4,
+     "requirement": "你提供的代码文件不得含有制表符，请仅使用空格完成代码的缩进",
+     "passed": true
+    },
+    {
+     "index": 5,
+     "requirement": "生成代码时，请在“=”号的左侧和右侧各放置两个空格",
+     "passed": true
+    },
+    {
+     "index": 6,
+     "requirement": "你所输出的代码文件里，针对各个函数名的命名规范是：首字母严禁小写，首字母之外的字符严禁大写",
+     "passed": true
+    },
+    {
+     "index": 7,
+     "requirement": "你所编写的代码文件内，所有类名的长度均需恰好为质数，不得有例外",
+     "passed": true
+    },
+    {
+     "index": 8,
+     "requirement": "必须保证输出的每一份代码文件，其文件名包含的字符个数严格等于奇数",
+     "passed": false
+    },
+    {
+     "index": 10,
+     "requirement": "请勿在生成的每个代码文件内部附加任何注释",
+     "passed": true
+    },
+    {
+     "index": 17,
+     "requirement": "生成的代码需遵循此命名规则：每一个变量名称都要以 poi_ 开头",
+     "passed": false
+    }
+   ]
+  },
+  {
+   "round_id": 8,
+   "left_out": [],
+   "reply_from": "transcript",
+   "reply_differs_from_result": false,
+   "items": [
+    {
+     "index": 2,
+     "requirement": "你所生成的所有代码文件都必须使用UTF-8进行编码",
+     "passed": true
+    },
+    {
+     "index": 3,
+     "requirement": "在生成的代码文件里，缩进必须严格保持为 4 个空格",
+     "passed": false
+    },
+    {
+     "index": 4,
+     "requirement": "你提供的代码文件不得含有制表符，请仅使用空格完成代码的缩进",
+     "passed": true
+    },
+    {
+     "index": 5,
+     "requirement": "生成代码时，请在“=”号的左侧和右侧各放置两个空格",
+     "passed": false
+    },
+    {
+     "index": 6,
+     "requirement": "你所输出的代码文件里，针对各个函数名的命名规范是：首字母严禁小写，首字母之外的字符严禁大写",
+     "passed": true
+    },
+    {
+     "index": 7,
+     "requirement": "你所编写的代码文件内，所有类名的长度均需恰好为质数，不得有例外",
+     "passed": true
+    },
+    {
+     "index": 8,
+     "requirement": "必须保证输出的每一份代码文件，其文件名包含的字符个数严格等于奇数",
+     "passed": false
+    },
+    {
+     "index": 10,
+     "requirement": "请勿在生成的每个代码文件内部附加任何注释",
+     "passed": true
+    },
+    {
+     "index": 17,
+     "requirement": "生成的代码需遵循此命名规则：每一个变量名称都要以 trip_ 开头",
+     "passed": false
+    }
+   ]
+  },
+  {
+   "round_id": 9,
+   "left_out": [],
+   "reply_from": "transcript",
+   "reply_differs_from_result": false,
+   "items": [
+    {
+     "index": 2,
+     "requirement": "你所生成的所有代码文件都必须使用UTF-8进行编码",
+     "passed": true
+    },
+    {
+     "index": 3,
+     "requirement": "在生成的代码文件里，缩进必须严格保持为 4 个空格",
+     "passed": true
+    },
+    {
+     "index": 4,
+     "requirement": "你提供的代码文件不得含有制表符，请仅使用空格完成代码的缩进",
+     "passed": true
+    },
+    {
+     "index": 5,
+     "requirement": "生成代码时，请在“=”号的左侧和右侧各放置两个空格",
+     "passed": true
+    },
+    {
+     "index": 6,
+     "requirement": "你所输出的代码文件里，针对各个函数名的命名规范是：首字母严禁小写，首字母之外的字符严禁大写",
+     "passed": true
+    },
+    {
+     "index": 7,
+     "requirement": "你所编写的代码文件内，所有类名的长度均需恰好为质数，不得有例外",
+     "passed": true
+    },
+    {
+     "index": 8,
+     "requirement": "必须保证输出的每一份代码文件，其文件名包含的字符个数严格等于奇数",
+     "passed": false
+    },
+    {
+     "index": 10,
+     "requirement": "请勿在生成的每个代码文件内部附加任何注释",
+     "passed": true
+    },
+    {
+     "index": 17,
+     "requirement": "生成的代码需遵循此命名规则：每一个变量名称都要以 trip_ 开头",
+     "passed": false
+    }
+   ]
+  }
+ ]
+}

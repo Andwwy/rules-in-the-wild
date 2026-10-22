@@ -1,0 +1,56 @@
+{
+ "label": "b1-check-R7",
+ "exit": 0,
+ "result": {
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 518,
+  "duration_api_ms": 103,
+  "ttft_ms": 140,
+  "ttft_stream_ms": 137,
+  "time_to_request_ms": 126,
+  "num_turns": 2,
+  "result": "Written.",
+  "stop_reason": "end_turn",
+  "session_id": "e14c87f8-bbb5-4a61-8ce9-dbb7e7a92b06",
+  "total_cost_usd": 7.000000000000001e-05,
+  "usage": {
+   "input_tokens": 20,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 10,
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard"
+  },
+  "modelUsage": {
+   "claude-haiku-4-5": {
+    "inputTokens": 20,
+    "outputTokens": 10,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "webSearchRequests": 0,
+    "costUSD": 7.000000000000001e-05,
+    "contextWindow": 200000,
+    "maxOutputTokens": 32000
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "2065e267-bd13-4096-b324-612a591f092e"
+ },
+ "text": "Node check-R7 (4 of 10): write the check of R7 as the executable /opt/enforce/checks/R7: `/opt/enforce/checks/R7 <file>` exits 0 when the file follows the rule, and otherwise exits 1 and prints each violation: R7, where (the file and line, or the part of the text), and what to change. By the route: A pattern-based static analyzer. A rule is a code pattern that Semgrep matches against each file's syntax tree, for many languages (Python, JavaScript, TypeScript, HTML script blocks, Bash, …). Check: `semgrep scan --config <rules.yml> --error --metrics=off --quiet <file>` (exit 1 on a finding; `--json` for a report) Rules: `rules: [{id: <id>, languages: [<language>], severity: ERROR, message: \"<what to change>\", pattern: \"<code pattern>\"}]`; Semgrep matches syntax, it cannot compute values (a length, a count): use a check script (/opt/enforce-toolbox/skeletons/check.py) for those It reads A function or a method. Where: in the source files; read them with a parser (/opt/enforce-toolbox/skeletons/names_python.py, /opt/enforce-toolbox/skeletons/names_js.py), or with Semgrep patterns Which files: every file that holds code, decided when the check runs (/opt/enforce-toolbox/targets/source-code/source-file.md); take embedded code out of its container first (a `<script>` in HTML), then parse it.\nDone when: as the agent, it exits 1 and names R7 for every file in /opt/enforce/fixtures/R7/flag, and exits 0 for every file in /opt/enforce/fixtures/R7/pass, and it runs semgrep. The harness checks this when you reply.",
+ "stderr": ""
+}
