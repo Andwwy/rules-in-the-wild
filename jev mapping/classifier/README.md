@@ -34,4 +34,4 @@ python map_values.py trigger --limit 5     # the voted values of the v1.11 vote 
 | `map_values.py` | maps the voted trigger or target values of `v1.11.vote` (the 1,841 full-triple rules by default) and resumes |
 
 The rings of the trigger and target mappings: `../ring/ring.py`. Needs `typesafe-sdk` and `TYPESAFE_API_KEY`
-(`~/Desktop/DAPlab/.env`).
+(see the repository's `.env.example`).

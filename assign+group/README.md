@@ -52,7 +52,7 @@ One switch, `--provider`, and the same model name for all three:
 * A 429 waits for the provider's `Retry-After` (else 10, 20, 40 … s, up to 6 times); `insufficient_quota` stops the run.
 * `python -m rule_pipeline.llm --check perplexity openai bedrock` sends one tiny request to each and prints the answer or the
   error.
-* **Spend:** every answered request goes into the project's ledger (`rules in the wild/spend.jsonl`, shared with the MTAC
+* **Spend:** every answered request goes into the project's spend ledger (shared with the MTAC
   experiment's gateway), and no request starts once `RITW_BUDGET_USD` (default $50) is spent. `python -m rule_pipeline.spend`
   prints the totals by source and by day.
 
