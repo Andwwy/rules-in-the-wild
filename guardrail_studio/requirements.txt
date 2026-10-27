@@ -1,0 +1,6 @@
+jsonschema>=4.23,<5
+semgrep==1.182.1
+quickjs==1.19.4
+PyYAML==6.0.3
+pre-commit==4.7.0
+check-jsonschema==0.38.0

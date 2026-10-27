@@ -1,0 +1,415 @@
+{
+  "type": "object",
+  "properties": {
+    "version": {
+      "const": "1.0"
+    },
+    "generator": {
+      "enum": [
+        "regex",
+        "json_schema",
+        "conftest",
+        "danger",
+        "semgrep",
+        "git_diff",
+        "path_manifest"
+      ]
+    },
+    "rule": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 20000
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 20000
+    },
+    "scope": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "include": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 20000
+              },
+              "maxItems": 50,
+              "minItems": 1
+            },
+            "exclude": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 20000
+              },
+              "maxItems": 50
+            }
+          },
+          "required": [
+            "include",
+            "exclude"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "config": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "version",
+    "generator",
+    "rule",
+    "description",
+    "scope",
+    "config"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "generator": {
+            "const": "regex"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "config": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "pygrep": {
+                    "type": "object"
+                  }
+                },
+                "required": [
+                  "pygrep"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "pattern": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 20000
+                  },
+                  "mode": {
+                    "enum": [
+                      "require",
+                      "forbid"
+                    ]
+                  },
+                  "ignore_case": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "pattern",
+                  "mode",
+                  "ignore_case"
+                ],
+                "additionalProperties": false
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "generator": {
+            "const": "conftest"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "config": {
+            "type": "object",
+            "properties": {
+              "policy": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 60000
+              }
+            },
+            "required": [
+              "policy"
+            ],
+            "additionalProperties": false
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "generator": {
+            "const": "json_schema"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "config": {
+            "type": "object",
+            "properties": {
+              "schema": {
+                "type": [
+                  "object",
+                  "boolean"
+                ]
+              }
+            },
+            "required": [
+              "schema"
+            ],
+            "additionalProperties": false
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "generator": {
+            "const": "path_manifest"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "config": {
+            "type": "object",
+            "properties": {
+              "required": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 20000
+                },
+                "maxItems": 50
+              },
+              "forbidden": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 20000
+                },
+                "maxItems": 50
+              }
+            },
+            "required": [
+              "required",
+              "forbidden"
+            ],
+            "additionalProperties": false
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "generator": {
+            "const": "git_diff"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "config": {
+            "type": "object",
+            "properties": {
+              "allowed_paths": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 20000
+                },
+                "maxItems": 50
+              },
+              "forbidden_paths": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 20000
+                },
+                "maxItems": 50
+              },
+              "forbid_deletions": {
+                "type": "boolean"
+              },
+              "base": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "^[^-]"
+              },
+              "include_untracked": {
+                "type": "boolean"
+              },
+              "forbidden_changes": {
+                "type": "array",
+                "maxItems": 50,
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "paths": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 20000
+                      },
+                      "maxItems": 50,
+                      "minItems": 1
+                    },
+                    "statuses": {
+                      "type": "array",
+                      "minItems": 1,
+                      "uniqueItems": true,
+                      "items": {
+                        "enum": [
+                          "A",
+                          "M",
+                          "D",
+                          "T"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "paths",
+                    "statuses"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "allowed_paths",
+              "forbidden_paths",
+              "forbid_deletions"
+            ],
+            "additionalProperties": false
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "generator": {
+            "const": "danger"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "config": {
+            "type": "object",
+            "properties": {
+              "dangerfile": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 60000
+              },
+              "mode": {
+                "enum": [
+                  "staged",
+                  "branch"
+                ]
+              },
+              "base": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200,
+                "pattern": "^[^-]"
+              }
+            },
+            "required": [
+              "dangerfile",
+              "mode",
+              "base"
+            ],
+            "additionalProperties": false
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "generator": {
+            "const": "semgrep"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "config": {
+            "type": "object",
+            "properties": {
+              "rules": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 10,
+                "items": {
+                  "type": "object"
+                }
+              }
+            },
+            "required": [
+              "rules"
+            ],
+            "additionalProperties": false
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "generator": {
+            "not": {
+              "enum": [
+                "json_schema",
+                "danger",
+                "regex",
+                "semgrep",
+                "conftest"
+              ]
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "scope": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

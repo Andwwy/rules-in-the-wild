@@ -1,0 +1,149 @@
+[
+  {
+    "case": "path_glob_is_not_per_service",
+    "observed": {
+      "status": "pass",
+      "checked": 1,
+      "violations": []
+    },
+    "interpretation": "This tempting approximation passes with a missing web Dockerfile. A generated per-service predicate is needed; it is not evidence that Codex actually chose this approximation."
+  },
+  {
+    "case": "path_directory_inventory",
+    "observed": {
+      "artifact": {
+        "files": {}
+      },
+      "result": {
+        "status": "fail",
+        "checked": 1,
+        "violations": [
+          {
+            "path": "docs",
+            "message": "Required path is missing"
+          }
+        ]
+      }
+    },
+    "interpretation": "Repository collection records files only and skips symlinks. Directory existence/type rules cannot be faithfully checked with this contract."
+  },
+  {
+    "case": "regex_search_is_not_fullmatch",
+    "observed": {
+      "status": "pass",
+      "checked": 1,
+      "violations": []
+    },
+    "interpretation": "A line-anchored pattern passes on one good line under MULTILINE search. A strict entire-value check needs fullmatch or absolute anchors; the engine can express it, but the interface does not make that distinction explicit."
+  },
+  {
+    "case": "regex_unbound_predicate",
+    "observed": {
+      "accepted": false,
+      "error": "None is not of type 'object'\n\nFailed validating 'type' in schema['allOf'][6]['then']['properties']['scope']:\n    {'type': 'object'}\n\nOn instance['scope']:\n    None"
+    },
+    "interpretation": "The same deployment-scope blocker fixed for JSON Schema remains for regex. A reusable text predicate should not require repository paths."
+  },
+  {
+    "case": "json_schema_native_oneof",
+    "observed": [
+      "pass",
+      "pass",
+      "fail",
+      "fail"
+    ],
+    "interpretation": "Native JSON Schema supports the conditional predicate without custom policy fields. No backend replacement is needed."
+  },
+  {
+    "case": "semgrep_native_paths_rejected",
+    "observed": {
+      "accepted": false,
+      "error": "Semgrep rules must use local search patterns and required metadata only"
+    },
+    "interpretation": "Native per-rule paths are rejected by our wrapper, although global wrapper scope is not a replacement for different scope per rule."
+  },
+  {
+    "case": "semgrep_native_taint_rejected",
+    "observed": {
+      "accepted": false,
+      "error": "Semgrep rules must use local search patterns and required metadata only"
+    },
+    "interpretation": "Our wrapper rejects native taint rules even when sources, sinks, and sanitizer are supplied."
+  },
+  {
+    "case": "semgrep_native_paths_engine",
+    "observed": {
+      "findings": 1,
+      "paths": [
+        "<fixture>/src/main.py"
+      ]
+    },
+    "interpretation": "The installed Semgrep engine handles this rule. The blocker is our custom wrapper, not this native capability."
+  },
+  {
+    "case": "semgrep_native_taint_engine",
+    "observed": {
+      "findings": 1,
+      "paths": [
+        "<fixture>/src/main.py"
+      ]
+    },
+    "interpretation": "The installed Semgrep engine handles this rule. The blocker is our custom wrapper, not this native capability."
+  },
+  {
+    "case": "bundle_regex",
+    "observed": [
+      "guardrail.json",
+      "guardrail.py",
+      "spec.schema.json",
+      "requirements.txt",
+      "README.md"
+    ],
+    "interpretation": "Bundle contains a runnable checker but no hook installer or native schema/rules file; enforcement integration is still manual."
+  },
+  {
+    "case": "bundle_json_schema",
+    "observed": [
+      "guardrail.json",
+      "guardrail.py",
+      "spec.schema.json",
+      "requirements.txt",
+      "README.md"
+    ],
+    "interpretation": "Bundle contains a runnable checker but no hook installer or native schema/rules file; enforcement integration is still manual."
+  },
+  {
+    "case": "bundle_path_manifest",
+    "observed": [
+      "guardrail.json",
+      "guardrail.py",
+      "spec.schema.json",
+      "requirements.txt",
+      "README.md"
+    ],
+    "interpretation": "Bundle contains a runnable checker but no hook installer or native schema/rules file; enforcement integration is still manual."
+  },
+  {
+    "case": "bundle_semgrep",
+    "observed": [
+      "guardrail.json",
+      "guardrail.py",
+      "spec.schema.json",
+      "requirements.txt",
+      "README.md"
+    ],
+    "interpretation": "Bundle contains a runnable checker but no hook installer or native schema/rules file; enforcement integration is still manual."
+  },
+  {
+    "case": "working_tree_not_staged_snapshot",
+    "observed": {
+      "runner_result": {
+        "status": "pass",
+        "checked": 1,
+        "violations": []
+      },
+      "staged_content": "TODO\n"
+    },
+    "interpretation": "The generic runner reads worktree files. Wrapping --repo in a commit hook would miss this violating staged version; a staged-snapshot adapter is needed."
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "name": "guardrail-studio-danger",
+  "private": true,
+  "description": "Pinned Danger runtime for native integration checks",
+  "scripts": {
+    "danger": "danger"
+  },
+  "devDependencies": {
+    "danger": "14.1.0"
+  }
+}
